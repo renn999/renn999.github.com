@@ -1,121 +1,112 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>老伯筆記</title>
-  <meta name="author" content="renn999">
+	<meta charset="utf-8">
+	<title>老伯筆記</title>
+	<meta name="author" content="renn999">
 
-  
-  <meta name="description" content="這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了
+	
+	<meta name="description" content=" 這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了
 應該都ok了吧&#8230;OTZ
-接著看看明天有沒有把備份自動寄到我的信箱就好了&#8230;OTZ">
-  
+接著看看明天有沒有把備份自動寄到我的信箱就好了&#8230;OTZ May 28th, 2010 隨便亂寫 Comments ">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://renn999.github.com/archives/page/2/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="老伯筆記" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
+	<link href="/atom.xml" rel="alternate" title="老伯筆記" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">老伯筆記</a></h1>
-  
-    <h2>一個老伯的閒語by Octopress</h2>
-  
-</hgroup>
+<body>
+	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:renn999.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		<a class="google" href="https://plus.google.com/renn999?rel=author" title="Google+">Google+</a>
+		
+		
+		<a class="twitter" href="http://twitter.com/renn999" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/renn999" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:renn999.github.com">
+	</form>
+</nav>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:renn999.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
+	
+		
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/renn999">renn999</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('renn999', 4, true);
+	})(jQuery);
+</script>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/archives/729">紀錄一下</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+	<div id="content" class="inner">
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-28T00:00:00+08:00" pubdate data-updated="true">May 28<span>th</span>, 2010</time>
-        
-         | <a href="/archives/729#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了</p>
+    <article class="post">
+	<h1 class="title"><a href="/archives/729">紀錄一下</a></h1>
+	<div class="entry-content">
+		<p>這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了</p>
 <p>應該都ok了吧&#8230;<span class="caps">OTZ</span></p>
-<p>接著看看明天有沒有把備份自動寄到我的信箱就好了&#8230;<span class="caps">OTZ</span></p></div>
-  
-  
+<p>接著看看明天有沒有把備份自動寄到我的信箱就好了&#8230;<span class="caps">OTZ</span></p>
+		
+		
+	</div>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/archives/721">利用 Trash 來取代 Rm 在 Terminal 模式下</a></h1>
-    
-    
-      <p class="meta">
-        
+<div class="meta">
+	<div class="date">
 
 
 
@@ -127,39 +118,34 @@
   
 
 
-<time datetime="2010-05-26T00:00:00+08:00" pubdate data-updated="true">May 26<span>th</span>, 2010</time>
-        
-         | <a href="/archives/721#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2010-05-28T00:00:00+08:00" pubdate data-updated="true">May 28<span>th</span>, 2010</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下&#8217;rm *.jpg&#8217;，但是手殘外加腦包的我竟然不小心下成&#8217;rm * .jpg&#8217;看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>&#8230;不不不&#8230;應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式&#8230;.<span class="caps">OTZ</span></p>
+	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/729/archives/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/721">利用 Trash 來取代 Rm 在 Terminal 模式下</a></h1>
+	<div class="entry-content">
+		<p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下&#8217;rm *.jpg&#8217;，但是手殘外加腦包的我竟然不小心下成&#8217;rm * .jpg&#8217;看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>&#8230;不不不&#8230;應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式&#8230;.<span class="caps">OTZ</span></p>
 <p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big><br />
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install trash-cli</span></code></pre></td></tr></table></div></figure></div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/archives/721">Read on &rarr;</a>
-    </footer>
-  
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install trash-cli</span></code></pre></td></tr></table></div></figure></div></notextile>
+		
+		<a href="/archives/721" class="more-link">Read on &rarr;</a>
+	</div>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/archives/708">Ubuntu 10.04 升級筆記</a></h1>
-    
-    
-      <p class="meta">
-        
+<div class="meta">
+	<div class="date">
 
 
 
@@ -171,37 +157,32 @@
   
 
 
-<time datetime="2010-05-22T00:00:00+08:00" pubdate data-updated="true">May 22<span>nd</span>, 2010</time>
-        
-         | <a href="/archives/708#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2010-05-26T00:00:00+08:00" pubdate data-updated="true">May 26<span>th</span>, 2010</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。&quot;看&quot;起來好像也沒有比較大的問題出現了。</p>
-<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/archives/708">Read on &rarr;</a>
-    </footer>
-  
+	<a class='category' href='/archives/categories/linux/'>Linux</a>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/archives/690">觀貓日記 20100514</a></h1>
-    
-    
-      <p class="meta">
-        
+</div>
+	
+		<span class="comments"><a href="/archives/721/archives/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/708">Ubuntu 10.04 升級筆記</a></h1>
+	<div class="entry-content">
+		<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。&quot;看&quot;起來好像也沒有比較大的問題出現了。</p>
+<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現
+		
+		<a href="/archives/708" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -213,39 +194,34 @@
   
 
 
-<time datetime="2010-05-14T00:00:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2010</time>
-        
-         | <a href="/archives/690#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2010-05-22T00:00:00+08:00" pubdate data-updated="true">May 22<span>nd</span>, 2010</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>今天真是睡姿大聚集&#8230;.</p>
+	<a class='category' href='/archives/categories/linux/'>Linux</a>, <a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>, <a class='category' href='/archives/categories/架站相關/'>架站相關</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/708/archives/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/690">觀貓日記 20100514</a></h1>
+	<div class="entry-content">
+		<p>今天真是睡姿大聚集&#8230;.</p>
 <div align="center">
 <wpg2>1297</wpg2>
-<p>先來個日光浴</div></div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/archives/690">Read on &rarr;</a>
-    </footer>
-  
+<p>先來個日光浴</div>
+		
+		<a href="/archives/690" class="more-link">Read on &rarr;</a>
+	</div>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/archives/680">觀貓日記 20100513</a></h1>
-    
-    
-      <p class="meta">
-        
+<div class="meta">
+	<div class="date">
 
 
 
@@ -257,41 +233,36 @@
   
 
 
-<time datetime="2010-05-13T00:00:00+08:00" pubdate data-updated="true">May 13<span>th</span>, 2010</time>
-        
-         | <a href="/archives/680#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2010-05-14T00:00:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2010</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>今天觀察才發現到，那隻虎斑貓還會睡在別的地方&#8230;XDrz<br />
+	<a class='category' href='/archives/categories/觀貓日記/'>觀貓日記</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/690/archives/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/680">觀貓日記 20100513</a></h1>
+	<div class="entry-content">
+		<p>今天觀察才發現到，那隻虎斑貓還會睡在別的地方&#8230;XDrz<br />
 <div align="center"><br />
 <p>虎斑貓在波浪版上睡覺之間</p><br />
 <wpg2>1285</wpg2><br />
 接著出現了另外一隻花貓</p>
-<p></div></div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/archives/680">Read on &rarr;</a>
-    </footer>
-  
+<p></div>
+		
+		<a href="/archives/680" class="more-link">Read on &rarr;</a>
+	</div>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/archives/668">回到高雄的這幾個禮拜</a></h1>
-    
-    
-      <p class="meta">
-        
+<div class="meta">
+	<div class="date">
 
 
 
@@ -303,106 +274,104 @@
   
 
 
-<time datetime="2010-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2010</time>
-        
-         | <a href="/archives/668#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2010-05-13T00:00:00+08:00" pubdate data-updated="true">May 13<span>th</span>, 2010</time></div>
+	<div class="tags">
 
 
-  <div class="entry-content"><p>　　有看過我的plurk的人應該都知道，我已經重台南搬回到高雄住了，現在每個星期三通車回到成大去上個游泳外加等畢業然後等Online，體檢報告也不知道啥時會出爐，外加因為蹲不下去還要等醫院的通知(我的身體毛病還真多，應該是我不喜歡運動的關係吧)，然而在家裡的這段時間我不就是幫父母做事，要不就是準備公職考試，看是很閒但是心中有著不明的壓力。<br />
+	<a class='category' href='/archives/categories/觀貓日記/'>觀貓日記</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/680/archives/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/668">回到高雄的這幾個禮拜</a></h1>
+	<div class="entry-content">
+		<p>　　有看過我的plurk的人應該都知道，我已經重台南搬回到高雄住了，現在每個星期三通車回到成大去上個游泳外加等畢業然後等Online，體檢報告也不知道啥時會出爐，外加因為蹲不下去還要等醫院的通知(我的身體毛病還真多，應該是我不喜歡運動的關係吧)，然而在家裡的這段時間我不就是幫父母做事，要不就是準備公職考試，看是很閒但是心中有著不明的壓力。<br />
 　　先來說說最近完成的第一件事情吧，我已經搬回高雄了，所以說最近都是在整理家裡已經快要n年沒整理的房間，丟了一大堆東西之後才發現到那間房間的狀況有夠糟糕的，壁癌啦&#8230;之類的，當然裡面是以前我們家裡開過文具行的一些剩物，當然也勾起了一堆的回憶，說真的也丟了不少東西就是了整理完之後把牆壁刮一刮就像下面這個樣子。<br />
 <div align="center"><wpg2>1248</wpg2><wpg2>1244</wpg2></div><br />
+
+		
+		<a href="/archives/668" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
+
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/archives/668">Read on &rarr;</a>
-    </footer>
-  
+	
+		<span class="comments"><a href="/archives/668/archives/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/archives/644">vSlider Navigation修正</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-03-07T00:00:00+08:00" pubdate data-updated="true">Mar 7<span>th</span>, 2010</time>
-        
-         | <a href="/archives/644#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近發現到這裡霉味很重，已經一段時間沒有更新一堆東西，另外一個原因就是最近都在<del datetime="2010-03-07T14:11:43+00:00">菸酒所</del>研究所考試，所以說大部分的時間都是拿去唸書了。</p>
+    <article class="post">
+	<h1 class="title"><a href="/archives/644">vSlider Navigation修正</a></h1>
+	<div class="entry-content">
+		<p>最近發現到這裡霉味很重，已經一段時間沒有更新一堆東西，另外一個原因就是最近都在<del datetime="2010-03-07T14:11:43+00:00">菸酒所</del>研究所考試，所以說大部分的時間都是拿去唸書了。</p>
 <p>我用vSlider當作我的主要佈景主題已經一段時間了，最主要是說裡面我已經改了一堆的東西外加上，如果還要換上新主題的話，又要去研究新主題的語法外加修改掛廣告&#8230;等。</p>
 <p>但是在今天拉到頁尾，看到了很刺眼的東西<br />
 <a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/03/Screenshot.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/03/Screenshot.png" alt="" title="Screenshot" width="690" class="alignnone size-full wp-image-646" /></a><br />
 就是底下都會出現雙連結，雖然說之前都有看到，但是都是懶的修正&#8230;<br />
+
+		
+		<a href="/archives/644" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-07T00:00:00+08:00" pubdate data-updated="true">Mar 7<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>
+
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/archives/644">Read on &rarr;</a>
-    </footer>
-  
+	
+		<span class="comments"><a href="/archives/644/archives/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/archives/618">Wine開啟視窗字體平滑效果</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-29T00:00:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2009</time>
-        
-         | <a href="/archives/618#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在很早以前用wine的時候只要在user.reg下加入<br />
+    <article class="post">
+	<h1 class="title"><a href="/archives/618">Wine開啟視窗字體平滑效果</a></h1>
+	<div class="entry-content">
+		<p>在很早以前用wine的時候只要在user.reg下加入<br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>[Software\\Wine\\X11 Driver]
@@ -410,213 +379,140 @@
 就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了<br />
 因為如果不啟用平滑效果的話，情況會像下圖：<br />
 <a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定-283x300.png" alt="" title="Screenshot-Wine 設定" width="283" height="300" class="alignnone size-medium wp-image-619" /></a><br />
+
+		
+		<a href="/archives/618" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-29T00:00:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/linux/'>Linux</a>
+
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/archives/618">Read on &rarr;</a>
-    </footer>
-  
+	
+		<span class="comments"><a href="/archives/618/archives/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/archives/577">Wordplurk Improve</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-23T00:00:00+08:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2009</time>
-        
-         | <a href="/archives/577#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p></big>&gt;&gt;已經成立獨立頁面<a href="http://www.renn999.twbbs.org/wordpress/wordplurk-improve">http://www.renn999.twbbs.org/wordpress/wordplurk-improve</a></big></p>
+    <article class="post">
+	<h1 class="title"><a href="/archives/577">Wordplurk Improve</a></h1>
+	<div class="entry-content">
+		<p></big>&gt;&gt;已經成立獨立頁面<a href="http://www.renn999.twbbs.org/wordpress/wordplurk-improve">http://www.renn999.twbbs.org/wordpress/wordplurk-improve</a></big></p>
 <p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出。<br />
 <a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-1.png"><img class="alignnone size-medium wp-image-578" title="Screenshot-1" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-1-300x242.png" alt="" width="300" height="242" /></a><br />
 本版本更貼近使用者的各項設定，至於未來是否要結合其他的plugin功能，讓Wordplurk越來越強大我還在思考中。<br />
+
+		
+		<a href="/archives/577" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-23T00:00:00+08:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>
+
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/archives/577">Read on &rarr;</a>
-    </footer>
-  
+	
+		<span class="comments"><a href="/archives/577/archives/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/archives/572">The Final Tset of Wordplurk Improve Modify</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-22T00:00:00+08:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2009</time>
-        
-         | <a href="/archives/572#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>這一篇只是要作一測試</p>
+    <article class="post">
+	<h1 class="title"><a href="/archives/572">The Final Tset of Wordplurk Improve Modify</a></h1>
+	<div class="entry-content">
+		<p>這一篇只是要作一測試</p>
 <p>改天會把我的修改文章給po出來</p>
 <p>最主要是修改了wordplurk的一些細節</p>
 <p>最初作者是用hacker出來的api下去處理</p>
-<p>我改用官方釋出的api 外加多了一點的修正</p></div>
-  
+<p>我改用官方釋出的api 外加多了一點的修正</p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
 
 
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/archives/page/3/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/">Newer &rarr;</a>
-    
-  </div>
+<time datetime="2009-12-22T00:00:00+08:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
+
+
 </div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+	
+		<span class="comments"><a href="/archives/572/archives/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+<nav id="pagenavi">
     
-      <li class="post">
-        <a href="/archives/2012/09/03/hello-world/">Hello World</a>
-      </li>
+        <a href="/" class="prev">Prev</a>
     
-      <li class="post">
-        <a href="/archives/900">[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops</a>
-      </li>
     
-      <li class="post">
-        <a href="/archives/894">ubuntu11.04使用感使用感外加問題解決</a>
-      </li>
+        <a href="/archives/page/3/" class="next">Next</a>
     
-      <li class="post">
-        <a href="/archives/886">[公告] server硬碟壞掉</a>
-      </li>
-    
-      <li class="post">
-        <a href="/archives/869">Wordpress升級jQuery from 1.4.2 to 1.4.3</a>
-      </li>
-    
-  </ul>
-</section>
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2012
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/renn999">@renn999</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'renn999',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("renn999", 4, true);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/renn999" class="twitter-follow-button" data-show-count="true">Follow @renn999</a>
-  
-</section>
-
-
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/renn999?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - renn999 -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    renn999
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
 
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
@@ -630,39 +526,6 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
