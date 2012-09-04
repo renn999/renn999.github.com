@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>自動MySQL備份搞定 - 老伯筆記</title>
+  <meta name="author" content="renn999">
+
+  
+  <meta name="description" content="最近把新機器弄了起來 就想說要把我的Blog搬到我自己的新機器上面去(有新家真好&#8230;XDDD)
+當然因為我之前實在是太惡搞我學弟的機器 所以以至於說一堆MySQL的基本指令不能用(就指令找不到啦)
+我真的頓時覺得超QQ的 因為我嘗試使用PHPMyaadmin去Dump出我的資料 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://renn999.github.com/archives/184">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="老伯筆記" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">老伯筆記</a></h1>
+  
+    <h2>一個老伯的閒語by Octopress</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:renn999.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">自動MySQL備份搞定</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-30T00:00:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>最近把新機器弄了起來 就想說要把我的Blog搬到我自己的新機器上面去(有新家真好&#8230;<span class="caps">XDDD</span>)<br />
+當然因為我之前實在是太惡搞我學弟的機器 所以以至於說一堆MySQL的基本指令不能用(就指令找不到啦)<br />
+我真的頓時覺得超QQ的 因為我嘗試使用PHPMyaadmin去Dump出我的資料 但是我真的很多當初不曉得怎麼搞的<br />
+一堆資料庫的編碼不對 導致說PHPmyadmin太聰明的邦我轉碼 變成名副其實的&quot;UTF-8亂碼&quot;<br />
+都還原不回來 到最後把整個MySQL殺掉重裝 才搞定好這個問題 到最後的問題也是用mysqldump搞定<br />
+前幾天都在想說要怎麼做備份 簡單來說就是一整個備份策略(就是外加網站檔案 因為太大了寄不出去)<br />
+講一個非常老實的話我還沒完全擬定好&#8230;Orz</p>
+<p>因為我最想要的就是直接mail到我的mailBox(因為我有Google app mail空間丟著很費浪&#8230;Orz 反正7G多了 當作一種備份儲存裝置也不錯 最重要的是mail fliter也弄的不錯)<br />
+所以說我要如何做到最基本的每天就定時dump出MySQL &#8212;&gt; Zip sql &#8212;&gt; mail附件出去<br />
+這就是最基本的處理方式 雖然說有的我之前已經實做過了<br />
+前幾天在搞定自己電腦的時候問題還是一堆</p>
+<p>這裡簡述一下流程<!--more--><br />
+Step 1. 先確認自己電腦有無Mail服務 如果沒有先去自己搞定一個 KeyWord：sendmail postfix</p>
+<p>Step 2. Mysql備份<br />
+就是要先搞定Mysql的Dump 最簡單最快速的還是使用&quot;mysqldump 有的時候去請教男人mysqldump要怎麼用還會看不懂&#8230;Orz<br />
+<blockquote>mysqldump -u[管理者id] -p[管理者密碼] [資料庫名稱] &gt; [輸出檔名].sql</blockquote><br />
+這樣就OK了 往後要作些定期備份的話也很方便 寫入Shell中就好了回復的話 就先建立好空白資料庫 再把Dump出來的東西打回去就好了<br />
+<blockquote>mysql -u[管理者id] -p[管理者密碼] [資料庫名稱] &lt; [輸出檔名].sql</blockquote><br />
+接著打包 就進入step3</p>
+<p>Step 3. Mail出去<br />
+因為之前說到的要mail服務就是要在這裡用到 因為在文字介面底下 所以說要找到好用的Mail附件的軟體真的不容易 我是Google到&quot;mutt&quot; 如果要用sendmail的話要用uuencode這個奇怪的東西 所以說我還是選擇用&quot;mutt&quot;<br />
+<blockquote>mutt -s &#8220;[信件主旨]&#8221; -a  [附件名稱].zip [mail位置＠where.are.you]</blockquote><br />
+要注意的地方是說這裡的話沒有內容他會要你打內容 所以說你可以利用兩種方式一種是你固定打好內容<br />
+<blockquote>mutt -s &#8220;[信件主旨]&#8221; -a  [附件名稱].zip [mail位置＠where.are.you] &lt; 內容文字檔</blockquote><br />
+或是<br />
+<blockquote>echo &#8220;你的內容&#8221; | mutt -s &#8220;[信件主旨]&#8221; -a  [附件名稱].zip [mail位置＠where.are.you]</blockquote><br />
+如果利用echo的話就可以玩的花樣就多一點了</p>
+<p>以上就是我的Mysql的的其備份的方式 分享一下我的備份Script&#8230;Orz<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/bash
+</span><span class='line'>today=`date +%y%m%d`
+</span><span class='line'>mysqldump -u[你看不到] -p********* Gallery2 > Gallery2.sql
+</span><span class='line'>mysqldump -u[你看不到] -p********* MediaWiki > MediaWiki.sql
+</span><span class='line'>mysqldump -u[你看不到] -p********* Wordpress > Wordpress.sql
+</span><span class='line'>mysqldump -u[你看不到] -p********* shorturl > shorturl.sql
+</span><span class='line'>zip -9r sqlbak$today.zip *.sql
+</span><span class='line'>rm *.sql
+</span><span class='line'>echo "$today Data base backup" | mutt -s "Web Mysql Database Backup" -a  sqlbak$today.zip [mail位置＠where.are.you]
+</span><span class='line'>rm sqlbak$today.zip sent</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+接著我就把這個bash寫到 crontab中每天固定的同一時間就會自動去run了&#8230;XD</blockquote></blockquote></p></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">renn999</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-30T00:00:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/archives/categories/架站相關/'>架站相關</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://renn999.github.com/archives/184" data-via="renn999" data-counturl="http://renn999.github.com/archives/184" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/archives/183" title="Previous Post: 當Blogger遇上Wordpress">&laquo; 當Blogger遇上Wordpress</a>
+      
+      
+        <a class="basic-alignment right" href="/archives/197" title="Next Post: CounterizeII IP紀錄功能">CounterizeII IP紀錄功能 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/archives/2012/09/03/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/900">[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/894">ubuntu11.04使用感使用感外加問題解決</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/886">[公告] server硬碟壞掉</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/869">Wordpress升級jQuery from 1.4.2 to 1.4.3</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/renn999">@renn999</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'renn999',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("renn999", 4, true);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/renn999" class="twitter-follow-button" data-show-count="true">Follow @renn999</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/renn999?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - renn999 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rennidit';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://renn999.github.com/archives/184';
+        var disqus_url = 'http://renn999.github.com/archives/184';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

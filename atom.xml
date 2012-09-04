@@ -1,16 +1,773 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[老伯筆記]]></title>
   <link href="http://renn999.github.com/atom.xml" rel="self"/>
   <link href="http://renn999.github.com/"/>
-  <updated>2012-09-04T16:51:48+08:00</updated>
+  <updated>2012-09-04T17:23:04+08:00</updated>
   <id>http://renn999.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[renn999]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://renn999.github.com/archives/2012/09/03/hello-world/"/>
+    <updated>2012-09-03T09:56:00+08:00</updated>
+    <id>http://renn999.github.com/archives/2012/09/03/hello-world</id>
+    <content type="html"><![CDATA[<p>Hello World!</p>
+
+<p>Octopress!!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops]]></title>
+    <link href="http://renn999.github.com/archives/900"/>
+    <updated>2011-07-21T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/900</id>
+    <content type="html"><![CDATA[<p>This is the first time I write post in English, so if there are something wrong in my post, please notice me, thanks.</p>
+<p>I have a laptop Asus A43SV, I do not like the windows7, so I install the ubuntu on it. But there are &#8220;Some&#8221; problem, after I finish install.</p>
+<p>First, Elantech touchpad recognized as PS/2 Logitech mouse, but you can find Elantech models in <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/681904/comments/104" target="_blank">this article.</a></p>
+<p>To solve the Realtek <span class="caps">USB</span> multi-card reader On my laptops, I have google it for a long time until yesterday. I find freechelmi said that he mailed to Realtek in <a href="http://ubuntuforums.org/showthread.php?t=1797202#6" target="_blank">this article</a>, and RealTek sent him a driver. This driver works on my laptops.</p>
+<p>Now, Asus Fn keys F9-F12 and some special keys stile not work, I hope ubuntu can support it in next release&#8230;</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu11.04使用感使用感外加問題解決]]></title>
+    <link href="http://renn999.github.com/archives/894"/>
+    <updated>2011-05-10T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/894</id>
+    <content type="html"><![CDATA[<p>為11.04已經發布了，當初還在想說應該完不到了，但是因為了某些原因，提早結束了Online生活，就理用了讀書所剩餘的時間把完了一下，但是感覺上比較大的不同只有unity外加一堆預設程式被換掉，但是還是用不大習慣。<br />
+外加，顯卡的需求好像變得比較高了&#8230;= =a，但是這不是重點，重點是解決問題的快感啊。<br />
+首先就是unity的程式分類，當我要新增一個程式到選單時，沒有辦法放到指定的位置，只職能在所有程式中找到，unity的設定不是使用主選單的分類，而是是用每個~/.local/share/applications下的.desktop設定檔中的Categories來分類的，所以說只要分類對了就可以在unity下的分類中看到。<br />
+另外一個就是影片縮圖，因為我都習慣把Totem拔掉，因為他真的貧弱到不行，但是拔掉之後又沒有影片縮圖，我還是利用了<a href="http://sites.google.com/site/me20305812/download_mplayer">mplayer-video-thumb</a>，但是因為1.4.1版的問題非常大&#8230;XDrz因為這是要totem存在下，才會縮圖，所以說他讓我改了一堆東西之後才可以用QQ，我是結合了1.3.2的設定，但是看到了比較高桿的用法<a href="http://planykao.blogspot.com/2009/12/mplayer-video-thumb-14-1.html">在這</a>，來為強者鞠躬吧&#8230;&lt;(_ _)&gt;</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
+    <link href="http://renn999.github.com/archives/886"/>
+    <updated>2011-04-24T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/886</id>
+    <content type="html"><![CDATA[<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息&#8230;OTZ。</p>
+<p>就如標題所說的，因為有的服務是我自己寫得程式，但是我犯了一個不可饒恕的錯誤&#8230;就是我忘記備份php程式了，造成有的服務可能無時間表的停止服務，因為這個站是我緊急的跟我們一位社團學長借的空間，因為有所限制，所以說短時間內我也不大想要把剩下的服務弄上去。</p>
+<p>在此公告，老伯繪師收集區停開，因為老早之前我就有打算要整個翻修內部程式碼，但是都懶得去動他，剛好趁著硬碟壞掉算是個總結吧&#8230;OTZ，但是不要擔心的是說資料庫還留著，但是程式就881了。</p>
+<p>感謝大家這幾年來對此站的照顧，在這裡除了對一些編輯者至上萬分的歉意以及感謝<br />
+&lt;(_ _)&gt;</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wordpress升級jQuery from 1.4.2 to 1.4.3]]></title>
+    <link href="http://renn999.github.com/archives/869"/>
+    <updated>2010-10-19T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/869</id>
+    <content type="html"><![CDATA[<p>jQuery最近釋出了1.4.3，當然在翻wordpress  trac的時候剛好翻到有人釋出了更新到1.4.3的patch。我則手動的將其升級了上去，如果有程度的可以直接看<a href="http://core.trac.wordpress.org/ticket/15135">ticket/15135</a><br />
+<!--more--><br />
+升級步驟：<br />
+<ul><br />
+	<li>v先到<a href="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js">http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js</a>將最新版的，jquery下載下來並取代wp-includes/js/jquery/jquery.js</li><br />
+	<li>修改wp-includes/script-loader.php將119行<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$scripts->add( 'jquery', '/wp-includes/js/jquery/jquery.js', false, '1.4.2');</span></code></pre></td></tr></table></div></figure></div></notextile>改成<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$scripts->add( 'jquery', '/wp-includes/js/jquery/jquery.js', false, '1.4.3');</span></code></pre></td></tr></table></div></figure></div></notextile></li></p>
+</ul>
+<p>但是有的時候可能會出新因為plugin將原本的版本號覆蓋的情形，以本人的wordplurk-improve為例子，要找出<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$jq_url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js';
+</span><span class='line'>  wp_deregister_script('jquery');
+</span><span class='line'>  wp_enqueue_script('jquery', $jq_url, false, '1.4.2');</span></code></pre></td></tr></table></div></figure></div></notextile>改成<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$jq_url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js';
+</span><span class='line'>  wp_deregister_script('jquery');
+</span><span class='line'>  wp_enqueue_script('jquery', $jq_url, false, '1.4.3');</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+即可，至於每個plugin依照設計的不同要是要相對於修改。</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[mysql轉sqlite]]></title>
+    <link href="http://renn999.github.com/archives/861"/>
+    <updated>2010-08-11T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/861</id>
+    <content type="html"><![CDATA[<p>前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到&#8230;XDrz</p>
+<p>可以參考這裡<a href="http://www.sqlite.org/cvstrac/wiki?p=ConverterTools">sqlite &#8211; Converter Tools</a></p>
+<p>當然我的作法是將步驟分開來作的</p>
+<p>先將sqldump出來<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysqldump -u'username' -p'password' --compact --compatible=ansi --default-character-set=binary 'databasename' > database.sql</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+<!--more--><br />
+接著就利用內部所說的sh script擷取部份<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/sh
+</span><span class='line'>
+</span><span class='line'>cat database.sql |
+</span><span class='line'>grep -v ' KEY "' |
+</span><span class='line'>grep -v ' UNIQUE KEY "' |
+</span><span class='line'>grep -v ' PRIMARY KEY ' |
+</span><span class='line'>sed 's/ unsigned / /g' |
+</span><span class='line'>sed 's/ auto_increment/ primary key autoincrement/gi' |
+</span><span class='line'>sed 's/ smallint([0-9]*) / integer /gi' |
+</span><span class='line'>sed 's/ tinyint([0-9]*) / integer /gi' |
+</span><span class='line'>sed 's/ int([0-9]*) / integer /gi' |
+</span><span class='line'>sed 's/ character set [^ ]* / /gi' |
+</span><span class='line'>sed 's/ enum([^)]*) / varchar(255) /gi' |
+</span><span class='line'>sed 's/ on update [^,]*//gi' |
+</span><span class='line'>perl -e 'local $/;$_=&lt;>;s/,\n\)/\n\)/gs;print "begin;\n";print;print "commit;\n"' |
+</span><span class='line'>perl -pe '
+</span><span class='line'>if (/^(INSERT.+?)\(/) {
+</span><span class='line'>   $a=$1;
+</span><span class='line'>   s/\\'\''/'\'\''/g;
+</span><span class='line'>   s/\\n/\n/g;
+</span><span class='line'>   s/\),\(/\);\n$a\(/g;
+</span><span class='line'>}
+</span><span class='line'>' > output.sql
+</span><span class='line'>cat output.sql | sqlite3 output.db > output.err</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>這樣的好處是說只要亦有問題，可以依照error message出現的錯誤去修正database.sql，老實他那個error message一直沒有辦法被output出來，建議使用script指令紀錄錯誤訊息，利用錯誤訊息慢慢去修正會比較好。</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[初學python]]></title>
+    <link href="http://renn999.github.com/archives/828"/>
+    <updated>2010-07-22T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/828</id>
+    <content type="html"><![CDATA[<p>這是利用plurk api簡單寫得東東，主要是要搞懂json的用法：p<br />
+到時候先搞定cookie的儲存..<span class="caps">OTZ</span><br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/python
+</span><span class='line'>#-*- coding: UTF8 -*-
+</span><span class='line'>#
+</span><span class='line'>
+</span><span class='line'>import logging, os, sys, re, time
+</span><span class='line'>import urllib,urllib2,cookielib,htmllib,formatter
+</span><span class='line'>import sgmllib
+</span><span class='line'>import json
+</span><span class='line'>
+</span><span class='line'>def main():
+</span><span class='line'>  opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
+</span><span class='line'>  get_api_url = lambda x: 'http://www.plurk.com/API%s' % x
+</span><span class='line'>  encode = urllib.urlencode
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>  fp = opener.open(get_api_url('/Users/login'),
+</span><span class='line'>    encode({
+</span><span class='line'>      'username': username,
+</span><span class='line'>      'password': password,
+</span><span class='line'>      'api_key': api_key ,
+</span><span class='line'>    }))
+</span><span class='line'>  fp.read()
+</span><span class='line'>  
+</span><span class='line'>  fp = opener.open(get_api_url('/Timeline/getPlurks'),
+</span><span class='line'>    encode({'api_key': api_key}))
+</span><span class='line'>  dumps = fp.read()
+</span><span class='line'>  dumps = json.JSONDecoder().decode(dumps)
+</span><span class='line'>  for a in dumps['plurks']:
+</span><span class='line'>    print api_key
+</span><span class='line'>    user_dis_name = dumps['plurk_users'][str(a['owner_id'])]['display_name']
+</span><span class='line'>    print ("%s"%user_dis_name)+" "*2+a['qualifier_translated']+":"
+</span><span class='line'>    print " "*4+"%s"%a['content_raw']
+</span><span class='line'>
+</span><span class='line'>if __name__ =='__main__':
+</span><span class='line'>  api_key = 'api_key'
+</span><span class='line'>  username = 'your_username'
+</span><span class='line'>  password = 'your_password'
+</span><span class='line'>  main()
+</span><span class='line'>  sys.exit()</span></code></pre></td></tr></table></div></figure></div></notextile></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在ubuntu下播放正版DVD]]></title>
+    <link href="http://renn999.github.com/archives/799"/>
+    <updated>2010-07-03T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/799</id>
+    <content type="html"><![CDATA[<p>我知道這是老梗文了，在前幾天翻出了&#8217;I, Robot&#8217;又懷念了一下，但是在播放的時候一直出現問題，才想到說我沒有灌解CSS相關的東西，<del datetime="2010-07-03T01:45:34+00:00">雖然說看正版的人應該不多吧</del>，但是還是紀錄一下。</p>
+<p><a href="https://help.ubuntu.com/community/RestrictedFormats/PlayingDVDs">ubuntu原文</a> 英文好的請直接喀這裡，&#8230;.<span class="caps">OTZ</span></p>
+<p><!--more--><br />
+<big><strong>Ubuntu 9.04, 9.10 and 10.04 (i386, amd64)</strong></big><br />
+<ul><br />
+	<li>安裝libdvdread4套件(不需要加入第三方套件庫)<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install libdvdread4</span></code></pre></td></tr></table></div></figure></div></notextile></li><br />
+	<li>打開terminal並且輸入執行<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo /usr/share/doc/libdvdread4/install-css.sh</span></code></pre></td></tr></table></div></figure></div></notextile></li><br />
+	<li>重新開機</li></p>
+</ul>
+<p>至於修改區碼，先安裝regionset<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install regionset</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p><span style="color: #ff0000;"><strong>每台機器可能都會有修改5次或以下的次數，當修改次數沒了之後此機器可能需要送回原廠才可以更改區碼。</strong></span></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[bitly.pro自訂網域的短網址服務]]></title>
+    <link href="http://renn999.github.com/archives/769"/>
+    <updated>2010-06-12T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/769</id>
+    <content type="html"><![CDATA[<p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。<!--more--><br />
+而<a href="http://bit.ly">bit.ly</a>這一家在不久前成立了<a href="http://bitly.pro">bitly Pro</a>服務，這是啥小跟bit.ly有啥不一樣，簡單說就是把domain name交給他們，讓他們去產生短網址，還外加給你點擊數及地區每日的統計&#8230;等等。這聽起來好像非常不錯，但是這還是一個beta，的服務所以說如果要申請還要填表格等等再說，當然我是已經等到了，外加弄清楚他們的api要怎麼使用，想想看有啥搞頭，但是感覺上還是純粹的個人風格的短網址而已&#8230;XD</p>
+<p>申請方式如下：<br />
+點下Sing Up For Free<br />
+<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot.jpg"><img class="size-medium wp-image-771" title="Screenshot" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-300x226.jpg" alt="" width="300" height="226" /></a></p>
+<p>這頁再跟你說他們還是個beta服務如果要使用還要填一下表格再等等。</p>
+<p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-1.jpg"><img class="size-medium wp-image-772" title="Screenshot-1" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-1-300x127.jpg" alt="" width="300" height="127" /></a></p>
+<p>就填表格吧。</p>
+<p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-2.jpg"><img class="size-medium wp-image-773" title="Screenshot-2" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-2-300x196.jpg" alt="" width="300" height="196" /></a></p>
+<p>接著大約等個一個星期到兩個星期左右他就會寄信給你說，你已經被邀請了<br />
+接著可以參考<a href="http://briian.com/?p=6799">重灌狂人 Bit.ly Pro 開放自訂網址的「縮址服務」</a>的設定方法做好就可以了<br />
+你問我網域從哪邊得到？恩 請google <span class="caps">FREE</span> domain或是免費網域吧！</p>
+<p>當然有了api和詳細的<a href="http://code.google.com/p/bitly-api/wiki/ApiDocumentation">使用手冊</a>，因為時常要上去縮的話很累，所以說就自己寫了一個小小的html利用jQuery的AJAX程式在此提供參考。</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+</span><span class='line'>&lt;html>
+</span><span class='line'>	&lt;head>
+</span><span class='line'>	&lt;META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+</span><span class='line'>	&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">&lt;/script>
+</span><span class='line'>	&lt;script type="text/javascript">
+</span><span class='line'>$(function(){
+</span><span class='line'>	$('button#sub').click(function(){
+</span><span class='line'>		var api_user='';
+</span><span class='line'>		var api_key=''
+</span><span class='line'>		$.getJSON('http://api.bit.ly/v3/shorten?login='+ api_user +'&apiKey='+ api_key +'&longUrl='+encodeURIComponent($('input#longurl').val())+'&format=json&callback=?',function(bitly){
+</span><span class='line'>			$('div#show').empty();
+</span><span class='line'>			$('div#show').append(bitly.data.url).hide().fadeIn(2000);
+</span><span class='line'>		})
+</span><span class='line'>	});
+</span><span class='line'>});
+</span><span class='line'>	&lt;/script>
+</span><span class='line'>	&lt;/style>
+</span><span class='line'>	&lt;/head>
+</span><span class='line'>	&lt;body>
+</span><span class='line'>	&lt;from id="bit" action="#">
+</span><span class='line'>		longurl:&lt;input type="text"id="longurl">&lt;button id="sub">submit&lt;/button>
+</span><span class='line'>	&lt;/from>
+</span><span class='line'>	&lt;div id=show>&lt;/div>
+</span><span class='line'>	&lt;/body>
+</span><span class='line'>&lt;/html></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+如果有申請bitly pro的話api所產生的網址會是你的網域，除非你多了一個domain的參數其實一個比較有趣的地方，像是說我縮了一個<a href="http://ren9.tk/dzkm9I">http://ren9.tk/dzkm9I</a>的網址你可以試試看<a href="http://bit.ly/dzkm9I">http://bit.ly/dzkm9I</a>，其實就是一個代管的功能而已&#8230;XDrz</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[EveryDNS替代方案FreeDNS]]></title>
+    <link href="http://renn999.github.com/archives/732"/>
+    <updated>2010-06-07T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/732</id>
+    <content type="html"><![CDATA[<p>因為之前聽到Everydns被Dyn收購的消息，然而在這一段時間老實說，我是擔心說和時會停止服務，雖然說官方一直說免費服務還是會維持，但是維持到啥時我就不知道了。然而我就開始尋找替代方案。</p>
+<p>我找到了<a href="http://freedns.afraid.org/">FreeDNS</a>，雖然說網址有點難記就是了。</p>
+<p>我也去申請了一個<a href="http://www.dot.tk">.TK</a>的免費網路域名，作為我自己的短網址之用的，真的短了很多。</p>
+<p>在此也紀錄一下。</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[紀錄一下]]></title>
+    <link href="http://renn999.github.com/archives/729"/>
+    <updated>2010-05-28T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/729</id>
+    <content type="html"><![CDATA[<p>這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了</p>
+<p>應該都ok了吧&#8230;<span class="caps">OTZ</span></p>
+<p>接著看看明天有沒有把備份自動寄到我的信箱就好了&#8230;<span class="caps">OTZ</span></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[利用 trash 來取代 rm 在 Terminal 模式下]]></title>
+    <link href="http://renn999.github.com/archives/721"/>
+    <updated>2010-05-26T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/721</id>
+    <content type="html"><![CDATA[<p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下&#8217;rm *.jpg&#8217;，但是手殘外加腦包的我竟然不小心下成&#8217;rm * .jpg&#8217;看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>&#8230;不不不&#8230;應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式&#8230;.<span class="caps">OTZ</span></p>
+<p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big><br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install trash-cli</span></code></pre></td></tr></table></div></figure></div></notextile><!--more--></p>
+<p><big><strong>第二步：新增script</strong></big><br />
+這一步的話最主要是要新增一個script來模擬<code>rm -r</code>的狀況，如果看trash的help就可以知道，雖然說trash也有-r的指令，但是他的指令會被忽略掉。在terminal中輸入<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo gedit /usr/bin/trash-rm</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+並把下面的code貼入，我在這個地方有做了一些修改，因為原先的script好像會吐出錯誤訊息。<br />
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'><span class="c"># command name: trash-rm</span>
+</span><span class='line'><span class="nb">shopt</span> -s extglob
+</span><span class='line'><span class="nv">recursive</span><span class="o">=</span>1
+</span><span class='line'><span class="nb">declare</span> -a cmd
+</span><span class='line'><span class="o">((</span><span class="nv">i</span> <span class="o">=</span> 0<span class="o">))</span>
+</span><span class='line'><span class="k">for </span>f in <span class="s2">&quot;$@&quot;</span>
+</span><span class='line'><span class="k">do</span>
+</span><span class='line'><span class="k"> case</span> <span class="s2">&quot;$f&quot;</span> in
+</span><span class='line'>  <span class="o">(</span>-*<span class="o">([</span>fiIv<span class="o">])</span>r*<span class="o">([</span>fiIv<span class="o">])</span>|-*<span class="o">([</span>fiIv<span class="o">])</span>R*<span class="o">([</span>fiIv<span class="o">])</span>|--recursive<span class="o">)</span>
+</span><span class='line'>   <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;$dshdsh&quot;</span> <span class="o">==</span> 1 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">    if</span> <span class="o">[</span> <span class="nv">$recursive</span> !<span class="o">=</span> 0 -a -d <span class="s2">&quot;$f&quot;</span> <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">     </span><span class="nb">echo</span> <span class="s2">&quot;skipping directory: $f&quot;</span>
+</span><span class='line'>	 <span class="k">continue</span>
+</span><span class='line'><span class="k">	fi</span>
+</span><span class='line'><span class="k">   else</span>
+</span><span class='line'><span class="k">    </span><span class="nv">recursive</span><span class="o">=</span>0
+</span><span class='line'>   <span class="k">fi</span> ;;
+</span><span class='line'>  <span class="o">(</span>--<span class="o">)</span>
+</span><span class='line'>   <span class="nv">dshdsh</span><span class="o">=</span>1;;
+</span><span class='line'>  <span class="o">(</span>*<span class="o">)</span>
+</span><span class='line'>   <span class="k">if</span> <span class="o">[</span> <span class="nv">$recursive</span> !<span class="o">=</span> 0 -a -d <span class="s2">&quot;$f&quot;</span> <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">    </span><span class="nb">echo</span> <span class="s2">&quot;skipping directory: $f&quot;</span>
+</span><span class='line'>	<span class="k">continue</span>
+</span><span class='line'><span class="k">   fi</span> ;;
+</span><span class='line'> <span class="k">esac</span>
+</span><span class='line'><span class="k"> </span>cmd<span class="o">[</span><span class="nv">$i</span><span class="o">]=</span><span class="s2">&quot;$f&quot;</span>
+</span><span class='line'> <span class="o">((</span>i++<span class="o">))</span>
+</span><span class='line'><span class="k">done</span>
+</span><span class='line'>trash <span class="s2">&quot;${cmd[@]}&quot;</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+接著，要讓這個script變成可執行檔<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo chmod +x /usr/bin/trash-rm</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p><big><strong>第三步：利用trash-rm取代rm</strong></big><br />
+也是在terminal中輸入<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ gedit ~/.bashrc</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+把以下的code加入到開啟的文件後面，並儲存<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias rm="trash-rm"</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+接著要reload bashrc就下bash的指令就可以了，到這裡就完成了，你可以利用rm和rm -r的指令來試試看。</p>
+<p><big><strong>其他trash-cli相關指令</strong></big><br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>empty-trash ＃清理
+</span><span class='line'>list-trash ＃列出
+</span><span class='line'>restore-trash ＃還原</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+這幾個應該看名字就知道功用了吧，這裡就不多加說明，更多可以看<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ man trash</span></code></pre></td></tr></table></div></figure></div></notextile></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu 10.04 升級筆記]]></title>
+    <link href="http://renn999.github.com/archives/708"/>
+    <updated>2010-05-22T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/708</id>
+    <content type="html"><![CDATA[<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。&quot;看&quot;起來好像也沒有比較大的問題出現了。</p>
+<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<!--more--><br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Deprecated: Function set_magic_quotes_runtime() is deprecated in [path]/wp-settings.php on line 18</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+這時候要去修正wp-settings.php這個檔案將原先的18行改成<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if(version_compare(PHP_VERSION, '5.3.0', '&lt;')){set_magic_quotes_runtime(0); }</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>apache 的部份就是 userdir 的部份因為我有裝php，之前的預設值是在 userdir 中也可以執行php新版更新之後是關起來的，userdir中的php都會變成下載的模式，要打開要修改/etc/apache2/mods-available/php5.conf，找到以下這幾行<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;IfModule mod_userdir.c>
+</span><span class='line'>        &lt;Directory /home/*/public_html>
+</span><span class='line'>            php_admin_value engine Off
+</span><span class='line'>        &lt;/Directory>
+</span><span class='line'>    &lt;/IfModule></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+修改成<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#    &lt;IfModule mod_userdir.c>
+</span><span class='line'>#        &lt;Directory /home/*/public_html>
+</span><span class='line'>#            php_admin_value engine Off
+</span><span class='line'>#        &lt;/Directory>
+</span><span class='line'>#    &lt;/IfModule></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+儲存之後resrart apache即可，以上是我server目前遇到的升級問題。</p>
+<p>至於桌機的部份不外乎就是nv顯卡的問題了(幾乎每次升級都會發生&#8230;<span class="caps">OTZ</span>)，我是不打算裝apt中的顯卡驅動我都是直接到nv官方去下載，在9.10中輕輕鬆鬆的就可以編譯ok，然後上機but這次可就沒這麼幸運了&#8230;OTZ，在編譯的過程中時常會出現<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: Unable to load the kernel module 'nvidia.ko'.  This happens most
+</span><span class='line'>       frequently when this kernel module was built against the wrong or
+</span><span class='line'>       improperly configured kernel sources, with a version of gcc that differs
+</span><span class='line'>       from the one used to build the target kernel, or if a driver such as
+</span><span class='line'>       rivafb/nvidiafb is present and prevents the NVIDIA kernel module from
+</span><span class='line'>       obtaining ownership of the NVIDIA graphics device(s), or NVIDIA GPU
+</span><span class='line'>       installed in this system is not supported by this NVIDIA Linux graphics
+</span><span class='line'>       driver release.</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+這個問題的話，我是google到這一篇<a href="http://ubuntuforums.org/showthread.php?t=1467074">http://ubuntuforums.org/showthread.php?t=1467074</a>參考了一下同樣的作法之後就ok了。作一下大致上的翻譯，首先先下載nv的最新驅動之後，之後開啟terminal<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/modprobe.d/blacklist.conf</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+將下面幾行加入並儲存<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>blacklist vga16fb
+</span><span class='line'>blacklist nouveau
+</span><span class='line'>blacklist rivafb
+</span><span class='line'>blacklist nvidiafb
+</span><span class='line'>blacklist rivatv</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+然後在terminal中輸入底下的指令把一些已經裝過的nv驅動全部拔掉外加nouveau<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get --purge remove nvidia-* xserver-xorg-video-nouveau</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+之後reboot一下，進入recover mode，再把nv的驅動編譯起來，在重新開機，應該就可以順利的執行的，但是我的vdpau無法順利執行，看一下錯誤檔好像是因為沒有權限所以說我又多加了一道指令<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo chmod 666 /dev/nvidia*</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+大致上nv的部份全部都ok了，但是Plymouth(新的開機畫面看來他們幹掉xsplash了..XDrz)的解析度會變很爛，這也是有解法的google到這一篇<a href="http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html">http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html</a>，也是大致上翻譯一下作法<br />
+也是打開terminal，輸入下面的指令<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/default/grub</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+找到約18行左右(依照每個人的電腦而異)的&quot;#GRUB_GFXMODE=640&#215;480&#8243;改成，把前面的#註解去掉改成。<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>GRUB_GFXMODE=1024X768</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+儲存之後修改/etc/grub.d/00_header的檔案也是在terminal，輸入下面的指令<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/grub.d/00_header</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+找到約103行左右(依照每個人的電腦而異)的&quot;gfxmode=${GRUB_GFXMODE}&quot;並此行下面多加一行<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>set gfxpayload=keep</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+儲存並回到terminal，輸入下面的指令更新grub2<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-grub</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+更新完之後就可以重新開機看看結果了</p>
+<p>當然還有發現到 rar 的解壓會出現亂碼，我處理的方式是到rar的官方去下載最新版的，改一下makefile裡面的<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PREFIX=/usr/local</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+改成<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PREFIX=/usr</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+然後make install把舊版的蓋過去就ok了</p>
+<p>這裡大致上把我遇到的問題先整理部份起來，不知道還會遇到啥鬼問題&#8230;<span class="caps">OTZ</span></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[觀貓日記 20100514]]></title>
+    <link href="http://renn999.github.com/archives/690"/>
+    <updated>2010-05-14T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/690</id>
+    <content type="html"><![CDATA[<p>今天真是睡姿大聚集&#8230;.</p>
+<div align="center">
+<wpg2>1297</wpg2>
+<p>先來個日光浴</div><!--more--><div align="center"><br />
+<wpg2>1300</wpg2><br />
+這樣睡ok<br />
+<wpg2>1303</wpg2><br />
+在換個邊睡<br />
+<wpg2>1306</wpg2><br />
+這樣不會鬧枕嗎？<br />
+<wpg2>1309</wpg2><br />
+換個邊睡不讓你拍臉了<br />
+<wpg2>1312</wpg2><br />
+天氣越來越熱了我還是找別的地方好了</p>
+</div>
+<p>今天先到這裡了&#8230;</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[觀貓日記 20100513]]></title>
+    <link href="http://renn999.github.com/archives/680"/>
+    <updated>2010-05-13T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/680</id>
+    <content type="html"><![CDATA[<p>今天觀察才發現到，那隻虎斑貓還會睡在別的地方&#8230;XDrz<br />
+<div align="center"><br />
+<p>虎斑貓在波浪版上睡覺之間</p><br />
+<wpg2>1285</wpg2><br />
+接著出現了另外一隻花貓</p>
+<p></div><!--more--><div align="center"><br />
+<wpg2>1288</wpg2><br />
+阿伯不是壞人不要出現這麼可怕的表情好不好<br />
+接著這隻貓不知道是不是真的被我嚇到匆匆的掉下去了&#8230;拍謝&gt;&quot;&lt;<br />
+<wpg2>1279</wpg2><br />
+今天在波浪版上睡了一覺之後，開始在屋頂上玩耍，因為那隻花貓在喵喵叫把他吵醒了。<br />
+<wpg2>1282</wpg2><br />
+這兩張好像都是被我嚇到了，過沒多久虎斑貓跑去睡覺了<br />
+<wpg2>1291</wpg2><br />
+跑出了另外一隻貓 正在找睡覺的地方，恩看來這地方不錯<br />
+<wpg2>1273</wpg2><br />
+虎斑貓看起來睡得非常香甜<br />
+<wpg2>1294</wpg2><br />
+睡醒了 發現到我正在偷拍&#8230;&gt;&quot;&lt;，接著就跑走了<br />
+<wpg2>1276</wpg2><br />
+太陽曬屁股了還沒有醒</p>
+</div>
+<p>因為早上差不多到10點前，那裡都沒有太陽而且又涼爽，才會成為貓喜歡聚集的地方吧&#8230;今天就先到這裡了&#8230;</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[回到高雄的這幾個禮拜]]></title>
+    <link href="http://renn999.github.com/archives/668"/>
+    <updated>2010-05-12T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/668</id>
+    <content type="html"><![CDATA[<p>　　有看過我的plurk的人應該都知道，我已經重台南搬回到高雄住了，現在每個星期三通車回到成大去上個游泳外加等畢業然後等Online，體檢報告也不知道啥時會出爐，外加因為蹲不下去還要等醫院的通知(我的身體毛病還真多，應該是我不喜歡運動的關係吧)，然而在家裡的這段時間我不就是幫父母做事，要不就是準備公職考試，看是很閒但是心中有著不明的壓力。<br />
+　　先來說說最近完成的第一件事情吧，我已經搬回高雄了，所以說最近都是在整理家裡已經快要n年沒整理的房間，丟了一大堆東西之後才發現到那間房間的狀況有夠糟糕的，壁癌啦&#8230;之類的，當然裡面是以前我們家裡開過文具行的一些剩物，當然也勾起了一堆的回憶，說真的也丟了不少東西就是了整理完之後把牆壁刮一刮就像下面這個樣子。<br />
+<div align="center"><wpg2>1248</wpg2><wpg2>1244</wpg2></div><br />
+<!--more-->當然我還畫了設計圖。<br />
+<div align="center"><wpg2>1264</wpg2></div><br />
+整理到快要上個禮拜之後才整理完，雖然說途中還有一點小小地變更，完成以後<br />
+<div align="center"><wpg2>1252</wpg2><wpg2>1255</wpg2><wpg2>1258</wpg2><wpg2>1261</wpg2></div><br />
+　　算一算整個房間所花的錢大約有5500NT(兩個大書架，一個只有888，在家x福購買的，電腦桌1800，還有油漆700上下，還有一些小東西)，有一堆東西不是家裡以前有的就是外面撿的，但是我很喜歡。<br />
+　　回到家裡之後發現到，附近的貓真的有夠多的，不管大貓小貓，隨隨便便的走幾步路就可以看到貓，當然我從我的房間向外看的時候就發現了有一隻有趣的貓，他好像非常的喜歡我們加附近的波浪屋頂版的樣子<br />
+<div align="center"><wpg2>1269</wpg2></div><br />
+以後乾脆來寫個觀貓日記好了&#8230;XDrz</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[vSlider navigation修正]]></title>
+    <link href="http://renn999.github.com/archives/644"/>
+    <updated>2010-03-07T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/644</id>
+    <content type="html"><![CDATA[<p>最近發現到這裡霉味很重，已經一段時間沒有更新一堆東西，另外一個原因就是最近都在<del datetime="2010-03-07T14:11:43+00:00">菸酒所</del>研究所考試，所以說大部分的時間都是拿去唸書了。</p>
+<p>我用vSlider當作我的主要佈景主題已經一段時間了，最主要是說裡面我已經改了一堆的東西外加上，如果還要換上新主題的話，又要去研究新主題的語法外加修改掛廣告&#8230;等。</p>
+<p>但是在今天拉到頁尾，看到了很刺眼的東西<br />
+<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/03/Screenshot.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/03/Screenshot.png" alt="" title="Screenshot" width="690" class="alignnone size-full wp-image-646" /></a><br />
+就是底下都會出現雙連結，雖然說之前都有看到，但是都是懶的修正&#8230;<br />
+<!--more--><br />
+其實修正方式非常簡單，打開navigation.php應該會看到<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!--
+</span><span class='line'>This block is used whenever navigation is required
+</span><span class='line'>-->
+</span><span class='line'>&lt;div class="navigation">
+</span><span class='line'>    &lt;div class="alignleft">&lt;?php posts_nav_link('','',__('&laquo; Older stuff', 'vSlider')) ?>&lt;/div>
+</span><span class='line'>    &lt;div class="alignright">&lt;?php posts_nav_link('',__('Newer stuff &raquo;', 'vSlider'),'') ?>&lt;/div>   
+</span><span class='line'>&lt;/div></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+這裡的話他是用<a href="http://codex.wordpress.org/Template_Tags/posts_nav_link">posts_nav_link</a>，可以點連結看一下官方說明，官方有說道這種方式可能會出現雙連結等錯誤的格式。如果要用此方式的話可以使用<a href="http://codex.wordpress.org/next_posts_link">next_posts_link</a> and <a href="http://codex.wordpress.org/Template_Tags/previous_posts_link">previous_posts_link</a>來替代。</p>
+<p>所以說修正之後的程式碼<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!--
+</span><span class='line'>This block is used whenever navigation is required
+</span><span class='line'>-->
+</span><span class='line'>&lt;div class="navigation">
+</span><span class='line'>    &lt;div class="alignleft">&lt;?php next_posts_link(__('&laquo; Older stuff', 'vSlider'),0)?>&lt;/div>
+</span><span class='line'>    &lt;div class="alignright">&lt;?php previous_posts_link(__('Newer stuff &raquo;', 'vSlider'),0) ?>&lt;/div>                                      
+</span><span class='line'>&lt;/div></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+這樣就ok了 可以看一下頁尾就是正常顯示了</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wine開啟視窗字體平滑效果]]></title>
+    <link href="http://renn999.github.com/archives/618"/>
+    <updated>2009-12-29T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/618</id>
+    <content type="html"><![CDATA[<p>在很早以前用wine的時候只要在user.reg下加入<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Software\\Wine\\X11 Driver]
+</span><span class='line'>"ClientSideAntiAliasWithRender"="Y"</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了<br />
+因為如果不啟用平滑效果的話，情況會像下圖：<br />
+<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定-283x300.png" alt="" title="Screenshot-Wine 設定" width="283" height="300" class="alignnone size-medium wp-image-619" /></a><br />
+<!--more--><br />
+在網路上已經有真正的解法了，如果您真的很有耐心的話可以看看Wine-Review的<a href="http://www.wine-reviews.net/wine-reviews/tips-n-tricks/how-to-enable-font-anti-aliasing-in-wine.html">這一篇</a><br />
+他有說到將以下的文字存成reg並且匯進去regedit<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>REGEDIT4
+</span><span class='line'>
+</span><span class='line'>[HKEY_CURRENT_USER\Control Panel\Desktop]
+</span><span class='line'>"FontSmoothing"="2"
+</span><span class='line'>"FontSmoothingType"=dword:00000002
+</span><span class='line'>"FontSmoothingGamma"=dword:00000578
+</span><span class='line'>"FontSmoothingOrientation"=dword:00000001</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+但是太麻煩了，最快的方式，打開終端機複製貼上<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://files.polosatus.ru/winefontssmoothing_en.sh -O- | bash</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+然後，出現以下畫面去作選擇<br />
+<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Terminal.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Terminal-300x185.png" alt="" title="Screenshot-Terminal" width="300" height="185" class="alignnone size-medium wp-image-621" /></a><br />
+之後可以開啟Wine來看看結果<br />
+<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定-1.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定-1-300x296.png" alt="" title="Screenshot-Wine 設定-1" width="300" height="296" class="alignnone size-medium wp-image-620" /></a></p>
+<p>這樣看起來棒多了，取代其他字型的regcode</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Software\\Wine\\Fonts\\Replacements]
+</span><span class='line'>"System"="你要的字型名稱"
+</span><span class='line'>"Arial"="你要的字型名稱"
+</span><span class='line'>"Fixedsys"="你要的字型名稱"
+</span><span class='line'>"Microsoft Sans Serif"="你要的字型名稱"
+</span><span class='line'>"MS UI Gothic"="你要的字型名稱"
+</span><span class='line'>"Tahoma"="你要的字型名稱"
+</span><span class='line'>"Terminal"="你要的字型名稱"
+</span><span class='line'>"MingLiU"="你要的字型名稱"
+</span><span class='line'>"PMingLiU"="你要的字型名稱"</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>將其附加到user.reg後面即可</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wordplurk Improve]]></title>
+    <link href="http://renn999.github.com/archives/577"/>
+    <updated>2009-12-23T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/577</id>
+    <content type="html"><![CDATA[<p></big>&gt;&gt;已經成立獨立頁面<a href="http://www.renn999.twbbs.org/wordpress/wordplurk-improve">http://www.renn999.twbbs.org/wordpress/wordplurk-improve</a></big></p>
+<p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出。<br />
+<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-1.png"><img class="alignnone size-medium wp-image-578" title="Screenshot-1" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-1-300x242.png" alt="" width="300" height="242" /></a><br />
+本版本更貼近使用者的各項設定，至於未來是否要結合其他的plugin功能，讓Wordplurk越來越強大我還在思考中。<br />
+<!--more--><br />
+P.S. 這個plurk api 需要plurk api key，這個需要去plurk申請<a href="http://www.plurk.com/API">http://www.plurk.com/<span class="caps">API</span></a></p>
+<p><big><strong>如何安裝：</strong></big><br />
+<ol><br />
+<li>首先下載<a href="http://www.renn999.twbbs.org/wordpress/downloads/wordplurk_im.zip">Wordplurk_im.zip</a></li><br />
+<li>解壓縮之後放到您的wordpress plurgin資料夾內</li><br />
+<li>在外掛設定中啟用</li><br />
+<li>設定您的Plurk 帳號密碼 <span class="caps">API</span> key等&#8230;</li><br />
+<li>當下次寫新文章發表時會自動發布到plurk上了</li></p>
+</ol>
+<p>P.S. 在Wordplurk Template中可以隨意自訂你所要得格式 預設為%%url%% &#8211; <span>%title</span>% 可以改成%%url%% (%%title%%)直接連結的模式</p>
+<p><big><strong>Wordpress版本需求：</strong></big>2.6以上</p>
+<p><big><strong>目前問題：</strong></big><br />
+<ol><br />
+<li>當文章title更新時無法更新Plurk上已經post過的(近期改善)</li><br />
+<li>多國語系支援</li><br />
+<li>多種縮網址選擇</li></p>
+</ol>
+<p>如果有任何問題 請大家在此留言 謝謝&lt;(_ _)&gt;</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The final tset Of wordplurk improve modify]]></title>
+    <link href="http://renn999.github.com/archives/572"/>
+    <updated>2009-12-22T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/572</id>
+    <content type="html"><![CDATA[<p>這一篇只是要作一測試</p>
+<p>改天會把我的修改文章給po出來</p>
+<p>最主要是修改了wordplurk的一些細節</p>
+<p>最初作者是用hacker出來的api下去處理</p>
+<p>我改用官方釋出的api 外加多了一點的修正</p>]]></content>
+  </entry>
   
 </feed>

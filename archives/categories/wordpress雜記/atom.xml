@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: wordpress雜記 | 老伯筆記]]></title>
+  <link href="http://renn999.github.com/archives/categories/wordpress雜記/atom.xml" rel="self"/>
+  <link href="http://renn999.github.com/"/>
+  <updated>2012-09-04T17:23:04+08:00</updated>
+  <id>http://renn999.github.com/</id>
+  <author>
+    <name><![CDATA[renn999]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
+    <link href="http://renn999.github.com/archives/886"/>
+    <updated>2011-04-24T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/886</id>
+    <content type="html"><![CDATA[<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息...OTZ。</p>
+
+<p>就如標題所說的，因為有的服務是我自己寫得程式，但是我犯了一個不可饒恕的錯誤...就是我忘記備份php程式了，造成有的服務可能無時間表的停止服務，因為這個站是我緊急的跟我們一位社團學長借的空間，因為有所限制，所以說短時間內我也不大想要把剩下的服務弄上去。</p>
+
+<p>在此公告，老伯繪師收集區停開，因為老早之前我就有打算要整個翻修內部程式碼，但是都懶得去動他，剛好趁著硬碟壞掉算是個總結吧...OTZ，但是不要擔心的是說資料庫還留著，但是程式就881了。</p>
+
+<p>感謝大家這幾年來對此站的照顧，在這裡除了對一些編輯者至上萬分的歉意以及感謝
+&lt;(<em> </em>)></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wordpress升級jQuery from 1.4.2 to 1.4.3]]></title>
+    <link href="http://renn999.github.com/archives/869"/>
+    <updated>2010-10-19T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/869</id>
+    <content type="html"><![CDATA[<p>jQuery最近釋出了1.4.3，當然在翻wordpress  trac的時候剛好翻到有人釋出了更新到1.4.3的patch。我則手動的將其升級了上去，如果有程度的可以直接看<a href="http://core.trac.wordpress.org/ticket/15135">ticket/15135</a></p>
+
+<!--more-->
+
+
+<p>升級步驟：</p>
+
+<ul>
+    <li>v先到<a href="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js">http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js</a>將最新版的，jquery下載下來並取代wp-includes/js/jquery/jquery.js</li>
+    <li>修改wp-includes/script-loader.php將119行<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$scripts->add( 'jquery', '/wp-includes/js/jquery/jquery.js', false, '1.4.2');</span></code></pre></td></tr></table></div></figure></notextile></div>改成<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$scripts->add( 'jquery', '/wp-includes/js/jquery/jquery.js', false, '1.4.3');</span></code></pre></td></tr></table></div></figure></notextile></div></li>
+</ul>
+
+
+<p>但是有的時候可能會出新因為plugin將原本的版本號覆蓋的情形，以本人的wordplurk-improve為例子，要找出<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$jq_url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js';
+</span><span class='line'>  wp_deregister_script('jquery');
+</span><span class='line'>  wp_enqueue_script('jquery', $jq_url, false, '1.4.2');</span></code></pre></td></tr></table></div></figure></notextile></div>改成<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$jq_url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js';
+</span><span class='line'>  wp_deregister_script('jquery');
+</span><span class='line'>  wp_enqueue_script('jquery', $jq_url, false, '1.4.3');</span></code></pre></td></tr></table></div></figure></notextile></div>
+即可，至於每個plugin依照設計的不同要是要相對於修改。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu 10.04 升級筆記]]></title>
+    <link href="http://renn999.github.com/archives/708"/>
+    <updated>2010-05-22T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/708</id>
+    <content type="html"><![CDATA[<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。"看"起來好像也沒有比較大的問題出現了。</p>
+
+<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<!--more-->
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Deprecated: Function set_magic_quotes_runtime() is deprecated in [path]/wp-settings.php on line 18</span></code></pre></td></tr></table></div></figure></notextile></div>
+這時候要去修正wp-settings.php這個檔案將原先的18行改成
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if(version_compare(PHP_VERSION, '5.3.0', '&lt;')){set_magic_quotes_runtime(0); }</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>apache 的部份就是 userdir 的部份因為我有裝php，之前的預設值是在 userdir 中也可以執行php新版更新之後是關起來的，userdir中的php都會變成下載的模式，要打開要修改/etc/apache2/mods-available/php5.conf，找到以下這幾行
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;IfModule mod_userdir.c>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>    &lt;Directory /home/*/public_html&gt;
+</span><span class='line'>        php_admin_value engine Off
+</span><span class='line'>    &lt;/Directory&gt;
+</span><span class='line'>&lt;/IfModule&gt;</span></code></pre></td></tr></table></div></figure></notextile></div>
+</code></pre>
+
+<p>修改成
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#    &lt;IfModule mod_userdir.c>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>&lt;Directory /home/*/public_html>&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>php_admin_value engine Off&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>&lt;/Directory>&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>&lt;/IfModule></span></code></pre></td></tr></table></div></figure></notextile></div></h1>
+
+<p>儲存之後resrart apache即可，以上是我server目前遇到的升級問題。</p>
+
+<p>至於桌機的部份不外乎就是nv顯卡的問題了(幾乎每次升級都會發生...OTZ)，我是不打算裝apt中的顯卡驅動我都是直接到nv官方去下載，在9.10中輕輕鬆鬆的就可以編譯ok，然後上機but這次可就沒這麼幸運了...OTZ，在編譯的過程中時常會出現
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: Unable to load the kernel module 'nvidia.ko'.  This happens most&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>   frequently when this kernel module was built against the wrong or
+</span><span class='line'>   improperly configured kernel sources, with a version of gcc that differs
+</span><span class='line'>   from the one used to build the target kernel, or if a driver such as
+</span><span class='line'>   rivafb/nvidiafb is present and prevents the NVIDIA kernel module from
+</span><span class='line'>   obtaining ownership of the NVIDIA graphics device(s), or NVIDIA GPU
+</span><span class='line'>   installed in this system is not supported by this NVIDIA Linux graphics
+</span><span class='line'>   driver release.</span></code></pre></td></tr></table></div></figure></notextile></div>
+</code></pre>
+
+<p>這個問題的話，我是google到這一篇<a href="http://ubuntuforums.org/showthread.php?t=1467074">http://ubuntuforums.org/showthread.php?t=1467074</a>參考了一下同樣的作法之後就ok了。作一下大致上的翻譯，首先先下載nv的最新驅動之後，之後開啟terminal
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/modprobe.d/blacklist.conf</span></code></pre></td></tr></table></div></figure></notextile></div>
+將下面幾行加入並儲存
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>blacklist vga16fb
+</span><span class='line'>blacklist nouveau
+</span><span class='line'>blacklist rivafb
+</span><span class='line'>blacklist nvidiafb
+</span><span class='line'>blacklist rivatv</span></code></pre></td></tr></table></div></figure></notextile></div>
+然後在terminal中輸入底下的指令把一些已經裝過的nv驅動全部拔掉外加nouveau
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get --purge remove nvidia-&lt;em> xserver-xorg-video-nouveau</span></code></pre></td></tr></table></div></figure></notextile></div>
+之後reboot一下，進入recover mode，再把nv的驅動編譯起來，在重新開機，應該就可以順利的執行的，但是我的vdpau無法順利執行，看一下錯誤檔好像是因為沒有權限所以說我又多加了一道指令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo chmod 666 /dev/nvidia&lt;/em></span></code></pre></td></tr></table></div></figure></notextile></div>
+大致上nv的部份全部都ok了，但是Plymouth(新的開機畫面看來他們幹掉xsplash了..XDrz)的解析度會變很爛，這也是有解法的google到這一篇<a href="http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html">http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html</a>，也是大致上翻譯一下作法
+也是打開terminal，輸入下面的指令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/default/grub</span></code></pre></td></tr></table></div></figure></notextile></div>
+找到約18行左右(依照每個人的電腦而異)的"#GRUB_GFXMODE=640x480"改成，把前面的#註解去掉改成。
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>GRUB_GFXMODE=1024X768</span></code></pre></td></tr></table></div></figure></notextile></div>
+儲存之後修改/etc/grub.d/00_header的檔案也是在terminal，輸入下面的指令
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/grub.d/00_header</span></code></pre></td></tr></table></div></figure></notextile></div>
+找到約103行左右(依照每個人的電腦而異)的"gfxmode=${GRUB_GFXMODE}"並此行下面多加一行
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>set gfxpayload=keep</span></code></pre></td></tr></table></div></figure></notextile></div>
+儲存並回到terminal，輸入下面的指令更新grub2
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-grub</span></code></pre></td></tr></table></div></figure></notextile></div>
+更新完之後就可以重新開機看看結果了</p>
+
+<p>當然還有發現到 rar 的解壓會出現亂碼，我處理的方式是到rar的官方去下載最新版的，改一下makefile裡面的
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PREFIX=/usr/local</span></code></pre></td></tr></table></div></figure></notextile></div>
+改成
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PREFIX=/usr</span></code></pre></td></tr></table></div></figure></notextile></div>
+然後make install把舊版的蓋過去就ok了</p>
+
+<p>這裡大致上把我遇到的問題先整理部份起來，不知道還會遇到啥鬼問題...OTZ</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[vSlider navigation修正]]></title>
+    <link href="http://renn999.github.com/archives/644"/>
+    <updated>2010-03-07T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/644</id>
+    <content type="html"><![CDATA[<p>最近發現到這裡霉味很重，已經一段時間沒有更新一堆東西，另外一個原因就是最近都在<del datetime="2010-03-07T14:11:43+00:00">菸酒所</del>研究所考試，所以說大部分的時間都是拿去唸書了。</p>
+
+<p>我用vSlider當作我的主要佈景主題已經一段時間了，最主要是說裡面我已經改了一堆的東西外加上，如果還要換上新主題的話，又要去研究新主題的語法外加修改掛廣告...等。</p>
+
+<p>但是在今天拉到頁尾，看到了很刺眼的東西
+<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/03/Screenshot.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/03/Screenshot.png" alt="" title="Screenshot" width="690" class="alignnone size-full wp-image-646" /></a>
+就是底下都會出現雙連結，雖然說之前都有看到，但是都是懶的修正...</p>
+
+<!--more-->
+
+
+<p>其實修正方式非常簡單，打開navigation.php應該會看到
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!--
+</span><span class='line'>This block is used whenever navigation is required
+</span><span class='line'>-->&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;div class="navigation">
+</span><span class='line'>    &lt;div class="alignleft">&lt;?php posts_nav_link('','',__('&laquo; Older stuff', 'vSlider')) ?>&lt;/div>
+</span><span class='line'>    &lt;div class="alignright">&lt;?php posts_nav_link('',__('Newer stuff &raquo;', 'vSlider'),'') ?>&lt;/div>   
+</span><span class='line'>&lt;/div>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div>
+這裡的話他是用<a href="http://codex.wordpress.org/Template_Tags/posts_nav_link">posts_nav_link</a>，可以點連結看一下官方說明，官方有說道這種方式可能會出現雙連結等錯誤的格式。如果要用此方式的話可以使用<a href="http://codex.wordpress.org/next_posts_link">next_posts_link</a> and <a href="http://codex.wordpress.org/Template_Tags/previous_posts_link">previous_posts_link</a>來替代。</p>
+
+<p>所以說修正之後的程式碼
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!--
+</span><span class='line'>This block is used whenever navigation is required
+</span><span class='line'>-->&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;div class="navigation">
+</span><span class='line'>    &lt;div class="alignleft">&lt;?php next_posts_link(__('&laquo; Older stuff', 'vSlider'),0)?>&lt;/div>
+</span><span class='line'>    &lt;div class="alignright">&lt;?php previous_posts_link(__('Newer stuff &raquo;', 'vSlider'),0) ?>&lt;/div>                                      
+</span><span class='line'>&lt;/div>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div>
+這樣就ok了 可以看一下頁尾就是正常顯示了</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wordplurk Improve]]></title>
+    <link href="http://renn999.github.com/archives/577"/>
+    <updated>2009-12-23T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/577</id>
+    <content type="html"><![CDATA[<p></big>>>已經成立獨立頁面<a href="http://www.renn999.twbbs.org/wordpress/wordplurk-improve">http://www.renn999.twbbs.org/wordpress/wordplurk-improve</a></big></p>
+
+<p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出。
+<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-1.png"><img class="alignnone size-medium wp-image-578" title="Screenshot-1" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-1-300x242.png" alt="" width="300" height="242" /></a>
+本版本更貼近使用者的各項設定，至於未來是否要結合其他的plugin功能，讓Wordplurk越來越強大我還在思考中。</p>
+
+<!--more-->
+
+
+<p>P.S. 這個plurk api 需要plurk api key，這個需要去plurk申請<a href="http://www.plurk.com/API">http://www.plurk.com/API</a></p>
+
+<p><big><strong>如何安裝：</strong></big></p>
+
+<ol>
+<li>首先下載<a href="http://www.renn999.twbbs.org/wordpress/downloads/wordplurk_im.zip">Wordplurk_im.zip</a></li>
+<li>解壓縮之後放到您的wordpress plurgin資料夾內</li>
+<li>在外掛設定中啟用</li>
+<li>設定您的Plurk 帳號密碼 API key等...</li>
+<li>當下次寫新文章發表時會自動發布到plurk上了</li>
+</ol>
+
+
+<p>P.S. 在Wordplurk Template中可以隨意自訂你所要得格式 預設為%%url%% - %%title%% 可以改成%%url%% (%%title%%)直接連結的模式</p>
+
+<p><big><strong>Wordpress版本需求：</strong></big>2.6以上</p>
+
+<p><big><strong>目前問題：</strong></big></p>
+
+<ol>
+<li>當文章title更新時無法更新Plurk上已經post過的(近期改善)</li>
+<li>多國語系支援</li>
+<li>多種縮網址選擇</li>
+</ol>
+
+
+<p>如果有任何問題 請大家在此留言 謝謝&lt;(<em> </em>)></p>
+]]></content>
+  </entry>
+  
+</feed>

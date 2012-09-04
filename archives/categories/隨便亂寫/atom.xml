@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 隨便亂寫 | 老伯筆記]]></title>
+  <link href="http://renn999.github.com/archives/categories/隨便亂寫/atom.xml" rel="self"/>
+  <link href="http://renn999.github.com/"/>
+  <updated>2012-09-04T17:23:04+08:00</updated>
+  <id>http://renn999.github.com/</id>
+  <author>
+    <name><![CDATA[renn999]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
+    <link href="http://renn999.github.com/archives/886"/>
+    <updated>2011-04-24T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/886</id>
+    <content type="html"><![CDATA[<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息...OTZ。</p>
+
+<p>就如標題所說的，因為有的服務是我自己寫得程式，但是我犯了一個不可饒恕的錯誤...就是我忘記備份php程式了，造成有的服務可能無時間表的停止服務，因為這個站是我緊急的跟我們一位社團學長借的空間，因為有所限制，所以說短時間內我也不大想要把剩下的服務弄上去。</p>
+
+<p>在此公告，老伯繪師收集區停開，因為老早之前我就有打算要整個翻修內部程式碼，但是都懶得去動他，剛好趁著硬碟壞掉算是個總結吧...OTZ，但是不要擔心的是說資料庫還留著，但是程式就881了。</p>
+
+<p>感謝大家這幾年來對此站的照顧，在這裡除了對一些編輯者至上萬分的歉意以及感謝
+&lt;(<em> </em>)></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[bitly.pro自訂網域的短網址服務]]></title>
+    <link href="http://renn999.github.com/archives/769"/>
+    <updated>2010-06-12T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/769</id>
+    <content type="html"><![CDATA[<p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。<!--more-->
+而<a href="http://bit.ly">bit.ly</a>這一家在不久前成立了<a href="http://bitly.pro">bitly Pro</a>服務，這是啥小跟bit.ly有啥不一樣，簡單說就是把domain name交給他們，讓他們去產生短網址，還外加給你點擊數及地區每日的統計...等等。這聽起來好像非常不錯，但是這還是一個beta，的服務所以說如果要申請還要填表格等等再說，當然我是已經等到了，外加弄清楚他們的api要怎麼使用，想想看有啥搞頭，但是感覺上還是純粹的個人風格的短網址而已...XD</p>
+
+<p>申請方式如下：
+點下Sing Up For Free
+<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot.jpg"><img class="size-medium wp-image-771" title="Screenshot" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-300x226.jpg" alt="" width="300" height="226" /></a></p>
+
+<p>這頁再跟你說他們還是個beta服務如果要使用還要填一下表格再等等。</p>
+
+<p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-1.jpg"><img class="size-medium wp-image-772" title="Screenshot-1" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-1-300x127.jpg" alt="" width="300" height="127" /></a></p>
+
+<p>就填表格吧。</p>
+
+<p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-2.jpg"><img class="size-medium wp-image-773" title="Screenshot-2" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-2-300x196.jpg" alt="" width="300" height="196" /></a></p>
+
+<p>接著大約等個一個星期到兩個星期左右他就會寄信給你說，你已經被邀請了
+接著可以參考<a href="http://briian.com/?p=6799">重灌狂人 Bit.ly Pro 開放自訂網址的「縮址服務」</a>的設定方法做好就可以了
+你問我網域從哪邊得到？恩 請google FREE domain或是免費網域吧！</p>
+
+<p>當然有了api和詳細的<a href="http://code.google.com/p/bitly-api/wiki/ApiDocumentation">使用手冊</a>，因為時常要上去縮的話很累，所以說就自己寫了一個小小的html利用jQuery的AJAX程式在此提供參考。</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+</span><span class='line'>&lt;html>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>&lt;head&gt;
+</span><span class='line'>&lt;META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"&gt;
+</span><span class='line'>&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"&gt;&lt;/script&gt;
+</span><span class='line'>&lt;script type="text/javascript"&gt;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$(function(){&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>$('button#sub').click(function(){
+</span><span class='line'>    var api_user='';
+</span><span class='line'>    var api_key=''
+</span><span class='line'>    $.getJSON('http://api.bit.ly/v3/shorten?login='+ api_user +'&amp;apiKey='+ api_key +'&amp;longUrl='+encodeURIComponent($('input#longurl').val())+'&amp;format=json&amp;callback=?',function(bitly){
+</span><span class='line'>        $('div#show').empty();
+</span><span class='line'>        $('div#show').append(bitly.data.url).hide().fadeIn(2000);
+</span><span class='line'>    })
+</span><span class='line'>});
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>});&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>&lt;/script&gt;
+</span><span class='line'>&lt;/style&gt;
+</span><span class='line'>&lt;/head&gt;
+</span><span class='line'>&lt;body&gt;
+</span><span class='line'>&lt;from id="bit" action="#"&gt;
+</span><span class='line'>    longurl:&lt;input type="text"id="longurl"&gt;&lt;button id="sub"&gt;submit&lt;/button&gt;
+</span><span class='line'>&lt;/from&gt;
+</span><span class='line'>&lt;div id=show&gt;&lt;/div&gt;
+</span><span class='line'>&lt;/body&gt;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>&lt;/html></span></code></pre></td></tr></table></div></figure></notextile></div>
+如果有申請bitly pro的話api所產生的網址會是你的網域，除非你多了一個domain的參數其實一個比較有趣的地方，像是說我縮了一個<a href="http://ren9.tk/dzkm9I">http://ren9.tk/dzkm9I</a>的網址你可以試試看<a href="http://bit.ly/dzkm9I">http://bit.ly/dzkm9I</a>，其實就是一個代管的功能而已...XDrz</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[EveryDNS替代方案FreeDNS]]></title>
+    <link href="http://renn999.github.com/archives/732"/>
+    <updated>2010-06-07T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/732</id>
+    <content type="html"><![CDATA[<p>因為之前聽到Everydns被Dyn收購的消息，然而在這一段時間老實說，我是擔心說和時會停止服務，雖然說官方一直說免費服務還是會維持，但是維持到啥時我就不知道了。然而我就開始尋找替代方案。</p>
+
+<p>我找到了<a href="http://freedns.afraid.org/">FreeDNS</a>，雖然說網址有點難記就是了。</p>
+
+<p>我也去申請了一個<a href="http://www.dot.tk">.TK</a>的免費網路域名，作為我自己的短網址之用的，真的短了很多。</p>
+
+<p>在此也紀錄一下。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[紀錄一下]]></title>
+    <link href="http://renn999.github.com/archives/729"/>
+    <updated>2010-05-28T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/729</id>
+    <content type="html"><![CDATA[<p>這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了</p>
+
+<p>應該都ok了吧...OTZ</p>
+
+<p>接著看看明天有沒有把備份自動寄到我的信箱就好了...OTZ</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[回到高雄的這幾個禮拜]]></title>
+    <link href="http://renn999.github.com/archives/668"/>
+    <updated>2010-05-12T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/668</id>
+    <content type="html"><![CDATA[<p>　　有看過我的plurk的人應該都知道，我已經重台南搬回到高雄住了，現在每個星期三通車回到成大去上個游泳外加等畢業然後等Online，體檢報告也不知道啥時會出爐，外加因為蹲不下去還要等醫院的通知(我的身體毛病還真多，應該是我不喜歡運動的關係吧)，然而在家裡的這段時間我不就是幫父母做事，要不就是準備公職考試，看是很閒但是心中有著不明的壓力。
+　　先來說說最近完成的第一件事情吧，我已經搬回高雄了，所以說最近都是在整理家裡已經快要n年沒整理的房間，丟了一大堆東西之後才發現到那間房間的狀況有夠糟糕的，壁癌啦...之類的，當然裡面是以前我們家裡開過文具行的一些剩物，當然也勾起了一堆的回憶，說真的也丟了不少東西就是了整理完之後把牆壁刮一刮就像下面這個樣子。</p>
+
+<div align="center"><wpg2>1248</wpg2><wpg2>1244</wpg2></div>
+
+
+<!--more-->
+
+
+<p>當然我還畫了設計圖。</p>
+
+<div align="center"><wpg2>1264</wpg2></div>
+
+
+<p>整理到快要上個禮拜之後才整理完，雖然說途中還有一點小小地變更，完成以後</p>
+
+<div align="center"><wpg2>1252</wpg2><wpg2>1255</wpg2><wpg2>1258</wpg2><wpg2>1261</wpg2></div>
+
+
+<p>　　算一算整個房間所花的錢大約有5500NT(兩個大書架，一個只有888，在家x福購買的，電腦桌1800，還有油漆700上下，還有一些小東西)，有一堆東西不是家裡以前有的就是外面撿的，但是我很喜歡。
+　　回到家裡之後發現到，附近的貓真的有夠多的，不管大貓小貓，隨隨便便的走幾步路就可以看到貓，當然我從我的房間向外看的時候就發現了有一隻有趣的貓，他好像非常的喜歡我們加附近的波浪屋頂版的樣子</p>
+
+<div align="center"><wpg2>1269</wpg2></div>
+
+
+<p>以後乾脆來寫個觀貓日記好了...XDrz</p>
+]]></content>
+  </entry>
+  
+</feed>

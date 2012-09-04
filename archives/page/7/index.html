@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>老伯筆記</title>
+  <meta name="author" content="renn999">
+
+  
+  <meta name="description" content="自己架了一個 圖片上傳的功能 就是有點像是tinypic 或是 Imageshack等得圖片上傳區 但是一定很奇怪 為啥有了相簿之後還要一個圖片上傳區…? 因為這兩個東東的功能性完全的不一樣啊…XD 一個只是臨時貼圖要用的 另外一個純粹的只是放圖給人家看的 當然一個比較方便啦 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://renn999.github.com/archives/page/7/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="老伯筆記" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">老伯筆記</a></h1>
+  
+    <h2>一個老伯的閒語by Octopress</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:renn999.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/archives/170">新增圖片上傳</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-22T00:00:00+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2009</time>
+        
+         | <a href="/archives/170#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>自己架了一個 圖片上傳的功能 就是有點像是tinypic 或是 Imageshack等得圖片上傳區</p>  <p>但是一定很奇怪 為啥有了相簿之後還要一個圖片上傳區…?    <br />因為這兩個東東的功能性完全的不一樣啊…XD     <br />一個只是臨時貼圖要用的 另外一個純粹的只是放圖給人家看的     <br />當然一個比較方便啦</p>  <p>我所使用的程式是ImageUpon    <br />網址<a title="http://www.neekey.com/imageupon/" href="http://www.neekey.com/imageupon/">http://www.neekey.com/imageupon/</a></p>  <p>而這算是一個非常陽春的圖片上傳程式 也就是縮功能並不是非常多    <br />連一個最基本的管理介面也沒有     <br />由於這個程式完全沒有動用到MySQL等得資料庫     <br />所以說無法儲存任何的歷史紀錄或是異常流量     <br />但是對於一些基本的圖片上傳來說已經綽綽有餘了     <br />(雖然說內部是有歷史紀錄的功能 但是是用到cookies紀錄 本人認為問題非常多還要動用到cookies所以說就直接幹掉了)</p>  <p>當然這些功能真的不大能滿足我…Orz    <br />所以說的話我本身上就在裡面多加了產生縮圖的功能     <br />利用的是<cite>Tsung</cite>大大的PHP縮圖程式     <br />網址<a title="http://plog.longwin.com.tw/programming/2007/08/20/php_image_resize_2007" href="http://plog.longwin.com.tw/programming/2007/08/20/php_image_resize_2007">http://plog.longwin.com.tw/programming/2007/08/20/php_image_resize_2007</a></p>  <p>算是多加了一縮圖的功能可以給予外連(雖然說一堆.htaccess還沒有寫好)    <br />但是基本雛型已經好了</p>  <p>未來可能將網頁的外型修改一下並加上防盜連應該就可以OK了…XD    <br />至於管理介面的話…Orz     <br />老實說 我沒有這麼強大…</p>  <p>貼圖網址:<a href="http://pic.renn999.twbbs.org" target="_blank">http://pic.renn999.twbbs.org</a></p>  <p>以下為圖片上傳區的範例：    <br /><a href="http://pic.renn999.twbbs.org/view.php?pic=1235314629x-1938528414.png"><img src="http://pic.renn999.twbbs.org/thumb/1235314629x-1938528414.jpg" /></a>     <br />＼射命丸！／＼射命丸！／＼射命丸！／</p>  <p>(某些功能在PO完這一篇的時候就處理完了Q_Q 多加了可以看大圖的網頁)</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/archives/168">Plunk</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-01-14T00:00:00+08:00" pubdate data-updated="true">Jan 14<span>th</span>, 2009</time>
+        
+         | <a href="/archives/168#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>沒想到這個東西還蠻好玩的<br /><br />就講一句話<br /><br />非常像是聊天性質的東西<br /><br />還有啊 我這麼晚正在幹啥&#8230;Orz<br /><br />老實說 最近真的淺眠到炸掉了<br /><br />無緣無故睡到一半 都會自然醒過來<br /><br />算了 就來念期末考吧&#8230;(逃)<br /><br /><br /></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/archives/164">這篇純粹測試用</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-23T00:00:00+08:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2008</time>
+        
+         | <a href="/archives/164#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>就TEST<br />
+123<br />
+這個我只是要試試看 那個在BS2上得RRS測試而已<br />
+不支到會不會成功&#8230;Orz<br /></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/archives/158">Use SSH Open a SOCKS Proxy</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-22T00:00:00+08:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2008</time>
+        
+         | <a href="/archives/158#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在此 感謝Billcho的教導<br /><br />從來都沒想過SSH的功能會這麼的強大 連開一個臨時Proxy都可以<br /><br />基本上在Linux中去找ssh的男人(men)時 會發現到一個參數<br /><blockquote>-D [bind_address:]port<br /> Specifies a local &#8220;dynamic&#8217;&#8217; application-level port forwarding. This works by allocating a socket to listen to port on the local side, optionally bound to the specified bind_address.  Whenever a connection is made to this port, the connection is forwarded over the secure channel, and the application protocol is then used to determine where to connect to from the remote machine.  Currently the SOCKS4 and SOCKS5 protocols are supported, and ssh will act as a <span class="caps">SOCKS</span> server.  Only root can forward privileged ports. Dynamic port forwardings can also be specified in the configura-tion file.<br /> IPv6 addresses can be specified with an alternative syntax: [bind_address/]port or by enclosing the address in square brackets.  Only the superuser can forward privileged ports.  By default, the local port is bound in accordance with the GatewayPorts setting.  However, an explicit bind_address may be used to bind the connection to a specific address.  The bind_address of &#8220;localhost&#8217;&#8217; indicates that the listening port be bound for local use only, while an empty address or &#8216;*&#8217; indicates that the port should be available from all interfaces.<br /></blockquote><br />基本上來說 這個參數就是利用SSH在 遠端的電腦上開一個Port之後 來當作一個Socks Proxy<br /><br />Linux的作法老實說比較簡單 因為Linux不可能不具備SSH吧&#8230;XD<br /><br />所以說的話只要SSH到目的主機參數多加上-D &lt;你要開的Prot&gt;這樣就OK了 連線方式就是在Socks5 proxy設定那邊打上127.0.0.1:&lt;你要開的Prot&gt; 這樣就好了 可以連去測試IP的地方看一看<br /><br />如果你有一個工作Host端伺服器為Linux 但是你的client為Windows的話 或者你黑進去一個Linux的伺服器打算要在上面開一個Port的話 這個部份就要注意一點了 你比需要在Host端開一個port 如果直接下-D &lt;你要開的Prot&gt;的話這樣是沒有辦法連上去的 因為他裡面有說 如果沒有指定bind_address的話他只會允許localhost的連線 故要用-D &lt;Host端IP&gt;&lt;host 端ip=&quot;&quot;&gt;:&lt;你要開的Prot&gt; 這樣才可以連的上去<br /></host></p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/archives/148">WordPress 2.7發佈</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-14T00:00:00+08:00" pubdate data-updated="true">Dec 14<span>th</span>, 2008</time>
+        
+         | <a href="/archives/148#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>等等來更新一下好了</p>
+<p>最近老實說都懶得更新Blog</p>
+<p>覺得自己越來越像某畫&quot;爸爸你到底在哪裡&quot;的那一位了&#8230;XD</p>
+<p>聽說wordpress2.7變得非常非常炫</p>
+<p>晚點再來看看吧&#8230;</p>
+<p>也該來為這積了厚厚的黴菌的Blog擦一下了&#8230;QQ</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/archives/139">本日最錯愕&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-17T00:00:00+08:00" pubdate data-updated="true">Aug 17<span>th</span>, 2008</time>
+        
+         | <a href="/archives/139#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天因為某種原因勿砍了某一個程式 當然想說要去下載回來&#8230;</p>  <p>結果就發生了這樣的事情&#8230;囧</p>  <p><a href="http://www.renn999.twbbs.org/gallery/main.php?g2_view=core.DownloadItem&amp;g2_itemId=1204&amp;g2_serialNumber=2&amp;g2_GALLERYSID=59ad99a69294a7bc87adcb2d8aeeeb1c" target="_blank"><img style="margin: 0px" height="480" src="http://www.renn999.twbbs.org/gallery/main.php?g2_view=core.DownloadItem&amp;g2_itemId=1204&amp;g2_serialNumber=2&amp;g2_GALLERYSID=59ad99a69294a7bc87adcb2d8aeeeb1c" width="640" /></a> </p>  <p>第一秒 (:;&#160; ﾟд ﾟ )</p>  <p>第二秒 (:;&#8835;д&#8834;)</p>  <p>第三秒 (:; &quot;ﾟД ﾟ )</p>  <p>不知道大家有沒有看出來 這就是成大的宿網&#8230;</p>  <p>當我看到這個鬼東西 就如同上面的表情 在下一秒我就在地上笑到打滾了&#8230;</p>  <p>反正大家去Google一下Anchiva應該就知道這是啥鬼東西了 我是用Avast!所以說絕對不是我電腦上得防毒</p>  <p>之前遇到的一次就是&quot;無界瀏覽&quot; 這次反而是這一個 真的讓我跌破眼鏡了&#8230;.</p>  <p>因為他們鎖這個有啥屁用啊 更何況這又不是病毒&#8230; 這的確只是日系P2P Share的主程式而已</p>  <p>沒想到學校真的添購了一大堆奇奇怪怪又沒三小路用的檔P2P的軟體 搞到整個網路用到不爽&#8230;</p>  <p>還不如把那些錢省下來放在學術研究上面比較實在&#8230;</p>  <p>無奈歸無奈&#8230; BT還是跑得很爽的說啦&#8230;</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/archives/137">久久的PO文&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-13T00:00:00+08:00" pubdate data-updated="true">Aug 13<span>th</span>, 2008</time>
+        
+         | <a href="/archives/137#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>嗯嗯&#8230; 因為最近真的忙到有一個境界了&#8230;</p>
+<p>感覺上都快要被鬼隱了&#8230;</p>
+<p>最主要的原因真的是江郎才盡&#8230;囧(因為被我<span style="text-decoration: line-through;">老哥</span>?說已經有霉味了&#8230;&lt;囧&gt;)</p>
+<p>然而最近又遇到粉多的囧事&#8230;.</p>
+<p>算了&#8230;XD 反正都PO文了 就放點有點像是閃光的東西好了&#8230;</p>
+<p>前幾天在逛書店之時忍不住被某一本書給深深地吸引住了 就花了錢拜下來了&#8230;.orz(害我要多吃一個星期的泡麵&#8230;)</p>
+<p>就是&quot;<a href="http://blog.roodo.com/ching_win_comic/archives/6209305.html" target="_blank">數學少女</a>&quot; (應該說是被封面吸引住了&#8230;XD)</p>
+<p>內容真的很棒&#8230; 但是我覺得當參考輸的成份居多</p>
+<p>只不過要看懂真的需要好大一份功力&#8230;</p>
+<p>(真抱歉 請容我不貼任何圖 因為&#8230;我懶)</p>
+<p>科科&#8230; 日本的C垃圾也快要開始了就在 這個星期五吧&#8230;</p>
+<p>到石英個有更多的東西可以寫了&#8230;(前提是我的惰性不要啟動&#8230;&lt;囧&gt;)</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/archives/134">企鵝娘 第六話 and 第七話</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-04T00:00:00+08:00" pubdate data-updated="true">Jun 4<span>th</span>, 2008</time>
+        
+         | <a href="/archives/134#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>這次Lag太大了&#8230;</p>  <p>但是也在忙期末了&#8230;</p>  <p>這次也懶得捏了&#8230;= =</p>  <p>官網:<a href="http://pen-musu.jp" target="_blank">http://pen-musu.jp</a>    <br /><iframe style="border-right: #ccc 1px solid; border-top: #ccc 1px solid; border-left: #ccc 1px solid; border-bottom: #ccc 1px solid" src="http://www.nicovideo.jp/thumb/za3406440" frameborder="0" width="312" scrolling="no" height="176"><a href="http://www.nicovideo.jp/watch/za3406440">【ニコニコ動画】ペンギン娘♡はぁと ０６「これがワタチーのご主人様！」</a></iframe></p>  <p><iframe style="border-right: #ccc 1px solid; border-top: #ccc 1px solid; border-left: #ccc 1px solid; border-bottom: #ccc 1px solid" src="http://www.nicovideo.jp/thumb/za3248509" frameborder="0" width="312" scrolling="no" height="176"><a href="http://www.nicovideo.jp/watch/za3248509">【ニコニコ動画】ペンギン娘♡はぁと ０７「みんな好きの巫女」</a></iframe></p>  <p>這次看起來服務性質超大</p>  <p>第六話萌女僕 第七話萌女巫 下一話萌&quot;呆毛&quot;？&#8230;囧</p>  <p>(以下不想捏)</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/archives/133">[IOSYS] 東方真華神祭</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-27T00:00:00+08:00" pubdate data-updated="true">May 27<span>th</span>, 2008</time>
+        
+         | <a href="/archives/133#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>老實說真是可怕的惰性 外加上最近忙到快爆炸了&#8230;QQ</p>  <p>還有一堆鳥事要處理&#8230; 真的快要到翻桌的地步了</p>  <p><del>-</del>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-(抱怨分隔線)&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>  <p>嗯嗯 說介紹這個Lag有點大了 但是這家除了上次介紹做了&quot;三次&quot;同人音樂外&#8230;</p>  <p>這一張專輯真的是二次同人音樂了&#8230;</p>  <p>應援一下    <br /><a href="http://makashinsai.com/" target="_blank"><img src="http://makashinsai.com/image/468_60.gif" /></a>&#160;</p>  <p>老實說這家每次亦有新專輯時 一定都會有很棒的Flash</p>  <p>而且電波污染嚴重 &#8230;<span class="caps">XDDD</span></p>  <p>但是每次經過電波的洗腦之後 心情總是比較好一點</p>  <p><a href="http://makashinsai.com/pv_hakureijinja.html">博麗神社町内会音頭</a> 這個Flash真的推薦看一下</p>  <p>而且Flash作者的網站真的也建議去看一下 很棒的&#8230;</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/archives/132">嘎～～！有人想&#8221;駭&#8221;我&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-18T00:00:00+08:00" pubdate data-updated="true">May 18<span>th</span>, 2008</time>
+        
+         | <a href="/archives/132#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天早上起來 看了一下瀏覽紀錄無意間發現了怪怪的東西</p>  <p>就是出現了兩個謎樣瀏覽&#8230;</p>  <p>分別是連向</p>  <p>http://myurl/wordpress/index.php?cat=999+UNION+SELECT+null,<acronym title="666,CHAR(58"><span class="caps">CONCAT</span></acronym>,user_pass,<acronym title="58"><span class="caps">CHAR</span></acronym>,666, <acronym title="58"><span class="caps">CHAR</span></acronym>),null,null,null+FROM+ wp_users+where+id=1/*</p>  <p>http://myurl/wordpress/index.php?cat=%2527 +UNION+SELECT+CONCAT(666,<acronym title="58"><span class="caps">CHAR</span></acronym>,user_pass,<acronym title="58"><span class="caps">CHAR</span></acronym>,666,<acronym title="58"><span class="caps">CHAR</span></acronym>)+FROM+wp_users+where+id= 1/*</p>  <p>我google了一下 好像有人想要利用&quot;之前&quot;的漏洞攻擊</p>  <p>試圖得到我的user and password</p>  <p>還好我的Blog吐出來是沒有用的東西&#8230;<span class="caps">XDDD</span></p>  <p>因為前一天剛好做了系統外加Blog的更新&#8230;</p>  <p>定期更新是很重要的&#8230;<span class="caps">XDDD</span></p></div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/archives/page/8/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/archives/page/6/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/archives/2012/09/03/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/900">[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/894">ubuntu11.04使用感使用感外加問題解決</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/886">[公告] server硬碟壞掉</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/869">Wordpress升級jQuery from 1.4.2 to 1.4.3</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/renn999">@renn999</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'renn999',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("renn999", 4, true);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/renn999" class="twitter-follow-button" data-show-count="true">Follow @renn999</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/renn999?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - renn999 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rennidit';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

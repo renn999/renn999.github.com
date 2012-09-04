@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ubuntu 9.04 ext4 災情外加解決報告...囧"> - 老伯筆記</title>
+  <meta name="author" content="renn999">
+
+  
+  <meta name="description" content="前幾天非常高興的把我的1T硬碟的的所有Partition的Partition的Ext3轉換成轉換成Ext4，當然我覺得我真的做的太大膽了，轉完之後在做大量檔案搬移的時候，災難已經開始發生了&#8230;.囧rz，因為之前在google時是有看到有人因為ext4而造成Loss DATA的狀況， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://renn999.github.com/archives/207">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="老伯筆記" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">老伯筆記</a></h1>
+  
+    <h2>一個老伯的閒語by Octopress</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:renn999.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ubuntu 9.04 Ext4 災情外加解決報告...囧"></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-29T00:00:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2009</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>前幾天非常高興的把我的1T硬碟的的所有Partition的Partition的Ext3轉換成轉換成Ext4，當然我覺得我真的做的太大膽了，轉完之後在做大量檔案搬移的時候，災難已經開始發生了&#8230;.囧rz，因為之前在google時是有看到有人因為ext4而造成Loss DATA的狀況，但是我在想說但是我在想說Ubuntuu已經開始推了，應該是沒問題才對，於是就很放心的把我1T上的所有partitionn全部轉了過去，但是今天才是慘劇的開始，原因事因為我正在因為某些原因需要騰出大量的Freespace，所以說很直覺得將我的檔案搬過去，但是每搬到一段時間後，Ubuntu娘就整個失神了，我當初只是想說應該只是小問題吧，直到的第三次，第四次&#8230;&lt;囧&gt;，我就不甘心的打開Epiphany來google &#8220;ext4 wiki&#8221;(不要在提Firefox了)，真的是讓我囧了一下下<!--more--><br />
+<blockquote><strong>Caveats</strong></p>
+<p>Delayed allocation and potential data loss</p>
+<p>Delayed allocation poses some additional risk of data loss in cases where the system crashes before all of the data has been written to the disk.</p>
+<p>The typical scenario in which this might occur is a program replacing the contents of a file without forcing a write to the disk with fsync. Problems can arise if the system crashes before the actual write occurs. In this situation, users of ext3 have come to expect that the disk will hold either the old version or the new version of the file following the crash. However, the ext4 code in the Linux kernel version 2.6.28 will often clear the contents of the file before the crash, but never write the new version, thus losing the contents of the file entirely.</p>
+<p>Many people find such a behavior unacceptable. A significant issue is that fixing the bug by using fsync more often could lead to severe performance penalties on ext3 filesystems mounted with the data=ordered flag (the default on most Linux distributions). Given that both file-systems will be in use for some time, this complicates matters enormously for end-user application developers. In response, Theodore Ts&#8217;o has written some patches for ext4 that cause it to limit its delayed allocation in these common cases. For a small cost in performance, this will significantly increase the chance that either version of the file will survive the crash.</p>
+<p>The new patches are expected to become part of the mainline kernel 2.6.30. Various distributions may choose to backport them to 2.6.28 or 2.6.29, for instance Ubuntu made them part of the 2.6.28 kernel in version 9.04 &#8212; Jaunty Jackalope.</p>
+<p>以上摘自<a href="http://en.wikipedia.org/wiki/Ext4" target="_blank">http://en.wikipedia.org/wiki/Ext4</a></blockquote><br />
+阿阿阿阿～！～！9.04還是舊的kernel啊！當然我這個懶人可不想要一直搬東西一直當掉啊，於是於是再繼續的google到其實已經有2.6.30的kernel了，但是還是處於RC3的階段，如果說你的如果說你的(逼&#8230;..)夠大的話大，真的可以握住來試試看(誤)，因為我是(逼&#8230;..)超大的人所以說我真的裝了(誤更大)，當然中間有超多的坡折(nVidia的驅動爛掉了，&quot;/&quot;碟出現的一堆error，Fsck按按&quot;y&quot;到手軟到手軟，忘記加上&quot;-y&quot;的參數，他X的!我的我的inode是怎樣了是怎樣了&#8230;)算了以下就說一下升級方式好了：<br />
+<ol><br />
+	<li>基本上如果有裝任何的驅動程式請先移除，並將所有有關並將所有有關nvidia驅動程式都解除安裝，並先備份Xorg的設定<br />
+<blockquote>$ sudo cp /etc/X11/xorg.conf<br />
+$ sudo apt-get purge nvidia-*</blockquote><br />
+以上這些動作是為了為了說怕新的Kernel對舊的驅動產生問題，並且將Xorg的顯示還原成最基本的&quot;nv&quot;<br />
+<blockquote>Section &#8220;Screen&#8221;<br />
+Identifier      &#8220;Default Screen&#8221;<br />
+DefaultDepth    24<br />
+EndSectionSection &#8220;Device&#8221;<br />
+Identifier      &#8220;Default Device&#8221;<br />
+Driver  &#8220;nv&#8221;<br />
+EndSection</blockquote><br />
+以上只是參考</li><br />
+	<li>此時最好reboot一下，接著上<a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/v2.6.30-rc3/" target="_blank">http://kernel.ubuntu.com/~kernel-ppa/mainline/v2.6.30-rc3/</a>將最新的kernell下載下來，i386請下載：<blockquote>linux-image-2.6.30-020630rc3-generic_2.6.30-020630rc3_i386.deb<br />
+linux-headers-2.6.30-020630rc3_2.6.30-020630rc3_all.deb<br />
+linux-headers-2.6.30-020630rc3-generic_2.6.30-020630rc3_i386.deb</blockquote><br />
+或是<blockquote>dpkg -i *.deb</blockquote><br />
+64bit的應該不用我說吧，接著&quot;按照順序&quot;安裝起來，這就算是Kernel的更新完成<br />
+P.S. 記住：除非你很清楚你在幹啥 要不然不要輕易嘗試&#8230;XDDDDrz</li></ol></p>
+<p>NV的驅動可以上nVidia的官網下載.run安裝這應該google就多資訊了吧&#8230;.這裡就懶的寫了<br />
+P.S. 目前的災情好像是幾張圖不見了 及一些小檔案 還好大檔案沒有缺失&#8230;但這只是初期判斷</p></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">renn999</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-29T00:00:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/archives/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://renn999.github.com/archives/207" data-via="renn999" data-counturl="http://renn999.github.com/archives/207" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/archives/200" title="Previous Post: Ubuntu 9.04 發佈">&laquo; Ubuntu 9.04 發佈</a>
+      
+      
+        <a class="basic-alignment right" href="/archives/216" title="Next Post: CoreAVC-for-Linux dshowserver.patch for mplayer.29242">CoreAVC-for-Linux dshowserver.patch for mplayer.29242 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/archives/2012/09/03/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/900">[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/894">ubuntu11.04使用感使用感外加問題解決</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/886">[公告] server硬碟壞掉</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/869">Wordpress升級jQuery from 1.4.2 to 1.4.3</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/renn999">@renn999</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'renn999',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("renn999", 4, true);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/renn999" class="twitter-follow-button" data-show-count="true">Follow @renn999</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/renn999?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - renn999 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rennidit';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://renn999.github.com/archives/207';
+        var disqus_url = 'http://renn999.github.com/archives/207';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

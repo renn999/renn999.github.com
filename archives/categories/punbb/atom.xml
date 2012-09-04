@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: PunBB | 老伯筆記]]></title>
+  <link href="http://renn999.github.com/archives/categories/punbb/atom.xml" rel="self"/>
+  <link href="http://renn999.github.com/"/>
+  <updated>2012-09-04T17:23:04+08:00</updated>
+  <id>http://renn999.github.com/</id>
+  <author>
+    <name><![CDATA[renn999]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[PunBB in Wordpress完成]]></title>
+    <link href="http://renn999.github.com/archives/47"/>
+    <updated>2008-03-02T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/47</id>
+    <content type="html"><![CDATA[<p>過了一陣子 的研究 和爬了無數的google搜尋</p>
+
+<p>總算把著個嵌入到我的wordpress中了</p>
+
+<p>國寶大師前一陣子 跟我反應說在IE底下的字很小</p>
+
+<p>所以我修了一下我的佈景主題的CSS 讓字變大點 ...</p>
+
+<p>就先這樣子了...</p>
+]]></content>
+  </entry>
+  
+</feed>

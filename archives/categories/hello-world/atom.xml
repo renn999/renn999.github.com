@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hello World | 老伯筆記]]></title>
+  <link href="http://renn999.github.com/archives/categories/hello-world/atom.xml" rel="self"/>
+  <link href="http://renn999.github.com/"/>
+  <updated>2012-09-04T17:23:04+08:00</updated>
+  <id>http://renn999.github.com/</id>
+  <author>
+    <name><![CDATA[renn999]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://renn999.github.com/archives/2012/09/03/hello-world/"/>
+    <updated>2012-09-03T09:56:00+08:00</updated>
+    <id>http://renn999.github.com/archives/2012/09/03/hello-world</id>
+    <content type="html"><![CDATA[<p>Hello World!</p>
+
+<p>Octopress!!</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 程式相關 | 老伯筆記]]></title>
+  <link href="http://renn999.github.com/archives/categories/程式相關/atom.xml" rel="self"/>
+  <link href="http://renn999.github.com/"/>
+  <updated>2012-09-04T17:23:04+08:00</updated>
+  <id>http://renn999.github.com/</id>
+  <author>
+    <name><![CDATA[renn999]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops]]></title>
+    <link href="http://renn999.github.com/archives/900"/>
+    <updated>2011-07-21T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/900</id>
+    <content type="html"><![CDATA[<p>This is the first time I write post in English, so if there are something wrong in my post, please notice me, thanks.</p>
+
+<p>I have a laptop Asus A43SV, I do not like the windows7, so I install the ubuntu on it. But there are "Some" problem, after I finish install.</p>
+
+<p>First, Elantech touchpad recognized as PS/2 Logitech mouse, but you can find Elantech models in <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/681904/comments/104" target="_blank">this article.</a></p>
+
+<p>To solve the Realtek USB multi-card reader On my laptops, I have google it for a long time until yesterday. I find freechelmi said that he mailed to Realtek in <a href="http://ubuntuforums.org/showthread.php?t=1797202#6" target="_blank">this article</a>, and RealTek sent him a driver. This driver works on my laptops.</p>
+
+<p>Now, Asus Fn keys F9-F12 and some special keys stile not work, I hope ubuntu can support it in next release...</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu11.04使用感使用感外加問題解決]]></title>
+    <link href="http://renn999.github.com/archives/894"/>
+    <updated>2011-05-10T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/894</id>
+    <content type="html"><![CDATA[<p>為11.04已經發布了，當初還在想說應該完不到了，但是因為了某些原因，提早結束了Online生活，就理用了讀書所剩餘的時間把完了一下，但是感覺上比較大的不同只有unity外加一堆預設程式被換掉，但是還是用不大習慣。
+外加，顯卡的需求好像變得比較高了...= =a，但是這不是重點，重點是解決問題的快感啊。
+首先就是unity的程式分類，當我要新增一個程式到選單時，沒有辦法放到指定的位置，只職能在所有程式中找到，unity的設定不是使用主選單的分類，而是是用每個~/.local/share/applications下的.desktop設定檔中的Categories來分類的，所以說只要分類對了就可以在unity下的分類中看到。
+另外一個就是影片縮圖，因為我都習慣把Totem拔掉，因為他真的貧弱到不行，但是拔掉之後又沒有影片縮圖，我還是利用了<a href="http://sites.google.com/site/me20305812/download_mplayer">mplayer-video-thumb</a>，但是因為1.4.1版的問題非常大...XDrz因為這是要totem存在下，才會縮圖，所以說他讓我改了一堆東西之後才可以用QQ，我是結合了1.3.2的設定，但是看到了比較高桿的用法<a href="http://planykao.blogspot.com/2009/12/mplayer-video-thumb-14-1.html">在這</a>，來為強者鞠躬吧...&lt;(<em> </em>)></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[mysql轉sqlite]]></title>
+    <link href="http://renn999.github.com/archives/861"/>
+    <updated>2010-08-11T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/861</id>
+    <content type="html"><![CDATA[<p>前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到...XDrz</p>
+
+<p>可以參考這裡<a href="http://www.sqlite.org/cvstrac/wiki?p=ConverterTools">sqlite - Converter Tools</a></p>
+
+<p>當然我的作法是將步驟分開來作的</p>
+
+<p>先將sqldump出來
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysqldump -u'username' -p'password' --compact --compatible=ansi --default-character-set=binary 'databasename' > database.sql</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<!--more-->
+
+
+<p>接著就利用內部所說的sh script擷取部份
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/sh&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>cat database.sql |
+</span><span class='line'>grep -v ' KEY "' |
+</span><span class='line'>grep -v ' UNIQUE KEY "' |
+</span><span class='line'>grep -v ' PRIMARY KEY ' |
+</span><span class='line'>sed 's/ unsigned / /g' |
+</span><span class='line'>sed 's/ auto_increment/ primary key autoincrement/gi' |
+</span><span class='line'>sed 's/ smallint([0-9]&lt;em>) / integer /gi' |
+</span><span class='line'>sed 's/ tinyint([0-9]&lt;/em>) / integer /gi' |
+</span><span class='line'>sed 's/ int([0-9]&lt;em>) / integer /gi' |
+</span><span class='line'>sed 's/ character set [^ ]&lt;/em> / /gi' |
+</span><span class='line'>sed 's/ enum([&lt;sup>)]*)&lt;/sup> / varchar(255) /gi' |
+</span><span class='line'>sed 's/ on update [&lt;sup>,]*//gi'&lt;/sup> |
+</span><span class='line'>perl -e 'local $/;$_=&lt;>;s/,\n)/\n)/gs;print "begin;\n";print;print "commit;\n"' |
+</span><span class='line'>perl -pe '
+</span><span class='line'>if (/&lt;sup>(INSERT.+?)(/)&lt;/sup> {
+</span><span class='line'>   $a=$1;
+</span><span class='line'>   s/\'\''/'\'\''/g;
+</span><span class='line'>   s/\n/\n/g;
+</span><span class='line'>   s/),(/);\n$a(/g;
+</span><span class='line'>}
+</span><span class='line'>' > output.sql
+</span><span class='line'>cat output.sql | sqlite3 output.db > output.err</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>這樣的好處是說只要亦有問題，可以依照error message出現的錯誤去修正database.sql，老實他那個error message一直沒有辦法被output出來，建議使用script指令紀錄錯誤訊息，利用錯誤訊息慢慢去修正會比較好。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[初學python]]></title>
+    <link href="http://renn999.github.com/archives/828"/>
+    <updated>2010-07-22T00:00:00+08:00</updated>
+    <id>http://renn999.github.com/archives/828</id>
+    <content type="html"><![CDATA[<p>這是利用plurk api簡單寫得東東，主要是要搞懂json的用法：p
+到時候先搞定cookie的儲存..OTZ
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/python&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>-&lt;em>- coding: UTF8 -&lt;/em>-&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>#&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>import logging, os, sys, re, time
+</span><span class='line'>import urllib,urllib2,cookielib,htmllib,formatter
+</span><span class='line'>import sgmllib
+</span><span class='line'>import json&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>def main():
+</span><span class='line'>  opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
+</span><span class='line'>  get_api_url = lambda x: 'http://www.plurk.com/API%s' % x
+</span><span class='line'>  encode = urllib.urlencode&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>  fp = opener.open(get_api_url('/Users/login'),&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>encode({
+</span><span class='line'>  'username': username,
+</span><span class='line'>  'password': password,
+</span><span class='line'>  'api_key': api_key ,
+</span><span class='line'>}))
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>  fp.read()&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>  fp = opener.open(get_api_url('/Timeline/getPlurks'),&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>encode({'api_key': api_key}))
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>  dumps = fp.read()
+</span><span class='line'>  dumps = json.JSONDecoder().decode(dumps)
+</span><span class='line'>  for a in dumps['plurks']:&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>print api_key
+</span><span class='line'>user_dis_name = dumps['plurk_users'][str(a['owner_id'])]['display_name']
+</span><span class='line'>print ("%s"%user_dis_name)+" "*2+a['qualifier_translated']+":"
+</span><span class='line'>print " "*4+"%s"%a['content_raw']
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>if &lt;strong>name&lt;/strong> =='&lt;strong>main&lt;/strong>':
+</span><span class='line'>  api_key = 'api_key'
+</span><span class='line'>  username = 'your_username'
+</span><span class='line'>  password = 'your_password'
+</span><span class='line'>  main()
+</span><span class='line'>  sys.exit()</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

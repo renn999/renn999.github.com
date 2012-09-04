@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ext2 Installable File System For Windows - 老伯筆記</title>
+  <meta name="author" content="renn999">
+
+  
+  <meta name="description" content="這是一個可以讓Windows讀取Linux的EXT2或EXT3的分個區工具  最新版已經到了1.11版其中有不少的更新
+官方網站 可以到裡面看一下
+主要功用及支援： 支援NT 4.0, Windows 2000, Windows XP, Windows 2003 and Windows Vista &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://renn999.github.com/archives/48">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="老伯筆記" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">老伯筆記</a></h1>
+  
+    <h2>一個老伯的閒語by Octopress</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:renn999.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ext2 Installable File System for Windows</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-02T00:00:00+08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2008</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>這是一個可以讓Windows讀取Linux的EXT2或EXT3的分個區工具  最新版已經到了1.11版其中有不少的更新</p>
+<p><a href="http://www.fs-driver.org/" target="_blank">官方網站</a> 可以到裡面看一下</p>
+<p>主要功用及支援：<!--more--><br />
+<ol><br />
+	<li>支援<em>NT 4.0</em>, <em>Windows 2000</em>, <em>Windows XP</em>, <em>Windows 2003</em> and <font color="#3366ff"><em>Windows Vista</em></font></li><br />
+	<li>支援32bit x86平台以及64bit x64平台</li><br />
+	<li>Includes drivers with a digital signature for Windows Vista x64(我不知道這啥功能 因為沒用Vista&#8230;= =)</li><br />
+	<li>支援所有讀寫移動&#8230;等功能</li><br />
+	<li><em><span class="caps">UTF</span>-8</em>支援(我認為這是最重要的功能&#8230;<span class="caps">XDDD</span>)</li><br />
+	<li>2 GBytes大檔案支援(不大清楚 請看<a href="http://www.fs-driver.org/faq.html" target="_blank">官方FQA</a>)</li><br />
+<li dragover="true">完整的<em>plug-n-play</em>功能 當磁碟被移除時代號也會被移除</li><br />
+<li dragover="true"> 					Supports use of the Windows <em dragover="true">mountvol</em> utility to create or delete drive letters for Ext2 volumes [new] (except on Windows NT 4.0). This is useful for scripts. (Please read the <a href="http://www.fs-driver.org/faq.html"><span class="caps">FAQ</span> section</a>, too.)</li><br />
+<li dragover="true"> 					A global <em>read-only option</em> is provided [new].</li><br />
+<li dragover="true"> 					File names that start with a dot &#8220;.&#8221; character are treated as hidden [new].</li><br />
+<li dragover="true"> 					Supports <span class="caps">GPT</span> disks if the Windows version used also does [new].</li><br />
+	<li> 					<em>Paging files</em> are supported. (A paging file is a file &#8220;pagefile.sys&#8221;, which Windows swaps virtual memory to.) Users may create paging files at NT&#8217;s control panel at Ext2 volumes.</li><br />
+	<li> Specific functions of the I/O subsystem of NT: Byte range locks, notification of changes of directories, oplocks (which are required by the NT <span class="caps">LAN</span> manager for sharing files via <span class="caps">SMB</span>).</li></p>
+</ol>
+<p>以上部份 主要功能有翻過了 剩下的都是懶的翻&#8230;主要來源來自官方網站</p>
+<p>我覺得有LINUX雙系統的人裝上這個後真的磁區的可用性大增 而且有已經支援UTF-8了</p>
+<p>在ext2上面的中文字都可以正常顯示以及複製到windows底下 真的是雙系統必裝的&#8230;<span class="caps">XDDD</span></p></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">renn999</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-02T00:00:00+08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://renn999.github.com/archives/48" data-via="renn999" data-counturl="http://renn999.github.com/archives/48" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/archives/47" title="Previous Post: PunBB in Wordpress完成">&laquo; PunBB in Wordpress完成</a>
+      
+      
+        <a class="basic-alignment right" href="/archives/49" title="Next Post: 最近太多雜事了...">最近太多雜事了... &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/archives/2012/09/03/hello-world/">Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/900">[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/894">ubuntu11.04使用感使用感外加問題解決</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/886">[公告] server硬碟壞掉</a>
+      </li>
+    
+      <li class="post">
+        <a href="/archives/869">Wordpress升級jQuery from 1.4.2 to 1.4.3</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/renn999">@renn999</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'renn999',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("renn999", 4, true);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/renn999" class="twitter-follow-button" data-show-count="true">Follow @renn999</a>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/renn999?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - renn999 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rennidit';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://renn999.github.com/archives/48';
+        var disqus_url = 'http://renn999.github.com/archives/48';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
