@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: 關於軟體 | 老伯筆記]]></title>
-  <link href="http://renn999.github.com/archives/categories/關於軟體/atom.xml" rel="self"/>
-  <link href="http://renn999.github.com/"/>
-  <updated>2012-09-07T13:28:21+08:00</updated>
-  <id>http://renn999.github.com/</id>
+  <link href="http://www.renn999.twbbs.org/archives/categories/關於軟體/atom.xml" rel="self"/>
+  <link href="http://www.renn999.twbbs.org/"/>
+  <updated>2012-09-07T13:35:00+08:00</updated>
+  <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ubuntu11.04使用感使用感外加問題解決]]></title>
-    <link href="http://renn999.github.com/archives/894"/>
+    <link href="http://www.renn999.twbbs.org/archives/894"/>
     <updated>2011-05-10T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/894</id>
+    <id>http://www.renn999.twbbs.org/archives/894</id>
     <content type="html"><![CDATA[<p>為11.04已經發布了，當初還在想說應該完不到了，但是因為了某些原因，提早結束了Online生活，就理用了讀書所剩餘的時間把完了一下，但是感覺上比較大的不同只有unity外加一堆預設程式被換掉，但是還是用不大習慣。
 外加，顯卡的需求好像變得比較高了...= =a，但是這不是重點，重點是解決問題的快感啊。
 首先就是unity的程式分類，當我要新增一個程式到選單時，沒有辦法放到指定的位置，只職能在所有程式中找到，unity的設定不是使用主選單的分類，而是是用每個~/.local/share/applications下的.desktop設定檔中的Categories來分類的，所以說只要分類對了就可以在unity下的分類中看到。
@@ -27,9 +27,9 @@
   
   <entry>
     <title type="html"><![CDATA[Google Chromium for Linux總算給我顯示出中文了]]></title>
-    <link href="http://renn999.github.com/archives/291"/>
+    <link href="http://www.renn999.twbbs.org/archives/291"/>
     <updated>2009-06-18T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/291</id>
+    <id>http://www.renn999.twbbs.org/archives/291</id>
     <content type="html"><![CDATA[<p><a href="http://pic.renn999.twbbs.org/view.php?pic=abbba84962814770.png" target="_blank"><img src="http://pic.renn999.twbbs.org/upload/abbba84962814770.png" alt="" width="640" /></a></p>
 
 <p>之前知道開始放出"超級不穩定版"，我就決定要自己測試看看，但是裝完之後一直都是方塊文字，但是聽說網路上有的人是正常出現中文字，我今天才想到最主要的問題點。</p>
@@ -102,9 +102,9 @@
   
   <entry>
     <title type="html"><![CDATA[Windows Live Writer 第一篇PO文]]></title>
-    <link href="http://renn999.github.com/archives/95"/>
+    <link href="http://www.renn999.twbbs.org/archives/95"/>
     <updated>2008-05-16T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/95</id>
+    <id>http://www.renn999.twbbs.org/archives/95</id>
     <content type="html"><![CDATA[<p>這微軟真的好樣的...    <br />最近他們好像有搞了一些新的東西...</p>
 
 
@@ -119,9 +119,9 @@
   
   <entry>
     <title type="html"><![CDATA[Windows Live Writer 使用心得]]></title>
-    <link href="http://renn999.github.com/archives/104"/>
+    <link href="http://www.renn999.twbbs.org/archives/104"/>
     <updated>2008-05-16T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/104</id>
+    <id>http://www.renn999.twbbs.org/archives/104</id>
     <content type="html"><![CDATA[<p>這幾天用了...覺得真的太方便了</p>
 
 
@@ -131,9 +131,9 @@
   
   <entry>
     <title type="html"><![CDATA[我就說IE6這個廢物早該被淘汰了]]></title>
-    <link href="http://renn999.github.com/archives/84"/>
+    <link href="http://www.renn999.twbbs.org/archives/84"/>
     <updated>2008-05-12T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/84</id>
+    <id>http://www.renn999.twbbs.org/archives/84</id>
     <content type="html"><![CDATA[<p>今天在處理Blog內部升級 順便看看有啥東西有蟲的</p>
 
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: about PHP | 老伯筆記]]></title>
-  <link href="http://renn999.github.com/archives/categories/about-php/atom.xml" rel="self"/>
-  <link href="http://renn999.github.com/"/>
-  <updated>2012-09-07T13:28:21+08:00</updated>
-  <id>http://renn999.github.com/</id>
+  <link href="http://www.renn999.twbbs.org/archives/categories/about-php/atom.xml" rel="self"/>
+  <link href="http://www.renn999.twbbs.org/"/>
+  <updated>2012-09-07T13:35:00+08:00</updated>
+  <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
-    <link href="http://renn999.github.com/archives/886"/>
+    <link href="http://www.renn999.twbbs.org/archives/886"/>
     <updated>2011-04-24T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/886</id>
+    <id>http://www.renn999.twbbs.org/archives/886</id>
     <content type="html"><![CDATA[<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息...OTZ。</p>
 
 <p>就如標題所說的，因為有的服務是我自己寫得程式，但是我犯了一個不可饒恕的錯誤...就是我忘記備份php程式了，造成有的服務可能無時間表的停止服務，因為這個站是我緊急的跟我們一位社團學長借的空間，因為有所限制，所以說短時間內我也不大想要把剩下的服務弄上去。</p>
@@ -31,9 +31,9 @@
   
   <entry>
     <title type="html"><![CDATA[Counterize II 2.14.1 IP patch(還原顯示IP功能)]]></title>
-    <link href="http://renn999.github.com/archives/468"/>
+    <link href="http://www.renn999.twbbs.org/archives/468"/>
     <updated>2009-12-15T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/468</id>
+    <id>http://www.renn999.twbbs.org/archives/468</id>
     <content type="html"><![CDATA[<p><a href="http://www.renn999.twbbs.org/wordpress/archives/197">前文</a>在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。</p>
 
 <p><a href="http://www.renn999.twbbs.org/wordpress/downloads/ip_patch.patch">ip_patch.patch download</a></p>
@@ -53,9 +53,9 @@
   
   <entry>
     <title type="html"><![CDATA[Google AJAX Libraries API]]></title>
-    <link href="http://renn999.github.com/archives/401"/>
+    <link href="http://www.renn999.twbbs.org/archives/401"/>
     <updated>2009-10-28T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/401</id>
+    <id>http://www.renn999.twbbs.org/archives/401</id>
     <content type="html"><![CDATA[<p>其實今天就是在google AJAX看到的鬼東西，而且是一個非常有趣的鬼東西，依照我淺薄的接觸以為javascript Libraries只有jQuery，竟然沒想到還有這麼多的種類，</p>
 
 <p>網站：<a href="http://code.google.com/intl/en/apis/ajaxlibs/">http://code.google.com/intl/en/apis/ajaxlibs/</a></p>
@@ -88,9 +88,9 @@
   
   <entry>
     <title type="html"><![CDATA[利用php將UTF-8 -> big5 UAO沒有PATCH iconv]]></title>
-    <link href="http://renn999.github.com/archives/383"/>
+    <link href="http://www.renn999.twbbs.org/archives/383"/>
     <updated>2009-10-06T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/383</id>
+    <id>http://www.renn999.twbbs.org/archives/383</id>
     <content type="html"><![CDATA[<p>最近因為嘗試要轉換一些HTML->BBS的文章會發生的問題，所以說就寫了一個這樣的程式，因為我完全不想要動到iconv的PATCH，所以說就先利用ZTerm src中的BIG5表格下去做轉換，結果還不錯。</p>
 
 <p>(修正了幾個bug 091006 21：00)
@@ -217,9 +217,9 @@
   
   <entry>
     <title type="html"><![CDATA[PHP備份Pixiv的bookmark(お気に入りユーザー)修正版]]></title>
-    <link href="http://renn999.github.com/archives/371"/>
+    <link href="http://www.renn999.twbbs.org/archives/371"/>
     <updated>2009-09-30T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/371</id>
+    <id>http://www.renn999.twbbs.org/archives/371</id>
     <content type="html"><![CDATA[<p>基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。</p>
 
 <p>所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。

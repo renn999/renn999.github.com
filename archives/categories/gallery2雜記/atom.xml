@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Gallery2雜記 | 老伯筆記]]></title>
-  <link href="http://renn999.github.com/archives/categories/gallery2雜記/atom.xml" rel="self"/>
-  <link href="http://renn999.github.com/"/>
-  <updated>2012-09-07T13:28:21+08:00</updated>
-  <id>http://renn999.github.com/</id>
+  <link href="http://www.renn999.twbbs.org/archives/categories/gallery2雜記/atom.xml" rel="self"/>
+  <link href="http://www.renn999.twbbs.org/"/>
+  <updated>2012-09-07T13:35:00+08:00</updated>
+  <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
-    <link href="http://renn999.github.com/archives/886"/>
+    <link href="http://www.renn999.twbbs.org/archives/886"/>
     <updated>2011-04-24T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/886</id>
+    <id>http://www.renn999.twbbs.org/archives/886</id>
     <content type="html"><![CDATA[<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息...OTZ。</p>
 
 <p>就如標題所說的，因為有的服務是我自己寫得程式，但是我犯了一個不可饒恕的錯誤...就是我忘記備份php程式了，造成有的服務可能無時間表的停止服務，因為這個站是我緊急的跟我們一位社團學長借的空間，因為有所限制，所以說短時間內我也不大想要把剩下的服務弄上去。</p>

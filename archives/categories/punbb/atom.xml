@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: PunBB | 老伯筆記]]></title>
-  <link href="http://renn999.github.com/archives/categories/punbb/atom.xml" rel="self"/>
-  <link href="http://renn999.github.com/"/>
-  <updated>2012-09-07T13:28:21+08:00</updated>
-  <id>http://renn999.github.com/</id>
+  <link href="http://www.renn999.twbbs.org/archives/categories/punbb/atom.xml" rel="self"/>
+  <link href="http://www.renn999.twbbs.org/"/>
+  <updated>2012-09-07T13:35:00+08:00</updated>
+  <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[PunBB in Wordpress完成]]></title>
-    <link href="http://renn999.github.com/archives/47"/>
+    <link href="http://www.renn999.twbbs.org/archives/47"/>
     <updated>2008-03-02T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/47</id>
+    <id>http://www.renn999.twbbs.org/archives/47</id>
     <content type="html"><![CDATA[<p>過了一陣子 的研究 和爬了無數的google搜尋</p>
 
 <p>總算把著個嵌入到我的wordpress中了</p>

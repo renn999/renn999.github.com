@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Linux | 老伯筆記]]></title>
-  <link href="http://renn999.github.com/archives/categories/linux/atom.xml" rel="self"/>
-  <link href="http://renn999.github.com/"/>
-  <updated>2012-09-07T13:28:21+08:00</updated>
-  <id>http://renn999.github.com/</id>
+  <link href="http://www.renn999.twbbs.org/archives/categories/linux/atom.xml" rel="self"/>
+  <link href="http://www.renn999.twbbs.org/"/>
+  <updated>2012-09-07T13:35:00+08:00</updated>
+  <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops]]></title>
-    <link href="http://renn999.github.com/archives/900"/>
+    <link href="http://www.renn999.twbbs.org/archives/900"/>
     <updated>2011-07-21T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/900</id>
+    <id>http://www.renn999.twbbs.org/archives/900</id>
     <content type="html"><![CDATA[<p>This is the first time I write post in English, so if there are something wrong in my post, please notice me, thanks.</p>
 
 <p>I have a laptop Asus A43SV, I do not like the windows7, so I install the ubuntu on it. But there are "Some" problem, after I finish install.</p>
@@ -32,9 +32,9 @@
   
   <entry>
     <title type="html"><![CDATA[在ubuntu下播放正版DVD]]></title>
-    <link href="http://renn999.github.com/archives/799"/>
+    <link href="http://www.renn999.twbbs.org/archives/799"/>
     <updated>2010-07-03T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/799</id>
+    <id>http://www.renn999.twbbs.org/archives/799</id>
     <content type="html"><![CDATA[<p>我知道這是老梗文了，在前幾天翻出了'I, Robot'又懷念了一下，但是在播放的時候一直出現問題，才想到說我沒有灌解CSS相關的東西，<del datetime="2010-07-03T01:45:34+00:00">雖然說看正版的人應該不多吧</del>，但是還是紀錄一下。</p>
 
 <p><a href="https://help.ubuntu.com/community/RestrictedFormats/PlayingDVDs">ubuntu原文</a> 英文好的請直接喀這裡，....OTZ</p>
@@ -63,9 +63,9 @@
   
   <entry>
     <title type="html"><![CDATA[利用 trash 來取代 rm 在 Terminal 模式下]]></title>
-    <link href="http://renn999.github.com/archives/721"/>
+    <link href="http://www.renn999.twbbs.org/archives/721"/>
     <updated>2010-05-26T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/721</id>
+    <id>http://www.renn999.twbbs.org/archives/721</id>
     <content type="html"><![CDATA[<p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下'rm *.jpg'，但是手殘外加腦包的我竟然不小心下成'rm * .jpg'看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>...不不不...應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式....OTZ</p>
 
 <p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big>
@@ -192,9 +192,9 @@
   
   <entry>
     <title type="html"><![CDATA[ubuntu 10.04 升級筆記]]></title>
-    <link href="http://renn999.github.com/archives/708"/>
+    <link href="http://www.renn999.twbbs.org/archives/708"/>
     <updated>2010-05-22T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/708</id>
+    <id>http://www.renn999.twbbs.org/archives/708</id>
     <content type="html"><![CDATA[<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。"看"起來好像也沒有比較大的問題出現了。</p>
 
 <p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<!--more-->
@@ -314,9 +314,9 @@
   
   <entry>
     <title type="html"><![CDATA[Wine開啟視窗字體平滑效果]]></title>
-    <link href="http://renn999.github.com/archives/618"/>
+    <link href="http://www.renn999.twbbs.org/archives/618"/>
     <updated>2009-12-29T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/618</id>
+    <id>http://www.renn999.twbbs.org/archives/618</id>
     <content type="html"><![CDATA[<p>在很早以前用wine的時候只要在user.reg下加入
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

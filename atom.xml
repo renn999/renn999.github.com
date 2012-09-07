@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[老伯筆記]]></title>
-  <link href="http://renn999.github.com/atom.xml" rel="self"/>
-  <link href="http://renn999.github.com/"/>
-  <updated>2012-09-07T13:28:21+08:00</updated>
-  <id>http://renn999.github.com/</id>
+  <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
+  <link href="http://www.renn999.twbbs.org/"/>
+  <updated>2012-09-07T13:35:00+08:00</updated>
+  <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Hello Octopress]]></title>
-    <link href="http://renn999.github.com/archives/901/"/>
+    <link href="http://www.renn999.twbbs.org/archives/901/"/>
     <updated>2012-09-07T09:56:00+08:00</updated>
-    <id>http://renn999.github.com/archives/901</id>
-    <content type="html"><![CDATA[<p>我把本站的網址改了：<a href="http://www.renn999.twbbs.org">http://www.renn999.twbbs.org</a>
+    <id>http://www.renn999.twbbs.org/archives/901</id>
+    <content type="html"><![CDATA[<p>我把本站的網址改了：<a href="http://www.renn999.twbbs.org">http://www.renn999.twbbs.org</a><br/>
 RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbbs.org/atom.xml</a></p>
 
 <p>算一算從開始用Wordpress(以下簡稱WP)已經幾年了，我只既得我一開始事由社團教學所認識的，那時沒有記錯的話是從2.3版開始，算是非常晚了那時會自己架站最主要就是看上自己架的 Blog more flexible <s>而且比較能炫耀</s>，並且整合性高，也可以自己架設相簿整合成自己的一套系統，但是經歷了一堆儲存裝置上的大地雷，以及不少次的歸零重整，外加程度上的成長，反而讓自己越來越懶，我懶得改一大堆東西，外加對於 Wordpress 這已經大到可以稱怪物的東西，以及一大堆如雞肋般的功能，還有裝太多的 plugin 拖累系統的效能，那個editor真的爛到我想殺人，都讓我非常的詬病。老實說XDite大在<a href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">Why Octopress?</a>中已經把所有的重點已經講完了，真的身同感受啊！</p>
@@ -42,9 +42,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops]]></title>
-    <link href="http://renn999.github.com/archives/900"/>
+    <link href="http://www.renn999.twbbs.org/archives/900"/>
     <updated>2011-07-21T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/900</id>
+    <id>http://www.renn999.twbbs.org/archives/900</id>
     <content type="html"><![CDATA[<p>This is the first time I write post in English, so if there are something wrong in my post, please notice me, thanks.</p>
 <p>I have a laptop Asus A43SV, I do not like the windows7, so I install the ubuntu on it. But there are &#8220;Some&#8221; problem, after I finish install.</p>
 <p>First, Elantech touchpad recognized as PS/2 Logitech mouse, but you can find Elantech models in <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/681904/comments/104" target="_blank">this article.</a></p>
@@ -54,9 +54,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[ubuntu11.04使用感使用感外加問題解決]]></title>
-    <link href="http://renn999.github.com/archives/894"/>
+    <link href="http://www.renn999.twbbs.org/archives/894"/>
     <updated>2011-05-10T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/894</id>
+    <id>http://www.renn999.twbbs.org/archives/894</id>
     <content type="html"><![CDATA[<p>為11.04已經發布了，當初還在想說應該完不到了，但是因為了某些原因，提早結束了Online生活，就理用了讀書所剩餘的時間把完了一下，但是感覺上比較大的不同只有unity外加一堆預設程式被換掉，但是還是用不大習慣。<br />
 外加，顯卡的需求好像變得比較高了&#8230;= =a，但是這不是重點，重點是解決問題的快感啊。<br />
 首先就是unity的程式分類，當我要新增一個程式到選單時，沒有辦法放到指定的位置，只職能在所有程式中找到，unity的設定不是使用主選單的分類，而是是用每個~/.local/share/applications下的.desktop設定檔中的Categories來分類的，所以說只要分類對了就可以在unity下的分類中看到。<br />
@@ -65,9 +65,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
-    <link href="http://renn999.github.com/archives/886"/>
+    <link href="http://www.renn999.twbbs.org/archives/886"/>
     <updated>2011-04-24T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/886</id>
+    <id>http://www.renn999.twbbs.org/archives/886</id>
     <content type="html"><![CDATA[<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息&#8230;OTZ。</p>
 <p>就如標題所說的，因為有的服務是我自己寫得程式，但是我犯了一個不可饒恕的錯誤&#8230;就是我忘記備份php程式了，造成有的服務可能無時間表的停止服務，因為這個站是我緊急的跟我們一位社團學長借的空間，因為有所限制，所以說短時間內我也不大想要把剩下的服務弄上去。</p>
 <p>在此公告，老伯繪師收集區停開，因為老早之前我就有打算要整個翻修內部程式碼，但是都懶得去動他，剛好趁著硬碟壞掉算是個總結吧&#8230;OTZ，但是不要擔心的是說資料庫還留著，但是程式就881了。</p>
@@ -77,9 +77,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[Wordpress升級jQuery from 1.4.2 to 1.4.3]]></title>
-    <link href="http://renn999.github.com/archives/869"/>
+    <link href="http://www.renn999.twbbs.org/archives/869"/>
     <updated>2010-10-19T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/869</id>
+    <id>http://www.renn999.twbbs.org/archives/869</id>
     <content type="html"><![CDATA[<p>jQuery最近釋出了1.4.3，當然在翻wordpress  trac的時候剛好翻到有人釋出了更新到1.4.3的patch。我則手動的將其升級了上去，如果有程度的可以直接看<a href="http://core.trac.wordpress.org/ticket/15135">ticket/15135</a><br />
 <!--more--><br />
 升級步驟：<br />
@@ -105,9 +105,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[mysql轉sqlite]]></title>
-    <link href="http://renn999.github.com/archives/861"/>
+    <link href="http://www.renn999.twbbs.org/archives/861"/>
     <updated>2010-08-11T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/861</id>
+    <id>http://www.renn999.twbbs.org/archives/861</id>
     <content type="html"><![CDATA[<p>前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到&#8230;XDrz</p>
 <p>可以參考這裡<a href="http://www.sqlite.org/cvstrac/wiki?p=ConverterTools">sqlite &#8211; Converter Tools</a></p>
 <p>當然我的作法是將步驟分開來作的</p>
@@ -169,9 +169,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[初學python]]></title>
-    <link href="http://renn999.github.com/archives/828"/>
+    <link href="http://www.renn999.twbbs.org/archives/828"/>
     <updated>2010-07-22T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/828</id>
+    <id>http://www.renn999.twbbs.org/archives/828</id>
     <content type="html"><![CDATA[<p>這是利用plurk api簡單寫得東東，主要是要搞懂json的用法：p<br />
 到時候先搞定cookie的儲存..<span class="caps">OTZ</span><br />
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -257,9 +257,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[在ubuntu下播放正版DVD]]></title>
-    <link href="http://renn999.github.com/archives/799"/>
+    <link href="http://www.renn999.twbbs.org/archives/799"/>
     <updated>2010-07-03T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/799</id>
+    <id>http://www.renn999.twbbs.org/archives/799</id>
     <content type="html"><![CDATA[<p>我知道這是老梗文了，在前幾天翻出了&#8217;I, Robot&#8217;又懷念了一下，但是在播放的時候一直出現問題，才想到說我沒有灌解CSS相關的東西，<del datetime="2010-07-03T01:45:34+00:00">雖然說看正版的人應該不多吧</del>，但是還是紀錄一下。</p>
 <p><a href="https://help.ubuntu.com/community/RestrictedFormats/PlayingDVDs">ubuntu原文</a> 英文好的請直接喀這裡，&#8230;.<span class="caps">OTZ</span></p>
 <p><!--more--><br />
@@ -279,9 +279,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[bitly.pro自訂網域的短網址服務]]></title>
-    <link href="http://renn999.github.com/archives/769"/>
+    <link href="http://www.renn999.twbbs.org/archives/769"/>
     <updated>2010-06-12T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/769</id>
+    <id>http://www.renn999.twbbs.org/archives/769</id>
     <content type="html"><![CDATA[<p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。<!--more--><br />
 而<a href="http://bit.ly">bit.ly</a>這一家在不久前成立了<a href="http://bitly.pro">bitly Pro</a>服務，這是啥小跟bit.ly有啥不一樣，簡單說就是把domain name交給他們，讓他們去產生短網址，還外加給你點擊數及地區每日的統計&#8230;等等。這聽起來好像非常不錯，但是這還是一個beta，的服務所以說如果要申請還要填表格等等再說，當然我是已經等到了，外加弄清楚他們的api要怎麼使用，想想看有啥搞頭，但是感覺上還是純粹的個人風格的短網址而已&#8230;XD</p>
 <p>申請方式如下：<br />
@@ -352,9 +352,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[EveryDNS替代方案FreeDNS]]></title>
-    <link href="http://renn999.github.com/archives/732"/>
+    <link href="http://www.renn999.twbbs.org/archives/732"/>
     <updated>2010-06-07T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/732</id>
+    <id>http://www.renn999.twbbs.org/archives/732</id>
     <content type="html"><![CDATA[<p>因為之前聽到Everydns被Dyn收購的消息，然而在這一段時間老實說，我是擔心說和時會停止服務，雖然說官方一直說免費服務還是會維持，但是維持到啥時我就不知道了。然而我就開始尋找替代方案。</p>
 <p>我找到了<a href="http://freedns.afraid.org/">FreeDNS</a>，雖然說網址有點難記就是了。</p>
 <p>我也去申請了一個<a href="http://www.dot.tk">.TK</a>的免費網路域名，作為我自己的短網址之用的，真的短了很多。</p>
@@ -363,9 +363,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[紀錄一下]]></title>
-    <link href="http://renn999.github.com/archives/729"/>
+    <link href="http://www.renn999.twbbs.org/archives/729"/>
     <updated>2010-05-28T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/729</id>
+    <id>http://www.renn999.twbbs.org/archives/729</id>
     <content type="html"><![CDATA[<p>這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了</p>
 <p>應該都ok了吧&#8230;<span class="caps">OTZ</span></p>
 <p>接著看看明天有沒有把備份自動寄到我的信箱就好了&#8230;<span class="caps">OTZ</span></p>]]></content>
@@ -373,9 +373,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[利用 trash 來取代 rm 在 Terminal 模式下]]></title>
-    <link href="http://renn999.github.com/archives/721"/>
+    <link href="http://www.renn999.twbbs.org/archives/721"/>
     <updated>2010-05-26T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/721</id>
+    <id>http://www.renn999.twbbs.org/archives/721</id>
     <content type="html"><![CDATA[<p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下&#8217;rm *.jpg&#8217;，但是手殘外加腦包的我竟然不小心下成&#8217;rm * .jpg&#8217;看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>&#8230;不不不&#8230;應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式&#8230;.<span class="caps">OTZ</span></p>
 <p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big><br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -471,9 +471,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[ubuntu 10.04 升級筆記]]></title>
-    <link href="http://renn999.github.com/archives/708"/>
+    <link href="http://www.renn999.twbbs.org/archives/708"/>
     <updated>2010-05-22T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/708</id>
+    <id>http://www.renn999.twbbs.org/archives/708</id>
     <content type="html"><![CDATA[<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。&quot;看&quot;起來好像也沒有比較大的問題出現了。</p>
 <p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<!--more--><br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -570,9 +570,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[觀貓日記 20100514]]></title>
-    <link href="http://renn999.github.com/archives/690"/>
+    <link href="http://www.renn999.twbbs.org/archives/690"/>
     <updated>2010-05-14T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/690</id>
+    <id>http://www.renn999.twbbs.org/archives/690</id>
     <content type="html"><![CDATA[<p>今天真是睡姿大聚集&#8230;.</p>
 <div align="center">
 <wpg2>1297</wpg2>
@@ -593,9 +593,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[觀貓日記 20100513]]></title>
-    <link href="http://renn999.github.com/archives/680"/>
+    <link href="http://www.renn999.twbbs.org/archives/680"/>
     <updated>2010-05-13T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/680</id>
+    <id>http://www.renn999.twbbs.org/archives/680</id>
     <content type="html"><![CDATA[<p>今天觀察才發現到，那隻虎斑貓還會睡在別的地方&#8230;XDrz<br />
 <div align="center"><br />
 <p>虎斑貓在波浪版上睡覺之間</p><br />
@@ -623,9 +623,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[回到高雄的這幾個禮拜]]></title>
-    <link href="http://renn999.github.com/archives/668"/>
+    <link href="http://www.renn999.twbbs.org/archives/668"/>
     <updated>2010-05-12T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/668</id>
+    <id>http://www.renn999.twbbs.org/archives/668</id>
     <content type="html"><![CDATA[<p>　　有看過我的plurk的人應該都知道，我已經重台南搬回到高雄住了，現在每個星期三通車回到成大去上個游泳外加等畢業然後等Online，體檢報告也不知道啥時會出爐，外加因為蹲不下去還要等醫院的通知(我的身體毛病還真多，應該是我不喜歡運動的關係吧)，然而在家裡的這段時間我不就是幫父母做事，要不就是準備公職考試，看是很閒但是心中有著不明的壓力。<br />
 　　先來說說最近完成的第一件事情吧，我已經搬回高雄了，所以說最近都是在整理家裡已經快要n年沒整理的房間，丟了一大堆東西之後才發現到那間房間的狀況有夠糟糕的，壁癌啦&#8230;之類的，當然裡面是以前我們家裡開過文具行的一些剩物，當然也勾起了一堆的回憶，說真的也丟了不少東西就是了整理完之後把牆壁刮一刮就像下面這個樣子。<br />
 <div align="center"><wpg2>1248</wpg2><wpg2>1244</wpg2></div><br />
@@ -641,9 +641,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[vSlider navigation修正]]></title>
-    <link href="http://renn999.github.com/archives/644"/>
+    <link href="http://www.renn999.twbbs.org/archives/644"/>
     <updated>2010-03-07T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/644</id>
+    <id>http://www.renn999.twbbs.org/archives/644</id>
     <content type="html"><![CDATA[<p>最近發現到這裡霉味很重，已經一段時間沒有更新一堆東西，另外一個原因就是最近都在<del datetime="2010-03-07T14:11:43+00:00">菸酒所</del>研究所考試，所以說大部分的時間都是拿去唸書了。</p>
 <p>我用vSlider當作我的主要佈景主題已經一段時間了，最主要是說裡面我已經改了一堆的東西外加上，如果還要換上新主題的話，又要去研究新主題的語法外加修改掛廣告&#8230;等。</p>
 <p>但是在今天拉到頁尾，看到了很刺眼的東西<br />
@@ -686,9 +686,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[Wine開啟視窗字體平滑效果]]></title>
-    <link href="http://renn999.github.com/archives/618"/>
+    <link href="http://www.renn999.twbbs.org/archives/618"/>
     <updated>2009-12-29T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/618</id>
+    <id>http://www.renn999.twbbs.org/archives/618</id>
     <content type="html"><![CDATA[<p>在很早以前用wine的時候只要在user.reg下加入<br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -747,9 +747,9 @@ RSS Feed:<a href="http://www.renn999.twbbs.org/atom.xml">http://www.renn999.twbb
   
   <entry>
     <title type="html"><![CDATA[Wordplurk Improve]]></title>
-    <link href="http://renn999.github.com/archives/577"/>
+    <link href="http://www.renn999.twbbs.org/archives/577"/>
     <updated>2009-12-23T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/577</id>
+    <id>http://www.renn999.twbbs.org/archives/577</id>
     <content type="html"><![CDATA[<p></big>&gt;&gt;已經成立獨立頁面<a href="http://www.renn999.twbbs.org/wordpress/wordplurk-improve">http://www.renn999.twbbs.org/wordpress/wordplurk-improve</a></big></p>
 <p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出。<br />
 <a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-1.png"><img class="alignnone size-medium wp-image-578" title="Screenshot-1" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-1-300x242.png" alt="" width="300" height="242" /></a><br />
@@ -777,9 +777,9 @@ P.S. 這個plurk api 需要plurk api key，這個需要去plurk申請<a href="ht
   
   <entry>
     <title type="html"><![CDATA[The final tset Of wordplurk improve modify]]></title>
-    <link href="http://renn999.github.com/archives/572"/>
+    <link href="http://www.renn999.twbbs.org/archives/572"/>
     <updated>2009-12-22T00:00:00+08:00</updated>
-    <id>http://renn999.github.com/archives/572</id>
+    <id>http://www.renn999.twbbs.org/archives/572</id>
     <content type="html"><![CDATA[<p>這一篇只是要作一測試</p>
 <p>改天會把我的修改文章給po出來</p>
 <p>最主要是修改了wordplurk的一些細節</p>
