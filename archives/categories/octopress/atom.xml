@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-07T17:39:26+08:00</updated>
+  <updated>2012-09-08T16:43:22+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,67 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[rake的tips]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/902"/>
+    <updated>2012-09-08T12:23:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/902</id>
+    <content type="html"><![CDATA[<p>參考至<a href="http://robdodson.me/blog/2012/06/11/some-octopress-rake-tips/">Some Octopress Rake Tips</a></p>
+
+<p>剛開始用Octopress的時候感覺上速度還蠻快的，但是在將WP的文章匯入的時候就發現到，鎂一次的<code>generate</code>就會發現到速度會少許的減慢，好像每一次都會對所有的文章做一次的編譯，造成每次要<code>preview</code>時速度都非常慢，其實裏面有幾個有用的指令可以提昇速度。</p>
+
+<!--more-->
+
+
+<pre><code>rake isolate[file_name]
+</code></pre>
+
+<p>這樣他就會把你要編輯的檔案給獨立出來，將其他的檔案先暫時的放到<code>_stash</code>中，這樣只要下</p>
+
+<pre><code>rake preview
+</code></pre>
+
+<p>此時在<code>localhost:4000</code>就可以預覽，而且速度會提昇不少。編輯完後只要另外下</p>
+
+<pre><code>rake integrate
+</code></pre>
+
+<p>即可將原先遷移的檔案搬回來，要<code>generate</code>順便<code>deploy</code></p>
+
+<pre><code>rake gen_deploy
+</code></pre>
+
+<p>而要查看rake所有可用的指令,就下</p>
+
+<pre><code>rake -T
+</code></pre>
+
+<p>就會跑出</p>
+
+<p><code>sh
+rake clean                     # Clean out caches: .pygments-cache, .gist-cache, .sass-cache
+rake copydot[source,dest]      # copy dot files for deployment
+rake deploy                    # Default deploy task
+rake gen_deploy                # Generate website and deploy
+rake generate                  # Generate jekyll site
+rake install[theme]            # Initial setup for Octopress: copies the default theme into the path of Jekyll's generator.
+rake integrate                 # Move all stashed posts back into the posts directory, ready for site generation.
+rake isolate[filename]         # Move all other posts than the one currently being worked on to a temporary stash location (stash) so regenerating the site happens much quicker.
+rake list                      # list tasks
+rake new_page[filename]        # Create a new page in source/(filename)/index.markdown
+rake new_post[title]           # Begin a new post in source/_posts
+rake preview                   # preview the site in a web browser
+rake push                      # deploy public directory to github pages
+rake rsync                     # Deploy website via rsync
+rake set_root_dir[dir]         # Update configurations to support publishing to root or sub directory
+rake setup_github_pages[repo]  # Set up _deploy folder and deploy branch for Github Pages deployment
+rake update_source[theme]      # Move source to source.old, install source theme updates, replace source/_includes/navigation.html with source.old's navigation
+rake update_style[theme]       # Move sass to sass.old, install sass theme updates, replace sass/custom with sass.old/custom
+rake watch                     # Watch the site and regenerate when it changes
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello Octopress]]></title>

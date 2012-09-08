@@ -7,10 +7,12 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="今天算是把全部 文章內容的一堆.co.cc的字眼給幹掉 除了email外，那是google APP的問題了，改天在處理
-在此紀錄一下 先把wordpress的mysql data dump出來後(如何dump請參考自動MySQL備份搞定)
+	<meta name="description" content="最近都在忙一些課業上得問題真的沒有時間去搞定有的沒的
+最主要之前的email publish都一直沒有出現
+今天在翻apache log的時候才發現到問題(奇怪之前都寄得出去&#8230;= =a?)
 1
-sed -i -e 's/取代的字串/取代的字串/g &hellip;">
+sh: sendmail: not found
+去/etc/php5/apache2/ &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -93,6 +95,49 @@ sed -i -e 's/取代的字串/取代的字串/g &hellip;">
 
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/349">修好sendmail</a></h1>
+	<div class="entry-content">
+		<p>最近都在忙一些課業上得問題真的沒有時間去搞定有的沒的</p>
+<p>最主要之前的email publish都一直沒有出現</p>
+<p>今天在翻apache log的時候才發現到問題(奇怪之前都寄得出去&#8230;= =a?)</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sh: sendmail: not found</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>去/etc/php5/apache2/php.ini中把sendmail path設定一下就修好了</p>
+<p>我真的呆了好一陣子&#8230;QQ</p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-07T00:00:00+08:00" pubdate data-updated="true">Jul 7<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/架站相關/'>架站相關</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/349#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -519,44 +564,6 @@ sed -i -e 's/取代的字串/取代的字串/g &hellip;">
 </div>
 	
 		<span class="comments"><a href="/archives/249#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/243">Linux音訊轉檔(一)</a></h1>
-	<div class="entry-content">
-		<p>再這裡把幾個常用的有損及無損音樂壓縮整理一下，以及他們在Linux底下如何轉檔所作的整理，基本上無損壓縮壓縮的話不外乎看到的就是tta(<a href="http://true-audio.com/">TrueAudio</a>) ape(<a href="http://www.monkeysaudio.com/">Monkey&#8217;s Audio</a>) flac(<a href="http://flac.sourceforge.net/">Free Lossless Audio Codec</a>) wv(<a href="http://www.wavpack.com/">Wavpack</a>) tak(<a href="http://www.thbeck.de/Tak/Tak.html">(T)om&#8217;s lossless (A)udio (K)ompressor</a>)，有損的話Mp3(<span class="caps">MPEG</span>-1 Audio Layer 3) Ogg(<a href="http://zh.wikipedia.org/w/index.php?title=Xiph.Org_%E5%9F%BA%E9%87%91%E6%9C%83&amp;variant=zh-tw">Ogg Vorbis</a>) <acronym title="Advanced Audio Coding"><span class="caps">AAC</span></acronym>，基本上比較流行的格式不外乎上面幾種<br />
-
-		
-		<a href="/archives/243" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-15T00:00:00+08:00" pubdate data-updated="true">May 15<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/243#disqus_thread">Comments</a></span>
 	
 </div>
 </article>

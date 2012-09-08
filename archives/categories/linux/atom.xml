@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/linux/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-07T17:39:26+08:00</updated>
+  <updated>2012-09-08T16:43:22+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -323,8 +323,7 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>[Software\Wine\X11 Driver]
 </span><span class='line'>"ClientSideAntiAliasWithRender"="Y"</span></code></pre></td></tr></table></div></figure></notextile></div>
 就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了
-因為如果不啟用平滑效果的話，情況會像下圖：
-<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定-283x300.png" alt="" title="Screenshot-Wine 設定" width="283" height="300" class="alignnone size-medium wp-image-619" /></a></p>
+因為如果不啟用平滑效果的話，情況會像下圖：</p>
 
 <!--more-->
 
@@ -348,10 +347,9 @@
 但是太麻煩了，最快的方式，打開終端機複製貼上
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>wget http://files.polosatus.ru/winefontssmoothing_en.sh -O- | bash</span></code></pre></td></tr></table></div></figure></notextile></div>
-然後，出現以下畫面去作選擇
-<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Terminal.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Terminal-300x185.png" alt="" title="Screenshot-Terminal" width="300" height="185" class="alignnone size-medium wp-image-621" /></a>
-之後可以開啟Wine來看看結果
-<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定-1.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定-1-300x296.png" alt="" title="Screenshot-Wine 設定-1" width="300" height="296" class="alignnone size-medium wp-image-620" /></a></p>
+然後，出現以下畫面去作選擇</p>
+
+<p>之後可以開啟Wine來看看結果</p>
 
 <p>這樣看起來棒多了，取代其他字型的regcode</p>
 

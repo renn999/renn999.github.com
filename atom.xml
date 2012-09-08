@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-07T17:39:26+08:00</updated>
+  <updated>2012-09-08T16:43:22+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,86 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[rake的tips]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/902"/>
+    <updated>2012-09-08T12:23:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/902</id>
+    <content type="html"><![CDATA[<p>參考至<a href="http://robdodson.me/blog/2012/06/11/some-octopress-rake-tips/">Some Octopress Rake Tips</a></p>
+
+<p>剛開始用Octopress的時候感覺上速度還蠻快的，但是在將WP的文章匯入的時候就發現到，鎂一次的<code>generate</code>就會發現到速度會少許的減慢，好像每一次都會對所有的文章做一次的編譯，造成每次要<code>preview</code>時速度都非常慢，其實裏面有幾個有用的指令可以提昇速度。</p>
+
+<!--more-->
+
+
+<pre><code>rake isolate[file_name]
+</code></pre>
+
+<p>這樣他就會把你要編輯的檔案給獨立出來，將其他的檔案先暫時的放到<code>_stash</code>中，這樣只要下</p>
+
+<pre><code>rake preview
+</code></pre>
+
+<p>此時在<code>localhost:4000</code>就可以預覽，而且速度會提昇不少。編輯完後只要另外下</p>
+
+<pre><code>rake integrate
+</code></pre>
+
+<p>即可將原先遷移的檔案搬回來，要<code>generate</code>順便<code>deploy</code></p>
+
+<pre><code>rake gen_deploy
+</code></pre>
+
+<p>而要查看rake所有可用的指令,就下</p>
+
+<pre><code>rake -T
+</code></pre>
+
+<p>就會跑出</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake clean                     <span class="c"># Clean out caches: .pygments-cache, .gist-cache, .sass-cache</span>
+</span><span class='line'>rake copydot<span class="o">[</span><span class="nb">source</span>,dest<span class="o">]</span>      <span class="c"># copy dot files for deployment</span>
+</span><span class='line'>rake deploy                    <span class="c"># Default deploy task</span>
+</span><span class='line'>rake gen_deploy                <span class="c"># Generate website and deploy</span>
+</span><span class='line'>rake generate                  <span class="c"># Generate jekyll site</span>
+</span><span class='line'>rake install<span class="o">[</span>theme<span class="o">]</span>            <span class="c"># Initial setup for Octopress: copies the default theme into the path of Jekyll&#39;s generator.</span>
+</span><span class='line'>rake integrate                 <span class="c"># Move all stashed posts back into the posts directory, ready for site generation.</span>
+</span><span class='line'>rake isolate<span class="o">[</span>filename<span class="o">]</span>         <span class="c"># Move all other posts than the one currently being worked on to a temporary stash location (stash) so regenerating the site happens much quicker.</span>
+</span><span class='line'>rake list                      <span class="c"># list tasks</span>
+</span><span class='line'>rake new_page<span class="o">[</span>filename<span class="o">]</span>        <span class="c"># Create a new page in source/(filename)/index.markdown</span>
+</span><span class='line'>rake new_post<span class="o">[</span>title<span class="o">]</span>           <span class="c"># Begin a new post in source/_posts</span>
+</span><span class='line'>rake preview                   <span class="c"># preview the site in a web browser</span>
+</span><span class='line'>rake push                      <span class="c"># deploy public directory to github pages</span>
+</span><span class='line'>rake rsync                     <span class="c"># Deploy website via rsync</span>
+</span><span class='line'>rake set_root_dir<span class="o">[</span>dir<span class="o">]</span>         <span class="c"># Update configurations to support publishing to root or sub directory</span>
+</span><span class='line'>rake setup_github_pages<span class="o">[</span>repo<span class="o">]</span>  <span class="c"># Set up _deploy folder and deploy branch for Github Pages deployment</span>
+</span><span class='line'>rake update_source<span class="o">[</span>theme<span class="o">]</span>      <span class="c"># Move source to source.old, install source theme updates, replace source/_includes/navigation.html with source.old&#39;s navigation</span>
+</span><span class='line'>rake update_style<span class="o">[</span>theme<span class="o">]</span>       <span class="c"># Move sass to sass.old, install sass theme updates, replace sass/custom with sass.old/custom</span>
+</span><span class='line'>rake watch                     <span class="c"># Watch the site and regenerate when it changes</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello Octopress]]></title>
@@ -646,9 +726,8 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <id>http://www.renn999.twbbs.org/archives/644</id>
     <content type="html"><![CDATA[<p>最近發現到這裡霉味很重，已經一段時間沒有更新一堆東西，另外一個原因就是最近都在<del datetime="2010-03-07T14:11:43+00:00">菸酒所</del>研究所考試，所以說大部分的時間都是拿去唸書了。</p>
 <p>我用vSlider當作我的主要佈景主題已經一段時間了，最主要是說裡面我已經改了一堆的東西外加上，如果還要換上新主題的話，又要去研究新主題的語法外加修改掛廣告&#8230;等。</p>
-<p>但是在今天拉到頁尾，看到了很刺眼的東西<br />
-<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/03/Screenshot.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/03/Screenshot.png" alt="" title="Screenshot" width="690" class="alignnone size-full wp-image-646" /></a><br />
-就是底下都會出現雙連結，雖然說之前都有看到，但是都是懶的修正&#8230;<br />
+<p>但是在今天拉到頁尾，看到了很刺眼的東西</p>
+<p>就是底下都會出現雙連結，雖然說之前都有看到，但是都是懶的修正&#8230;<br />
 <!--more--><br />
 其實修正方式非常簡單，打開navigation.php應該會看到<br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -695,9 +774,8 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 </pre></td><td class='code'><pre><code class=''><span class='line'>[Software\\Wine\\X11 Driver]
 </span><span class='line'>"ClientSideAntiAliasWithRender"="Y"</span></code></pre></td></tr></table></div></figure></div></notextile><br />
 就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了<br />
-因為如果不啟用平滑效果的話，情況會像下圖：<br />
-<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定-283x300.png" alt="" title="Screenshot-Wine 設定" width="283" height="300" class="alignnone size-medium wp-image-619" /></a><br />
-<!--more--><br />
+因為如果不啟用平滑效果的話，情況會像下圖：</p>
+<p><!--more--><br />
 在網路上已經有真正的解法了，如果您真的很有耐心的話可以看看Wine-Review的<a href="http://www.wine-reviews.net/wine-reviews/tips-n-tricks/how-to-enable-font-anti-aliasing-in-wine.html">這一篇</a><br />
 他有說到將以下的文字存成reg並且匯進去regedit<br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -717,10 +795,8 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 但是太麻煩了，最快的方式，打開終端機複製貼上<br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>wget http://files.polosatus.ru/winefontssmoothing_en.sh -O- | bash</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-然後，出現以下畫面去作選擇<br />
-<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Terminal.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Terminal-300x185.png" alt="" title="Screenshot-Terminal" width="300" height="185" class="alignnone size-medium wp-image-621" /></a><br />
-之後可以開啟Wine來看看結果<br />
-<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定-1.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-Wine-設定-1-300x296.png" alt="" title="Screenshot-Wine 設定-1" width="300" height="296" class="alignnone size-medium wp-image-620" /></a></p>
+然後，出現以下畫面去作選擇</p>
+<p>之後可以開啟Wine來看看結果</p>
 <p>這樣看起來棒多了，取代其他字型的regcode</p>
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -751,9 +827,8 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <updated>2009-12-23T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/577</id>
     <content type="html"><![CDATA[<p></big>&gt;&gt;已經成立獨立頁面<a href="http://www.renn999.twbbs.org/wordpress/wordplurk-improve">http://www.renn999.twbbs.org/wordpress/wordplurk-improve</a></big></p>
-<p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出。<br />
-<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-1.png"><img class="alignnone size-medium wp-image-578" title="Screenshot-1" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-1-300x242.png" alt="" width="300" height="242" /></a><br />
-本版本更貼近使用者的各項設定，至於未來是否要結合其他的plugin功能，讓Wordplurk越來越強大我還在思考中。<br />
+<p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出。</p>
+<p>本版本更貼近使用者的各項設定，至於未來是否要結合其他的plugin功能，讓Wordplurk越來越強大我還在思考中。<br />
 <!--more--><br />
 P.S. 這個plurk api 需要plurk api key，這個需要去plurk申請<a href="http://www.plurk.com/API">http://www.plurk.com/<span class="caps">API</span></a></p>
 <p><big><strong>如何安裝：</strong></big><br />
@@ -773,18 +848,6 @@ P.S. 這個plurk api 需要plurk api key，這個需要去plurk申請<a href="ht
 <li>多種縮網址選擇</li></p>
 </ol>
 <p>如果有任何問題 請大家在此留言 謝謝&lt;(_ _)&gt;</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The final tset Of wordplurk improve modify]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/572"/>
-    <updated>2009-12-22T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/572</id>
-    <content type="html"><![CDATA[<p>這一篇只是要作一測試</p>
-<p>改天會把我的修改文章給po出來</p>
-<p>最主要是修改了wordplurk的一些細節</p>
-<p>最初作者是用hacker出來的api下去處理</p>
-<p>我改用官方釋出的api 外加多了一點的修正</p>]]></content>
   </entry>
   
 </feed>
