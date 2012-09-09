@@ -7,9 +7,15 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="PHP備份Pixiv的bookmark(お気に入りユーザー)修正版 基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。
+	<meta name="description" content="基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。
 所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。
-(這是Memory &hellip;">
+(這是Memory Leaks的問題已經解決)
+以下為修改完的程式碼。
+1
+2
+3
+4
+5 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -190,7 +196,7 @@
 </span><span class='line'>    }while(!empty($match));
 </span><span class='line'>    
 </span><span class='line'>    curl_close($curl);
-</span><span class='line'>?></span></code></pre></td></tr></table></div></figure></div></notextile></p></div>
+</span><span class='line'>?></span></code></pre></td></tr></table></div></figure></div></notextile></p><div class="linkwithin_div"></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script></div>
 
 
 <div class="meta">
@@ -218,12 +224,7 @@
 		<span class="comments"><a href="#disqus_thread">Comments</a></span>
 	
 </div>
-
-<script>
-var linkwithin_site_id = 1454823;
-</script>
-<script src="http://www.linkwithin.com/widget.js"></script>
-<a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a></article>
+</article>
 
 	<div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
