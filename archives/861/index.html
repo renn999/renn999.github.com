@@ -7,12 +7,12 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到&#8230;XDrz
+	<meta name="description" content="Mysql轉sqlite 前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到&#8230;XDrz
 可以參考這裡sqlite &#8211; Converter Tools
 當然我的作法是將步驟分開來作的
 先將sqldump出來
 1
-mysqldump -u'username' -p'password' -- &hellip;">
+mysqldump -u'username' -p' &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -138,11 +138,7 @@ mysqldump -u'username' -p'password' -- &hellip;">
 </span><span class='line'>}
 </span><span class='line'>' > output.sql
 </span><span class='line'>cat output.sql | sqlite3 output.db > output.err</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>這樣的好處是說只要亦有問題，可以依照error message出現的錯誤去修正database.sql，老實他那個error message一直沒有辦法被output出來，建議使用script指令紀錄錯誤訊息，利用錯誤訊息慢慢去修正會比較好。</p><script>
-var linkwithin_site_id = 1454823;
-</script>
-<script src="http://www.linkwithin.com/widget.js"></script>
-<a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a></div>
+<p>這樣的好處是說只要亦有問題，可以依照error message出現的錯誤去修正database.sql，老實他那個error message一直沒有辦法被output出來，建議使用script指令紀錄錯誤訊息，利用錯誤訊息慢慢去修正會比較好。</p></div>
 
 
 <div class="meta">
@@ -170,7 +166,12 @@ var linkwithin_site_id = 1454823;
 		<span class="comments"><a href="#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
+
+<script>
+var linkwithin_site_id = 1454823;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+<a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a></article>
 
 	<div class="share">
 	<div class="addthis_toolbox addthis_default_style ">

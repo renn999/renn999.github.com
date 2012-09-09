@@ -7,15 +7,7 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣
-1
-2
-3
-4
-5
-6
-7
-[bbs@localhost 3]$ ls &hellip;">
+	<meta name="description" content="Apache修改執行user和Group和修改phpmyadmin預設網址 在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -104,11 +96,7 @@
 <p>修改phpmyadmin的預設路徑，剛灌好的phpphpmyadmin預設路徑為 http://你的網址/phpmyadmin 以前的作法是在/var/www下面將phpmyadmin的Link修改名稱即可，現在就已經不一樣了，現在已經把設定檔寫在/etc/apache2/conf.d/phpmyadmin.conf，找到<br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>Alias /phpmyadmin(修改這裡) /usr/share/phpmyadmin</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-修改完並restart apache即可。</p><script>
-var linkwithin_site_id = 1454823;
-</script>
-<script src="http://www.linkwithin.com/widget.js"></script>
-<a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a></div>
+修改完並restart apache即可。</p></div>
 
 
 <div class="meta">
@@ -136,7 +124,12 @@ var linkwithin_site_id = 1454823;
 		<span class="comments"><a href="#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
+
+<script>
+var linkwithin_site_id = 1454823;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+<a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a></article>
 
 	<div class="share">
 	<div class="addthis_toolbox addthis_default_style ">

@@ -7,10 +7,10 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。
+	<meta name="description" content="Ubuntu9.10 Nautilus解決掛載磁區要輸入密碼麻煩的動作 Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。
 首先
 1
-gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks. &hellip;">
+gksudo gedit /usr/share/polkit-1/ &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -117,11 +117,7 @@ gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks. &helli
 改成<br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;allow_active>yes&lt;/allow_active></span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>這樣要掛載磁區就不用在輸入密碼了</p><script>
-var linkwithin_site_id = 1454823;
-</script>
-<script src="http://www.linkwithin.com/widget.js"></script>
-<a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a></div>
+<p>這樣要掛載磁區就不用在輸入密碼了</p></div>
 
 
 <div class="meta">
@@ -149,7 +145,12 @@ var linkwithin_site_id = 1454823;
 		<span class="comments"><a href="#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
+
+<script>
+var linkwithin_site_id = 1454823;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+<a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a></article>
 
 	<div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
