@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-09T20:59:53+08:00</updated>
+  <updated>2012-09-10T08:54:48+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,16 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress調教メモ]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/903"/>
+    <updated>2012-09-10T08:03:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/903</id>
+    <content type="html"><![CDATA[<p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章</p>
+
+<a href="http://www.renn999.twbbs.org/archives/903" class="more-link">Read on &rarr;</a>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[rake的tips]]></title>
@@ -303,17 +313,6 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了<br />
 因為如果不啟用平滑效果的話，情況會像下圖：</p>
 <p><a href="http://www.renn999.twbbs.org/archives/618" class="more-link">Read on &rarr;</a>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wordplurk Improve]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/577"/>
-    <updated>2009-12-23T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/577</id>
-    <content type="html"><![CDATA[<p></big>&gt;&gt;已經成立獨立頁面<a href="http://www.renn999.twbbs.org/wordpress/wordplurk-improve">http://www.renn999.twbbs.org/wordpress/wordplurk-improve</a></big></p>
-<p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出。</p>
-<p>本版本更貼近使用者的各項設定，至於未來是否要結合其他的plugin功能，讓Wordplurk越來越強大我還在思考中。<br />
-<a href="http://www.renn999.twbbs.org/archives/577" class="more-link">Read on &rarr;</a>]]></content>
   </entry>
   
 </feed>

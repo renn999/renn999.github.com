@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-09T20:59:53+08:00</updated>
+  <updated>2012-09-10T08:54:48+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,85 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress調教メモ]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/903"/>
+    <updated>2012-09-10T08:03:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/903</id>
+    <content type="html"><![CDATA[<p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章</p>
+
+<!--more-->
+
+
+<p>以下是我參考了一下內部的index的page html改出來的其實好像說不難</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='diff'><span class='line'><span class="gh">diff --git a/source/atom.xml b/source/atom.xml</span>
+</span><span class='line'><span class="gh">index 83af3f8..d4aeff5 100644</span>
+</span><span class='line'><span class="gd">--- a/source/atom.xml</span>
+</span><span class='line'><span class="gi">+++ b/source/atom.xml</span>
+</span><span class='line'><span class="gu">@@ -21,7 +21,7 @@ layout: nil</span>
+</span><span class='line'>     &lt;link href=&quot;{{ site.url }}{{ post.url }}&quot;/&gt;
+</span><span class='line'>     &lt;updated&gt;{{ post.date | date_to_xmlschema }}&lt;/updated&gt;
+</span><span class='line'>     &lt;id&gt;{{ site.url }}{{ post.id }}&lt;/id&gt;
+</span><span class='line'><span class="gd">-    &lt;content type=&quot;html&quot;&gt;&lt;![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]&gt;&lt;/content&gt;</span>
+</span><span class='line'><span class="gi">+    &lt;content type=&quot;html&quot;&gt;&lt;![CDATA[{{ post.content | excerpt | expand_urls: site.url | cdata_escape }}{% capture excerpted %}{{ post.content | has_excerpt }}{% endcapture %}{% if excerpted == &#39;true&#39; %}&lt;a href=&quot;{{ site.url }}{{ root_url }}{{ post.url }}&quot; class=&quot;more-link&quot;&gt;{{ site.excerpt_link }}&lt;/a&gt;{% endif %}]]&gt;&lt;/content&gt;</span>
+</span><span class='line'>   &lt;/entry&gt;
+</span><span class='line'>   {% endfor %}
+</span><span class='line'> &lt;/feed&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>至於<code>LinkWithin</code>的話就先去<a href="http://www.linkwithin.com/">LinkWithin</a>，填入基本資訊後，在Platform的部份選擇Other，他就會給你一組code，比較快的做法直接貼到<code>source/_layouts/default.html</code>下去就可以了，這裡才是重點並且在<code>source/_layouts/post.html</code>你要的地方貼上</p>
+
+<pre><code>&lt;div class="linkwithin_div"&gt;&lt;/div&gt;
+</code></pre>
+
+<p>但LinkWithin太聰明了，我使用<a href="http://zespia.tw/Octopress-Theme-Slash/">Slash</a>這個theme的時候，他竟然會在<code>index</code>每一則訊息後面都加上去，所以說放大絕，我是直接修改<code>source/_includes/article.html</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='diff'><span class='line'><span class="gh">diff --git a/source/_includes/article.html b/source/_includes/article.html</span>
+</span><span class='line'><span class="gh">index 50846a3..1e85c87 100644</span>
+</span><span class='line'><span class="gd">--- a/source/_includes/article.html</span>
+</span><span class='line'><span class="gi">+++ b/source/_includes/article.html</span>
+</span><span class='line'><span class="gu">@@ -7,7 +7,7 @@</span>
+</span><span class='line'>  &lt;/div&gt;
+</span><span class='line'> {% else %}
+</span><span class='line'>  &lt;h1 class=&quot;title&quot;&gt;{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}&lt;/h1&gt;
+</span><span class='line'><span class="gd">- &lt;div class=&quot;entry-content&quot;&gt;{{ content }}&lt;/div&gt;</span>
+</span><span class='line'><span class="gi">+ &lt;div class=&quot;entry-content&quot;&gt;{{ content }}&lt;div class=&quot;linkwithin_div&quot; style=&#39;font-size:1.2em;margin: 0px 0px -30px;&#39;&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot;&gt;var linkwithin_site_id = 1454823;&lt;/script&gt;  &lt;script src=&quot;http://www.linkwithin.com/widget.js&quot;&gt;&lt;/script&gt;&lt;/div&gt;</span>
+</span><span class='line'> {% endif %}
+</span><span class='line'>
+</span><span class='line'> &lt;div class=&quot;meta&quot;&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[rake的tips]]></title>
@@ -819,35 +898,6 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 </span><span class='line'>"MingLiU"="你要的字型名稱"
 </span><span class='line'>"PMingLiU"="你要的字型名稱"</span></code></pre></td></tr></table></div></figure></div></notextile></p>
 <p>將其附加到user.reg後面即可</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wordplurk Improve]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/577"/>
-    <updated>2009-12-23T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/577</id>
-    <content type="html"><![CDATA[<p></big>&gt;&gt;已經成立獨立頁面<a href="http://www.renn999.twbbs.org/wordpress/wordplurk-improve">http://www.renn999.twbbs.org/wordpress/wordplurk-improve</a></big></p>
-<p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出。</p>
-<p>本版本更貼近使用者的各項設定，至於未來是否要結合其他的plugin功能，讓Wordplurk越來越強大我還在思考中。<br />
-<!--more--><br />
-P.S. 這個plurk api 需要plurk api key，這個需要去plurk申請<a href="http://www.plurk.com/API">http://www.plurk.com/<span class="caps">API</span></a></p>
-<p><big><strong>如何安裝：</strong></big><br />
-<ol><br />
-<li>首先下載<a href="http://www.renn999.twbbs.org/wordpress/downloads/wordplurk_im.zip">Wordplurk_im.zip</a></li><br />
-<li>解壓縮之後放到您的wordpress plurgin資料夾內</li><br />
-<li>在外掛設定中啟用</li><br />
-<li>設定您的Plurk 帳號密碼 <span class="caps">API</span> key等&#8230;</li><br />
-<li>當下次寫新文章發表時會自動發布到plurk上了</li></p>
-</ol>
-<p>P.S. 在Wordplurk Template中可以隨意自訂你所要得格式 預設為%%url%% &#8211; <span>%title</span>% 可以改成%%url%% (%%title%%)直接連結的模式</p>
-<p><big><strong>Wordpress版本需求：</strong></big>2.6以上</p>
-<p><big><strong>目前問題：</strong></big><br />
-<ol><br />
-<li>當文章title更新時無法更新Plurk上已經post過的(近期改善)</li><br />
-<li>多國語系支援</li><br />
-<li>多種縮網址選擇</li></p>
-</ol>
-<p>如果有任何問題 請大家在此留言 謝謝&lt;(_ _)&gt;</p>]]></content>
   </entry>
   
 </feed>

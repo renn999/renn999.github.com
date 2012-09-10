@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-09T20:59:53+08:00</updated>
+  <updated>2012-09-10T08:54:48+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress調教メモ]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/903"/>
+    <updated>2012-09-10T08:03:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/903</id>
+    <content type="html"><![CDATA[<p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章</p>
+
+<!--more-->
+
+
+<p>以下是我參考了一下內部的index的page html改出來的其實好像說不難</p>
+
+<p>```diff
+diff --git a/source/atom.xml b/source/atom.xml
+index 83af3f8..d4aeff5 100644
+--- a/source/atom.xml
++++ b/source/atom.xml
+@@ -21,7 +21,7 @@ layout: nil</p>
+
+<pre><code> &lt;link href="{{ site.url }}{{ post.url }}"/&gt;
+ &lt;updated&gt;{{ post.date | date_to_xmlschema }}&lt;/updated&gt;
+ &lt;id&gt;{{ site.url }}{{ post.id }}&lt;/id&gt;
+</code></pre>
+
+<ul>
+<li> <content type="html">&lt;![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]&gt;</content></li>
+<li> <content type="html">&lt;![CDATA[{{ post.content | excerpt | expand_urls: site.url | cdata_escape }}{% capture excerpted %}{{ post.content | has_excerpt }}{% endcapture %}{% if excerpted == 'true' %}<a href="{{ site.url }}{{ root_url }}{{ post.url }}" class="more-link">{{ site.excerpt_link }}</a>{% endif %}]]&gt;</content>
+</entry>
+{% endfor %}
+</feed>
+```</li>
+</ul>
+
+
+<p>至於<code>LinkWithin</code>的話就先去<a href="http://www.linkwithin.com/">LinkWithin</a>，填入基本資訊後，在Platform的部份選擇Other，他就會給你一組code，比較快的做法直接貼到<code>source/_layouts/default.html</code>下去就可以了，這裡才是重點並且在<code>source/_layouts/post.html</code>你要的地方貼上</p>
+
+<pre><code>&lt;div class="linkwithin_div"&gt;&lt;/div&gt;
+</code></pre>
+
+<p>但LinkWithin太聰明了，我使用<a href="http://zespia.tw/Octopress-Theme-Slash/">Slash</a>這個theme的時候，他竟然會在<code>index</code>每一則訊息後面都加上去，所以說放大絕，我是直接修改<code>source/_includes/article.html</code></p>
+
+<p>```diff
+diff --git a/source/<em>includes/article.html b/source/</em>includes/article.html
+index 50846a3..1e85c87 100644
+--- a/source/<em>includes/article.html
++++ b/source/</em>includes/article.html
+@@ -7,7 +7,7 @@
+  </div>
+ {% else %}
+  <h1 class="title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+- <div class="entry-content">{{ content }}</div>
++ <div class="entry-content">{{ content }}<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script></div>
+ {% endif %}</p>
+
+<p> <div class="meta">
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[rake的tips]]></title>
