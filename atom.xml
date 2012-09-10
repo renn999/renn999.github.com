@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-10T08:54:48+08:00</updated>
+  <updated>2012-09-10T08:59:46+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -20,7 +20,7 @@
     <id>http://www.renn999.twbbs.org/archives/903</id>
     <content type="html"><![CDATA[<p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章</p>
 
-<a href="http://www.renn999.twbbs.org/archives/903" class="more-link">Read on &rarr;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/903" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -32,7 +32,7 @@
 
 <p>剛開始用Octopress的時候感覺上速度還蠻快的，但是在將WP的文章匯入的時候就發現到，每一次的<code>generate</code>就會發現到速度會少許的減慢，好像每一次都會對所有的文章做一次的編譯，造成每次要<code>preview</code>時速度都非常慢，其實裏面有幾個有用的指令可以提昇速度。</p>
 
-<a href="http://www.renn999.twbbs.org/archives/902" class="more-link">Read on &rarr;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/902" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -45,7 +45,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 
 <p>算一算從開始用Wordpress(以下簡稱WP)已經幾年了，我只既得我一開始事由社團教學所認識的，那時沒有記錯的話是從2.3版開始，算是非常晚了那時會自己架站最主要就是看上自己架的 Blog more flexible <s>而且比較能炫耀</s>，並且整合性高，也可以自己架設相簿整合成自己的一套系統，但是經歷了一堆儲存裝置上的大地雷，以及不少次的歸零重整，外加程度上的成長，反而讓自己越來越懶，我懶得改一大堆東西，外加對於 Wordpress 這已經大到可以稱怪物的東西，以及一大堆如雞肋般的功能，還有裝太多的 plugin 拖累系統的效能，那個editor真的爛到我想殺人，都讓我非常的詬病。老實說XDite大在<a href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">Why Octopress?</a>中已經把所有的重點已經講完了，真的身同感受啊！</p>
 
-<a href="http://www.renn999.twbbs.org/archives/901/" class="more-link">Read on &rarr;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/901/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -89,7 +89,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <updated>2010-10-19T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/869</id>
     <content type="html"><![CDATA[<p>jQuery最近釋出了1.4.3，當然在翻wordpress  trac的時候剛好翻到有人釋出了更新到1.4.3的patch。我則手動的將其升級了上去，如果有程度的可以直接看<a href="http://core.trac.wordpress.org/ticket/15135">ticket/15135</a><br />
-<a href="http://www.renn999.twbbs.org/archives/869" class="more-link">Read on &rarr;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/869" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -103,7 +103,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 <p>先將sqldump出來<br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>mysqldump -u'username' -p'password' --compact --compatible=ansi --default-character-set=binary 'databasename' > database.sql</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-<a href="http://www.renn999.twbbs.org/archives/861" class="more-link">Read on &rarr;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/861" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -201,7 +201,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <id>http://www.renn999.twbbs.org/archives/799</id>
     <content type="html"><![CDATA[<p>我知道這是老梗文了，在前幾天翻出了&#8217;I, Robot&#8217;又懷念了一下，但是在播放的時候一直出現問題，才想到說我沒有灌解CSS相關的東西，<del datetime="2010-07-03T01:45:34+00:00">雖然說看正版的人應該不多吧</del>，但是還是紀錄一下。</p>
 <p><a href="https://help.ubuntu.com/community/RestrictedFormats/PlayingDVDs">ubuntu原文</a> 英文好的請直接喀這裡，&#8230;.<span class="caps">OTZ</span></p>
-<p><a href="http://www.renn999.twbbs.org/archives/799" class="more-link">Read on &rarr;</a>]]></content>
+<p><a href="http://www.renn999.twbbs.org/archives/799" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -209,7 +209,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <link href="http://www.renn999.twbbs.org/archives/769"/>
     <updated>2010-06-12T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/769</id>
-    <content type="html"><![CDATA[<p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。<a href="http://www.renn999.twbbs.org/archives/769" class="more-link">Read on &rarr;</a>]]></content>
+    <content type="html"><![CDATA[<p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。<a href="http://www.renn999.twbbs.org/archives/769" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -241,7 +241,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <content type="html"><![CDATA[<p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下&#8217;rm *.jpg&#8217;，但是手殘外加腦包的我竟然不小心下成&#8217;rm * .jpg&#8217;看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>&#8230;不不不&#8230;應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式&#8230;.<span class="caps">OTZ</span></p>
 <p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big><br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install trash-cli</span></code></pre></td></tr></table></div></figure></div></notextile><a href="http://www.renn999.twbbs.org/archives/721" class="more-link">Read on &rarr;</a>]]></content>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install trash-cli</span></code></pre></td></tr></table></div></figure></div></notextile><a href="http://www.renn999.twbbs.org/archives/721" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -250,7 +250,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <updated>2010-05-22T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/708</id>
     <content type="html"><![CDATA[<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。&quot;看&quot;起來好像也沒有比較大的問題出現了。</p>
-<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<a href="http://www.renn999.twbbs.org/archives/708" class="more-link">Read on &rarr;</a>]]></content>
+<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<a href="http://www.renn999.twbbs.org/archives/708" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -261,7 +261,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <content type="html"><![CDATA[<p>今天真是睡姿大聚集&#8230;.</p>
 <div align="center">
 <wpg2>1297</wpg2>
-<p>先來個日光浴</div><a href="http://www.renn999.twbbs.org/archives/690" class="more-link">Read on &rarr;</a>]]></content>
+<p>先來個日光浴</div><a href="http://www.renn999.twbbs.org/archives/690" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -274,7 +274,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 <p>虎斑貓在波浪版上睡覺之間</p><br />
 <wpg2>1285</wpg2><br />
 接著出現了另外一隻花貓</p>
-<p></div><a href="http://www.renn999.twbbs.org/archives/680" class="more-link">Read on &rarr;</a>]]></content>
+<p></div><a href="http://www.renn999.twbbs.org/archives/680" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -285,7 +285,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <content type="html"><![CDATA[<p>　　有看過我的plurk的人應該都知道，我已經重台南搬回到高雄住了，現在每個星期三通車回到成大去上個游泳外加等畢業然後等Online，體檢報告也不知道啥時會出爐，外加因為蹲不下去還要等醫院的通知(我的身體毛病還真多，應該是我不喜歡運動的關係吧)，然而在家裡的這段時間我不就是幫父母做事，要不就是準備公職考試，看是很閒但是心中有著不明的壓力。<br />
 　　先來說說最近完成的第一件事情吧，我已經搬回高雄了，所以說最近都是在整理家裡已經快要n年沒整理的房間，丟了一大堆東西之後才發現到那間房間的狀況有夠糟糕的，壁癌啦&#8230;之類的，當然裡面是以前我們家裡開過文具行的一些剩物，當然也勾起了一堆的回憶，說真的也丟了不少東西就是了整理完之後把牆壁刮一刮就像下面這個樣子。<br />
 <div align="center"><wpg2>1248</wpg2><wpg2>1244</wpg2></div><br />
-<a href="http://www.renn999.twbbs.org/archives/668" class="more-link">Read on &rarr;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/668" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -297,7 +297,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 <p>我用vSlider當作我的主要佈景主題已經一段時間了，最主要是說裡面我已經改了一堆的東西外加上，如果還要換上新主題的話，又要去研究新主題的語法外加修改掛廣告&#8230;等。</p>
 <p>但是在今天拉到頁尾，看到了很刺眼的東西</p>
 <p>就是底下都會出現雙連結，雖然說之前都有看到，但是都是懶的修正&#8230;<br />
-<a href="http://www.renn999.twbbs.org/archives/644" class="more-link">Read on &rarr;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/644" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -312,7 +312,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 </span><span class='line'>"ClientSideAntiAliasWithRender"="Y"</span></code></pre></td></tr></table></div></figure></div></notextile><br />
 就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了<br />
 因為如果不啟用平滑效果的話，情況會像下圖：</p>
-<p><a href="http://www.renn999.twbbs.org/archives/618" class="more-link">Read on &rarr;</a>]]></content>
+<p><a href="http://www.renn999.twbbs.org/archives/618" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
 </feed>

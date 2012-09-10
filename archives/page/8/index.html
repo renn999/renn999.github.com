@@ -7,7 +7,15 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="老實說真是可怕的惰性 外加上最近忙到快爆炸了&#8230;QQ 還有一堆鳥事要處理&#8230; 真的快要到翻桌的地步了 -&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-( &hellip;">
+	<meta name="description" content="在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣
+1
+2
+3
+4
+5
+6
+7
+[bbs@localhost 3]$ &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,9 +87,28 @@
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/133">[IOSYS] 東方真華神祭</a></h1>
+	<h1 class="title"><a href="/archives/396">Apache修改執行user和Group和修改phpmyadmin預設網址</a></h1>
 	<div class="entry-content">
-		<p>老實說真是可怕的惰性 外加上最近忙到快爆炸了&#8230;QQ</p>  <p>還有一堆鳥事要處理&#8230; 真的快要到翻桌的地步了</p>  <p><del>-</del>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-(抱怨分隔線)&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>  <p>嗯嗯 說介紹這個Lag有點大了 但是這家除了上次介紹做了&quot;三次&quot;同人音樂外&#8230;</p>  <p>這一張專輯真的是二次同人音樂了&#8230;</p>  <p>應援一下    <br /><a href="http://makashinsai.com/" target="_blank"><img src="http://makashinsai.com/image/468_60.gif" /></a>&#160;</p>  <p>老實說這家每次亦有新專輯時 一定都會有很棒的Flash</p>  <p>而且電波污染嚴重 &#8230;<span class="caps">XDDD</span></p>  <p>但是每次經過電波的洗腦之後 心情總是比較好一點</p>  <p><a href="http://makashinsai.com/pv_hakureijinja.html">博麗神社町内会音頭</a> 這個Flash真的推薦看一下</p>  <p>而且Flash作者的網站真的也建議去看一下 很棒的&#8230;</p>
+		<p>在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[bbs@localhost 3]$ ls -lt
+</span><span class='line'>total 20
+</span><span class='line'>-rw------- 2 bbs bbs 341 2009-09-01 12:53 A159PA63
+</span><span class='line'>-rw------- 1 bbs bbs 751 2009-05-02 00:20 A14VM573
+</span><span class='line'>-rw------- 1 bbs bbs 719 2009-04-27 12:06 A14VAAL3
+</span><span class='line'>-rw------- 1 bbs bbs 526 2009-02-09 12:10 A14OVB03
+</span><span class='line'>-rw------- 1 bbs bbs 255 2007-10-12 22:41 A13GV1S3</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+所以說必須要讓apache改變user和grup其實非常簡單只要修改/etc/apache2/envvars裡面的APACHE_RUN_USER及APACHE_RUN_GROUP為你要的user及group，並restart apache即可。</p>
+<p>修改phpmyadmin的預設路徑，剛灌好的phpphpmyadmin預設路徑為 http://你的網址/phpmyadmin 以前的作法是在/var/www下面將phpmyadmin的Link修改名稱即可，現在就已經不一樣了，現在已經把設定檔寫在/etc/apache2/conf.d/phpmyadmin.conf，找到<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Alias /phpmyadmin(修改這裡) /usr/share/phpmyadmin</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+修改完並restart apache即可。</p>
 		
 		
 	</div>
@@ -100,25 +127,134 @@
   
 
 
-<time datetime="2008-05-27T00:00:00+08:00" pubdate data-updated="true">May 27<span>th</span>, 2008</time></div>
+<time datetime="2009-10-12T00:00:00+08:00" pubdate data-updated="true">Oct 12<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/同人cd/'>同人CD</a>, <a class='category' href='/archives/categories/同人樂團/'>同人樂團</a>, <a class='category' href='/archives/categories/東方project/'>東方Project</a>
+	<a class='category' href='/archives/categories/架站相關/'>架站相關</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/archives/133#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/396#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/132">嘎～～！有人想&#8221;駭&#8221;我&#8230;</a></h1>
+	<h1 class="title"><a href="/archives/391">Perl版將UTF-8 -> Big5 UAO</a></h1>
 	<div class="entry-content">
-		<p>今天早上起來 看了一下瀏覽紀錄無意間發現了怪怪的東西</p>  <p>就是出現了兩個謎樣瀏覽&#8230;</p>  <p>分別是連向</p>  <p>http://myurl/wordpress/index.php?cat=999+UNION+SELECT+null,<acronym title="666,CHAR(58"><span class="caps">CONCAT</span></acronym>,user_pass,<acronym title="58"><span class="caps">CHAR</span></acronym>,666, <acronym title="58"><span class="caps">CHAR</span></acronym>),null,null,null+FROM+ wp_users+where+id=1/*</p>  <p>http://myurl/wordpress/index.php?cat=%2527 +UNION+SELECT+CONCAT(666,<acronym title="58"><span class="caps">CHAR</span></acronym>,user_pass,<acronym title="58"><span class="caps">CHAR</span></acronym>,666,<acronym title="58"><span class="caps">CHAR</span></acronym>)+FROM+wp_users+where+id= 1/*</p>  <p>我google了一下 好像有人想要利用&quot;之前&quot;的漏洞攻擊</p>  <p>試圖得到我的user and password</p>  <p>還好我的Blog吐出來是沒有用的東西&#8230;<span class="caps">XDDD</span></p>  <p>因為前一天剛好做了系統外加Blog的更新&#8230;</p>  <p>定期更新是很重要的&#8230;<span class="caps">XDDD</span></p>
+		<p>這是我第一個將PHP轉Perl的程式，也算是學一點Perl，Perl真是一個博大驚深的語言啊，老實說起來。某些方面比php簡單很多也直覺很多&#8230;XDrz</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/perl -w
+</span><span class='line'>#
+</span><span class='line'># This perl script is using GNU General Public License v2.0
+</span><span class='line'># renn999&lt;AT>ccns.ncku.edu.tw
+</span><span class='line'># http://renn999.twbbs.org
+</span><span class='line'>#
+</span><span class='line'># USAGE:ucs2big5( $str );
+</span><span class='line'>#
+</span><span class='line'># Big5 table(big5.txt)
+</span><span class='line'># using from Ztrem
+</span><span class='line'># http://zhouer.org/ZTerm/
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>print &ucs2big5('測試 試験 しけん');
+</span><span class='line'>
+</span><span class='line'>sub ucs2big5 {
+</span><span class='line'>	my $ucs_str=shift;
+</span><span class='line'>	open FILE, "big5.txt";
+</span><span class='line'>	#binmode FILE; 
+</span><span class='line'>	my $len = length $ucs_str;
+</span><span class='line'>	my ($b1,$b2,$b3,$big5_code,$ucs_code,$big5_str);
+</span><span class='line'>
+</span><span class='line'>	for( my $i = 0 ; $i &lt; $len ; $i++ ) {
+</span><span class='line'>		$b1 = ord(substr $ucs_str, $i, 1);
+</span><span class='line'>		if( $b1 &lt; 0x80 ) {
+</span><span class='line'>			$big5_str .= chr($b1);
+</span><span class='line'>		}
+</span><span class='line'>		elsif( $b1 >= 224 ) {
+</span><span class='line'>			#3code UTF-8
+</span><span class='line'>			$b1 -= 224;
+</span><span class='line'>			$b2 = ord(substr $ucs_str, ++$i, 1) - 128;
+</span><span class='line'>			$b3 = ord(substr $ucs_str, ++$i, 1) - 256;
+</span><span class='line'>			$ucs_code = $b1 * 4096 + $b2 * 64 + $b3;
+</span><span class='line'>			seek( FILE, $ucs_code * 2 , 0);
+</span><span class='line'>			read FILE, $big5_code, 2;
+</span><span class='line'>			$big5_str .= $big5_code;
+</span><span class='line'>		}
+</span><span class='line'>		elsif( $b1 >= 192 ) {
+</span><span class='line'>			#2code UTF-8
+</span><span class='line'>			$b1 -= 192;
+</span><span class='line'>			$b2 = ord(substr $ucs_str, ++$i, 1) - 256;
+</span><span class='line'>			$ucs_code = $b1 * 64 + $b2 ;
+</span><span class='line'>			seek( FILE, $ucs_code * 2 , 0 );
+</span><span class='line'>			read FILE, $big5_code, 2;
+</span><span class='line'>			$big5_str .= $big5_code;
+</span><span class='line'>		}else{
+</span><span class='line'>			$big5_str .= '?';
+</span><span class='line'>		}
+</span><span class='line'>	}
+</span><span class='line'>
+</span><span class='line'>	if(length $big5_str != 0) {
+</span><span class='line'>		$big5_str;
+</span><span class='line'>	}
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>用pietty等UAO支援的程式應該可以看得出結果</p>
 		
 		
 	</div>
@@ -137,7 +273,7 @@
   
 
 
-<time datetime="2008-05-18T00:00:00+08:00" pubdate data-updated="true">May 18<span>th</span>, 2008</time></div>
+<time datetime="2009-10-12T00:00:00+08:00" pubdate data-updated="true">Oct 12<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
@@ -146,16 +282,129 @@
 
 </div>
 	
-		<span class="comments"><a href="/archives/132#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/391#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/131">IOSYS - ごっすんリミックス</a></h1>
+	<h1 class="title"><a href="/archives/383">利用php將UTF-8 -> Big5 UAO沒有PATCH Iconv</a></h1>
 	<div class="entry-content">
-		<p>IOSYS可能沒想到 當初他們做出來的&quot;魔理沙は大変なものを盗んでいきました&quot;會這麼紅吧</p>  <p>所以這次聯合了一堆社團做了好幾首的三次創作&#8230;<span class="caps">XDDD</span></p>  <p>打算在5/25 (日) 博麗神社例大祭 開賣&#8230;</p>  <p>&quot;ごっすんリミックス アイン&quot;和&quot;ごっすんリミックス ツバイン&quot;</p>  <p><a href="http://gossun-remix.com/" target="_blank"><img src="http://gossun-remix.com/image/banner_tohog_big.jpg" /></a></p>  <p>剛剛聽了一下試聽 覺得這次的都是電波嚴重 小心被污染了&#8230;<span class="caps">XDDD</span></p>  <p>但是老實說還是有幾個社團的我真的不喜歡&#8230;</p>  <p>還有&quot;dBu music&quot;也有參加 但是在試聽曲的感覺上好像沒這麼吸引我&#8230;</p>  <p>還是等正式的歌曲出來再說吧&#8230;<span class="caps">XDDD</span></p>
+		<p>最近因為嘗試要轉換一些HTML&#8594;BBS的文章會發生的問題，所以說就寫了一個這樣的程式，因為我完全不想要動到iconv的PATCH，所以說就先利用ZTerm src中的BIG5表格下去做轉換，結果還不錯。</p>
+<p>(修正了幾個bug 091006 21：00)<br />
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="cm">/*  </span>
+</span><span class='line'><span class="cm"> *	This php is using GNU General Public License v2.0</span>
+</span><span class='line'><span class="cm"> *	renn999&lt;AT&gt;ccns.ncku.edu.tw</span>
+</span><span class='line'><span class="cm"> *	http://renn999.twbbs.org</span>
+</span><span class='line'><span class="cm"> *</span>
+</span><span class='line'><span class="cm"> *	USAGE:ucs2big5( $str );</span>
+</span><span class='line'><span class="cm"> *	</span>
+</span><span class='line'><span class="cm"> *	Big5 table(big5.txt)</span>
+</span><span class='line'><span class="cm"> *	using from Ztrem</span>
+</span><span class='line'><span class="cm"> *	http://zhouer.org/ZTerm/</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">function</span> <span class="nf">ucs2big5</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>	<span class="nv">$fp</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span> <span class="s1">&#39;big5.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span> <span class="p">);</span>
+</span><span class='line'>	<span class="nv">$len</span> <span class="o">=</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">);</span>
+</span><span class='line'>	<span class="nb">unset</span><span class="p">(</span><span class="nv">$big5_str</span><span class="p">);</span>
+</span><span class='line'>	
+</span><span class='line'>	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>	<span class="k">for</span><span class="p">(</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$len</span> <span class="p">;</span> <span class="nv">$i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>		<span class="nv">$b1</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="nv">$i</span><span class="p">]);</span>
+</span><span class='line'>		<span class="k">if</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&lt;</span> <span class="mh">0x80</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>			<span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="nv">$b1</span><span class="p">);</span>
+</span><span class='line'>		<span class="p">}</span>
+</span><span class='line'>		<span class="k">elseif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">224</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>			<span class="c1">#3code UTF-8</span>
+</span><span class='line'>			<span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">224</span><span class="p">;</span>
+</span><span class='line'>			<span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">128</span><span class="p">;</span>
+</span><span class='line'>			<span class="nv">$b3</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span>
+</span><span class='line'>			<span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">4096</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b3</span><span class="p">;</span>
+</span><span class='line'>			<span class="nb">fseek</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>			<span class="nv">$big5_code</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
+</span><span class='line'>			<span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>			<span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>		<span class="p">}</span>
+</span><span class='line'>		<span class="k">elseif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">192</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>			<span class="c1">#2code UTF-8</span>
+</span><span class='line'>			<span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">192</span><span class="p">;</span>
+</span><span class='line'>			<span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span>
+</span><span class='line'>			<span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="p">;</span>
+</span><span class='line'>			<span class="nb">fseek</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">);</span>
+</span><span class='line'>			<span class="nv">$big5_code</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
+</span><span class='line'>			<span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>			<span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>		<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span class='line'>			<span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;?&#39;</span><span class="p">;</span>
+</span><span class='line'>		<span class="p">}</span>
+</span><span class='line'>	<span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="nb">fclose</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span>
+</span><span class='line'>	<span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$big5_str</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>		<span class="k">return</span> <span class="nb">join</span><span class="p">(</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$big5_str</span><span class="p">);</span>
+</span><span class='line'>	<span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>至於BIG5.txt可以到<a href="http://zterm.googlecode.com/svn/trunk/org/zhouer/utils/conv/">http://zterm.googlecode.com/svn/trunk/org/zhouer/utils/conv/</a>中去下載 這裡就不附上了</p>
 		
 		
 	</div>
@@ -174,175 +423,136 @@
   
 
 
-<time datetime="2008-05-17T00:00:00+08:00" pubdate data-updated="true">May 17<span>th</span>, 2008</time></div>
+<time datetime="2009-10-06T00:00:00+08:00" pubdate data-updated="true">Oct 6<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/同人cd/'>同人CD</a>, <a class='category' href='/archives/categories/同人樂團/'>同人樂團</a>, <a class='category' href='/archives/categories/東方project/'>東方Project</a>
+	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/archives/131#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/383#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/130">企鵝娘 第五話 ペンギン娘♡はぁと ０５「マリー様がみてる」</a></h1>
+	<h1 class="title"><a href="/archives/371">PHP備份Pixiv的bookmark(お気に入りユーザー)修正版</a></h1>
 	<div class="entry-content">
-		<p>老實說最近都迷上用 WLW來寫Blog了&#8230;<acronym title="題外話"><span class="caps">XDDD</span></acronym></p>  <p>企鵝娘 第五話也發佈了..</p>  <p>這次有新人物追加&#8230;(看起來好邪惡&#8230;=.=)</p>  <p>官網：<a href="http://pen-musu.jp" target="_blank">http://pen-musu.jp</a>     <br /><iframe style="border-right: #ccc 1px solid; border-top: #ccc 1px solid; border-left: #ccc 1px solid; border-bottom: #ccc 1px solid" src="http://www.nicovideo.jp/thumb/za3248507" frameborder="0" width="312" scrolling="no" height="176"><a href="http://www.nicovideo.jp/watch/za3248507">【ニコニコ動画】ペンギン娘♡はぁと ０５「マリー様がみてる」</a></iframe></p>  <p>(以下有捏&#8230;)</p> 
-<p>
-		
-		<a href="/archives/130" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-05-17T00:00:00+08:00" pubdate data-updated="true">May 17<span>th</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/ニコニコ動画/'>ニコニコ動画</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/130#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/95">Windows Live Writer 第一篇PO文</a></h1>
-	<div class="entry-content">
-		<p>這微軟真的好樣的&#8230;    <br />最近他們好像有搞了一些新的東西&#8230;</p>  <p>就是可以離線寫Blog&#8230;</p>  <p>讓我真的不禁想說&#8230;</p>  <blockquote>   <p><font size="5">他們啥時有這麼好用的東西了&#8230;&lt;0&gt;</font></p> <p></blockquote>  <p>老實說他的好用我還真的被嚇到了&#8230;</p>  <p>其實說&#8230; 有支援Wordpress我就嚇到了&#8230;(毆)</p>  <p>(微軟啊！以後要多寫點這樣的軟體啊&#8230;)</p>  <p>就先說道這裡吧&#8230; 都要考試了我還再說這些&#8230;orz</p>  <p>以下是插入測試 可以不用看&#8230;<span class="caps">XDDD</span></p> <br />
-
-		
-		<a href="/archives/95" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-05-16T00:00:00+08:00" pubdate data-updated="true">May 16<span>th</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/關於軟體/'>關於軟體</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/95#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/105">當Ubuntu遇到觸控式銀幕</a></h1>
-	<div class="entry-content">
-		<p>哇靠！這真的是太強大了&#8230;</p>  <p>還真的有人這樣玩&#8230;</p>  <p>但是感覺上他控起來的感絕不怎麼好&#8230; 因為手指太粗了&#8230;<span class="caps">XDDD</span></p>  <p><object width="425" height="355"><param name="movie" value="http://www.youtube.com/v/Yx9FgLr9oTk&amp;hl=en"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/Yx9FgLr9oTk&amp;hl=en" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed></object></p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-05-16T00:00:00+08:00" pubdate data-updated="true">May 16<span>th</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/105#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/104">Windows Live Writer 使用心得</a></h1>
-	<div class="entry-content">
-		<p>這幾天用了&#8230;覺得真的太方便了</p>  <p>因為老實說 很少有離線寫Blog的軟體&#8230;</p>  <p>但是每次用網頁預視時 都會出現下面的錯誤訊息</p>  <p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/00000.jpg"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="292" alt="00000" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/00000-thumb.jpg" width="452" border="0" /></a></p>  <p>可能是我的樣式太花俏了&#8230;<span class="caps">XDDD</span> 造成很多的問題&#8230;<span class="caps">XDDD</span></p>  <p>希望這個部份下一版能改進&#8230;</p>  <p>還有一個缺點就是 文字大小的問題</p>  <p>還要手動到Html原始碼下去新增有點麻煩</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-05-16T00:00:00+08:00" pubdate data-updated="true">May 16<span>th</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/關於軟體/'>關於軟體</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/104#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/88">Blog升級筆記</a></h1>
-	<div class="entry-content">
-		<p>Wordpress2.3.3 <del>-</del>&gt; 2.5.1 (又用回來了)</p>  <p>vSlider(WP) 3.0 <del>-</del>&gt; 3.1.1</p>  <p>vSlider(WPG2) 3.0 <del>-</del>&gt;3.1.1</p>  <p>算做一下筆記吧&#8230;</p>  <p>要不然改天真的都會忘掉&#8230;</p>  <p>還有之前的那些問題迫使我降級的好像並不是wordpress本身的問題&#8230;</p>  <p>而又是IE6出現的鳥問題&#8230;= =</p>
+		<p>基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。</p>
+<p>所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。<br />
+(這是Memory Leaks的問題已經解決)</p>
+<p>以下為修改完的程式碼。<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>    require 'simplehtmldom/simple_html_dom.php';
+</span><span class='line'>        
+</span><span class='line'>    $loginurl='http://www.pixiv.net/index.php';
+</span><span class='line'>    $pixiv_id='';
+</span><span class='line'>    $password='';
+</span><span class='line'>    
+</span><span class='line'>    $curl = curl_init();
+</span><span class='line'>    curl_setopt($curl, CURLOPT_HEADER, 0);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_USERAGENT,'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)');
+</span><span class='line'>    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_COOKIEJAR, 'cookie.txt');
+</span><span class='line'>    curl_setopt($curl, CURLOPT_COOKIEFILE, 'cookie.txt');
+</span><span class='line'>    curl_setopt($curl, CURLOPT_POST, 1);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_COOKIESESSION,true);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_URL, $loginurl);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_POSTFIELDS, 'mode=login&pixiv_id='.$pixiv_id.'&pass='.$password );
+</span><span class='line'>    curl_exec($curl);
+</span><span class='line'>   
+</span><span class='line'>    $p=1;
+</span><span class='line'>    $bookmark_rest='show';//show
+</span><span class='line'>    do{
+</span><span class='line'>        $url='http://www.pixiv.net/bookmark.php?type=user&rest='.$bookmark_rest.'&p='.$p;
+</span><span class='line'>        curl_setopt($curl, CURLOPT_URL, $url);
+</span><span class='line'>        $profile=curl_exec($curl);
+</span><span class='line'>        $dom1 = new simple_html_dom();
+</span><span class='line'>        $dom1 = str_get_html($profile);
+</span><span class='line'>       
+</span><span class='line'>        $test=$dom1->find('div#content2 div[align="right"]',0)->plaintext;
+</span><span class='line'>       
+</span><span class='line'>        preg_match('/次の(.*?)件/',$test,$match);
+</span><span class='line'>                       
+</span><span class='line'>        $title2 = $dom1->find('div#content2 form#f div[style="width:140px;height:130px;float:left;text-align:center;"]');
+</span><span class='line'>
+</span><span class='line'>        foreach($title2 as $illsthtml){
+</span><span class='line'>        $illst = $illsthtml->outertext;
+</span><span class='line'>        $illst=preg_replace('/&lt;div(.*?)">&lt;input(.*?)>&lt;\/div>/','',$illst);
+</span><span class='line'>        $illst=preg_replace('/\n/', '',$illst);
+</span><span class='line'>        $illst=preg_replace('/&lt;img(.*?)>/', '',$illst);
+</span><span class='line'>        preg_match_all('/&lt;a href="member.php\?id=(.*?)">&lt;\/a>&lt;div style=\"padding-top:5px;\">(.*?)&lt;\/div>(&lt;a href="jump.php\?(.*?)" target="_blank">&lt;\/a>)?/', $illst,$match2,PREG_SET_ORDER);
+</span><span class='line'>            foreach ($match2 as $val) {
+</span><span class='line'>                echo 'http://www.pixiv.net/member.php?id='.$val[1].' - '.$val[2];
+</span><span class='line'>                if(!empty($val[4])){echo ' - '.$val[4];}
+</span><span class='line'>                echo "&lt;br />\n";
+</span><span class='line'>            }
+</span><span class='line'>        }
+</span><span class='line'>        $dom1->__destruct();//解決Memory Leaks的問題
+</span><span class='line'>        unset($profile,$dom1,$test);
+</span><span class='line'>        $p++;
+</span><span class='line'>    }while(!empty($match));
+</span><span class='line'>    
+</span><span class='line'>    curl_close($curl);
+</span><span class='line'>?></span></code></pre></td></tr></table></div></figure></div></notextile></p>
 		
 		
 	</div>
@@ -361,28 +571,129 @@
   
 
 
-<time datetime="2008-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2008</time></div>
+<time datetime="2009-09-30T00:00:00+08:00" pubdate data-updated="true">Sep 30<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>
+	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/archives/88#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/371#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/84">我就說IE6這個廢物早該被淘汰了</a></h1>
+	<h1 class="title"><a href="/archives/357">PHP+phpQuery備份Pixiv的bookmark(お気に入りユーザー)</a></h1>
 	<div class="entry-content">
-		<p>今天在處理Blog內部升級 順便看看有啥東西有蟲的</p>  <p>結果發現到header的圖一直出現問題&#8230;</p>  <p>於是乎我就對我的一些原始碼做修正&#8230;</p>  <p>But大部分都解決掉了&#8230; 唯獨短網址的一直出問題&#8230;</p>  <p>有啥問題呢？</p>  <p>請看圖&#8230;</p>  <p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/bug.jpg"><img class="alignnone size-full wp-image-85" title="bug" height="248" alt="" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/bug.jpg" width="690" /></a></p> 
-<p>
+		<p>最近老實說又多玩了一個語言，外加我今年算是個考生，所以說很多時候晚上忙一下就已經11點多了，當然最近都在養肝，忙完就睡著了&#8230;XD</p>
+<p>至於廢話就不多說了，最近學了一點Action Script 3.0，但是我基本上還是用Flash CS4下去學習，改天會開始去摸摸看Flex，希望是有時間就好(笑)。但是老實說在這個7月時也算是我過的最充實的一個月了，因為搞懂了非常之多的東西。</p>
+<p>這一個PHP只能算是一個小部份，因為也是一個小程式&#8230;.XD，但是基本上需要phpQuery，因為這個函式庫對於要抓取網頁資訊來說的話非常之方便而且簡單明瞭，對於一個複雜的網頁原始碼而言，可以簡化取出需要的資訊之後，再去做preg的動作繪比較的簡單。</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt; ?php
+</span><span class='line'>	require 'phpQuery/phpQuery/phpQuery.php';
+</span><span class='line'>	
+</span><span class='line'>	$loginurl='http://www.pixiv.net/index.php';
+</span><span class='line'>	$pixiv_id='你的PIXIV_id';
+</span><span class='line'>	$password='password';
+</span><span class='line'>	//以上為一些登入基本資訊
+</span><span class='line'>	
+</span><span class='line'>	$curl = curl_init();
+</span><span class='line'>	curl_setopt($curl, CURLOPT_HEADER, 0);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_USERAGENT,'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)');
+</span><span class='line'>	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_COOKIEJAR, 'cookie.txt');
+</span><span class='line'>	curl_setopt($curl, CURLOPT_COOKIEFILE, 'cookie.txt');
+</span><span class='line'>	curl_setopt($curl, CURLOPT_POST, 1);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_COOKIESESSION,true);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_URL, $loginurl);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_POSTFIELDS, 'mode=login&pixiv_id='.$pixiv_id.'&pass='.$password );
+</span><span class='line'>	curl_exec($curl);
+</span><span class='line'>	//登入的動作
+</span><span class='line'>
+</span><span class='line'>	$p=1;//設定起始頁
+</span><span class='line'>	$bookmark_rest='show';//hide為非公開 show為公開
+</span><span class='line'>	
+</span><span class='line'>	do{
+</span><span class='line'>		$url='http://www.pixiv.net/bookmark.php?type=user&rest='.$bookmark_rest.'&p='.$p; //bookmark網址
+</span><span class='line'>		curl_setopt($curl, CURLOPT_URL, $url);
+</span><span class='line'>		$profile=curl_exec($curl);
+</span><span class='line'>		
+</span><span class='line'>		phpQuery::newDocument($profile)->find('html > body > div#wrapper > div#pixiv > div#content2');
+</span><span class='line'>		$title = pq('div[align="right"] > a') -> html();
+</span><span class='line'>		preg_match('/次の(.*?)件/',$title,$match);
+</span><span class='line'>		//是否有下一頁的判斷用
+</span><span class='line'>
+</span><span class='line'>		$title2 = pq('form#f > div[style="width:140px;height:120px;float:left;text-align:center;"]') -> html();
+</span><span class='line'>		$title2=preg_replace('/\n/', '',$title2);
+</span><span class='line'>		$title2=preg_replace('/&lt;input (.*?)/>/', '',$title2);
+</span><span class='line'>		$title2=preg_replace('/&lt;img (.*?)/>/', '',$title2);
+</span><span class='line'>		preg_match_all('/&lt;a href="member.php\?id=(.*?)">&lt; \/a>&lt;div style=\"padding-top:5px;\">(.*?)&lt; \/div>/', $title2,$match2,PREG_SET_ORDER);
+</span><span class='line'>		
+</span><span class='line'>		foreach ($match2 as $val) {
+</span><span class='line'>			echo 'http://www.pixiv.net/member.php?id='.$val[1].' - '.$val[2]."\n";
+</span><span class='line'>		}//映出所有的繪師
+</span><span class='line'>		$p++;
+</span><span class='line'>	}while(!empty($match));
+</span><span class='line'>	
+</span><span class='line'>	curl_close($curl);
+</span><span class='line'>?></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+以上就是一個非常簡單的小範例。對於熟悉PHPQuery之後要處理抓取網頁的資訊的動作的話真的非常的簡單。</p>
+<p>這是一個非常簡單的，把PIXIV上的喜愛繪師的網址給備份出來的一個小程式，用這個列出來後才知道，原來我已經收了快要1150個繪師了&#8230;Orz</p>
 		
-		<a href="/archives/84" class="more-link">Read on &rarr;</a>
+		
 	</div>
 
 
@@ -399,54 +710,16 @@
   
 
 
-<time datetime="2008-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2008</time></div>
+<time datetime="2009-08-06T00:00:00+08:00" pubdate data-updated="true">Aug 6<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/關於軟體/'>關於軟體</a>
+	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/archives/84#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/79">企鵝娘 第四話</a></h1>
-	<div class="entry-content">
-		<p>這次怎麼只有八分多鐘啦！</p>  <p>真少！但是這次有幾個場面真是不錯&#8230;</p>  <p>話說Candy Boy下一話啥時會出來啊</p>  <p>官網：<a href="http://pen-musu.jp" target="_blank">http://pen-musu.jp</a>    <br /><iframe style="border-right: #ccc 1px solid; border-top: #ccc 1px solid; border-left: #ccc 1px solid; border-bottom: #ccc 1px solid" src="http://www.nicovideo.jp/thumb/za3098096" frameborder="0" width="312" scrolling="no" height="176"><a href="http://www.nicovideo.jp/watch/za3098096">【ニコニコ動画】ペンギン娘はぁと ０４「めぐりあい夜空（そら）の下」</a></iframe></p>  <p>(以下有捏&#8230;)</p> 
-<p>
-		
-		<a href="/archives/79" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-05-11T00:00:00+08:00" pubdate data-updated="true">May 11<span>th</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/ニコニコ動画/'>ニコニコ動画</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/79#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/357#disqus_thread">Comments</a></span>
 	
 </div>
 </article>

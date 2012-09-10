@@ -7,10 +7,12 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="老實說 我只是個新手
-這也是想說想說看看SAI可不可以在Wine上跑的一個惡趣味而已
-改天真的要去摸摸gimp了
-&lt;img src=http://pic.renn999.twbbs.org/thumb/ccbe0202fbea8960.jpg /&gt; &hellip;">
+	<meta name="description" content="前文在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。
+ip_patch.patch download
+使用方法：
+將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入
+1
+patch -p0 &lt; ip_patch. &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -82,15 +84,20 @@
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/249">練習著色&#8230;</a></h1>
+	<h1 class="title"><a href="/archives/468">Counterize II 2.14.1 IP patch(還原顯示IP功能)</a></h1>
 	<div class="entry-content">
-		<p>老實說 我只是個新手</p>
-<p>這也是想說想說看看SAI可不可以在Wine上跑的一個惡趣味而已<br />
-改天真的要去摸摸gimp了</p>
-<p><a href="http://pic.renn999.twbbs.org/view/ccbe0202fbea8960.png">&lt;img src=http://pic.renn999.twbbs.org/thumb/ccbe0202fbea8960.jpg /&gt;</a></p>
-<p>因為我真的功力沒這麼好只好先拿人家的線搞來練習了&#8230;QQ</p>
-<p>Winee是可以用沒錯啦 但是一堆快速鍵就死光了 像是Ctrl+Z&#8230;.. 而且中文語系還亂碼顯示 只好強制使用英文了</p>
-<p>P.S. 剛剛才發現到的一件事情 這位畫師畫師竟然有放線稿的PSD&#8230;囧(我還在用JPG慢慢塗&#8230;我還在用JPG慢慢塗&#8230;&lt; 囧&gt;</p>
+		<p><a href="http://www.renn999.twbbs.org/wordpress/archives/197">前文</a>在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。</p>
+<p><a href="http://www.renn999.twbbs.org/wordpress/downloads/ip_patch.patch">ip_patch.patch download</a></p>
+<p>使用方法：<br />
+將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>patch -p0 &lt; ip_patch.patch</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+如果出現<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>patching file counterizeii/counterize_install.php
+</span><span class='line'>patching file counterizeii/counterize.php</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+表示完成了，這是在Linux底下，在windows的話可能需要GnuWin32或是其他對應的軟體。</p>
 		
 		
 	</div>
@@ -109,7 +116,120 @@
   
 
 
-<time datetime="2009-05-16T00:00:00+08:00" pubdate data-updated="true">May 16<span>th</span>, 2009</time></div>
+<time datetime="2009-12-15T00:00:00+08:00" pubdate data-updated="true">Dec 15<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/about-php/'>about PHP</a>, <a class='category' href='/archives/categories/架站相關/'>架站相關</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/468#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/463">Ubuntu9.10 Nautilus解決掛載磁區要輸入密碼麻煩的動作</a></h1>
+	<div class="entry-content">
+		<p>Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。</p>
+<p>首先<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks.policy</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+之後找到<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;action id="org.freedesktop.devicekit.disks.filesystem-mount-system-internal">
+</span><span class='line'>    &lt;description>Mount a system-internal device&lt;/description>
+</span><span class='line'>    &lt;description xml:lang="da">Montér en intern enhed&lt;/description>
+</span><span class='line'>    &lt;description xml:lang="de">Eingebautes Gerät einhängen&lt;/description>
+</span><span class='line'>    &lt;message>Authentication is required to mount the device&lt;/message>
+</span><span class='line'>    &lt;message xml:lang="da">Autorisering er påkrævet for at montere et fil system&lt;/message>
+</span><span class='line'>    &lt;message xml:lang="de">Zugriffsrechte werden benötigt um das Gerät einzuhängen&lt;/message>
+</span><span class='line'>    &lt;defaults>
+</span><span class='line'>      &lt;allow_any>no&lt;/allow_any>
+</span><span class='line'>      &lt;allow_inactive>no&lt;/allow_inactive>
+</span><span class='line'>      &lt;allow_active>auth_admin_keep&lt;/allow_active>
+</span><span class='line'>    &lt;/defaults>
+</span><span class='line'>  &lt;/action></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+把<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;allow_active>auth_admin_keep&lt;/allow_active></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+改成<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;allow_active>yes&lt;/allow_active></span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>這樣要掛載磁區就不用在輸入密碼了</p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-14T00:00:00+08:00" pubdate data-updated="true">Dec 14<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/linux/'>Linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/463#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/455">Google Chrome OS試用心得</a></h1>
+	<div class="entry-content">
+		<p>今天用BT將Google Chrome OS拉回來之後，打開看了一下這個號稱開機只要10秒內的神奇作業軟體。</p>
+<p>我是直接使用VirtualBox開機後感覺上有點頓頓的&#8230;<br />
+
+		
+		<a href="/archives/455" class="more-link">Read More &#8230;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-03T00:00:00+08:00" pubdate data-updated="true">Dec 3<span>rd</span>, 2009</time></div>
 	<div class="tags">
 
 
@@ -118,68 +238,24 @@
 
 </div>
 	
-		<span class="comments"><a href="/archives/249#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/455#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/243">Linux音訊轉檔(一)</a></h1>
+	<h1 class="title"><a href="/archives/446">Server上的一些變動紀錄</a></h1>
 	<div class="entry-content">
-		<p>再這裡把幾個常用的有損及無損音樂壓縮整理一下，以及他們在Linux底下如何轉檔所作的整理，基本上無損壓縮壓縮的話不外乎看到的就是tta(<a href="http://true-audio.com/">TrueAudio</a>) ape(<a href="http://www.monkeysaudio.com/">Monkey&#8217;s Audio</a>) flac(<a href="http://flac.sourceforge.net/">Free Lossless Audio Codec</a>) wv(<a href="http://www.wavpack.com/">Wavpack</a>) tak(<a href="http://www.thbeck.de/Tak/Tak.html">(T)om&#8217;s lossless (A)udio (K)ompressor</a>)，有損的話Mp3(<span class="caps">MPEG</span>-1 Audio Layer 3) Ogg(<a href="http://zh.wikipedia.org/w/index.php?title=Xiph.Org_%E5%9F%BA%E9%87%91%E6%9C%83&amp;variant=zh-tw">Ogg Vorbis</a>) <acronym title="Advanced Audio Coding"><span class="caps">AAC</span></acronym>，基本上比較流行的格式不外乎上面幾種<br />
-
-		
-		<a href="/archives/243" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-15T00:00:00+08:00" pubdate data-updated="true">May 15<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/243#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/235">Ubuntu Tweak - 方便設定Ubuntu設定</a></h1>
-	<div class="entry-content">
-		<p>這真是一個好用的工具啊，真的是好用到炸了XD<br />
-如果說要改一些設定的話都要去翻一些設定檔，但是這個Ubuntu Tweak已經完完全全的幫你&quot;寬便便&quot;了<br />
-<ul><br />
-<li>官網：<a href="http://ubuntu-tweak.com/">Ubuntu Tweak</a></li><br />
-<li>下載：<a href="http://ubuntu-tweak.com/downloads">Official download page</a></p>
-<p></li></ul><br />
-當初找了老半天的鬼設定，這裡面都有<br />
-看來這個又是一套必裝的軟體了</p>
-<p>一些截圖<br />
-<a href="http://pic.renn999.twbbs.org/view.php?pic=caeba90887c260ec.png">&lt;img src=http://pic.renn999.twbbs.org/thumb/caeba90887c260ec.jpg /&gt;</a><br />
-這是歡迎畫面 感覺上簡單大方<br />
-<a href="http://pic.renn999.twbbs.org/view.php?pic=8693507822a9eb9c.png">&lt;img src=http://pic.renn999.twbbs.org/thumb/8693507822a9eb9c.jpg /&gt;</a><a href="http://pic.renn999.twbbs.org/view.php?pic=0ff401cebf7e7317.png">&lt;img src=http://pic.renn999.twbbs.org/thumb/0ff401cebf7e7317.jpg /&gt;</a><br />
-<a href="http://pic.renn999.twbbs.org/view.php?pic=f9dfa4cc0a8f677f.png">&lt;img src=http://pic.renn999.twbbs.org/thumb/f9dfa4cc0a8f677f.jpg /&gt;</a><a href="http://pic.renn999.twbbs.org/view.php?pic=838275d11112e148.png">&lt;img src=http://pic.renn999.twbbs.org/thumb/838275d11112e148.jpg /&gt;</a><br />
-但是老實說內部功能可不是簡單大方啊&#8230;XD<br />
-<p>大家可以參考參考一下官網的<a href="http://ubuntu-tweak.com/about">About</a> 看來未來的版本應該很令人期待</p></p>
+		<p>前一兩個星期從Ubuntu9.04直接升級到9.10，看似沒有問題。但是今天看了一下備份的紀錄只有到091102，好像Postfix沒有動作的樣子，至於為啥沒有動作，我就不想浪費時間去找問題，於是我參考<a href="http://plog.longwin.com.tw/">Tsung</a>大的<a href="http://plog.longwin.com.tw/my_note-unix/2009/08/27/ssmtp-shell-gmail-send-mail-2009">這一篇</a>，把postfix換掉改用gmail的smtp來送我的備份檔，除了附件大小要注意之外，還是可以使用mutt來送東西。這樣真的省得時間再去設定postfix。</p>
+<p>至於mutt的話之前的版本按照我在前一篇的<a href="http://www.renn999.twbbs.org/wordpress/archives/184">自動MySQL備份搞定</a>，中的script中一定會發現到會吐出error，他會跟你說找不到[mail位置＠where.are.you]這個檔案，我是不清楚新板式不是在這裡有改了啥東西，但是這個問題我改一下參數順序就可以了<br />
+原始為：<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo "$today Data base backup" | mutt -s "Web Mysql Database Backup" -a  sqlbak$today.zip [mail位置＠where.are.you]</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+改成<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo "$today Data base backup" | mutt [mail位置＠where.are.you] -s "Web Mysql Database Backup" -a  sqlbak$today.zip</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>還有我的/etc/resolv.conf每次重新開機都會跑掉，於是我把resolvconf給remove就ok了 :-P</p>
 		
 		
 	</div>
@@ -198,281 +274,7 @@
   
 
 
-<time datetime="2009-05-12T00:00:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/235#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/226">Mplayer SVN 29259</a></h1>
-	<div class="entry-content">
-		<p>老實說 這算是一個美麗的錯誤？<br />
-今天原本想寫一個比較文就是有沒有打入CoreAVC-for-Linux的外掛的差別<br />
-但是讓我覺得非常驚訝的是我沒打CoreAVC-for-Linux跟有打一樣&#8230;.Orz</p>
-<p>應該是說Mplayer已經寫一個libavcodec的東東進去了 讓H264的解碼好了一點<br />
-(他X的 我前幾天幹的事情真的好像拖褲子放屁)<br />
-而且最主要的是說 效能比CoreAVC-for-Linux還要好</p>
-<p>更何況開frame drop時CoreAVC-for-Linux會產生超嚴重的破圖現象<br />
-所以說以後不用拖褲子放屁多弄一個CoreAVC-for-Linux了</p>
-<p>基本上我是建議說 自己SVN一個一個新版本再依自己的喜好compiler 把Gui關掉<br />
-因為沒有人會去用Mplayerr當作前導程式吧&#8230;= =a
-		
-		<a href="/archives/226" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-05T00:00:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/226#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/216">CoreAVC-for-Linux dshowserver.patch for mplayer.29242</a></h1>
-	<div class="entry-content">
-		<p>就是就是要在Linux底下看H264的影片 老實說都要耗盡好大的一番功夫<br />
-在Linux底下沒有一套一套可以把H264解好的Codec 所以說我還是要單靠<a href="http://code.google.com/p/coreavc-for-linux/">CoreAVC-for-Linux</a><br />
-但是老實說這個好用的東西好像沒有在更新了了&#8230;Orz<br />
-裡面的dshowserver.patch對於新版的Mplayer好像沒有辦法Patch<br />
-所以說我就非常單純的&quot;手動&quot;把dshowserver.patch的東西手動去自己更新<br />
-難怪之前用原本的Patch去作的話在compile的過程中都會發生錯誤<br />
-所以說我就自己來稿定一個Patch</p>
-<p>因為我這時候svn出來的mplayer版本為29242<br />
-所以說有新版本的話不一定能用 就版本也不一定能用<br />
-要不然的自己去讀.patch檔自己手動檔自己手動Patch也可以</p>
-<p>simple english:<br />
-The code from svn is still in 82, and the dshowserver.patch won&#8217;t work so I differ the patch and codes by myself and make a new dshowserver.patch for Mplayer svn version 29242. you can download from here.(Please forgive me my pool english&#8230;Orz)</p>
-<p><a href="http://web.renn999.twbbs.org/~renn999/dshowserver.patch">dshowserver.patch for mplayer.29242 download</a><br />
-<a href="http://web.renn999.twbbs.org/~renn999/mplayer_20090503-2_i386.deb">mplayer.29242 patched Deb pack for i386 Ubuntu 9.10(Unofficial Pack)</a></p>
-<p>最主要是說網路上好多的資料都沒有說到這一部份&#8230;Orz</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-03T00:00:00+08:00" pubdate data-updated="true">May 3<span>rd</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/216#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/207">Ubuntu 9.04 Ext4 災情外加解決報告&#8230;囧&#8221;></a></h1>
-	<div class="entry-content">
-		<p>前幾天非常高興的把我的1T硬碟的的所有Partition的Partition的Ext3轉換成轉換成Ext4，當然我覺得我真的做的太大膽了，轉完之後在做大量檔案搬移的時候，災難已經開始發生了&#8230;.囧rz，因為之前在google時是有看到有人因為ext4而造成Loss DATA的狀況，但是我在想說但是我在想說Ubuntuu已經開始推了，應該是沒問題才對，於是就很放心的把我1T上的所有partitionn全部轉了過去，但是今天才是慘劇的開始，原因事因為我正在因為某些原因需要騰出大量的Freespace，所以說很直覺得將我的檔案搬過去，但是每搬到一段時間後，Ubuntu娘就整個失神了，我當初只是想說應該只是小問題吧，直到的第三次，第四次&#8230;&lt;囧&gt;，我就不甘心的打開Epiphany來google &#8220;ext4 wiki&#8221;(不要在提Firefox了)，真的是讓我囧了一下下
-		
-		<a href="/archives/207" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-29T00:00:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/207#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/200">Ubuntu 9.04 發佈</a></h1>
-	<div class="entry-content">
-		<p>今天剛好是Ubuntu9.04發佈的日子<br />
-所以說就想說升級來試試看的心態下去升級了<br />
-整體讓人感覺上對於速度的提昇有不少的改進<br />
-當然我就順道把我的桌機和我就順道把我的桌機和Serverr一起升級上去了</p>
-<p>當然最直覺的感覺開機速度提昇不少<br />
-還有一些的的小地方感覺上沒有這麼頓了<br />
-登入畫面變得比較酷<br />
-但是目前還有去測試Ext4怎樣<br />
-這應該是晚一點的事情了&#8230;</p>
-<p>這裡就來寫寫升級的方式好了<br />
-
-		
-		<a href="/archives/200" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-23T00:00:00+08:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/200#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/197">CounterizeII IP紀錄功能</a></h1>
-	<div class="entry-content">
-		<p>在Wordpress中CounterizeII的一些紀錄功能真的很好用<br />
-但是作者在2.13.x版左右開始就開始把IP紀錄的功能拿掉 因為在某些國家IP的紀錄是不合法的<br />
-但是我老實說啦沒了那種功能 就像吃飯沒有筷子一樣 真的非常的不方便<br />
-如果有人亂版 亂塞東西 都沒有伴法有效的Block掉 所以我之前都是一直只有維持在2.12.x版<br />
-最近就心血來潮把這項功能給加回來<br />
-老實說 弄完沒多久自己google了一下才發現到 原來已經有人老早就寫出來了&#8230;Orz<br />
-<a href="http://www.beardedknight.com/tech/fixing-counterize-ii-2141/">http://www.beardedknight.com/tech/fixing-counterize-ii-2141/</a></p>
-<p>害我還花了不少時間&#8230;Orz<br />
-但是我只有改到兩個地方 沒有像說他改得這麼詳細&#8230;XD</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-19T00:00:00+08:00" pubdate data-updated="true">Apr 19<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/197#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/184">自動MySQL備份搞定</a></h1>
-	<div class="entry-content">
-		<p>最近把新機器弄了起來 就想說要把我的Blog搬到我自己的新機器上面去(有新家真好&#8230;<span class="caps">XDDD</span>)<br />
-當然因為我之前實在是太惡搞我學弟的機器 所以以至於說一堆MySQL的基本指令不能用(就指令找不到啦)<br />
-我真的頓時覺得超QQ的 因為我嘗試使用PHPMyaadmin去Dump出我的資料 但是我真的很多當初不曉得怎麼搞的<br />
-一堆資料庫的編碼不對 導致說PHPmyadmin太聰明的邦我轉碼 變成名副其實的&quot;UTF-8亂碼&quot;<br />
-都還原不回來 到最後把整個MySQL殺掉重裝 才搞定好這個問題 到最後的問題也是用mysqldump搞定<br />
-前幾天都在想說要怎麼做備份 簡單來說就是一整個備份策略(就是外加網站檔案 因為太大了寄不出去)<br />
-講一個非常老實的話我還沒完全擬定好&#8230;Orz</p>
-<p>因為我最想要的就是直接mail到我的mailBox(因為我有Google app mail空間丟著很費浪&#8230;Orz 反正7G多了 當作一種備份儲存裝置也不錯 最重要的是mail fliter也弄的不錯)<br />
-所以說我要如何做到最基本的每天就定時dump出MySQL &#8212;&gt; Zip sql &#8212;&gt; mail附件出去<br />
-這就是最基本的處理方式 雖然說有的我之前已經實做過了<br />
-前幾天在搞定自己電腦的時候問題還是一堆</p>
-<p>這裡簡述一下流程
-		
-		<a href="/archives/184" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-30T00:00:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2009</time></div>
+<time datetime="2009-11-11T00:00:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
@@ -481,18 +283,19 @@ The code from svn is still in 82, and the dshowserver.patch won&#8217;t work so 
 
 </div>
 	
-		<span class="comments"><a href="/archives/184#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/446#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/183">當Blogger遇上Wordpress</a></h1>
+	<h1 class="title"><a href="/archives/437">9.10登入以及開機畫面[xsplash]篇</a></h1>
 	<div class="entry-content">
-		<p>最近因為一要把本Blog遷站外加IP的動作 開始在整理內部的東西   <br />(老實說太久沒整理了 才發現到裡面當初為了要測試產生的垃圾一堆)</p>  <p>當然我也一併整理我在EveryDNS上面的DomainName把一些沒有用的給砍掉，但是沒想到我竟然有為google Blogger設了一個網址給他，既然有了這個資源當然說就是要好好得利用</p>  <p>Step 1. Wordpress 文章轉移</p>  <p>老實說，我只是要作一個鏡像站而已，光是這個問題就<strike>天殺的</strike>浪費了我不少時間，首先就是WordPress所輸出的XML為他們自家的格式(WordPress eXtended <span class="caps">RSS</span> 簡稱WXR 為啥會讓我想到rxw…)，然後把這個XML丟給Blogger他們又不吃他，到最後找了一堆工具，像是w2b…之類的，但是他們都好像是用奇怪的Post方式，超過50篇之後就不讓你丟了，所以說還要匯入的方式比較快，但是光是這個問題也是<strike>天殺的</strike>浪費我好多時間，到最後所找到的方式…Orz，就是利用Pixnet把wordpress的XML匯入之後(文章不知道為啥會從7X篇暴增到10X篇 原來多了一堆垃圾)，所以要要匯出之前要先作一下整理，匯出MT檔之後還是要用記事本整理一下，再用BlogTrans轉換成Blogger的XML才會入成功。</p>  <p>Step 2. Sync to Blogger</p>  <p>老實說這巷功能還好，在Blogger上開啟mail Post，再到Wordpress加上<a href="http://blog.derjohng.com/dj-email-publish/">DJ EmailPublish</a>將PO文的時候他會自動的將文章利用mailPost的方式Post一份到Blogger上，本文就是了…XDDD</p>
+		<p>翻完以上的文章之後，老實說那些有些部份只適用9.04以前的，今天就研究了一下要如何修改，9.10的那些介面，因為9.10跟以往不大一樣的地方就是他們的gdm版本是比較新的(廢話)，因為這個原因他們的登入以及Splash佈景待改笧用新版，而比較特別的就是Splash改用了xSplash。</p>
+<p><big>修改登入畫面：</big></p><p>
 		
-		
+		<a href="/archives/437" class="more-link">Read More &#8230;</a>
 	</div>
 
 
@@ -509,16 +312,16 @@ The code from svn is still in 82, and the dshowserver.patch won&#8217;t work so 
   
 
 
-<time datetime="2009-03-25T00:00:00+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2009</time></div>
+<time datetime="2009-11-06T00:00:00+08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
+	<a class='category' href='/archives/categories/linux/'>Linux</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/archives/183#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/437#disqus_thread">Comments</a></span>
 	
 </div>
 </article>

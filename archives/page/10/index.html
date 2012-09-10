@@ -7,11 +7,10 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="不知道有再看的人有沒有發現到&#8230;XDDD
-本站的網址變成了http://0&#215;8c74fa04/~renn999/
-這個是在PCADV實驗室看到的這真是一個非常好玩的東西
-只不過沒有想到IP也可以這麼玩..
-原文可以到http://www.pcadv.com.tw/?p= &hellip;">
+	<meta name="description" content="WordPlurk以要對wordpress發文之後把標題連結同步到Plurk真的非常的方便，當然我也小看了一下原始碼對於中文語系的話也些地方還是可以調整的。 1
+2
+3
+curl_setopt($curl, CURLOPT_URL, &#39;http://www.plurk.com/ &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -83,14 +82,37 @@
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/59">關於新網址</a></h1>
+	<h1 class="title"><a href="/archives/328">WordPlurk一些細部修改</a></h1>
 	<div class="entry-content">
-		<p>不知道有再看的人有沒有發現到&#8230;<span class="caps">XDDD</span></p>
-<p>本站的網址變成了http://0&#215;8c74fa04/~renn999/</p>
-<p>這個是在<a href="http://www.pcadv.com.tw" target="_blank">PCADV實驗室</a>看到的這真是一個非常好玩的東西</p>
-<p>只不過沒有想到IP也可以這麼玩..</p>
-<p>原文可以到http://www.pcadv.com.tw/?p=316看看 真的是挺有趣的東西</p>
-<p>應該只是說IP的另外一種表示方法而已&#8230;</p>
+		<p>WordPlurk以要對wordpress發文之後把標題連結同步到Plurk真的非常的方便，當然我也小看了一下原始碼對於中文語系的話也些地方還是可以調整的。</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">curl_setopt($curl, CURLOPT_URL, &#39;http://www.plurk.com/TimeLine/addPlurk&#39;);</span>
+</span><span class='line'><span class="x">curl_setopt($curl, CURLOPT_POSTFIELDS, &#39;qualifier=shares&amp;content=&#39;. $new_status .&#39;&amp;lang=en&amp;no_comments=0&amp;uid=&#39; . $uid[0]);</span>
+</span><span class='line'><span class="x">$post = curl_exec($curl);</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+在台灣地區的話，於第29行網址的部份lang=en可以改成lang=tr_ch，這樣在plurk上就不會出現英文，qualifier=share這裡可以改變plurk post的狀態就是&quot;說&quot;&quot;想要&quot;那些有的沒的<br />
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">the_post();</span>
+</span><span class='line'><span class="x">$post_url = file_get_contents(&#39;http://tinyurl.com/api-create.php?url=&#39; . get_permalink());</span>
+</span><span class='line'><span class="x">$title = get_the_title();</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>在46行的部份<code>'http://tinyurl.com/api-create.php?url='</code>這是將網址用tinyurl縮網如果不想縮網的話可以去掉，要不然要用自己喜歡的服務也可以(0rz.tw的服務好像被拿掉了但是我在研究看看)，我是不知道網址太長會怎樣&#8230;Orz，因為我是用我自己的短網址，我還刻意做了一個api給他用&#8230;XD</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">$i = &#39;\&#39;&#39; . $title . &#39;\&#39; - &#39; . $post_url;</span>
+</span><span class='line'><span class="x">			</span>
+</span><span class='line'><span class="x">$plurk_username = get_option(&#39;wordplurk_username&#39;, 0);</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+在51行的部份就是post到Plurk的時候會出現的樣式，他這邊就設計的不怎麼好就是了，這裡通常會改成<br />
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">$i = $post_url . &#39; (&#39;. $title .&#39;)&#39; ;</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+讓title直接變成連結的方式</p>
 		
 		
 	</div>
@@ -109,31 +131,48 @@
   
 
 
-<time datetime="2008-04-01T00:00:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2008</time></div>
+<time datetime="2009-06-21T00:00:00+08:00" pubdate data-updated="true">Jun 21<span>st</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
+	<a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>, <a class='category' href='/archives/categories/架站相關/'>架站相關</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/archives/59#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/328#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/53">解完了&#8230;</a></h1>
+	<h1 class="title"><a href="/archives/315">ImageUpon檔案副檔名判斷修改</a></h1>
 	<div class="entry-content">
-		<p>那個Hackerskill的20關破完了&#8230;</p>
-<p>心得就是</p>
-<p>JavaScript 真的只適合作為特效用的語法 不大適合用在 一些像是密碼之類的東西&#8230;</p>
-<p>密碼還是利用PHP寫會比較好 而一個網管人元千萬也不要在網頁上留有關密碼的資訊&#8230;</p>
-<p>不管如何 還是會備有心的駭客破解的&#8230;<span class="caps">XDDD</span></p>
-<p>http://isatcis.com/ 這個網站太難了 不大想破了</p>
-<p>只到了14關沒破,,,</p>
+		<p>今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案&#8230;Orz，優點也是可以正確的去辨識檔案<br />
+<p>修改部份：<br />
+找到<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$suffix = strtolower(substr($_FILES['uploadimg']['name'],-4));</span></code></pre></td></tr></table></div></figure></div></notextile></p><br />
+<p>改成：<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$img_info = getimagesize($_FILES['uploadimg']['tmp_name']);
+</span><span class='line'>$mime = $img_info['mime'];
+</span><span class='line'>list($t, $suffix) = split('/', $mime);
+</span><span class='line'>if ($suffix == 'jpeg') //這個部份將JPEG檔名轉成jpg
+</span><span class='line'>	$suffix = 'jpg';
+</span><span class='line'>$suffix='.'.$suffix;//加上點這樣整體架構不用去作修改</span></code></pre></td></tr></table></div></figure></div></notextile></p><br />
+<p>雖然說多了很多的步驟，但是隨便拿一張圖附檔亂改，都還可以正確的去作辨識，取得應有的副檔名。</p><br />
+<p>如果還是要使用上傳檔案的檔名去取得副檔名的話，我想到比較好的方式還是使用preg_match會比較正統，因為畢竟副檔名不是只有三個字<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>preg_match('/(.*?)[.](\w+$)/u', $_FILES['uploadimg']['name'], $regs);
+</span><span class='line'>$suffix = '.'.strtolower($regs[2]);</span></code></pre></td></tr></table></div></figure></div></notextile></p></p>
 		
 		
 	</div>
@@ -152,33 +191,29 @@
   
 
 
-<time datetime="2008-03-25T00:00:00+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2008</time></div>
+<time datetime="2009-06-20T00:00:00+08:00" pubdate data-updated="true">Jun 20<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
+	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/archives/53#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/315#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/52">Hackerskill</a></h1>
+	<h1 class="title"><a href="/archives/291">Google Chromium for Linux總算給我顯示出中文了</a></h1>
 	<div class="entry-content">
-		<p>老實說&#8230; 前幾關真的好簡單</p>
-<p>但是後面就卡關了&#8230;</p>
-<p>改天寫一下解答好了&#8230;<span class="caps">XDDD</span></p>
-<p>http://isatcis.com/<br />
-Level 8</p>
-<p>http://www.hackertest.net/<br />
-目前Level 12</p>
+		<p><a href="http://pic.renn999.twbbs.org/view.php?pic=abbba84962814770.png" target="_blank"><img src="http://pic.renn999.twbbs.org/upload/abbba84962814770.png" alt="" width="640" /></a></p>
+<p>之前知道開始放出&quot;超級不穩定版&quot;，我就決定要自己測試看看，但是裝完之後一直都是方塊文字，但是聽說網路上有的人是正常出現中文字，我今天才想到最主要的問題點。</p>
+<p>
 		
-		
+		<a href="/archives/291" class="more-link">Read More &#8230;</a>
 	</div>
 
 
@@ -195,30 +230,40 @@ Level 8</p>
   
 
 
-<time datetime="2008-03-23T00:00:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2008</time></div>
+<time datetime="2009-06-18T00:00:00+08:00" pubdate data-updated="true">Jun 18<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
+	<a class='category' href='/archives/categories/linux/'>Linux</a>, <a class='category' href='/archives/categories/關於軟體/'>關於軟體</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/archives/52#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/291#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/51">Hacker Test</a></h1>
+	<h1 class="title"><a href="/archives/264">PTTBlog-Rolling嵌入Wordpress vSlider Theme</a></h1>
 	<div class="entry-content">
-		<p>http://www.hackertest.net</p>
-<p>已經破到第7關了&#8230;</p>
-<p>感覺上前6關真簡單</p>
-<p>第7關卡關中&#8230;</p>
+		<p>昨天花了一點時間處理這個東西<br />
+竟然沒想到被我弄了出來</p>
+<p>其實這鬼東西我很早已就很想弄了<br />
+但是基於自己技術上的問題</p>
+<p>但是老實說這也只是簡單的PHP  <span class="caps">XML</span> DOM而已<br />
+因為這也是我首次寫一個比我想像還要龐大的東西(對我來說啦&#8230;.&lt;囧&quot;)<br />
+畢竟也是花了一點時間在Try&amp;Error上</p>
+<p>因為我不會寫Wordpress的Plugin所以說在設定以及使用上面有點不這麼的方便<br />
+也不能套用在別的theme上面<br />
+另外 我把內部一些html ifram的TAG轉成noifram這是為了一些安全上的考量<br />
+以及除去一些RSS AD的影響 如果自己的如果自己的Blog上有自己的ads又不想被影響的話<br />
+(我是不知道會不會影響 但是心中就是怪怪的)</p>
+<p>畢竟這是暴力改出來的東西<br />
+
 		
-		
+		<a href="/archives/264" class="more-link">Read More &#8230;</a>
 	</div>
 
 
@@ -235,35 +280,35 @@ Level 8</p>
   
 
 
-<time datetime="2008-03-23T00:00:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2008</time></div>
+<time datetime="2009-05-20T00:00:00+08:00" pubdate data-updated="true">May 20<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
+	<a class='category' href='/archives/categories/about-php/'>about PHP</a>, <a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/archives/51#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/264#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
 
 
     <article class="post">
-	<h1 class="title"><a href="/archives/50">最近架了一個Wiki&#8230;</a></h1>
+	<h1 class="title"><a href="/archives/256">最近在玩XML的語法</a></h1>
 	<div class="entry-content">
-		<p>最近架了一個Wiki Http://nckuccns.twbbs.org/~renn999/wiki/</p>
-<p>用了一下之後才發現到 如果這個Wiki要認真改起來的話&#8230;</p>
-<p>也可以當一個 Blog來用&#8230;Orz 因為Wiki我之所以會價的原因是因為用他來做一些筆記真的很好用&#8230;</p>
-<p>但是如果用起來的話這個Blog可能會冷掉吧&#8230;<span class="caps">XDDD</span></p>
-<p>但是Wiki真的很好用的說 我所用的Wiki是用MediaWiki架設的&#8230;</p>
-<p>但是架起來簡單 但是後台管理介面不大親和 很多東西都要自己改</p>
-<p>比較屬於進階者所使用的 而且大部分的PHP+Mysql免費空間都不支援他的安裝</p>
-<p>故需要自己架設伺服器所使用&#8230;</p>
-<p>一般的人還是找人家叫好的免費Wiki就夠了 雖說我就是免費的用不習慣 就自己架了&#8230;</p>
+		<p>只是先拿只是先拿Plurk的的RSS來先玩玩看<br />
+結果如下<br />
+<a href="http://pic.renn999.twbbs.org/upload/280228bebfe454ee.png" target=_blank>&lt;img src=&#8220;http://pic.renn999.twbbs.org/upload/280228bebfe454ee.png&#8221; width=640  /&gt;</a></p>
+<p>在改一下程式<br />
+<a href="http://pic.renn999.twbbs.org/upload/2631eda66f9d3c35.png" target=_blank>&lt;img src=&#8220;http://pic.renn999.twbbs.org/upload/2631eda66f9d3c35.png&#8221; width=640  /&gt;</a></p>
+<p>變成可以顯示回應，但是這種作法好暴力&#8230;= =<br />
+主要是要去檢查每一個的Plurk回應rss 可能會造成對主網站多餘的loading<br />
+所以說只是玩玩而已</p>
+<p>原始碼如下：
 		
-		
+		<a href="/archives/256" class="more-link">Read More &#8230;</a>
 	</div>
 
 
@@ -280,218 +325,16 @@ Level 8</p>
   
 
 
-<time datetime="2008-03-18T00:00:00+08:00" pubdate data-updated="true">Mar 18<span>th</span>, 2008</time></div>
+<time datetime="2009-05-19T00:00:00+08:00" pubdate data-updated="true">May 19<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
+	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/archives/50#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/49">最近太多雜事了&#8230;</a></h1>
-	<div class="entry-content">
-		<p>最近一直都沒有寫網誌&#8230;Orz 一部分的原因是我真的惰性太強烈了&#8230;</p>
-<p>另外一部份真的是我的雜事太多了 (講難聽點就是不務正業&#8230;)</p>
-<p>因為前幾次迷上了PunBB的架設 融和在WordPress中&#8230;</p>
-<p>但是我對於網路上得改法就是直接將HTML語法貼上的作法覺得不大適當&#8230;</p>
-<p>到時網誌本身做些變動時還要刻意的去改PunBB的佈景&#8230;</p>
-<p>我認為有點不當&#8230; 所以近期看看有沒有新的方法可以使用的&#8230;</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-03-16T00:00:00+08:00" pubdate data-updated="true">Mar 16<span>th</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/49#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/48">Ext2 Installable File System for Windows</a></h1>
-	<div class="entry-content">
-		<p>這是一個可以讓Windows讀取Linux的EXT2或EXT3的分個區工具  最新版已經到了1.11版其中有不少的更新</p>
-<p><a href="http://www.fs-driver.org/" target="_blank">官方網站</a> 可以到裡面看一下</p>
-<p>主要功用及支援：
-		
-		<a href="/archives/48" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-03-02T00:00:00+08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/48#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/47">PunBB in Wordpress完成</a></h1>
-	<div class="entry-content">
-		<p>過了一陣子 的研究 和爬了無數的google搜尋</p>
-<p>總算把著個嵌入到我的wordpress中了</p>
-<p>國寶大師前一陣子 跟我反應說在IE底下的字很小</p>
-<p>所以我修了一下我的佈景主題的CSS 讓字變大點 &#8230;</p>
-<p>就先這樣子了&#8230;</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-03-02T00:00:00+08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/punbb/'>PunBB</a>, <a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/47#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/44">啊啊啊啊啊~~~~~!我幹了白目事啊~~!</a></h1>
-	<div class="entry-content">
-		<p>靠X啦！不小心把mysql資料庫給幹掉了&#8230;</p>
-<p>結果備份只到12月&#8230;囧</p>
-<p>死了一堆東西</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-02-22T00:00:00+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/44#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/43">Dbu Music C73 的新CD</a></h1>
-	<div class="entry-content">
-		<p>之前其實滿關心這個同人團體不知道在C73會出啥專輯出來&#8230;</p>
-<p>今天再不知名的因緣下看到了&#8230;</p>
-<p><a href="http://www.dobuusagi.com/dBu10th/index.htm"><img src="http://nckuccns.twbbs.org/~renn999/gallery/main.php?g2_view=core.DownloadItem&amp;g2_itemId=2219&amp;g2_GALLERYSID=3d2e6fb41f480fd36992e0d3f4d9549a" height="60" width="468" /></a></p>
-<p>其老實說我非常喜歡這間團體的歌&#8230;</p>
-<p>聽完試聽之後真的更值得期待了&#8230;</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-12-28T00:00:00+08:00" pubdate data-updated="true">Dec 28<span>th</span>, 2007</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/同人cd/'>同人CD</a>, <a class='category' href='/archives/categories/東方project/'>東方Project</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/43#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/archives/256#disqus_thread">Comments</a></span>
 	
 </div>
 </article>

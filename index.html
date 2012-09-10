@@ -7,7 +7,7 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content=" 這篇主要是調教atom.xmlRSS變成不要全文顯示外加加上LinkWithin有興趣的文章 Read on &rarr; Sep 10th, 2012 octopress Comments ">
+	<meta name="description" content=" 這篇主要是調教atom.xmlRSS變成不要全文顯示外加加上LinkWithin有興趣的文章 Read More &#8230; Sep 10th, 2012 octopress Comments ">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -85,7 +85,7 @@
 
 
 		
-		<a href="/archives/903" class="more-link">Read on &rarr;</a>
+		<a href="/archives/903" class="more-link">Read More &#8230;</a>
 	</div>
 
 
@@ -126,7 +126,7 @@
 
 
 		
-		<a href="/archives/902" class="more-link">Read on &rarr;</a>
+		<a href="/archives/902" class="more-link">Read More &#8230;</a>
 	</div>
 
 
@@ -168,7 +168,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 
 
 		
-		<a href="/archives/901/" class="more-link">Read on &rarr;</a>
+		<a href="/archives/901/" class="more-link">Read More &#8230;</a>
 	</div>
 
 
@@ -276,284 +276,6 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 </div>
 	
 		<span class="comments"><a href="/archives/894#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/886">[公告] Server硬碟壞掉</a></h1>
-	<div class="entry-content">
-		<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息&#8230;OTZ。</p>
-<p>就如標題所說的，因為有的服務是我自己寫得程式，但是我犯了一個不可饒恕的錯誤&#8230;就是我忘記備份php程式了，造成有的服務可能無時間表的停止服務，因為這個站是我緊急的跟我們一位社團學長借的空間，因為有所限制，所以說短時間內我也不大想要把剩下的服務弄上去。</p>
-<p>在此公告，老伯繪師收集區停開，因為老早之前我就有打算要整個翻修內部程式碼，但是都懶得去動他，剛好趁著硬碟壞掉算是個總結吧&#8230;OTZ，但是不要擔心的是說資料庫還留著，但是程式就881了。</p>
-<p>感謝大家這幾年來對此站的照顧，在這裡除了對一些編輯者至上萬分的歉意以及感謝<br />
-&lt;(_ _)&gt;</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-24T00:00:00+08:00" pubdate data-updated="true">Apr 24<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/gallery2雜記/'>Gallery2雜記</a>, <a class='category' href='/archives/categories/about-php/'>about PHP</a>, <a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>, <a class='category' href='/archives/categories/架站相關/'>架站相關</a>, <a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/886#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/869">Wordpress升級jQuery From 1.4.2 to 1.4.3</a></h1>
-	<div class="entry-content">
-		<p>jQuery最近釋出了1.4.3，當然在翻wordpress  trac的時候剛好翻到有人釋出了更新到1.4.3的patch。我則手動的將其升級了上去，如果有程度的可以直接看<a href="http://core.trac.wordpress.org/ticket/15135">ticket/15135</a><br />
-
-		
-		<a href="/archives/869" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-19T00:00:00+08:00" pubdate data-updated="true">Oct 19<span>th</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/869#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/861">Mysql轉sqlite</a></h1>
-	<div class="entry-content">
-		<p>前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到&#8230;XDrz</p>
-<p>可以參考這裡<a href="http://www.sqlite.org/cvstrac/wiki?p=ConverterTools">sqlite &#8211; Converter Tools</a></p>
-<p>當然我的作法是將步驟分開來作的</p>
-<p>先將sqldump出來<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mysqldump -u'username' -p'password' --compact --compatible=ansi --default-character-set=binary 'databasename' > database.sql</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-
-		
-		<a href="/archives/861" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-11T00:00:00+08:00" pubdate data-updated="true">Aug 11<span>th</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/程式相關/'>程式相關</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/861#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/828">初學python</a></h1>
-	<div class="entry-content">
-		<p>這是利用plurk api簡單寫得東東，主要是要搞懂json的用法：p<br />
-到時候先搞定cookie的儲存..<span class="caps">OTZ</span><br />
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
-</span><span class='line'><span class="c">#-*- coding: UTF8 -*-</span>
-</span><span class='line'><span class="c">#</span>
-</span><span class='line'>
-</span><span class='line'><span class="kn">import</span> <span class="nn">logging</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">time</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">urllib</span><span class="o">,</span><span class="nn">urllib2</span><span class="o">,</span><span class="nn">cookielib</span><span class="o">,</span><span class="nn">htmllib</span><span class="o">,</span><span class="nn">formatter</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">sgmllib</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">json</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-</span><span class='line'>  <span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">())</span>
-</span><span class='line'>  <span class="n">get_api_url</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s">&#39;http://www.plurk.com/API</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">x</span>
-</span><span class='line'>  <span class="n">encode</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">fp</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">get_api_url</span><span class="p">(</span><span class="s">&#39;/Users/login&#39;</span><span class="p">),</span>
-</span><span class='line'>    <span class="n">encode</span><span class="p">({</span>
-</span><span class='line'>      <span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
-</span><span class='line'>      <span class="s">&#39;password&#39;</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span>
-</span><span class='line'>      <span class="s">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">api_key</span> <span class="p">,</span>
-</span><span class='line'>    <span class="p">}))</span>
-</span><span class='line'>  <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">fp</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">get_api_url</span><span class="p">(</span><span class="s">&#39;/Timeline/getPlurks&#39;</span><span class="p">),</span>
-</span><span class='line'>    <span class="n">encode</span><span class="p">({</span><span class="s">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">}))</span>
-</span><span class='line'>  <span class="n">dumps</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'>  <span class="n">dumps</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">dumps</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">dumps</span><span class="p">[</span><span class="s">&#39;plurks&#39;</span><span class="p">]:</span>
-</span><span class='line'>    <span class="k">print</span> <span class="n">api_key</span>
-</span><span class='line'>    <span class="n">user_dis_name</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">[</span><span class="s">&#39;plurk_users&#39;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;owner_id&#39;</span><span class="p">])][</span><span class="s">&#39;display_name&#39;</span><span class="p">]</span>
-</span><span class='line'>    <span class="k">print</span> <span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">user_dis_name</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;qualifier_translated&#39;</span><span class="p">]</span><span class="o">+</span><span class="s">&quot;:&quot;</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot; &quot;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;content_raw&#39;</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span><span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-</span><span class='line'>  <span class="n">api_key</span> <span class="o">=</span> <span class="s">&#39;api_key&#39;</span>
-</span><span class='line'>  <span class="n">username</span> <span class="o">=</span> <span class="s">&#39;your_username&#39;</span>
-</span><span class='line'>  <span class="n">password</span> <span class="o">=</span> <span class="s">&#39;your_password&#39;</span>
-</span><span class='line'>  <span class="n">main</span><span class="p">()</span>
-</span><span class='line'>  <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-22T00:00:00+08:00" pubdate data-updated="true">Jul 22<span>nd</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/程式相關/'>程式相關</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/828#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/799">在ubuntu下播放正版DVD</a></h1>
-	<div class="entry-content">
-		<p>我知道這是老梗文了，在前幾天翻出了&#8217;I, Robot&#8217;又懷念了一下，但是在播放的時候一直出現問題，才想到說我沒有灌解CSS相關的東西，<del datetime="2010-07-03T01:45:34+00:00">雖然說看正版的人應該不多吧</del>，但是還是紀錄一下。</p>
-<p><a href="https://help.ubuntu.com/community/RestrictedFormats/PlayingDVDs">ubuntu原文</a> 英文好的請直接喀這裡，&#8230;.<span class="caps">OTZ</span></p>
-<p>
-		
-		<a href="/archives/799" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-03T00:00:00+08:00" pubdate data-updated="true">Jul 3<span>rd</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/799#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
