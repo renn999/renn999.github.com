@@ -7,10 +7,7 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="本文翻譯從http://moebuntu.web.fc2.com/moesplash.html 並符合正體中文語系的使用者介面之翻譯
-注意：以下之方法只是用於9.04(含)以前的版本，於最新版的9.10不適用(譯者親身經歷)
-準備工作：
-StartUp-Manager(用於修改Splash的工具 &hellip;">
+	<meta name="description" content="翻完以上的文章之後，老實說那些有些部份只適用9.04以前的，今天就研究了一下要如何修改，9.10的那些介面，因為9.10跟以往不大一樣的地方就是他們的gdm版本是比較新的(廢話)，因為這個原因他們的登入以及Splash佈景待改笧用新版，而比較特別的就是Splash改用了xSplash。 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +76,45 @@ StartUp-Manager(用於修改Splash的工具 &hellip;">
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/437">9.10登入以及開機畫面[xsplash]篇</a></h1>
+	<div class="entry-content">
+		<p>翻完以上的文章之後，老實說那些有些部份只適用9.04以前的，今天就研究了一下要如何修改，9.10的那些介面，因為9.10跟以往不大一樣的地方就是他們的gdm版本是比較新的(廢話)，因為這個原因他們的登入以及Splash佈景待改笧用新版，而比較特別的就是Splash改用了xSplash。</p>
+<p><big>修改登入畫面：</big></p><p>
+		
+		<a href="/archives/437" class="more-link">Read More &#8230;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-06T00:00:00+08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/linux/'>Linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/437#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -252,182 +288,6 @@ StartUp-Manager(用於修改Splash的工具 &hellip;">
 </div>
 	
 		<span class="comments"><a href="/archives/401#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/399">PHP產生bbs的rss(for Server端)</a></h1>
-	<div class="entry-content">
-		<p>這是一個利用php產生rss的script，就只是普通的實做&#8230;XDDrz</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
-</span><span class='line'>include('uaocode.php');
-</span><span class='line'> 
-</span><span class='line'>$bbs_path='/home/bbs/brd/';
-</span><span class='line'>$brd_name=$_GET['brd'];
-</span><span class='line'>$filename=$bbs_path.$brd_name.'/.DIR';
-</span><span class='line'>if (!file_exists($filename)) {
-</span><span class='line'>	echo 'no such broad!';
-</span><span class='line'>	exit;
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>header('Content-type: application/rss+xml; charset=utf-8');
-</span><span class='line'>echo "&lt;?xml version=\"1.0\" encoding=\"utf-8\" ?>\n";
-</span><span class='line'>
-</span><span class='line'>$all_post=filesize($filename)/256;
-</span><span class='line'>
-</span><span class='line'>$post_num=10;
-</span><span class='line'>
-</span><span class='line'>for($i=1; $i &lt;= $post_num ; ++$i){
-</span><span class='line'>	$fp=fopen($filename,'r');
-</span><span class='line'>	fseek($fp, ($all_post-$i)*256+12);
-</span><span class='line'>	$match[$i]['post_id']=trim(fread($fp,32));
-</span><span class='line'>	$post_path=$bbs_path.$brd_name.'/'.substr($match[$i]['post_id'], -1).'/'.$match[$i]['post_id'];
-</span><span class='line'>	$fpp=fopen($post_path,'r');
-</span><span class='line'>	$j=0;
-</span><span class='line'>	while($current_line = fgets($fpp)){
-</span><span class='line'>		++$j;
-</span><span class='line'>		switch ($j){
-</span><span class='line'>			case 1:
-</span><span class='line'>				preg_match('/: (.*) \(/',$current_line,$match[$i]['post_userid']);
-</span><span class='line'>			case 2:
-</span><span class='line'>				$match[$i]['post_title']=trim(html_entity_decode(iconv("big5","UTF-8",uao_convert(substr($current_line,6))),ENT_QUOTES,"UTF-8"));
-</span><span class='line'>			case 3:
-</span><span class='line'>				$match[$i]['post_time']=date(DATE_RSS, strtotime(trim(substr($current_line,6))));
-</span><span class='line'>			default;
-</span><span class='line'>				$current_line=preg_replace('/\\x1b\\[([^m]*)m/i','',$current_line);
-</span><span class='line'>				$match[$i]['post_conten'] .= trim(html_entity_decode(iconv("big5","UTF-8",uao_convert($current_line)),ENT_QUOTES,"UTF-8"),'\0');
-</span><span class='line'>		}
-</span><span class='line'>	}
-</span><span class='line'>}
-</span><span class='line'>?>
-</span><span class='line'>&lt;rss version="2.0"
-</span><span class='line'>	xmlns:content="http://purl.org/rss/1.0/modules/content/"
-</span><span class='line'>	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-</span><span class='line'>	xmlns:dc="http://purl.org/dc/elements/1.1/"
-</span><span class='line'>	xmlns:atom="http://www.w3.org/2005/Atom"
-</span><span class='line'>	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-</span><span class='line'>	>
-</span><span class='line'>	&lt;channel>
-</span><span class='line'>	&lt;title>夢之大地rsstest&lt;/title>
-</span><span class='line'>	&lt;description>none&lt;/description>
-</span><span class='line'>	&lt;link>http://140.116.250.9/&lt;/link>
-</span><span class='line'>	&lt;atom:link href="http://140.116.250.9/paser.php" rel="self" type="application/rss+xml" />
-</span><span class='line'>	&lt;language>en&lt;/language>
-</span><span class='line'>	&lt;generator>http://www.renn999.twbbs.org/illustrator/RSS.php&lt;/generator>
-</span><span class='line'>&lt;?php 
-</span><span class='line'>		foreach($match as $item){
-</span><span class='line'>			echo "&lt;item>\n";
-</span><span class='line'>			echo "\t\t\t&lt;title>&lt;![CDATA[".stripslashes($item["post_title"])."]]]]>&lt;![CDATA[>&lt;/title>\n";
-</span><span class='line'>			echo "\t\t\t&lt;pubDate>".stripslashes($item["post_time"])."&lt;/pubDate>\n";
-</span><span class='line'>			echo "\t\t\t&lt;link>http://140.116.250.9/&lt;/link>\n";
-</span><span class='line'>			//str_replace(' ','&nbsp;',nl2br(htmlspecialchars($item["post_conten"])));
-</span><span class='line'>			echo "\t\t\t&lt;description>&lt;![CDATA[".nl2br(str_replace(' ','&nbsp;',htmlspecialchars($item["post_conten"])))."]]]]>&lt;![CDATA[>&lt;/description>\n";
-</span><span class='line'>			echo "\t\t\t&lt;guid isPermaLink=\"false\">",$item['post_id'],"&lt;/guid>";
-</span><span class='line'>			echo "&lt;/item>\n";
-</span><span class='line'>		}
-</span><span class='line'>	?>
-</span><span class='line'>	&lt;/channel>
-</span><span class='line'>&lt;/rss></span></code></pre></td></tr></table></div></figure></div></notextile></p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-14T00:00:00+08:00" pubdate data-updated="true">Oct 14<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/399#disqus_thread">Comments</a></span>
 	
 	
 </div>

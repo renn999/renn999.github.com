@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-12T17:09:32+08:00</updated>
+  <updated>2012-09-12T19:56:32+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,16 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress調教メモ之二]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/904"/>
+    <updated>2012-09-12T19:55:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/904</id>
+    <content type="html"><![CDATA[<p>這次把<code>LinkWithin</code>的連結稍微改了一下，把他弄成獨立頁面，並且我發現到如果改了 theme 之前 theme 的東西還是會留下來變成垃圾，但是會不會一起<code>generate</code>老實說我就不得而知了，但是看起來好像不會。</p>
+
+<a href="http://www.renn999.twbbs.org/archives/904" class="more-link">Read More &#8230;</a>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之一]]></title>
@@ -298,21 +308,6 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 <p>但是在今天拉到頁尾，看到了很刺眼的東西</p>
 <p>就是底下都會出現雙連結，雖然說之前都有看到，但是都是懶的修正&#8230;<br />
 <a href="http://www.renn999.twbbs.org/archives/644" class="more-link">Read More &#8230;</a>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wine開啟視窗字體平滑效果]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/618"/>
-    <updated>2009-12-29T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/618</id>
-    <content type="html"><![CDATA[<p>在很早以前用wine的時候只要在user.reg下加入<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[Software\\Wine\\X11 Driver]
-</span><span class='line'>"ClientSideAntiAliasWithRender"="Y"</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了<br />
-因為如果不啟用平滑效果的話，情況會像下圖：</p>
-<p><a href="http://www.renn999.twbbs.org/archives/618" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
 </feed>
