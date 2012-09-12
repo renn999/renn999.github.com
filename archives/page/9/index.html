@@ -7,10 +7,8 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="&lt;img src=http://pic.renn999.twbbs.org/thumb/60de3e924b77158d.jpg /&gt;
-這東西已經可以打中文了耶XDD 今天才發現
-加油啊 Google 我想要把我想要把FireFox 換掉了&#8230;XDDD
-(還在混 &hellip;">
+	<meta name="description" content="最近老實說又多玩了一個語言，外加我今年算是個考生，所以說很多時候晚上忙一下就已經11點多了，當然最近都在養肝，忙完就睡著了&#8230;XD
+至於廢話就不多說了，最近學了一點Action Script 3.0，但是我基本上還是用Flash CS4下去學習，改天會開始去摸摸看Flex， &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -82,6 +80,146 @@
 
 
     <article class="post">
+	<h1 class="title"><a href="/archives/357">PHP+phpQuery備份Pixiv的bookmark(お気に入りユーザー)</a></h1>
+	<div class="entry-content">
+		<p>最近老實說又多玩了一個語言，外加我今年算是個考生，所以說很多時候晚上忙一下就已經11點多了，當然最近都在養肝，忙完就睡著了&#8230;XD</p>
+<p>至於廢話就不多說了，最近學了一點Action Script 3.0，但是我基本上還是用Flash CS4下去學習，改天會開始去摸摸看Flex，希望是有時間就好(笑)。但是老實說在這個7月時也算是我過的最充實的一個月了，因為搞懂了非常之多的東西。</p>
+<p>這一個PHP只能算是一個小部份，因為也是一個小程式&#8230;.XD，但是基本上需要phpQuery，因為這個函式庫對於要抓取網頁資訊來說的話非常之方便而且簡單明瞭，對於一個複雜的網頁原始碼而言，可以簡化取出需要的資訊之後，再去做preg的動作繪比較的簡單。</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt; ?php
+</span><span class='line'>	require 'phpQuery/phpQuery/phpQuery.php';
+</span><span class='line'>	
+</span><span class='line'>	$loginurl='http://www.pixiv.net/index.php';
+</span><span class='line'>	$pixiv_id='你的PIXIV_id';
+</span><span class='line'>	$password='password';
+</span><span class='line'>	//以上為一些登入基本資訊
+</span><span class='line'>	
+</span><span class='line'>	$curl = curl_init();
+</span><span class='line'>	curl_setopt($curl, CURLOPT_HEADER, 0);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_USERAGENT,'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)');
+</span><span class='line'>	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_COOKIEJAR, 'cookie.txt');
+</span><span class='line'>	curl_setopt($curl, CURLOPT_COOKIEFILE, 'cookie.txt');
+</span><span class='line'>	curl_setopt($curl, CURLOPT_POST, 1);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_COOKIESESSION,true);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_URL, $loginurl);
+</span><span class='line'>	curl_setopt($curl, CURLOPT_POSTFIELDS, 'mode=login&pixiv_id='.$pixiv_id.'&pass='.$password );
+</span><span class='line'>	curl_exec($curl);
+</span><span class='line'>	//登入的動作
+</span><span class='line'>
+</span><span class='line'>	$p=1;//設定起始頁
+</span><span class='line'>	$bookmark_rest='show';//hide為非公開 show為公開
+</span><span class='line'>	
+</span><span class='line'>	do{
+</span><span class='line'>		$url='http://www.pixiv.net/bookmark.php?type=user&rest='.$bookmark_rest.'&p='.$p; //bookmark網址
+</span><span class='line'>		curl_setopt($curl, CURLOPT_URL, $url);
+</span><span class='line'>		$profile=curl_exec($curl);
+</span><span class='line'>		
+</span><span class='line'>		phpQuery::newDocument($profile)->find('html > body > div#wrapper > div#pixiv > div#content2');
+</span><span class='line'>		$title = pq('div[align="right"] > a') -> html();
+</span><span class='line'>		preg_match('/次の(.*?)件/',$title,$match);
+</span><span class='line'>		//是否有下一頁的判斷用
+</span><span class='line'>
+</span><span class='line'>		$title2 = pq('form#f > div[style="width:140px;height:120px;float:left;text-align:center;"]') -> html();
+</span><span class='line'>		$title2=preg_replace('/\n/', '',$title2);
+</span><span class='line'>		$title2=preg_replace('/&lt;input (.*?)/>/', '',$title2);
+</span><span class='line'>		$title2=preg_replace('/&lt;img (.*?)/>/', '',$title2);
+</span><span class='line'>		preg_match_all('/&lt;a href="member.php\?id=(.*?)">&lt; \/a>&lt;div style=\"padding-top:5px;\">(.*?)&lt; \/div>/', $title2,$match2,PREG_SET_ORDER);
+</span><span class='line'>		
+</span><span class='line'>		foreach ($match2 as $val) {
+</span><span class='line'>			echo 'http://www.pixiv.net/member.php?id='.$val[1].' - '.$val[2]."\n";
+</span><span class='line'>		}//映出所有的繪師
+</span><span class='line'>		$p++;
+</span><span class='line'>	}while(!empty($match));
+</span><span class='line'>	
+</span><span class='line'>	curl_close($curl);
+</span><span class='line'>?></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+以上就是一個非常簡單的小範例。對於熟悉PHPQuery之後要處理抓取網頁的資訊的動作的話真的非常的簡單。</p>
+<p>這是一個非常簡單的，把PIXIV上的喜愛繪師的網址給備份出來的一個小程式，用這個列出來後才知道，原來我已經收了快要1150個繪師了&#8230;Orz</p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-06T00:00:00+08:00" pubdate data-updated="true">Aug 6<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/357#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
+
+
+    <article class="post">
 	<h1 class="title"><a href="/archives/352">Google Chromium for Linux 3.0.194.0</a></h1>
 	<div class="entry-content">
 		<p><a href="http://pic.renn999.twbbs.org/view.php?pic=60de3e924b77158d.png">&lt;img src=http://pic.renn999.twbbs.org/thumb/60de3e924b77158d.jpg /&gt;</a></p>
@@ -116,6 +254,7 @@
 </div>
 	
 		<span class="comments"><a href="/archives/352#disqus_thread">Comments</a></span>
+	
 	
 </div>
 </article>
@@ -159,6 +298,7 @@
 </div>
 	
 		<span class="comments"><a href="/archives/349#disqus_thread">Comments</a></span>
+	
 	
 </div>
 </article>
@@ -206,6 +346,7 @@
 	
 		<span class="comments"><a href="/archives/345#disqus_thread">Comments</a></span>
 	
+	
 </div>
 </article>
 
@@ -248,44 +389,6 @@
 	
 		<span class="comments"><a href="/archives/339#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/337">今天值得紀念的一天</a></h1>
-	<div class="entry-content">
-		<p>我把所有的瀏覽人數 全部歸零了</p>
-<p>因為由於之前的人數老實說 不客觀的機率佔很大</p>
-<p>所以說歸零也是個開始吧&#8230;XD</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-22T00:00:00+08:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/337#disqus_thread">Comments</a></span>
 	
 </div>
 </article>

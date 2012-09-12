@@ -3,14 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Ubuntu9.10 Nautilus解決掛載磁區要輸入密碼麻煩的動作 - 老伯筆記</title>
+	<title>Octopress調教メモ之二 - 老伯筆記</title>
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。
-首先
-1
-gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks. &hellip;">
+	<meta name="description" content=" Sep 12th, 2012 octopress Comments QR-Code&trade; ">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,45 +76,9 @@ gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks. &helli
 		
 	
 	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Ubuntu9.10 Nautilus解決掛載磁區要輸入密碼麻煩的動作</h1>
-	<div class="entry-content"><p>Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。</p>
-<p>首先<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks.policy</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-之後找到<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;action id="org.freedesktop.devicekit.disks.filesystem-mount-system-internal">
-</span><span class='line'>    &lt;description>Mount a system-internal device&lt;/description>
-</span><span class='line'>    &lt;description xml:lang="da">Montér en intern enhed&lt;/description>
-</span><span class='line'>    &lt;description xml:lang="de">Eingebautes Gerät einhängen&lt;/description>
-</span><span class='line'>    &lt;message>Authentication is required to mount the device&lt;/message>
-</span><span class='line'>    &lt;message xml:lang="da">Autorisering er påkrævet for at montere et fil system&lt;/message>
-</span><span class='line'>    &lt;message xml:lang="de">Zugriffsrechte werden benötigt um das Gerät einzuhängen&lt;/message>
-</span><span class='line'>    &lt;defaults>
-</span><span class='line'>      &lt;allow_any>no&lt;/allow_any>
-</span><span class='line'>      &lt;allow_inactive>no&lt;/allow_inactive>
-</span><span class='line'>      &lt;allow_active>auth_admin_keep&lt;/allow_active>
-</span><span class='line'>    &lt;/defaults>
-</span><span class='line'>  &lt;/action></span></code></pre></td></tr></table></div></figure></div></notextile><br />
-把<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;allow_active>auth_admin_keep&lt;/allow_active></span></code></pre></td></tr></table></div></figure></div></notextile><br />
-改成<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;allow_active>yes&lt;/allow_active></span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>這樣要掛載磁區就不用在輸入密碼了</p><section>
+	<h1 class="title">Octopress調教メモ之二</h1>
+	<div class="entry-content">
+<section>
 <div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
 </section>
 </div>
@@ -136,11 +97,11 @@ gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks. &helli
   
 
 
-<time datetime="2009-12-14T00:00:00+08:00" pubdate data-updated="true">Dec 14<span>th</span>, 2009</time></div>
+<time datetime="2012-09-12T16:43:00+08:00" pubdate data-updated="true">Sep 12<span>th</span>, 2012</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
+	<a class='category' href='/archives/categories/octopress/'>octopress</a>
 
 
 </div>
@@ -150,7 +111,7 @@ gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks. &helli
 	
 	  <section>
 QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/463"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=165B94&chl=http://www.renn999.twbbs.org/archives/463" alt="post-qrcode"></a></section>
+<a href="http://www.renn999.twbbs.org/archives/904"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=165B94&chl=http://www.renn999.twbbs.org/archives/904" alt="post-qrcode"></a></section>
 
 	
 </div>
@@ -199,8 +160,8 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.renn999.twbbs.org/archives/463';
-        var disqus_url = 'http://www.renn999.twbbs.org/archives/463';
+        var disqus_identifier = 'http://www.renn999.twbbs.org/archives/904';
+        var disqus_url = 'http://www.renn999.twbbs.org/archives/904';
         var disqus_script = 'embed.js';
       
     (function () {
