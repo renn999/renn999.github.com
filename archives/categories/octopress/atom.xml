@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-12T19:56:32+08:00</updated>
+  <updated>2012-09-17T18:01:22+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -40,7 +40,7 @@ index 2fcc168..b387e7c 100644
 </code></pre>
 
 <ul>
-<li><div class="entry-content">{{ content }}{% include linkwithin.html %}</div></li>
+<li><div class="entry-content">{{ content }}</div></li>
 <li><div class="entry-content">{{ content }}{% include asides/linkwithin.html %}</div>
 {% endif %}</li>
 </ul>
