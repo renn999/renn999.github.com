@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-18T15:40:48+08:00</updated>
+  <updated>2012-09-18T15:42:59+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -25,7 +25,7 @@
 
 <p>其實因為OP我覺得他的擴充性蠻大的，而且內文可以直接使用Html，並且我想到之前我有看到網頁上直接使用AES加密文章，google一下之後發現到有一個javascript符合需求，<a href="http://www.movable-type.co.uk/scripts/aes.html">JavaScript Implementation of AES Advanced Encryption Standard in Counter Mode</a>就是一個JS的AES加解密器，只要將文章由Markdown轉成HTML後加密並且將加密文貼到文章上就可以了，但是沒這麼簡單(被歐...)</p>
 
-<p>以下是我寫的一個小小的script要將加密文貼到<code>var text='加密文請放這裡';</code>裡面之後就可以貼到post中，<code>generate</code>並<code>deploy</code>。</p>
+<p>以下是我寫的一個小小的script要將加密文貼到 <code>var text='加密文請放這裡';</code> 裡面之後就可以貼到 post 中， <code>generate</code> 並 <code>deploy</code>。</p>
 
 <p>``` js</p>
 
