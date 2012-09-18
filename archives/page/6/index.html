@@ -7,11 +7,11 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content=" 這一篇只是要作一測試
-改天會把我的修改文章給po出來
-最主要是修改了wordplurk的一些細節
-最初作者是用hacker出來的api下去處理
-我改用官方釋出的api 外加多了一點的修正 Dec 22nd, 2009 隨便亂寫 Comments ">
+	<meta name="description" content="&lt;&lt;回到moebuntu中文教學文件(介面篇)
+本文翻譯從http://moebuntu.web.fc2.com/moesplash910.html並符合正體中文語系的使用者介面之翻譯
+真是抱歉因為惰性的關係，讓這一篇一直到現在才完成。
+準備工作：
+StartUp-Manager( &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,48 +84,6 @@
 		
 	
 	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/572">The Final Tset of Wordplurk Improve Modify</a></h1>
-	<div class="entry-content">
-		<p>這一篇只是要作一測試</p>
-<p>改天會把我的修改文章給po出來</p>
-<p>最主要是修改了wordplurk的一些細節</p>
-<p>最初作者是用hacker出來的api下去處理</p>
-<p>我改用官方釋出的api 外加多了一點的修正</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-22T00:00:00+08:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/572#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
 
 
     <article class="post">
@@ -308,6 +266,81 @@
 </div>
 	
 		<span class="comments"><a href="/archives/468#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/463">Ubuntu9.10 Nautilus解決掛載磁區要輸入密碼麻煩的動作</a></h1>
+	<div class="entry-content">
+		<p>Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。</p>
+<p>首先<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks.policy</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+之後找到<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;action id="org.freedesktop.devicekit.disks.filesystem-mount-system-internal">
+</span><span class='line'>    &lt;description>Mount a system-internal device&lt;/description>
+</span><span class='line'>    &lt;description xml:lang="da">Montér en intern enhed&lt;/description>
+</span><span class='line'>    &lt;description xml:lang="de">Eingebautes Gerät einhängen&lt;/description>
+</span><span class='line'>    &lt;message>Authentication is required to mount the device&lt;/message>
+</span><span class='line'>    &lt;message xml:lang="da">Autorisering er påkrævet for at montere et fil system&lt;/message>
+</span><span class='line'>    &lt;message xml:lang="de">Zugriffsrechte werden benötigt um das Gerät einzuhängen&lt;/message>
+</span><span class='line'>    &lt;defaults>
+</span><span class='line'>      &lt;allow_any>no&lt;/allow_any>
+</span><span class='line'>      &lt;allow_inactive>no&lt;/allow_inactive>
+</span><span class='line'>      &lt;allow_active>auth_admin_keep&lt;/allow_active>
+</span><span class='line'>    &lt;/defaults>
+</span><span class='line'>  &lt;/action></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+把<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;allow_active>auth_admin_keep&lt;/allow_active></span></code></pre></td></tr></table></div></figure></div></notextile><br />
+改成<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;allow_active>yes&lt;/allow_active></span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>這樣要掛載磁區就不用在輸入密碼了</p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-14T00:00:00+08:00" pubdate data-updated="true">Dec 14<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/linux/'>Linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/463#disqus_thread">Comments</a></span>
 	
 	
 </div>
