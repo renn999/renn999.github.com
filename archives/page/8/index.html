@@ -7,7 +7,9 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="本文翻譯從http://moebuntu.web.fc2.com/index.html 並符合正體中文語系的使用者介面之翻譯 老實說看到這這東西雖然被了kagami萌了一下，但是我覺得粉紅色好噁心&#8230;Orz，但是這份文件太好了排除&quot;萌&quot; &hellip;">
+	<meta name="description" content="本文翻譯從http://moebuntu.web.fc2.com/moelogin.html 並符合正體中文語系的使用者介面之翻譯
+注意：以下之方法只是用於9.04(含)以前的版本，於最新版的9.10不適用(譯者親身經歷)
+方法如下： Read More &#8230; Nov 5th, &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -80,6 +82,47 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/418">Moebuntu中文教學文件(登入篇)</a></h1>
+	<div class="entry-content">
+		<p>本文翻譯從<a target="_blank" href="http://moebuntu.web.fc2.com/moelogin.html">http://moebuntu.web.fc2.com/moelogin.html</a> 並符合正體中文語系的使用者介面之翻譯</p>
+<p><big><big><font color="#CC0000">注意：以下之方法只是用於9.04(含)以前的版本，於最新版的9.10不適用(譯者親身經歷)</font></big></big></p>
+<p><big><big>方法如下：</big></big><br />
+
+		
+		<a href="/archives/418" class="more-link">Read More &#8230;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-05T00:00:00+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/linux/'>Linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/418#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -403,153 +446,6 @@
 </div>
 	
 		<span class="comments"><a href="/archives/396#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/391">Perl版將UTF-8 -> Big5 UAO</a></h1>
-	<div class="entry-content">
-		<p>這是我第一個將PHP轉Perl的程式，也算是學一點Perl，Perl真是一個博大驚深的語言啊，老實說起來。某些方面比php簡單很多也直覺很多&#8230;XDrz</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/perl -w
-</span><span class='line'>#
-</span><span class='line'># This perl script is using GNU General Public License v2.0
-</span><span class='line'># renn999&lt;AT>ccns.ncku.edu.tw
-</span><span class='line'># http://renn999.twbbs.org
-</span><span class='line'>#
-</span><span class='line'># USAGE:ucs2big5( $str );
-</span><span class='line'>#
-</span><span class='line'># Big5 table(big5.txt)
-</span><span class='line'># using from Ztrem
-</span><span class='line'># http://zhouer.org/ZTerm/
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>print &ucs2big5('測試 試験 しけん');
-</span><span class='line'>
-</span><span class='line'>sub ucs2big5 {
-</span><span class='line'>	my $ucs_str=shift;
-</span><span class='line'>	open FILE, "big5.txt";
-</span><span class='line'>	#binmode FILE; 
-</span><span class='line'>	my $len = length $ucs_str;
-</span><span class='line'>	my ($b1,$b2,$b3,$big5_code,$ucs_code,$big5_str);
-</span><span class='line'>
-</span><span class='line'>	for( my $i = 0 ; $i &lt; $len ; $i++ ) {
-</span><span class='line'>		$b1 = ord(substr $ucs_str, $i, 1);
-</span><span class='line'>		if( $b1 &lt; 0x80 ) {
-</span><span class='line'>			$big5_str .= chr($b1);
-</span><span class='line'>		}
-</span><span class='line'>		elsif( $b1 >= 224 ) {
-</span><span class='line'>			#3code UTF-8
-</span><span class='line'>			$b1 -= 224;
-</span><span class='line'>			$b2 = ord(substr $ucs_str, ++$i, 1) - 128;
-</span><span class='line'>			$b3 = ord(substr $ucs_str, ++$i, 1) - 256;
-</span><span class='line'>			$ucs_code = $b1 * 4096 + $b2 * 64 + $b3;
-</span><span class='line'>			seek( FILE, $ucs_code * 2 , 0);
-</span><span class='line'>			read FILE, $big5_code, 2;
-</span><span class='line'>			$big5_str .= $big5_code;
-</span><span class='line'>		}
-</span><span class='line'>		elsif( $b1 >= 192 ) {
-</span><span class='line'>			#2code UTF-8
-</span><span class='line'>			$b1 -= 192;
-</span><span class='line'>			$b2 = ord(substr $ucs_str, ++$i, 1) - 256;
-</span><span class='line'>			$ucs_code = $b1 * 64 + $b2 ;
-</span><span class='line'>			seek( FILE, $ucs_code * 2 , 0 );
-</span><span class='line'>			read FILE, $big5_code, 2;
-</span><span class='line'>			$big5_str .= $big5_code;
-</span><span class='line'>		}else{
-</span><span class='line'>			$big5_str .= '?';
-</span><span class='line'>		}
-</span><span class='line'>	}
-</span><span class='line'>
-</span><span class='line'>	if(length $big5_str != 0) {
-</span><span class='line'>		$big5_str;
-</span><span class='line'>	}
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>用pietty等UAO支援的程式應該可以看得出結果</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-12T00:00:00+08:00" pubdate data-updated="true">Oct 12<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/391#disqus_thread">Comments</a></span>
 	
 	
 </div>

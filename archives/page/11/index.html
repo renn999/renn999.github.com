@@ -7,7 +7,11 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content=" 之前知道開始放出&quot;超級不穩定版&quot;，我就決定要自己測試看看，但是裝完之後一直都是方塊文字，但是聽說網路上有的人是正常出現中文字，我今天才想到最主要的問題點。 Read More &#8230; Jun 18th, 2009 Linux, 關於軟體 Comments ">
+	<meta name="description" content="今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案&#8230;Orz，優點也是可以正確的去辨識檔案
+修改部份：
+找到
+1
+$suffix = strtolower( &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -80,6 +84,67 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/315">ImageUpon檔案副檔名判斷修改</a></h1>
+	<div class="entry-content">
+		<p>今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案&#8230;Orz，優點也是可以正確的去辨識檔案<br />
+<p>修改部份：<br />
+找到<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$suffix = strtolower(substr($_FILES['uploadimg']['name'],-4));</span></code></pre></td></tr></table></div></figure></div></notextile></p><br />
+<p>改成：<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$img_info = getimagesize($_FILES['uploadimg']['tmp_name']);
+</span><span class='line'>$mime = $img_info['mime'];
+</span><span class='line'>list($t, $suffix) = split('/', $mime);
+</span><span class='line'>if ($suffix == 'jpeg') //這個部份將JPEG檔名轉成jpg
+</span><span class='line'>	$suffix = 'jpg';
+</span><span class='line'>$suffix='.'.$suffix;//加上點這樣整體架構不用去作修改</span></code></pre></td></tr></table></div></figure></div></notextile></p><br />
+<p>雖然說多了很多的步驟，但是隨便拿一張圖附檔亂改，都還可以正確的去作辨識，取得應有的副檔名。</p><br />
+<p>如果還是要使用上傳檔案的檔名去取得副檔名的話，我想到比較好的方式還是使用preg_match會比較正統，因為畢竟副檔名不是只有三個字<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>preg_match('/(.*?)[.](\w+$)/u', $_FILES['uploadimg']['name'], $regs);
+</span><span class='line'>$suffix = '.'.strtolower($regs[2]);</span></code></pre></td></tr></table></div></figure></div></notextile></p></p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-20T00:00:00+08:00" pubdate data-updated="true">Jun 20<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/315#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -257,45 +322,6 @@
 </div>
 	
 		<span class="comments"><a href="/archives/249#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/243">Linux音訊轉檔(一)</a></h1>
-	<div class="entry-content">
-		<p>再這裡把幾個常用的有損及無損音樂壓縮整理一下，以及他們在Linux底下如何轉檔所作的整理，基本上無損壓縮壓縮的話不外乎看到的就是tta(<a href="http://true-audio.com/">TrueAudio</a>) ape(<a href="http://www.monkeysaudio.com/">Monkey&#8217;s Audio</a>) flac(<a href="http://flac.sourceforge.net/">Free Lossless Audio Codec</a>) wv(<a href="http://www.wavpack.com/">Wavpack</a>) tak(<a href="http://www.thbeck.de/Tak/Tak.html">(T)om&#8217;s lossless (A)udio (K)ompressor</a>)，有損的話Mp3(<span class="caps">MPEG</span>-1 Audio Layer 3) Ogg(<a href="http://zh.wikipedia.org/w/index.php?title=Xiph.Org_%E5%9F%BA%E9%87%91%E6%9C%83&amp;variant=zh-tw">Ogg Vorbis</a>) <acronym title="Advanced Audio Coding"><span class="caps">AAC</span></acronym>，基本上比較流行的格式不外乎上面幾種<br />
-
-		
-		<a href="/archives/243" class="more-link">Read More &#8230;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-15T00:00:00+08:00" pubdate data-updated="true">May 15<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/243#disqus_thread">Comments</a></span>
 	
 	
 </div>
