@@ -8,9 +8,8 @@
 
 	
 	<meta name="description" content="&lt;&lt;回到moebuntu中文教學文件(介面篇)
-本文翻譯從http://moebuntu.web.fc2.com/moelogin910.html並符合正體中文語系的使用者介面之翻譯
-題外話：因為最近逛了一下才發現到官方已經有放出9.10登入等得修改畫面
-題外話2：真是強大的惰性 &hellip;">
+本文翻譯從http://moebuntu.web.fc2.com/moexsplash910.html並符合正體中文語系的使用者介面之翻譯
+題外話：最近整個在研究修改佈景主題的script要怎麼寫，有可能的話就會發出懶人包( &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -83,6 +82,52 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/507">moebuntu中文教學文件(9.10 xSplash篇)</a></h1>
+	<div class="entry-content">
+		<p><a href="http://www.renn999.twbbs.org/wordpress/archives/406">&lt;&lt;回到<strong></strong><strong>moebuntu中文教學文件(介面篇)</strong></a></p>
+<p>本文翻譯從<a href="http://moebuntu.web.fc2.com/moexsplash910.html">http://moebuntu.web.fc2.com/moexsplash910.html</a>並符合正體中文語系的使用者介面之翻譯</p>
+<p>題外話：最近整個在研究修改佈景主題的script要怎麼寫，有可能的話就會發出懶人包(這應該是每個人的願望吧&#8230;.XDrz)，祝我好運吧&#8230;XDrz。<br />
+題外話2：Thanks to google translation from <span class="caps">JAPANESE</span> to English</p>
+<p><big>事前準備：</big><br />
+<ol><br />
+	<li>替換用的萌xsplash包</li></p>
+</ol>
+<p>
+		
+		<a href="/archives/507" class="more-link">Read More &#8230;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-21T00:00:00+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/linux/'>Linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/507#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -291,52 +336,6 @@
 </div>
 	
 		<span class="comments"><a href="/archives/455#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/446">Server上的一些變動紀錄</a></h1>
-	<div class="entry-content">
-		<p>前一兩個星期從Ubuntu9.04直接升級到9.10，看似沒有問題。但是今天看了一下備份的紀錄只有到091102，好像Postfix沒有動作的樣子，至於為啥沒有動作，我就不想浪費時間去找問題，於是我參考<a href="http://plog.longwin.com.tw/">Tsung</a>大的<a href="http://plog.longwin.com.tw/my_note-unix/2009/08/27/ssmtp-shell-gmail-send-mail-2009">這一篇</a>，把postfix換掉改用gmail的smtp來送我的備份檔，除了附件大小要注意之外，還是可以使用mutt來送東西。這樣真的省得時間再去設定postfix。</p>
-<p>至於mutt的話之前的版本按照我在前一篇的<a href="http://www.renn999.twbbs.org/wordpress/archives/184">自動MySQL備份搞定</a>，中的script中一定會發現到會吐出error，他會跟你說找不到[mail位置＠where.are.you]這個檔案，我是不清楚新板式不是在這裡有改了啥東西，但是這個問題我改一下參數順序就可以了<br />
-原始為：<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo "$today Data base backup" | mutt -s "Web Mysql Database Backup" -a  sqlbak$today.zip [mail位置＠where.are.you]</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-改成<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo "$today Data base backup" | mutt [mail位置＠where.are.you] -s "Web Mysql Database Backup" -a  sqlbak$today.zip</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>還有我的/etc/resolv.conf每次重新開機都會跑掉，於是我把resolvconf給remove就ok了 :-P</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-11-11T00:00:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/架站相關/'>架站相關</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/446#disqus_thread">Comments</a></span>
 	
 	
 </div>

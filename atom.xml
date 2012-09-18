@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-17T20:46:39+08:00</updated>
+  <updated>2012-09-18T12:55:51+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,16 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[近日心情]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/905"/>
+    <updated>2012-09-17T20:51:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/905</id>
+    <content type="html"><![CDATA[<p>這是密碼保護文</p>
+
+<a href="http://www.renn999.twbbs.org/archives/905" class="more-link">Read More &#8230;</a>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之二]]></title>
@@ -296,18 +306,6 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 　　先來說說最近完成的第一件事情吧，我已經搬回高雄了，所以說最近都是在整理家裡已經快要n年沒整理的房間，丟了一大堆東西之後才發現到那間房間的狀況有夠糟糕的，壁癌啦&#8230;之類的，當然裡面是以前我們家裡開過文具行的一些剩物，當然也勾起了一堆的回憶，說真的也丟了不少東西就是了整理完之後把牆壁刮一刮就像下面這個樣子。<br />
 <div align="center"><wpg2>1248</wpg2><wpg2>1244</wpg2></div><br />
 <a href="http://www.renn999.twbbs.org/archives/668" class="more-link">Read More &#8230;</a>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[vSlider navigation修正]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/644"/>
-    <updated>2010-03-07T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/644</id>
-    <content type="html"><![CDATA[<p>最近發現到這裡霉味很重，已經一段時間沒有更新一堆東西，另外一個原因就是最近都在<del datetime="2010-03-07T14:11:43+00:00">菸酒所</del>研究所考試，所以說大部分的時間都是拿去唸書了。</p>
-<p>我用vSlider當作我的主要佈景主題已經一段時間了，最主要是說裡面我已經改了一堆的東西外加上，如果還要換上新主題的話，又要去研究新主題的語法外加修改掛廣告&#8230;等。</p>
-<p>但是在今天拉到頁尾，看到了很刺眼的東西</p>
-<p>就是底下都會出現雙連結，雖然說之前都有看到，但是都是懶的修正&#8230;<br />
-<a href="http://www.renn999.twbbs.org/archives/644" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
 </feed>
