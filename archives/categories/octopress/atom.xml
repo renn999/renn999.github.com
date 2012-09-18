@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-18T13:49:06+08:00</updated>
+  <updated>2012-09-18T15:40:48+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress文章加密計劃？！]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/906"/>
+    <updated>2012-09-18T13:53:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/906</id>
+    <content type="html"><![CDATA[<p>想想OP如果有像WP一樣的加密文章那該多有趣。</p>
+
+<!--more-->
+
+
+<p>其實因為OP我覺得他的擴充性蠻大的，而且內文可以直接使用Html，並且我想到之前我有看到網頁上直接使用AES加密文章，google一下之後發現到有一個javascript符合需求，<a href="http://www.movable-type.co.uk/scripts/aes.html">JavaScript Implementation of AES Advanced Encryption Standard in Counter Mode</a>就是一個JS的AES加解密器，只要將文章由Markdown轉成HTML後加密並且將加密文貼到文章上就可以了，但是沒這麼簡單(被歐...)</p>
+
+<p>以下是我寫的一個小小的script要將加密文貼到<code>var text='加密文請放這裡';</code>裡面之後就可以貼到post中，<code>generate</code>並<code>deploy</code>。</p>
+
+<p>``` js</p>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">/*如果theme中已經引入了這行就可以省了*/</script>
+
+
+<script src="http://www.renn999.twbbs.org/javascripts/AES.js"></script>
+
+
+<script>
+  var text='加密文請放這裡';
+  function Decrypt_post(){
+    var password = $('input.password').val();
+    var origtext = Aes.Ctr.decrypt(text, password, 256);
+    $('div#decrypted_post').empty().append(origtext);
+  }
+</script>
+
+
+<p><input class='password' /><input type="button" value='解碼' onclick="javascript:Decrypt_post()"/></p>
+
+<div id='decrypted_post'></div>
+
+
+<p>```</p>
+
+<p>至於Markdown要怎麼變成HTML，我只之道Linux下有一個<code>markdown</code>的指令</p>
+
+<pre><code>sudo apt-get install markdown
+</code></pre>
+
+<p>然後就可以</p>
+
+<pre><code>markdown text.markdown &gt; markdown.html
+</code></pre>
+
+<p>很抱歉目前功力不足，無法寫成plugin...OTZ</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之二]]></title>

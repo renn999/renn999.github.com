@@ -7,7 +7,10 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="老實說 今天也是無聊上了一下我常用的domain name的網站，但是讓我一整個錯愕&#8230;.囧&#8230;is expired (~2009-04-29) &lt;img width=640 src=&#8220;http://pic.renn999.twbbs.org/upload/ &hellip;">
+	<meta name="description" content="今天算是把全部 文章內容的一堆.co.cc的字眼給幹掉 除了email外，那是google APP的問題了，改天在處理
+在此紀錄一下 先把wordpress的mysql data dump出來後(如何dump請參考自動MySQL備份搞定)
+1
+sed -i -e 's/取代的字串/取代的字串/g &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -80,6 +83,53 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/345">紀錄一下</a></h1>
+	<div class="entry-content">
+		<p>今天算是把全部 文章內容的一堆.co.cc的字眼給幹掉 除了email外，那是google APP的問題了，改天在處理</p>
+<p>在此紀錄一下 先把wordpress的mysql data dump出來後(如何dump請參考<a href="http://www.renn999.twbbs.org/wordpress/archives/184" target="_blank">自動MySQL備份搞定</a>)<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sed -i -e 's/取代的字串/取代的字串/g' "Wordpress.sql"</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+用gedit開是最不明智的選擇&#8230;XD</p>
+<p>在mysql匯回即可</p>
+<p>再把一些轉址設定好(.htaccess)<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>redirectMatch /(.*) http://www.renn999.twbbs.org/$1</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+搞定收工</p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-23T00:00:00+08:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/linux/'>Linux</a>, <a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>, <a class='category' href='/archives/categories/架站相關/'>架站相關</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/345#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -286,46 +336,6 @@
 </div>
 	
 		<span class="comments"><a href="/archives/315#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/291">Google Chromium for Linux總算給我顯示出中文了</a></h1>
-	<div class="entry-content">
-		<p><a href="http://pic.renn999.twbbs.org/view.php?pic=abbba84962814770.png" target="_blank"><img src="http://pic.renn999.twbbs.org/upload/abbba84962814770.png" alt="" width="640" /></a></p>
-<p>之前知道開始放出&quot;超級不穩定版&quot;，我就決定要自己測試看看，但是裝完之後一直都是方塊文字，但是聽說網路上有的人是正常出現中文字，我今天才想到最主要的問題點。</p>
-<p>
-		
-		<a href="/archives/291" class="more-link">Read More &#8230;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-18T00:00:00+08:00" pubdate data-updated="true">Jun 18<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>, <a class='category' href='/archives/categories/關於軟體/'>關於軟體</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/291#disqus_thread">Comments</a></span>
 	
 	
 </div>
