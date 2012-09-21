@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-09-21T10:16:33+08:00</updated>
+  <updated>2012-09-21T17:38:17+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,18 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress調教メモ之三]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/907"/>
+    <updated>2012-09-21T17:22:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/907</id>
+    <content type="html"><![CDATA[<p>用上了 <code>slash</code> 這個 theme 後，忍不住想要惡搞起來，搞得跟自己的 Terminal 一樣黑底綠字</p>
+
+<p>附上 diff 檔，但是現在還有一堆東西沒有改上&#8230;OTZ</p>
+
+<a href="http://www.renn999.twbbs.org/archives/907" class="more-link">Read More &#8230;</a>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress文章加密計劃？！]]></title>
@@ -292,19 +304,6 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 <div align="center">
 <wpg2>1297</wpg2>
 <p>先來個日光浴</div><a href="http://www.renn999.twbbs.org/archives/690" class="more-link">Read More &#8230;</a>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[觀貓日記 20100513]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/680"/>
-    <updated>2010-05-13T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/680</id>
-    <content type="html"><![CDATA[<p>今天觀察才發現到，那隻虎斑貓還會睡在別的地方&#8230;XDrz<br />
-<div align="center"><br />
-<p>虎斑貓在波浪版上睡覺之間</p><br />
-<wpg2>1285</wpg2><br />
-接著出現了另外一隻花貓</p>
-<p></div><a href="http://www.renn999.twbbs.org/archives/680" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
 </feed>

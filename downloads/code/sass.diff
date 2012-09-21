@@ -1,0 +1,111 @@
+diff -urN sass.orig/_parts.scss sass.new/_parts.scss
+--- sass.orig/_parts.scss	2012-09-21 08:52:47.812425000 +0800
++++ sass.new/_parts.scss	2012-09-19 09:56:37.642030000 +0800
+@@ -6,4 +6,5 @@
+ @import "parts/comment";
+ @import "parts/footer";
+ @import "parts/syntax";
+-@import "parts/twitter";
+\ No newline at end of file
++@import "parts/twitter";
++@import "parts/scollbars";
+diff -urN sass.orig/base/_color.scss sass.new/base/_color.scss
+--- sass.orig/base/_color.scss	2012-09-21 08:52:47.812425000 +0800
++++ sass.new/base/_color.scss	2012-09-18 21:08:57.791326000 +0800
+@@ -1,7 +1,7 @@
+-$color-background: #eee;
+-$color-main: #258fb8;
+-$color-gray01: #666;
+-$color-gray02: #999;
+-$color-gray03: #ccc;
+-$color-gray04: #ddd;
+-$color-gray05: #fff;
+\ No newline at end of file
++$color-background: #000;
++$color-main: lime; //more
++$color-gray01: lime; //post_font
++$color-gray02: lime; //post_aside
++$color-gray03: lime;
++$color-gray04: black;
++$color-gray05: lime;
+diff -urN sass.orig/parts/_archive.scss sass.new/parts/_archive.scss
+--- sass.orig/parts/_archive.scss	2012-09-21 08:52:47.812425000 +0800
++++ sass.new/parts/_archive.scss	2012-09-21 17:13:30.916612000 +0800
+@@ -15,7 +15,7 @@
+ 		position: absolute;
+ 		top: 0;
+ 		padding-top: 15px;
+-		border-top: 1px solid #fff;
++		border-top: 1px solid lime;
+ 		&:before{
+ 			content: "";
+ 			position: absolute;
+@@ -70,4 +70,4 @@
+ 			.comments:before{content: "\f075";}
+ 		}
+ 	}
+-}
+\ No newline at end of file
++}
+diff -urN sass.orig/parts/_header.scss sass.new/parts/_header.scss
+--- sass.orig/parts/_header.scss	2012-09-21 08:52:47.812425000 +0800
++++ sass.new/parts/_header.scss	2012-09-19 08:57:02.705179000 +0800
+@@ -165,7 +165,7 @@
+ 		position: relative;
+ 		width: 100%;
+ 		.button{
+-			background: #f2f2f2;
++			background: #141414;
+ 			border: 1px solid $color-gray04;
+ 			color: #999;
+ 			padding: 0 60px 0 10px;
+diff -urN sass.orig/parts/_scollbars.scss sass.new/parts/_scollbars.scss
+--- sass.orig/parts/_scollbars.scss	1970-01-01 08:00:00.000000000 +0800
++++ sass.new/parts/_scollbars.scss	2012-09-19 19:43:24.382908000 +0800
+@@ -0,0 +1,16 @@
++::-webkit-scrollbar {
++    width: 8px;
++    height: 8px;
++}
++ 
++::-webkit-scrollbar-track {
++    border-radius: 10px;
++    background-color: lime;
++}
++ 
++::-webkit-scrollbar-thumb {
++    border: 1px solid;
++    border-radius: 10px;
++    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
++    background-color: black;
++}
+diff -urN sass.orig/parts/_syntax.scss sass.new/parts/_syntax.scss
+--- sass.orig/parts/_syntax.scss	2012-09-21 08:52:47.812425000 +0800
++++ sass.new/parts/_syntax.scss	2012-09-21 17:11:26.524618000 +0800
+@@ -15,7 +15,7 @@
+ $solar-cyan:      #2aa198 !default;
+ $solar-green:     #859900 !default;
+ 
+-$solarized: light !default;
++$solarized: dark !default;
+ 
+ @if $solarized == light {
+ 
+@@ -83,7 +83,7 @@
+ 			margin: -5px -15px 0;
+ 			padding: 5px 15px;
+ 			display: block;
+-			@include background(linear-gradient(top, $pre-border, $pre-bg));
++			border-bottom: 1px solid $pre-border;
+ 			&:empty{
+ 				display: none;
+ 			}
+@@ -163,7 +163,7 @@
+ 					left: 0;
+ 					padding: 5px 15px;
+ 					width: 100%;
+-					@include background(linear-gradient(top, $pre-border, $pre-bg));
++					border-bottom: 1px solid $pre-border;
+ 				}
+ 			}
+ 		}

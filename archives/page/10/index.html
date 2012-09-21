@@ -7,10 +7,12 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="今天算是把全部 文章內容的一堆.co.cc的字眼給幹掉 除了email外，那是google APP的問題了，改天在處理
-在此紀錄一下 先把wordpress的mysql data dump出來後(如何dump請參考自動MySQL備份搞定)
+	<meta name="description" content="最近都在忙一些課業上得問題真的沒有時間去搞定有的沒的
+最主要之前的email publish都一直沒有出現
+今天在翻apache log的時候才發現到問題(奇怪之前都寄得出去&#8230;= =a?)
 1
-sed -i -e 's/取代的字串/取代的字串/g &hellip;">
+sh: sendmail: not found
+去/etc/php5/apache2/ &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,6 +86,50 @@ sed -i -e 's/取代的字串/取代的字串/g &hellip;">
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/349">修好sendmail</a></h1>
+	<div class="entry-content">
+		<p>最近都在忙一些課業上得問題真的沒有時間去搞定有的沒的</p>
+<p>最主要之前的email publish都一直沒有出現</p>
+<p>今天在翻apache log的時候才發現到問題(奇怪之前都寄得出去&#8230;= =a?)</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sh: sendmail: not found</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>去/etc/php5/apache2/php.ini中把sendmail path設定一下就修好了</p>
+<p>我真的呆了好一陣子&#8230;QQ</p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-07T00:00:00+08:00" pubdate data-updated="true">Jul 7<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/架站相關/'>架站相關</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/349#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -276,67 +322,6 @@ sed -i -e 's/取代的字串/取代的字串/g &hellip;">
 </div>
 	
 		<span class="comments"><a href="/archives/328#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/315">ImageUpon檔案副檔名判斷修改</a></h1>
-	<div class="entry-content">
-		<p>今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案&#8230;Orz，優點也是可以正確的去辨識檔案<br />
-<p>修改部份：<br />
-找到<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$suffix = strtolower(substr($_FILES['uploadimg']['name'],-4));</span></code></pre></td></tr></table></div></figure></div></notextile></p><br />
-<p>改成：<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$img_info = getimagesize($_FILES['uploadimg']['tmp_name']);
-</span><span class='line'>$mime = $img_info['mime'];
-</span><span class='line'>list($t, $suffix) = split('/', $mime);
-</span><span class='line'>if ($suffix == 'jpeg') //這個部份將JPEG檔名轉成jpg
-</span><span class='line'>	$suffix = 'jpg';
-</span><span class='line'>$suffix='.'.$suffix;//加上點這樣整體架構不用去作修改</span></code></pre></td></tr></table></div></figure></div></notextile></p><br />
-<p>雖然說多了很多的步驟，但是隨便拿一張圖附檔亂改，都還可以正確的去作辨識，取得應有的副檔名。</p><br />
-<p>如果還是要使用上傳檔案的檔名去取得副檔名的話，我想到比較好的方式還是使用preg_match會比較正統，因為畢竟副檔名不是只有三個字<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>preg_match('/(.*?)[.](\w+$)/u', $_FILES['uploadimg']['name'], $regs);
-</span><span class='line'>$suffix = '.'.strtolower($regs[2]);</span></code></pre></td></tr></table></div></figure></div></notextile></p></p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-20T00:00:00+08:00" pubdate data-updated="true">Jun 20<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/315#disqus_thread">Comments</a></span>
 	
 	
 </div>
