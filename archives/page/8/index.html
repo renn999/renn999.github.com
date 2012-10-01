@@ -7,9 +7,10 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="本文翻譯從http://moebuntu.web.fc2.com/moelogin.html 並符合正體中文語系的使用者介面之翻譯
+	<meta name="description" content="本文翻譯從http://moebuntu.web.fc2.com/moesplash.html 並符合正體中文語系的使用者介面之翻譯
 注意：以下之方法只是用於9.04(含)以前的版本，於最新版的9.10不適用(譯者親身經歷)
-方法如下： Read More &#8230; Nov 5th, &hellip;">
+準備工作：
+StartUp-Manager(用於修改Splash的工具 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -29,6 +30,7 @@
 	<li><a href="/archives">Archives</a></li>
 	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
+	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
 <ul>
 </nav>
 <nav id="mobile-nav">
@@ -38,6 +40,7 @@
 	<li><a href="/archives">Archives</a></li>
 	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
+	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
 <ul>
 </div>
 	</div>
@@ -83,6 +86,48 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/428">Moebuntu中文教學文件(開機畫面[splash]篇)</a></h1>
+	<div class="entry-content">
+		<p>本文翻譯從<a target="_blank" href="http://moebuntu.web.fc2.com/moesplash.html">http://moebuntu.web.fc2.com/moesplash.html</a> 並符合正體中文語系的使用者介面之翻譯</p>
+<p><big><big><font color="#CC0000">注意：以下之方法只是用於9.04(含)以前的版本，於最新版的9.10不適用(譯者親身經歷)</font></big></big></p>
+<p><big><big>準備工作：</big></big><br />
+<ul><li>StartUp-Manager(用於修改Splash的工具)</li><li>moebuntu Splash佈景</li></ul><br />
+
+		
+		<a href="/archives/428" class="more-link">Read More &#8230;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-05T00:00:00+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/linux/'>Linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/428#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -390,63 +435,6 @@
 </div>
 	
 		<span class="comments"><a href="/archives/399#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/396">Apache修改執行user和Group和修改phpmyadmin預設網址</a></h1>
-	<div class="entry-content">
-		<p>在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[bbs@localhost 3]$ ls -lt
-</span><span class='line'>total 20
-</span><span class='line'>-rw------- 2 bbs bbs 341 2009-09-01 12:53 A159PA63
-</span><span class='line'>-rw------- 1 bbs bbs 751 2009-05-02 00:20 A14VM573
-</span><span class='line'>-rw------- 1 bbs bbs 719 2009-04-27 12:06 A14VAAL3
-</span><span class='line'>-rw------- 1 bbs bbs 526 2009-02-09 12:10 A14OVB03
-</span><span class='line'>-rw------- 1 bbs bbs 255 2007-10-12 22:41 A13GV1S3</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-所以說必須要讓apache改變user和grup其實非常簡單只要修改/etc/apache2/envvars裡面的APACHE_RUN_USER及APACHE_RUN_GROUP為你要的user及group，並restart apache即可。</p>
-<p>修改phpmyadmin的預設路徑，剛灌好的phpphpmyadmin預設路徑為 http://你的網址/phpmyadmin 以前的作法是在/var/www下面將phpmyadmin的Link修改名稱即可，現在就已經不一樣了，現在已經把設定檔寫在/etc/apache2/conf.d/phpmyadmin.conf，找到<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Alias /phpmyadmin(修改這裡) /usr/share/phpmyadmin</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-修改完並restart apache即可。</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-12T00:00:00+08:00" pubdate data-updated="true">Oct 12<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/架站相關/'>架站相關</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/396#disqus_thread">Comments</a></span>
 	
 	
 </div>

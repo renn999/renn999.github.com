@@ -7,11 +7,10 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案&#8230;Orz，優點也是可以正確的去辨識檔案
-修改部份：
-找到
-1
-$suffix = strtolower( &hellip;">
+	<meta name="description" content="WordPlurk以要對wordpress發文之後把標題連結同步到Plurk真的非常的方便，當然我也小看了一下原始碼對於中文語系的話也些地方還是可以調整的。 1
+2
+3
+curl_setopt($curl, CURLOPT_URL, &#39;http://www.plurk.com/ &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -31,6 +30,7 @@ $suffix = strtolower( &hellip;">
 	<li><a href="/archives">Archives</a></li>
 	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
+	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
 <ul>
 </nav>
 <nav id="mobile-nav">
@@ -40,6 +40,7 @@ $suffix = strtolower( &hellip;">
 	<li><a href="/archives">Archives</a></li>
 	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
+	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
 <ul>
 </div>
 	</div>
@@ -85,6 +86,72 @@ $suffix = strtolower( &hellip;">
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/328">WordPlurk一些細部修改</a></h1>
+	<div class="entry-content">
+		<p>WordPlurk以要對wordpress發文之後把標題連結同步到Plurk真的非常的方便，當然我也小看了一下原始碼對於中文語系的話也些地方還是可以調整的。</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">curl_setopt($curl, CURLOPT_URL, &#39;http://www.plurk.com/TimeLine/addPlurk&#39;);</span>
+</span><span class='line'><span class="x">curl_setopt($curl, CURLOPT_POSTFIELDS, &#39;qualifier=shares&amp;content=&#39;. $new_status .&#39;&amp;lang=en&amp;no_comments=0&amp;uid=&#39; . $uid[0]);</span>
+</span><span class='line'><span class="x">$post = curl_exec($curl);</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+在台灣地區的話，於第29行網址的部份lang=en可以改成lang=tr_ch，這樣在plurk上就不會出現英文，qualifier=share這裡可以改變plurk post的狀態就是&quot;說&quot;&quot;想要&quot;那些有的沒的<br />
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">the_post();</span>
+</span><span class='line'><span class="x">$post_url = file_get_contents(&#39;http://tinyurl.com/api-create.php?url=&#39; . get_permalink());</span>
+</span><span class='line'><span class="x">$title = get_the_title();</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>在46行的部份<code>'http://tinyurl.com/api-create.php?url='</code>這是將網址用tinyurl縮網如果不想縮網的話可以去掉，要不然要用自己喜歡的服務也可以(0rz.tw的服務好像被拿掉了但是我在研究看看)，我是不知道網址太長會怎樣&#8230;Orz，因為我是用我自己的短網址，我還刻意做了一個api給他用&#8230;XD</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">$i = &#39;\&#39;&#39; . $title . &#39;\&#39; - &#39; . $post_url;</span>
+</span><span class='line'><span class="x">			</span>
+</span><span class='line'><span class="x">$plurk_username = get_option(&#39;wordplurk_username&#39;, 0);</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+在51行的部份就是post到Plurk的時候會出現的樣式，他這邊就設計的不怎麼好就是了，這裡通常會改成<br />
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">$i = $post_url . &#39; (&#39;. $title .&#39;)&#39; ;</span>
+</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+讓title直接變成連結的方式</p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-21T00:00:00+08:00" pubdate data-updated="true">Jun 21<span>st</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>, <a class='category' href='/archives/categories/架站相關/'>架站相關</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/328#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -279,50 +346,6 @@ $suffix = strtolower( &hellip;">
 </div>
 	
 		<span class="comments"><a href="/archives/256#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/249">練習著色&#8230;</a></h1>
-	<div class="entry-content">
-		<p>老實說 我只是個新手</p>
-<p>這也是想說想說看看SAI可不可以在Wine上跑的一個惡趣味而已<br />
-改天真的要去摸摸gimp了</p>
-<p><a href="http://pic.renn999.twbbs.org/view/ccbe0202fbea8960.png">&lt;img src=http://pic.renn999.twbbs.org/thumb/ccbe0202fbea8960.jpg /&gt;</a></p>
-<p>因為我真的功力沒這麼好只好先拿人家的線搞來練習了&#8230;QQ</p>
-<p>Winee是可以用沒錯啦 但是一堆快速鍵就死光了 像是Ctrl+Z&#8230;.. 而且中文語系還亂碼顯示 只好強制使用英文了</p>
-<p>P.S. 剛剛才發現到的一件事情 這位畫師畫師竟然有放線稿的PSD&#8230;囧(我還在用JPG慢慢塗&#8230;我還在用JPG慢慢塗&#8230;&lt; 囧&gt;</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-16T00:00:00+08:00" pubdate data-updated="true">May 16<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/249#disqus_thread">Comments</a></span>
 	
 	
 </div>
