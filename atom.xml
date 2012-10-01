@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-01T20:53:22+08:00</updated>
+  <updated>2012-10-01T20:59:24+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,16 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/908"/>
-    <updated>2012-10-01T19:17:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/908</id>
-    <content type="html"><![CDATA[<p>最近因為 octopress 的關係，把重大學時代某位NE網友提起的 git 給重新翻出來學，順便把一些在硬碟中塵封已久的一些小 project 給 remote 到一些像是 <a href="http://github.com">github</a> <a href="http://bitbucket.org">bitbucket</a> 等服務上面去。</p>
-
-<a href="http://www.renn999.twbbs.org/archives/908" class="more-link">Read More &#8230;</a>]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之三]]></title>
@@ -303,6 +293,17 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <id>http://www.renn999.twbbs.org/archives/708</id>
     <content type="html"><![CDATA[<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。&quot;看&quot;起來好像也沒有比較大的問題出現了。</p>
 <p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<a href="http://www.renn999.twbbs.org/archives/708" class="more-link">Read More &#8230;</a>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[觀貓日記 20100514]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/690"/>
+    <updated>2010-05-14T00:00:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/690</id>
+    <content type="html"><![CDATA[<p>今天真是睡姿大聚集&#8230;.</p>
+<div align="center">
+<wpg2>1297</wpg2>
+<p>先來個日光浴</div><a href="http://www.renn999.twbbs.org/archives/690" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
 </feed>

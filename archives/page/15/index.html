@@ -7,7 +7,12 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="在此 感謝Billcho的教導從來都沒想過SSH的功能會這麼的強大 連開一個臨時Proxy都可以基本上在Linux中去找ssh的男人(men)時 會發現到一個參數-D [bind_address:]port Specifies a local &#8220;dynamic&#8217;&# &hellip;">
+	<meta name="description" content="等等來更新一下好了
+最近老實說都懶得更新Blog
+覺得自己越來越像某畫&quot;爸爸你到底在哪裡&quot;的那一位了&#8230;XD
+聽說wordpress2.7變得非常非常炫
+晚點再來看看吧&#8230;
+也該來為這積了厚厚的黴菌的Blog擦一下了&#8230;QQ Dec 14th, &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -83,44 +88,6 @@
 		
 	
 	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/158">Use SSH Open a SOCKS Proxy</a></h1>
-	<div class="entry-content">
-		<p>在此 感謝Billcho的教導<br /><br />從來都沒想過SSH的功能會這麼的強大 連開一個臨時Proxy都可以<br /><br />基本上在Linux中去找ssh的男人(men)時 會發現到一個參數<br /><blockquote>-D [bind_address:]port<br /> Specifies a local &#8220;dynamic&#8217;&#8217; application-level port forwarding. This works by allocating a socket to listen to port on the local side, optionally bound to the specified bind_address.  Whenever a connection is made to this port, the connection is forwarded over the secure channel, and the application protocol is then used to determine where to connect to from the remote machine.  Currently the SOCKS4 and SOCKS5 protocols are supported, and ssh will act as a <span class="caps">SOCKS</span> server.  Only root can forward privileged ports. Dynamic port forwardings can also be specified in the configura-tion file.<br /> IPv6 addresses can be specified with an alternative syntax: [bind_address/]port or by enclosing the address in square brackets.  Only the superuser can forward privileged ports.  By default, the local port is bound in accordance with the GatewayPorts setting.  However, an explicit bind_address may be used to bind the connection to a specific address.  The bind_address of &#8220;localhost&#8217;&#8217; indicates that the listening port be bound for local use only, while an empty address or &#8216;*&#8217; indicates that the port should be available from all interfaces.<br /></blockquote><br />基本上來說 這個參數就是利用SSH在 遠端的電腦上開一個Port之後 來當作一個Socks Proxy<br /><br />Linux的作法老實說比較簡單 因為Linux不可能不具備SSH吧&#8230;XD<br /><br />所以說的話只要SSH到目的主機參數多加上-D &lt;你要開的Prot&gt;這樣就OK了 連線方式就是在Socks5 proxy設定那邊打上127.0.0.1:&lt;你要開的Prot&gt; 這樣就好了 可以連去測試IP的地方看一看<br /><br />如果你有一個工作Host端伺服器為Linux 但是你的client為Windows的話 或者你黑進去一個Linux的伺服器打算要在上面開一個Port的話 這個部份就要注意一點了 你比需要在Host端開一個port 如果直接下-D &lt;你要開的Prot&gt;的話這樣是沒有辦法連上去的 因為他裡面有說 如果沒有指定bind_address的話他只會允許localhost的連線 故要用-D &lt;Host端IP&gt;&lt;host 端ip=&quot;&quot;&gt;:&lt;你要開的Prot&gt; 這樣才可以連的上去<br /></host></p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-12-22T00:00:00+08:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/158#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
 
 
     <article class="post">
@@ -285,6 +252,44 @@
 </div>
 	
 		<span class="comments"><a href="/archives/134#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/133">[IOSYS] 東方真華神祭</a></h1>
+	<div class="entry-content">
+		<p>老實說真是可怕的惰性 外加上最近忙到快爆炸了&#8230;QQ</p>  <p>還有一堆鳥事要處理&#8230; 真的快要到翻桌的地步了</p>  <p><del>-</del>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-(抱怨分隔線)&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>  <p>嗯嗯 說介紹這個Lag有點大了 但是這家除了上次介紹做了&quot;三次&quot;同人音樂外&#8230;</p>  <p>這一張專輯真的是二次同人音樂了&#8230;</p>  <p>應援一下    <br /><a href="http://makashinsai.com/" target="_blank"><img src="http://makashinsai.com/image/468_60.gif" /></a>&#160;</p>  <p>老實說這家每次亦有新專輯時 一定都會有很棒的Flash</p>  <p>而且電波污染嚴重 &#8230;<span class="caps">XDDD</span></p>  <p>但是每次經過電波的洗腦之後 心情總是比較好一點</p>  <p><a href="http://makashinsai.com/pv_hakureijinja.html">博麗神社町内会音頭</a> 這個Flash真的推薦看一下</p>  <p>而且Flash作者的網站真的也建議去看一下 很棒的&#8230;</p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-27T00:00:00+08:00" pubdate data-updated="true">May 27<span>th</span>, 2008</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/同人cd/'>同人CD</a>, <a class='category' href='/archives/categories/同人樂團/'>同人樂團</a>, <a class='category' href='/archives/categories/東方project/'>東方Project</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/133#disqus_thread">Comments</a></span>
 	
 	
 </div>
