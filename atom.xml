@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-02T07:31:14+08:00</updated>
+  <updated>2012-10-15T10:46:52+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,16 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress調教メモ之四]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/909"/>
+    <updated>2012-10-15T10:50:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/909</id>
+    <content type="html"><![CDATA[<p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
+
+<a href="http://www.renn999.twbbs.org/archives/909" class="more-link">Read More &#8230;</a>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[bash prompt加上目前所在的git branch]]></title>
@@ -294,15 +304,6 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 <p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big><br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install trash-cli</span></code></pre></td></tr></table></div></figure></div></notextile><a href="http://www.renn999.twbbs.org/archives/721" class="more-link">Read More &#8230;</a>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ubuntu 10.04 升級筆記]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/708"/>
-    <updated>2010-05-22T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/708</id>
-    <content type="html"><![CDATA[<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。&quot;看&quot;起來好像也沒有比較大的問題出現了。</p>
-<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<a href="http://www.renn999.twbbs.org/archives/708" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
 </feed>

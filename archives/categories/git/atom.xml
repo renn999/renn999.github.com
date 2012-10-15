@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/git/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-02T07:31:14+08:00</updated>
+  <updated>2012-10-15T10:46:52+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress調教メモ之四]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/909"/>
+    <updated>2012-10-15T10:50:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/909</id>
+    <content type="html"><![CDATA[<p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
+
+<!--more-->
+
+
+<p>像說我把我的 Octopress deploy 到 <a href="http://github.com">github</a> 上，但是在 <a href="http://bitbucket.org">bitbucket</a> 上開了一個 private 的 repo 來放 source 主要是將一些 private post 找到可以放的家。要不然真的一些 private post 放在 github 上的話真的一覽無遺...Q_Q</p>
+
+<pre><code>git remote add bitbucket &lt;your repo url&gt;
+git push origin bitbucket
+</code></pre>
+
+<p>而其實 <a href="http://bitbucket.org">bitbucket</a> 的申請方式差不多，而且也可以像 <a href="http://github.com">github</a> 把網頁 deploy 上去，這真的讓我也碘考慮想要搬家了...OTZ</p>
+
+<p>看到很多人都在抱怨 <a href="http://octopress.org/">octopress</a> 的 generate 速度非常慢，有的強者甚至自己利用其他語言刻了一個出來，像是[這裡] (http://zespia.tw/blog/2012/10/11/hexo-debut/) 是用 node.js 造出來的，其實我也有打算想要造一個，但是我是想要用Python+Flask而且目前已經有了框架出來了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[bash prompt加上目前所在的git branch]]></title>
