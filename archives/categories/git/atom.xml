@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/git/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-15T10:46:52+08:00</updated>
+  <updated>2012-10-15T10:49:23+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -31,7 +31,7 @@ git push origin bitbucket
 
 <p>而其實 <a href="http://bitbucket.org">bitbucket</a> 的申請方式差不多，而且也可以像 <a href="http://github.com">github</a> 把網頁 deploy 上去，這真的讓我也碘考慮想要搬家了...OTZ</p>
 
-<p>看到很多人都在抱怨 <a href="http://octopress.org/">octopress</a> 的 generate 速度非常慢，有的強者甚至自己利用其他語言刻了一個出來，像是[這裡] (http://zespia.tw/blog/2012/10/11/hexo-debut/) 是用 node.js 造出來的，其實我也有打算想要造一個，但是我是想要用Python+Flask而且目前已經有了框架出來了。</p>
+<p>看到很多人都在抱怨 <a href="http://octopress.org/">octopress</a> 的 generate 速度非常慢，有的強者甚至自己利用其他語言刻了一個出來，像是<a href="http://zespia.tw/blog/2012/10/11/hexo-debut/">這裡</a> 是用 node.js 造出來的，其實我也有打算想要造一個，但是我是想要用Python+Flask而且目前已經有了框架出來了。</p>
 ]]></content>
   </entry>
   
