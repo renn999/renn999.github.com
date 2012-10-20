@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-15T10:57:13+08:00</updated>
+  <updated>2012-10-20T12:37:56+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -15,12 +15,12 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之四]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/909"/>
+    <link href="http://www.renn999.twbbs.org/archives/909/"/>
     <updated>2012-10-15T10:50:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/909</id>
     <content type="html"><![CDATA[<p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
 
-<a href="http://www.renn999.twbbs.org/archives/909" class="more-link">Read More &#8230;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/909/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>

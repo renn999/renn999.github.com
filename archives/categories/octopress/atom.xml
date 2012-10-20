@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-15T10:57:13+08:00</updated>
+  <updated>2012-10-20T16:05:01+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -15,7 +15,7 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之四]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/909"/>
+    <link href="http://www.renn999.twbbs.org/archives/909/"/>
     <updated>2012-10-15T10:50:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/909</id>
     <content type="html"><![CDATA[<p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
@@ -26,7 +26,7 @@
 <p>像說我把我的 Octopress deploy 到 <a href="http://github.com">github</a> 上，但是在 <a href="http://bitbucket.org">bitbucket</a> 上開了一個 private 的 repo 來放 source 主要是將一些 private post 找到可以放的家。要不然真的一些 private post 放在 github 上的話真的一覽無遺...Q_Q</p>
 
 <pre><code>git remote add bitbucket &lt;your repo url&gt;
-git push bitbucket source
+git push origin bitbucket
 </code></pre>
 
 <p>而其實 <a href="http://bitbucket.org">bitbucket</a> 的申請方式差不多，而且也可以像 <a href="http://github.com">github</a> 把網頁 deploy 上去，這真的讓我也碘考慮想要搬家了...OTZ</p>
@@ -37,7 +37,7 @@ git push bitbucket source
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之三]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/907"/>
+    <link href="http://www.renn999.twbbs.org/archives/907/"/>
     <updated>2012-09-21T17:22:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/907</id>
     <content type="html"><![CDATA[<p>用上了 <code>slash</code> 這個 theme 後，忍不住想要惡搞起來，搞得跟自己的 Terminal 一樣黑底綠字</p>
@@ -53,7 +53,7 @@ git push bitbucket source
   
   <entry>
     <title type="html"><![CDATA[Octopress文章加密計劃？！]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/906"/>
+    <link href="http://www.renn999.twbbs.org/archives/906/"/>
     <updated>2012-09-18T13:53:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/906</id>
     <content type="html"><![CDATA[<p>想想OP如果有像WP一樣的加密文章那該多有趣。</p>
@@ -108,7 +108,7 @@ git push bitbucket source
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之二]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/904"/>
+    <link href="http://www.renn999.twbbs.org/archives/904/"/>
     <updated>2012-09-12T19:55:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/904</id>
     <content type="html"><![CDATA[<p>這次把<code>LinkWithin</code>的連結稍微改了一下，把他弄成獨立頁面，並且我發現到如果改了 theme 之前 theme 的東西還是會留下來變成垃圾，但是會不會一起<code>generate</code>老實說我就不得而知了，但是看起來好像不會。</p>
@@ -187,7 +187,7 @@ index 0000000..0041fba
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之一]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/903"/>
+    <link href="http://www.renn999.twbbs.org/archives/903/"/>
     <updated>2012-09-10T08:03:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/903</id>
     <content type="html"><![CDATA[<p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章</p>

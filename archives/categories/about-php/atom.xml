@@ -4,7 +4,7 @@
   <title><![CDATA[Category: about PHP | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/about-php/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-15T10:57:13+08:00</updated>
+  <updated>2012-10-20T16:05:01+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -15,7 +15,7 @@
   
   <entry>
     <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/886"/>
+    <link href="http://www.renn999.twbbs.org/archives/886/"/>
     <updated>2011-04-24T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/886</id>
     <content type="html"><![CDATA[<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息...OTZ。</p>
@@ -31,7 +31,7 @@
   
   <entry>
     <title type="html"><![CDATA[Counterize II 2.14.1 IP patch(還原顯示IP功能)]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/468"/>
+    <link href="http://www.renn999.twbbs.org/archives/468/"/>
     <updated>2009-12-15T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/468</id>
     <content type="html"><![CDATA[<p><a href="http://www.renn999.twbbs.org/wordpress/archives/197">前文</a>在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。</p>
@@ -40,20 +40,17 @@
 
 <p>使用方法：
 將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>patch -p0 &lt; ip_patch.patch</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}patch -p0 &lt; ip_patch.patch{% endcodeblock %}
 如果出現
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>patching file counterizeii/counterize_install.php
-</span><span class='line'>patching file counterizeii/counterize.php</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}patching file counterizeii/counterize_install.php
+patching file counterizeii/counterize.php{% endcodeblock %}
 表示完成了，這是在Linux底下，在windows的話可能需要GnuWin32或是其他對應的軟體。</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Google AJAX Libraries API]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/401"/>
+    <link href="http://www.renn999.twbbs.org/archives/401/"/>
     <updated>2009-10-28T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/401</id>
     <content type="html"><![CDATA[<p>其實今天就是在google AJAX看到的鬼東西，而且是一個非常有趣的鬼東西，依照我淺薄的接觸以為javascript Libraries只有jQuery，竟然沒想到還有這麼多的種類，</p>
@@ -61,26 +58,16 @@
 <p>網站：<a href="http://code.google.com/intl/en/apis/ajaxlibs/">http://code.google.com/intl/en/apis/ajaxlibs/</a></p>
 
 <p>其實這讓開發者真的可以非常的方便來使用一些javascript的Libraries，如果要使用jQuery的話只要
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;script src="http://www.google.com/jsapi">&lt;/script> &lt;!--先include google js api-->&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;script> 
-</span><span class='line'>google.load("jquery", "1.3.2");
-</span><span class='line'>google.load("jqueryui", "1.7.2");
-</span><span class='line'>&lt;!-- your js code -->
-</span><span class='line'>&lt;/script>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}<script src="http://www.google.com/jsapi"></script> <!--先include google js api--></p>
+
+<script> 
+google.load("jquery", "1.3.2");
+google.load("jqueryui", "1.7.2");
+<!-- your js code -->
+</script>
+
+
+<p>{% endcodeblock %}</p>
 
 <p>真是方便的東西...XDrz</p>
 ]]></content>
@@ -88,129 +75,70 @@
   
   <entry>
     <title type="html"><![CDATA[利用php將UTF-8 -> big5 UAO沒有PATCH iconv]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/383"/>
+    <link href="http://www.renn999.twbbs.org/archives/383/"/>
     <updated>2009-10-06T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/383</id>
     <content type="html"><![CDATA[<p>最近因為嘗試要轉換一些HTML->BBS的文章會發生的問題，所以說就寫了一個這樣的程式，因為我完全不想要動到iconv的PATCH，所以說就先利用ZTerm src中的BIG5表格下去做轉換，結果還不錯。</p>
 
 <p>(修正了幾個bug 091006 21：00)
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">&amp;lt;?php</span>
-</span><span class='line'><span class="x">/&lt;em&gt;&lt;br/&gt;</span>
-</span><span class='line'><span class="x"> *  This php is using GNU General Public License v2.0</span>
-</span><span class='line'><span class="x"> *  renn999&lt;AT&gt;ccns.ncku.edu.tw</span>
-</span><span class='line'><span class="x"> *  http://renn999.twbbs.org</span>
-</span><span class='line'><span class="x"> *</span>
-</span><span class='line'><span class="x"> *  USAGE:ucs2big5( $str );</span>
-</span><span class='line'><span class="x"> &lt;/em&gt;&lt;br/&gt;</span>
-</span><span class='line'><span class="x"> *  Big5 table(big5.txt)</span>
-</span><span class='line'><span class="x"> *  using from Ztrem</span>
-</span><span class='line'><span class="x"> *  http://zhouer.org/ZTerm/</span>
-</span><span class='line'><span class="x"> */&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">&lt;p&gt;function ucs2big5($ucs_str) {&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">&lt;pre&gt;&lt;code&gt;$fp = fopen( &#39;big5.txt&#39;, &#39;r&#39; );</span>
-</span><span class='line'><span class="x">$len = strlen($ucs_str);</span>
-</span><span class='line'><span class="x">unset($big5_str);</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">$x = 0;</span>
-</span><span class='line'><span class="x">for( $i = 0 ; $i &amp;lt; $len ; $i++ ) {</span>
-</span><span class='line'><span class="x">    $b1 = ord($ucs_str[$i]);</span>
-</span><span class='line'><span class="x">    if( $b1 &amp;lt; 0x80 ) {</span>
-</span><span class='line'><span class="x">        $big5_str[$x++] = chr($b1);</span>
-</span><span class='line'><span class="x">    }</span>
-</span><span class='line'><span class="x">    elseif( $b1 &amp;gt;= 224 ) {</span>
-</span><span class='line'><span class="x">        #3code UTF-8</span>
-</span><span class='line'><span class="x">        $b1 -= 224;</span>
-</span><span class='line'><span class="x">        $b2 = ord($ucs_str[++$i]) - 128;</span>
-</span><span class='line'><span class="x">        $b3 = ord($ucs_str[++$i]) - 256;</span>
-</span><span class='line'><span class="x">        $ucs_code = $b1 * 4096 + $b2 * 64 + $b3;</span>
-</span><span class='line'><span class="x">        fseek( $fp, $ucs_code * 2);</span>
-</span><span class='line'><span class="x">        $big5_code = fread( $fp, 2 );</span>
-</span><span class='line'><span class="x">        $big5_str[$x++] = $big5_code[0];</span>
-</span><span class='line'><span class="x">        $big5_str[$x++] = $big5_code[1];</span>
-</span><span class='line'><span class="x">    }</span>
-</span><span class='line'><span class="x">    elseif( $b1 &amp;gt;= 192 ) {</span>
-</span><span class='line'><span class="x">        #2code UTF-8</span>
-</span><span class='line'><span class="x">        $b1 -= 192;</span>
-</span><span class='line'><span class="x">        $b2 = ord($ucs_str[++$i]) - 256;</span>
-</span><span class='line'><span class="x">        $ucs_code = $b1 * 64 + $b2 ;</span>
-</span><span class='line'><span class="x">        fseek( $fp, $ucs_code * 2 );</span>
-</span><span class='line'><span class="x">        $big5_code = fread( $fp, 2 );</span>
-</span><span class='line'><span class="x">        $big5_str[$x++] = $big5_code[0];</span>
-</span><span class='line'><span class="x">        $big5_str[$x++] = $big5_code[1];</span>
-</span><span class='line'><span class="x">    }else{</span>
-</span><span class='line'><span class="x">        $big5_str[$x++] = &#39;?&#39;;</span>
-</span><span class='line'><span class="x">    }</span>
-</span><span class='line'><span class="x">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">fclose($fp);</span>
-</span><span class='line'><span class="x">if(isset($big5_str)) {</span>
-</span><span class='line'><span class="x">    return join( &#39;&#39;, $big5_str);</span>
-</span><span class='line'><span class="x">}</span>
-</span><span class='line'><span class="x">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">&lt;p&gt;}</span>
-</span><span class='line'><span class="x">?&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock lang:php %}&lt;?php
+/<em><br/>
+ *  This php is using GNU General Public License v2.0
+ *  renn999<AT>ccns.ncku.edu.tw
+ *  http://renn999.twbbs.org
+ *
+ *  USAGE:ucs2big5( $str );
+ </em><br/>
+ *  Big5 table(big5.txt)
+ *  using from Ztrem
+ *  http://zhouer.org/ZTerm/
+ */</p>
+
+<p>function ucs2big5($ucs_str) {</p>
+
+<pre><code>$fp = fopen( 'big5.txt', 'r' );
+$len = strlen($ucs_str);
+unset($big5_str);
+
+$x = 0;
+for( $i = 0 ; $i &lt; $len ; $i++ ) {
+    $b1 = ord($ucs_str[$i]);
+    if( $b1 &lt; 0x80 ) {
+        $big5_str[$x++] = chr($b1);
+    }
+    elseif( $b1 &gt;= 224 ) {
+        #3code UTF-8
+        $b1 -= 224;
+        $b2 = ord($ucs_str[++$i]) - 128;
+        $b3 = ord($ucs_str[++$i]) - 256;
+        $ucs_code = $b1 * 4096 + $b2 * 64 + $b3;
+        fseek( $fp, $ucs_code * 2);
+        $big5_code = fread( $fp, 2 );
+        $big5_str[$x++] = $big5_code[0];
+        $big5_str[$x++] = $big5_code[1];
+    }
+    elseif( $b1 &gt;= 192 ) {
+        #2code UTF-8
+        $b1 -= 192;
+        $b2 = ord($ucs_str[++$i]) - 256;
+        $ucs_code = $b1 * 64 + $b2 ;
+        fseek( $fp, $ucs_code * 2 );
+        $big5_code = fread( $fp, 2 );
+        $big5_str[$x++] = $big5_code[0];
+        $big5_str[$x++] = $big5_code[1];
+    }else{
+        $big5_str[$x++] = '?';
+    }
+}
+
+fclose($fp);
+if(isset($big5_str)) {
+    return join( '', $big5_str);
+}
+</code></pre>
+
+<p>}
+?>{% endcodeblock %}</p>
 
 <p>至於BIG5.txt可以到<a href="http://zterm.googlecode.com/svn/trunk/org/zhouer/utils/conv/">http://zterm.googlecode.com/svn/trunk/org/zhouer/utils/conv/</a>中去下載 這裡就不附上了</p>
 ]]></content>
@@ -218,7 +146,7 @@
   
   <entry>
     <title type="html"><![CDATA[PHP備份Pixiv的bookmark(お気に入りユーザー)修正版]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/371"/>
+    <link href="http://www.renn999.twbbs.org/archives/371/"/>
     <updated>2009-09-30T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/371</id>
     <content type="html"><![CDATA[<p>基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。</p>
@@ -227,120 +155,63 @@
 (這是Memory Leaks的問題已經解決)</p>
 
 <p>以下為修改完的程式碼。
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>require 'simplehtmldom/simple_html_dom.php';
-</span><span class='line'>
-</span><span class='line'>$loginurl='http://www.pixiv.net/index.php';
-</span><span class='line'>$pixiv_id='';
-</span><span class='line'>$password='';
-</span><span class='line'>
-</span><span class='line'>$curl = curl_init();
-</span><span class='line'>curl_setopt($curl, CURLOPT_HEADER, 0);
-</span><span class='line'>curl_setopt($curl, CURLOPT_USERAGENT,'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)');
-</span><span class='line'>curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-</span><span class='line'>curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-</span><span class='line'>curl_setopt($curl, CURLOPT_COOKIEJAR, 'cookie.txt');
-</span><span class='line'>curl_setopt($curl, CURLOPT_COOKIEFILE, 'cookie.txt');
-</span><span class='line'>curl_setopt($curl, CURLOPT_POST, 1);
-</span><span class='line'>curl_setopt($curl, CURLOPT_COOKIESESSION,true);
-</span><span class='line'>curl_setopt($curl, CURLOPT_URL, $loginurl);
-</span><span class='line'>curl_setopt($curl, CURLOPT_POSTFIELDS, 'mode=login&amp;pixiv_id='.$pixiv_id.'&amp;pass='.$password );
-</span><span class='line'>curl_exec($curl);
-</span><span class='line'>
-</span><span class='line'>$p=1;
-</span><span class='line'>$bookmark_rest='show';//show
-</span><span class='line'>do{
-</span><span class='line'>    $url='http://www.pixiv.net/bookmark.php?type=user&amp;rest='.$bookmark_rest.'&amp;p='.$p;
-</span><span class='line'>    curl_setopt($curl, CURLOPT_URL, $url);
-</span><span class='line'>    $profile=curl_exec($curl);
-</span><span class='line'>    $dom1 = new simple_html_dom();
-</span><span class='line'>    $dom1 = str_get_html($profile);
-</span><span class='line'>
-</span><span class='line'>    $test=$dom1-&gt;find('div#content2 div[align="right"]',0)-&gt;plaintext;
-</span><span class='line'>
-</span><span class='line'>    preg_match('/次の(.*?)件/',$test,$match);
-</span><span class='line'>
-</span><span class='line'>    $title2 = $dom1-&gt;find('div#content2 form#f div[style="width:140px;height:130px;float:left;text-align:center;"]');
-</span><span class='line'>
-</span><span class='line'>    foreach($title2 as $illsthtml){
-</span><span class='line'>    $illst = $illsthtml-&gt;outertext;
-</span><span class='line'>    $illst=preg_replace('/&lt;div(.*?)"&gt;&lt;input(.*?)&gt;&lt;\/div&gt;/','',$illst);
-</span><span class='line'>    $illst=preg_replace('/\n/', '',$illst);
-</span><span class='line'>    $illst=preg_replace('/&lt;img(.*?)&gt;/', '',$illst);
-</span><span class='line'>    preg_match_all('/&lt;a href="member.php\?id=(.*?)"&gt;&lt;\/a&gt;&lt;div style=\"padding-top:5px;\"&gt;(.*?)&lt;\/div&gt;(&lt;a href="jump.php\?(.*?)" target="_blank"&gt;&lt;\/a&gt;)?/', $illst,$match2,PREG_SET_ORDER);
-</span><span class='line'>        foreach ($match2 as $val) {
-</span><span class='line'>            echo 'http://www.pixiv.net/member.php?id='.$val[1].' - '.$val[2];
-</span><span class='line'>            if(!empty($val[4])){echo ' - '.$val[4];}
-</span><span class='line'>            echo "&lt;br /&gt;\n";
-</span><span class='line'>        }
-</span><span class='line'>    }
-</span><span class='line'>    $dom1-&gt;__destruct();//解決Memory Leaks的問題
-</span><span class='line'>    unset($profile,$dom1,$test);
-</span><span class='line'>    $p++;
-</span><span class='line'>}while(!empty($match));
-</span><span class='line'>
-</span><span class='line'>curl_close($curl);
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>?></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}&lt;?php</p>
+
+<pre><code>require 'simplehtmldom/simple_html_dom.php';
+
+$loginurl='http://www.pixiv.net/index.php';
+$pixiv_id='';
+$password='';
+
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_HEADER, 0);
+curl_setopt($curl, CURLOPT_USERAGENT,'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)');
+curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($curl, CURLOPT_COOKIEJAR, 'cookie.txt');
+curl_setopt($curl, CURLOPT_COOKIEFILE, 'cookie.txt');
+curl_setopt($curl, CURLOPT_POST, 1);
+curl_setopt($curl, CURLOPT_COOKIESESSION,true);
+curl_setopt($curl, CURLOPT_URL, $loginurl);
+curl_setopt($curl, CURLOPT_POSTFIELDS, 'mode=login&amp;pixiv_id='.$pixiv_id.'&amp;pass='.$password );
+curl_exec($curl);
+
+$p=1;
+$bookmark_rest='show';//show
+do{
+    $url='http://www.pixiv.net/bookmark.php?type=user&amp;rest='.$bookmark_rest.'&amp;p='.$p;
+    curl_setopt($curl, CURLOPT_URL, $url);
+    $profile=curl_exec($curl);
+    $dom1 = new simple_html_dom();
+    $dom1 = str_get_html($profile);
+
+    $test=$dom1-&gt;find('div#content2 div[align="right"]',0)-&gt;plaintext;
+
+    preg_match('/次の(.*?)件/',$test,$match);
+
+    $title2 = $dom1-&gt;find('div#content2 form#f div[style="width:140px;height:130px;float:left;text-align:center;"]');
+
+    foreach($title2 as $illsthtml){
+    $illst = $illsthtml-&gt;outertext;
+    $illst=preg_replace('/&lt;div(.*?)"&gt;&lt;input(.*?)&gt;&lt;\/div&gt;/','',$illst);
+    $illst=preg_replace('/\n/', '',$illst);
+    $illst=preg_replace('/&lt;img(.*?)&gt;/', '',$illst);
+    preg_match_all('/&lt;a href="member.php\?id=(.*?)"&gt;&lt;\/a&gt;&lt;div style=\"padding-top:5px;\"&gt;(.*?)&lt;\/div&gt;(&lt;a href="jump.php\?(.*?)" target="_blank"&gt;&lt;\/a&gt;)?/', $illst,$match2,PREG_SET_ORDER);
+        foreach ($match2 as $val) {
+            echo 'http://www.pixiv.net/member.php?id='.$val[1].' - '.$val[2];
+            if(!empty($val[4])){echo ' - '.$val[4];}
+            echo "&lt;br /&gt;\n";
+        }
+    }
+    $dom1-&gt;__destruct();//解決Memory Leaks的問題
+    unset($profile,$dom1,$test);
+    $p++;
+}while(!empty($match));
+
+curl_close($curl);
+</code></pre>
+
+<p>?>{% endcodeblock %}</p>
 ]]></content>
   </entry>
   

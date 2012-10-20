@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bash | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/bash/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-15T10:57:13+08:00</updated>
+  <updated>2012-10-20T16:05:01+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -15,7 +15,7 @@
   
   <entry>
     <title type="html"><![CDATA[bash prompt加上目前所在的git branch]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/908"/>
+    <link href="http://www.renn999.twbbs.org/archives/908/"/>
     <updated>2012-10-01T19:17:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/908</id>
     <content type="html"><![CDATA[<p>最近因為 octopress 的關係，把重大學時代某位NE網友提起的 git 給重新翻出來學，順便把一些在硬碟中塵封已久的一些小 project 給 remote 到一些像是 <a href="http://github.com">github</a> <a href="http://bitbucket.org">bitbucket</a> 等服務上面去。</p>
@@ -32,7 +32,7 @@
 
 <p>這是我的 bash prompt 而在 <code>.bashrc</code> 中修改之後就會變成這樣</p>
 
-<p><img src="http://i.minus.com/ibonR410SXuSka.png"></p>
+<p>{% img http://i.minus.com/ibonR410SXuSka.png %}</p>
 
 <p>這樣就可以隨時之道自己處在那個branch中了。</p>
 ]]></content>
