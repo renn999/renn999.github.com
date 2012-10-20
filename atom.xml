@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-20T12:37:56+08:00</updated>
+  <updated>2012-10-20T16:05:18+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -25,76 +25,76 @@
   
   <entry>
     <title type="html"><![CDATA[bash prompt加上目前所在的git branch]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/908"/>
+    <link href="http://www.renn999.twbbs.org/archives/908/"/>
     <updated>2012-10-01T19:17:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/908</id>
     <content type="html"><![CDATA[<p>最近因為 octopress 的關係，把重大學時代某位NE網友提起的 git 給重新翻出來學，順便把一些在硬碟中塵封已久的一些小 project 給 remote 到一些像是 <a href="http://github.com">github</a> <a href="http://bitbucket.org">bitbucket</a> 等服務上面去。</p>
 
-<a href="http://www.renn999.twbbs.org/archives/908" class="more-link">Read More &#8230;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/908/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之三]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/907"/>
+    <link href="http://www.renn999.twbbs.org/archives/907/"/>
     <updated>2012-09-21T17:22:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/907</id>
     <content type="html"><![CDATA[<p>用上了 <code>slash</code> 這個 theme 後，忍不住想要惡搞起來，搞得跟自己的 Terminal 一樣黑底綠字</p>
 
 <p>附上 diff 檔，但是現在還有一堆東西沒有改上&#8230;OTZ</p>
 
-<a href="http://www.renn999.twbbs.org/archives/907" class="more-link">Read More &#8230;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/907/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress文章加密計劃？！]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/906"/>
+    <link href="http://www.renn999.twbbs.org/archives/906/"/>
     <updated>2012-09-18T13:53:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/906</id>
     <content type="html"><![CDATA[<p>想想OP如果有像WP一樣的加密文章那該多有趣。</p>
 
-<a href="http://www.renn999.twbbs.org/archives/906" class="more-link">Read More &#8230;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/906/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[近日心情]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/905"/>
+    <link href="http://www.renn999.twbbs.org/archives/905/"/>
     <updated>2012-09-17T20:51:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/905</id>
     <content type="html"><![CDATA[<p>這是密碼保護文</p>
 
-<a href="http://www.renn999.twbbs.org/archives/905" class="more-link">Read More &#8230;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/905/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之二]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/904"/>
+    <link href="http://www.renn999.twbbs.org/archives/904/"/>
     <updated>2012-09-12T19:55:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/904</id>
     <content type="html"><![CDATA[<p>這次把<code>LinkWithin</code>的連結稍微改了一下，把他弄成獨立頁面，並且我發現到如果改了 theme 之前 theme 的東西還是會留下來變成垃圾，但是會不會一起<code>generate</code>老實說我就不得而知了，但是看起來好像不會。</p>
 
-<a href="http://www.renn999.twbbs.org/archives/904" class="more-link">Read More &#8230;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/904/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之一]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/903"/>
+    <link href="http://www.renn999.twbbs.org/archives/903/"/>
     <updated>2012-09-10T08:03:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/903</id>
     <content type="html"><![CDATA[<p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章</p>
 
-<a href="http://www.renn999.twbbs.org/archives/903" class="more-link">Read More &#8230;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/903/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[rake的tips]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/902"/>
+    <link href="http://www.renn999.twbbs.org/archives/902/"/>
     <updated>2012-09-08T12:23:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/902</id>
     <content type="html"><![CDATA[<p>參考至<a href="http://robdodson.me/blog/2012/06/11/some-octopress-rake-tips/">Some Octopress Rake Tips</a></p>
 
 <p>剛開始用Octopress的時候感覺上速度還蠻快的，但是在將WP的文章匯入的時候就發現到，每一次的<code>generate</code>就會發現到速度會少許的減慢，好像每一次都會對所有的文章做一次的編譯，造成每次要<code>preview</code>時速度都非常慢，其實裏面有幾個有用的指令可以提昇速度。</p>
 
-<a href="http://www.renn999.twbbs.org/archives/902" class="more-link">Read More &#8230;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/902/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
@@ -112,7 +112,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
   
   <entry>
     <title type="html"><![CDATA[[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/900"/>
+    <link href="http://www.renn999.twbbs.org/archives/900/"/>
     <updated>2011-07-21T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/900</id>
     <content type="html"><![CDATA[<p>This is the first time I write post in English, so if there are something wrong in my post, please notice me, thanks.</p>
@@ -124,7 +124,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
   
   <entry>
     <title type="html"><![CDATA[ubuntu11.04使用感使用感外加問題解決]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/894"/>
+    <link href="http://www.renn999.twbbs.org/archives/894/"/>
     <updated>2011-05-10T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/894</id>
     <content type="html"><![CDATA[<p>為11.04已經發布了，當初還在想說應該完不到了，但是因為了某些原因，提早結束了Online生活，就理用了讀書所剩餘的時間把完了一下，但是感覺上比較大的不同只有unity外加一堆預設程式被換掉，但是還是用不大習慣。<br />
@@ -135,7 +135,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
   
   <entry>
     <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/886"/>
+    <link href="http://www.renn999.twbbs.org/archives/886/"/>
     <updated>2011-04-24T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/886</id>
     <content type="html"><![CDATA[<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息&#8230;OTZ。</p>
@@ -147,16 +147,16 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
   
   <entry>
     <title type="html"><![CDATA[Wordpress升級jQuery from 1.4.2 to 1.4.3]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/869"/>
+    <link href="http://www.renn999.twbbs.org/archives/869/"/>
     <updated>2010-10-19T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/869</id>
     <content type="html"><![CDATA[<p>jQuery最近釋出了1.4.3，當然在翻wordpress  trac的時候剛好翻到有人釋出了更新到1.4.3的patch。我則手動的將其升級了上去，如果有程度的可以直接看<a href="http://core.trac.wordpress.org/ticket/15135">ticket/15135</a><br />
-<a href="http://www.renn999.twbbs.org/archives/869" class="more-link">Read More &#8230;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/869/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[mysql轉sqlite]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/861"/>
+    <link href="http://www.renn999.twbbs.org/archives/861/"/>
     <updated>2010-08-11T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/861</id>
     <content type="html"><![CDATA[<p>前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到&#8230;XDrz</p>
@@ -165,12 +165,12 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
 <p>先將sqldump出來<br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>mysqldump -u'username' -p'password' --compact --compatible=ansi --default-character-set=binary 'databasename' > database.sql</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-<a href="http://www.renn999.twbbs.org/archives/861" class="more-link">Read More &#8230;</a>]]></content>
+<a href="http://www.renn999.twbbs.org/archives/861/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[初學python]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/828"/>
+    <link href="http://www.renn999.twbbs.org/archives/828/"/>
     <updated>2010-07-22T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/828</id>
     <content type="html"><![CDATA[<p>這是利用plurk api簡單寫得東東，主要是要搞懂json的用法：p<br />
@@ -258,25 +258,25 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
   
   <entry>
     <title type="html"><![CDATA[在ubuntu下播放正版DVD]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/799"/>
+    <link href="http://www.renn999.twbbs.org/archives/799/"/>
     <updated>2010-07-03T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/799</id>
     <content type="html"><![CDATA[<p>我知道這是老梗文了，在前幾天翻出了&#8217;I, Robot&#8217;又懷念了一下，但是在播放的時候一直出現問題，才想到說我沒有灌解CSS相關的東西，<del datetime="2010-07-03T01:45:34+00:00">雖然說看正版的人應該不多吧</del>，但是還是紀錄一下。</p>
 <p><a href="https://help.ubuntu.com/community/RestrictedFormats/PlayingDVDs">ubuntu原文</a> 英文好的請直接喀這裡，&#8230;.<span class="caps">OTZ</span></p>
-<p><a href="http://www.renn999.twbbs.org/archives/799" class="more-link">Read More &#8230;</a>]]></content>
+<p><a href="http://www.renn999.twbbs.org/archives/799/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[bitly.pro自訂網域的短網址服務]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/769"/>
+    <link href="http://www.renn999.twbbs.org/archives/769/"/>
     <updated>2010-06-12T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/769</id>
-    <content type="html"><![CDATA[<p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。<a href="http://www.renn999.twbbs.org/archives/769" class="more-link">Read More &#8230;</a>]]></content>
+    <content type="html"><![CDATA[<p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。<a href="http://www.renn999.twbbs.org/archives/769/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[EveryDNS替代方案FreeDNS]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/732"/>
+    <link href="http://www.renn999.twbbs.org/archives/732/"/>
     <updated>2010-06-07T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/732</id>
     <content type="html"><![CDATA[<p>因為之前聽到Everydns被Dyn收購的消息，然而在這一段時間老實說，我是擔心說和時會停止服務，雖然說官方一直說免費服務還是會維持，但是維持到啥時我就不知道了。然而我就開始尋找替代方案。</p>
@@ -287,7 +287,7 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
   
   <entry>
     <title type="html"><![CDATA[紀錄一下]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/729"/>
+    <link href="http://www.renn999.twbbs.org/archives/729/"/>
     <updated>2010-05-28T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/729</id>
     <content type="html"><![CDATA[<p>這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了</p>
@@ -297,13 +297,13 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
   
   <entry>
     <title type="html"><![CDATA[利用 trash 來取代 rm 在 Terminal 模式下]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/721"/>
+    <link href="http://www.renn999.twbbs.org/archives/721/"/>
     <updated>2010-05-26T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/721</id>
     <content type="html"><![CDATA[<p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下&#8217;rm *.jpg&#8217;，但是手殘外加腦包的我竟然不小心下成&#8217;rm * .jpg&#8217;看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>&#8230;不不不&#8230;應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式&#8230;.<span class="caps">OTZ</span></p>
 <p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big><br />
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install trash-cli</span></code></pre></td></tr></table></div></figure></div></notextile><a href="http://www.renn999.twbbs.org/archives/721" class="more-link">Read More &#8230;</a>]]></content>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install trash-cli</span></code></pre></td></tr></table></div></figure></div></notextile><a href="http://www.renn999.twbbs.org/archives/721/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
 </feed>

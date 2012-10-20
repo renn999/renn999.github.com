@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 隨便亂寫 | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/隨便亂寫/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-20T16:05:01+08:00</updated>
+  <updated>2012-10-20T16:05:18+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -89,41 +89,76 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
 
 <p>當然有了api和詳細的<a href="http://code.google.com/p/bitly-api/wiki/ApiDocumentation">使用手冊</a>，因為時常要上去縮的話很累，所以說就自己寫了一個小小的html利用jQuery的AJAX程式在此提供參考。</p>
 
-<p>{% codeblock %}&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html></p>
-
-<pre><code>&lt;head&gt;
-&lt;META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"&gt;
-&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript"&gt;
-</code></pre>
-
-<p>$(function(){</p>
-
-<pre><code>$('button#sub').click(function(){
-    var api_user='';
-    var api_key=''
-    $.getJSON('http://api.bit.ly/v3/shorten?login='+ api_user +'&amp;apiKey='+ api_key +'&amp;longUrl='+encodeURIComponent($('input#longurl').val())+'&amp;format=json&amp;callback=?',function(bitly){
-        $('div#show').empty();
-        $('div#show').append(bitly.data.url).hide().fadeIn(2000);
-    })
-});
-</code></pre>
-
-<p>});</p>
-
-<pre><code>&lt;/script&gt;
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;from id="bit" action="#"&gt;
-    longurl:&lt;input type="text"id="longurl"&gt;&lt;button id="sub"&gt;submit&lt;/button&gt;
-&lt;/from&gt;
-&lt;div id=show&gt;&lt;/div&gt;
-&lt;/body&gt;
-</code></pre>
-
-<p></html>{% endcodeblock %}
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+</span><span class='line'>&lt;html>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>&lt;head&gt;
+</span><span class='line'>&lt;META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"&gt;
+</span><span class='line'>&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"&gt;&lt;/script&gt;
+</span><span class='line'>&lt;script type="text/javascript"&gt;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$(function(){&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>$('button#sub').click(function(){
+</span><span class='line'>    var api_user='';
+</span><span class='line'>    var api_key=''
+</span><span class='line'>    $.getJSON('http://api.bit.ly/v3/shorten?login='+ api_user +'&amp;apiKey='+ api_key +'&amp;longUrl='+encodeURIComponent($('input#longurl').val())+'&amp;format=json&amp;callback=?',function(bitly){
+</span><span class='line'>        $('div#show').empty();
+</span><span class='line'>        $('div#show').append(bitly.data.url).hide().fadeIn(2000);
+</span><span class='line'>    })
+</span><span class='line'>});
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>});&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>&lt;/script&gt;
+</span><span class='line'>&lt;/style&gt;
+</span><span class='line'>&lt;/head&gt;
+</span><span class='line'>&lt;body&gt;
+</span><span class='line'>&lt;from id="bit" action="#"&gt;
+</span><span class='line'>    longurl:&lt;input type="text"id="longurl"&gt;&lt;button id="sub"&gt;submit&lt;/button&gt;
+</span><span class='line'>&lt;/from&gt;
+</span><span class='line'>&lt;div id=show&gt;&lt;/div&gt;
+</span><span class='line'>&lt;/body&gt;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>&lt;/html></span></code></pre></td></tr></table></div></figure></notextile></div>
 如果有申請bitly pro的話api所產生的網址會是你的網域，除非你多了一個domain的參數其實一個比較有趣的地方，像是說我縮了一個<a href="http://ren9.tk/dzkm9I">http://ren9.tk/dzkm9I</a>的網址你可以試試看<a href="http://bit.ly/dzkm9I">http://bit.ly/dzkm9I</a>，其實就是一個代管的功能而已...XDrz</p>
 ]]></content>
   </entry>

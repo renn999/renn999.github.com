@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/linux/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-20T16:05:01+08:00</updated>
+  <updated>2012-10-20T16:05:18+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -45,14 +45,17 @@
 <p><big><strong>Ubuntu 9.04, 9.10 and 10.04 (i386, amd64)</strong></big></p>
 
 <ul>
-    <li>安裝libdvdread4套件(不需要加入第三方套件庫){% codeblock %}$ sudo apt-get install libdvdread4{% endcodeblock %}</li>
-    <li>打開terminal並且輸入執行{% codeblock %}$ sudo /usr/share/doc/libdvdread4/install-css.sh{% endcodeblock %}</li>
+    <li>安裝libdvdread4套件(不需要加入第三方套件庫)<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install libdvdread4</span></code></pre></td></tr></table></div></figure></notextile></div></li>
+    <li>打開terminal並且輸入執行<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo /usr/share/doc/libdvdread4/install-css.sh</span></code></pre></td></tr></table></div></figure></notextile></div></li>
     <li>重新開機</li>
 </ul>
 
 
 <p>至於修改區碼，先安裝regionset
-{% codeblock %}$ sudo apt-get install regionset{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install regionset</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><span style="color: #ff0000;"><strong>每台機器可能都會有修改5次或以下的次數，當修改次數沒了之後此機器可能需要送回原廠才可以更改區碼。</strong></span></p>
 ]]></content>
@@ -66,72 +69,124 @@
     <content type="html"><![CDATA[<p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下'rm *.jpg'，但是手殘外加腦包的我竟然不小心下成'rm * .jpg'看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>...不不不...應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式....OTZ</p>
 
 <p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big>
-{% codeblock %}$ sudo apt-get install trash-cli{% endcodeblock %}<!--more--></p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install trash-cli</span></code></pre></td></tr></table></div></figure></notextile></div><!--more--></p>
 
 <p><big><strong>第二步：新增script</strong></big>
 這一步的話最主要是要新增一個script來模擬<code>rm -r</code>的狀況，如果看trash的help就可以知道，雖然說trash也有-r的指令，但是他的指令會被忽略掉。在terminal中輸入
-{% codeblock %}$ sudo gedit /usr/bin/trash-rm{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo gedit /usr/bin/trash-rm</span></code></pre></td></tr></table></div></figure></notextile></div>
 並把下面的code貼入，我在這個地方有做了一些修改，因為原先的script好像會吐出錯誤訊息。
-{% codeblock lang:sh %}</p>
-
-<h1>!/bin/bash</h1>
-
-<h1>command name: trash-rm</h1>
-
-<p>shopt -s extglob
-recursive=1
-declare -a cmd
-((i = 0))
-for f in "$@"
-do
- case "$f" in
-  (-<em>([fiIv])r</em>([fiIv])|-<em>([fiIv])R</em>([fiIv])|--recursive)
-   if [ "$dshdsh" == 1 ] ; then</p>
-
-<pre><code>if [ $recursive != 0 -a -d "$f" ] ; then
- echo "skipping directory: $f"
- continue
-fi
-</code></pre>
-
-<p>   else</p>
-
-<pre><code>recursive=0
-</code></pre>
-
-<p>   fi ;;
-  (--)
-   dshdsh=1;;
-  (*)
-   if [ $recursive != 0 -a -d "$f" ] ; then</p>
-
-<pre><code>echo "skipping directory: $f"
-continue
-</code></pre>
-
-<p>   fi ;;
- esac
- cmd[$i]="$f"
- ((i++))
-done
-trash "${cmd[@]}"
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;!/bin/bash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;command name: trash-rm&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;shopt -s extglob
+</span><span class='line'><span class="nv">recursive</span><span class="o">=</span>1
+</span><span class='line'><span class="nb">declare</span> -a cmd
+</span><span class='line'><span class="o">((</span><span class="nv">i</span> <span class="o">=</span> 0<span class="o">))</span>
+</span><span class='line'><span class="k">for </span>f in <span class="s2">&quot;$@&quot;</span>
+</span><span class='line'><span class="k">do</span>
+</span><span class='line'><span class="k"> case</span> <span class="s2">&quot;$f&quot;</span> in
+</span><span class='line'>  <span class="o">(</span>-&lt;em&gt;<span class="o">([</span>fiIv<span class="o">])</span>r&lt;/em&gt;<span class="o">([</span>fiIv<span class="o">])</span>|-&lt;em&gt;<span class="o">([</span>fiIv<span class="o">])</span>R&lt;/em&gt;<span class="o">([</span>fiIv<span class="o">])</span>|--recursive<span class="o">)</span>
+</span><span class='line'>   <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;$dshdsh&quot;</span> <span class="o">==</span> 1 <span class="o">]</span> ; <span class="k">then</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;if <span class="o">[</span> <span class="nv">$recursive</span> !<span class="o">=</span> 0 -a -d <span class="s2">&quot;$f&quot;</span> <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k"> </span><span class="nb">echo</span> <span class="s2">&quot;skipping directory: $f&quot;</span>
+</span><span class='line'> <span class="k">continue</span>
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;   <span class="k">else</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;recursive<span class="o">=</span>0
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;   <span class="k">fi</span> ;;
+</span><span class='line'>  <span class="o">(</span>--<span class="o">)</span>
+</span><span class='line'>   <span class="nv">dshdsh</span><span class="o">=</span>1;;
+</span><span class='line'>  <span class="o">(</span>*<span class="o">)</span>
+</span><span class='line'>   <span class="k">if</span> <span class="o">[</span> <span class="nv">$recursive</span> !<span class="o">=</span> 0 -a -d <span class="s2">&quot;$f&quot;</span> <span class="o">]</span> ; <span class="k">then</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;echo <span class="s2">&quot;skipping directory: $f&quot;</span>
+</span><span class='line'><span class="k">continue</span>
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;   <span class="k">fi</span> ;;
+</span><span class='line'> <span class="k">esac</span>
+</span><span class='line'><span class="k"> </span>cmd<span class="o">[</span><span class="nv">$i</span><span class="o">]=</span><span class="s2">&quot;$f&quot;</span>
+</span><span class='line'> <span class="o">((</span>i++<span class="o">))</span>
+</span><span class='line'><span class="k">done</span>
+</span><span class='line'>trash <span class="s2">&quot;${cmd[@]}&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 接著，要讓這個script變成可執行檔
-{% codeblock %}$ sudo chmod +x /usr/bin/trash-rm{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo chmod +x /usr/bin/trash-rm</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><big><strong>第三步：利用trash-rm取代rm</strong></big>
 也是在terminal中輸入
-{% codeblock %}$ gedit ~/.bashrc{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ gedit ~/.bashrc</span></code></pre></td></tr></table></div></figure></notextile></div>
 把以下的code加入到開啟的文件後面，並儲存
-{% codeblock %}alias rm="trash-rm"{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias rm="trash-rm"</span></code></pre></td></tr></table></div></figure></notextile></div>
 接著要reload bashrc就下bash的指令就可以了，到這裡就完成了，你可以利用rm和rm -r的指令來試試看。</p>
 
 <p><big><strong>其他trash-cli相關指令</strong></big>
-{% codeblock %}empty-trash ＃清理
-list-trash ＃列出
-restore-trash ＃還原{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>empty-trash ＃清理
+</span><span class='line'>list-trash ＃列出
+</span><span class='line'>restore-trash ＃還原</span></code></pre></td></tr></table></div></figure></notextile></div>
 這幾個應該看名字就知道功用了吧，這裡就不多加說明，更多可以看
-{% codeblock %}$ man trash{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ man trash</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
@@ -143,73 +198,114 @@ restore-trash ＃還原{% endcodeblock %}
     <content type="html"><![CDATA[<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。"看"起來好像也沒有比較大的問題出現了。</p>
 
 <p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<!--more-->
-{% codeblock %}Deprecated: Function set_magic_quotes_runtime() is deprecated in [path]/wp-settings.php on line 18{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Deprecated: Function set_magic_quotes_runtime() is deprecated in [path]/wp-settings.php on line 18</span></code></pre></td></tr></table></div></figure></notextile></div>
 這時候要去修正wp-settings.php這個檔案將原先的18行改成
-{% codeblock %}if(version_compare(PHP_VERSION, '5.3.0', '&lt;')){set_magic_quotes_runtime(0); }{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if(version_compare(PHP_VERSION, '5.3.0', '&lt;')){set_magic_quotes_runtime(0); }</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>apache 的部份就是 userdir 的部份因為我有裝php，之前的預設值是在 userdir 中也可以執行php新版更新之後是關起來的，userdir中的php都會變成下載的模式，要打開要修改/etc/apache2/mods-available/php5.conf，找到以下這幾行
-{% codeblock %}    <IfModule mod_userdir.c></p>
-
-<pre><code>    &lt;Directory /home/*/public_html&gt;
-        php_admin_value engine Off
-    &lt;/Directory&gt;
-&lt;/IfModule&gt;{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;IfModule mod_userdir.c>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>    &lt;Directory /home/*/public_html&gt;
+</span><span class='line'>        php_admin_value engine Off
+</span><span class='line'>    &lt;/Directory&gt;
+</span><span class='line'>&lt;/IfModule&gt;</span></code></pre></td></tr></table></div></figure></notextile></div>
 </code></pre>
 
 <p>修改成
-{% codeblock %}#    <IfModule mod_userdir.c></p>
-
-<h1><Directory /home/*/public_html></h1>
-
-<h1>php_admin_value engine Off</h1>
-
-<h1></Directory></h1>
-
-<h1></IfModule>{% endcodeblock %}</h1>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#    &lt;IfModule mod_userdir.c>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>&lt;Directory /home/*/public_html>&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>php_admin_value engine Off&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>&lt;/Directory>&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>&lt;/IfModule></span></code></pre></td></tr></table></div></figure></notextile></div></h1>
 
 <p>儲存之後resrart apache即可，以上是我server目前遇到的升級問題。</p>
 
 <p>至於桌機的部份不外乎就是nv顯卡的問題了(幾乎每次升級都會發生...OTZ)，我是不打算裝apt中的顯卡驅動我都是直接到nv官方去下載，在9.10中輕輕鬆鬆的就可以編譯ok，然後上機but這次可就沒這麼幸運了...OTZ，在編譯的過程中時常會出現
-{% codeblock %}ERROR: Unable to load the kernel module 'nvidia.ko'.  This happens most</p>
-
-<pre><code>   frequently when this kernel module was built against the wrong or
-   improperly configured kernel sources, with a version of gcc that differs
-   from the one used to build the target kernel, or if a driver such as
-   rivafb/nvidiafb is present and prevents the NVIDIA kernel module from
-   obtaining ownership of the NVIDIA graphics device(s), or NVIDIA GPU
-   installed in this system is not supported by this NVIDIA Linux graphics
-   driver release.{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: Unable to load the kernel module 'nvidia.ko'.  This happens most&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>   frequently when this kernel module was built against the wrong or
+</span><span class='line'>   improperly configured kernel sources, with a version of gcc that differs
+</span><span class='line'>   from the one used to build the target kernel, or if a driver such as
+</span><span class='line'>   rivafb/nvidiafb is present and prevents the NVIDIA kernel module from
+</span><span class='line'>   obtaining ownership of the NVIDIA graphics device(s), or NVIDIA GPU
+</span><span class='line'>   installed in this system is not supported by this NVIDIA Linux graphics
+</span><span class='line'>   driver release.</span></code></pre></td></tr></table></div></figure></notextile></div>
 </code></pre>
 
 <p>這個問題的話，我是google到這一篇<a href="http://ubuntuforums.org/showthread.php?t=1467074">http://ubuntuforums.org/showthread.php?t=1467074</a>參考了一下同樣的作法之後就ok了。作一下大致上的翻譯，首先先下載nv的最新驅動之後，之後開啟terminal
-{% codeblock %}sudo gedit /etc/modprobe.d/blacklist.conf{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/modprobe.d/blacklist.conf</span></code></pre></td></tr></table></div></figure></notextile></div>
 將下面幾行加入並儲存
-{% codeblock %}blacklist vga16fb
-blacklist nouveau
-blacklist rivafb
-blacklist nvidiafb
-blacklist rivatv{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>blacklist vga16fb
+</span><span class='line'>blacklist nouveau
+</span><span class='line'>blacklist rivafb
+</span><span class='line'>blacklist nvidiafb
+</span><span class='line'>blacklist rivatv</span></code></pre></td></tr></table></div></figure></notextile></div>
 然後在terminal中輸入底下的指令把一些已經裝過的nv驅動全部拔掉外加nouveau
-{% codeblock %}sudo apt-get --purge remove nvidia-<em> xserver-xorg-video-nouveau{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get --purge remove nvidia-&lt;em> xserver-xorg-video-nouveau</span></code></pre></td></tr></table></div></figure></notextile></div>
 之後reboot一下，進入recover mode，再把nv的驅動編譯起來，在重新開機，應該就可以順利的執行的，但是我的vdpau無法順利執行，看一下錯誤檔好像是因為沒有權限所以說我又多加了一道指令
-{% codeblock %}sudo chmod 666 /dev/nvidia</em>{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo chmod 666 /dev/nvidia&lt;/em></span></code></pre></td></tr></table></div></figure></notextile></div>
 大致上nv的部份全部都ok了，但是Plymouth(新的開機畫面看來他們幹掉xsplash了..XDrz)的解析度會變很爛，這也是有解法的google到這一篇<a href="http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html">http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html</a>，也是大致上翻譯一下作法
 也是打開terminal，輸入下面的指令
-{% codeblock %}sudo gedit /etc/default/grub{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/default/grub</span></code></pre></td></tr></table></div></figure></notextile></div>
 找到約18行左右(依照每個人的電腦而異)的"#GRUB_GFXMODE=640x480"改成，把前面的#註解去掉改成。
-{% codeblock %}GRUB_GFXMODE=1024X768{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>GRUB_GFXMODE=1024X768</span></code></pre></td></tr></table></div></figure></notextile></div>
 儲存之後修改/etc/grub.d/00_header的檔案也是在terminal，輸入下面的指令
-{% codeblock %}sudo gedit /etc/grub.d/00_header{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/grub.d/00_header</span></code></pre></td></tr></table></div></figure></notextile></div>
 找到約103行左右(依照每個人的電腦而異)的"gfxmode=${GRUB_GFXMODE}"並此行下面多加一行
-{% codeblock %}set gfxpayload=keep{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>set gfxpayload=keep</span></code></pre></td></tr></table></div></figure></notextile></div>
 儲存並回到terminal，輸入下面的指令更新grub2
-{% codeblock %}sudo update-grub{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-grub</span></code></pre></td></tr></table></div></figure></notextile></div>
 更新完之後就可以重新開機看看結果了</p>
 
 <p>當然還有發現到 rar 的解壓會出現亂碼，我處理的方式是到rar的官方去下載最新版的，改一下makefile裡面的
-{% codeblock %}PREFIX=/usr/local{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PREFIX=/usr/local</span></code></pre></td></tr></table></div></figure></notextile></div>
 改成
-{% codeblock %}PREFIX=/usr{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PREFIX=/usr</span></code></pre></td></tr></table></div></figure></notextile></div>
 然後make install把舊版的蓋過去就ok了</p>
 
 <p>這裡大致上把我遇到的問題先整理部份起來，不知道還會遇到啥鬼問題...OTZ</p>
@@ -222,8 +318,10 @@ blacklist rivatv{% endcodeblock %}
     <updated>2009-12-29T00:00:00+08:00</updated>
     <id>http://www.renn999.twbbs.org/archives/618</id>
     <content type="html"><![CDATA[<p>在很早以前用wine的時候只要在user.reg下加入
-{% codeblock %}[Software\Wine\X11 Driver]
-"ClientSideAntiAliasWithRender"="Y"{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Software\Wine\X11 Driver]
+</span><span class='line'>"ClientSideAntiAliasWithRender"="Y"</span></code></pre></td></tr></table></div></figure></notextile></div>
 就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了
 因為如果不啟用平滑效果的話，情況會像下圖：</p>
 
@@ -232,31 +330,49 @@ blacklist rivatv{% endcodeblock %}
 
 <p>在網路上已經有真正的解法了，如果您真的很有耐心的話可以看看Wine-Review的<a href="http://www.wine-reviews.net/wine-reviews/tips-n-tricks/how-to-enable-font-anti-aliasing-in-wine.html">這一篇</a>
 他有說到將以下的文字存成reg並且匯進去regedit
-{% codeblock %}REGEDIT4</p>
-
-<p>[HKEY_CURRENT_USER\Control Panel\Desktop]
-"FontSmoothing"="2"
-"FontSmoothingType"=dword:00000002
-"FontSmoothingGamma"=dword:00000578
-"FontSmoothingOrientation"=dword:00000001{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>REGEDIT4&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>[HKEY_CURRENT_USER\Control Panel\Desktop]
+</span><span class='line'>"FontSmoothing"="2"
+</span><span class='line'>"FontSmoothingType"=dword:00000002
+</span><span class='line'>"FontSmoothingGamma"=dword:00000578
+</span><span class='line'>"FontSmoothingOrientation"=dword:00000001</span></code></pre></td></tr></table></div></figure></notextile></div>
 但是太麻煩了，最快的方式，打開終端機複製貼上
-{% codeblock %}wget http://files.polosatus.ru/winefontssmoothing_en.sh -O- | bash{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://files.polosatus.ru/winefontssmoothing_en.sh -O- | bash</span></code></pre></td></tr></table></div></figure></notextile></div>
 然後，出現以下畫面去作選擇</p>
 
 <p>之後可以開啟Wine來看看結果</p>
 
 <p>這樣看起來棒多了，取代其他字型的regcode</p>
 
-<p>{% codeblock %}[Software\Wine\Fonts\Replacements]
-"System"="你要的字型名稱"
-"Arial"="你要的字型名稱"
-"Fixedsys"="你要的字型名稱"
-"Microsoft Sans Serif"="你要的字型名稱"
-"MS UI Gothic"="你要的字型名稱"
-"Tahoma"="你要的字型名稱"
-"Terminal"="你要的字型名稱"
-"MingLiU"="你要的字型名稱"
-"PMingLiU"="你要的字型名稱"{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Software\Wine\Fonts\Replacements]
+</span><span class='line'>"System"="你要的字型名稱"
+</span><span class='line'>"Arial"="你要的字型名稱"
+</span><span class='line'>"Fixedsys"="你要的字型名稱"
+</span><span class='line'>"Microsoft Sans Serif"="你要的字型名稱"
+</span><span class='line'>"MS UI Gothic"="你要的字型名稱"
+</span><span class='line'>"Tahoma"="你要的字型名稱"
+</span><span class='line'>"Terminal"="你要的字型名稱"
+</span><span class='line'>"MingLiU"="你要的字型名稱"
+</span><span class='line'>"PMingLiU"="你要的字型名稱"</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>將其附加到user.reg後面即可</p>
 ]]></content>

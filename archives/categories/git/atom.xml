@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/git/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-20T16:05:01+08:00</updated>
+  <updated>2012-10-20T16:05:18+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -54,7 +54,7 @@ git push origin bitbucket
 
 <p>這是我的 bash prompt 而在 <code>.bashrc</code> 中修改之後就會變成這樣</p>
 
-<p>{% img http://i.minus.com/ibonR410SXuSka.png %}</p>
+<p><img src="http://i.minus.com/ibonR410SXuSka.png"></p>
 
 <p>這樣就可以隨時之道自己處在那個branch中了。</p>
 ]]></content>

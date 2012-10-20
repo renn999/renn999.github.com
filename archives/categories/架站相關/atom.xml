@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 架站相關 | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/架站相關/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-20T16:05:01+08:00</updated>
+  <updated>2012-10-20T16:05:18+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -52,73 +52,114 @@
     <content type="html"><![CDATA[<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。"看"起來好像也沒有比較大的問題出現了。</p>
 
 <p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<!--more-->
-{% codeblock %}Deprecated: Function set_magic_quotes_runtime() is deprecated in [path]/wp-settings.php on line 18{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Deprecated: Function set_magic_quotes_runtime() is deprecated in [path]/wp-settings.php on line 18</span></code></pre></td></tr></table></div></figure></notextile></div>
 這時候要去修正wp-settings.php這個檔案將原先的18行改成
-{% codeblock %}if(version_compare(PHP_VERSION, '5.3.0', '&lt;')){set_magic_quotes_runtime(0); }{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if(version_compare(PHP_VERSION, '5.3.0', '&lt;')){set_magic_quotes_runtime(0); }</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>apache 的部份就是 userdir 的部份因為我有裝php，之前的預設值是在 userdir 中也可以執行php新版更新之後是關起來的，userdir中的php都會變成下載的模式，要打開要修改/etc/apache2/mods-available/php5.conf，找到以下這幾行
-{% codeblock %}    <IfModule mod_userdir.c></p>
-
-<pre><code>    &lt;Directory /home/*/public_html&gt;
-        php_admin_value engine Off
-    &lt;/Directory&gt;
-&lt;/IfModule&gt;{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;IfModule mod_userdir.c>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>    &lt;Directory /home/*/public_html&gt;
+</span><span class='line'>        php_admin_value engine Off
+</span><span class='line'>    &lt;/Directory&gt;
+</span><span class='line'>&lt;/IfModule&gt;</span></code></pre></td></tr></table></div></figure></notextile></div>
 </code></pre>
 
 <p>修改成
-{% codeblock %}#    <IfModule mod_userdir.c></p>
-
-<h1><Directory /home/*/public_html></h1>
-
-<h1>php_admin_value engine Off</h1>
-
-<h1></Directory></h1>
-
-<h1></IfModule>{% endcodeblock %}</h1>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#    &lt;IfModule mod_userdir.c>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>&lt;Directory /home/*/public_html>&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>php_admin_value engine Off&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>&lt;/Directory>&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>&lt;/IfModule></span></code></pre></td></tr></table></div></figure></notextile></div></h1>
 
 <p>儲存之後resrart apache即可，以上是我server目前遇到的升級問題。</p>
 
 <p>至於桌機的部份不外乎就是nv顯卡的問題了(幾乎每次升級都會發生...OTZ)，我是不打算裝apt中的顯卡驅動我都是直接到nv官方去下載，在9.10中輕輕鬆鬆的就可以編譯ok，然後上機but這次可就沒這麼幸運了...OTZ，在編譯的過程中時常會出現
-{% codeblock %}ERROR: Unable to load the kernel module 'nvidia.ko'.  This happens most</p>
-
-<pre><code>   frequently when this kernel module was built against the wrong or
-   improperly configured kernel sources, with a version of gcc that differs
-   from the one used to build the target kernel, or if a driver such as
-   rivafb/nvidiafb is present and prevents the NVIDIA kernel module from
-   obtaining ownership of the NVIDIA graphics device(s), or NVIDIA GPU
-   installed in this system is not supported by this NVIDIA Linux graphics
-   driver release.{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: Unable to load the kernel module 'nvidia.ko'.  This happens most&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>   frequently when this kernel module was built against the wrong or
+</span><span class='line'>   improperly configured kernel sources, with a version of gcc that differs
+</span><span class='line'>   from the one used to build the target kernel, or if a driver such as
+</span><span class='line'>   rivafb/nvidiafb is present and prevents the NVIDIA kernel module from
+</span><span class='line'>   obtaining ownership of the NVIDIA graphics device(s), or NVIDIA GPU
+</span><span class='line'>   installed in this system is not supported by this NVIDIA Linux graphics
+</span><span class='line'>   driver release.</span></code></pre></td></tr></table></div></figure></notextile></div>
 </code></pre>
 
 <p>這個問題的話，我是google到這一篇<a href="http://ubuntuforums.org/showthread.php?t=1467074">http://ubuntuforums.org/showthread.php?t=1467074</a>參考了一下同樣的作法之後就ok了。作一下大致上的翻譯，首先先下載nv的最新驅動之後，之後開啟terminal
-{% codeblock %}sudo gedit /etc/modprobe.d/blacklist.conf{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/modprobe.d/blacklist.conf</span></code></pre></td></tr></table></div></figure></notextile></div>
 將下面幾行加入並儲存
-{% codeblock %}blacklist vga16fb
-blacklist nouveau
-blacklist rivafb
-blacklist nvidiafb
-blacklist rivatv{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>blacklist vga16fb
+</span><span class='line'>blacklist nouveau
+</span><span class='line'>blacklist rivafb
+</span><span class='line'>blacklist nvidiafb
+</span><span class='line'>blacklist rivatv</span></code></pre></td></tr></table></div></figure></notextile></div>
 然後在terminal中輸入底下的指令把一些已經裝過的nv驅動全部拔掉外加nouveau
-{% codeblock %}sudo apt-get --purge remove nvidia-<em> xserver-xorg-video-nouveau{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get --purge remove nvidia-&lt;em> xserver-xorg-video-nouveau</span></code></pre></td></tr></table></div></figure></notextile></div>
 之後reboot一下，進入recover mode，再把nv的驅動編譯起來，在重新開機，應該就可以順利的執行的，但是我的vdpau無法順利執行，看一下錯誤檔好像是因為沒有權限所以說我又多加了一道指令
-{% codeblock %}sudo chmod 666 /dev/nvidia</em>{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo chmod 666 /dev/nvidia&lt;/em></span></code></pre></td></tr></table></div></figure></notextile></div>
 大致上nv的部份全部都ok了，但是Plymouth(新的開機畫面看來他們幹掉xsplash了..XDrz)的解析度會變很爛，這也是有解法的google到這一篇<a href="http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html">http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html</a>，也是大致上翻譯一下作法
 也是打開terminal，輸入下面的指令
-{% codeblock %}sudo gedit /etc/default/grub{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/default/grub</span></code></pre></td></tr></table></div></figure></notextile></div>
 找到約18行左右(依照每個人的電腦而異)的"#GRUB_GFXMODE=640x480"改成，把前面的#註解去掉改成。
-{% codeblock %}GRUB_GFXMODE=1024X768{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>GRUB_GFXMODE=1024X768</span></code></pre></td></tr></table></div></figure></notextile></div>
 儲存之後修改/etc/grub.d/00_header的檔案也是在terminal，輸入下面的指令
-{% codeblock %}sudo gedit /etc/grub.d/00_header{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/grub.d/00_header</span></code></pre></td></tr></table></div></figure></notextile></div>
 找到約103行左右(依照每個人的電腦而異)的"gfxmode=${GRUB_GFXMODE}"並此行下面多加一行
-{% codeblock %}set gfxpayload=keep{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>set gfxpayload=keep</span></code></pre></td></tr></table></div></figure></notextile></div>
 儲存並回到terminal，輸入下面的指令更新grub2
-{% codeblock %}sudo update-grub{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-grub</span></code></pre></td></tr></table></div></figure></notextile></div>
 更新完之後就可以重新開機看看結果了</p>
 
 <p>當然還有發現到 rar 的解壓會出現亂碼，我處理的方式是到rar的官方去下載最新版的，改一下makefile裡面的
-{% codeblock %}PREFIX=/usr/local{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PREFIX=/usr/local</span></code></pre></td></tr></table></div></figure></notextile></div>
 改成
-{% codeblock %}PREFIX=/usr{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PREFIX=/usr</span></code></pre></td></tr></table></div></figure></notextile></div>
 然後make install把舊版的蓋過去就ok了</p>
 
 <p>這裡大致上把我遇到的問題先整理部份起來，不知道還會遇到啥鬼問題...OTZ</p>
@@ -136,10 +177,13 @@ blacklist rivatv{% endcodeblock %}
 
 <p>使用方法：
 將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入
-{% codeblock %}patch -p0 &lt; ip_patch.patch{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>patch -p0 &lt; ip_patch.patch</span></code></pre></td></tr></table></div></figure></notextile></div>
 如果出現
-{% codeblock %}patching file counterizeii/counterize_install.php
-patching file counterizeii/counterize.php{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>patching file counterizeii/counterize_install.php
+</span><span class='line'>patching file counterizeii/counterize.php</span></code></pre></td></tr></table></div></figure></notextile></div>
 表示完成了，這是在Linux底下，在windows的話可能需要GnuWin32或是其他對應的軟體。</p>
 ]]></content>
   </entry>
@@ -153,9 +197,11 @@ patching file counterizeii/counterize.php{% endcodeblock %}
 
 <p>至於mutt的話之前的版本按照我在前一篇的<a href="http://www.renn999.twbbs.org/wordpress/archives/184">自動MySQL備份搞定</a>，中的script中一定會發現到會吐出error，他會跟你說找不到[mail位置＠where.are.you]這個檔案，我是不清楚新板式不是在這裡有改了啥東西，但是這個問題我改一下參數順序就可以了
 原始為：
-{% codeblock %}echo "$today Data base backup" | mutt -s "Web Mysql Database Backup" -a  sqlbak$today.zip [mail位置＠where.are.you]{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo "$today Data base backup" | mutt -s "Web Mysql Database Backup" -a  sqlbak$today.zip [mail位置＠where.are.you]</span></code></pre></td></tr></table></div></figure></notextile></div>
 改成
-{% codeblock %}echo "$today Data base backup" | mutt [mail位置＠where.are.you] -s "Web Mysql Database Backup" -a  sqlbak$today.zip{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo "$today Data base backup" | mutt [mail位置＠where.are.you] -s "Web Mysql Database Backup" -a  sqlbak$today.zip</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>還有我的/etc/resolv.conf每次重新開機都會跑掉，於是我把resolvconf給remove就ok了 :-P</p>
 ]]></content>

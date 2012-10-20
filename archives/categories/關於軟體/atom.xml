@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 關於軟體 | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/關於軟體/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-20T16:05:01+08:00</updated>
+  <updated>2012-10-20T16:05:18+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -40,32 +40,58 @@
 <p>我想起之前在裝完Adobe Flash Player之後我去修改了"/etc/fonts/conf.d/49-sansserif.conf"這隻檔案，想說會不會是在這個環節上出了問題，於是我就把當初的檔案給改回來之後，Ｙｅｓ！Chromium正常的把中文字給顯示出來了，但是Adobe Flash Player硬是出現方塊字。</p>
 
 <p>到了最後放大絕了我就如下的
-{% codeblock %}&lt; ?xml version="1.0"?>
-&lt; !DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig></p>
-
-<!--
-  If the font still has no generic name, add sans-serif
- -->
-
-
-<pre><code>&lt;match target="pattern"&gt;
-    &lt;test qual="all" name="family" compare="not_eq"&gt;
-        &lt;string&gt;sans serif&lt;/string&gt;
-    &lt;/test&gt;
-    &lt;test qual="all" name="family" compare="not_eq"&gt;
-        &lt;string&gt;serif&lt;/string&gt;
-    &lt;/test&gt;
-    &lt;test qual="all" name="family" compare="not_eq"&gt;
-        &lt;string&gt;monospace&lt;/string&gt;
-    &lt;/test&gt;
-    &lt;edit name="family" mode="append_last"&gt;
-        &lt;string&gt;WenQuanYi Zen Hei&lt;/string&gt;
-    &lt;/edit&gt;
-&lt;/match&gt;
-</code></pre>
-
-<p></fontconfig>{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt; ?xml version="1.0"?>
+</span><span class='line'>&lt; !DOCTYPE fontconfig SYSTEM "fonts.dtd">
+</span><span class='line'>&lt;fontconfig>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;!--
+</span><span class='line'>  If the font still has no generic name, add sans-serif
+</span><span class='line'> -->
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>&lt;match target="pattern"&gt;
+</span><span class='line'>    &lt;test qual="all" name="family" compare="not_eq"&gt;
+</span><span class='line'>        &lt;string&gt;sans serif&lt;/string&gt;
+</span><span class='line'>    &lt;/test&gt;
+</span><span class='line'>    &lt;test qual="all" name="family" compare="not_eq"&gt;
+</span><span class='line'>        &lt;string&gt;serif&lt;/string&gt;
+</span><span class='line'>    &lt;/test&gt;
+</span><span class='line'>    &lt;test qual="all" name="family" compare="not_eq"&gt;
+</span><span class='line'>        &lt;string&gt;monospace&lt;/string&gt;
+</span><span class='line'>    &lt;/test&gt;
+</span><span class='line'>    &lt;edit name="family" mode="append_last"&gt;
+</span><span class='line'>        &lt;string&gt;WenQuanYi Zen Hei&lt;/string&gt;
+</span><span class='line'>    &lt;/edit&gt;
+</span><span class='line'>&lt;/match&gt;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>&lt;/fontconfig></span></code></pre></td></tr></table></div></figure></notextile></div>
 把字型改成WenQuanYi Zen Hei之後都顯示正常了,至於字型的部份您可以自行選擇您要得，但是不要打中文要用字型的英文名稱，否則Chromium的部份還是硬是給你方塊字。</p>
 
 <p><a href="http://pic.renn999.twbbs.org/view.php?pic=5de8a7a24301dc84.png" target="_blank"><img src="http://pic.renn999.twbbs.org/upload/5de8a7a24301dc84.png" alt="" width="640" /></a></p>

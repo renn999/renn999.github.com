@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 程式相關 | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/程式相關/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-20T16:05:01+08:00</updated>
+  <updated>2012-10-20T16:05:18+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -54,36 +54,61 @@
 <p>當然我的作法是將步驟分開來作的</p>
 
 <p>先將sqldump出來
-{% codeblock %}mysqldump -u'username' -p'password' --compact --compatible=ansi --default-character-set=binary 'databasename' > database.sql{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysqldump -u'username' -p'password' --compact --compatible=ansi --default-character-set=binary 'databasename' > database.sql</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <!--more-->
 
 
 <p>接著就利用內部所說的sh script擷取部份
-{% codeblock %}#!/bin/sh</p>
-
-<p>cat database.sql |
-grep -v ' KEY "' |
-grep -v ' UNIQUE KEY "' |
-grep -v ' PRIMARY KEY ' |
-sed 's/ unsigned / /g' |
-sed 's/ auto_increment/ primary key autoincrement/gi' |
-sed 's/ smallint([0-9]<em>) / integer /gi' |
-sed 's/ tinyint([0-9]</em>) / integer /gi' |
-sed 's/ int([0-9]<em>) / integer /gi' |
-sed 's/ character set [^ ]</em> / /gi' |
-sed 's/ enum([<sup>)]*)</sup> / varchar(255) /gi' |
-sed 's/ on update [<sup>,]*//gi'</sup> |
-perl -e 'local $/;$_=&lt;>;s/,\n)/\n)/gs;print "begin;\n";print;print "commit;\n"' |
-perl -pe '
-if (/<sup>(INSERT.+?)(/)</sup> {
-   $a=$1;
-   s/\'\''/'\'\''/g;
-   s/\n/\n/g;
-   s/),(/);\n$a(/g;
-}
-' > output.sql
-cat output.sql | sqlite3 output.db > output.err{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/sh&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>cat database.sql |
+</span><span class='line'>grep -v ' KEY "' |
+</span><span class='line'>grep -v ' UNIQUE KEY "' |
+</span><span class='line'>grep -v ' PRIMARY KEY ' |
+</span><span class='line'>sed 's/ unsigned / /g' |
+</span><span class='line'>sed 's/ auto_increment/ primary key autoincrement/gi' |
+</span><span class='line'>sed 's/ smallint([0-9]&lt;em>) / integer /gi' |
+</span><span class='line'>sed 's/ tinyint([0-9]&lt;/em>) / integer /gi' |
+</span><span class='line'>sed 's/ int([0-9]&lt;em>) / integer /gi' |
+</span><span class='line'>sed 's/ character set [^ ]&lt;/em> / /gi' |
+</span><span class='line'>sed 's/ enum([&lt;sup>)]*)&lt;/sup> / varchar(255) /gi' |
+</span><span class='line'>sed 's/ on update [&lt;sup>,]*//gi'&lt;/sup> |
+</span><span class='line'>perl -e 'local $/;$_=&lt;>;s/,\n)/\n)/gs;print "begin;\n";print;print "commit;\n"' |
+</span><span class='line'>perl -pe '
+</span><span class='line'>if (/&lt;sup>(INSERT.+?)(/)&lt;/sup> {
+</span><span class='line'>   $a=$1;
+</span><span class='line'>   s/\'\''/'\'\''/g;
+</span><span class='line'>   s/\n/\n/g;
+</span><span class='line'>   s/),(/);\n$a(/g;
+</span><span class='line'>}
+</span><span class='line'>' > output.sql
+</span><span class='line'>cat output.sql | sqlite3 output.db > output.err</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>這樣的好處是說只要亦有問題，可以依照error message出現的錯誤去修正database.sql，老實他那個error message一直沒有辦法被output出來，建議使用script指令紀錄錯誤訊息，利用錯誤訊息慢慢去修正會比較好。</p>
 ]]></content>
@@ -96,57 +121,107 @@ cat output.sql | sqlite3 output.db > output.err{% endcodeblock %}</p>
     <id>http://www.renn999.twbbs.org/archives/828</id>
     <content type="html"><![CDATA[<p>這是利用plurk api簡單寫得東東，主要是要搞懂json的用法：p
 到時候先搞定cookie的儲存..OTZ
-{% codeblock lang:python %}</p>
-
-<h1>!/usr/bin/python</h1>
-
-<h1>-<em>- coding: UTF8 -</em>-</h1>
-
-<p>#</p>
-
-<p>import logging, os, sys, re, time
-import urllib,urllib2,cookielib,htmllib,formatter
-import sgmllib
-import json</p>
-
-<p>def main():
-  opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
-  get_api_url = lambda x: 'http://www.plurk.com/API%s' % x
-  encode = urllib.urlencode</p>
-
-<p>  fp = opener.open(get_api_url('/Users/login'),</p>
-
-<pre><code>encode({
-  'username': username,
-  'password': password,
-  'api_key': api_key ,
-}))
-</code></pre>
-
-<p>  fp.read()</p>
-
-<p>  fp = opener.open(get_api_url('/Timeline/getPlurks'),</p>
-
-<pre><code>encode({'api_key': api_key}))
-</code></pre>
-
-<p>  dumps = fp.read()
-  dumps = json.JSONDecoder().decode(dumps)
-  for a in dumps['plurks']:</p>
-
-<pre><code>print api_key
-user_dis_name = dumps['plurk_users'][str(a['owner_id'])]['display_name']
-print ("%s"%user_dis_name)+" "*2+a['qualifier_translated']+":"
-print " "*4+"%s"%a['content_raw']
-</code></pre>
-
-<p>if <strong>name</strong> =='<strong>main</strong>':
-  api_key = 'api_key'
-  username = 'your_username'
-  password = 'your_password'
-  main()
-  sys.exit()
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="err">!</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;-&lt;</span><span class="n">em</span><span class="o">&gt;-</span> <span class="n">coding</span><span class="p">:</span> <span class="n">UTF8</span> <span class="o">-&lt;/</span><span class="n">em</span><span class="o">&gt;-&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c">#&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">logging</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">time</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">urllib</span><span class="o">,</span><span class="nn">urllib2</span><span class="o">,</span><span class="nn">cookielib</span><span class="o">,</span><span class="nn">htmllib</span><span class="o">,</span><span class="nn">formatter</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">sgmllib</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">json</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span><span class='line'>  <span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">())</span>
+</span><span class='line'>  <span class="n">get_api_url</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s">&#39;http://www.plurk.com/API</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">x</span>
+</span><span class='line'>  <span class="n">encode</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">fp</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">get_api_url</span><span class="p">(</span><span class="s">&#39;/Users/login&#39;</span><span class="p">),</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">encode</span><span class="p">({</span>
+</span><span class='line'>  <span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+</span><span class='line'>  <span class="s">&#39;password&#39;</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span>
+</span><span class='line'>  <span class="s">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">api_key</span> <span class="p">,</span>
+</span><span class='line'><span class="p">}))</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">fp</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">get_api_url</span><span class="p">(</span><span class="s">&#39;/Timeline/getPlurks&#39;</span><span class="p">),</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">encode</span><span class="p">({</span><span class="s">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">}))</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">dumps</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>  <span class="n">dumps</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">dumps</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">dumps</span><span class="p">[</span><span class="s">&#39;plurks&#39;</span><span class="p">]:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">print</span> <span class="n">api_key</span>
+</span><span class='line'><span class="n">user_dis_name</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">[</span><span class="s">&#39;plurk_users&#39;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;owner_id&#39;</span><span class="p">])][</span><span class="s">&#39;display_name&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="k">print</span> <span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">user_dis_name</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;qualifier_translated&#39;</span><span class="p">]</span><span class="o">+</span><span class="s">&quot;:&quot;</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot; &quot;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;content_raw&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">if</span> <span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">name</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="o">==</span><span class="s">&#39;&lt;strong&gt;main&lt;/strong&gt;&#39;</span><span class="p">:</span>
+</span><span class='line'>  <span class="n">api_key</span> <span class="o">=</span> <span class="s">&#39;api_key&#39;</span>
+</span><span class='line'>  <span class="n">username</span> <span class="o">=</span> <span class="s">&#39;your_username&#39;</span>
+</span><span class='line'>  <span class="n">password</span> <span class="o">=</span> <span class="s">&#39;your_password&#39;</span>
+</span><span class='line'>  <span class="n">main</span><span class="p">()</span>
+</span><span class='line'>  <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
