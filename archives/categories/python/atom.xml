@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: python | 老伯筆記]]></title>
+  <link href="http://www.renn999.twbbs.org/archives/categories/python/atom.xml" rel="self"/>
+  <link href="http://www.renn999.twbbs.org/"/>
+  <updated>2012-10-21T07:37:36+08:00</updated>
+  <id>http://www.renn999.twbbs.org/</id>
+  <author>
+    <name><![CDATA[renn999]]></name>
+    <email><![CDATA[renn999@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[No handlers could be found for logger 'XXXXX']]></title>
+    <link href="http://www.renn999.twbbs.org/archives/910/"/>
+    <updated>2012-10-21T07:29:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/910</id>
+    <content type="html"><![CDATA[<p>之前在練習寫 Markdown Extension ，寫完要測試時 Bash 一直吐出這樣的訊息</p>
+
+<pre><code>No handlers could be found for logger 'MARKDOWN'
+</code></pre>
+
+<p>只要在主 python 的程式加上</p>
+
+<p><code>python    
+import logging
+logging.basicConfig()
+</code></p>
+
+<p>就可以看到吐出來的錯誤訊息，這個東西浪費了我不少時間。</p>
+]]></content>
+  </entry>
+  
+</feed>

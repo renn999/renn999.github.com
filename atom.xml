@@ -4,7 +4,7 @@
   <title><![CDATA[老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-20T16:16:00+08:00</updated>
+  <updated>2012-10-21T07:37:36+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[No handlers could be found for logger 'XXXXX']]></title>
+    <link href="http://www.renn999.twbbs.org/archives/910/"/>
+    <updated>2012-10-21T07:29:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/910</id>
+    <content type="html"><![CDATA[<p>之前在練習寫 Markdown Extension ，寫完要測試時 Bash 一直吐出這樣的訊息</p>
+
+<pre><code>No handlers could be found for logger 'MARKDOWN'
+</code></pre>
+
+<p>只要在主 python 的程式加上</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">logging</span>
+</span><span class='line'><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>就可以看到吐出來的錯誤訊息，這個東西浪費了我不少時間。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之四]]></title>
@@ -293,17 +316,6 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <content type="html"><![CDATA[<p>這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了</p>
 <p>應該都ok了吧&#8230;<span class="caps">OTZ</span></p>
 <p>接著看看明天有沒有把備份自動寄到我的信箱就好了&#8230;<span class="caps">OTZ</span></p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[利用 trash 來取代 rm 在 Terminal 模式下]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/721/"/>
-    <updated>2010-05-26T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/721</id>
-    <content type="html"><![CDATA[<p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下&#8217;rm *.jpg&#8217;，但是手殘外加腦包的我竟然不小心下成&#8217;rm * .jpg&#8217;看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>&#8230;不不不&#8230;應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式&#8230;.<span class="caps">OTZ</span></p>
-<p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big><br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install trash-cli</span></code></pre></td></tr></table></div></figure></div></notextile><a href="http://www.renn999.twbbs.org/archives/721/" class="more-link">Read More &#8230;</a>]]></content>
   </entry>
   
 </feed>

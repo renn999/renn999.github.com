@@ -7,8 +7,14 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="最近老實說又多玩了一個語言，外加我今年算是個考生，所以說很多時候晚上忙一下就已經11點多了，當然最近都在養肝，忙完就睡著了&#8230;XD
-至於廢話就不多說了，最近學了一點Action Script 3.0，但是我基本上還是用Flash CS4下去學習，改天會開始去摸摸看Flex， &hellip;">
+	<meta name="description" content="基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。
+所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。
+(這是Memory Leaks的問題已經解決)
+以下為修改完的程式碼。
+1
+2
+3
+4 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,6 +90,155 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/371/">PHP備份Pixiv的bookmark(お気に入りユーザー)修正版</a></h1>
+	<div class="entry-content">
+		<p>基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。</p>
+<p>所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。<br />
+(這是Memory Leaks的問題已經解決)</p>
+<p>以下為修改完的程式碼。<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>    require 'simplehtmldom/simple_html_dom.php';
+</span><span class='line'>        
+</span><span class='line'>    $loginurl='http://www.pixiv.net/index.php';
+</span><span class='line'>    $pixiv_id='';
+</span><span class='line'>    $password='';
+</span><span class='line'>    
+</span><span class='line'>    $curl = curl_init();
+</span><span class='line'>    curl_setopt($curl, CURLOPT_HEADER, 0);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_USERAGENT,'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)');
+</span><span class='line'>    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_COOKIEJAR, 'cookie.txt');
+</span><span class='line'>    curl_setopt($curl, CURLOPT_COOKIEFILE, 'cookie.txt');
+</span><span class='line'>    curl_setopt($curl, CURLOPT_POST, 1);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_COOKIESESSION,true);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_URL, $loginurl);
+</span><span class='line'>    curl_setopt($curl, CURLOPT_POSTFIELDS, 'mode=login&pixiv_id='.$pixiv_id.'&pass='.$password );
+</span><span class='line'>    curl_exec($curl);
+</span><span class='line'>   
+</span><span class='line'>    $p=1;
+</span><span class='line'>    $bookmark_rest='show';//show
+</span><span class='line'>    do{
+</span><span class='line'>        $url='http://www.pixiv.net/bookmark.php?type=user&rest='.$bookmark_rest.'&p='.$p;
+</span><span class='line'>        curl_setopt($curl, CURLOPT_URL, $url);
+</span><span class='line'>        $profile=curl_exec($curl);
+</span><span class='line'>        $dom1 = new simple_html_dom();
+</span><span class='line'>        $dom1 = str_get_html($profile);
+</span><span class='line'>       
+</span><span class='line'>        $test=$dom1->find('div#content2 div[align="right"]',0)->plaintext;
+</span><span class='line'>       
+</span><span class='line'>        preg_match('/次の(.*?)件/',$test,$match);
+</span><span class='line'>                       
+</span><span class='line'>        $title2 = $dom1->find('div#content2 form#f div[style="width:140px;height:130px;float:left;text-align:center;"]');
+</span><span class='line'>
+</span><span class='line'>        foreach($title2 as $illsthtml){
+</span><span class='line'>        $illst = $illsthtml->outertext;
+</span><span class='line'>        $illst=preg_replace('/&lt;div(.*?)">&lt;input(.*?)>&lt;\/div>/','',$illst);
+</span><span class='line'>        $illst=preg_replace('/\n/', '',$illst);
+</span><span class='line'>        $illst=preg_replace('/&lt;img(.*?)>/', '',$illst);
+</span><span class='line'>        preg_match_all('/&lt;a href="member.php\?id=(.*?)">&lt;\/a>&lt;div style=\"padding-top:5px;\">(.*?)&lt;\/div>(&lt;a href="jump.php\?(.*?)" target="_blank">&lt;\/a>)?/', $illst,$match2,PREG_SET_ORDER);
+</span><span class='line'>            foreach ($match2 as $val) {
+</span><span class='line'>                echo 'http://www.pixiv.net/member.php?id='.$val[1].' - '.$val[2];
+</span><span class='line'>                if(!empty($val[4])){echo ' - '.$val[4];}
+</span><span class='line'>                echo "&lt;br />\n";
+</span><span class='line'>            }
+</span><span class='line'>        }
+</span><span class='line'>        $dom1->__destruct();//解決Memory Leaks的問題
+</span><span class='line'>        unset($profile,$dom1,$test);
+</span><span class='line'>        $p++;
+</span><span class='line'>    }while(!empty($match));
+</span><span class='line'>    
+</span><span class='line'>    curl_close($curl);
+</span><span class='line'>?></span></code></pre></td></tr></table></div></figure></div></notextile></p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-30T00:00:00+08:00" pubdate data-updated="true">Sep 30<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/371/#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -352,49 +507,6 @@
 </div>
 	
 		<span class="comments"><a href="/archives/345/#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/339/">From co.cc to twbbs.org</a></h1>
-	<div class="entry-content">
-		<p>老實說 今天也是無聊上了一下我常用的domain name的網站，但是讓我一整個錯愕&#8230;.囧&#8230;is expired (~2009-04-29) <br />
-<center>&lt;img width=640 src=&#8220;http://pic.renn999.twbbs.org/upload/82510a01b0b24b05.png&#8221; /&gt;</center></p>
-<p>按下renew時竟然給你老子出現要錢的選項<br />
-<center>&lt;img width=640 src=&#8220;http://pic.renn999.twbbs.org/upload/b8bd2384056a0836.png&#8221; /&gt;</center></p>
-<p>上網google一大堆資料的時候，確定看到一堆人為此而哀號，當初想說有這麼棒的免費domain name的說，事件原因很簡單因為他們是商人，就跟某小站一樣，免費的就要有這個風險吧，簡單來說好像可以免費用一年他們的設定，但是過了一年就要付錢才可以改設定，這個domain啥時不可以用也不知道，所以說還是早早搬家吧，算了俺還是窮學生，買不起那些.com啦.cc啦.org那些網址，就就先回twbbs.org待一陣子了，畢竟這才是愛呆丸的表現(挺&#8230;)，還好我當初是選擇EveryDNS作為我的dns管理，至少還可以增加一些服務，我當初沒有用co.cc他們本家的dns管理功能真是明智的選擇&#8230;XD</p>
-<p>我只知道我一轉，一堆服務可能要跟著變動了，目前是Blog的部份還好，圖片啦，短網址就有點麻煩了，網誌上面的圖應該是最麻煩的，提早弄真的哪天炸了也不一定，感覺上這個味道&#8230;恩&#8230;.跟某有名差不多，基本上www.renn999.co.cc原則上還是可以找到我，會自動轉址到www.renn999.twbbs.org，但是www.renn999.twbbs.org啥時會炸我就不知道了。</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-22T00:00:00+08:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>, <a class='category' href='/archives/categories/架站相關/'>架站相關</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/339/#disqus_thread">Comments</a></span>
 	
 	
 </div>

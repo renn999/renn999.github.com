@@ -7,7 +7,7 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="翻完以上的文章之後，老實說那些有些部份只適用9.04以前的，今天就研究了一下要如何修改，9.10的那些介面，因為9.10跟以往不大一樣的地方就是他們的gdm版本是比較新的(廢話)，因為這個原因他們的登入以及Splash佈景待改笧用新版，而比較特別的就是Splash改用了xSplash。 &hellip;">
+	<meta name="description" content="前一兩個星期從Ubuntu9.04直接升級到9.10，看似沒有問題。但是今天看了一下備份的紀錄只有到091102，好像Postfix沒有動作的樣子，至於為啥沒有動作，我就不想浪費時間去找問題，於是我參考Tsung大的這一篇，把postfix換掉改用gmail的smtp來送我的備份檔， &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -83,6 +83,52 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/446/">Server上的一些變動紀錄</a></h1>
+	<div class="entry-content">
+		<p>前一兩個星期從Ubuntu9.04直接升級到9.10，看似沒有問題。但是今天看了一下備份的紀錄只有到091102，好像Postfix沒有動作的樣子，至於為啥沒有動作，我就不想浪費時間去找問題，於是我參考<a href="http://plog.longwin.com.tw/">Tsung</a>大的<a href="http://plog.longwin.com.tw/my_note-unix/2009/08/27/ssmtp-shell-gmail-send-mail-2009">這一篇</a>，把postfix換掉改用gmail的smtp來送我的備份檔，除了附件大小要注意之外，還是可以使用mutt來送東西。這樣真的省得時間再去設定postfix。</p>
+<p>至於mutt的話之前的版本按照我在前一篇的<a href="http://www.renn999.twbbs.org/wordpress/archives/184">自動MySQL備份搞定</a>，中的script中一定會發現到會吐出error，他會跟你說找不到[mail位置＠where.are.you]這個檔案，我是不清楚新板式不是在這裡有改了啥東西，但是這個問題我改一下參數順序就可以了<br />
+原始為：<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo "$today Data base backup" | mutt -s "Web Mysql Database Backup" -a  sqlbak$today.zip [mail位置＠where.are.you]</span></code></pre></td></tr></table></div></figure></div></notextile><br />
+改成<br />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo "$today Data base backup" | mutt [mail位置＠where.are.you] -s "Web Mysql Database Backup" -a  sqlbak$today.zip</span></code></pre></td></tr></table></div></figure></div></notextile></p>
+<p>還有我的/etc/resolv.conf每次重新開機都會跑掉，於是我把resolvconf給remove就ok了 :-P</p>
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-11T00:00:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/架站相關/'>架站相關</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/446/#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -242,59 +288,6 @@
 </div>
 	
 		<span class="comments"><a href="/archives/406/#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/401/">Google AJAX Libraries API</a></h1>
-	<div class="entry-content">
-		<p>其實今天就是在google AJAX看到的鬼東西，而且是一個非常有趣的鬼東西，依照我淺薄的接觸以為javascript Libraries只有jQuery，竟然沒想到還有這麼多的種類，</p>
-<p>網站：<a href="http://code.google.com/intl/en/apis/ajaxlibs/">http://code.google.com/intl/en/apis/ajaxlibs/</a></p>
-<p>其實這讓開發者真的可以非常的方便來使用一些javascript的Libraries，如果要使用jQuery的話只要<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;script src="http://www.google.com/jsapi">&lt;/script> &lt;!--先include google js api-->
-</span><span class='line'>&lt;script> 
-</span><span class='line'>google.load("jquery", "1.3.2");
-</span><span class='line'>google.load("jqueryui", "1.7.2");
-</span><span class='line'>&lt;!-- your js code -->
-</span><span class='line'>&lt;/script></span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>真是方便的東西&#8230;XDrz</p>
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-28T00:00:00+08:00" pubdate data-updated="true">Oct 28<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/about-php/'>about PHP</a>, <a class='category' href='/archives/categories/架站相關/'>架站相關</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/401/#disqus_thread">Comments</a></span>
 	
 	
 </div>

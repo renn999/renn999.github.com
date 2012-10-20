@@ -7,10 +7,10 @@
 	<meta name="author" content="renn999">
 
 	
-	<meta name="description" content="就是就是要在Linux底下看H264的影片 老實說都要耗盡好大的一番功夫
-在Linux底下沒有一套一套可以把H264解好的Codec 所以說我還是要單靠CoreAVC-for-Linux
-但是老實說這個好用的東西好像沒有在更新了了&#8230;Orz
-裡面的dshowserver. &hellip;">
+	<meta name="description" content="老實說 這算是一個美麗的錯誤？
+今天原本想寫一個比較文就是有沒有打入CoreAVC-for-Linux的外掛的差別
+但是讓我覺得非常驚訝的是我沒打CoreAVC-for-Linux跟有打一樣&#8230;.Orz
+應該是說Mplayer已經寫一個libavcodec的東東進去了 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -86,6 +86,53 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/archives/226/">Mplayer SVN 29259</a></h1>
+	<div class="entry-content">
+		<p>老實說 這算是一個美麗的錯誤？<br />
+今天原本想寫一個比較文就是有沒有打入CoreAVC-for-Linux的外掛的差別<br />
+但是讓我覺得非常驚訝的是我沒打CoreAVC-for-Linux跟有打一樣&#8230;.Orz</p>
+<p>應該是說Mplayer已經寫一個libavcodec的東東進去了 讓H264的解碼好了一點<br />
+(他X的 我前幾天幹的事情真的好像拖褲子放屁)<br />
+而且最主要的是說 效能比CoreAVC-for-Linux還要好</p>
+<p>更何況開frame drop時CoreAVC-for-Linux會產生超嚴重的破圖現象<br />
+所以說以後不用拖褲子放屁多弄一個CoreAVC-for-Linux了</p>
+<p>基本上我是建議說 自己SVN一個一個新版本再依自己的喜好compiler 把Gui關掉<br />
+因為沒有人會去用Mplayerr當作前導程式吧&#8230;= =a
+		
+		<a href="/archives/226/" class="more-link">Read More &#8230;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-05T00:00:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/archives/categories/linux/'>Linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/archives/226/#disqus_thread">Comments</a></span>
+	
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -266,55 +313,6 @@ The code from svn is still in 82, and the dshowserver.patch won&#8217;t work so 
 </div>
 	
 		<span class="comments"><a href="/archives/197/#disqus_thread">Comments</a></span>
-	
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/archives/184/">自動MySQL備份搞定</a></h1>
-	<div class="entry-content">
-		<p>最近把新機器弄了起來 就想說要把我的Blog搬到我自己的新機器上面去(有新家真好&#8230;<span class="caps">XDDD</span>)<br />
-當然因為我之前實在是太惡搞我學弟的機器 所以以至於說一堆MySQL的基本指令不能用(就指令找不到啦)<br />
-我真的頓時覺得超QQ的 因為我嘗試使用PHPMyaadmin去Dump出我的資料 但是我真的很多當初不曉得怎麼搞的<br />
-一堆資料庫的編碼不對 導致說PHPmyadmin太聰明的邦我轉碼 變成名副其實的&quot;UTF-8亂碼&quot;<br />
-都還原不回來 到最後把整個MySQL殺掉重裝 才搞定好這個問題 到最後的問題也是用mysqldump搞定<br />
-前幾天都在想說要怎麼做備份 簡單來說就是一整個備份策略(就是外加網站檔案 因為太大了寄不出去)<br />
-講一個非常老實的話我還沒完全擬定好&#8230;Orz</p>
-<p>因為我最想要的就是直接mail到我的mailBox(因為我有Google app mail空間丟著很費浪&#8230;Orz 反正7G多了 當作一種備份儲存裝置也不錯 最重要的是mail fliter也弄的不錯)<br />
-所以說我要如何做到最基本的每天就定時dump出MySQL &#8212;&gt; Zip sql &#8212;&gt; mail附件出去<br />
-這就是最基本的處理方式 雖然說有的我之前已經實做過了<br />
-前幾天在搞定自己電腦的時候問題還是一堆</p>
-<p>這裡簡述一下流程
-		
-		<a href="/archives/184/" class="more-link">Read More &#8230;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-30T00:00:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/架站相關/'>架站相關</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/archives/184/#disqus_thread">Comments</a></span>
 	
 	
 </div>
