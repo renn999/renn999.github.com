@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/git/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-20T16:05:18+08:00</updated>
+  <updated>2012-10-20T16:16:00+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -26,7 +26,7 @@
 <p>像說我把我的 Octopress deploy 到 <a href="http://github.com">github</a> 上，但是在 <a href="http://bitbucket.org">bitbucket</a> 上開了一個 private 的 repo 來放 source 主要是將一些 private post 找到可以放的家。要不然真的一些 private post 放在 github 上的話真的一覽無遺...Q_Q</p>
 
 <pre><code>git remote add bitbucket &lt;your repo url&gt;
-git push origin bitbucket
+git push bitbucket source
 </code></pre>
 
 <p>而其實 <a href="http://bitbucket.org">bitbucket</a> 的申請方式差不多，而且也可以像 <a href="http://github.com">github</a> 把網頁 deploy 上去，這真的讓我也碘考慮想要搬家了...OTZ</p>
