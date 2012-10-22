@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/python/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-21T07:37:36+08:00</updated>
+  <updated>2012-10-22T17:08:07+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -12,6 +12,85 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[pyBlogtle 計劃啟動]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/912/"/>
+    <updated>2012-10-22T17:03:00+08:00</updated>
+    <id>http://www.renn999.twbbs.org/archives/912</id>
+    <content type="html"><![CDATA[<h2><strong>前言</strong></h2>
+
+<p>在Octopress用過一陣子之後，最令人詬病的就是 generate 的 speed 一直提升不起來，光是我這只有少少的 136 篇的 markdown 每一次的 generate 就要花上快要 12sec 以下為測試數據</p>
+
+<pre><code>real  0m12.665s
+user  0m12.053s
+sys   0m0.564s
+</code></pre>
+
+<p>所以在想如果利用其他語言編輯不知道效果如何，我到最後選定的基本語言就是python，因為眾多的 extension 也是我的考量之一吧...(沒錯我就是懶)，另外因為 <a href="http://flask.pocoo.org/">Flask</a> 那是因為</p>
+
+<blockquote><p>Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed!</p></blockquote>
+
+<p>我有利用其來編寫過一些網頁，對與它的功能及速度上有著非常深刻的映像，外加 <a href="http://flask.pocoo.org/">Flask</a> 的 extension 也是非常多，尤其是 <a href="http://packages.python.org/Frozen-Flask/">Frozen-Flask</a> 才是本次的主角，外加本人真的有點<s>潔癖</s>潔屁，不喜歡一大堆東西混雜的放在一起（看向 octopress 的 _source 資料夾）。</p>
+
+<h2><strong>由來</strong></h2>
+
+<p>為何叫做<code>pyBlogtle</code></p>
+
+<blockquote><p>flask is a kind of bottle.<br/>
+so Python + Flask + Blog => Pyblogtle</p></blockquote>
+
+<p>就是這麼簡單，目前 source 我是放在 <a href="https://bitbucket.org/renn999/pyblogtle">Bitbucket/PyBlogtle</a> 有興趣的人可以 clone 下來看看。</p>
+
+<h2><strong>HOT TO USE</strong></h2>
+
+<p>基本上只要將所有的 Markdown File 的副檔名 rename 成 <code>.markdown</code> 並且還要轉換一下，因為 Octopress 的 meta head 的格式在這裡完全不通的</p>
+
+<pre><code>---
+layout: post
+title: brabrabrabra
+date: '20XX-XX-XX'
+comments: true
+categories:brabrabrabra
+permalink: 
+---
+brararararararrarararrrarar
+</code></pre>
+
+<p>閉需要換成</p>
+
+<pre><code>layout: post
+title: brabrabrabra
+date: '20XX-XX-XX'
+comments: true
+categories:brabrabrabra
+permalink: 
+
+brararararararrarararrrarar
+</code></pre>
+
+<p>在 bash 底下只要下以下的指令就可以轉換了(請記得要備份)：</p>
+
+<pre><code>for i in `ls *`; do sed -i -e "1d" "$i";done
+for i in `ls *`; do sed -i -e "s/---//" "$i";done
+</code></pre>
+
+<p>轉換完後就就可以丟到 page 的 folder 並且下</p>
+
+<pre><code>python blogtle.py preview #這是預覽
+python blogtle.py build   #這是產生 static file 放在 build folder
+</code></pre>
+
+<p>時間測試：</p>
+
+<pre><code>real  0m1.929s
+user  0m1.840s
+sys   0m0.080s
+</code></pre>
+
+<p>目前真的只是半成品而已，請大家鞭小力點...OTZ</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[No handlers could be found for logger 'XXXXX']]></title>
