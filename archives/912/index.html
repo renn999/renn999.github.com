@@ -112,6 +112,11 @@ so Python + Flask + Blog => Pyblogtle</p></blockquote>
 
 <h2><strong>HOT TO USE</strong></h2>
 
+<p>首先需要先配置python所需要得環境，而 <code>require</code> 內部為所需要的 python extension 可以利用 easy_install 安裝</p>
+
+<pre><code>for i in `cat require`;do sudo easy_install $i;done
+</code></pre>
+
 <p>基本上只要將所有的 Markdown File 的副檔名 rename 成 <code>.markdown</code> 並且還要轉換一下，因為 Octopress 的 meta head 的格式在這裡完全不通的</p>
 
 <pre><code>---
