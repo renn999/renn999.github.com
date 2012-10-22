@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | 老伯筆記]]></title>
   <link href="http://www.renn999.twbbs.org/archives/categories/python/atom.xml" rel="self"/>
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-22T19:37:55+08:00</updated>
+  <updated>2012-10-22T19:41:29+08:00</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -32,6 +32,9 @@ sys   0m0.564s
 <blockquote><p>Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed!</p></blockquote>
 
 <p>我有利用其來編寫過一些網頁，對與它的功能及速度上有著非常深刻的映像，外加 <a href="http://flask.pocoo.org/">Flask</a> 的 extension 也是非常多，尤其是 <a href="http://packages.python.org/Frozen-Flask/">Frozen-Flask</a> 才是本次的主角，外加本人真的有點<s>潔癖</s>潔屁，不喜歡一大堆東西混雜的放在一起（看向 octopress 的 _source 資料夾）。</p>
+
+<!--more-->
+
 
 <h2><strong>由來</strong></h2>
 
