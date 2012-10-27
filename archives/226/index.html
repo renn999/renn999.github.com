@@ -1,48 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Mplayer SVN 29259 - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="老實說 這算是一個美麗的錯誤？
-今天原本想寫一個比較文就是有沒有打入CoreAVC-for-Linux的外掛的差別
-但是讓我覺得非常驚訝的是我沒打CoreAVC-for-Linux跟有打一樣&#8230;.Orz
-應該是說Mplayer已經寫一個libavcodec的東東進去了 &hellip;">
+	<meta name="description" content="老實說 這算是一個美麗的錯誤？ 今天原本想寫一個比較文就是有沒有打入CoreAVC-for-Linux的外掛的差別 但是讓我覺得非常驚訝的是我沒打CoreAVC-for-Linux跟有打一樣....Orz 應該是說Mplayer已經寫一個libavcodec的東東進去了 讓H264的解碼好了一點 (...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -79,87 +66,61 @@
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Mplayer SVN 29259</h1>
-	<div class="entry-content"><p>老實說 這算是一個美麗的錯誤？<br />
-今天原本想寫一個比較文就是有沒有打入CoreAVC-for-Linux的外掛的差別<br />
-但是讓我覺得非常驚訝的是我沒打CoreAVC-for-Linux跟有打一樣&#8230;.Orz</p>
-<p>應該是說Mplayer已經寫一個libavcodec的東東進去了 讓H264的解碼好了一點<br />
-(他X的 我前幾天幹的事情真的好像拖褲子放屁)<br />
+<h1 class="title"><a href="/archives/226/">Mplayer SVN 29259
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>老實說 這算是一個美麗的錯誤？
+今天原本想寫一個比較文就是有沒有打入CoreAVC-for-Linux的外掛的差別
+但是讓我覺得非常驚訝的是我沒打CoreAVC-for-Linux跟有打一樣....Orz</p>
+<p>應該是說Mplayer已經寫一個libavcodec的東東進去了 讓H264的解碼好了一點
+(他X的 我前幾天幹的事情真的好像拖褲子放屁)
 而且最主要的是說 效能比CoreAVC-for-Linux還要好</p>
-<p>更何況開frame drop時CoreAVC-for-Linux會產生超嚴重的破圖現象<br />
+<p>更何況開frame drop時CoreAVC-for-Linux會產生超嚴重的破圖現象
 所以說以後不用拖褲子放屁多弄一個CoreAVC-for-Linux了</p>
-<p>基本上我是建議說 自己SVN一個一個新版本再依自己的喜好compiler 把Gui關掉<br />
-因為沒有人會去用Mplayerr當作前導程式吧&#8230;= =a<!--more--><br />
-<blockquote><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$svn checkout svn://svn.mplayerhq.hu/mplayer/trunk mplayer
-</span><span class='line'>$cd mplayer
-</span><span class='line'>$./configure --enable-freetype --enable-debug --codecsdir=/usr/lib/codecs --language=zh_TW --prefix=/usr
-</span><span class='line'>(這裡要開Gui可以加上 --enable-gui)
-</span><span class='line'>$make
-</span><span class='line'>$sudo checkinstall (這裡是產生一個Deb 順便解決smplayer的相依性)
-</span><span class='line'>$sudo apt-get install smplayer</span></code></pre></td></tr></table></div></figure></div></notextile></blockquote><br />
-老實說我會把我會把Ubuntuu 底下預設的影片totem連根拔除<br />
-<blockquote>sudo apt-get purge totem totem-mozilla totem-plugins totem-gstreamer totem-common</blockquote><br />
-此時的Nautilus會對於影片沒辦法縮圖 可以去找<a href="http://me2030581.googlepages.com/download_mplayer">Mplayer-video-thumb</a>並安裝 詳細安裝方式可以參考 <a href="http://freedom-heero.blogspot.com/2008/02/mplayer.html">蒼天之劍：使用mplayer來產生影像檔的縮圖</a><br />
-在這裡我就不想再浪費力氣再去打一次&#8230;Orz</p>
-<p>增加對增加對rmvb的支援可以看<a href="http://wiki.ubuntu-tw.org/index.php?title=W32codecs">W32codecs/w64codecs</a></p>
-<p>至於安裝完後會發現到mkv和flv無法一起縮圖可以在video_ext這個file後面加上<br />
-<blockquote>/desktop/gnome/thumbnailers/video@x-matroska<br />
-/desktop/gnome/thumbnailers/video@x-flv</blockquote><br />
-在執行一次 gconf.sh 即可</p>
-<p>老實說 在Linux底下的多媒體真的越來越完善了&#8230;<span class="caps">XDDD</span></p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
+<p>基本上我是建議說 自己SVN一個一個新版本再依自己的喜好compiler 把Gui關掉
+因為沒有人會去用Mplayerr當作前導程式吧...= =a</p>
+<!--more-->
 
+<blockquote>
+wzxhzdk:0
+</blockquote>
+
+<p>老實說我會把我會把Ubuntuu 底下預設的影片totem連根拔除
+<blockquote>sudo apt-get purge totem totem-mozilla totem-plugins totem-gstreamer totem-common</blockquote>
+此時的Nautilus會對於影片沒辦法縮圖 可以去找<a href="http://me2030581.googlepages.com/download_mplayer">Mplayer-video-thumb</a>並安裝 詳細安裝方式可以參考 <a href="http://freedom-heero.blogspot.com/2008/02/mplayer.html">蒼天之劍：使用mplayer來產生影像檔的縮圖</a>
+在這裡我就不想再浪費力氣再去打一次...Orz</p>
+<p>增加對增加對rmvb的支援可以看<a href="http://wiki.ubuntu-tw.org/index.php?title=W32codecs">W32codecs/w64codecs</a></p>
+<p>至於安裝完後會發現到mkv和flv無法一起縮圖可以在video_ext這個file後面加上
+<blockquote>/desktop/gnome/thumbnailers/video@x-matroska
+/desktop/gnome/thumbnailers/video@x-flv</blockquote>
+在執行一次 gconf.sh 即可</p>
+<p>老實說 在Linux底下的多媒體真的越來越完善了...XDDD</p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-05T00:00:00+08:00" pubdate data-updated="true">May 5<span>th</span>, 2009</time></div>
+	<div class="date">Tue May.  5 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
+    <a href='/archives/categories/Linux/'>Linux</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/226/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/226/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/226/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -174,34 +135,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/226/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/226/';
@@ -214,8 +174,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -227,8 +186,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

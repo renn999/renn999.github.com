@@ -1,45 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Ubuntu 9.04 ext4 災情外加解決報告...囧"> - 老伯筆記</title>
+	<title>Ubuntu 9.04 ext4 災情外加解決報告...囧&#34;&gt; - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="前幾天非常高興的把我的1T硬碟的的所有Partition的Partition的Ext3轉換成轉換成Ext4，當然我覺得我真的做的太大膽了，轉完之後在做大量檔案搬移的時候，災難已經開始發生了&#8230;.囧rz，因為之前在google時是有看到有人因為ext4而造成Loss DATA的狀況， &hellip;">
+	<meta name="description" content="前幾天非常高興的把我的1T硬碟的的所有Partition的Partition的Ext3轉換成轉換成Ext4，當然我覺得我真的做的太大膽了，轉完之後在做大量檔案搬移的時候，災難已經開始發生了....囧rz，因為之前在google時是有看到有人因為ext4而造成Loss DATA的狀況，但是我在想說但是...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -76,83 +66,74 @@
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Ubuntu 9.04 Ext4 災情外加解決報告...囧"></h1>
-	<div class="entry-content"><p>前幾天非常高興的把我的1T硬碟的的所有Partition的Partition的Ext3轉換成轉換成Ext4，當然我覺得我真的做的太大膽了，轉完之後在做大量檔案搬移的時候，災難已經開始發生了&#8230;.囧rz，因為之前在google時是有看到有人因為ext4而造成Loss DATA的狀況，但是我在想說但是我在想說Ubuntuu已經開始推了，應該是沒問題才對，於是就很放心的把我1T上的所有partitionn全部轉了過去，但是今天才是慘劇的開始，原因事因為我正在因為某些原因需要騰出大量的Freespace，所以說很直覺得將我的檔案搬過去，但是每搬到一段時間後，Ubuntu娘就整個失神了，我當初只是想說應該只是小問題吧，直到的第三次，第四次&#8230;&lt;囧&gt;，我就不甘心的打開Epiphany來google &#8220;ext4 wiki&#8221;(不要在提Firefox了)，真的是讓我囧了一下下<!--more--><br />
-<blockquote><strong>Caveats</strong></p>
-<p>Delayed allocation and potential data loss</p>
-<p>Delayed allocation poses some additional risk of data loss in cases where the system crashes before all of the data has been written to the disk.</p>
-<p>The typical scenario in which this might occur is a program replacing the contents of a file without forcing a write to the disk with fsync. Problems can arise if the system crashes before the actual write occurs. In this situation, users of ext3 have come to expect that the disk will hold either the old version or the new version of the file following the crash. However, the ext4 code in the Linux kernel version 2.6.28 will often clear the contents of the file before the crash, but never write the new version, thus losing the contents of the file entirely.</p>
-<p>Many people find such a behavior unacceptable. A significant issue is that fixing the bug by using fsync more often could lead to severe performance penalties on ext3 filesystems mounted with the data=ordered flag (the default on most Linux distributions). Given that both file-systems will be in use for some time, this complicates matters enormously for end-user application developers. In response, Theodore Ts&#8217;o has written some patches for ext4 that cause it to limit its delayed allocation in these common cases. For a small cost in performance, this will significantly increase the chance that either version of the file will survive the crash.</p>
-<p>The new patches are expected to become part of the mainline kernel 2.6.30. Various distributions may choose to backport them to 2.6.28 or 2.6.29, for instance Ubuntu made them part of the 2.6.28 kernel in version 9.04 &#8212; Jaunty Jackalope.</p>
-<p>以上摘自<a href="http://en.wikipedia.org/wiki/Ext4" target="_blank">http://en.wikipedia.org/wiki/Ext4</a></blockquote><br />
-阿阿阿阿～！～！9.04還是舊的kernel啊！當然我這個懶人可不想要一直搬東西一直當掉啊，於是於是再繼續的google到其實已經有2.6.30的kernel了，但是還是處於RC3的階段，如果說你的如果說你的(逼&#8230;..)夠大的話大，真的可以握住來試試看(誤)，因為我是(逼&#8230;..)超大的人所以說我真的裝了(誤更大)，當然中間有超多的坡折(nVidia的驅動爛掉了，&quot;/&quot;碟出現的一堆error，Fsck按按&quot;y&quot;到手軟到手軟，忘記加上&quot;-y&quot;的參數，他X的!我的我的inode是怎樣了是怎樣了&#8230;)算了以下就說一下升級方式好了：<br />
-<ol><br />
-	<li>基本上如果有裝任何的驅動程式請先移除，並將所有有關並將所有有關nvidia驅動程式都解除安裝，並先備份Xorg的設定<br />
-<blockquote>$ sudo cp /etc/X11/xorg.conf<br />
-$ sudo apt-get purge nvidia-*</blockquote><br />
-以上這些動作是為了為了說怕新的Kernel對舊的驅動產生問題，並且將Xorg的顯示還原成最基本的&quot;nv&quot;<br />
-<blockquote>Section &#8220;Screen&#8221;<br />
-Identifier      &#8220;Default Screen&#8221;<br />
-DefaultDepth    24<br />
-EndSectionSection &#8220;Device&#8221;<br />
-Identifier      &#8220;Default Device&#8221;<br />
-Driver  &#8220;nv&#8221;<br />
-EndSection</blockquote><br />
-以上只是參考</li><br />
-	<li>此時最好reboot一下，接著上<a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/v2.6.30-rc3/" target="_blank">http://kernel.ubuntu.com/~kernel-ppa/mainline/v2.6.30-rc3/</a>將最新的kernell下載下來，i386請下載：<blockquote>linux-image-2.6.30-020630rc3-generic_2.6.30-020630rc3_i386.deb<br />
-linux-headers-2.6.30-020630rc3_2.6.30-020630rc3_all.deb<br />
-linux-headers-2.6.30-020630rc3-generic_2.6.30-020630rc3_i386.deb</blockquote><br />
-或是<blockquote>dpkg -i *.deb</blockquote><br />
-64bit的應該不用我說吧，接著&quot;按照順序&quot;安裝起來，這就算是Kernel的更新完成<br />
-P.S. 記住：除非你很清楚你在幹啥 要不然不要輕易嘗試&#8230;XDDDDrz</li></ol></p>
-<p>NV的驅動可以上nVidia的官網下載.run安裝這應該google就多資訊了吧&#8230;.這裡就懶的寫了<br />
-P.S. 目前的災情好像是幾張圖不見了 及一些小檔案 還好大檔案沒有缺失&#8230;但這只是初期判斷</p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
+<h1 class="title"><a href="/archives/207/">Ubuntu 9.04 ext4 災情外加解決報告...囧&#34;&gt;
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>前幾天非常高興的把我的1T硬碟的的所有Partition的Partition的Ext3轉換成轉換成Ext4，當然我覺得我真的做的太大膽了，轉完之後在做大量檔案搬移的時候，災難已經開始發生了....囧rz，因為之前在google時是有看到有人因為ext4而造成Loss DATA的狀況，但是我在想說但是我在想說Ubuntuu已經開始推了，應該是沒問題才對，於是就很放心的把我1T上的所有partitionn全部轉了過去，但是今天才是慘劇的開始，原因事因為我正在因為某些原因需要騰出大量的Freespace，所以說很直覺得將我的檔案搬過去，但是每搬到一段時間後，Ubuntu娘就整個失神了，我當初只是想說應該只是小問題吧，直到的第三次，第四次...&lt;囧&gt;，我就不甘心的打開Epiphany來google "ext4 wiki"(不要在提Firefox了)，真的是讓我囧了一下下</p>
+<!--more-->
+
+<blockquote><strong>Caveats</strong>
+
+Delayed allocation and potential data loss
+
+Delayed allocation poses some additional risk of data loss in cases where the system crashes before all of the data has been written to the disk.
+
+The typical scenario in which this might occur is a program replacing the contents of a file without forcing a write to the disk with fsync. Problems can arise if the system crashes before the actual write occurs. In this situation, users of ext3 have come to expect that the disk will hold either the old version or the new version of the file following the crash. However, the ext4 code in the Linux kernel version 2.6.28 will often clear the contents of the file before the crash, but never write the new version, thus losing the contents of the file entirely.
+
+Many people find such a behavior unacceptable. A significant issue is that fixing the bug by using fsync more often could lead to severe performance penalties on ext3 filesystems mounted with the data=ordered flag (the default on most Linux distributions). Given that both file-systems will be in use for some time, this complicates matters enormously for end-user application developers. In response, Theodore Ts'o has written some patches for ext4 that cause it to limit its delayed allocation in these common cases. For a small cost in performance, this will significantly increase the chance that either version of the file will survive the crash.
+
+The new patches are expected to become part of the mainline kernel 2.6.30. Various distributions may choose to backport them to 2.6.28 or 2.6.29, for instance Ubuntu made them part of the 2.6.28 kernel in version 9.04 -- Jaunty Jackalope.
+
+以上摘自<a href="http://en.wikipedia.org/wiki/Ext4" target="_blank">http://en.wikipedia.org/wiki/Ext4</a></blockquote>
+
+<p>阿阿阿阿～！～！9.04還是舊的kernel啊！當然我這個懶人可不想要一直搬東西一直當掉啊，於是於是再繼續的google到其實已經有2.6.30的kernel了，但是還是處於RC3的階段，如果說你的如果說你的(逼.....)夠大的話大，真的可以握住來試試看(誤)，因為我是(逼.....)超大的人所以說我真的裝了(誤更大)，當然中間有超多的坡折(nVidia的驅動爛掉了，"/"碟出現的一堆error，Fsck按按"y"到手軟到手軟，忘記加上"-y"的參數，他X的!我的我的inode是怎樣了是怎樣了...)算了以下就說一下升級方式好了：
+<ol>
+    <li>基本上如果有裝任何的驅動程式請先移除，並將所有有關並將所有有關nvidia驅動程式都解除安裝，並先備份Xorg的設定
+<blockquote>$ sudo cp /etc/X11/xorg.conf
+$ sudo apt-get purge nvidia-<em></blockquote>
+以上這些動作是為了為了說怕新的Kernel對舊的驅動產生問題，並且將Xorg的顯示還原成最基本的"nv"
+<blockquote>Section "Screen"
+Identifier      "Default Screen"
+DefaultDepth    24
+EndSectionSection "Device"
+Identifier      "Default Device"
+Driver  "nv"
+EndSection</blockquote>
+以上只是參考</li>
+    <li>此時最好reboot一下，接著上<a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/v2.6.30-rc3/" target="_blank">http://kernel.ubuntu.com/~kernel-ppa/mainline/v2.6.30-rc3/</a>將最新的kernell下載下來，i386請下載：<blockquote>linux-image-2.6.30-020630rc3-generic_2.6.30-020630rc3_i386.deb
+linux-headers-2.6.30-020630rc3_2.6.30-020630rc3_all.deb
+linux-headers-2.6.30-020630rc3-generic_2.6.30-020630rc3_i386.deb</blockquote>
+或是<blockquote>dpkg -i </em>.deb</blockquote>
+64bit的應該不用我說吧，接著"按照順序"安裝起來，這就算是Kernel的更新完成
+P.S. 記住：除非你很清楚你在幹啥 要不然不要輕易嘗試...XDDDDrz</li></ol></p>
+<p>NV的驅動可以上nVidia的官網下載.run安裝這應該google就多資訊了吧....這裡就懶的寫了
+P.S. 目前的災情好像是幾張圖不見了 及一些小檔案 還好大檔案沒有缺失...但這只是初期判斷</p>
+  
 </div>
-
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-29T00:00:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2009</time></div>
+	<div class="date">Wed Apr. 29 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
+    <a href='/archives/categories/Linux/'>Linux</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/207/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/207/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/207/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -167,34 +148,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/207/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/207/';
@@ -207,8 +187,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -220,8 +199,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

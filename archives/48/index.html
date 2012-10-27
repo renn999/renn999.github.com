@@ -1,47 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Ext2 Installable File System For Windows - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="這是一個可以讓Windows讀取Linux的EXT2或EXT3的分個區工具  最新版已經到了1.11版其中有不少的更新
-官方網站 可以到裡面看一下
-主要功用及支援： 支援NT 4.0, Windows 2000, Windows XP, Windows 2003 and Windows Vista &hellip;">
+	<meta name="description" content="這是一個可以讓Windows讀取Linux的EXT2或EXT3的分個區工具 最新版已經到了1.11版其中有不少的更新 官方網站 可以到裡面看一下 主要功用及支援： 支援NT 4.0, Windows 2000, Windows XP, Windows 2003 and Windows Vista 支...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -78,74 +66,59 @@
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Ext2 Installable File System for Windows</h1>
-	<div class="entry-content"><p>這是一個可以讓Windows讀取Linux的EXT2或EXT3的分個區工具  最新版已經到了1.11版其中有不少的更新</p>
+<h1 class="title"><a href="/archives/48/">Ext2 Installable File System For Windows
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>這是一個可以讓Windows讀取Linux的EXT2或EXT3的分個區工具  最新版已經到了1.11版其中有不少的更新</p>
 <p><a href="http://www.fs-driver.org/" target="_blank">官方網站</a> 可以到裡面看一下</p>
-<p>主要功用及支援：<!--more--><br />
-<ol><br />
-	<li>支援<em>NT 4.0</em>, <em>Windows 2000</em>, <em>Windows XP</em>, <em>Windows 2003</em> and <font color="#3366ff"><em>Windows Vista</em></font></li><br />
-	<li>支援32bit x86平台以及64bit x64平台</li><br />
-	<li>Includes drivers with a digital signature for Windows Vista x64(我不知道這啥功能 因為沒用Vista&#8230;= =)</li><br />
-	<li>支援所有讀寫移動&#8230;等功能</li><br />
-	<li><em><span class="caps">UTF</span>-8</em>支援(我認為這是最重要的功能&#8230;<span class="caps">XDDD</span>)</li><br />
-	<li>2 GBytes大檔案支援(不大清楚 請看<a href="http://www.fs-driver.org/faq.html" target="_blank">官方FQA</a>)</li><br />
-<li dragover="true">完整的<em>plug-n-play</em>功能 當磁碟被移除時代號也會被移除</li><br />
-<li dragover="true"> 					Supports use of the Windows <em dragover="true">mountvol</em> utility to create or delete drive letters for Ext2 volumes [new] (except on Windows NT 4.0). This is useful for scripts. (Please read the <a href="http://www.fs-driver.org/faq.html"><span class="caps">FAQ</span> section</a>, too.)</li><br />
-<li dragover="true"> 					A global <em>read-only option</em> is provided [new].</li><br />
-<li dragover="true"> 					File names that start with a dot &#8220;.&#8221; character are treated as hidden [new].</li><br />
-<li dragover="true"> 					Supports <span class="caps">GPT</span> disks if the Windows version used also does [new].</li><br />
-	<li> 					<em>Paging files</em> are supported. (A paging file is a file &#8220;pagefile.sys&#8221;, which Windows swaps virtual memory to.) Users may create paging files at NT&#8217;s control panel at Ext2 volumes.</li><br />
-	<li> Specific functions of the I/O subsystem of NT: Byte range locks, notification of changes of directories, oplocks (which are required by the NT <span class="caps">LAN</span> manager for sharing files via <span class="caps">SMB</span>).</li></p>
-</ol>
-<p>以上部份 主要功能有翻過了 剩下的都是懶的翻&#8230;主要來源來自官方網站</p>
-<p>我覺得有LINUX雙系統的人裝上這個後真的磁區的可用性大增 而且有已經支援UTF-8了</p>
-<p>在ext2上面的中文字都可以正常顯示以及複製到windows底下 真的是雙系統必裝的&#8230;<span class="caps">XDDD</span></p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
+<p>主要功用及支援：</p>
+<!--more-->
 
+<ol>
+    <li>支援<em>NT 4.0</em>, <em>Windows 2000</em>, <em>Windows XP</em>, <em>Windows 2003</em> and <font color="#3366ff"><em>Windows Vista</em></font></li>
+    <li>支援32bit x86平台以及64bit x64平台</li>
+    <li>Includes drivers with a digital signature for Windows Vista x64(我不知道這啥功能 因為沒用Vista...= =)</li>
+    <li>支援所有讀寫移動...等功能</li>
+    <li><em>UTF-8</em>支援(我認為這是最重要的功能...XDDD)</li>
+    <li>2 GBytes大檔案支援(不大清楚 請看<a href="http://www.fs-driver.org/faq.html" target="_blank">官方FQA</a>)</li>
+<li dragover="true">完整的<em>plug-n-play</em>功能 當磁碟被移除時代號也會被移除</li>
+<li dragover="true">                    Supports use of the Windows <em dragover="true">mountvol</em> utility to create or delete drive letters for Ext2 volumes [new] (except on Windows NT 4.0). This is useful for scripts. (Please read the <a href="http://www.fs-driver.org/faq.html">FAQ section</a>, too.)</li>
+<li dragover="true">                    A global <em>read-only option</em> is provided [new].</li>
+<li dragover="true">                    File names that start with a dot "." character are treated as hidden [new].</li>
+<li dragover="true">                    Supports GPT disks if the Windows version used also does [new].</li>
+    <li>                    <em>Paging files</em> are supported. (A paging file is a file "pagefile.sys", which Windows swaps virtual memory to.) Users may create paging files at NT's control panel at Ext2 volumes.</li>
+    <li> Specific functions of the I/O subsystem of NT: Byte range locks, notification of changes of directories, oplocks (which are required by the NT LAN manager for sharing files via SMB).</li>
+</ol>
+
+<p>以上部份 主要功能有翻過了 剩下的都是懶的翻...主要來源來自官方網站</p>
+<p>我覺得有LINUX雙系統的人裝上這個後真的磁區的可用性大增 而且有已經支援UTF-8了</p>
+<p>在ext2上面的中文字都可以正常顯示以及複製到windows底下 真的是雙系統必裝的...XDDD</p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-03-02T00:00:00+08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2008</time></div>
+	<div class="date">Sun Mar.  2 2008</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/隨便亂寫/'>隨便亂寫</a>
-
-
-</div>
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/48/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/48/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/48/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -160,34 +133,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/48/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/48/';
@@ -200,8 +172,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -213,8 +184,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

@@ -1,47 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>自動MySQL備份搞定 - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="最近把新機器弄了起來 就想說要把我的Blog搬到我自己的新機器上面去(有新家真好&#8230;XDDD)
-當然因為我之前實在是太惡搞我學弟的機器 所以以至於說一堆MySQL的基本指令不能用(就指令找不到啦)
-我真的頓時覺得超QQ的 因為我嘗試使用PHPMyaadmin去Dump出我的資料 &hellip;">
+	<meta name="description" content="最近把新機器弄了起來 就想說要把我的Blog搬到我自己的新機器上面去(有新家真好...XDDD) 當然因為我之前實在是太惡搞我學弟的機器 所以以至於說一堆MySQL的基本指令不能用(就指令找不到啦) 我真的頓時覺得超QQ的 因為我嘗試使用PHPMyaadmin去Dump出我的資料 但是我真的很多當初...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -78,102 +66,89 @@
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">自動MySQL備份搞定</h1>
-	<div class="entry-content"><p>最近把新機器弄了起來 就想說要把我的Blog搬到我自己的新機器上面去(有新家真好&#8230;<span class="caps">XDDD</span>)<br />
-當然因為我之前實在是太惡搞我學弟的機器 所以以至於說一堆MySQL的基本指令不能用(就指令找不到啦)<br />
-我真的頓時覺得超QQ的 因為我嘗試使用PHPMyaadmin去Dump出我的資料 但是我真的很多當初不曉得怎麼搞的<br />
-一堆資料庫的編碼不對 導致說PHPmyadmin太聰明的邦我轉碼 變成名副其實的&quot;UTF-8亂碼&quot;<br />
-都還原不回來 到最後把整個MySQL殺掉重裝 才搞定好這個問題 到最後的問題也是用mysqldump搞定<br />
-前幾天都在想說要怎麼做備份 簡單來說就是一整個備份策略(就是外加網站檔案 因為太大了寄不出去)<br />
-講一個非常老實的話我還沒完全擬定好&#8230;Orz</p>
-<p>因為我最想要的就是直接mail到我的mailBox(因為我有Google app mail空間丟著很費浪&#8230;Orz 反正7G多了 當作一種備份儲存裝置也不錯 最重要的是mail fliter也弄的不錯)<br />
-所以說我要如何做到最基本的每天就定時dump出MySQL &#8212;&gt; Zip sql &#8212;&gt; mail附件出去<br />
-這就是最基本的處理方式 雖然說有的我之前已經實做過了<br />
+<h1 class="title"><a href="/archives/184/">自動MySQL備份搞定
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>最近把新機器弄了起來 就想說要把我的Blog搬到我自己的新機器上面去(有新家真好...XDDD)
+當然因為我之前實在是太惡搞我學弟的機器 所以以至於說一堆MySQL的基本指令不能用(就指令找不到啦)
+我真的頓時覺得超QQ的 因為我嘗試使用PHPMyaadmin去Dump出我的資料 但是我真的很多當初不曉得怎麼搞的
+一堆資料庫的編碼不對 導致說PHPmyadmin太聰明的邦我轉碼 變成名副其實的"UTF-8亂碼"
+都還原不回來 到最後把整個MySQL殺掉重裝 才搞定好這個問題 到最後的問題也是用mysqldump搞定
+前幾天都在想說要怎麼做備份 簡單來說就是一整個備份策略(就是外加網站檔案 因為太大了寄不出去)
+講一個非常老實的話我還沒完全擬定好...Orz</p>
+<p>因為我最想要的就是直接mail到我的mailBox(因為我有Google app mail空間丟著很費浪...Orz 反正7G多了 當作一種備份儲存裝置也不錯 最重要的是mail fliter也弄的不錯)
+所以說我要如何做到最基本的每天就定時dump出MySQL --&gt; Zip sql --&gt; mail附件出去
+這就是最基本的處理方式 雖然說有的我之前已經實做過了
 前幾天在搞定自己電腦的時候問題還是一堆</p>
-<p>這裡簡述一下流程<!--more--><br />
-Step 1. 先確認自己電腦有無Mail服務 如果沒有先去自己搞定一個 KeyWord：sendmail postfix</p>
-<p>Step 2. Mysql備份<br />
-就是要先搞定Mysql的Dump 最簡單最快速的還是使用&quot;mysqldump 有的時候去請教男人mysqldump要怎麼用還會看不懂&#8230;Orz<br />
-<blockquote>mysqldump -u[管理者id] -p[管理者密碼] [資料庫名稱] &gt; [輸出檔名].sql</blockquote><br />
-這樣就OK了 往後要作些定期備份的話也很方便 寫入Shell中就好了回復的話 就先建立好空白資料庫 再把Dump出來的東西打回去就好了<br />
-<blockquote>mysql -u[管理者id] -p[管理者密碼] [資料庫名稱] &lt; [輸出檔名].sql</blockquote><br />
-接著打包 就進入step3</p>
-<p>Step 3. Mail出去<br />
-因為之前說到的要mail服務就是要在這裡用到 因為在文字介面底下 所以說要找到好用的Mail附件的軟體真的不容易 我是Google到&quot;mutt&quot; 如果要用sendmail的話要用uuencode這個奇怪的東西 所以說我還是選擇用&quot;mutt&quot;<br />
-<blockquote>mutt -s &#8220;[信件主旨]&#8221; -a  [附件名稱].zip [mail位置＠where.are.you]</blockquote><br />
-要注意的地方是說這裡的話沒有內容他會要你打內容 所以說你可以利用兩種方式一種是你固定打好內容<br />
-<blockquote>mutt -s &#8220;[信件主旨]&#8221; -a  [附件名稱].zip [mail位置＠where.are.you] &lt; 內容文字檔</blockquote><br />
-或是<br />
-<blockquote>echo &#8220;你的內容&#8221; | mutt -s &#8220;[信件主旨]&#8221; -a  [附件名稱].zip [mail位置＠where.are.you]</blockquote><br />
-如果利用echo的話就可以玩的花樣就多一點了</p>
-<p>以上就是我的Mysql的的其備份的方式 分享一下我的備份Script&#8230;Orz<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/bash
-</span><span class='line'>today=`date +%y%m%d`
-</span><span class='line'>mysqldump -u[你看不到] -p********* Gallery2 > Gallery2.sql
-</span><span class='line'>mysqldump -u[你看不到] -p********* MediaWiki > MediaWiki.sql
-</span><span class='line'>mysqldump -u[你看不到] -p********* Wordpress > Wordpress.sql
-</span><span class='line'>mysqldump -u[你看不到] -p********* shorturl > shorturl.sql
-</span><span class='line'>zip -9r sqlbak$today.zip *.sql
-</span><span class='line'>rm *.sql
-</span><span class='line'>echo "$today Data base backup" | mutt -s "Web Mysql Database Backup" -a  sqlbak$today.zip [mail位置＠where.are.you]
-</span><span class='line'>rm sqlbak$today.zip sent</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-接著我就把這個bash寫到 crontab中每天固定的同一時間就會自動去run了&#8230;XD</blockquote></blockquote></p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
+<p>這裡簡述一下流程</p>
+<!--more-->
 
+<p>Step 1. 先確認自己電腦有無Mail服務 如果沒有先去自己搞定一個 KeyWord：sendmail postfix</p>
+<p>Step 2. Mysql備份
+就是要先搞定Mysql的Dump 最簡單最快速的還是使用"mysqldump 有的時候去請教男人mysqldump要怎麼用還會看不懂...Orz
+<blockquote>mysqldump -u[管理者id] -p[管理者密碼] [資料庫名稱] &gt; [輸出檔名].sql</blockquote>
+這樣就OK了 往後要作些定期備份的話也很方便 寫入Shell中就好了回復的話 就先建立好空白資料庫 再把Dump出來的東西打回去就好了
+<blockquote>mysql -u[管理者id] -p[管理者密碼] [資料庫名稱] &lt; [輸出檔名].sql</blockquote>
+接著打包 就進入step3</p>
+<p>Step 3. Mail出去
+因為之前說到的要mail服務就是要在這裡用到 因為在文字介面底下 所以說要找到好用的Mail附件的軟體真的不容易 我是Google到"mutt" 如果要用sendmail的話要用uuencode這個奇怪的東西 所以說我還是選擇用"mutt"
+<blockquote>mutt -s "[信件主旨]" -a  [附件名稱].zip [mail位置＠where.are.you]</blockquote>
+要注意的地方是說這裡的話沒有內容他會要你打內容 所以說你可以利用兩種方式一種是你固定打好內容
+<blockquote>mutt -s "[信件主旨]" -a  [附件名稱].zip [mail位置＠where.are.you] &lt; 內容文字檔</blockquote>
+或是
+<blockquote>echo "你的內容" | mutt -s "[信件主旨]" -a  [附件名稱].zip [mail位置＠where.are.you]</blockquote>
+如果利用echo的話就可以玩的花樣就多一點了</p>
+<p>以上就是我的Mysql的的其備份的方式 分享一下我的備份Script...Orz</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">#!/bin/bash</span></span>
+<span class='line'><span class="nv">today</span><span class="o">=</span><span class="sb">`</span>date +%y%m%d<span class="sb">`</span></span>
+<span class='line'>mysqldump -u<span class="o">[</span>你看不到<span class="o">]</span> -p********* Gallery2 &gt; Gallery2.sql</span>
+<span class='line'>mysqldump -u<span class="o">[</span>你看不到<span class="o">]</span> -p********* MediaWiki &gt; MediaWiki.sql</span>
+<span class='line'>mysqldump -u<span class="o">[</span>你看不到<span class="o">]</span> -p********* Wordpress &gt; Wordpress.sql</span>
+<span class='line'>mysqldump -u<span class="o">[</span>你看不到<span class="o">]</span> -p********* shorturl &gt; shorturl.sql</span>
+<span class='line'>zip -9r sqlbak<span class="nv">$today</span>.zip *.sql</span>
+<span class='line'>rm *.sql</span>
+<span class='line'><span class="nb">echo</span> <span class="s2">&quot;$today Data base backup&quot;</span> | mutt -s <span class="s2">&quot;Web Mysql Database Backup&quot;</span> -a  sqlbak<span class="nv">$today</span>.zip <span class="o">[</span>mail位置＠where.are.you<span class="o">]</span></span>
+<span class='line'>rm sqlbak<span class="nv">$today</span>.zip sent</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>接著我就把這個bash寫到 crontab中每天固定的同一時間就會自動去run了...XD</blockquote></blockquote></p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-30T00:00:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2009</time></div>
+	<div class="date">Mon Mar. 30 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/架站相關/'>架站相關</a>
-
-
-</div>
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/184/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/184/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/184/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -188,34 +163,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/184/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/184/';
@@ -228,8 +202,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -241,8 +214,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

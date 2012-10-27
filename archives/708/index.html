@@ -1,46 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>ubuntu 10.04 升級筆記 - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。&quot;看&quot;起來好像也沒有比較大的問題出現了。
-server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3. &hellip;">
+	<meta name="description" content="雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。&#34;看&#34;起來好像也沒有比較大的問題出現了。 server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -77,145 +66,194 @@ server最大的差異點，就是 apache 和 php 的設定檔更變，因為php�
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Ubuntu 10.04 升級筆記</h1>
-	<div class="entry-content"><p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。&quot;看&quot;起來好像也沒有比較大的問題出現了。</p>
-<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現<!--more--><br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Deprecated: Function set_magic_quotes_runtime() is deprecated in [path]/wp-settings.php on line 18</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-這時候要去修正wp-settings.php這個檔案將原先的18行改成<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>if(version_compare(PHP_VERSION, '5.3.0', '&lt;')){set_magic_quotes_runtime(0); }</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>apache 的部份就是 userdir 的部份因為我有裝php，之前的預設值是在 userdir 中也可以執行php新版更新之後是關起來的，userdir中的php都會變成下載的模式，要打開要修改/etc/apache2/mods-available/php5.conf，找到以下這幾行<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<h1 class="title"><a href="/archives/708/">ubuntu 10.04 升級筆記
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。"看"起來好像也沒有比較大的問題出現了。</p>
+<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現</p>
+<!--more-->
+
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">Deprecated</span><span class="o">:</span> <span class="n">Function</span> <span class="n">set_magic_quotes_runtime</span><span class="o">()</span> <span class="k">is</span> <span class="n">deprecated</span> <span class="k">in</span> <span class="o">[</span><span class="n">path</span><span class="o">]/</span><span class="n">wp</span><span class="o">-</span><span class="n">settings</span><span class="o">.</span><span class="na">php</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">18</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>這時候要去修正wp-settings.php這個檔案將原先的18行改成</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">if</span><span class="p">(</span><span class="n">version_compare</span><span class="p">(</span><span class="n">PHP_VERSION</span><span class="p">,</span> <span class="s">&#39;5.3.0&#39;</span><span class="p">,</span> <span class="s">&#39;&lt;&#39;</span><span class="p">)){</span><span class="n">set_magic_quotes_runtime</span><span class="p">(</span>0<span class="p">);</span> <span class="p">}</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>apache 的部份就是 userdir 的部份因為我有裝php，之前的預設值是在 userdir 中也可以執行php新版更新之後是關起來的，userdir中的php都會變成下載的模式，要打開要修改/etc/apache2/mods-available/php5.conf，找到以下這幾行</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;IfModule mod_userdir.c>
-</span><span class='line'>        &lt;Directory /home/*/public_html>
-</span><span class='line'>            php_admin_value engine Off
-</span><span class='line'>        &lt;/Directory>
-</span><span class='line'>    &lt;/IfModule></span></code></pre></td></tr></table></div></figure></div></notextile><br />
-修改成<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>5</span></pre></td><td class='code'><pre><code><span class='line'>    <span class="nt">&lt;IfModule</span> <span class="err">mod_userdir.c</span><span class="nt">&gt;</span></span>
+<span class='line'>        <span class="nt">&lt;Directory</span> <span class="err">/home/*/public_html</span><span class="nt">&gt;</span></span>
+<span class='line'>            php_admin_value engine Off</span>
+<span class='line'>        <span class="nt">&lt;/Directory&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/IfModule&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>修改成</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#    &lt;IfModule mod_userdir.c>
-</span><span class='line'>#        &lt;Directory /home/*/public_html>
-</span><span class='line'>#            php_admin_value engine Off
-</span><span class='line'>#        &lt;/Directory>
-</span><span class='line'>#    &lt;/IfModule></span></code></pre></td></tr></table></div></figure></div></notextile><br />
-儲存之後resrart apache即可，以上是我server目前遇到的升級問題。</p>
-<p>至於桌機的部份不外乎就是nv顯卡的問題了(幾乎每次升級都會發生&#8230;<span class="caps">OTZ</span>)，我是不打算裝apt中的顯卡驅動我都是直接到nv官方去下載，在9.10中輕輕鬆鬆的就可以編譯ok，然後上機but這次可就沒這麼幸運了&#8230;OTZ，在編譯的過程中時常會出現<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>5</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">#    &lt;IfModule mod_userdir.c&gt;</span></span>
+<span class='line'><span class="c">#        &lt;Directory /home/*/public_html&gt;</span></span>
+<span class='line'><span class="c">#            php_admin_value engine Off</span></span>
+<span class='line'><span class="c">#        &lt;/Directory&gt;</span></span>
+<span class='line'><span class="c">#    &lt;/IfModule&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>儲存之後resrart apache即可，以上是我server目前遇到的升級問題。</p>
+<p>至於桌機的部份不外乎就是nv顯卡的問題了(幾乎每次升級都會發生...OTZ)，我是不打算裝apt中的顯卡驅動我都是直接到nv官方去下載，在9.10中輕輕鬆鬆的就可以編譯ok，然後上機but這次可就沒這麼幸運了...OTZ，在編譯的過程中時常會出現</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: Unable to load the kernel module 'nvidia.ko'.  This happens most
-</span><span class='line'>       frequently when this kernel module was built against the wrong or
-</span><span class='line'>       improperly configured kernel sources, with a version of gcc that differs
-</span><span class='line'>       from the one used to build the target kernel, or if a driver such as
-</span><span class='line'>       rivafb/nvidiafb is present and prevents the NVIDIA kernel module from
-</span><span class='line'>       obtaining ownership of the NVIDIA graphics device(s), or NVIDIA GPU
-</span><span class='line'>       installed in this system is not supported by this NVIDIA Linux graphics
-</span><span class='line'>       driver release.</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-這個問題的話，我是google到這一篇<a href="http://ubuntuforums.org/showthread.php?t=1467074">http://ubuntuforums.org/showthread.php?t=1467074</a>參考了一下同樣的作法之後就ok了。作一下大致上的翻譯，首先先下載nv的最新驅動之後，之後開啟terminal<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/modprobe.d/blacklist.conf</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-將下面幾行加入並儲存<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>8</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">ERROR</span><span class="o">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">load</span> <span class="n">the</span> <span class="n">kernel</span> <span class="n">module</span> <span class="s1">&#39;nvidia.ko&#39;</span><span class="o">.</span>  <span class="n">This</span> <span class="n">happens</span> <span class="n">most</span></span>
+<span class='line'>       <span class="n">frequently</span> <span class="n">when</span> <span class="k">this</span> <span class="n">kernel</span> <span class="n">module</span> <span class="n">was</span> <span class="n">built</span> <span class="n">against</span> <span class="n">the</span> <span class="n">wrong</span> <span class="n">or</span></span>
+<span class='line'>       <span class="n">improperly</span> <span class="n">configured</span> <span class="n">kernel</span> <span class="n">sources</span><span class="o">,</span> <span class="k">with</span> <span class="n">a</span> <span class="n">version</span> <span class="n">of</span> <span class="n">gcc</span> <span class="n">that</span> <span class="n">differs</span></span>
+<span class='line'>       <span class="n">from</span> <span class="n">the</span> <span class="n">one</span> <span class="n">used</span> <span class="n">to</span> <span class="n">build</span> <span class="n">the</span> <span class="n">target</span> <span class="n">kernel</span><span class="o">,</span> <span class="n">or</span> <span class="k">if</span> <span class="n">a</span> <span class="n">driver</span> <span class="n">such</span> <span class="k">as</span></span>
+<span class='line'>       <span class="n">rivafb</span><span class="o">/</span><span class="n">nvidiafb</span> <span class="k">is</span> <span class="n">present</span> <span class="n">and</span> <span class="n">prevents</span> <span class="n">the</span> <span class="n">NVIDIA</span> <span class="n">kernel</span> <span class="n">module</span> <span class="n">from</span></span>
+<span class='line'>       <span class="n">obtaining</span> <span class="n">ownership</span> <span class="n">of</span> <span class="n">the</span> <span class="n">NVIDIA</span> <span class="n">graphics</span> <span class="n">device</span><span class="o">(</span><span class="n">s</span><span class="o">),</span> <span class="n">or</span> <span class="n">NVIDIA</span> <span class="n">GPU</span></span>
+<span class='line'>       <span class="n">installed</span> <span class="k">in</span> <span class="k">this</span> <span class="n">system</span> <span class="k">is</span> <span class="n">not</span> <span class="n">supported</span> <span class="n">by</span> <span class="k">this</span> <span class="n">NVIDIA</span> <span class="n">Linux</span> <span class="n">graphics</span></span>
+<span class='line'>       <span class="n">driver</span> <span class="n">release</span><span class="o">.</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>這個問題的話，我是google到這一篇<a href="http://ubuntuforums.org/showthread.php?t=1467074">http://ubuntuforums.org/showthread.php?t=1467074</a>參考了一下同樣的作法之後就ok了。作一下大致上的翻譯，首先先下載nv的最新驅動之後，之後開啟terminal</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">modprobe</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">blacklist</span><span class="p">.</span><span class="n">conf</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>將下面幾行加入並儲存</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>blacklist vga16fb
-</span><span class='line'>blacklist nouveau
-</span><span class='line'>blacklist rivafb
-</span><span class='line'>blacklist nvidiafb
-</span><span class='line'>blacklist rivatv</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-然後在terminal中輸入底下的指令把一些已經裝過的nv驅動全部拔掉外加nouveau<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get --purge remove nvidia-* xserver-xorg-video-nouveau</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-之後reboot一下，進入recover mode，再把nv的驅動編譯起來，在重新開機，應該就可以順利的執行的，但是我的vdpau無法順利執行，看一下錯誤檔好像是因為沒有權限所以說我又多加了一道指令<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo chmod 666 /dev/nvidia*</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-大致上nv的部份全部都ok了，但是Plymouth(新的開機畫面看來他們幹掉xsplash了..XDrz)的解析度會變很爛，這也是有解法的google到這一篇<a href="http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html">http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html</a>，也是大致上翻譯一下作法<br />
-也是打開terminal，輸入下面的指令<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/default/grub</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-找到約18行左右(依照每個人的電腦而異)的&quot;#GRUB_GFXMODE=640&#215;480&#8243;改成，把前面的#註解去掉改成。<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>GRUB_GFXMODE=1024X768</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-儲存之後修改/etc/grub.d/00_header的檔案也是在terminal，輸入下面的指令<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gedit /etc/grub.d/00_header</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-找到約103行左右(依照每個人的電腦而異)的&quot;gfxmode=${GRUB_GFXMODE}&quot;並此行下面多加一行<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>set gfxpayload=keep</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-儲存並回到terminal，輸入下面的指令更新grub2<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo update-grub</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-更新完之後就可以重新開機看看結果了</p>
-<p>當然還有發現到 rar 的解壓會出現亂碼，我處理的方式是到rar的官方去下載最新版的，改一下makefile裡面的<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>PREFIX=/usr/local</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-改成<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>PREFIX=/usr</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-然後make install把舊版的蓋過去就ok了</p>
-<p>這裡大致上把我遇到的問題先整理部份起來，不知道還會遇到啥鬼問題&#8230;<span class="caps">OTZ</span></p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
+<span class='line-number'>5</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">blacklist</span> <span class="n">vga16fb</span></span>
+<span class='line'><span class="n">blacklist</span> <span class="n">nouveau</span></span>
+<span class='line'><span class="n">blacklist</span> <span class="n">rivafb</span></span>
+<span class='line'><span class="n">blacklist</span> <span class="n">nvidiafb</span></span>
+<span class='line'><span class="n">blacklist</span> <span class="n">rivatv</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
+
+
+<p>然後在terminal中輸入底下的指令把一些已經裝過的nv驅動全部拔掉外加nouveau</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">--</span><span class="n">purge</span> <span class="n">remove</span> <span class="n">nvidia</span><span class="o">-*</span> <span class="n">xserver</span><span class="o">-</span><span class="n">xorg</span><span class="o">-</span><span class="n">video</span><span class="o">-</span><span class="n">nouveau</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>之後reboot一下，進入recover mode，再把nv的驅動編譯起來，在重新開機，應該就可以順利的執行的，但是我的vdpau無法順利執行，看一下錯誤檔好像是因為沒有權限所以說我又多加了一道指令</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">chmod</span> 666 <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">nvidia</span><span class="o">*</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>大致上nv的部份全部都ok了，但是Plymouth(新的開機畫面看來他們幹掉xsplash了..XDrz)的解析度會變很爛，這也是有解法的google到這一篇<a href="http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html">http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html</a>，也是大致上翻譯一下作法
+也是打開terminal，輸入下面的指令</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">default</span><span class="o">/</span><span class="n">grub</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>找到約18行左右(依照每個人的電腦而異)的"#GRUB_GFXMODE=640x480"改成，把前面的#註解去掉改成。</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">GRUB_GFXMODE</span><span class="p">=</span>1024<span class="n">X768</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>儲存之後修改/etc/grub.d/00_header的檔案也是在terminal，輸入下面的指令</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">grub</span><span class="p">.</span><span class="n">d</span><span class="o">/</span>00<span class="n">_header</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>找到約103行左右(依照每個人的電腦而異)的"gfxmode=${GRUB_GFXMODE}"並此行下面多加一行</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">set</span> <span class="n">gfxpayload</span><span class="p">=</span><span class="n">keep</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>儲存並回到terminal，輸入下面的指令更新grub2</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">grub</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>更新完之後就可以重新開機看看結果了</p>
+<p>當然還有發現到 rar 的解壓會出現亂碼，我處理的方式是到rar的官方去下載最新版的，改一下makefile裡面的</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">PREFIX</span><span class="p">=</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>改成</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">PREFIX</span><span class="p">=</span><span class="o">/</span><span class="n">usr</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>然後make install把舊版的蓋過去就ok了</p>
+<p>這裡大致上把我遇到的問題先整理部份起來，不知道還會遇到啥鬼問題...OTZ </p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-22T00:00:00+08:00" pubdate data-updated="true">May 22<span>nd</span>, 2010</time></div>
+	<div class="date">Sat May. 22 2010</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>, <a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>, <a class='category' href='/archives/categories/架站相關/'>架站相關</a>
-
-
-</div>
+    <a href='/archives/categories/Linux/'>Linux</a>, 
+    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a>, 
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/708/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/708/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/708/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -230,34 +268,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/708/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/708/';
@@ -270,8 +307,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -283,8 +319,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

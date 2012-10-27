@@ -1,45 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Octopress調教メモ之四 - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="前一段時間都是把 Octopress 的 source 跟網頁一起放在 github 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 bitbucket (最近他們把所有的介面改過發現到真的還不錯)。 像說我把我的 &hellip;">
+	<meta name="description" content="前一段時間都是把 Octopress 的 source 跟網頁一起放在 github 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 bitbucket (最近他們把所有的介面改過發現到真的還不錯)。 像說我把我的 Octopress...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -76,68 +66,49 @@
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
-
-</header>
+</nav></header>
+	<div id="content" class="inner">
 	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Octopress調教メモ之四</h1>
-	<div class="entry-content"><p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
+    
+    <article class="post">
+    
+      
 
+<h1 class="title"><a href="/archives/909/">Octopress調教メモ之四
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
 <!--more-->
 
+<p>像說我把我的 Octopress deploy 到 <a href="http://github.com">github</a> 上，但是在 <a href="http://bitbucket.org">bitbucket</a> 上開了一個 private 的 repo 來放 source 主要是將一些 private post 找到可以放的家。要不然真的一些 private post 放在 github 上的話真的一覽無遺...Q_Q</p>
 
-<p>像說我把我的 Octopress deploy 到 <a href="http://github.com">github</a> 上，但是在 <a href="http://bitbucket.org">bitbucket</a> 上開了一個 private 的 repo 來放 source 主要是將一些 private post 找到可以放的家。要不然真的一些 private post 放在 github 上的話真的一覽無遺&#8230;Q_Q</p>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">bitbucket</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">repo</span> <span class="n">url</span><span class="o">&gt;</span></span>
+<span class='line'><span class="n">git</span> <span class="n">push</span> <span class="n">bitbucket</span> <span class="n">source</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
-<pre><code>git remote add bitbucket &lt;your repo url&gt;
-git push bitbucket source
-</code></pre>
 
-<p>而其實 <a href="http://bitbucket.org">bitbucket</a> 的申請方式差不多，而且也可以像 <a href="http://github.com">github</a> 把網頁 deploy 上去，這真的讓我也碘考慮想要搬家了&#8230;OTZ</p>
-
+<p>而其實 <a href="http://bitbucket.org">bitbucket</a> 的申請方式差不多，而且也可以像 <a href="http://github.com">github</a> 把網頁 deploy 上去，這真的讓我也碘考慮想要搬家了...OTZ</p>
 <p>看到很多人都在抱怨 <a href="http://octopress.org/">octopress</a> 的 generate 速度非常慢，有的強者甚至自己利用其他語言刻了一個出來，像是<a href="http://zespia.tw/blog/2012/10/11/hexo-debut/">這裡</a> 是用 node.js 造出來的，其實我也有打算想要造一個，但是我是想要用Python+Flask而且目前已經有了框架出來了。</p>
-<section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
+  
 </div>
-
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-15T10:50:00+08:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time></div>
+	<div class="date">Mon Oct. 15 2012</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/git/'>git</a>, <a class='category' href='/archives/categories/octopress/'>octopress</a>
-
-
-</div>
+    <a href='/archives/categories/octopress/'>octopress</a>, 
+    <a href='/archives/categories/git/'>git</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/909/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/909/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/909/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -152,34 +123,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/909/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/909/';
@@ -192,8 +162,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -205,8 +174,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

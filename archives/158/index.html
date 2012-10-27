@@ -1,45 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Use SSH Open a SOCKS Proxy - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="在此 感謝Billcho的教導從來都沒想過SSH的功能會這麼的強大 連開一個臨時Proxy都可以基本上在Linux中去找ssh的男人(men)時 會發現到一個參數-D [bind_address:]port Specifies a local &#8220;dynamic&#8217;&#8217 &hellip;">
+	<meta name="description" content="在此 感謝Billcho的教導從來都沒想過SSH的功能會這麼的強大 連開一個臨時Proxy都可以基本上在Linux中去找ssh的男人(men)時 會發現到一個參數-D [bind_address:]port Specifies a local dynamic&#39;&#39; application-level ...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -76,54 +66,36 @@
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Use SSH Open a SOCKS Proxy</h1>
-	<div class="entry-content"><p>在此 感謝Billcho的教導<br /><br />從來都沒想過SSH的功能會這麼的強大 連開一個臨時Proxy都可以<br /><br />基本上在Linux中去找ssh的男人(men)時 會發現到一個參數<br /><blockquote>-D [bind_address:]port<br /> Specifies a local &#8220;dynamic&#8217;&#8217; application-level port forwarding. This works by allocating a socket to listen to port on the local side, optionally bound to the specified bind_address.  Whenever a connection is made to this port, the connection is forwarded over the secure channel, and the application protocol is then used to determine where to connect to from the remote machine.  Currently the SOCKS4 and SOCKS5 protocols are supported, and ssh will act as a <span class="caps">SOCKS</span> server.  Only root can forward privileged ports. Dynamic port forwardings can also be specified in the configura-tion file.<br /> IPv6 addresses can be specified with an alternative syntax: [bind_address/]port or by enclosing the address in square brackets.  Only the superuser can forward privileged ports.  By default, the local port is bound in accordance with the GatewayPorts setting.  However, an explicit bind_address may be used to bind the connection to a specific address.  The bind_address of &#8220;localhost&#8217;&#8217; indicates that the listening port be bound for local use only, while an empty address or &#8216;*&#8217; indicates that the port should be available from all interfaces.<br /></blockquote><br />基本上來說 這個參數就是利用SSH在 遠端的電腦上開一個Port之後 來當作一個Socks Proxy<br /><br />Linux的作法老實說比較簡單 因為Linux不可能不具備SSH吧&#8230;XD<br /><br />所以說的話只要SSH到目的主機參數多加上-D &lt;你要開的Prot&gt;這樣就OK了 連線方式就是在Socks5 proxy設定那邊打上127.0.0.1:&lt;你要開的Prot&gt; 這樣就好了 可以連去測試IP的地方看一看<br /><br />如果你有一個工作Host端伺服器為Linux 但是你的client為Windows的話 或者你黑進去一個Linux的伺服器打算要在上面開一個Port的話 這個部份就要注意一點了 你比需要在Host端開一個port 如果直接下-D &lt;你要開的Prot&gt;的話這樣是沒有辦法連上去的 因為他裡面有說 如果沒有指定bind_address的話他只會允許localhost的連線 故要用-D &lt;Host端IP&gt;&lt;host 端ip=&quot;&quot;&gt;:&lt;你要開的Prot&gt; 這樣才可以連的上去<br /></host></p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
+<h1 class="title"><a href="/archives/158/">Use SSH Open a SOCKS Proxy
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>在此 感謝Billcho的教導<br /><br />從來都沒想過SSH的功能會這麼的強大 連開一個臨時Proxy都可以<br /><br />基本上在Linux中去找ssh的男人(men)時 會發現到一個參數<br /><blockquote>-D [bind_address:]port<br /> Specifies a local <code>dynamic'' application-level port forwarding. This works by allocating a socket to listen to port on the local side, optionally bound to the specified bind_address.  Whenever a connection is made to this port, the connection is forwarded over the secure channel, and the application protocol is then used to determine where to connect to from the remote machine.  Currently the SOCKS4 and SOCKS5 protocols are supported, and ssh will act as a SOCKS server.  Only root can forward privileged ports. Dynamic port forwardings can also be specified in the configura-tion file.&lt;br /&gt; IPv6 addresses can be specified with an alternative syntax: [bind_address/]port or by enclosing the address in square brackets.  Only the superuser can forward privileged ports.  By default, the local port is bound in accordance with the GatewayPorts setting.  However, an explicit bind_address may be used to bind the connection to a specific address.  The bind_address of</code>localhost'' indicates that the listening port be bound for local use only, while an empty address or '*' indicates that the port should be available from all interfaces.<br /></blockquote><br />基本上來說 這個參數就是利用SSH在 遠端的電腦上開一個Port之後 來當作一個Socks Proxy<br /><br />Linux的作法老實說比較簡單 因為Linux不可能不具備SSH吧...XD<br /><br />所以說的話只要SSH到目的主機參數多加上-D &lt;你要開的Prot&gt;這樣就OK了 連線方式就是在Socks5 proxy設定那邊打上127.0.0.1:&lt;你要開的Prot&gt; 這樣就好了 可以連去測試IP的地方看一看<br /><br />如果你有一個工作Host端伺服器為Linux 但是你的client為Windows的話 或者你黑進去一個Linux的伺服器打算要在上面開一個Port的話 這個部份就要注意一點了 你比需要在Host端開一個port 如果直接下-D &lt;你要開的Prot&gt;的話這樣是沒有辦法連上去的 因為他裡面有說 如果沒有指定bind_address的話他只會允許localhost的連線 故要用-D &lt;Host端IP&gt;<host 端ip="">:&lt;你要開的Prot&gt; 這樣才可以連的上去<br /></host></p>
+  
 </div>
-
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-12-22T00:00:00+08:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2008</time></div>
+	<div class="date">Mon Dec. 22 2008</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
+    <a href='/archives/categories/Linux/'>Linux</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/158/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/158/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/158/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -138,34 +110,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/158/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/158/';
@@ -178,8 +149,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -191,8 +161,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

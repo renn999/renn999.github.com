@@ -1,53 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>PHP備份Pixiv的bookmark(お気に入りユーザー)修正版 - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。
-所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。
-(這是Memory Leaks的問題已經解決)
-以下為修改完的程式碼。
-1
-2
-3
-4
-5 &hellip;">
+	<meta name="description" content="基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。 所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。 (這是Memory Leaks的問題已經解決) 以下為修改完的程式碼。 1 2 3 4 5 ...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -84,27 +66,34 @@
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">PHP備份Pixiv的bookmark(お気に入りユーザー)修正版</h1>
-	<div class="entry-content"><p>基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。</p>
-<p>所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。<br />
+<h1 class="title"><a href="/archives/371/">PHP備份Pixiv的bookmark(お気に入りユーザー)修正版
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。</p>
+<p>所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。
 (這是Memory Leaks的問題已經解決)</p>
-<p>以下為修改完的程式碼。<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
+<p>以下為修改完的程式碼。</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
@@ -149,100 +138,76 @@
 <span class='line-number'>51</span>
 <span class='line-number'>52</span>
 <span class='line-number'>53</span>
-<span class='line-number'>54</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
-</span><span class='line'>    require 'simplehtmldom/simple_html_dom.php';
-</span><span class='line'>        
-</span><span class='line'>    $loginurl='http://www.pixiv.net/index.php';
-</span><span class='line'>    $pixiv_id='';
-</span><span class='line'>    $password='';
-</span><span class='line'>    
-</span><span class='line'>    $curl = curl_init();
-</span><span class='line'>    curl_setopt($curl, CURLOPT_HEADER, 0);
-</span><span class='line'>    curl_setopt($curl, CURLOPT_USERAGENT,'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)');
-</span><span class='line'>    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-</span><span class='line'>    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-</span><span class='line'>    curl_setopt($curl, CURLOPT_COOKIEJAR, 'cookie.txt');
-</span><span class='line'>    curl_setopt($curl, CURLOPT_COOKIEFILE, 'cookie.txt');
-</span><span class='line'>    curl_setopt($curl, CURLOPT_POST, 1);
-</span><span class='line'>    curl_setopt($curl, CURLOPT_COOKIESESSION,true);
-</span><span class='line'>    curl_setopt($curl, CURLOPT_URL, $loginurl);
-</span><span class='line'>    curl_setopt($curl, CURLOPT_POSTFIELDS, 'mode=login&pixiv_id='.$pixiv_id.'&pass='.$password );
-</span><span class='line'>    curl_exec($curl);
-</span><span class='line'>   
-</span><span class='line'>    $p=1;
-</span><span class='line'>    $bookmark_rest='show';//show
-</span><span class='line'>    do{
-</span><span class='line'>        $url='http://www.pixiv.net/bookmark.php?type=user&rest='.$bookmark_rest.'&p='.$p;
-</span><span class='line'>        curl_setopt($curl, CURLOPT_URL, $url);
-</span><span class='line'>        $profile=curl_exec($curl);
-</span><span class='line'>        $dom1 = new simple_html_dom();
-</span><span class='line'>        $dom1 = str_get_html($profile);
-</span><span class='line'>       
-</span><span class='line'>        $test=$dom1->find('div#content2 div[align="right"]',0)->plaintext;
-</span><span class='line'>       
-</span><span class='line'>        preg_match('/次の(.*?)件/',$test,$match);
-</span><span class='line'>                       
-</span><span class='line'>        $title2 = $dom1->find('div#content2 form#f div[style="width:140px;height:130px;float:left;text-align:center;"]');
-</span><span class='line'>
-</span><span class='line'>        foreach($title2 as $illsthtml){
-</span><span class='line'>        $illst = $illsthtml->outertext;
-</span><span class='line'>        $illst=preg_replace('/&lt;div(.*?)">&lt;input(.*?)>&lt;\/div>/','',$illst);
-</span><span class='line'>        $illst=preg_replace('/\n/', '',$illst);
-</span><span class='line'>        $illst=preg_replace('/&lt;img(.*?)>/', '',$illst);
-</span><span class='line'>        preg_match_all('/&lt;a href="member.php\?id=(.*?)">&lt;\/a>&lt;div style=\"padding-top:5px;\">(.*?)&lt;\/div>(&lt;a href="jump.php\?(.*?)" target="_blank">&lt;\/a>)?/', $illst,$match2,PREG_SET_ORDER);
-</span><span class='line'>            foreach ($match2 as $val) {
-</span><span class='line'>                echo 'http://www.pixiv.net/member.php?id='.$val[1].' - '.$val[2];
-</span><span class='line'>                if(!empty($val[4])){echo ' - '.$val[4];}
-</span><span class='line'>                echo "&lt;br />\n";
-</span><span class='line'>            }
-</span><span class='line'>        }
-</span><span class='line'>        $dom1->__destruct();//解決Memory Leaks的問題
-</span><span class='line'>        unset($profile,$dom1,$test);
-</span><span class='line'>        $p++;
-</span><span class='line'>    }while(!empty($match));
-</span><span class='line'>    
-</span><span class='line'>    curl_close($curl);
-</span><span class='line'>?></span></code></pre></td></tr></table></div></figure></div></notextile></p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
+<span class='line-number'>54</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
+<span class='line'>    <span class="k">require</span> <span class="s1">&#39;simplehtmldom/simple_html_dom.php&#39;</span><span class="p">;</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nv">$loginurl</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/index.php&#39;</span><span class="p">;</span></span>
+<span class='line'>    <span class="nv">$pixiv_id</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span></span>
+<span class='line'>    <span class="nv">$password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span></span>
+<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_USERAGENT</span><span class="p">,</span><span class="s1">&#39;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)&#39;</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_FOLLOWLOCATION</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIEJAR</span><span class="p">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIEFILE</span><span class="p">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIESESSION</span><span class="p">,</span><span class="k">true</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$loginurl</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="s1">&#39;mode=login&amp;pixiv_id=&#39;</span><span class="o">.</span><span class="nv">$pixiv_id</span><span class="o">.</span><span class="s1">&#39;&amp;pass=&#39;</span><span class="o">.</span><span class="nv">$password</span> <span class="p">);</span></span>
+<span class='line'>    <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nv">$p</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span></span>
+<span class='line'>    <span class="nv">$bookmark_rest</span><span class="o">=</span><span class="s1">&#39;show&#39;</span><span class="p">;</span><span class="c1">//show</span></span>
+<span class='line'>    <span class="k">do</span><span class="p">{</span></span>
+<span class='line'>        <span class="nv">$url</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/bookmark.php?type=user&amp;rest=&#39;</span><span class="o">.</span><span class="nv">$bookmark_rest</span><span class="o">.</span><span class="s1">&#39;&amp;p=&#39;</span><span class="o">.</span><span class="nv">$p</span><span class="p">;</span></span>
+<span class='line'>        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span></span>
+<span class='line'>        <span class="nv">$profile</span><span class="o">=</span><span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span></span>
+<span class='line'>        <span class="nv">$dom1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">simple_html_dom</span><span class="p">();</span></span>
+<span class='line'>        <span class="nv">$dom1</span> <span class="o">=</span> <span class="nx">str_get_html</span><span class="p">(</span><span class="nv">$profile</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="nv">$test</span><span class="o">=</span><span class="nv">$dom1</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="s1">&#39;div#content2 div[align=&quot;right&quot;]&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">plaintext</span><span class="p">;</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="nb">preg_match</span><span class="p">(</span><span class="s1">&#39;/次の(.*?)件/&#39;</span><span class="p">,</span><span class="nv">$test</span><span class="p">,</span><span class="nv">$match</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="nv">$title2</span> <span class="o">=</span> <span class="nv">$dom1</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="s1">&#39;div#content2 form#f div[style=&quot;width:140px;height:130px;float:left;text-align:center;&quot;]&#39;</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="k">foreach</span><span class="p">(</span><span class="nv">$title2</span> <span class="k">as</span> <span class="nv">$illsthtml</span><span class="p">){</span></span>
+<span class='line'>        <span class="nv">$illst</span> <span class="o">=</span> <span class="nv">$illsthtml</span><span class="o">-&gt;</span><span class="na">outertext</span><span class="p">;</span></span>
+<span class='line'>        <span class="nv">$illst</span><span class="o">=</span><span class="nb">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;div(.*?)&quot;&gt;&lt;input(.*?)&gt;&lt;\/div&gt;/&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$illst</span><span class="p">);</span></span>
+<span class='line'>        <span class="nv">$illst</span><span class="o">=</span><span class="nb">preg_replace</span><span class="p">(</span><span class="s1">&#39;/\n/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$illst</span><span class="p">);</span></span>
+<span class='line'>        <span class="nv">$illst</span><span class="o">=</span><span class="nb">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;img(.*?)&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$illst</span><span class="p">);</span></span>
+<span class='line'>        <span class="nb">preg_match_all</span><span class="p">(</span><span class="s1">&#39;/&lt;a href=&quot;member.php\?id=(.*?)&quot;&gt;&lt;\/a&gt;&lt;div style=\&quot;padding-top:5px;\&quot;&gt;(.*?)&lt;\/div&gt;(&lt;a href=&quot;jump.php\?(.*?)&quot; target=&quot;_blank&quot;&gt;&lt;\/a&gt;)?/&#39;</span><span class="p">,</span> <span class="nv">$illst</span><span class="p">,</span><span class="nv">$match2</span><span class="p">,</span><span class="nx">PREG_SET_ORDER</span><span class="p">);</span></span>
+<span class='line'>            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$match2</span> <span class="k">as</span> <span class="nv">$val</span><span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>                <span class="k">echo</span> <span class="s1">&#39;http://www.pixiv.net/member.php?id=&#39;</span><span class="o">.</span><span class="nv">$val</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="s1">&#39; - &#39;</span><span class="o">.</span><span class="nv">$val</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span></span>
+<span class='line'>                <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$val</span><span class="p">[</span><span class="mi">4</span><span class="p">])){</span><span class="k">echo</span> <span class="s1">&#39; - &#39;</span><span class="o">.</span><span class="nv">$val</span><span class="p">[</span><span class="mi">4</span><span class="p">];}</span></span>
+<span class='line'>                <span class="k">echo</span> <span class="s2">&quot;&lt;br /&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
+<span class='line'>            <span class="p">}</span></span>
+<span class='line'>        <span class="p">}</span></span>
+<span class='line'>        <span class="nv">$dom1</span><span class="o">-&gt;</span><span class="na">__destruct</span><span class="p">();</span><span class="c1">//解決Memory Leaks的問題</span></span>
+<span class='line'>        <span class="nb">unset</span><span class="p">(</span><span class="nv">$profile</span><span class="p">,</span><span class="nv">$dom1</span><span class="p">,</span><span class="nv">$test</span><span class="p">);</span></span>
+<span class='line'>        <span class="nv">$p</span><span class="o">++</span><span class="p">;</span></span>
+<span class='line'>    <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$match</span><span class="p">));</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span></span>
+<span class='line'><span class="cp">?&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+  
 </div>
-
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-09-30T00:00:00+08:00" pubdate data-updated="true">Sep 30<span>th</span>, 2009</time></div>
+	<div class="date">Wed Sep. 30 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
-
-
-</div>
+    <a href='/archives/categories/about%20PHP/'>about PHP</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/371/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/371/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/371/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -257,34 +222,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/371/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/371/';
@@ -297,8 +261,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -310,8 +273,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

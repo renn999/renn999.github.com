@@ -1,49 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>最近在玩XML的語法 - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="只是先拿只是先拿Plurk的的RSS來先玩玩看
-結果如下
-&lt;img src=&#8220;http://pic.renn999.twbbs.org/upload/280228bebfe454ee.png&#8221; width=640 /&gt;
-在改一下程式
-&lt;img src=&# &hellip;">
+	<meta name="description" content="只是先拿只是先拿Plurk的的RSS來先玩玩看 結果如下 在改一下程式 變成可以顯示回應，但是這種作法好暴力...= = 主要是要去檢查每一個的Plurk回應rss 可能會造成對主網站多餘的loading 所以說只是玩玩而已 原始碼如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 ...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -80,96 +66,83 @@
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">最近在玩XML的語法</h1>
-	<div class="entry-content"><p>只是先拿只是先拿Plurk的的RSS來先玩玩看<br />
-結果如下<br />
-<a href="http://pic.renn999.twbbs.org/upload/280228bebfe454ee.png" target=_blank>&lt;img src=&#8220;http://pic.renn999.twbbs.org/upload/280228bebfe454ee.png&#8221; width=640  /&gt;</a></p>
-<p>在改一下程式<br />
-<a href="http://pic.renn999.twbbs.org/upload/2631eda66f9d3c35.png" target=_blank>&lt;img src=&#8220;http://pic.renn999.twbbs.org/upload/2631eda66f9d3c35.png&#8221; width=640  /&gt;</a></p>
-<p>變成可以顯示回應，但是這種作法好暴力&#8230;= =<br />
-主要是要去檢查每一個的Plurk回應rss 可能會造成對主網站多餘的loading<br />
+<h1 class="title"><a href="/archives/256/">最近在玩XML的語法
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>只是先拿只是先拿Plurk的的RSS來先玩玩看
+結果如下
+<a href="http://pic.renn999.twbbs.org/upload/280228bebfe454ee.png" target=_blank><img src="http://pic.renn999.twbbs.org/upload/280228bebfe454ee.png" width=640  /></a></p>
+<p>在改一下程式
+<a href="http://pic.renn999.twbbs.org/upload/2631eda66f9d3c35.png" target=_blank><img src="http://pic.renn999.twbbs.org/upload/2631eda66f9d3c35.png" width=640  /></a></p>
+<p>變成可以顯示回應，但是這種作法好暴力...= =
+主要是要去檢查每一個的Plurk回應rss 可能會造成對主網站多餘的loading
 所以說只是玩玩而已</p>
-<p>原始碼如下：<!--more--><br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
+<p>原始碼如下：</p>
+<!--more-->
+
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt; ?php
-</span><span class='line'>$doc = new DOMDocument();
-</span><span class='line'>$doc->load( 'http://www.plurk.com/user/renn999.xml' );
-</span><span class='line'>
-</span><span class='line'>$feeds = $doc->getElementsByTagName( "entry" );
-</span><span class='line'>foreach( $feeds as $entry )
-</span><span class='line'>{
-</span><span class='line'>    $titles = $entry->getElementsByTagName( "title" );
-</span><span class='line'>    $title = $titles->item(0)->nodeValue;
-</span><span class='line'>
-</span><span class='line'>    $links = $entry->getElementsByTagName( "link" );
-</span><span class='line'>    $link = $links->item(0)->getAttribute('href');
-</span><span class='line'>
-</span><span class='line'>    echo "$title - http://www.plurk.com$link\n";
-</span><span class='line'>}
-</span><span class='line'>?></span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>這只是簡單的php xml dom<br />
-但是我的腦子已經有一堆鬼點子了 嘿嘿&#8230;<span class="caps">XDDD</span></p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
+<span class='line-number'>16</span></pre></td><td class='code'><pre><code><span class='line'><span class="o">&lt;</span> <span class="o">?</span><span class="nx">php</span></span>
+<span class='line'><span class="nx">$doc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span></span>
+<span class='line'><span class="nx">$doc</span><span class="o">-&gt;</span><span class="nx">load</span><span class="p">(</span> <span class="s1">&#39;http://www.plurk.com/user/renn999.xml&#39;</span> <span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'><span class="nx">$feeds</span> <span class="o">=</span> <span class="nx">$doc</span><span class="o">-&gt;</span><span class="nx">getElementsByTagName</span><span class="p">(</span> <span class="s2">&quot;entry&quot;</span> <span class="p">);</span></span>
+<span class='line'><span class="nx">foreach</span><span class="p">(</span> <span class="nx">$feeds</span> <span class="nx">as</span> <span class="nx">$entry</span> <span class="p">)</span></span>
+<span class='line'><span class="p">{</span></span>
+<span class='line'>    <span class="nx">$titles</span> <span class="o">=</span> <span class="nx">$entry</span><span class="o">-&gt;</span><span class="nx">getElementsByTagName</span><span class="p">(</span> <span class="s2">&quot;title&quot;</span> <span class="p">);</span></span>
+<span class='line'>    <span class="nx">$title</span> <span class="o">=</span> <span class="nx">$titles</span><span class="o">-&gt;</span><span class="nx">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">-&gt;</span><span class="nx">nodeValue</span><span class="p">;</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nx">$links</span> <span class="o">=</span> <span class="nx">$entry</span><span class="o">-&gt;</span><span class="nx">getElementsByTagName</span><span class="p">(</span> <span class="s2">&quot;link&quot;</span> <span class="p">);</span></span>
+<span class='line'>    <span class="nx">$link</span> <span class="o">=</span> <span class="nx">$links</span><span class="o">-&gt;</span><span class="nx">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">-&gt;</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nx">echo</span> <span class="s2">&quot;$title - http://www.plurk.com$link\n&quot;</span><span class="p">;</span></span>
+<span class='line'><span class="p">}</span></span>
+<span class='line'><span class="o">?&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
+
+<p>這只是簡單的php xml dom
+但是我的腦子已經有一堆鬼點子了 嘿嘿...XDDD</p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-19T00:00:00+08:00" pubdate data-updated="true">May 19<span>th</span>, 2009</time></div>
+	<div class="date">Tue May. 19 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
-
-
-</div>
+    <a href='/archives/categories/about%20PHP/'>about PHP</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/256/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/256/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/256/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -184,34 +157,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/256/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/256/';
@@ -224,8 +196,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -237,8 +208,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

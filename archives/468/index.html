@@ -1,50 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Counterize II 2.14.1 IP patch(還原顯示IP功能) - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="前文在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。
-ip_patch.patch download
-使用方法：
-將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入
-1
-patch -p0 &lt; ip_patch.patch &hellip;">
+	<meta name="description" content="前文在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。 ip_patch.patch download 使用方法： 將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入 1patch -p0 &lt; ip_patch.patch 如果出現...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -81,65 +66,55 @@ patch -p0 &lt; ip_patch.patch &hellip;">
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Counterize II 2.14.1 IP patch(還原顯示IP功能)</h1>
-	<div class="entry-content"><p><a href="http://www.renn999.twbbs.org/wordpress/archives/197">前文</a>在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。</p>
+<h1 class="title"><a href="/archives/468/">Counterize II 2.14.1 IP patch(還原顯示IP功能)
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p><a href="http://www.renn999.twbbs.org/wordpress/archives/197">前文</a>在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。</p>
 <p><a href="http://www.renn999.twbbs.org/wordpress/downloads/ip_patch.patch">ip_patch.patch download</a></p>
-<p>使用方法：<br />
-將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>patch -p0 &lt; ip_patch.patch</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-如果出現<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>patching file counterizeii/counterize_install.php
-</span><span class='line'>patching file counterizeii/counterize.php</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-表示完成了，這是在Linux底下，在windows的話可能需要GnuWin32或是其他對應的軟體。</p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
+<p>使用方法：
+將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入</p>
 
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">patch</span> <span class="o">-</span><span class="n">p0</span> <span class="o">&lt;</span> <span class="n">ip_patch</span><span class="p">.</span><span class="n">patch</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>如果出現</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">patching</span> <span class="n">file</span> <span class="n">counterizeii</span><span class="o">/</span><span class="n">counterize_install</span><span class="p">.</span><span class="n">php</span></span>
+<span class='line'><span class="n">patching</span> <span class="n">file</span> <span class="n">counterizeii</span><span class="o">/</span><span class="n">counterize</span><span class="p">.</span><span class="n">php</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>表示完成了，這是在Linux底下，在windows的話可能需要GnuWin32或是其他對應的軟體。</p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-15T00:00:00+08:00" pubdate data-updated="true">Dec 15<span>th</span>, 2009</time></div>
+	<div class="date">Tue Dec. 15 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/about-php/'>about PHP</a>, <a class='category' href='/archives/categories/架站相關/'>架站相關</a>
-
-
-</div>
+    <a href='/archives/categories/about%20PHP/'>about PHP</a>, 
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/468/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/468/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/468/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -154,34 +129,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/468/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/468/';
@@ -194,8 +168,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -207,8 +180,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

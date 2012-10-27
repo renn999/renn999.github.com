@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
+  
   <title><![CDATA[Category: 觀貓日記 | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org/archives/categories/觀貓日記/atom.xml" rel="self"/>
+  <link href="http://www.renn999.twbbs.org//archives/categories/%E8%A7%80%E8%B2%93%E6%97%A5%E8%A8%98/atom.xml" rel="self"/>
+  
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-22T19:41:29+08:00</updated>
+  <updated>2012-10-27T14:53:50+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
   
   <entry>
     <title type="html"><![CDATA[觀貓日記 20100514]]></title>
     <link href="http://www.renn999.twbbs.org/archives/690/"/>
-    <updated>2010-05-14T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/690</id>
+    <updated>2010-05-14T00:00:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/690/</id>
     <content type="html"><![CDATA[<p>今天真是睡姿大聚集....</p>
-
 
 <div align="center">
 <wpg2>1297</wpg2>
 先來個日光浴</div>
 
-
 <!--more-->
-
 
 <div align="center">
 <wpg2>1300</wpg2>
@@ -42,27 +41,21 @@
 天氣越來越熱了我還是找別的地方好了
 </div>
 
-
-<p>今天先到這裡了...</p>
-]]></content>
+<p>今天先到這裡了...</p>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[觀貓日記 20100513]]></title>
     <link href="http://www.renn999.twbbs.org/archives/680/"/>
-    <updated>2010-05-13T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/680</id>
-    <content type="html"><![CDATA[<p>今天觀察才發現到，那隻虎斑貓還會睡在別的地方...XDrz</p>
-
+    <updated>2010-05-13T00:00:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/680/</id>
+    <content type="html"><![CDATA[<p>今天觀察才發現到，那隻虎斑貓還會睡在別的地方...XDrz
 <div align="center">
 <p>虎斑貓在波浪版上睡覺之間</p>
 <wpg2>1285</wpg2>
 接著出現了另外一隻花貓
-</div>
-
-
+</div></p>
 <!--more-->
-
 
 <div align="center">
 <wpg2>1288</wpg2>
@@ -82,9 +75,7 @@
 太陽曬屁股了還沒有醒
 </div>
 
-
-<p>因為早上差不多到10點前，那裡都沒有太陽而且又涼爽，才會成為貓喜歡聚集的地方吧...今天就先到這裡了...</p>
-]]></content>
+<p>因為早上差不多到10點前，那裡都沒有太陽而且又涼爽，才會成為貓喜歡聚集的地方吧...今天就先到這裡了...</p>]]></content>
   </entry>
   
 </feed>

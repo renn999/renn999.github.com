@@ -1,124 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
+  
   <title><![CDATA[Category: python | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org/archives/categories/python/atom.xml" rel="self"/>
+  <link href="http://www.renn999.twbbs.org//archives/categories/python/atom.xml" rel="self"/>
+  
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-22T19:41:29+08:00</updated>
+  <updated>2012-10-27T14:53:50+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
   
   <entry>
     <title type="html"><![CDATA[pyBlogtle 計劃啟動]]></title>
     <link href="http://www.renn999.twbbs.org/archives/912/"/>
-    <updated>2012-10-22T17:03:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/912</id>
+    <updated>2012-10-22T17:03:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/912/</id>
     <content type="html"><![CDATA[<h2><strong>前言</strong></h2>
-
 <p>在Octopress用過一陣子之後，最令人詬病的就是 generate 的 speed 一直提升不起來，光是我這只有少少的 136 篇的 markdown 每一次的 generate 就要花上快要 12sec 以下為測試數據</p>
 
-<pre><code>real  0m12.665s
-user  0m12.053s
-sys   0m0.564s
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">real</span>  0<span class="n">m12</span><span class="p">.</span>665<span class="n">s</span></span>
+<span class='line'><span class="n">user</span>  0<span class="n">m12</span><span class="p">.</span>053<span class="n">s</span></span>
+<span class='line'><span class="n">sys</span>   0<span class="n">m0</span><span class="p">.</span>564<span class="n">s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 
 <p>所以在想如果利用其他語言編輯不知道效果如何，我到最後選定的基本語言就是python，因為眾多的 extension 也是我的考量之一吧...(沒錯我就是懶)，另外因為 <a href="http://flask.pocoo.org/">Flask</a> 那是因為</p>
-
-<blockquote><p>Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed!</p></blockquote>
-
+<blockquote>
+<p>Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed!</p>
+</blockquote>
 <p>我有利用其來編寫過一些網頁，對與它的功能及速度上有著非常深刻的映像，外加 <a href="http://flask.pocoo.org/">Flask</a> 的 extension 也是非常多，尤其是 <a href="http://packages.python.org/Frozen-Flask/">Frozen-Flask</a> 才是本次的主角，外加本人真的有點<s>潔癖</s>潔屁，不喜歡一大堆東西混雜的放在一起（看向 octopress 的 _source 資料夾）。</p>
-
 <!--more-->
 
-
 <h2><strong>由來</strong></h2>
-
 <p>為何叫做<code>pyBlogtle</code></p>
-
-<blockquote><p>flask is a kind of bottle.<br/>
-so Python + Flask + Blog => Pyblogtle</p></blockquote>
-
+<blockquote>
+<p>flask is a kind of bottle.<br />
+so Python + Flask + Blog =&gt; Pyblogtle</p>
+</blockquote>
 <p>就是這麼簡單，目前 source 我是放在 <a href="https://bitbucket.org/renn999/pyblogtle">Bitbucket/PyBlogtle</a> 有興趣的人可以 clone 下來看看。</p>
-
 <h2><strong>HOT TO USE</strong></h2>
-
 <p>首先需要先配置python所需要得環境，而 <code>require</code> 內部為所需要的 python extension 可以利用 easy_install 安裝</p>
 
-<pre><code>for i in `cat require`;do sudo easy_install $i;done
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> `<span class="nb">cat</span> <span class="n">require</span>`<span class="p">;</span><span class="n">do</span> <span class="n">sudo</span> <span class="n">easy_install</span> $<span class="nb">i</span><span class="p">;</span><span class="n">done</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 
 <p>基本上只要將所有的 Markdown File 的副檔名 rename 成 <code>.markdown</code> 並且還要轉換一下，因為 Octopress 的 meta head 的格式在這裡完全不通的</p>
 
-<pre><code>---
-layout: post
-title: brabrabrabra
-date: '20XX-XX-XX'
-comments: true
-categories:brabrabrabra
-permalink: 
----
-brararararararrarararrrarar
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span></pre></td><td class='code'><pre><code><span class='line'><span class="o">---</span></span>
+<span class='line'><span class="n">layout</span><span class="p">:</span> <span class="n">post</span></span>
+<span class='line'><span class="n">title</span><span class="p">:</span> <span class="n">brabrabrabra</span></span>
+<span class='line'><span class="n">date</span><span class="p">:</span> <span class="s">&#39;20XX-XX-XX&#39;</span></span>
+<span class='line'><span class="n">comments</span><span class="p">:</span> <span class="n">true</span></span>
+<span class='line'><span class="n">categories</span><span class="p">:</span><span class="n">brabrabrabra</span></span>
+<span class='line'><span class="n">permalink</span><span class="p">:</span> </span>
+<span class='line'><span class="o">---</span></span>
+<span class='line'><span class="n">brararararararrarararrrarar</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 
 <p>閉需要換成</p>
 
-<pre><code>layout: post
-title: brabrabrabra
-date: '20XX-XX-XX'
-comments: true
-categories:brabrabrabra
-permalink: 
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">layout</span><span class="o">:</span> <span class="n">post</span></span>
+<span class='line'><span class="n">title</span><span class="o">:</span> <span class="n">brabrabrabra</span></span>
+<span class='line'><span class="n">date</span><span class="o">:</span> <span class="s1">&#39;20XX-XX-XX&#39;</span></span>
+<span class='line'><span class="n">comments</span><span class="o">:</span> <span class="kc">true</span></span>
+<span class='line'><span class="n">categories</span><span class="o">:</span><span class="n">brabrabrabra</span></span>
+<span class='line'><span class="n">permalink</span><span class="o">:</span></span>
+<span class='line'></span>
+<span class='line'><span class="n">brararararararrarararrrarar</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
-brararararararrarararrrarar
-</code></pre>
+
 
 <p>在 bash 底下只要下以下的指令就可以轉換了(請記得要備份)：</p>
 
-<pre><code>for i in `ls *`; do sed -i -e "1d" "$i";done
-for i in `ls *`; do sed -i -e "s/---//" "$i";done
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> `<span class="n">ls</span> <span class="o">*</span>`<span class="p">;</span> <span class="n">do</span> <span class="n">sed</span> <span class="o">-</span><span class="nb">i</span> <span class="o">-</span><span class="n">e</span> &quot;1<span class="n">d</span>&quot; &quot;$<span class="nb">i</span>&quot;<span class="p">;</span><span class="n">done</span></span>
+<span class='line'><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> `<span class="n">ls</span> <span class="o">*</span>`<span class="p">;</span> <span class="n">do</span> <span class="n">sed</span> <span class="o">-</span><span class="nb">i</span> <span class="o">-</span><span class="n">e</span> &quot;<span class="n">s</span><span class="o">/---//</span>&quot; &quot;$<span class="nb">i</span>&quot;<span class="p">;</span><span class="n">done</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 
 <p>轉換完後就就可以丟到 page 的 folder 並且下</p>
 
-<pre><code>python blogtle.py preview #這是預覽
-python blogtle.py build   #這是產生 static file 放在 build folder
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">preview</span> #這是預覽</span>
+<span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">build</span>   #這是產生 <span class="n">static</span> <span class="n">file</span> 放在 <span class="n">build</span> <span class="n">folder</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 
 <p>時間測試：</p>
 
-<pre><code>real  0m1.929s
-user  0m1.840s
-sys   0m0.080s
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">real</span>  0<span class="n">m1</span><span class="p">.</span>929<span class="n">s</span></span>
+<span class='line'><span class="n">user</span>  0<span class="n">m1</span><span class="p">.</span>840<span class="n">s</span></span>
+<span class='line'><span class="n">sys</span>   0<span class="n">m0</span><span class="p">.</span>080<span class="n">s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
-<p>目前真的只是半成品而已，請大家鞭小力點...OTZ</p>
-]]></content>
+
+<p>目前真的只是半成品而已，請大家鞭小力點...OTZ</p>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[No handlers could be found for logger 'XXXXX']]></title>
     <link href="http://www.renn999.twbbs.org/archives/910/"/>
-    <updated>2012-10-21T07:29:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/910</id>
+    <updated>2012-10-21T07:29:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/910/</id>
     <content type="html"><![CDATA[<p>之前在練習寫 Markdown Extension ，寫完要測試時 Bash 一直吐出這樣的訊息</p>
 
-<pre><code>No handlers could be found for logger 'MARKDOWN'
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">No</span> <span class="n">handlers</span> <span class="n">could</span> <span class="n">be</span> <span class="n">found</span> <span class="k">for</span> <span class="n">logger</span> <span class="s">&#39;MARKDOWN&#39;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 
 <p>只要在主 python 的程式加上</p>
 
-<p><code>python    
-import logging
-logging.basicConfig()
-</code></p>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="kn">import</span> <span class="nn">logging</span></span>
+<span class='line'><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">()</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
-<p>就可以看到吐出來的錯誤訊息，這個東西浪費了我不少時間。</p>
-]]></content>
+
+<p>就可以看到吐出來的錯誤訊息，這個東西浪費了我不少時間。</p>]]></content>
   </entry>
   
 </feed>

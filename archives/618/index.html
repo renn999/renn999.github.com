@@ -1,51 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Wine開啟視窗字體平滑效果 - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="在很早以前用wine的時候只要在user.reg下加入
-1
-2
-[Software\\Wine\\X11 Driver]
-"ClientSideAntiAliasWithRender"="Y"
-就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了
-因為如果不啟用平滑效果的話，情況會像下圖： &hellip;">
+	<meta name="description" content="在很早以前用wine的時候只要在user.reg下加入 1 2[Software\\Wine\\X11 Driver] &#34;ClientSideAntiAliasWithRender&#34;=&#34;Y&#34; 就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了 因為如果不啟用平滑效果的話，情況會像下圖： 在網...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -82,104 +66,102 @@
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Wine開啟視窗字體平滑效果</h1>
-	<div class="entry-content"><p>在很早以前用wine的時候只要在user.reg下加入<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[Software\\Wine\\X11 Driver]
-</span><span class='line'>"ClientSideAntiAliasWithRender"="Y"</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了<br />
+<h1 class="title"><a href="/archives/618/">Wine開啟視窗字體平滑效果
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>在很早以前用wine的時候只要在user.reg下加入</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">[Software\\Wine\\X11 Driver]</span></span>
+<span class='line'><span class="na">&quot;ClientSideAntiAliasWithRender&quot;</span><span class="o">=</span><span class="s">&quot;Y&quot;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了
 因為如果不啟用平滑效果的話，情況會像下圖：</p>
-<p><!--more--><br />
-在網路上已經有真正的解法了，如果您真的很有耐心的話可以看看Wine-Review的<a href="http://www.wine-reviews.net/wine-reviews/tips-n-tricks/how-to-enable-font-anti-aliasing-in-wine.html">這一篇</a><br />
-他有說到將以下的文字存成reg並且匯進去regedit<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<!--more-->
+
+<p>在網路上已經有真正的解法了，如果您真的很有耐心的話可以看看Wine-Review的<a href="http://www.wine-reviews.net/wine-reviews/tips-n-tricks/how-to-enable-font-anti-aliasing-in-wine.html">這一篇</a>
+他有說到將以下的文字存成reg並且匯進去regedit</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>REGEDIT4
-</span><span class='line'>
-</span><span class='line'>[HKEY_CURRENT_USER\Control Panel\Desktop]
-</span><span class='line'>"FontSmoothing"="2"
-</span><span class='line'>"FontSmoothingType"=dword:00000002
-</span><span class='line'>"FontSmoothingGamma"=dword:00000578
-</span><span class='line'>"FontSmoothingOrientation"=dword:00000001</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-但是太麻煩了，最快的方式，打開終端機複製貼上<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://files.polosatus.ru/winefontssmoothing_en.sh -O- | bash</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-然後，出現以下畫面去作選擇</p>
+<span class='line-number'>7</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">REGEDIT4</span></span>
+<span class='line'></span>
+<span class='line'><span class="p">[</span><span class="n">HKEY_CURRENT_USER</span><span class="o">\</span><span class="n">Control</span> <span class="n">Panel</span><span class="o">\</span><span class="n">Desktop</span><span class="p">]</span></span>
+<span class='line'>&quot;<span class="n">FontSmoothing</span>&quot;<span class="p">=</span>&quot;2&quot;</span>
+<span class='line'>&quot;<span class="n">FontSmoothingType</span>&quot;<span class="p">=</span><span class="n">dword</span><span class="p">:</span>00000002</span>
+<span class='line'>&quot;<span class="n">FontSmoothingGamma</span>&quot;<span class="p">=</span><span class="n">dword</span><span class="p">:</span>00000578</span>
+<span class='line'>&quot;<span class="n">FontSmoothingOrientation</span>&quot;<span class="p">=</span><span class="n">dword</span><span class="p">:</span>00000001</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>但是太麻煩了，最快的方式，打開終端機複製貼上</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">files</span><span class="p">.</span><span class="n">polosatus</span><span class="p">.</span><span class="n">ru</span><span class="o">/</span><span class="n">winefontssmoothing_en</span><span class="p">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">O</span><span class="o">-</span> <span class="o">|</span> <span class="n">bash</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>然後，出現以下畫面去作選擇</p>
 <p>之後可以開啟Wine來看看結果</p>
 <p>這樣看起來棒多了，取代其他字型的regcode</p>
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[Software\\Wine\\Fonts\\Replacements]
-</span><span class='line'>"System"="你要的字型名稱"
-</span><span class='line'>"Arial"="你要的字型名稱"
-</span><span class='line'>"Fixedsys"="你要的字型名稱"
-</span><span class='line'>"Microsoft Sans Serif"="你要的字型名稱"
-</span><span class='line'>"MS UI Gothic"="你要的字型名稱"
-</span><span class='line'>"Tahoma"="你要的字型名稱"
-</span><span class='line'>"Terminal"="你要的字型名稱"
-</span><span class='line'>"MingLiU"="你要的字型名稱"
-</span><span class='line'>"PMingLiU"="你要的字型名稱"</span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>將其附加到user.reg後面即可</p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
 
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">[Software\\Wine\\Fonts\\Replacements]</span></span>
+<span class='line'><span class="na">&quot;System&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
+<span class='line'><span class="na">&quot;Arial&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
+<span class='line'><span class="na">&quot;Fixedsys&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
+<span class='line'><span class="na">&quot;Microsoft Sans Serif&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
+<span class='line'><span class="na">&quot;MS UI Gothic&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
+<span class='line'><span class="na">&quot;Tahoma&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
+<span class='line'><span class="na">&quot;Terminal&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
+<span class='line'><span class="na">&quot;MingLiU&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
+<span class='line'><span class="na">&quot;PMingLiU&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>將其附加到user.reg後面即可</p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-29T00:00:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2009</time></div>
+	<div class="date">Tue Dec. 29 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
+    <a href='/archives/categories/Linux/'>Linux</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/618/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/618/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/618/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -194,34 +176,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/618/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/618/';
@@ -234,8 +215,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -247,8 +227,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

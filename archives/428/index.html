@@ -1,48 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>moebuntu中文教學文件(開機畫面[splash]篇) - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="本文翻譯從http://moebuntu.web.fc2.com/moesplash.html 並符合正體中文語系的使用者介面之翻譯
-注意：以下之方法只是用於9.04(含)以前的版本，於最新版的9.10不適用(譯者親身經歷)
-準備工作：
-StartUp-Manager(用於修改Splash的工具) &hellip;">
+	<meta name="description" content="本文翻譯從http://moebuntu.web.fc2.com/moesplash.html 並符合正體中文語系的使用者介面之翻譯 注意：以下之方法只是用於9.04(含)以前的版本，於最新版的9.10不適用(譯者親身經歷) 準備工作： StartUp-Manager(用於修改Splash的工具)m...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -79,79 +66,66 @@ StartUp-Manager(用於修改Splash的工具) &hellip;">
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Moebuntu中文教學文件(開機畫面[splash]篇)</h1>
-	<div class="entry-content"><p>本文翻譯從<a target="_blank" href="http://moebuntu.web.fc2.com/moesplash.html">http://moebuntu.web.fc2.com/moesplash.html</a> 並符合正體中文語系的使用者介面之翻譯</p>
+<h1 class="title"><a href="/archives/428/">moebuntu中文教學文件(開機畫面[splash]篇)
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>本文翻譯從<a target="_blank" href="http://moebuntu.web.fc2.com/moesplash.html">http://moebuntu.web.fc2.com/moesplash.html</a> 並符合正體中文語系的使用者介面之翻譯</p>
 <p><big><big><font color="#CC0000">注意：以下之方法只是用於9.04(含)以前的版本，於最新版的9.10不適用(譯者親身經歷)</font></big></big></p>
-<p><big><big>準備工作：</big></big><br />
-<ul><li>StartUp-Manager(用於修改Splash的工具)</li><li>moebuntu Splash佈景</li></ul><br />
-<!--more--><br />
-<big><big>方法如下：</big></big></p>
-<p><big>第一步 安裝StartUp-Manager</big></p>
-<p>可以利用&quot;Synaptic套件管理程式&quot;尋找startupmanager或是，開啟終端機輸入<br />
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<div class='bogus-wrapper'><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span><br />
-</pre></td><td class='code'><pre><code class=''>&lt;span class='line'&gt;sudo apt-get install startupmanager&lt;/span&gt;</code></pre></td><p></tr></table></div></figure></notextile><br />
-安裝。</p></p>
-<p><big>第二步 下載moebuntu Splash佈景</big></p>
-<p>選擇適合你的Ubuntu distribution<br />
-8.04 LTS（Hardy Heron） —&gt; <a href="http://moebuntu.web.fc2.com/img/usplash-theme-moebuntu_804.so" target="_blank">usplash-theme-moebuntu_804.so</a><br />
-8.10（Intrepid Ibex） —&gt; <a href="http://moebuntu.web.fc2.com/img/usplash-theme-moebuntu_810.so" target="_blank">usplash-theme-moebuntu_810.so</a><br />
-9.04（Jaunty Jackalope） —&gt; <a href="http://moebuntu.web.fc2.com/img/usplash-theme-moebuntu_904.so" target="_blank">usplash-theme-moebuntu_904.so</a><br />
-Source File —&gt; <a href="http://moebuntu.web.fc2.com/img/usplash-theme-moebuntu.tar.gz" target="_blank">usplash-theme-moebuntu.tar.gz</a></p>
-<p><big>第三步 開始安裝佈景</big></p>
-<p>開啟StartUp-Manager，點選在最上面的&quot;系統&quot;面板&quot;&#8594;&#8220;管理&#8221;&#8594;&quot;開機管理程式&quot;，此時可能需要輸入密碼。<br />
-進入&quot;外觀&quot;的分頁，點選&quot;管理uspalsh佈景主題&quot;的按鈕，之後點選&quot;加入&quot;，把剛剛下載回來的usplash-theme-moebuntu_XXX.so給加進去。<br />
-點選關閉，在&quot;外觀&quot;的分頁中，修改Usplash佈景主題為usplash-theme-moebuntu_xxx。<br />
-接著進入&quot;開機選項&quot;的分頁，把解析度修改成1024x768外加修改色彩深度為16 bits(這裡依照每台電腦體質不同需要自行修改)，之後按下關閉。<br />
-當&quot;正在進行設定後的工作&quot;task消失之後，表示安裝完成了。當你進行重新開機後，系統就會使用moebuntu Splash screen。<br />
-如果重新開機之後，銀幕呈現&quot;黑銀幕&quot;時，你可能裝錯moebuntu Splash的版本，請確認你的Ubuntu的版本之後，重新安裝對應的版本，或自己compile</p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
+<p><big><big>準備工作：</big></big>
+<ul><li>StartUp-Manager(用於修改Splash的工具)</li><li>moebuntu Splash佈景</li></ul></p>
+<!--more-->
 
+<p><big><big>方法如下：</big></big></p>
+<p><big>第一步 安裝StartUp-Manager</big></p>
+
+<p>可以利用"Synaptic套件管理程式"尋找startupmanager或是，開啟終端機輸入
+
+wzxhzdk:0
+
+安裝。</p>
+
+<p><big>第二步 下載moebuntu Splash佈景</big></p>
+
+<p>選擇適合你的Ubuntu distribution
+8.04 LTS（Hardy Heron） —> <a href="http://moebuntu.web.fc2.com/img/usplash-theme-moebuntu_804.so" target="_blank">usplash-theme-moebuntu_804.so</a>
+8.10（Intrepid Ibex） —> <a href="http://moebuntu.web.fc2.com/img/usplash-theme-moebuntu_810.so" target="_blank">usplash-theme-moebuntu_810.so</a>
+9.04（Jaunty Jackalope） —> <a href="http://moebuntu.web.fc2.com/img/usplash-theme-moebuntu_904.so" target="_blank">usplash-theme-moebuntu_904.so</a>
+Source File —> <a href="http://moebuntu.web.fc2.com/img/usplash-theme-moebuntu.tar.gz" target="_blank">usplash-theme-moebuntu.tar.gz</a></p>
+
+<p><big>第三步 開始安裝佈景</big></p>
+
+<p>開啟StartUp-Manager，點選在最上面的"系統"面板"->"管理"->"開機管理程式"，此時可能需要輸入密碼。
+進入"外觀"的分頁，點選"管理uspalsh佈景主題"的按鈕，之後點選"加入"，把剛剛下載回來的usplash-theme-moebuntu_XXX.so給加進去。
+點選關閉，在"外觀"的分頁中，修改Usplash佈景主題為usplash-theme-moebuntu_xxx。
+接著進入"開機選項"的分頁，把解析度修改成1024x768外加修改色彩深度為16 bits(這裡依照每台電腦體質不同需要自行修改)，之後按下關閉。
+當"正在進行設定後的工作"task消失之後，表示安裝完成了。當你進行重新開機後，系統就會使用moebuntu Splash screen。
+如果重新開機之後，銀幕呈現"黑銀幕"時，你可能裝錯moebuntu Splash的版本，請確認你的Ubuntu的版本之後，重新安裝對應的版本，或自己compile</p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-11-05T00:00:00+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2009</time></div>
+	<div class="date">Thu Nov.  5 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
+    <a href='/archives/categories/Linux/'>Linux</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/428/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/428/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/428/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -166,34 +140,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/428/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/428/';
@@ -206,8 +179,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -219,8 +191,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

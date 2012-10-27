@@ -1,47 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>pyBlogtle 計劃啟動 - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="前言 在Octopress用過一陣子之後，最令人詬病的就是 generate 的 speed 一直提升不起來，光是我這只有少少的 136 篇的 markdown 每一次的 generate 就要花上快要 12sec 以下為測試數據 real 0m12.665s
-user 0m12.053s
-sys &hellip;">
+	<meta name="description" content="前言 在Octopress用過一陣子之後，最令人詬病的就是 generate 的 speed 一直提升不起來，光是我這只有少少的 136 篇的 markdown 每一次的 generate 就要花上快要 12sec 以下為測試數據 1 2 3real 0m12.665s user 0m12.053s...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -78,133 +66,142 @@ sys &hellip;">
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
-
-</header>
+</nav></header>
+	<div id="content" class="inner">
 	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">pyBlogtle 計劃啟動</h1>
-	<div class="entry-content"><h2><strong>前言</strong></h2>
+    
+    <article class="post">
+    
+      
 
+<h1 class="title"><a href="/archives/912/">pyBlogtle 計劃啟動
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <h2><strong>前言</strong></h2>
 <p>在Octopress用過一陣子之後，最令人詬病的就是 generate 的 speed 一直提升不起來，光是我這只有少少的 136 篇的 markdown 每一次的 generate 就要花上快要 12sec 以下為測試數據</p>
 
-<pre><code>real  0m12.665s
-user  0m12.053s
-sys   0m0.564s
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">real</span>  0<span class="n">m12</span><span class="p">.</span>665<span class="n">s</span></span>
+<span class='line'><span class="n">user</span>  0<span class="n">m12</span><span class="p">.</span>053<span class="n">s</span></span>
+<span class='line'><span class="n">sys</span>   0<span class="n">m0</span><span class="p">.</span>564<span class="n">s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
-<p>所以在想如果利用其他語言編輯不知道效果如何，我到最後選定的基本語言就是python，因為眾多的 extension 也是我的考量之一吧&#8230;(沒錯我就是懶)，另外因為 <a href="http://flask.pocoo.org/">Flask</a> 那是因為</p>
 
-<blockquote><p>Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It&#8217;s BSD licensed!</p></blockquote>
 
+<p>所以在想如果利用其他語言編輯不知道效果如何，我到最後選定的基本語言就是python，因為眾多的 extension 也是我的考量之一吧...(沒錯我就是懶)，另外因為 <a href="http://flask.pocoo.org/">Flask</a> 那是因為</p>
+<blockquote>
+<p>Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed!</p>
+</blockquote>
 <p>我有利用其來編寫過一些網頁，對與它的功能及速度上有著非常深刻的映像，外加 <a href="http://flask.pocoo.org/">Flask</a> 的 extension 也是非常多，尤其是 <a href="http://packages.python.org/Frozen-Flask/">Frozen-Flask</a> 才是本次的主角，外加本人真的有點<s>潔癖</s>潔屁，不喜歡一大堆東西混雜的放在一起（看向 octopress 的 _source 資料夾）。</p>
-
 <!--more-->
 
-
 <h2><strong>由來</strong></h2>
-
 <p>為何叫做<code>pyBlogtle</code></p>
-
-<blockquote><p>flask is a kind of bottle.<br/>
-so Python + Flask + Blog => Pyblogtle</p></blockquote>
-
+<blockquote>
+<p>flask is a kind of bottle.<br />
+so Python + Flask + Blog =&gt; Pyblogtle</p>
+</blockquote>
 <p>就是這麼簡單，目前 source 我是放在 <a href="https://bitbucket.org/renn999/pyblogtle">Bitbucket/PyBlogtle</a> 有興趣的人可以 clone 下來看看。</p>
-
 <h2><strong>HOT TO USE</strong></h2>
-
 <p>首先需要先配置python所需要得環境，而 <code>require</code> 內部為所需要的 python extension 可以利用 easy_install 安裝</p>
 
-<pre><code>for i in `cat require`;do sudo easy_install $i;done
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> `<span class="nb">cat</span> <span class="n">require</span>`<span class="p">;</span><span class="n">do</span> <span class="n">sudo</span> <span class="n">easy_install</span> $<span class="nb">i</span><span class="p">;</span><span class="n">done</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 
 <p>基本上只要將所有的 Markdown File 的副檔名 rename 成 <code>.markdown</code> 並且還要轉換一下，因為 Octopress 的 meta head 的格式在這裡完全不通的</p>
 
-<pre><code>---
-layout: post
-title: brabrabrabra
-date: '20XX-XX-XX'
-comments: true
-categories:brabrabrabra
-permalink: 
----
-brararararararrarararrrarar
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span></pre></td><td class='code'><pre><code><span class='line'><span class="o">---</span></span>
+<span class='line'><span class="n">layout</span><span class="p">:</span> <span class="n">post</span></span>
+<span class='line'><span class="n">title</span><span class="p">:</span> <span class="n">brabrabrabra</span></span>
+<span class='line'><span class="n">date</span><span class="p">:</span> <span class="s">&#39;20XX-XX-XX&#39;</span></span>
+<span class='line'><span class="n">comments</span><span class="p">:</span> <span class="n">true</span></span>
+<span class='line'><span class="n">categories</span><span class="p">:</span><span class="n">brabrabrabra</span></span>
+<span class='line'><span class="n">permalink</span><span class="p">:</span> </span>
+<span class='line'><span class="o">---</span></span>
+<span class='line'><span class="n">brararararararrarararrrarar</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 
 <p>閉需要換成</p>
 
-<pre><code>layout: post
-title: brabrabrabra
-date: '20XX-XX-XX'
-comments: true
-categories:brabrabrabra
-permalink: 
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">layout</span><span class="o">:</span> <span class="n">post</span></span>
+<span class='line'><span class="n">title</span><span class="o">:</span> <span class="n">brabrabrabra</span></span>
+<span class='line'><span class="n">date</span><span class="o">:</span> <span class="s1">&#39;20XX-XX-XX&#39;</span></span>
+<span class='line'><span class="n">comments</span><span class="o">:</span> <span class="kc">true</span></span>
+<span class='line'><span class="n">categories</span><span class="o">:</span><span class="n">brabrabrabra</span></span>
+<span class='line'><span class="n">permalink</span><span class="o">:</span></span>
+<span class='line'></span>
+<span class='line'><span class="n">brararararararrarararrrarar</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
-brararararararrarararrrarar
-</code></pre>
+
 
 <p>在 bash 底下只要下以下的指令就可以轉換了(請記得要備份)：</p>
 
-<pre><code>for i in `ls *`; do sed -i -e "1d" "$i";done
-for i in `ls *`; do sed -i -e "s/---//" "$i";done
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> `<span class="n">ls</span> <span class="o">*</span>`<span class="p">;</span> <span class="n">do</span> <span class="n">sed</span> <span class="o">-</span><span class="nb">i</span> <span class="o">-</span><span class="n">e</span> &quot;1<span class="n">d</span>&quot; &quot;$<span class="nb">i</span>&quot;<span class="p">;</span><span class="n">done</span></span>
+<span class='line'><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> `<span class="n">ls</span> <span class="o">*</span>`<span class="p">;</span> <span class="n">do</span> <span class="n">sed</span> <span class="o">-</span><span class="nb">i</span> <span class="o">-</span><span class="n">e</span> &quot;<span class="n">s</span><span class="o">/---//</span>&quot; &quot;$<span class="nb">i</span>&quot;<span class="p">;</span><span class="n">done</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 
 <p>轉換完後就就可以丟到 page 的 folder 並且下</p>
 
-<pre><code>python blogtle.py preview #這是預覽
-python blogtle.py build   #這是產生 static file 放在 build folder
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">preview</span> #這是預覽</span>
+<span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">build</span>   #這是產生 <span class="n">static</span> <span class="n">file</span> 放在 <span class="n">build</span> <span class="n">folder</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 
 <p>時間測試：</p>
 
-<pre><code>real  0m1.929s
-user  0m1.840s
-sys   0m0.080s
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">real</span>  0<span class="n">m1</span><span class="p">.</span>929<span class="n">s</span></span>
+<span class='line'><span class="n">user</span>  0<span class="n">m1</span><span class="p">.</span>840<span class="n">s</span></span>
+<span class='line'><span class="n">sys</span>   0<span class="n">m0</span><span class="p">.</span>080<span class="n">s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
-<p>目前真的只是半成品而已，請大家鞭小力點&#8230;OTZ</p>
-<section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
+
+<p>目前真的只是半成品而已，請大家鞭小力點...OTZ</p>
+  
 </div>
-
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-22T17:03:00+08:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2012</time></div>
+	<div class="date">Mon Oct. 22 2012</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/python/'>python</a>
-
-
-</div>
+    <a href='/archives/categories/python/'>python</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/912/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/912/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/912/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -219,34 +216,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/912/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/912/';
@@ -259,8 +255,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -272,8 +267,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

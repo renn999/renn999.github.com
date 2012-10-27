@@ -1,35 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
+  
   <title><![CDATA[Category: 隨便亂寫 | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org/archives/categories/隨便亂寫/atom.xml" rel="self"/>
+  <link href="http://www.renn999.twbbs.org//archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/atom.xml" rel="self"/>
+  
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-22T19:41:29+08:00</updated>
+  <updated>2012-10-27T14:53:50+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
   
   <entry>
     <title type="html"><![CDATA[近日心情]]></title>
     <link href="http://www.renn999.twbbs.org/archives/905/"/>
-    <updated>2012-09-17T20:51:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/905</id>
+    <updated>2012-09-17T20:51:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/905/</id>
     <content type="html"><![CDATA[<p>這是密碼保護文</p>
-
 <!--more-->
-
 
 <script>
 var text='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';
 </script>
 
-
-<script src="http://www.renn999.twbbs.org/javascripts/AES.js"></script>
-
+<script src="/javascripts/AES.js"></script>
 
 <script>
     function Decrypt_post(){
@@ -39,65 +37,52 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
     }
 </script>
 
-
-<p><input class='password' /><input type="button" value='解碼' onclick="javascript:Decrypt_post()"/></p>
-
-<div id='decrypted_post'></div>
-
-]]></content>
+<p><input class='password' /><input type="button" value='解碼' onclick="javascript:Decrypt_post()"/>
+<div id='decrypted_post'></div></p>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
     <link href="http://www.renn999.twbbs.org/archives/886/"/>
-    <updated>2011-04-24T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/886</id>
+    <updated>2011-04-24T00:00:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/886/</id>
     <content type="html"><![CDATA[<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息...OTZ。</p>
-
 <p>就如標題所說的，因為有的服務是我自己寫得程式，但是我犯了一個不可饒恕的錯誤...就是我忘記備份php程式了，造成有的服務可能無時間表的停止服務，因為這個站是我緊急的跟我們一位社團學長借的空間，因為有所限制，所以說短時間內我也不大想要把剩下的服務弄上去。</p>
-
 <p>在此公告，老伯繪師收集區停開，因為老早之前我就有打算要整個翻修內部程式碼，但是都懶得去動他，剛好趁著硬碟壞掉算是個總結吧...OTZ，但是不要擔心的是說資料庫還留著，但是程式就881了。</p>
-
 <p>感謝大家這幾年來對此站的照顧，在這裡除了對一些編輯者至上萬分的歉意以及感謝
-&lt;(<em> </em>)></p>
-]]></content>
+&lt;(<em> </em>)&gt;</p>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[bitly.pro自訂網域的短網址服務]]></title>
     <link href="http://www.renn999.twbbs.org/archives/769/"/>
-    <updated>2010-06-12T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/769</id>
-    <content type="html"><![CDATA[<p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。<!--more-->
-而<a href="http://bit.ly">bit.ly</a>這一家在不久前成立了<a href="http://bitly.pro">bitly Pro</a>服務，這是啥小跟bit.ly有啥不一樣，簡單說就是把domain name交給他們，讓他們去產生短網址，還外加給你點擊數及地區每日的統計...等等。這聽起來好像非常不錯，但是這還是一個beta，的服務所以說如果要申請還要填表格等等再說，當然我是已經等到了，外加弄清楚他們的api要怎麼使用，想想看有啥搞頭，但是感覺上還是純粹的個人風格的短網址而已...XD</p>
+    <updated>2010-06-12T00:00:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/769/</id>
+    <content type="html"><![CDATA[<p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。</p>
+<!--more-->
 
+<p>而<a href="http://bit.ly">bit.ly</a>這一家在不久前成立了<a href="http://bitly.pro">bitly Pro</a>服務，這是啥小跟bit.ly有啥不一樣，簡單說就是把domain name交給他們，讓他們去產生短網址，還外加給你點擊數及地區每日的統計...等等。這聽起來好像非常不錯，但是這還是一個beta，的服務所以說如果要申請還要填表格等等再說，當然我是已經等到了，外加弄清楚他們的api要怎麼使用，想想看有啥搞頭，但是感覺上還是純粹的個人風格的短網址而已...XD</p>
 <p>申請方式如下：
 點下Sing Up For Free
 <a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot.jpg"><img class="size-medium wp-image-771" title="Screenshot" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-300x226.jpg" alt="" width="300" height="226" /></a></p>
-
 <p>這頁再跟你說他們還是個beta服務如果要使用還要填一下表格再等等。</p>
-
 <p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-1.jpg"><img class="size-medium wp-image-772" title="Screenshot-1" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-1-300x127.jpg" alt="" width="300" height="127" /></a></p>
-
 <p>就填表格吧。</p>
-
 <p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-2.jpg"><img class="size-medium wp-image-773" title="Screenshot-2" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2010/06/Screenshot-2-300x196.jpg" alt="" width="300" height="196" /></a></p>
-
 <p>接著大約等個一個星期到兩個星期左右他就會寄信給你說，你已經被邀請了
 接著可以參考<a href="http://briian.com/?p=6799">重灌狂人 Bit.ly Pro 開放自訂網址的「縮址服務」</a>的設定方法做好就可以了
 你問我網域從哪邊得到？恩 請google FREE domain或是免費網域吧！</p>
-
 <p>當然有了api和詳細的<a href="http://code.google.com/p/bitly-api/wiki/ApiDocumentation">使用手冊</a>，因為時常要上去縮的話很累，所以說就自己寫了一個小小的html利用jQuery的AJAX程式在此提供參考。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
@@ -114,81 +99,57 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
 <span class='line-number'>23</span>
 <span class='line-number'>24</span>
 <span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-</span><span class='line'>&lt;html>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>&lt;head&gt;
-</span><span class='line'>&lt;META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"&gt;
-</span><span class='line'>&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"&gt;&lt;/script&gt;
-</span><span class='line'>&lt;script type="text/javascript"&gt;
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$(function(){&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>$('button#sub').click(function(){
-</span><span class='line'>    var api_user='';
-</span><span class='line'>    var api_key=''
-</span><span class='line'>    $.getJSON('http://api.bit.ly/v3/shorten?login='+ api_user +'&amp;apiKey='+ api_key +'&amp;longUrl='+encodeURIComponent($('input#longurl').val())+'&amp;format=json&amp;callback=?',function(bitly){
-</span><span class='line'>        $('div#show').empty();
-</span><span class='line'>        $('div#show').append(bitly.data.url).hide().fadeIn(2000);
-</span><span class='line'>    })
-</span><span class='line'>});
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>});&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>&lt;/script&gt;
-</span><span class='line'>&lt;/style&gt;
-</span><span class='line'>&lt;/head&gt;
-</span><span class='line'>&lt;body&gt;
-</span><span class='line'>&lt;from id="bit" action="#"&gt;
-</span><span class='line'>    longurl:&lt;input type="text"id="longurl"&gt;&lt;button id="sub"&gt;submit&lt;/button&gt;
-</span><span class='line'>&lt;/from&gt;
-</span><span class='line'>&lt;div id=show&gt;&lt;/div&gt;
-</span><span class='line'>&lt;/body&gt;
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>&lt;/html></span></code></pre></td></tr></table></div></figure></notextile></div>
-如果有申請bitly pro的話api所產生的網址會是你的網域，除非你多了一個domain的參數其實一個比較有趣的地方，像是說我縮了一個<a href="http://ren9.tk/dzkm9I">http://ren9.tk/dzkm9I</a>的網址你可以試試看<a href="http://bit.ly/dzkm9I">http://bit.ly/dzkm9I</a>，其實就是一個代管的功能而已...XDrz</p>
-]]></content>
+<span class='line-number'>26</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span></span>
+<span class='line'><span class="nt">&lt;html&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;head&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;META</span> <span class="na">HTTP-EQUIV=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">CONTENT=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span></span>
+<span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;button#sub&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span></span>
+<span class='line'>        <span class="kd">var</span> <span class="nx">api_user</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span></span>
+<span class='line'>        <span class="kd">var</span> <span class="nx">api_key</span><span class="o">=</span><span class="s1">&#39;&#39;</span></span>
+<span class='line'>        <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">&#39;http://api.bit.ly/v3/shorten?login=&#39;</span><span class="o">+</span> <span class="nx">api_user</span> <span class="o">+</span><span class="s1">&#39;&amp;apiKey=&#39;</span><span class="o">+</span> <span class="nx">api_key</span> <span class="o">+</span><span class="s1">&#39;&amp;longUrl=&#39;</span><span class="o">+</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input#longurl&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">())</span><span class="o">+</span><span class="s1">&#39;&amp;format=json&amp;callback=?&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">bitly</span><span class="p">){</span></span>
+<span class='line'>            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div#show&#39;</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span></span>
+<span class='line'>            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div#show&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">bitly</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">url</span><span class="p">).</span><span class="nx">hide</span><span class="p">().</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span></span>
+<span class='line'>        <span class="p">})</span></span>
+<span class='line'>    <span class="p">});</span></span>
+<span class='line'><span class="p">});</span></span>
+<span class='line'>    <span class="nt">&lt;/script&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/style&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/head&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;body&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;from</span> <span class="na">id=</span><span class="s">&quot;bit&quot;</span> <span class="na">action=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>        longurl:<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="na">id=</span><span class="s">&quot;longurl&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">id=</span><span class="s">&quot;sub&quot;</span><span class="nt">&gt;</span>submit<span class="nt">&lt;/button&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/from&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">show</span><span class="nt">&gt;&lt;/div&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/body&gt;</span></span>
+<span class='line'><span class="nt">&lt;/html&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果有申請bitly pro的話api所產生的網址會是你的網域，除非你多了一個domain的參數其實一個比較有趣的地方，像是說我縮了一個<a href="http://ren9.tk/dzkm9I">http://ren9.tk/dzkm9I</a>的網址你可以試試看<a href="http://bit.ly/dzkm9I">http://bit.ly/dzkm9I</a>，其實就是一個代管的功能而已...XDrz</p>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[EveryDNS替代方案FreeDNS]]></title>
     <link href="http://www.renn999.twbbs.org/archives/732/"/>
-    <updated>2010-06-07T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/732</id>
+    <updated>2010-06-07T00:00:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/732/</id>
     <content type="html"><![CDATA[<p>因為之前聽到Everydns被Dyn收購的消息，然而在這一段時間老實說，我是擔心說和時會停止服務，雖然說官方一直說免費服務還是會維持，但是維持到啥時我就不知道了。然而我就開始尋找替代方案。</p>
-
 <p>我找到了<a href="http://freedns.afraid.org/">FreeDNS</a>，雖然說網址有點難記就是了。</p>
-
 <p>我也去申請了一個<a href="http://www.dot.tk">.TK</a>的免費網路域名，作為我自己的短網址之用的，真的短了很多。</p>
-
-<p>在此也紀錄一下。</p>
-]]></content>
+<p>在此也紀錄一下。</p>]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[紀錄一下]]></title>
     <link href="http://www.renn999.twbbs.org/archives/729/"/>
-    <updated>2010-05-28T00:00:00+08:00</updated>
-    <id>http://www.renn999.twbbs.org/archives/729</id>
+    <updated>2010-05-28T00:00:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/729/</id>
     <content type="html"><![CDATA[<p>這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了</p>
-
 <p>應該都ok了吧...OTZ</p>
-
-<p>接著看看明天有沒有把備份自動寄到我的信箱就好了...OTZ</p>
-]]></content>
+<p>接著看看明天有沒有把備份自動寄到我的信箱就好了...OTZ</p>]]></content>
   </entry>
   
 </feed>

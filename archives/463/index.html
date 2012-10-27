@@ -1,48 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Ubuntu9.10 Nautilus解決掛載磁區要輸入密碼麻煩的動作 - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。
-首先
-1
-gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks. &hellip;">
+	<meta name="description" content="Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。 首先 1gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks.poli...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -79,91 +66,88 @@ gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks. &helli
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Ubuntu9.10 Nautilus解決掛載磁區要輸入密碼麻煩的動作</h1>
-	<div class="entry-content"><p>Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。</p>
-<p>首先<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks.policy</span></code></pre></td></tr></table></div></figure></div></notextile><br />
-之後找到<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
+<h1 class="title"><a href="/archives/463/">Ubuntu9.10 Nautilus解決掛載磁區要輸入密碼麻煩的動作
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。</p>
+<p>首先</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">gksudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">polkit</span><span class="o">-</span>1<span class="o">/</span><span class="n">actions</span><span class="o">/</span><span class="n">org</span><span class="p">.</span><span class="n">freedesktop</span><span class="p">.</span><span class="n">devicekit</span><span class="p">.</span><span class="n">disks</span><span class="p">.</span><span class="n">policy</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>之後找到</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;action id="org.freedesktop.devicekit.disks.filesystem-mount-system-internal">
-</span><span class='line'>    &lt;description>Mount a system-internal device&lt;/description>
-</span><span class='line'>    &lt;description xml:lang="da">Montér en intern enhed&lt;/description>
-</span><span class='line'>    &lt;description xml:lang="de">Eingebautes Gerät einhängen&lt;/description>
-</span><span class='line'>    &lt;message>Authentication is required to mount the device&lt;/message>
-</span><span class='line'>    &lt;message xml:lang="da">Autorisering er påkrævet for at montere et fil system&lt;/message>
-</span><span class='line'>    &lt;message xml:lang="de">Zugriffsrechte werden benötigt um das Gerät einzuhängen&lt;/message>
-</span><span class='line'>    &lt;defaults>
-</span><span class='line'>      &lt;allow_any>no&lt;/allow_any>
-</span><span class='line'>      &lt;allow_inactive>no&lt;/allow_inactive>
-</span><span class='line'>      &lt;allow_active>auth_admin_keep&lt;/allow_active>
-</span><span class='line'>    &lt;/defaults>
-</span><span class='line'>  &lt;/action></span></code></pre></td></tr></table></div></figure></div></notextile><br />
-把<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;allow_active>auth_admin_keep&lt;/allow_active></span></code></pre></td></tr></table></div></figure></div></notextile><br />
-改成<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;allow_active>yes&lt;/allow_active></span></code></pre></td></tr></table></div></figure></div></notextile></p>
-<p>這樣要掛載磁區就不用在輸入密碼了</p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
+<span class='line-number'>13</span></pre></td><td class='code'><pre><code><span class='line'>  <span class="nt">&lt;action</span> <span class="na">id=</span><span class="s">&quot;org.freedesktop.devicekit.disks.filesystem-mount-system-internal&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;description&gt;</span>Mount a system-internal device<span class="nt">&lt;/description&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;description</span> <span class="na">xml:lang=</span><span class="s">&quot;da&quot;</span><span class="nt">&gt;</span>Montér en intern enhed<span class="nt">&lt;/description&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;description</span> <span class="na">xml:lang=</span><span class="s">&quot;de&quot;</span><span class="nt">&gt;</span>Eingebautes Gerät einhängen<span class="nt">&lt;/description&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;message&gt;</span>Authentication is required to mount the device<span class="nt">&lt;/message&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;message</span> <span class="na">xml:lang=</span><span class="s">&quot;da&quot;</span><span class="nt">&gt;</span>Autorisering er påkrævet for at montere et fil system<span class="nt">&lt;/message&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;message</span> <span class="na">xml:lang=</span><span class="s">&quot;de&quot;</span><span class="nt">&gt;</span>Zugriffsrechte werden benötigt um das Gerät einzuhängen<span class="nt">&lt;/message&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;defaults&gt;</span></span>
+<span class='line'>      <span class="nt">&lt;allow_any&gt;</span>no<span class="nt">&lt;/allow_any&gt;</span></span>
+<span class='line'>      <span class="nt">&lt;allow_inactive&gt;</span>no<span class="nt">&lt;/allow_inactive&gt;</span></span>
+<span class='line'>      <span class="nt">&lt;allow_active&gt;</span>auth_admin_keep<span class="nt">&lt;/allow_active&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/defaults&gt;</span></span>
+<span class='line'>  <span class="nt">&lt;/action&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
+
+
+<p>把</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="nt">&lt;allow_active&gt;</span>auth_admin_keep<span class="nt">&lt;/allow_active&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+
+<p>改成</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="nt">&lt;allow_active&gt;</span>yes<span class="nt">&lt;/allow_active&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這樣要掛載磁區就不用在輸入密碼了</p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-14T00:00:00+08:00" pubdate data-updated="true">Dec 14<span>th</span>, 2009</time></div>
+	<div class="date">Mon Dec. 14 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/linux/'>Linux</a>
-
-
-</div>
+    <a href='/archives/categories/Linux/'>Linux</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/463/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/463/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/463/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -178,34 +162,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/463/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/463/';
@@ -218,8 +201,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -231,8 +213,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

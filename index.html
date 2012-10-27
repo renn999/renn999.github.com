@@ -1,46 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="前言 在Octopress用過一陣子之後，最令人詬病的就是 generate 的 speed 一直提升不起來，光是我這只有少少的 136 篇的 markdown 每一次的 generate 就要花上快要 12sec 以下為測試數據 real 0m12.665s
-user 0m12.053s &hellip;">
+	<meta name="description" content="There is no description">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -77,269 +66,307 @@ user 0m12.053s &hellip;">
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
-
-</header>
-	
-		
-	
+</nav></header>
 	<div id="content" class="inner">
+	
 
+    
+        <article class="post">
 
-    <article class="post">
-	<h1 class="title"><a href="/archives/912/">pyBlogtle 計劃啟動</a></h1>
-	<div class="entry-content">
-		<h2><strong>前言</strong></h2>
+<h1 class="title"><a href="/archives/912/">pyBlogtle 計劃啟動
 
+</a></h1>
+
+<div class="entry-content">
+  
+    <h2><strong>前言</strong></h2>
 <p>在Octopress用過一陣子之後，最令人詬病的就是 generate 的 speed 一直提升不起來，光是我這只有少少的 136 篇的 markdown 每一次的 generate 就要花上快要 12sec 以下為測試數據</p>
 
-<pre><code>real  0m12.665s
-user  0m12.053s
-sys   0m0.564s
-</code></pre>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">real</span>  0<span class="n">m12</span><span class="p">.</span>665<span class="n">s</span></span>
+<span class='line'><span class="n">user</span>  0<span class="n">m12</span><span class="p">.</span>053<span class="n">s</span></span>
+<span class='line'><span class="n">sys</span>   0<span class="n">m0</span><span class="p">.</span>564<span class="n">s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
-<p>所以在想如果利用其他語言編輯不知道效果如何，我到最後選定的基本語言就是python，因為眾多的 extension 也是我的考量之一吧&#8230;(沒錯我就是懶)，另外因為 <a href="http://flask.pocoo.org/">Flask</a> 那是因為</p>
 
-<blockquote><p>Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It&#8217;s BSD licensed!</p></blockquote>
 
+<p>所以在想如果利用其他語言編輯不知道效果如何，我到最後選定的基本語言就是python，因為眾多的 extension 也是我的考量之一吧...(沒錯我就是懶)，另外因為 <a href="http://flask.pocoo.org/">Flask</a> 那是因為</p>
+<blockquote>
+<p>Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed!</p>
+</blockquote>
 <p>我有利用其來編寫過一些網頁，對與它的功能及速度上有著非常深刻的映像，外加 <a href="http://flask.pocoo.org/">Flask</a> 的 extension 也是非常多，尤其是 <a href="http://packages.python.org/Frozen-Flask/">Frozen-Flask</a> 才是本次的主角，外加本人真的有點<s>潔癖</s>潔屁，不喜歡一大堆東西混雜的放在一起（看向 octopress 的 _source 資料夾）。</p>
-
-
-		
-		<a href="/archives/912/" class="more-link">Read More &#8230;</a>
-	</div>
-
+    <a href="/archives/912/" class="more-link">Read More ...</a>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-22T17:03:00+08:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2012</time></div>
+	<div class="date">Mon Oct. 22 2012</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/python/'>python</a>
-
-
-</div>
+    <a href='/archives/categories/python/'>python</a></div>
 	
-		<span class="comments"><a href="/archives/912/#disqus_thread">Comments</a></span>
-	
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/912/#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/910/">No handlers could be found for logger &#39;XXXXX&#39;
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>之前在練習寫 Markdown Extension ，寫完要測試時 Bash 一直吐出這樣的訊息</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">No</span> <span class="n">handlers</span> <span class="n">could</span> <span class="n">be</span> <span class="n">found</span> <span class="k">for</span> <span class="n">logger</span> <span class="s">&#39;MARKDOWN&#39;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-    <article class="post">
-	<h1 class="title"><a href="/archives/910/">No Handlers Could Be Found for Logger &#8216;XXXXX&#8217;</a></h1>
-	<div class="entry-content">
-		<p>之前在練習寫 Markdown Extension ，寫完要測試時 Bash 一直吐出這樣的訊息</p>
-
-<pre><code>No handlers could be found for logger 'MARKDOWN'
-</code></pre>
 
 <p>只要在主 python 的程式加上</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">logging</span>
-</span><span class='line'><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="kn">import</span> <span class="nn">logging</span></span>
+<span class='line'><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">()</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
 <p>就可以看到吐出來的錯誤訊息，這個東西浪費了我不少時間。</p>
-
-		
-		
-	</div>
-
+    
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-21T07:29:00+08:00" pubdate data-updated="true">Oct 21<span>st</span>, 2012</time></div>
+	<div class="date">Sun Oct. 21 2012</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/python/'>python</a>
-
-
-</div>
+    <a href='/archives/categories/python/'>python</a></div>
 	
-		<span class="comments"><a href="/archives/910/#disqus_thread">Comments</a></span>
-	
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/910/#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
+    
+        <article class="post">
 
+<h1 class="title"><a href="/archives/909/">Octopress調教メモ之四
 
-    <article class="post">
-	<h1 class="title"><a href="/archives/909/">Octopress調教メモ之四</a></h1>
-	<div class="entry-content">
-		<p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
+</a></h1>
 
-
-		
-		<a href="/archives/909/" class="more-link">Read More &#8230;</a>
-	</div>
-
+<div class="entry-content">
+  
+    <p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
+    <a href="/archives/909/" class="more-link">Read More ...</a>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-15T10:50:00+08:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time></div>
+	<div class="date">Mon Oct. 15 2012</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/git/'>git</a>, <a class='category' href='/archives/categories/octopress/'>octopress</a>
-
-
-</div>
+    <a href='/archives/categories/octopress/'>octopress</a>, 
+    <a href='/archives/categories/git/'>git</a></div>
 	
-		<span class="comments"><a href="/archives/909/#disqus_thread">Comments</a></span>
-	
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/909/#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
+    
+        <article class="post">
 
+<h1 class="title"><a href="/archives/908/">bash prompt加上目前所在的git branch
 
-    <article class="post">
-	<h1 class="title"><a href="/archives/908/">Bash Prompt加上目前所在的git Branch</a></h1>
-	<div class="entry-content">
-		<p>最近因為 octopress 的關係，把重大學時代某位NE網友提起的 git 給重新翻出來學，順便把一些在硬碟中塵封已久的一些小 project 給 remote 到一些像是 <a href="http://github.com">github</a> <a href="http://bitbucket.org">bitbucket</a> 等服務上面去。</p>
+</a></h1>
 
-
-		
-		<a href="/archives/908/" class="more-link">Read More &#8230;</a>
-	</div>
-
+<div class="entry-content">
+  
+    <p>最近因為 octopress 的關係，把重大學時代某位NE網友提起的 git 給重新翻出來學，順便把一些在硬碟中塵封已久的一些小 project 給 remote 到一些像是 <a href="http://github.com">github</a> <a href="http://bitbucket.org">bitbucket</a> 等服務上面去。</p>
+    <a href="/archives/908/" class="more-link">Read More ...</a>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-01T19:17:00+08:00" pubdate data-updated="true">Oct 1<span>st</span>, 2012</time></div>
+	<div class="date">Mon Oct.  1 2012</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/bash/'>bash</a>, <a class='category' href='/archives/categories/git/'>git</a>
-
-
-</div>
+    <a href='/archives/categories/git/'>git</a>, 
+    <a href='/archives/categories/bash/'>bash</a></div>
 	
-		<span class="comments"><a href="/archives/908/#disqus_thread">Comments</a></span>
-	
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/908/#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
+    
+        <article class="post">
 
+<h1 class="title"><a href="/archives/907/">Octopress調教メモ之三
 
-    <article class="post">
-	<h1 class="title"><a href="/archives/907/">Octopress調教メモ之三</a></h1>
-	<div class="entry-content">
-		<p>用上了 <code>slash</code> 這個 theme 後，忍不住想要惡搞起來，搞得跟自己的 Terminal 一樣黑底綠字</p>
+</a></h1>
 
-<p>附上 diff 檔，但是現在還有一堆東西沒有改上&#8230;OTZ</p>
-
-
-		
-		<a href="/archives/907/" class="more-link">Read More &#8230;</a>
-	</div>
-
+<div class="entry-content">
+  
+    <p>用上了 <code>slash</code> 這個 theme 後，忍不住想要惡搞起來，搞得跟自己的 Terminal 一樣黑底綠字</p>
+<p>附上 diff 檔，但是現在還有一堆東西沒有改上...OTZ</p>
+    <a href="/archives/907/" class="more-link">Read More ...</a>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-21T17:22:00+08:00" pubdate data-updated="true">Sep 21<span>st</span>, 2012</time></div>
+	<div class="date">Fri Sep. 21 2012</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/octopress/'>octopress</a>, <a class='category' href='/archives/categories/theme/'>theme</a>
-
-
-</div>
+    <a href='/archives/categories/octopress/'>octopress</a>, 
+    <a href='/archives/categories/theme/'>theme</a></div>
 	
-		<span class="comments"><a href="/archives/907/#disqus_thread">Comments</a></span>
-	
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/907/#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
+    
+        <article class="post">
 
+<h1 class="title"><a href="/archives/906/">Octopress文章加密計劃？！
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>想想OP如果有像WP一樣的加密文章那該多有趣。</p>
+    <a href="/archives/906/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+	<div class="date">Tue Sep. 18 2012</div>
+	<div class="tags">
+    <a href='/archives/categories/octopress/'>octopress</a></div>
+	
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/906/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/905/">近日心情
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>這是密碼保護文</p>
+    <a href="/archives/905/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+	<div class="date">Mon Sep. 17 2012</div>
+	<div class="tags">
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
+	
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/905/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/904/">Octopress調教メモ之二
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>這次把<code>LinkWithin</code>的連結稍微改了一下，把他弄成獨立頁面，並且我發現到如果改了 theme 之前 theme 的東西還是會留下來變成垃圾，但是會不會一起<code>generate</code>老實說我就不得而知了，但是看起來好像不會。</p>
+    <a href="/archives/904/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+	<div class="date">Wed Sep. 12 2012</div>
+	<div class="tags">
+    <a href='/archives/categories/octopress/'>octopress</a></div>
+	
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/904/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/903/">Octopress調教メモ之一
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章<br />
+</p>
+    <a href="/archives/903/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+	<div class="date">Mon Sep. 10 2012</div>
+	<div class="tags">
+    <a href='/archives/categories/octopress/'>octopress</a></div>
+	
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/903/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/902/">rake的tips
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>參考至<a href="http://robdodson.me/blog/2012/06/11/some-octopress-rake-tips/">Some Octopress Rake Tips</a></p>
+<p>剛開始用Octopress的時候感覺上速度還蠻快的，但是在將WP的文章匯入的時候就發現到，每一次的<code>generate</code>就會發現到速度會少許的減慢，好像每一次都會對所有的文章做一次的編譯，造成每次要<code>preview</code>時速度都非常慢，其實裏面有幾個有用的指令可以提昇速度。</p>
+    <a href="/archives/902/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+	<div class="date">Sat Sep.  8 2012</div>
+	<div class="tags">
+    <a href='/archives/categories/octopress/'>octopress</a></div>
+	
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/902/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+    
 <nav id="pagenavi">
     
     
         <a href="/archives/page/2/" class="next">Next</a>
     
-    <div class="center"><a href="/archives">Blog Archives</a></div>
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         var disqus_script = 'count.js';
       
     (function () {
@@ -349,8 +376,7 @@ sys   0m0.564s
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -362,8 +388,6 @@ sys   0m0.564s
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

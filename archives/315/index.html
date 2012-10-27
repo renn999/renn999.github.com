@@ -1,49 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>ImageUpon檔案副檔名判斷修改 - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案&#8230;Orz，優點也是可以正確的去辨識檔案
-修改部份：
-找到
-1
-$suffix = strtolower( &hellip;">
+	<meta name="description" content="今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案...Orz，優點也是可以正確的去辨識檔案 修改部份： 找到 1$suffix = strtolower(substr(...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -80,77 +66,67 @@ $suffix = strtolower( &hellip;">
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">ImageUpon檔案副檔名判斷修改</h1>
-	<div class="entry-content"><p>今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案&#8230;Orz，優點也是可以正確的去辨識檔案<br />
+<h1 class="title"><a href="/archives/315/">ImageUpon檔案副檔名判斷修改
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案...Orz，優點也是可以正確的去辨識檔案
 <p>修改部份：<br />
-找到<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$suffix = strtolower(substr($_FILES['uploadimg']['name'],-4));</span></code></pre></td></tr></table></div></figure></div></notextile></p><br />
-<p>改成：<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$img_info = getimagesize($_FILES['uploadimg']['tmp_name']);
-</span><span class='line'>$mime = $img_info['mime'];
-</span><span class='line'>list($t, $suffix) = split('/', $mime);
-</span><span class='line'>if ($suffix == 'jpeg') //這個部份將JPEG檔名轉成jpg
-</span><span class='line'>	$suffix = 'jpg';
-</span><span class='line'>$suffix='.'.$suffix;//加上點這樣整體架構不用去作修改</span></code></pre></td></tr></table></div></figure></div></notextile></p><br />
-<p>雖然說多了很多的步驟，但是隨便拿一張圖附檔亂改，都還可以正確的去作辨識，取得應有的副檔名。</p><br />
-<p>如果還是要使用上傳檔案的檔名去取得副檔名的話，我想到比較好的方式還是使用preg_match會比較正統，因為畢竟副檔名不是只有三個字<br />
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>preg_match('/(.*?)[.](\w+$)/u', $_FILES['uploadimg']['name'], $regs);
-</span><span class='line'>$suffix = '.'.strtolower($regs[2]);</span></code></pre></td></tr></table></div></figure></div></notextile></p></p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
+找到</p>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>$<span class="n">suffix</span> <span class="p">=</span> <span class="n">strtolower</span><span class="p">(</span><span class="n">substr</span><span class="p">(</span>$<span class="n">_FILES</span><span class="p">[</span><span class="s">&#39;uploadimg&#39;</span><span class="p">][</span><span class="s">&#39;name&#39;</span><span class="p">],</span><span class="o">-</span>4<span class="p">));</span>
+</pre></div>
+</td></tr></table>
 
+</p>
+<p>改成：</p>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre>$<span class="n">img_info</span> <span class="p">=</span> <span class="n">getimagesize</span><span class="p">(</span>$<span class="n">_FILES</span><span class="p">[</span><span class="s">&#39;uploadimg&#39;</span><span class="p">][</span><span class="s">&#39;tmp_name&#39;</span><span class="p">]);</span>
+$<span class="n">mime</span> <span class="p">=</span> $<span class="n">img_info</span><span class="p">[</span><span class="s">&#39;mime&#39;</span><span class="p">];</span>
+<span class="n">list</span><span class="p">(</span>$<span class="n">t</span><span class="p">,</span> $<span class="n">suffix</span><span class="p">)</span> <span class="p">=</span> <span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> $<span class="n">mime</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span>$<span class="n">suffix</span> <span class="o">==</span> <span class="s">&#39;jpeg&#39;</span><span class="p">)</span> <span class="o">//</span>這個部份將<span class="n">JPEG</span>檔名轉成<span class="n">jpg</span>
+    $<span class="n">suffix</span> <span class="p">=</span> <span class="s">&#39;jpg&#39;</span><span class="p">;</span>
+$<span class="n">suffix</span><span class="p">=</span><span class="s">&#39;.&#39;</span><span class="p">.</span>$<span class="n">suffix</span><span class="p">;</span><span class="o">//</span>加上點這樣整體架構不用去作修改
+</pre></div>
+</td></tr></table>
+
+</p>
+<p>雖然說多了很多的步驟，但是隨便拿一張圖附檔亂改，都還可以正確的去作辨識，取得應有的副檔名。</p>
+<p>如果還是要使用上傳檔案的檔名去取得副檔名的話，我想到比較好的方式還是使用preg_match會比較正統，因為畢竟副檔名不是只有三個字</p>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">preg_match</span><span class="p">(</span><span class="s">&#39;/(.*?)[.](\w+$)/u&#39;</span><span class="p">,</span> $<span class="n">_FILES</span><span class="p">[</span><span class="s">&#39;uploadimg&#39;</span><span class="p">][</span><span class="s">&#39;name&#39;</span><span class="p">],</span> $<span class="n">regs</span><span class="p">);</span>
+$<span class="n">suffix</span> <span class="p">=</span> <span class="s">&#39;.&#39;</span><span class="p">.</span><span class="n">strtolower</span><span class="p">(</span>$<span class="n">regs</span><span class="p">[</span>2<span class="p">]);</span>
+</pre></div>
+</td></tr></table>
+</p></p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-20T00:00:00+08:00" pubdate data-updated="true">Jun 20<span>th</span>, 2009</time></div>
+	<div class="date">Sat Jun. 20 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/about-php/'>about PHP</a>
-
-
-</div>
+    <a href='/archives/categories/about%20PHP/'>about PHP</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/315/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/315/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/315/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -165,34 +141,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/315/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/315/';
@@ -205,8 +180,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -218,8 +192,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>

@@ -1,51 +1,35 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>PTTBlog-Rolling嵌入Wordpress  vSlider theme - 老伯筆記</title>
 	<meta name="author" content="renn999">
-
-	
-	<meta name="description" content="昨天花了一點時間處理這個東西
-竟然沒想到被我弄了出來
-其實這鬼東西我很早已就很想弄了
-但是基於自己技術上的問題
-但是老實說這也只是簡單的PHP XML DOM而已
-因為這也是我首次寫一個比我想像還要龐大的東西(對我來說啦&#8230;.&lt;囧&quot;)
-畢竟也是花了一點時間在Try&amp &hellip;">
+	<meta name="description" content="昨天花了一點時間處理這個東西 竟然沒想到被我弄了出來 其實這鬼東西我很早已就很想弄了 但是基於自己技術上的問題 但是老實說這也只是簡單的PHP XML DOM而已 因為這也是我首次寫一個比我想像還要龐大的東西(對我來說啦....&lt;囧&#34;) 畢竟也是花了一點時間在Try&amp;Error上 因為我不會寫Wor...">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-
-
 <body>
 	<header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
 <nav id="main-nav"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</nav>
+</ul></nav>
 <nav id="mobile-nav">
 	<div class="alignleft menu">
 		<a class="button">Menu</a>
 		<div class="container"><ul class="main">
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/wordpress/wordplurk-improve">wordplurk-improve</a></li>
+	<li><a href="/archives/">Archives</a></li>
 	<li><a href="/guestbook/">留言板</a></li>
 	<li><a href="http://renn999.pythonanywhere.com">老伯繪師收集區</a></li>
-<ul>
-</div>
+</ul></div>
 	</div>
 	<div class="alignright search">
 		<a class="button"></a>
@@ -82,74 +66,58 @@
 		<input class="alignright" type="text" name="q" results="0">
 		<input type="hidden" name="q" value="site:www.renn999.twbbs.org">
 	</form>
-</nav>
+</nav></header>
+	<div id="content" class="inner">
+	
+    
+    <article class="post">
+    
+      
 
-</header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">PTTBlog-Rolling嵌入Wordpress vSlider Theme</h1>
-	<div class="entry-content"><p>昨天花了一點時間處理這個東西<br />
+<h1 class="title"><a href="/archives/264/">PTTBlog-Rolling嵌入Wordpress  vSlider theme
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>昨天花了一點時間處理這個東西
 竟然沒想到被我弄了出來</p>
-<p>其實這鬼東西我很早已就很想弄了<br />
+<p>其實這鬼東西我很早已就很想弄了
 但是基於自己技術上的問題</p>
-<p>但是老實說這也只是簡單的PHP  <span class="caps">XML</span> DOM而已<br />
-因為這也是我首次寫一個比我想像還要龐大的東西(對我來說啦&#8230;.&lt;囧&quot;)<br />
+<p>但是老實說這也只是簡單的PHP  XML DOM而已
+因為這也是我首次寫一個比我想像還要龐大的東西(對我來說啦....&lt;囧")
 畢竟也是花了一點時間在Try&amp;Error上</p>
-<p>因為我不會寫Wordpress的Plugin所以說在設定以及使用上面有點不這麼的方便<br />
-也不能套用在別的theme上面<br />
-另外 我把內部一些html ifram的TAG轉成noifram這是為了一些安全上的考量<br />
-以及除去一些RSS AD的影響 如果自己的如果自己的Blog上有自己的ads又不想被影響的話<br />
+<p>因為我不會寫Wordpress的Plugin所以說在設定以及使用上面有點不這麼的方便
+也不能套用在別的theme上面
+另外 我把內部一些html ifram的TAG轉成noifram這是為了一些安全上的考量
+以及除去一些RSS AD的影響 如果自己的如果自己的Blog上有自己的ads又不想被影響的話
 (我是不知道會不會影響 但是心中就是怪怪的)</p>
-<p>畢竟這是暴力改出來的東西<br />
-<!--more--><br />
-範例：<a href="http://www.renn999.twbbs.org/wordpress/pttblogrolling">http://www.renn999.twbbs.org/wordpress/pttblogrolling</a></p>
-<p>下載：<a href="http://web.renn999.twbbs.org/~renn999/RSSXML.zip">http://web.renn999.twbbs.org/~renn999/<span class="caps">RSSXML</span>.zip</a></p>
-<p>使用方式：<br />
-將此壓縮檔解壓縮之後複製到[wordpress位置]/wp-content/themes/vSlider3底下<br />
-進入管理頁面&quot;網誌分頁&quot;&#8212;&gt;&quot;add new&quot;<br />
-打上你要的標題，內容請留空，並在Attributes底下templates選擇並按下發表即可<br />
-<img src="http://pic.renn999.twbbs.org/upload/31f5e014b037606e.png"/></p><section>
-<div class="linkwithin_div" style='font-size:1.2em;margin: 0px 0px -30px;'></div><script type="text/javascript">var linkwithin_site_id = 1454823;</script>  <script src="http://www.linkwithin.com/widget.js"></script>
-</section>
-</div>
+<p>畢竟這是暴力改出來的東西</p>
+<!--more-->
 
+<p>範例：<a href="http://www.renn999.twbbs.org/wordpress/pttblogrolling">http://www.renn999.twbbs.org/wordpress/pttblogrolling</a></p>
+<p>下載：<a href="http://web.renn999.twbbs.org/~renn999/RSSXML.zip">http://web.renn999.twbbs.org/~renn999/RSSXML.zip</a></p>
+<p>使用方式：
+將此壓縮檔解壓縮之後複製到[wordpress位置]/wp-content/themes/vSlider3底下
+進入管理頁面"網誌分頁"--&gt;"add new"
+打上你要的標題，內容請留空，並在Attributes底下templates選擇並按下發表即可
+<img src="http://pic.renn999.twbbs.org/upload/31f5e014b037606e.png"/></p>
+  
+</div>
 
 <div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-20T00:00:00+08:00" pubdate data-updated="true">May 20<span>th</span>, 2009</time></div>
+	<div class="date">Wed May. 20 2009</div>
 	<div class="tags">
-
-
-	<a class='category' href='/archives/categories/about-php/'>about PHP</a>, <a class='category' href='/archives/categories/wordpress雜記/'>wordpress雜記</a>
-
-
-</div>
+    <a href='/archives/categories/about%20PHP/'>about PHP</a>, 
+    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a></div>
 	
-		<span class="comments"><a href="#disqus_thread">Comments</a></span>
-	
-	
-	  <section>
-QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED. It applies only for the word 'QR Code', not for image.">&trade;</abbr>
-<a href="http://www.renn999.twbbs.org/archives/264/"><img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chld=|0&chco=0&chl=http://www.renn999.twbbs.org/archives/264/" alt="post-qrcode"></a></section>
-
+		<span class="comments"><a href="http://www.renn999.twbbs.org/archives/264/#disqus_thread">Comments</a></span>
 	
 </div>
-</article>
 
-	<div class="share">
+    </article>
+    
+	    <div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -164,34 +132,33 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-
-
-
-<section id="comment">
+    
+    <section id="comment">
     <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
 
-    renn999
-
-<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</footer>
+	</div>
+	<footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a herf='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
 	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
 	$('.fancybox').fancybox();
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
-
-
+  
 <script type="text/javascript">
       var disqus_shortname = 'rennidit';
       
-        
         // var disqus_developer = 1;
         var disqus_identifier = 'http://www.renn999.twbbs.org/archives/264/';
         var disqus_url = 'http://www.renn999.twbbs.org/archives/264/';
@@ -204,8 +171,7 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
     }());
 </script>
 
-
-
+  
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-12134531-1']);
@@ -217,8 +183,6 @@ QR-Code<abbr title="The word 'QR Code' is a registered trademark of DENSO WAVE I
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-
-
 
 </body>
 </html>
