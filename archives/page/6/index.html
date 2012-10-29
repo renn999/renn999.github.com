@@ -86,7 +86,6 @@
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>用gedit開是最不明智的選擇...XD</p>
 <p>在mysql匯回即可</p>
 <p>再把一些轉址設定好(.htaccess)</p>
@@ -187,7 +186,6 @@
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>在台灣地區的話，於第29行網址的部份lang=en可以改成lang=tr_ch，這樣在plurk上就不會出現英文，qualifier=share這裡可以改變plurk post的狀態就是"說""想要"那些有的沒的</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -198,7 +196,6 @@
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>在46行的部份<code>'http://tinyurl.com/api-create.php?url='</code>這是將網址用tinyurl縮網如果不想縮網的話可以去掉，要不然要用自己喜歡的服務也可以(0rz.tw的服務好像被拿掉了但是我在研究看看)，我是不知道網址太長會怎樣...Orz，因為我是用我自己的短網址，我還刻意做了一個api給他用...XD</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -207,7 +204,6 @@
 <span class='line'></span>
 <span class='line'><span class="x">$plurk_username = get_option(&#39;wordplurk_username&#39;, 0);</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>在51行的部份就是post到Plurk的時候會出現的樣式，他這邊就設計的不怎麼好就是了，這裡通常會改成</p>
@@ -246,7 +242,6 @@
 <p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>$<span class="n">suffix</span> <span class="p">=</span> <span class="n">strtolower</span><span class="p">(</span><span class="n">substr</span><span class="p">(</span>$<span class="n">_FILES</span><span class="p">[</span><span class="s">&#39;uploadimg&#39;</span><span class="p">][</span><span class="s">&#39;name&#39;</span><span class="p">],</span><span class="o">-</span>4<span class="p">));</span>
 </pre></div>
 </td></tr></table>
-
 </p>
 <p>改成：</p>
 <p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -262,7 +257,6 @@ $<span class="n">mime</span> <span class="p">=</span> $<span class="n">img_info<
 $<span class="n">suffix</span><span class="p">=</span><span class="s">&#39;.&#39;</span><span class="p">.</span>$<span class="n">suffix</span><span class="p">;</span><span class="o">//</span>加上點這樣整體架構不用去作修改
 </pre></div>
 </td></tr></table>
-
 </p>
 <p>雖然說多了很多的步驟，但是隨便拿一張圖附檔亂改，都還可以正確的去作辨識，取得應有的副檔名。</p>
 <p>如果還是要使用上傳檔案的檔名去取得副檔名的話，我想到比較好的方式還是使用preg_match會比較正統，因為畢竟副檔名不是只有三個字</p>

@@ -87,7 +87,6 @@
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <!--more-->
 
 <p><big><strong>第二步：新增script</strong></big>
@@ -95,7 +94,6 @@
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>$ <span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">trash</span><span class="o">-</span><span class="n">rm</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>並把下面的code貼入，我在這個地方有做了一些修改，因為原先的script好像會吐出錯誤訊息。</p>
@@ -162,12 +160,10 @@
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>接著，要讓這個script變成可執行檔</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>$ <span class="n">sudo</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">trash</span><span class="o">-</span><span class="n">rm</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p><big><strong>第三步：利用trash-rm取代rm</strong></big>
@@ -177,12 +173,10 @@
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>把以下的code加入到開啟的文件後面，並儲存</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">alias</span> <span class="n">rm</span><span class="p">=</span>&quot;<span class="n">trash</span><span class="o">-</span><span class="n">rm</span>&quot;</span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>接著要reload bashrc就下bash的指令就可以了，到這裡就完成了，你可以利用rm和rm -r的指令來試試看。</p>
@@ -194,7 +188,6 @@
 <span class='line'><span class="n">list</span><span class="o">-</span><span class="n">trash</span> ＃列出</span>
 <span class='line'><span class="n">restore</span><span class="o">-</span><span class="n">trash</span> ＃還原</span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>這幾個應該看名字就知道功用了吧，這裡就不多加說明，更多可以看</p>

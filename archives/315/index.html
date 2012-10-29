@@ -86,7 +86,6 @@
 <p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>$<span class="n">suffix</span> <span class="p">=</span> <span class="n">strtolower</span><span class="p">(</span><span class="n">substr</span><span class="p">(</span>$<span class="n">_FILES</span><span class="p">[</span><span class="s">&#39;uploadimg&#39;</span><span class="p">][</span><span class="s">&#39;name&#39;</span><span class="p">],</span><span class="o">-</span>4<span class="p">));</span>
 </pre></div>
 </td></tr></table>
-
 </p>
 <p>改成：</p>
 <p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -102,7 +101,6 @@ $<span class="n">mime</span> <span class="p">=</span> $<span class="n">img_info<
 $<span class="n">suffix</span><span class="p">=</span><span class="s">&#39;.&#39;</span><span class="p">.</span>$<span class="n">suffix</span><span class="p">;</span><span class="o">//</span>加上點這樣整體架構不用去作修改
 </pre></div>
 </td></tr></table>
-
 </p>
 <p>雖然說多了很多的步驟，但是隨便拿一張圖附檔亂改，都還可以正確的去作辨識，取得應有的副檔名。</p>
 <p>如果還是要使用上傳檔案的檔名去取得副檔名的話，我想到比較好的方式還是使用preg_match會比較正統，因為畢竟副檔名不是只有三個字</p>

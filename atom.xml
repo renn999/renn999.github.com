@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-28T17:47:02+0800</updated>
+  <updated>2012-10-29T17:17:31+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -31,7 +31,6 @@
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>所以在想如果利用其他語言編輯不知道效果如何，我到最後選定的基本語言就是python，因為眾多的 extension 也是我的考量之一吧...(沒錯我就是懶)，另外因為 <a href="http://flask.pocoo.org/">Flask</a> 那是因為</p>
 <blockquote>
 <p>Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed!</p>
@@ -51,7 +50,6 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> `<span class="nb">cat</span> <span class="n">require</span>`<span class="p">;</span><span class="n">do</span> <span class="n">sudo</span> <span class="n">easy_install</span> $<span class="nb">i</span><span class="p">;</span><span class="n">done</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>基本上只要將所有的 Markdown File 的副檔名 rename 成 <code>.markdown</code> 並且還要轉換一下，因為 Octopress 的 meta head 的格式在這裡完全不通的</p>
@@ -76,7 +74,6 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>閉需要換成</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -97,7 +94,6 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>在 bash 底下只要下以下的指令就可以轉換了(請記得要備份)：</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -106,14 +102,12 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>轉換完後就就可以丟到 page 的 folder 並且下</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">preview</span> #這是預覽</span>
 <span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">build</span>   #這是產生 <span class="n">static</span> <span class="n">file</span> 放在 <span class="n">build</span> <span class="n">folder</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>時間測試：</p>
@@ -138,7 +132,6 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">No</span> <span class="n">handlers</span> <span class="n">could</span> <span class="n">be</span> <span class="n">found</span> <span class="k">for</span> <span class="n">logger</span> <span class="s">&#39;MARKDOWN&#39;</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>只要在主 python 的程式加上</p>
@@ -242,12 +235,10 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>至於Markdown要怎麼變成HTML，我只之道Linux下有一個<code>markdown</code>的指令</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">markdown</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>然後就可以</p>
@@ -339,7 +330,6 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>把<code>LinkWithin</code>的code獨立出來</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -360,7 +350,6 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
 <span class='line'><span class="gi">+&lt;div class=&quot;linkwithin_div&quot; style=&#39;font-size:1.2em;margin: 0px 0px -30px;&#39;&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot;&gt;var linkwithin_site_id = 1454823;&lt;/script&gt;  &lt;script src=&quot;http://www.linkwithin.com/widget.js&quot;&gt;&lt;/script&gt;</span></span>
 <span class='line'><span class="gi">+&lt;/section&gt;</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>參考了<a href="https://github.com/sailor79/Octopress-dynamic-QR-Code-aside">sailor79 / Octopress-dynamic-QR-Code-aside</a>所加上：</p>
@@ -425,12 +414,10 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>至於<code>LinkWithin</code>的話就先去<a href="http://www.linkwithin.com/">LinkWithin</a>，填入基本資訊後，在Platform的部份選擇Other，他就會給你一組code，比較快的做法直接貼到<code>source/_layouts/default.html</code>下去就可以了，這裡才是重點並且在<code>source/_layouts/post.html</code>你要的地方貼上</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;linkwithin_div&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>但LinkWithin太聰明了，我使用<a href="http://zespia.tw/Octopress-Theme-Slash/">Slash</a>這個theme的時候，他竟然會在<code>index</code>每一則訊息後面都加上去，所以說放大絕，我是直接修改<code>source/_includes/article.html</code></p>
@@ -477,12 +464,10 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>這樣他就會把你要編輯的檔案給獨立出來，將其他的檔案先暫時的放到<code>_stash</code>中，這樣只要下</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">rake</span> <span class="n">preview</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>此時在<code>localhost:4000</code>就可以預覽，而且速度會提昇不少。編輯完後只要另外下</p>
@@ -491,19 +476,16 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>即可將原先遷移的檔案搬回來，要<code>generate</code>順便<code>deploy</code></p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">rake</span> <span class="n">gen_deploy</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-
 <p>而要查看rake所有可用的指令,就下</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">rake</span> <span class="o">-</span><span class="n">T</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 
 <p>就會跑出</p>

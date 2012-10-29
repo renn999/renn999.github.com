@@ -92,13 +92,11 @@ debPackage：<a href="http://web.renn999.twbbs.org/%7Erenn999/ttaenc-3.4.1_3.4.1
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">ttaenc</span> <span class="o">-</span><span class="n">e</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 </p>
 <p>[-o ...]內為可加可不加，不加為為輸出原始檔名的tta file</li><li>Decode：
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">ttaenc</span> <span class="o">-</span><span class="n">d</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">).</span><span class="n">tta</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 [-o ...]內為同Encode，更多請詳閱ttaenc -h</li></ul></p>
 <p>ape(<a href="http://www.monkeysaudio.com/">Monkey's Audio</a>)：
@@ -110,12 +108,10 @@ debPackage：<a href="http://web.renn999.twbbs.org/%7Erenn999/mac-3.99-u4_b5-1_i
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">mac</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span> <span class="n">outputfile</span><span class="p">.</span><span class="n">ape</span> <span class="o">-</span><span class="n">c</span><span class="p">[</span>1000<span class="o">~</span>5000<span class="p">]</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
-
 </li><li>Decode：
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">mac</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">).</span><span class="n">wav</span> <span class="n">outputfile</span><span class="p">.</span><span class="n">ape</span> <span class="o">-</span><span class="n">d</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 更多請直接詳閱mac</li></ul></p>
 <p>flac(<a href="http://flac.sourceforge.net/">Free Lossless Audio Codec</a>)：
@@ -124,18 +120,15 @@ debPackage：<a href="http://web.renn999.twbbs.org/%7Erenn999/mac-3.99-u4_b5-1_i
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>$ <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">flac</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
-
 </li><li>Encode：
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">flac</span> <span class="o">-</span><span class="p">[</span>0<span class="o">~</span>8<span class="p">]</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
-
 [-o ...]內為可加可不加，不加為為輸出原始檔名的flac file</li><li>Decode：
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">flac</span> <span class="o">-</span><span class="n">d</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">).</span><span class="n">flac</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 [-o ...]內為同Encode，更多請直接詳閱man flac</li></ul></p>
 <p>wv(<a href="http://www.wavpack.com/">Wavpack</a>)：
@@ -144,18 +137,15 @@ debPackage：<a href="http://web.renn999.twbbs.org/%7Erenn999/mac-3.99-u4_b5-1_i
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>$ <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">wavpack</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
-
 </li><li>Encode：
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">wavepack</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
-
 [-o ...]內為可加可不加，不加為為輸出原始檔名的wv file，更多請直接詳閱man wavpack</li><li>Decode：
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">wavunpack</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">).</span><span class="n">wv</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 [-o ...]內為同Encode，更多請直接詳閱man wavunpack</li></ul></p>
 <p>tak(<a href="http://www.thbeck.de/Tak/Tak.html">(T)om's lossless (A)udio (K)ompressor</a>):(這是在Linux底下最麻煩的格式了)
@@ -172,14 +162,12 @@ debPackage：<a href="http://web.renn999.twbbs.org/%7Erenn999/mac-3.99-u4_b5-1_i
 <span class='line'>$ <span class="n">mv</span> <span class="n">Takc</span><span class="p">.</span><span class="n">exe</span> <span class="n">Tak</span><span class="p">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">t</span> <span class="o">~/</span><span class="p">.</span><span class="n">wine</span><span class="o">/</span><span class="n">drive_c</span><span class="o">/</span><span class="n">windows</span><span class="o">/</span><span class="n">system32</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
-
 </li><li>Encode：
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">wine</span> <span class="n">tak</span><span class="p">.</span><span class="n">exe</span><span class="p">(</span><span class="n">GUI</span> <span class="n">mode</span><span class="p">)</span></span>
 <span class='line'><span class="n">wine</span> <span class="n">takc</span> <span class="o">-</span><span class="n">e</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span> <span class="p">[</span><span class="n">outfile</span><span class="p">]</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
-
 
 [outfile]內為可加可不加，不加為為輸出原始檔名的tak file，更多請直接詳閱wine takc</li><li>Decode：
 
