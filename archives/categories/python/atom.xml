@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/python/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-29T17:17:31+0800</updated>
+  <updated>2012-10-30T10:15:10+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,47 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[pyBlogtle 計劃啟動 PART II]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/913/"/>
+    <updated>2012-10-30T10:00:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/913/</id>
+    <content type="html"><![CDATA[<h2>這是廢話</h2>
+<p>其實老實說東西弄的差不多了，當然有一些<strong>寫的很髒</strong>的地方也修改了一下，當然前幾天因為一個 pull request 被人家說是 over-design 真的感覺上有點言之過重，但是身為一個學習者真的是要虛心受教，或許就是太過於衝動所造成的，而且也缺考慮，呵呵...</p>
+<h2>快速上手</h2>
+<p>這次主要是著重在 CLI 的改善，當然在整個 pyBlogtle clone 回家之後可以把內部一個檔名叫做 <code>pyBlogtle</code> 的 script +x 之後就可以下一些指令了，另外一種方式直接下載，那個 script 丟到 <code>/usr/bin</code> 或者是其他讓作業環境可以執行的地方即可。</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> ./pyblogtle init <span class="o">[</span>path<span class="o">]</span></span>
+<span class='line'><span class="go">這是從 github 上下載 pyblogtle 到鎖指定的資歷夾</span></span>
+<span class='line'><span class="gp">$</span> ./pyblogtle build</span>
+<span class='line'><span class="go">建立 blog</span></span>
+<span class='line'><span class="gp">$</span> ./pyblogtle preview</span>
+<span class='line'><span class="go">預覽 blog</span></span>
+<span class='line'><span class="gp">$</span> ./pyblogtle setup_deploy</span>
+<span class='line'><span class="go">設定 git repo</span></span>
+<span class='line'><span class="gp">$</span> ./pyblogtle deploy</span>
+<span class='line'><span class="go">發佈到 git repo</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h2>已知問題</h2>
+<ol>
+<li>無 sass generate</li>
+<li>文章修改後無法立即預覽，需要重新下 preview 的指令</li>
+<li>CLI 尚未處理錯誤終止問題</li>
+<li>完整的文件...XDDrz</li>
+</ol>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[pyBlogtle 計劃啟動]]></title>

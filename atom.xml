@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-10-29T17:17:31+0800</updated>
+  <updated>2012-10-30T10:15:10+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,47 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[pyBlogtle 計劃啟動 PART II]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/913/"/>
+    <updated>2012-10-30T10:00:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/913/</id>
+    <content type="html"><![CDATA[<h2>這是廢話</h2>
+<p>其實老實說東西弄的差不多了，當然有一些<strong>寫的很髒</strong>的地方也修改了一下，當然前幾天因為一個 pull request 被人家說是 over-design 真的感覺上有點言之過重，但是身為一個學習者真的是要虛心受教，或許就是太過於衝動所造成的，而且也缺考慮，呵呵...</p>
+<h2>快速上手</h2>
+<p>這次主要是著重在 CLI 的改善，當然在整個 pyBlogtle clone 回家之後可以把內部一個檔名叫做 <code>pyBlogtle</code> 的 script +x 之後就可以下一些指令了，另外一種方式直接下載，那個 script 丟到 <code>/usr/bin</code> 或者是其他讓作業環境可以執行的地方即可。</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> ./pyblogtle init <span class="o">[</span>path<span class="o">]</span></span>
+<span class='line'><span class="go">這是從 github 上下載 pyblogtle 到鎖指定的資歷夾</span></span>
+<span class='line'><span class="gp">$</span> ./pyblogtle build</span>
+<span class='line'><span class="go">建立 blog</span></span>
+<span class='line'><span class="gp">$</span> ./pyblogtle preview</span>
+<span class='line'><span class="go">預覽 blog</span></span>
+<span class='line'><span class="gp">$</span> ./pyblogtle setup_deploy</span>
+<span class='line'><span class="go">設定 git repo</span></span>
+<span class='line'><span class="gp">$</span> ./pyblogtle deploy</span>
+<span class='line'><span class="go">發佈到 git repo</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h2>已知問題</h2>
+<ol>
+<li>無 sass generate</li>
+<li>文章修改後無法立即預覽，需要重新下 preview 的指令</li>
+<li>CLI 尚未處理錯誤終止問題</li>
+<li>完整的文件...XDDrz</li>
+</ol>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[pyBlogtle 計劃啟動]]></title>
@@ -447,86 +488,6 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
 <span class='line'> {% endif %}</span>
 <span class='line'></span>
 <span class='line'> &lt;div class=&quot;meta&quot;&gt;</span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[rake的tips]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/902/"/>
-    <updated>2012-09-08T12:23:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/902/</id>
-    <content type="html"><![CDATA[<p>參考至<a href="http://robdodson.me/blog/2012/06/11/some-octopress-rake-tips/">Some Octopress Rake Tips</a></p>
-<p>剛開始用Octopress的時候感覺上速度還蠻快的，但是在將WP的文章匯入的時候就發現到，每一次的<code>generate</code>就會發現到速度會少許的減慢，好像每一次都會對所有的文章做一次的編譯，造成每次要<code>preview</code>時速度都非常慢，其實裏面有幾個有用的指令可以提昇速度。</p>
-<!--more-->
-
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">rake</span> <span class="n">isolate</span><span class="p">[</span><span class="n">file_name</span><span class="p">]</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>這樣他就會把你要編輯的檔案給獨立出來，將其他的檔案先暫時的放到<code>_stash</code>中，這樣只要下</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">rake</span> <span class="n">preview</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>此時在<code>localhost:4000</code>就可以預覽，而且速度會提昇不少。編輯完後只要另外下</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">rake</span> <span class="n">integrate</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>即可將原先遷移的檔案搬回來，要<code>generate</code>順便<code>deploy</code></p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">rake</span> <span class="n">gen_deploy</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>而要查看rake所有可用的指令,就下</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">rake</span> <span class="o">-</span><span class="n">T</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>就會跑出</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span></pre></td><td class='code'><pre><code><span class='line'>rake clean                     <span class="c"># Clean out caches: .pygments-cache, .gist-cache, .sass-cache</span></span>
-<span class='line'>rake copydot<span class="o">[</span><span class="nb">source</span>,dest<span class="o">]</span>      <span class="c"># copy dot files for deployment</span></span>
-<span class='line'>rake deploy                    <span class="c"># Default deploy task</span></span>
-<span class='line'>rake gen_deploy                <span class="c"># Generate website and deploy</span></span>
-<span class='line'>rake generate                  <span class="c"># Generate jekyll site</span></span>
-<span class='line'>rake install<span class="o">[</span>theme<span class="o">]</span>            <span class="c"># Initial setup for Octopress: copies the default theme into the path of Jekyll&#39;s generator.</span></span>
-<span class='line'>rake integrate                 <span class="c"># Move all stashed posts back into the posts directory, ready for site generation.</span></span>
-<span class='line'>rake isolate<span class="o">[</span>filename<span class="o">]</span>         <span class="c"># Move all other posts than the one currently being worked on to a temporary stash location (stash) so regenerating the site happens much quicker.</span></span>
-<span class='line'>rake list                      <span class="c"># list tasks</span></span>
-<span class='line'>rake new_page<span class="o">[</span>filename<span class="o">]</span>        <span class="c"># Create a new page in source/(filename)/index.markdown</span></span>
-<span class='line'>rake new_post<span class="o">[</span>title<span class="o">]</span>           <span class="c"># Begin a new post in source/_posts</span></span>
-<span class='line'>rake preview                   <span class="c"># preview the site in a web browser</span></span>
-<span class='line'>rake push                      <span class="c"># deploy public directory to github pages</span></span>
-<span class='line'>rake rsync                     <span class="c"># Deploy website via rsync</span></span>
-<span class='line'>rake set_root_dir<span class="o">[</span>dir<span class="o">]</span>         <span class="c"># Update configurations to support publishing to root or sub directory</span></span>
-<span class='line'>rake setup_github_pages<span class="o">[</span>repo<span class="o">]</span>  <span class="c"># Set up _deploy folder and deploy branch for Github Pages deployment</span></span>
-<span class='line'>rake update_source<span class="o">[</span>theme<span class="o">]</span>      <span class="c"># Move source to source.old, install source theme updates, replace source/_includes/navigation.html with source.old&#39;s navigation</span></span>
-<span class='line'>rake update_style<span class="o">[</span>theme<span class="o">]</span>       <span class="c"># Move sass to sass.old, install sass theme updates, replace sass/custom with sass.old/custom</span></span>
-<span class='line'>rake watch                     <span class="c"># Watch the site and regenerate when it changes</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>]]></content>
   </entry>
   
