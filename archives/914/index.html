@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>moebuntu中文教學文件(9.10 xSplash篇) - 老伯筆記</title>
+  <title>apache virtualhost 開啟其他 port - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="&lt;&lt;回到moebuntu中文教學文件(介面篇) 本文翻譯從http://moebuntu.web.fc2.com/moexsplash910.html並符合正體中文語系的使用者介面之翻譯 題外話：最近整個在研究修改佈景主題的script要怎麼寫，有可能的話就會發出懶人包(這應該是每個人的願望吧......">
+  <meta name="description" content="因為本機剛好有架設測試用的 apache server ，因為在寫完 blog 之後都很習慣的利用 preview 指令，我在想說乾脆一個 apache virtualhost 指向其他 port 之後直接下 build 就好了，如果沒問題直接 deploy。 在 /etc/apache2/site...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -74,52 +74,63 @@
     
       
 
-<h1 class="title"><a href="/archives/507/">moebuntu中文教學文件(9.10 xSplash篇)
+<h1 class="title"><a href="/archives/914/">apache virtualhost 開啟其他 port
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p><a href="http://www.renn999.twbbs.org/wordpress/archives/406">&lt;&lt;回到<strong></strong><strong>moebuntu中文教學文件(介面篇)</strong></a></p>
-<p>本文翻譯從<a href="http://moebuntu.web.fc2.com/moexsplash910.html">http://moebuntu.web.fc2.com/moexsplash910.html</a>並符合正體中文語系的使用者介面之翻譯</p>
-<p>題外話：最近整個在研究修改佈景主題的script要怎麼寫，有可能的話就會發出懶人包(這應該是每個人的願望吧....XDrz)，祝我好運吧...XDrz。
-題外話2：Thanks to google translation from JAPANESE to English</p>
-<p><big>事前準備：</big>
-<ol>
-    <li>替換用的萌xsplash包</li>
-</ol></p>
+    <p>因為本機剛好有架設測試用的 apache server ，因為在寫完 blog 之後都很習慣的利用 <code>preview</code> 指令，我在想說乾脆一個 apache virtualhost 指向其他 port 之後直接下 <code>build</code> 就好了，如果沒問題直接 <code>deploy</code>。</p>
 <!--more-->
 
-<p><big><big>方法如下：</big></big></p>
-<p><big>第一步 取得替換用的萌xsplash包</big></p>
-<p>這裡需要先下載萌xsplash包（xsplash_moe.tar.gz），這裡也是提供三個點下載。
-<a href="http://moebuntu.web.fc2.com/img/xsplash_moe.tar.gz">官方下載</a> <a href="http://www.renn999.twbbs.org/wordpress/downloads/xsplash_moe.tar.gz">本站下載</a> <a href="http://www.megaupload.com/?d=XTZJI8TB">MU下載(推薦使用)</a></p>
-<p><big>第二步 開始替換萌xsplash</big></p>
-<p>要修改xSplash需要administrator的權限來開啟資料夾(這樣才可以複製貼上)
-(有的人可能會從Synaptic裝上nautilus-gksu這樣的話按下右鍵以root開啟也可以)
-此時從"應用程式-&gt;附屬應用程式-&gt;終端機"打開之後，將以下的指令複製右鍵貼上</p>
+<p>在 <code>/etc/apache2/sites-available/</code> 建立一個 apache conf</p>
 
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">nautilus</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">images</span></span>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">Listen</span> <span class="m">8080</span></span>
+<span class='line'><span class="c">#port to Listen</span></span>
+<span class='line'><span class="nb">NameVirtualHost</span> *:8080</span>
+<span class='line'><span class="nt">&lt;VirtualHost</span> <span class="s">*:8080</span><span class="nt">&gt;</span></span>
+<span class='line'>  <span class="nb">ServerAdmin</span> webmaster@localhost</span>
+<span class='line'>  <span class="nb">DocumentRoot</span> <span class="sx">/path/to/build</span></span>
+<span class='line'>  <span class="nt">&lt;Directory</span> <span class="s">/path/to/build/</span><span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nb">Options</span> Indexes FollowSymLinks MultiViews</span>
+<span class='line'>    <span class="nb">AllowOverride</span> <span class="k">None</span></span>
+<span class='line'>    <span class="nb">Order</span> allow,deny</span>
+<span class='line'>    <span class="nb">allow</span> from <span class="k">all</span></span>
+<span class='line'>  <span class="nt">&lt;/Directory&gt;</span></span>
+<span class='line'><span class="nt">&lt;/VirtualHost&gt;</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-<p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-renn999@renn999-desktop.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-renn999@renn999-desktop-300x60.png" alt="" title="Screenshot-renn999@renn999-desktop" width="300" height="60" class="alignnone size-medium wp-image-511" /></a></p>
-<p>按下enter之後輸入密碼按下enter，打開包含有xSplash的資料夾</p>
-<p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-images-檔案瀏覽器.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-images-檔案瀏覽器-300x113.png" alt="" title="Screenshot-images - 檔案瀏覽器" width="300" height="113" class="alignnone size-medium wp-image-517" /></a></p>
-<p>先備份原先的xSplash資料夾(例如把資料夾名換成xsplash-old)</p>
-<p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-images-檔案瀏覽器-1.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-images-檔案瀏覽器-1-300x118.png" alt="" title="Screenshot-images - 檔案瀏覽器-1" width="300" height="118" class="alignnone size-medium wp-image-512" /></a></p>
-<p>把之前所下載的xsplash_moe.tar.gz解壓縮之後，把解壓縮出來的xsplash資料夾移到/usr/share/images此地方內就完成了</p>
-<p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-images-檔案瀏覽器-2.png"><img src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/12/Screenshot-images-檔案瀏覽器-2-300x91.png" alt="" title="Screenshot-images - 檔案瀏覽器-2" width="300" height="91" class="alignnone size-medium wp-image-519" /></a></p>
-<p>以上就是9.10的xSplash更變方法，此時您可以登出之後登入看看成果。</p>
+<p>儲存後記得</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo a2ensite &lt;your-apache-conf-name&gt;</span>
+<span class='line'><span class="gp">$</span> sudo service apache2 reload</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>雖然說我的 pyblogtle preview 花不了多少時間...OTZ</p>
   
 </div>
 
 <div class="meta">
-  <div class="date">Mon Dec. 21 2009</div>
+  <div class="date">Mon Nov.  5 2012</div>
   <div class="tags">
-    <a href='/archives/categories/Linux/'>Linux</a></div>
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/507/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/914/#disqus_thread">Comments</a></span>
   
 </div>
 
@@ -170,8 +181,8 @@
       var disqus_shortname = 'rennidit';
       
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.renn999.twbbs.org/archives/507/';
-        var disqus_url = 'http://www.renn999.twbbs.org/archives/507/';
+        var disqus_identifier = 'http://www.renn999.twbbs.org/archives/914/';
+        var disqus_url = 'http://www.renn999.twbbs.org/archives/914/';
         var disqus_script = 'embed.js';
       
     (function () {

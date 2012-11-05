@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-11-01T20:39:47+0800</updated>
+  <updated>2012-11-05T10:43:18+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,55 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[apache virtualhost 開啟其他 port]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/914/"/>
+    <updated>2012-11-05T09:30:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/914/</id>
+    <content type="html"><![CDATA[<p>因為本機剛好有架設測試用的 apache server ，因為在寫完 blog 之後都很習慣的利用 <code>preview</code> 指令，我在想說乾脆一個 apache virtualhost 指向其他 port 之後直接下 <code>build</code> 就好了，如果沒問題直接 <code>deploy</code>。</p>
+<!--more-->
+
+<p>在 <code>/etc/apache2/sites-available/</code> 建立一個 apache conf</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">Listen</span> <span class="m">8080</span></span>
+<span class='line'><span class="c">#port to Listen</span></span>
+<span class='line'><span class="nb">NameVirtualHost</span> *:8080</span>
+<span class='line'><span class="nt">&lt;VirtualHost</span> <span class="s">*:8080</span><span class="nt">&gt;</span></span>
+<span class='line'>  <span class="nb">ServerAdmin</span> webmaster@localhost</span>
+<span class='line'>  <span class="nb">DocumentRoot</span> <span class="sx">/path/to/build</span></span>
+<span class='line'>  <span class="nt">&lt;Directory</span> <span class="s">/path/to/build/</span><span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nb">Options</span> Indexes FollowSymLinks MultiViews</span>
+<span class='line'>    <span class="nb">AllowOverride</span> <span class="k">None</span></span>
+<span class='line'>    <span class="nb">Order</span> allow,deny</span>
+<span class='line'>    <span class="nb">allow</span> from <span class="k">all</span></span>
+<span class='line'>  <span class="nt">&lt;/Directory&gt;</span></span>
+<span class='line'><span class="nt">&lt;/VirtualHost&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>儲存後記得</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo a2ensite &lt;your-apache-conf-name&gt;</span>
+<span class='line'><span class="gp">$</span> sudo service apache2 reload</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>雖然說我的 pyblogtle preview 花不了多少時間...OTZ</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
@@ -210,28 +259,6 @@
 
 
 <p>表示完成了，這是在Linux底下，在windows的話可能需要GnuWin32或是其他對應的軟體。</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[server上的一些變動紀錄]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/446/"/>
-    <updated>2009-11-11T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/446/</id>
-    <content type="html"><![CDATA[<p>前一兩個星期從Ubuntu9.04直接升級到9.10，看似沒有問題。但是今天看了一下備份的紀錄只有到091102，好像Postfix沒有動作的樣子，至於為啥沒有動作，我就不想浪費時間去找問題，於是我參考<a href="http://plog.longwin.com.tw/">Tsung</a>大的<a href="http://plog.longwin.com.tw/my_note-unix/2009/08/27/ssmtp-shell-gmail-send-mail-2009">這一篇</a>，把postfix換掉改用gmail的smtp來送我的備份檔，除了附件大小要注意之外，還是可以使用mutt來送東西。這樣真的省得時間再去設定postfix。</p>
-<p>至於mutt的話之前的版本按照我在前一篇的<a href="http://www.renn999.twbbs.org/wordpress/archives/184">自動MySQL備份搞定</a>，中的script中一定會發現到會吐出error，他會跟你說找不到[mail位置＠where.are.you]這個檔案，我是不清楚新板式不是在這裡有改了啥東西，但是這個問題我改一下參數順序就可以了
-原始為：</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">echo</span> &quot;$<span class="n">today</span> <span class="n">Data</span> <span class="n">base</span> <span class="n">backup</span>&quot; <span class="o">|</span> <span class="n">mutt</span> <span class="o">-</span><span class="n">s</span> &quot;<span class="n">Web</span> <span class="n">Mysql</span> <span class="n">Database</span> <span class="n">Backup</span>&quot; <span class="o">-</span><span class="n">a</span>  <span class="n">sqlbak</span>$<span class="n">today</span><span class="p">.</span><span class="n">zip</span> <span class="p">[</span><span class="n">mail</span>位置＠<span class="n">where</span><span class="p">.</span><span class="n">are</span><span class="p">.</span><span class="n">you</span><span class="p">]</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>改成</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">echo</span> &quot;$<span class="n">today</span> <span class="n">Data</span> <span class="n">base</span> <span class="n">backup</span>&quot; <span class="o">|</span> <span class="n">mutt</span> <span class="p">[</span><span class="n">mail</span>位置＠<span class="n">where</span><span class="p">.</span><span class="n">are</span><span class="p">.</span><span class="n">you</span><span class="p">]</span> <span class="o">-</span><span class="n">s</span> &quot;<span class="n">Web</span> <span class="n">Mysql</span> <span class="n">Database</span> <span class="n">Backup</span>&quot; <span class="o">-</span><span class="n">a</span>  <span class="n">sqlbak</span>$<span class="n">today</span><span class="p">.</span><span class="n">zip</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>還有我的/etc/resolv.conf每次重新開機都會跑掉，於是我把resolvconf給remove就ok了 :-P</p>]]></content>
   </entry>
   
 </feed>

@@ -73,6 +73,32 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/352/">Google Chromium for Linux 3.0.194.0
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p><a href="http://pic.renn999.twbbs.org/view.php?pic=60de3e924b77158d.png"><img src=http://pic.renn999.twbbs.org/thumb/60de3e924b77158d.jpg /></a></p>
+<p>這東西已經可以打中文了耶XDD 今天才發現</p>
+<p>加油啊 Google 我想要把我想要把FireFox 換掉了...XDDD</p>
+<p>(還在混 趕快去趕你的工啦....毆)</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sun Jul. 12 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/352/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/349/">修好sendmail
 
 </a></h1>
@@ -145,31 +171,6 @@
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/337/">今天值得紀念的一天
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>我把所有的瀏覽人數 全部歸零了</p>
-<p>因為由於之前的人數老實說 不客觀的機率佔很大</p>
-<p>所以說歸零也是個開始吧...XD</p>
-    
-  
-</div>
-
-<div class="meta">
-  <div class="date">Mon Jun. 22 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/337/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
 <h1 class="title"><a href="/archives/339/">From co.cc to twbbs.org
 
 </a></h1>
@@ -202,60 +203,25 @@
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/328/">WordPlurk一些細部修改
+<h1 class="title"><a href="/archives/337/">今天值得紀念的一天
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>WordPlurk以要對wordpress發文之後把標題連結同步到Plurk真的非常的方便，當然我也小看了一下原始碼對於中文語系的話也些地方還是可以調整的。</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="x">curl_setopt($curl, CURLOPT_URL, &#39;http://www.plurk.com/TimeLine/addPlurk&#39;);</span></span>
-<span class='line'><span class="x">curl_setopt($curl, CURLOPT_POSTFIELDS, &#39;qualifier=shares&amp;content=&#39;. $new_status .&#39;&amp;lang=en&amp;no_comments=0&amp;uid=&#39; . $uid[0]);</span></span>
-<span class='line'><span class="x">$post = curl_exec($curl);</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>在台灣地區的話，於第29行網址的部份lang=en可以改成lang=tr_ch，這樣在plurk上就不會出現英文，qualifier=share這裡可以改變plurk post的狀態就是"說""想要"那些有的沒的</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="x">the_post();</span></span>
-<span class='line'><span class="x">$post_url = file_get_contents(&#39;http://tinyurl.com/api-create.php?url=&#39; . get_permalink());</span></span>
-<span class='line'><span class="x">$title = get_the_title();</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>在46行的部份<code>'http://tinyurl.com/api-create.php?url='</code>這是將網址用tinyurl縮網如果不想縮網的話可以去掉，要不然要用自己喜歡的服務也可以(0rz.tw的服務好像被拿掉了但是我在研究看看)，我是不知道網址太長會怎樣...Orz，因為我是用我自己的短網址，我還刻意做了一個api給他用...XD</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="x">$i = &#39;\&#39;&#39; . $title . &#39;\&#39; - &#39; . $post_url;</span></span>
-<span class='line'></span>
-<span class='line'><span class="x">$plurk_username = get_option(&#39;wordplurk_username&#39;, 0);</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>在51行的部份就是post到Plurk的時候會出現的樣式，他這邊就設計的不怎麼好就是了，這裡通常會改成</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="x">$i = $post_url . &#39; (&#39;. $title .&#39;)&#39; ;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>讓title直接變成連結的方式</p>
+    <p>我把所有的瀏覽人數 全部歸零了</p>
+<p>因為由於之前的人數老實說 不客觀的機率佔很大</p>
+<p>所以說歸零也是個開始吧...XD</p>
     
   
 </div>
 
 <div class="meta">
-  <div class="date">Sun Jun. 21 2009</div>
+  <div class="date">Mon Jun. 22 2009</div>
   <div class="tags">
-    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a>, 
-    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/328/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/337/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
