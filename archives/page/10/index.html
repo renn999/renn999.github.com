@@ -73,6 +73,168 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/399/">PHP產生bbs的rss(for server端)
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>這是一個利用php產生rss的script，就只是普通的實做...XDDrz</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
+<span class='line'><span class="k">include</span><span class="p">(</span><span class="s1">&#39;uaocode.php&#39;</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'><span class="nv">$bbs_path</span><span class="o">=</span><span class="s1">&#39;/home/bbs/brd/&#39;</span><span class="p">;</span></span>
+<span class='line'><span class="nv">$brd_name</span><span class="o">=</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;brd&#39;</span><span class="p">];</span></span>
+<span class='line'><span class="nv">$filename</span><span class="o">=</span><span class="nv">$bbs_path</span><span class="o">.</span><span class="nv">$brd_name</span><span class="o">.</span><span class="s1">&#39;/.DIR&#39;</span><span class="p">;</span></span>
+<span class='line'><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$filename</span><span class="p">))</span> <span class="p">{</span></span>
+<span class='line'>    <span class="k">echo</span> <span class="s1">&#39;no such broad!&#39;</span><span class="p">;</span></span>
+<span class='line'>    <span class="k">exit</span><span class="p">;</span></span>
+<span class='line'><span class="p">}</span></span>
+<span class='line'></span>
+<span class='line'><span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Content-type: application/rss+xml; charset=utf-8&#39;</span><span class="p">);</span></span>
+<span class='line'><span class="k">echo</span> <span class="s2">&quot;&lt;?xml version=</span><span class="se">\&quot;</span><span class="s2">1.0</span><span class="se">\&quot;</span><span class="s2"> encoding=</span><span class="se">\&quot;</span><span class="s2">utf-8</span><span class="se">\&quot;</span><span class="s2"> ?&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
+<span class='line'></span>
+<span class='line'><span class="nv">$all_post</span><span class="o">=</span><span class="nb">filesize</span><span class="p">(</span><span class="nv">$filename</span><span class="p">)</span><span class="o">/</span><span class="mi">256</span><span class="p">;</span></span>
+<span class='line'></span>
+<span class='line'><span class="nv">$post_num</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span></span>
+<span class='line'></span>
+<span class='line'><span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="nv">$post_num</span> <span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">){</span></span>
+<span class='line'>    <span class="nv">$fp</span><span class="o">=</span><span class="nb">fopen</span><span class="p">(</span><span class="nv">$filename</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">fseek</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="p">(</span><span class="nv">$all_post</span><span class="o">-</span><span class="nv">$i</span><span class="p">)</span><span class="o">*</span><span class="mi">256</span><span class="o">+</span><span class="mi">12</span><span class="p">);</span></span>
+<span class='line'>    <span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_id&#39;</span><span class="p">]</span><span class="o">=</span><span class="nx">trim</span><span class="p">(</span><span class="nb">fread</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span><span class="mi">32</span><span class="p">));</span></span>
+<span class='line'>    <span class="nv">$post_path</span><span class="o">=</span><span class="nv">$bbs_path</span><span class="o">.</span><span class="nv">$brd_name</span><span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="nx">substr</span><span class="p">(</span><span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_id&#39;</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_id&#39;</span><span class="p">];</span></span>
+<span class='line'>    <span class="nv">$fpp</span><span class="o">=</span><span class="nb">fopen</span><span class="p">(</span><span class="nv">$post_path</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">);</span></span>
+<span class='line'>    <span class="nv">$j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span></span>
+<span class='line'>    <span class="k">while</span><span class="p">(</span><span class="nv">$current_line</span> <span class="o">=</span> <span class="nb">fgets</span><span class="p">(</span><span class="nv">$fpp</span><span class="p">)){</span></span>
+<span class='line'>        <span class="o">++</span><span class="nv">$j</span><span class="p">;</span></span>
+<span class='line'>        <span class="k">switch</span> <span class="p">(</span><span class="nv">$j</span><span class="p">){</span></span>
+<span class='line'>            <span class="k">case</span> <span class="mi">1</span><span class="o">:</span></span>
+<span class='line'>                <span class="nb">preg_match</span><span class="p">(</span><span class="s1">&#39;/: (.*) \(/&#39;</span><span class="p">,</span><span class="nv">$current_line</span><span class="p">,</span><span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_userid&#39;</span><span class="p">]);</span></span>
+<span class='line'>            <span class="k">case</span> <span class="mi">2</span><span class="o">:</span></span>
+<span class='line'>                <span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_title&#39;</span><span class="p">]</span><span class="o">=</span><span class="nx">trim</span><span class="p">(</span><span class="nb">html_entity_decode</span><span class="p">(</span><span class="nb">iconv</span><span class="p">(</span><span class="s2">&quot;big5&quot;</span><span class="p">,</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">,</span><span class="nx">uao_convert</span><span class="p">(</span><span class="nx">substr</span><span class="p">(</span><span class="nv">$current_line</span><span class="p">,</span><span class="mi">6</span><span class="p">))),</span><span class="nx">ENT_QUOTES</span><span class="p">,</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">));</span></span>
+<span class='line'>            <span class="k">case</span> <span class="mi">3</span><span class="o">:</span></span>
+<span class='line'>                <span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_time&#39;</span><span class="p">]</span><span class="o">=</span><span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RSS</span><span class="p">,</span> <span class="nb">strtotime</span><span class="p">(</span><span class="nx">trim</span><span class="p">(</span><span class="nx">substr</span><span class="p">(</span><span class="nv">$current_line</span><span class="p">,</span><span class="mi">6</span><span class="p">))));</span></span>
+<span class='line'>            <span class="k">default</span><span class="p">;</span></span>
+<span class='line'>                <span class="nv">$current_line</span><span class="o">=</span><span class="nb">preg_replace</span><span class="p">(</span><span class="s1">&#39;/\\x1b\\[([^m]*)m/i&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$current_line</span><span class="p">);</span></span>
+<span class='line'>                <span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_conten&#39;</span><span class="p">]</span> <span class="o">.=</span> <span class="nx">trim</span><span class="p">(</span><span class="nb">html_entity_decode</span><span class="p">(</span><span class="nb">iconv</span><span class="p">(</span><span class="s2">&quot;big5&quot;</span><span class="p">,</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">,</span><span class="nx">uao_convert</span><span class="p">(</span><span class="nv">$current_line</span><span class="p">)),</span><span class="nx">ENT_QUOTES</span><span class="p">,</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">),</span><span class="s1">&#39;\0&#39;</span><span class="p">);</span></span>
+<span class='line'>        <span class="p">}</span></span>
+<span class='line'>    <span class="p">}</span></span>
+<span class='line'><span class="p">}</span></span>
+<span class='line'><span class="cp">?&gt;</span></span>
+<span class='line'><span class="o">&lt;</span><span class="nx">rss</span> <span class="nx">version</span><span class="o">=</span><span class="s2">&quot;2.0&quot;</span></span>
+<span class='line'>    <span class="nx">xmlns</span><span class="o">:</span><span class="nx">content</span><span class="o">=</span><span class="s2">&quot;http://purl.org/rss/1.0/modules/content/&quot;</span></span>
+<span class='line'>    <span class="nx">xmlns</span><span class="o">:</span><span class="nx">wfw</span><span class="o">=</span><span class="s2">&quot;http://wellformedweb.org/CommentAPI/&quot;</span></span>
+<span class='line'>    <span class="nx">xmlns</span><span class="o">:</span><span class="nx">dc</span><span class="o">=</span><span class="s2">&quot;http://purl.org/dc/elements/1.1/&quot;</span></span>
+<span class='line'>    <span class="nx">xmlns</span><span class="o">:</span><span class="nx">atom</span><span class="o">=</span><span class="s2">&quot;http://www.w3.org/2005/Atom&quot;</span></span>
+<span class='line'>    <span class="nx">xmlns</span><span class="o">:</span><span class="nx">sy</span><span class="o">=</span><span class="s2">&quot;http://purl.org/rss/1.0/modules/syndication/&quot;</span></span>
+<span class='line'>    <span class="o">&gt;</span></span>
+<span class='line'>    <span class="o">&lt;</span><span class="nx">channel</span><span class="o">&gt;</span></span>
+<span class='line'>    <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="err">夢之大地</span><span class="nx">rsstest</span><span class="o">&lt;</span><span class="err">/title&gt;</span></span>
+<span class='line'>    <span class="o">&lt;</span><span class="nx">description</span><span class="o">&gt;</span><span class="nx">none</span><span class="o">&lt;</span><span class="err">/description&gt;</span></span>
+<span class='line'>    <span class="o">&lt;</span><span class="nx">link</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">:</span><span class="c1">//140.116.250.9/&lt;/link&gt;</span></span>
+<span class='line'>    <span class="o">&lt;</span><span class="nx">atom</span><span class="o">:</span><span class="nx">link</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://140.116.250.9/paser.php&quot;</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">&quot;self&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;application/rss+xml&quot;</span> <span class="o">/&gt;</span></span>
+<span class='line'>    <span class="o">&lt;</span><span class="nx">language</span><span class="o">&gt;</span><span class="nx">en</span><span class="o">&lt;</span><span class="err">/language&gt;</span></span>
+<span class='line'>    <span class="o">&lt;</span><span class="nx">generator</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">:</span><span class="c1">//www.renn999.twbbs.org/illustrator/RSS.php&lt;/generator&gt;</span></span>
+<span class='line'><span class="cp">&lt;?php</span> </span>
+<span class='line'>        <span class="k">foreach</span><span class="p">(</span><span class="nv">$match</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">){</span></span>
+<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;&lt;item&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
+<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;title&gt;&lt;![CDATA[&quot;</span><span class="o">.</span><span class="nb">stripslashes</span><span class="p">(</span><span class="nv">$item</span><span class="p">[</span><span class="s2">&quot;post_title&quot;</span><span class="p">])</span><span class="o">.</span><span class="s2">&quot;]]]]&gt;&lt;![CDATA[&gt;&lt;/title&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
+<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;pubDate&gt;&quot;</span><span class="o">.</span><span class="nb">stripslashes</span><span class="p">(</span><span class="nv">$item</span><span class="p">[</span><span class="s2">&quot;post_time&quot;</span><span class="p">])</span><span class="o">.</span><span class="s2">&quot;&lt;/pubDate&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
+<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;link&gt;http://140.116.250.9/&lt;/link&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
+<span class='line'>            <span class="c1">//str_replace(&#39; &#39;,&#39;&amp;nbsp;&#39;,nl2br(htmlspecialchars($item[&quot;post_conten&quot;])));</span></span>
+<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;description&gt;&lt;![CDATA[&quot;</span><span class="o">.</span><span class="nb">nl2br</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&amp;nbsp;&#39;</span><span class="p">,</span><span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$item</span><span class="p">[</span><span class="s2">&quot;post_conten&quot;</span><span class="p">])))</span><span class="o">.</span><span class="s2">&quot;]]]]&gt;&lt;![CDATA[&gt;&lt;/description&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
+<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;guid isPermaLink=</span><span class="se">\&quot;</span><span class="s2">false</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">,</span><span class="nv">$item</span><span class="p">[</span><span class="s1">&#39;post_id&#39;</span><span class="p">],</span><span class="s2">&quot;&lt;/guid&gt;&quot;</span><span class="p">;</span></span>
+<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;&lt;/item&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
+<span class='line'>        <span class="p">}</span></span>
+<span class='line'>    <span class="cp">?&gt;</span></span>
+<span class='line'>    <span class="o">&lt;</span><span class="err">/channel&gt;</span></span>
+<span class='line'><span class="o">&lt;</span><span class="err">/rss&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Wed Oct. 14 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/399/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/396/">Apache修改執行user和Group和修改phpmyadmin預設網址
 
 </a></h1>
@@ -521,134 +683,6 @@
     <a href='/archives/categories/about%20PHP/'>about PHP</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/371/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/357/">PHP+phpQuery備份Pixiv的bookmark(お気に入りユーザー)
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>最近老實說又多玩了一個語言，外加我今年算是個考生，所以說很多時候晚上忙一下就已經11點多了，當然最近都在養肝，忙完就睡著了...XD</p>
-<p>至於廢話就不多說了，最近學了一點Action Script 3.0，但是我基本上還是用Flash CS4下去學習，改天會開始去摸摸看Flex，希望是有時間就好(笑)。但是老實說在這個7月時也算是我過的最充實的一個月了，因為搞懂了非常之多的東西。</p>
-<p>這一個PHP只能算是一個小部份，因為也是一個小程式....XD，但是基本上需要phpQuery，因為這個函式庫對於要抓取網頁資訊來說的話非常之方便而且簡單明瞭，對於一個複雜的網頁原始碼而言，可以簡化取出需要的資訊之後，再去做preg的動作繪比較的簡單。</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span></pre></td><td class='code'><pre><code><span class='line'><span class="o">&lt;</span> <span class="o">?</span><span class="nx">php</span></span>
-<span class='line'>    <span class="nx">require</span> <span class="s1">&#39;phpQuery/phpQuery/phpQuery.php&#39;</span><span class="p">;</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nx">$loginurl</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/index.php&#39;</span><span class="p">;</span></span>
-<span class='line'>    <span class="nx">$pixiv_id</span><span class="o">=</span><span class="s1">&#39;你的PIXIV_id&#39;</span><span class="p">;</span></span>
-<span class='line'>    <span class="nx">$password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">;</span></span>
-<span class='line'>    <span class="c1">//以上為一些登入基本資訊</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nx">$curl</span> <span class="o">=</span> <span class="nx">curl_init</span><span class="p">();</span></span>
-<span class='line'>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span></span>
-<span class='line'>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_USERAGENT</span><span class="p">,</span><span class="s1">&#39;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)&#39;</span><span class="p">);</span></span>
-<span class='line'>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_FOLLOWLOCATION</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
-<span class='line'>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
-<span class='line'>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIEJAR</span><span class="p">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="p">);</span></span>
-<span class='line'>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIEFILE</span><span class="p">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="p">);</span></span>
-<span class='line'>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
-<span class='line'>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIESESSION</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span></span>
-<span class='line'>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nx">$loginurl</span><span class="p">);</span></span>
-<span class='line'>    <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="s1">&#39;mode=login&amp;pixiv_id=&#39;</span><span class="p">.</span><span class="nx">$pixiv_id</span><span class="p">.</span><span class="s1">&#39;&amp;pass=&#39;</span><span class="p">.</span><span class="nx">$password</span> <span class="p">);</span></span>
-<span class='line'>    <span class="nx">curl_exec</span><span class="p">(</span><span class="nx">$curl</span><span class="p">);</span></span>
-<span class='line'>    <span class="c1">//登入的動作</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nx">$p</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="c1">//設定起始頁</span></span>
-<span class='line'>    <span class="nx">$bookmark_rest</span><span class="o">=</span><span class="s1">&#39;show&#39;</span><span class="p">;</span><span class="c1">//hide為非公開 show為公開</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="k">do</span><span class="p">{</span></span>
-<span class='line'>        <span class="nx">$url</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/bookmark.php?type=user&amp;rest=&#39;</span><span class="p">.</span><span class="nx">$bookmark_rest</span><span class="p">.</span><span class="s1">&#39;&amp;p=&#39;</span><span class="p">.</span><span class="nx">$p</span><span class="p">;</span> <span class="c1">//bookmark網址</span></span>
-<span class='line'>        <span class="nx">curl_setopt</span><span class="p">(</span><span class="nx">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nx">$url</span><span class="p">);</span></span>
-<span class='line'>        <span class="nx">$profile</span><span class="o">=</span><span class="nx">curl_exec</span><span class="p">(</span><span class="nx">$curl</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'>        <span class="nx">phpQuery</span><span class="o">::</span><span class="nx">newDocument</span><span class="p">(</span><span class="nx">$profile</span><span class="p">)</span><span class="o">-&gt;</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;html &gt; body &gt; div#wrapper &gt; div#pixiv &gt; div#content2&#39;</span><span class="p">);</span></span>
-<span class='line'>        <span class="nx">$title</span> <span class="o">=</span> <span class="nx">pq</span><span class="p">(</span><span class="s1">&#39;div[align=&quot;right&quot;] &gt; a&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">html</span><span class="p">();</span></span>
-<span class='line'>        <span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/次の(.*?)件/&#39;</span><span class="p">,</span><span class="nx">$title</span><span class="p">,</span><span class="nx">$match</span><span class="p">);</span></span>
-<span class='line'>        <span class="c1">//是否有下一頁的判斷用</span></span>
-<span class='line'></span>
-<span class='line'>        <span class="nx">$title2</span> <span class="o">=</span> <span class="nx">pq</span><span class="p">(</span><span class="s1">&#39;form#f &gt; div[style=&quot;width:140px;height:120px;float:left;text-align:center;&quot;]&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">html</span><span class="p">();</span></span>
-<span class='line'>        <span class="nx">$title2</span><span class="o">=</span><span class="nx">preg_replace</span><span class="p">(</span><span class="s1">&#39;/\n/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nx">$title2</span><span class="p">);</span></span>
-<span class='line'>        <span class="nx">$title2</span><span class="o">=</span><span class="nx">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;input (.*?)/&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nx">$title2</span><span class="p">);</span></span>
-<span class='line'>        <span class="nx">$title2</span><span class="o">=</span><span class="nx">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;img (.*?)/&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nx">$title2</span><span class="p">);</span></span>
-<span class='line'>        <span class="nx">preg_match_all</span><span class="p">(</span><span class="s1">&#39;/&lt;a href=&quot;member.php\?id=(.*?)&quot;&gt;&lt; \/a&gt;&lt;div style=\&quot;padding-top:5px;\&quot;&gt;(.*?)&lt; \/div&gt;/&#39;</span><span class="p">,</span> <span class="nx">$title2</span><span class="p">,</span><span class="nx">$match2</span><span class="p">,</span><span class="nx">PREG_SET_ORDER</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'>        <span class="nx">foreach</span> <span class="p">(</span><span class="nx">$match2</span> <span class="nx">as</span> <span class="nx">$val</span><span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>            <span class="nx">echo</span> <span class="s1">&#39;http://www.pixiv.net/member.php?id=&#39;</span><span class="p">.</span><span class="nx">$val</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="s1">&#39; - &#39;</span><span class="p">.</span><span class="nx">$val</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="s2">&quot;\n&quot;</span><span class="p">;</span></span>
-<span class='line'>        <span class="p">}</span><span class="c1">//映出所有的繪師</span></span>
-<span class='line'>        <span class="nx">$p</span><span class="o">++</span><span class="p">;</span></span>
-<span class='line'>    <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="nx">empty</span><span class="p">(</span><span class="nx">$match</span><span class="p">));</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nx">curl_close</span><span class="p">(</span><span class="nx">$curl</span><span class="p">);</span></span>
-<span class='line'><span class="o">?&gt;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>以上就是一個非常簡單的小範例。對於熟悉PHPQuery之後要處理抓取網頁的資訊的動作的話真的非常的簡單。</p>
-<p>這是一個非常簡單的，把PIXIV上的喜愛繪師的網址給備份出來的一個小程式，用這個列出來後才知道，原來我已經收了快要1150個繪師了...Orz</p>
-    
-  
-</div>
-
-<div class="meta">
-  <div class="date">Thu Aug.  6 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/about%20PHP/'>about PHP</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/357/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

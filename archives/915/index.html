@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>怕了吧! 我用CLI來噗浪 ヽ( ^∀^)ﾉ - 老伯筆記</title>
+  <meta name="author" content="renn999">
+  <meta name="description" content="我是廢話 雖然說，最近邁向國家煉金術士的考試還沒有結束，但是沒意外應該是沒問題了，只差需要應景一下的面試。所以說最近異常的活躍(?!)，但是老實說我真的是非常會曬網的人(望向一堆未完成做一半的 project ，pyblogtle ... ， 以及還沒有改版的 wordplurk-improve ....">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
+  <link rel="canonical" href="">
+  <link href="/favicon.ico" rel="shortcut icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+<body>
+  <header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
+<nav id="main-nav"><ul class="main">
+  <li><a href="/archives/">Archives</a></li>
+  <li><a href="/guestbook/">留言板</a></li>
+  <li><a href="http://renn999.pythonanywhere.com/">老伯繪師收集區</a></li>
+</ul></nav>
+<nav id="mobile-nav">
+  <div class="alignleft menu">
+    <a class="button">Menu</a>
+    <div class="container"><ul class="main">
+  <li><a href="/archives/">Archives</a></li>
+  <li><a href="/guestbook/">留言板</a></li>
+  <li><a href="http://renn999.pythonanywhere.com/">老伯繪師收集區</a></li>
+</ul></div>
+  </div>
+  <div class="alignright search">
+    <a class="button"></a>
+    <div class="container">
+      <form action="http://google.com/search" method="get">
+        <input type="text" name="q" results="0">
+        <input type="hidden" name="q" value="site:www.renn999.twbbs.org">
+      </form>
+    </div>
+  </div>
+</nav>
+<nav id="sub-nav" class="alignright">
+  <div class="social">
+    
+    <a class="facebook" href="http://www.facebook.com/renn999" title="Facebook">Facebook</a>
+    
+    
+    <a class="google" href="https://plus.google.com/103389845925471617368?rel=author" title="Google+">Google+</a>
+    
+    
+    <a class="twitter" href="http://twitter.com/renn999" title="Twitter">Twitter</a>
+    
+    
+    <a class="github" href="https://github.com/renn999" title="GitHub">GitHub</a>
+    
+    
+    
+    
+    
+    <a class="rss" href="http://feeds.feedburner.com/renn999" title="RSS">RSS</a>
+    
+  </div>
+  <form class="search" action="http://google.com/search" method="get">
+    <input class="alignright" type="text" name="q" results="0">
+    <input type="hidden" name="q" value="site:www.renn999.twbbs.org">
+  </form>
+</nav></header>
+  <div id="content" class="inner">
+  
+    
+    <article class="post">
+    
+      
+
+<h1 class="title"><a href="/archives/915/">怕了吧! 我用CLI來噗浪 ヽ( ^∀^)ﾉ
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <h1>我是廢話</h1>
+<p>雖然說，最近邁向<s>國家煉金術士</s>的考試還沒有結束，但是沒意外應該是沒問題了，只差需要應景一下的面試。所以說最近異常的活躍(?!)，但是老實說我真的是非常會曬網的人(望向一堆未完成做一半的 project ，<code>pyblogtle</code> ... ， 以及還沒有改版的 <code>wordplurk-improve</code> ...)，算了到時候再說吧 ... 哈哈哈哈哈~~~~~ ( 塊陶啊 ~~ ！ )，( 毆 )( 抓回來~~！)</p>
+<p>先來說說我為啥會做一個CLI的PLURK吧，並不是說Plurk做不好<s>(副聲道：一大堆JAVASCRIP，CSS，and F(畢)CKing ads...)</s>，而是說用CLI是很酷的一件事，正好也看看 Plurk API 2.0 來為 wordplurk-improve 來鋪路。並且減少使用網路頻寬，幫我國偉(ㄌㄨㄥˇ)大(ㄉㄨㄢˋ)的種花電信節省鋪設經費 ... 哈哈哈 ~！怕了吧 ... (毆)明明就是你只有裝最便宜的網路還說...OTZ</p>
+<!--more-->
+
+<h1>安裝</h1>
+<h2>需求</h2>
+<ul>
+<li><a href="https://github.com/clsung/plurk-oauth">plurk-oauth</a></li>
+<li><a href="http://pypi.python.org/pypi/termcolor">termcolor</a></li>
+</ul>
+<h2>建立所需要的環境</h2>
+<h3>安裝 <a href="https://github.com/clsung/plurk-oauth">plurk-oauth</a></h3>
+<h4>git clone from https://github.com/clsung/plurk-oauth</h4>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">clsung</span><span class="o">/</span><span class="n">plurk</span><span class="o">-</span><span class="n">oauth</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h4>安裝和建立</h4>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">build</span></span>
+<span class='line'><span class="n">sudo</span> <span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">install</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h3>安裝 termcolor</h3>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">termcolor</span></span>
+<span class='line'><span class="n">or</span></span>
+<span class='line'><span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">termcolor</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h2>安裝PLURK-CLI</h2>
+<h3>Ubuntu 環境下</h3>
+<p>可以直接<a href="https://github.com/downloads/renn999/Plurk-CLI/plurk-cli_0.1-1_all.deb">下載</a> deb，直接安裝，或下</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">#</span> dpkg -i plurk-cli_0.1-1_all.deb</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h3>其他版本 Linux</h3>
+<p>Git clone from Github</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">renn999</span><span class="o">/</span><span class="n">Plurk</span><span class="o">-</span><span class="n">CLI</span><span class="p">.</span><span class="n">git</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>在要<code>make</code>之前 修改 <code>makefile</code> 的開頭符合你的Linux版本</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">PERFIX</span><span class="p">=</span><span class="o">/</span><span class="n">usr</span></span>
+<span class='line'><span class="n">ETCPERFIX</span><span class="p">=</span><span class="o">/</span><span class="n">etc</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>然後開心make</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">#install</span></span>
+<span class='line'>$ <span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span></span>
+<span class='line'><span class="c">#uninstall</span></span>
+<span class='line'>$ <span class="n">sudo</span> <span class="n">make</span> <span class="n">uninstall</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h2>使用</h2>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">plurk</span> <span class="n">add</span> <span class="p">[</span><span class="n">qualifier</span><span class="p">]</span> <span class="p">[</span><span class="n">content</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">nc</span> <span class="o">-</span><span class="n">fc</span><span class="p">]</span></span>
+<span class='line'>      <span class="n">get</span> <span class="p">[</span><span class="o">--</span><span class="n">offset</span> <span class="p">[</span><span class="n">time</span><span class="p">]]</span></span>
+<span class='line'>      <span class="n">resp_add</span> <span class="p">[</span><span class="n">plurk_id</span><span class="p">]</span> <span class="p">[</span><span class="n">qualifier</span><span class="p">]</span> <span class="p">[</span><span class="n">content</span><span class="p">]</span></span>
+<span class='line'>      <span class="n">resp_get</span> <span class="p">[</span><span class="n">plurk_id</span><span class="p">]</span></span>
+<span class='line'>      <span class="n">resp_del</span> <span class="p">[</span><span class="n">plurk_id</span><span class="p">]</span> <span class="p">[</span><span class="n">resp_id</span><span class="p">]</span></span>
+<span class='line'>      <span class="n">count_unread</span></span>
+<span class='line'>      <span class="n">get_unread</span> <span class="p">[</span><span class="o">--</span><span class="n">new</span> <span class="o">--</span><span class="n">my</span> <span class="o">--</span><span class="n">responded</span> <span class="o">--</span><span class="n">private</span> <span class="o">--</span><span class="n">favorite</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">withmar</span><span class="p">]</span></span>
+<span class='line'>      <span class="n">del</span> <span class="p">[</span><span class="n">plurk_id</span><span class="p">]</span></span>
+<span class='line'>      <span class="n">edit</span> <span class="p">[</span><span class="n">plurk_id</span><span class="p">]</span> <span class="p">[</span><span class="n">content</span><span class="p">]</span></span>
+<span class='line'>      <span class="n">mute</span> <span class="p">[</span><span class="n">plurk_id</span>#1 <span class="n">plurk_id</span>#2 <span class="n">plurk_id</span>#3 <span class="p">...]</span></span>
+<span class='line'>      <span class="n">unmute</span> <span class="p">[</span><span class="n">plurk_id</span>#1 <span class="n">plurk_id</span>#2 <span class="n">plurk_id</span>#3 <span class="p">...]</span></span>
+<span class='line'>      <span class="n">favor</span> <span class="p">[</span><span class="n">plurk_id</span>#1 <span class="n">plurk_id</span>#2 <span class="n">plurk_id</span>#3 <span class="p">...]</span></span>
+<span class='line'>      <span class="n">unfavor</span> <span class="p">[</span><span class="n">plurk_id</span>#1 <span class="n">plurk_id</span>#2 <span class="n">plurk_id</span>#3 <span class="p">...]</span></span>
+<span class='line'>      <span class="n">mar</span> <span class="p">[</span><span class="n">plurk_id</span>#1 <span class="n">plurk_id</span>#2 <span class="n">plurk_id</span>#3 <span class="p">...]</span></span>
+<span class='line'>      <span class="n">replurk</span> <span class="p">[</span><span class="n">plurk_id</span>#1 <span class="n">plurk_id</span>#2 <span class="n">plurk_id</span>#3 <span class="p">...]</span></span>
+<span class='line'>      <span class="n">unreplurk</span> <span class="p">[</span><span class="n">plurk_id</span>#1 <span class="n">plurk_id</span>#2 <span class="n">plurk_id</span>#3 <span class="p">...]</span></span>
+<span class='line'>      <span class="n">get_user_pub</span> <span class="p">[</span><span class="n">user_id</span><span class="p">]</span></span>
+<span class='line'></span>
+<span class='line'><span class="n">Readmore</span> <span class="n">in</span> `<span class="n">doc</span><span class="o">/</span><span class="n">doc</span><span class="p">.</span><span class="n">txt</span>` <span class="n">or</span> `<span class="n">man</span> <span class="n">plurk</span>`<span class="p">.</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h1>已知問題</h1>
+<ul>
+<li>目前只有TimeLine上得功能 未來應該會把所有功能加上</li>
+<li>Not Support Windows.`</li>
+</ul>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Fri Nov. 16 2012</div>
+  <div class="tags">
+    <a href='/archives/categories/python/'>python</a>, 
+    <a href='/archives/categories/CLI/'>CLI</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/915/#disqus_thread">Comments</a></span>
+  
+</div>
+
+    </article>
+    
+      <div class="share">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+    
+    
+    <section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
+    
+
+  </div>
+  <footer id="footer" class="inner">
+    Copyright &copy; 
+    2012
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a href='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
+  <script src="/javascripts/slash.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+  
+<script type="text/javascript">
+      var disqus_shortname = 'rennidit';
+      
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.renn999.twbbs.org/archives/915/';
+        var disqus_url = 'http://www.renn999.twbbs.org/archives/915/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12134531-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+</html>
