@@ -76,6 +76,43 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/446/">server上的一些變動紀錄
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>前一兩個星期從Ubuntu9.04直接升級到9.10，看似沒有問題。但是今天看了一下備份的紀錄只有到091102，好像Postfix沒有動作的樣子，至於為啥沒有動作，我就不想浪費時間去找問題，於是我參考<a href="http://plog.longwin.com.tw/">Tsung</a>大的<a href="http://plog.longwin.com.tw/my_note-unix/2009/08/27/ssmtp-shell-gmail-send-mail-2009">這一篇</a>，把postfix換掉改用gmail的smtp來送我的備份檔，除了附件大小要注意之外，還是可以使用mutt來送東西。這樣真的省得時間再去設定postfix。</p>
+<p>至於mutt的話之前的版本按照我在前一篇的<a href="http://www.renn999.twbbs.org/wordpress/archives/184">自動MySQL備份搞定</a>，中的script中一定會發現到會吐出error，他會跟你說找不到[mail位置＠where.are.you]這個檔案，我是不清楚新板式不是在這裡有改了啥東西，但是這個問題我改一下參數順序就可以了
+原始為：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">echo</span> &quot;$<span class="n">today</span> <span class="n">Data</span> <span class="n">base</span> <span class="n">backup</span>&quot; <span class="o">|</span> <span class="n">mutt</span> <span class="o">-</span><span class="n">s</span> &quot;<span class="n">Web</span> <span class="n">Mysql</span> <span class="n">Database</span> <span class="n">Backup</span>&quot; <span class="o">-</span><span class="n">a</span>  <span class="n">sqlbak</span>$<span class="n">today</span><span class="p">.</span><span class="n">zip</span> <span class="p">[</span><span class="n">mail</span>位置＠<span class="n">where</span><span class="p">.</span><span class="n">are</span><span class="p">.</span><span class="n">you</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>改成</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">echo</span> &quot;$<span class="n">today</span> <span class="n">Data</span> <span class="n">base</span> <span class="n">backup</span>&quot; <span class="o">|</span> <span class="n">mutt</span> <span class="p">[</span><span class="n">mail</span>位置＠<span class="n">where</span><span class="p">.</span><span class="n">are</span><span class="p">.</span><span class="n">you</span><span class="p">]</span> <span class="o">-</span><span class="n">s</span> &quot;<span class="n">Web</span> <span class="n">Mysql</span> <span class="n">Database</span> <span class="n">Backup</span>&quot; <span class="o">-</span><span class="n">a</span>  <span class="n">sqlbak</span>$<span class="n">today</span><span class="p">.</span><span class="n">zip</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>還有我的/etc/resolv.conf每次重新開機都會跑掉，於是我把resolvconf給remove就ok了 :-P</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Wed Nov. 11 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/446/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/437/">9.10登入以及開機畫面[xsplash]篇
 
 </a></h1>
@@ -171,48 +208,6 @@
     <a href='/archives/categories/Linux/'>Linux</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/406/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/401/">Google AJAX Libraries API
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>其實今天就是在google AJAX看到的鬼東西，而且是一個非常有趣的鬼東西，依照我淺薄的接觸以為javascript Libraries只有jQuery，竟然沒想到還有這麼多的種類，</p>
-<p>網站：<a href="http://code.google.com/intl/en/apis/ajaxlibs/">http://code.google.com/intl/en/apis/ajaxlibs/</a></p>
-<p>其實這讓開發者真的可以非常的方便來使用一些javascript的Libraries，如果要使用jQuery的話只要</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span></pre></td><td class='code'><pre><code><span class='line'><span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">&quot;http://www.google.com/jsapi&quot;</span><span class="nt">&gt;&lt;/script&gt;</span> <span class="c">&lt;!--先include google js api--&gt;</span></span>
-<span class='line'><span class="nt">&lt;script&gt;</span> </span>
-<span class='line'>google.load(&quot;jquery&quot;, &quot;1.3.2&quot;);</span>
-<span class='line'>google.load(&quot;jqueryui&quot;, &quot;1.7.2&quot;);</span>
-<span class='line'><span class="c">&lt;!-- your js code --&gt;</span></span>
-<span class='line'><span class="nt">&lt;/script&gt;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>真是方便的東西...XDrz</p>
-    
-  
-</div>
-
-<div class="meta">
-  <div class="date">Wed Oct. 28 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/about%20PHP/'>about PHP</a>, 
-    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/401/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

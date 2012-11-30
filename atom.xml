@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-11-23T14:28:20+0800</updated>
+  <updated>2012-11-30T10:40:28+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,80 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[apache2 wsgi 設定メモ]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/916/"/>
+    <updated>2012-11-30T10:11:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/916/</id>
+    <content type="html"><![CDATA[<p>最近都在玩 Python 反而 php 少碰非常多，這是一個在 Ubuntu 下架設 apache2 及 wsgi 的紀錄。因為在本機上測試東西，架個在 localhost 上這樣就不用一直下 reload 指令...(:-p)</p>
+<h2>* 安裝相關套件</h2>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo apt-get install apache2 libapache2-mod-wsgi</span>
+<span class='line'><span class="gp">#</span>安裝套件</span>
+<span class='line'><span class="gp">$</span> sudo a2enmod wsgi</span>
+<span class='line'><span class="gp">#</span>載入wsgi</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<!--more-->
+
+<h2>* 設定相關檔案</h2>
+<p>這個部份可以在<code>/etc/apache2/sites-available/</code>中新增一個 virtualhost 設定，  因為我需要開在別的 port 上所以以下是我的設定檔，僅供參考：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">Listen</span> <span class="m">8888</span></span>
+<span class='line'><span class="nb">NameVirtualHost</span> *:8888</span>
+<span class='line'><span class="nt">&lt;VirtualHost</span> <span class="s">*:8888</span><span class="nt">&gt;</span></span>
+<span class='line'>  <span class="nb">ServerAdmin</span> webmaster@localhost</span>
+<span class='line'>  <span class="nb">DocumentRoot</span> <span class="sx">/home/renn999/Program/illust</span></span>
+<span class='line'>  <span class="nb">WSGIScriptAlias</span> / <span class="sx">/home/renn999/Program/illust/test.wsgi</span></span>
+<span class='line'>  <span class="nb">WSGIDaemonProcess</span> illust <span class="k">user</span>=renn999 <span class="k">group</span>=renn999 threads=5 </span>
+<span class='line'>  <span class="nt">&lt;Directory</span> <span class="s">/home/renn999/Program/illust</span><span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nb">WSGIProcessGroup</span> illust</span>
+<span class='line'>    <span class="nb">WSGIApplicationGroup</span> %{GLOBAL}</span>
+<span class='line'>    <span class="nb">WSGIScriptReloading</span> <span class="k">On</span></span>
+<span class='line'>    <span class="nb">Options</span> Indexes FollowSymLinks MultiViews</span>
+<span class='line'>    <span class="nb">AllowOverride</span> <span class="k">None</span></span>
+<span class='line'>    <span class="nb">Order</span> deny,allow</span>
+<span class='line'>    <span class="nb">Allow</span> from <span class="k">all</span></span>
+<span class='line'>  <span class="nt">&lt;/Directory&gt;</span></span>
+<span class='line'><span class="nt">&lt;/VirtualHost&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>相關設定檔可見[http://code.google.com/p/modwsgi/wiki/ConfigurationDirectives]，最後連結virtual-hostfile</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo a2ensite &lt;virtualhost-file&gt;</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h2>* 啟動</h2>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo apache2 restart</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果是出現 500 error 請參照 error.log 修正</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[怕了吧! 我用CLI來噗浪 ヽ( ^∀^)ﾉ]]></title>
@@ -686,32 +760,6 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 
 
 <p>很抱歉目前功力不足，無法寫成plugin...OTZ</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[近日心情]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/905/"/>
-    <updated>2012-09-17T20:51:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/905/</id>
-    <content type="html"><![CDATA[<p>這是密碼保護文</p>
-<!--more-->
-
-<script>
-var text='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';
-</script>
-
-<script src="/javascripts/AES.js"></script>
-
-<script>
-    function Decrypt_post(){
-      var password = $('input.password').val();
-      var origtext = Aes.Ctr.decrypt(text, password, 256);
-      $('div#decrypted_post').empty().append(origtext);
-    }
-</script>
-
-<p><input class='password' /><input type="button" value='解碼' onclick="javascript:Decrypt_post()"/>
-<div id='decrypted_post'></div></p>]]></content>
   </entry>
   
 </feed>

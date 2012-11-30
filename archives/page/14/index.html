@@ -76,6 +76,38 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/226/">Mplayer SVN 29259
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>老實說 這算是一個美麗的錯誤？
+今天原本想寫一個比較文就是有沒有打入CoreAVC-for-Linux的外掛的差別
+但是讓我覺得非常驚訝的是我沒打CoreAVC-for-Linux跟有打一樣....Orz</p>
+<p>應該是說Mplayer已經寫一個libavcodec的東東進去了 讓H264的解碼好了一點
+(他X的 我前幾天幹的事情真的好像拖褲子放屁)
+而且最主要的是說 效能比CoreAVC-for-Linux還要好</p>
+<p>更何況開frame drop時CoreAVC-for-Linux會產生超嚴重的破圖現象
+所以說以後不用拖褲子放屁多弄一個CoreAVC-for-Linux了</p>
+<p>基本上我是建議說 自己SVN一個一個新版本再依自己的喜好compiler 把Gui關掉
+因為沒有人會去用Mplayerr當作前導程式吧...= =a</p>
+    <a href="/archives/226/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Tue May.  5 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/Linux/'>Linux</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/226/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/216/">CoreAVC-for-Linux dshowserver.patch for mplayer.29242
 
 </a></h1>
@@ -193,40 +225,6 @@ The code from svn is still in 82, and the dshowserver.patch won't work so I diff
     <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/197/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/184/">自動MySQL備份搞定
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>最近把新機器弄了起來 就想說要把我的Blog搬到我自己的新機器上面去(有新家真好...XDDD)
-當然因為我之前實在是太惡搞我學弟的機器 所以以至於說一堆MySQL的基本指令不能用(就指令找不到啦)
-我真的頓時覺得超QQ的 因為我嘗試使用PHPMyaadmin去Dump出我的資料 但是我真的很多當初不曉得怎麼搞的
-一堆資料庫的編碼不對 導致說PHPmyadmin太聰明的邦我轉碼 變成名副其實的"UTF-8亂碼"
-都還原不回來 到最後把整個MySQL殺掉重裝 才搞定好這個問題 到最後的問題也是用mysqldump搞定
-前幾天都在想說要怎麼做備份 簡單來說就是一整個備份策略(就是外加網站檔案 因為太大了寄不出去)
-講一個非常老實的話我還沒完全擬定好...Orz</p>
-<p>因為我最想要的就是直接mail到我的mailBox(因為我有Google app mail空間丟著很費浪...Orz 反正7G多了 當作一種備份儲存裝置也不錯 最重要的是mail fliter也弄的不錯)
-所以說我要如何做到最基本的每天就定時dump出MySQL --&gt; Zip sql --&gt; mail附件出去
-這就是最基本的處理方式 雖然說有的我之前已經實做過了
-前幾天在搞定自己電腦的時候問題還是一堆</p>
-<p>這裡簡述一下流程</p>
-    <a href="/archives/184/" class="more-link">Read More ...</a>
-  
-</div>
-
-<div class="meta">
-  <div class="date">Mon Mar. 30 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/184/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2012-11-23T14:28:20+0800</updated>
+  <updated>2012-11-30T10:40:28+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,80 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[apache2 wsgi 設定メモ]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/916/"/>
+    <updated>2012-11-30T10:11:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/916/</id>
+    <content type="html"><![CDATA[<p>最近都在玩 Python 反而 php 少碰非常多，這是一個在 Ubuntu 下架設 apache2 及 wsgi 的紀錄。因為在本機上測試東西，架個在 localhost 上這樣就不用一直下 reload 指令...(:-p)</p>
+<h2>* 安裝相關套件</h2>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo apt-get install apache2 libapache2-mod-wsgi</span>
+<span class='line'><span class="gp">#</span>安裝套件</span>
+<span class='line'><span class="gp">$</span> sudo a2enmod wsgi</span>
+<span class='line'><span class="gp">#</span>載入wsgi</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<!--more-->
+
+<h2>* 設定相關檔案</h2>
+<p>這個部份可以在<code>/etc/apache2/sites-available/</code>中新增一個 virtualhost 設定，  因為我需要開在別的 port 上所以以下是我的設定檔，僅供參考：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">Listen</span> <span class="m">8888</span></span>
+<span class='line'><span class="nb">NameVirtualHost</span> *:8888</span>
+<span class='line'><span class="nt">&lt;VirtualHost</span> <span class="s">*:8888</span><span class="nt">&gt;</span></span>
+<span class='line'>  <span class="nb">ServerAdmin</span> webmaster@localhost</span>
+<span class='line'>  <span class="nb">DocumentRoot</span> <span class="sx">/home/renn999/Program/illust</span></span>
+<span class='line'>  <span class="nb">WSGIScriptAlias</span> / <span class="sx">/home/renn999/Program/illust/test.wsgi</span></span>
+<span class='line'>  <span class="nb">WSGIDaemonProcess</span> illust <span class="k">user</span>=renn999 <span class="k">group</span>=renn999 threads=5 </span>
+<span class='line'>  <span class="nt">&lt;Directory</span> <span class="s">/home/renn999/Program/illust</span><span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nb">WSGIProcessGroup</span> illust</span>
+<span class='line'>    <span class="nb">WSGIApplicationGroup</span> %{GLOBAL}</span>
+<span class='line'>    <span class="nb">WSGIScriptReloading</span> <span class="k">On</span></span>
+<span class='line'>    <span class="nb">Options</span> Indexes FollowSymLinks MultiViews</span>
+<span class='line'>    <span class="nb">AllowOverride</span> <span class="k">None</span></span>
+<span class='line'>    <span class="nb">Order</span> deny,allow</span>
+<span class='line'>    <span class="nb">Allow</span> from <span class="k">all</span></span>
+<span class='line'>  <span class="nt">&lt;/Directory&gt;</span></span>
+<span class='line'><span class="nt">&lt;/VirtualHost&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>相關設定檔可見[http://code.google.com/p/modwsgi/wiki/ConfigurationDirectives]，最後連結virtual-hostfile</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo a2ensite &lt;virtualhost-file&gt;</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h2>* 啟動</h2>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo apache2 restart</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果是出現 500 error 請參照 error.log 修正</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[apache virtualhost 開啟其他 port]]></title>
@@ -234,31 +308,6 @@
 
 <p>然後make install把舊版的蓋過去就ok了</p>
 <p>這裡大致上把我遇到的問題先整理部份起來，不知道還會遇到啥鬼問題...OTZ </p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Counterize II 2.14.1 IP patch(還原顯示IP功能)]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/468/"/>
-    <updated>2009-12-15T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/468/</id>
-    <content type="html"><![CDATA[<p><a href="http://www.renn999.twbbs.org/wordpress/archives/197">前文</a>在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。</p>
-<p><a href="http://www.renn999.twbbs.org/wordpress/downloads/ip_patch.patch">ip_patch.patch download</a></p>
-<p>使用方法：
-將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">patch</span> <span class="o">-</span><span class="n">p0</span> <span class="o">&lt;</span> <span class="n">ip_patch</span><span class="p">.</span><span class="n">patch</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果出現</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">patching</span> <span class="n">file</span> <span class="n">counterizeii</span><span class="o">/</span><span class="n">counterize_install</span><span class="p">.</span><span class="n">php</span></span>
-<span class='line'><span class="n">patching</span> <span class="n">file</span> <span class="n">counterizeii</span><span class="o">/</span><span class="n">counterize</span><span class="p">.</span><span class="n">php</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>表示完成了，這是在Linux底下，在windows的話可能需要GnuWin32或是其他對應的軟體。</p>]]></content>
   </entry>
   
 </feed>

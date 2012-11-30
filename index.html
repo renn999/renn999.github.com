@@ -76,6 +76,41 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/916/">apache2 wsgi 設定メモ
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>最近都在玩 Python 反而 php 少碰非常多，這是一個在 Ubuntu 下架設 apache2 及 wsgi 的紀錄。因為在本機上測試東西，架個在 localhost 上這樣就不用一直下 reload 指令...(:-p)</p>
+<h2>* 安裝相關套件</h2>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo apt-get install apache2 libapache2-mod-wsgi</span>
+<span class='line'><span class="gp">#</span>安裝套件</span>
+<span class='line'><span class="gp">$</span> sudo a2enmod wsgi</span>
+<span class='line'><span class="gp">#</span>載入wsgi</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+    <a href="/archives/916/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Fri Nov. 30 2012</div>
+  <div class="tags">
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/916/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/915/">怕了吧! 我用CLI來噗浪 ヽ( ^∀^)ﾉ
 
 </a></h1>
@@ -213,43 +248,6 @@
     <a href='/archives/categories/python/'>python</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/912/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/910/">No handlers could be found for logger &#39;XXXXX&#39;
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>之前在練習寫 Markdown Extension ，寫完要測試時 Bash 一直吐出這樣的訊息</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">No</span> <span class="n">handlers</span> <span class="n">could</span> <span class="n">be</span> <span class="n">found</span> <span class="k">for</span> <span class="n">logger</span> <span class="s">&#39;MARKDOWN&#39;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>只要在主 python 的程式加上</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="kn">import</span> <span class="nn">logging</span></span>
-<span class='line'><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">()</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>就可以看到吐出來的錯誤訊息，這個東西浪費了我不少時間。</p>
-    
-  
-</div>
-
-<div class="meta">
-  <div class="date">Sun Oct. 21 2012</div>
-  <div class="tags">
-    <a href='/archives/categories/python/'>python</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/910/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
