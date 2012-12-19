@@ -77,7 +77,7 @@
     
       
 
-<h1 class="title"><a href="/wordpress/wordplurk-improve/">WordPlurk Improve
+<h1 class="title"><a href="/wordplurk-improve/">WordPlurk Improve
 
 </a></h1>
 
@@ -85,7 +85,6 @@
   
     <p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出(已經多提供幾個短網址於1.7版)。</p>
 <p>本版本更貼近使用者的各項設定，至於未來是否要結合其他的plugin功能，讓Wordplurk越來越強大我還在思考中。</p>
-<p>P.S. 這個plurk api 需要plurk api key，這個需要去plurk申請<a href="http://www.plurk.com/API/1.0/">http://www.plurk.com/API/1.0/</a></p>
 <p><big><strong>WordPlurk Plugin Page：</strong></big>
 <a href="http://wordpress.org/extend/plugins/wordplurk-improve/">http://wordpress.org/extend/plugins/wordplurk-improve/</a></p>
 <p><big><strong>最新版本下載：</strong></big></p>
@@ -101,11 +100,11 @@
 <li>首先下載<a href="http://wordpress.org/extend/plugins/wordplurk-improve/">wordplurk improve</a></li>
 <li>解壓縮之後將wordplurk-improve資料夾放到您的wordpress plurgin資料夾內</li>
 <li>在外掛設定中啟用</li>
-<li>設定您的Plurk 帳號密碼 API key等...</li>
+<li>進入 Wordplurk-improve 設定頁面設定</li>
 <li>當下次寫新文章發表時會自動發布到plurk上了</li>
 </ol>
 <p>P.S. 在Wordplurk Template中可以隨意自訂你所要得格式 預設為<code>%%url%% - %%title%%</code>可以改成<code>%%url%% (%%title%%)</code>直接連結的模式</p>
-<p><big><strong>Wordpress版本需求：</strong></big>2.6以上</p>
+<p><big><strong>Wordpress版本需求：</strong></big>3.0以上</p>
 <p><big><strong>目前問題：</strong></big></p>
 <ul>
 <li>User can design Post Plurk Responses CSS.</li>
@@ -114,6 +113,21 @@
 <p><big><strong>Donate</strong></big>
 If you like this Plugin, please disable the adblock or add this site to white list, thanks.
 如果您喜歡這個Plugin，請關閉adblock或是把此站加入白名單，謝謝。</p>
+<p><strong>wordplurk improve 3.0</strong></p>
+<ul>
+<li>(NEW) Add Romanian language. ( thanks Alexander Ovsov "pivnyukip<AT>gmail.com" )</li>
+<li>(FIX) Upgrade plurk API using version 2.0.</li>
+<li>(FIX) drop dummy setting.</li>
+<li>(FIX) iFrame embed add for choies.</li>
+</ul>
+<p><strong>wordplurk improve 2.2.1</strong></p>
+<ul>
+<li>(FIX) The count of words might be wrong!</li>
+</ul>
+<p><strong>wordplurk improve 2.2</strong></p>
+<ul>
+<li>(FIX) file_get_contents() function might occurred a Warning on some server, so I ues curl replace it.</li>
+</ul>
 <p><strong>wordplurk improve 2.1</strong></p>
 <ul>
 <li>(NEW) New tag at Wordplurk Template '%%content%%'. It will capture front part of the article to plurk.(Thanks Lakatos for giving such ideal.)</li>
@@ -184,7 +198,7 @@ If you like this Plugin, please disable the adblock or add this site to white li
 <ul>
 <li>Bate Release</li>
 </ul>
-<p>如果有任何問題 請大家在此留言 謝謝<code>&lt;(_ _)&gt;</code></p>
+<p>如果有任何問題 請大家在此留言 謝謝&lt;(_ _)&gt;</p>
   
 </div>
 
@@ -235,8 +249,8 @@ If you like this Plugin, please disable the adblock or add this site to white li
       var disqus_shortname = 'rennidit';
       
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.renn999.twbbs.org/wordpress/wordplurk-improve/';
-        var disqus_url = 'http://www.renn999.twbbs.org/wordpress/wordplurk-improve/';
+        var disqus_identifier = 'http://www.renn999.twbbs.org/wordplurk-improve/';
+        var disqus_url = 'http://www.renn999.twbbs.org/wordplurk-improve/';
         var disqus_script = 'embed.js';
       
     (function () {
