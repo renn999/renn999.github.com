@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>WordPlurk Improve - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於原本作者的程式碼做了一點修改，更多可以設定的部份。而網址還是依照原始的用ti...">
+  <meta name="description" content="前言 其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於原本作者的程式碼做了一點修改，更多可以設定的部份。而網址還是依照原始的...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -83,10 +83,13 @@
 
 <div class="entry-content">
   
-    <p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出(已經多提供幾個短網址於1.7版)。</p>
+    <h2><big><strong>前言</strong></big></h2>
+<p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出(已經多提供幾個短網址於1.7版)。</p>
 <p>本版本更貼近使用者的各項設定，至於未來是否要結合其他的plugin功能，讓Wordplurk越來越強大我還在思考中。</p>
 <p><big><strong>WordPlurk Plugin Page：</strong></big>
-<a href="http://wordpress.org/extend/plugins/wordplurk-improve/">http://wordpress.org/extend/plugins/wordplurk-improve/</a></p>
+<a href="http://wordpress.org/extend/plugins/wordplurk-improve/" title="wordplurk-improve">http://wordpress.org/extend/plugins/wordplurk-improve/</a></p>
+<p><strong>Github page</strong> <a href="https://github.com/renn999/Wordplurk-improve">https://github.com/renn999/Wordplurk-improve</a>
+<strong>Bug Report</strong> <a href="https://github.com/renn999/Wordplurk-improve/issues">https://github.com/renn999/Wordplurk-improve/issues</a></p>
 <p><big><strong>最新版本下載：</strong></big></p>
 <ul>
 <li><a href="http://wordpress.org/extend/plugins/wordplurk-improve/">請至wordpress plugin頁面下載</a></li>
@@ -97,22 +100,27 @@
 </ul>
 <p><big><strong>如何安裝：</strong></big></p>
 <ol>
-<li>首先下載<a href="http://wordpress.org/extend/plugins/wordplurk-improve/">wordplurk improve</a></li>
-<li>解壓縮之後將wordplurk-improve資料夾放到您的wordpress plurgin資料夾內</li>
+<li>首先下載 <a href="http://wordpress.org/extend/plugins/wordplurk-improve/" title="wordplurk-improve">wordplurk-improve</a></li>
+<li>解壓縮之後將 <a href="http://wordpress.org/extend/plugins/wordplurk-improve/" title="wordplurk-improve">wordplurk-improve</a> 資料夾放到您的wordpress plurgin資料夾內</li>
 <li>在外掛設定中啟用</li>
-<li>進入 Wordplurk-improve 設定頁面設定</li>
+<li>進入 <a href="http://wordpress.org/extend/plugins/wordplurk-improve/" title="wordplurk-improve">wordplurk-improve</a> 設定頁面設定</li>
 <li>當下次寫新文章發表時會自動發布到plurk上了</li>
 </ol>
 <p>P.S. 在Wordplurk Template中可以隨意自訂你所要得格式 預設為<code>%%url%% - %%title%%</code>可以改成<code>%%url%% (%%title%%)</code>直接連結的模式</p>
 <p><big><strong>Wordpress版本需求：</strong></big>3.0以上</p>
-<p><big><strong>目前問題：</strong></big></p>
+<h2><big><strong>目前問題：</strong></big></h2>
 <ul>
 <li>User can design Post Plurk Responses CSS.</li>
 <li>Only one Plurk account is supported (not one account per author).from <a rel="nofollow" href="http://plugins.svn.wordpress.org/wordplurk/trunk/readme.txt">http://plugins.svn.wordpress.org/wordplurk/trunk/readme.txt</a></li>
 </ul>
-<p><big><strong>Donate</strong></big>
-If you like this Plugin, please disable the adblock or add this site to white list, thanks.
+<h2><big><strong>Donate</strong></big></h2>
+<p>If you like this Plugin, please disable the adblock or add this site to white list, thanks.
 如果您喜歡這個Plugin，請關閉adblock或是把此站加入白名單，謝謝。</p>
+<h2><big><strong>ChangeLog</strong></big></h2>
+<p><strong>wordplurk improve 3.1</strong></p>
+<ul>
+<li>(FIX) small bug fix. I forget this is php....(doh)</li>
+</ul>
 <p><strong>wordplurk improve 3.0</strong></p>
 <ul>
 <li>(NEW) Add Romanian language. ( thanks Alexander Ovsov "pivnyukip<AT>gmail.com" )</li>
