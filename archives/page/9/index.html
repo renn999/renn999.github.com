@@ -43,6 +43,9 @@
 </nav>
 <nav id="sub-nav" class="alignright">
   <div class="social">
+  	
+  	<a class="plurk" href="http://www.plurk.com/renn999" title="plurk">plurk</a>
+  	
     
     <a class="facebook" href="http://www.facebook.com/renn999" title="Facebook">Facebook</a>
     
@@ -73,138 +76,263 @@
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/446/">server上的一些變動紀錄
+<h1 class="title"><a href="/archives/137/">久久的PO文...
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>前一兩個星期從Ubuntu9.04直接升級到9.10，看似沒有問題。但是今天看了一下備份的紀錄只有到091102，好像Postfix沒有動作的樣子，至於為啥沒有動作，我就不想浪費時間去找問題，於是我參考<a href="http://plog.longwin.com.tw/">Tsung</a>大的<a href="http://plog.longwin.com.tw/my_note-unix/2009/08/27/ssmtp-shell-gmail-send-mail-2009">這一篇</a>，把postfix換掉改用gmail的smtp來送我的備份檔，除了附件大小要注意之外，還是可以使用mutt來送東西。這樣真的省得時間再去設定postfix。</p>
-<p>至於mutt的話之前的版本按照我在前一篇的<a href="http://www.renn999.twbbs.org/wordpress/archives/184">自動MySQL備份搞定</a>，中的script中一定會發現到會吐出error，他會跟你說找不到[mail位置＠where.are.you]這個檔案，我是不清楚新板式不是在這裡有改了啥東西，但是這個問題我改一下參數順序就可以了
-原始為：</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">echo</span> &quot;$<span class="n">today</span> <span class="n">Data</span> <span class="n">base</span> <span class="n">backup</span>&quot; <span class="o">|</span> <span class="n">mutt</span> <span class="o">-</span><span class="n">s</span> &quot;<span class="n">Web</span> <span class="n">Mysql</span> <span class="n">Database</span> <span class="n">Backup</span>&quot; <span class="o">-</span><span class="n">a</span>  <span class="n">sqlbak</span>$<span class="n">today</span><span class="p">.</span><span class="n">zip</span> <span class="p">[</span><span class="n">mail</span>位置＠<span class="n">where</span><span class="p">.</span><span class="n">are</span><span class="p">.</span><span class="n">you</span><span class="p">]</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>改成</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">echo</span> &quot;$<span class="n">today</span> <span class="n">Data</span> <span class="n">base</span> <span class="n">backup</span>&quot; <span class="o">|</span> <span class="n">mutt</span> <span class="p">[</span><span class="n">mail</span>位置＠<span class="n">where</span><span class="p">.</span><span class="n">are</span><span class="p">.</span><span class="n">you</span><span class="p">]</span> <span class="o">-</span><span class="n">s</span> &quot;<span class="n">Web</span> <span class="n">Mysql</span> <span class="n">Database</span> <span class="n">Backup</span>&quot; <span class="o">-</span><span class="n">a</span>  <span class="n">sqlbak</span>$<span class="n">today</span><span class="p">.</span><span class="n">zip</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>還有我的/etc/resolv.conf每次重新開機都會跑掉，於是我把resolvconf給remove就ok了 :-P</p>
+    <p>嗯嗯... 因為最近真的忙到有一個境界了...</p>
+<p>感覺上都快要被鬼隱了...</p>
+<p>最主要的原因真的是江郎才盡...囧(因為被我<span style="text-decoration: line-through;">老哥</span>?說已經有霉味了...&lt;囧&gt;)</p>
+<p>然而最近又遇到粉多的囧事....</p>
+<p>算了...XD 反正都PO文了 就放點有點像是閃光的東西好了...</p>
+<p>前幾天在逛書店之時忍不住被某一本書給深深地吸引住了 就花了錢拜下來了....orz(害我要多吃一個星期的泡麵...)</p>
+<p>就是"<a href="http://blog.roodo.com/ching_win_comic/archives/6209305.html" target="_blank">數學少女</a>" (應該說是被封面吸引住了...XD)</p>
+<p>內容真的很棒... 但是我覺得當參考輸的成份居多</p>
+<p>只不過要看懂真的需要好大一份功力...</p>
+<p>(真抱歉 請容我不貼任何圖 因為...我懶)</p>
+<p>科科... 日本的C垃圾也快要開始了就在 這個星期五吧...</p>
+<p>到石英個有更多的東西可以寫了...(前提是我的惰性不要啟動...&lt;囧&gt;)</p>
     
   
 </div>
 
 <div class="meta">
-  <div class="date">Wed Nov. 11 2009</div>
+  <div class="date">Wed Aug. 13 2008</div>
   <div class="tags">
-    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/446/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/137/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/437/">9.10登入以及開機畫面[xsplash]篇
+<h1 class="title"><a href="/archives/134/">企鵝娘 第六話 and 第七話
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>翻完以上的文章之後，老實說那些有些部份只適用9.04以前的，今天就研究了一下要如何修改，9.10的那些介面，因為9.10跟以往不大一樣的地方就是他們的gdm版本是比較新的(廢話)，因為這個原因他們的登入以及Splash佈景待改笧用新版，而比較特別的就是Splash改用了xSplash。</p>
-<p><big>修改登入畫面：</big></p>
+    <p>這次Lag太大了...</p>
 
-    <a href="/archives/437/" class="more-link">Read More ...</a>
+<p><p>但是也在忙期末了...</p>  <p>這次也懶得捏了...= =</p>  <p>官網:<a href="http://pen-musu.jp" target="_blank">http://pen-musu.jp</a>    <br /><iframe style="border-right: #ccc 1px solid; border-top: #ccc 1px solid; border-left: #ccc 1px solid; border-bottom: #ccc 1px solid" src="http://www.nicovideo.jp/thumb/za3406440" frameborder="0" width="312" scrolling="no" height="176"><a href="http://www.nicovideo.jp/watch/za3406440">【ニコニコ動画】ペンギン娘♡はぁと ０６「これがワタチーのご主人様！」</a></iframe></p>  <p><iframe style="border-right: #ccc 1px solid; border-top: #ccc 1px solid; border-left: #ccc 1px solid; border-bottom: #ccc 1px solid" src="http://www.nicovideo.jp/thumb/za3248509" frameborder="0" width="312" scrolling="no" height="176"><a href="http://www.nicovideo.jp/watch/za3248509">【ニコニコ動画】ペンギン娘♡はぁと ０７「みんな好きの巫女」</a></iframe></p>  <p>這次看起來服務性質超大</p>  <p>第六話萌女僕 第七話萌女巫 下一話萌&quot;呆毛&quot;？...囧</p>  <p>(以下不想捏)</p></p>
+    
   
 </div>
 
 <div class="meta">
-  <div class="date">Fri Nov.  6 2009</div>
+  <div class="date">Wed Jun.  4 2008</div>
   <div class="tags">
-    <a href='/archives/categories/Linux/'>Linux</a></div>
+    <a href='/archives/categories/%E3%83%8B%E3%82%B3%E3%83%8B%E3%82%B3%E5%8B%95%E7%94%BB/'>ニコニコ動画</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/437/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/134/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/428/">moebuntu中文教學文件(開機畫面[splash]篇)
+<h1 class="title"><a href="/archives/133/">[IOSYS] 東方真華神祭
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>本文翻譯從<a target="_blank" href="http://moebuntu.web.fc2.com/moesplash.html">http://moebuntu.web.fc2.com/moesplash.html</a> 並符合正體中文語系的使用者介面之翻譯</p>
-<p><big><big><font color="#CC0000">注意：以下之方法只是用於9.04(含)以前的版本，於最新版的9.10不適用(譯者親身經歷)</font></big></big></p>
-<p><big><big>準備工作：</big></big>
-<ul><li>StartUp-Manager(用於修改Splash的工具)</li><li>moebuntu Splash佈景</li></ul></p>
-    <a href="/archives/428/" class="more-link">Read More ...</a>
+    <p>老實說真是可怕的惰性 外加上最近忙到快爆炸了...QQ</p>
+
+<p><p>還有一堆鳥事要處理... 真的快要到翻桌的地步了</p>  <p>-------------------------(抱怨分隔線)---------------------------------------------------</p>  <p>嗯嗯 說介紹這個Lag有點大了 但是這家除了上次介紹做了&quot;三次&quot;同人音樂外...</p>  <p>這一張專輯真的是二次同人音樂了...</p>  <p>應援一下    <br /><a href="http://makashinsai.com/" target="_blank"><img src="http://makashinsai.com/image/468_60.gif" /></a>&#160;</p>  <p>老實說這家每次亦有新專輯時 一定都會有很棒的Flash</p>  <p>而且電波污染嚴重 ...XDDD</p>  <p>但是每次經過電波的洗腦之後 心情總是比較好一點</p>  <p><a href="http://makashinsai.com/pv_hakureijinja.html">博麗神社町内会音頭</a> 這個Flash真的推薦看一下</p>  <p>而且Flash作者的網站真的也建議去看一下 很棒的...</p></p>
+    
   
 </div>
 
 <div class="meta">
-  <div class="date">Thu Nov.  5 2009</div>
+  <div class="date">Tue May. 27 2008</div>
   <div class="tags">
-    <a href='/archives/categories/Linux/'>Linux</a></div>
+    <a href='/archives/categories/%E5%90%8C%E4%BA%BACD/'>同人CD</a>, 
+    <a href='/archives/categories/%E5%90%8C%E4%BA%BA%E6%A8%82%E5%9C%98/'>同人樂團</a>, 
+    <a href='/archives/categories/%E6%9D%B1%E6%96%B9Project/'>東方Project</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/428/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/133/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/418/">moebuntu中文教學文件(登入篇)
+<h1 class="title"><a href="/archives/132/">嘎～～！有人想&#34;駭&#34;我...
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>本文翻譯從<a target="_blank" href="http://moebuntu.web.fc2.com/moelogin.html">http://moebuntu.web.fc2.com/moelogin.html</a> 並符合正體中文語系的使用者介面之翻譯</p>
-<p><big><big><font color="#CC0000">注意：以下之方法只是用於9.04(含)以前的版本，於最新版的9.10不適用(譯者親身經歷)</font></big></big></p>
-<p><big><big>方法如下：</big></big></p>
-    <a href="/archives/418/" class="more-link">Read More ...</a>
+    <p>今天早上起來 看了一下瀏覽紀錄無意間發現了怪怪的東西</p>
+
+<p><p>就是出現了兩個謎樣瀏覽...</p>  <p>分別是連向</p>  <p>http://myurl/wordpress/index.php?cat=999+UNION+SELECT+null,CONCAT(666,CHAR(58),user_pass,CHAR(58),666, CHAR(58)),null,null,null+FROM+ wp_users+where+id=1/<em></p>  <p>http://myurl/wordpress/index.php?cat=%2527 +UNION+SELECT+CONCAT(666,CHAR(58),user_pass,CHAR(58),666,CHAR(58))+FROM+wp_users+where+id= 1/</em></p>  <p>我google了一下 好像有人想要利用&quot;之前&quot;的漏洞攻擊</p>  <p>試圖得到我的user and password</p>  <p>還好我的Blog吐出來是沒有用的東西...XDDD</p>  <p>因為前一天剛好做了系統外加Blog的更新...</p>  <p>定期更新是很重要的...XDDD</p></p>
+    
   
 </div>
 
 <div class="meta">
-  <div class="date">Thu Nov.  5 2009</div>
+  <div class="date">Sun May. 18 2008</div>
   <div class="tags">
-    <a href='/archives/categories/Linux/'>Linux</a></div>
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/418/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/132/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/406/">moebuntu中文教學文件(介面篇)
+<h1 class="title"><a href="/archives/130/">企鵝娘 第五話 ペンギン娘♡はぁと ０５「マリー様がみてる」
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>本文翻譯從<a href="http://moebuntu.web.fc2.com/index.html" target="_blank">http://moebuntu.web.fc2.com/index.html</a> 並符合正體中文語系的使用者介面之翻譯</p>
-<p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/11/moe_s_f_800.jpg"><img title="moe_s_f_800" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2009/11/moe_s_f_800.jpg" alt="moe_s_f_800" width="600" /></a>
-老實說看到這這東西雖然被了kagami萌了一下，<span style="text-decoration: line-through;">但是我覺得粉紅色好噁心...Orz</span>，但是這份文件太好了排除"萌"的要素之外根本就是給新手簡單的而且明瞭的介面轉換。廢話不多說：</p>
-    <a href="/archives/406/" class="more-link">Read More ...</a>
+    <p>老實說最近都迷上用 WLW來寫Blog了...XDDD(題外話)</p>
+
+<p><p>企鵝娘 第五話也發佈了..</p>  <p>這次有新人物追加...(看起來好邪惡...=.=)</p>  <p>官網：<a href="http://pen-musu.jp" target="_blank">http://pen-musu.jp</a>     <br /><iframe style="border-right: #ccc 1px solid; border-top: #ccc 1px solid; border-left: #ccc 1px solid; border-bottom: #ccc 1px solid" src="http://www.nicovideo.jp/thumb/za3248507" frameborder="0" width="312" scrolling="no" height="176"><a href="http://www.nicovideo.jp/watch/za3248507">【ニコニコ動画】ペンギン娘♡はぁと ０５「マリー様がみてる」</a></iframe></p>  <p>(以下有捏...)</p> </p>
+    <a href="/archives/130/" class="more-link">Read More ...</a>
   
 </div>
 
 <div class="meta">
-  <div class="date">Thu Nov.  5 2009</div>
+  <div class="date">Sat May. 17 2008</div>
+  <div class="tags">
+    <a href='/archives/categories/%E3%83%8B%E3%82%B3%E3%83%8B%E3%82%B3%E5%8B%95%E7%94%BB/'>ニコニコ動画</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/130/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/131/">IOSYS - ごっすんリミックス
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>IOSYS可能沒想到 當初他們做出來的&quot;魔理沙は大変なものを盗んでいきました&quot;會這麼紅吧</p>
+
+<p><p>所以這次聯合了一堆社團做了好幾首的三次創作...XDDD</p>  <p>打算在5/25 (日) 博麗神社例大祭 開賣...</p>  <p>&quot;ごっすんリミックス アイン&quot;和&quot;ごっすんリミックス ツバイン&quot;</p>  <p><a href="http://gossun-remix.com/" target="_blank"><img src="http://gossun-remix.com/image/banner_tohog_big.jpg" /></a></p>  <p>剛剛聽了一下試聽 覺得這次的都是電波嚴重 小心被污染了...XDDD</p>  <p>但是老實說還是有幾個社團的我真的不喜歡...</p>  <p>還有&quot;dBu music&quot;也有參加 但是在試聽曲的感覺上好像沒這麼吸引我...</p>  <p>還是等正式的歌曲出來再說吧...XDDD</p></p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sat May. 17 2008</div>
+  <div class="tags">
+    <a href='/archives/categories/%E5%90%8C%E4%BA%BACD/'>同人CD</a>, 
+    <a href='/archives/categories/%E5%90%8C%E4%BA%BA%E6%A8%82%E5%9C%98/'>同人樂團</a>, 
+    <a href='/archives/categories/%E6%9D%B1%E6%96%B9Project/'>東方Project</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/131/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/95/">Windows Live Writer 第一篇PO文
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>這微軟真的好樣的...    <br />最近他們好像有搞了一些新的東西...</p>
+
+<p><p>就是可以離線寫Blog...</p>  <p>讓我真的不禁想說...</p>  <blockquote>   <p><font size="5">他們啥時有這麼好用的東西了...&lt;0&gt;</font></p> </blockquote>  <p>老實說他的好用我還真的被嚇到了...</p>  <p>其實說... 有支援Wordpress我就嚇到了...(毆)</p>  <p>(微軟啊！以後要多寫點這樣的軟體啊...)</p>  <p>就先說道這裡吧... 都要考試了我還再說這些...orz</p>  <p>以下是插入測試 可以不用看...XDDD</p> </p>
+    <a href="/archives/95/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Fri May. 16 2008</div>
+  <div class="tags">
+    <a href='/archives/categories/%E9%97%9C%E6%96%BC%E8%BB%9F%E9%AB%94/'>關於軟體</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/95/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/104/">Windows Live Writer 使用心得
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>這幾天用了...覺得真的太方便了</p>
+
+<p><p>因為老實說 很少有離線寫Blog的軟體...</p>  <p>但是每次用網頁預視時 都會出現下面的錯誤訊息</p>  <p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/00000.jpg"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="292" alt="00000" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/00000-thumb.jpg" width="452" border="0" /></a></p>  <p>可能是我的樣式太花俏了...XDDD 造成很多的問題...XDDD</p>  <p>希望這個部份下一版能改進...</p>  <p>還有一個缺點就是 文字大小的問題</p>  <p>還要手動到Html原始碼下去新增有點麻煩</p></p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Fri May. 16 2008</div>
+  <div class="tags">
+    <a href='/archives/categories/%E9%97%9C%E6%96%BC%E8%BB%9F%E9%AB%94/'>關於軟體</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/104/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/105/">當Ubuntu遇到觸控式銀幕
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>哇靠！這真的是太強大了...</p>
+
+<p><p>還真的有人這樣玩...</p>  <p>但是感覺上他控起來的感絕不怎麼好... 因為手指太粗了...XDDD</p>  <object width="425" height="355"><param name="movie" value="http://www.youtube.com/v/Yx9FgLr9oTk&amp;hl=en"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/Yx9FgLr9oTk&amp;hl=en" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed></object></p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Fri May. 16 2008</div>
   <div class="tags">
     <a href='/archives/categories/Linux/'>Linux</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/406/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/105/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/88/">Blog升級筆記
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>Wordpress2.3.3 &gt; 2.5.1 (又用回來了)</p>
+
+<p><p>vSlider(WP) 3.0 ---&gt; 3.1.1</p>  <p>vSlider(WPG2) 3.0 ---&gt;3.1.1</p>  <p>算做一下筆記吧...</p>  <p>要不然改天真的都會忘掉...</p>  <p>還有之前的那些問題迫使我降級的好像並不是wordpress本身的問題...</p>  <p>而又是IE6出現的鳥問題...= =</p></p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Mon May. 12 2008</div>
+  <div class="tags">
+    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/88/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

@@ -43,6 +43,9 @@
 </nav>
 <nav id="sub-nav" class="alignright">
   <div class="social">
+  	
+  	<a class="plurk" href="http://www.plurk.com/renn999" title="plurk">plurk</a>
+  	
     
     <a class="facebook" href="http://www.facebook.com/renn999" title="Facebook">Facebook</a>
     
@@ -73,120 +76,336 @@
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/905/">近日心情
+<h1 class="title"><a href="/archives/828/">初學python
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>這是密碼保護文</p>
-    <a href="/archives/905/" class="more-link">Read More ...</a>
+    <p>這是利用plurk api簡單寫得東東，主要是要搞懂json的用法：p
+到時候先搞定cookie的儲存..OTZ</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">#!/usr/bin/python</span></span>
+<span class='line'><span class="c">#-*- coding: UTF8 -*-</span></span>
+<span class='line'><span class="c">#</span></span>
+<span class='line'></span>
+<span class='line'><span class="kn">import</span> <span class="nn">logging</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">time</span></span>
+<span class='line'><span class="kn">import</span> <span class="nn">urllib</span><span class="o">,</span><span class="nn">urllib2</span><span class="o">,</span><span class="nn">cookielib</span><span class="o">,</span><span class="nn">htmllib</span><span class="o">,</span><span class="nn">formatter</span></span>
+<span class='line'><span class="kn">import</span> <span class="nn">sgmllib</span></span>
+<span class='line'><span class="kn">import</span> <span class="nn">json</span></span>
+<span class='line'></span>
+<span class='line'><span class="k">def</span> <span class="nf">main</span><span class="p">():</span></span>
+<span class='line'>  <span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">())</span></span>
+<span class='line'>  <span class="n">get_api_url</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s">&#39;http://www.plurk.com/API</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">x</span></span>
+<span class='line'>  <span class="n">encode</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span></span>
+<span class='line'></span>
+<span class='line'>  <span class="n">fp</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">get_api_url</span><span class="p">(</span><span class="s">&#39;/Users/login&#39;</span><span class="p">),</span></span>
+<span class='line'>    <span class="n">encode</span><span class="p">({</span></span>
+<span class='line'>      <span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span></span>
+<span class='line'>      <span class="s">&#39;password&#39;</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span></span>
+<span class='line'>      <span class="s">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">api_key</span> <span class="p">,</span></span>
+<span class='line'>    <span class="p">}))</span></span>
+<span class='line'>  <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span></span>
+<span class='line'></span>
+<span class='line'>  <span class="n">fp</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">get_api_url</span><span class="p">(</span><span class="s">&#39;/Timeline/getPlurks&#39;</span><span class="p">),</span></span>
+<span class='line'>    <span class="n">encode</span><span class="p">({</span><span class="s">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">}))</span></span>
+<span class='line'>  <span class="n">dumps</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span></span>
+<span class='line'>  <span class="n">dumps</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">dumps</span><span class="p">)</span></span>
+<span class='line'>  <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">dumps</span><span class="p">[</span><span class="s">&#39;plurks&#39;</span><span class="p">]:</span></span>
+<span class='line'>    <span class="k">print</span> <span class="n">api_key</span></span>
+<span class='line'>    <span class="n">user_dis_name</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">[</span><span class="s">&#39;plurk_users&#39;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;owner_id&#39;</span><span class="p">])][</span><span class="s">&#39;display_name&#39;</span><span class="p">]</span></span>
+<span class='line'>    <span class="k">print</span> <span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">user_dis_name</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;qualifier_translated&#39;</span><span class="p">]</span><span class="o">+</span><span class="s">&quot;:&quot;</span></span>
+<span class='line'>    <span class="k">print</span> <span class="s">&quot; &quot;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;content_raw&#39;</span><span class="p">]</span></span>
+<span class='line'></span>
+<span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span><span class="s">&#39;__main__&#39;</span><span class="p">:</span></span>
+<span class='line'>  <span class="n">api_key</span> <span class="o">=</span> <span class="s">&#39;api_key&#39;</span></span>
+<span class='line'>  <span class="n">username</span> <span class="o">=</span> <span class="s">&#39;your_username&#39;</span></span>
+<span class='line'>  <span class="n">password</span> <span class="o">=</span> <span class="s">&#39;your_password&#39;</span></span>
+<span class='line'>  <span class="n">main</span><span class="p">()</span></span>
+<span class='line'>  <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+    
   
 </div>
 
 <div class="meta">
-  <div class="date">Mon Sep. 17 2012</div>
+  <div class="date">Thu Jul. 22 2010</div>
+  <div class="tags">
+    <a href='/archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/'>程式相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/828/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/799/">在ubuntu下播放正版DVD
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>我知道這是老梗文了，在前幾天翻出了'I, Robot'又懷念了一下，但是在播放的時候一直出現問題，才想到說我沒有灌解CSS相關的東西，<del datetime="2010-07-03T01:45:34+00:00">雖然說看正版的人應該不多吧</del>，但是還是紀錄一下。</p>
+<p><a href="https://help.ubuntu.com/community/RestrictedFormats/PlayingDVDs">ubuntu原文</a> 英文好的請直接喀這裡，....OTZ</p>
+    <a href="/archives/799/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sat Jul.  3 2010</div>
+  <div class="tags">
+    <a href='/archives/categories/Linux/'>Linux</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/799/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/769/">bitly.pro自訂網域的短網址服務
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。</p>
+    <a href="/archives/769/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sat Jun. 12 2010</div>
   <div class="tags">
     <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/905/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/769/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/904/">Octopress調教メモ之二
+<h1 class="title"><a href="/archives/732/">EveryDNS替代方案FreeDNS
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>這次把<code>LinkWithin</code>的連結稍微改了一下，把他弄成獨立頁面，並且我發現到如果改了 theme 之前 theme 的東西還是會留下來變成垃圾，但是會不會一起<code>generate</code>老實說我就不得而知了，但是看起來好像不會。</p>
-    <a href="/archives/904/" class="more-link">Read More ...</a>
+    <p>因為之前聽到Everydns被Dyn收購的消息，然而在這一段時間老實說，我是擔心說和時會停止服務，雖然說官方一直說免費服務還是會維持，但是維持到啥時我就不知道了。然而我就開始尋找替代方案。</p>
+<p>我找到了<a href="http://freedns.afraid.org/">FreeDNS</a>，雖然說網址有點難記就是了。</p>
+<p>我也去申請了一個<a href="http://www.dot.tk">.TK</a>的免費網路域名，作為我自己的短網址之用的，真的短了很多。</p>
+<p>在此也紀錄一下。</p>
+    
   
 </div>
 
 <div class="meta">
-  <div class="date">Wed Sep. 12 2012</div>
+  <div class="date">Mon Jun.  7 2010</div>
   <div class="tags">
-    <a href='/archives/categories/octopress/'>octopress</a></div>
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a>, 
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/904/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/732/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/903/">Octopress調教メモ之一
+<h1 class="title"><a href="/archives/729/">紀錄一下
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章<br />
-</p>
-    <a href="/archives/903/" class="more-link">Read More ...</a>
+    <p>這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了</p>
+<p>應該都ok了吧...OTZ</p>
+<p>接著看看明天有沒有把備份自動寄到我的信箱就好了...OTZ</p>
+    
   
 </div>
 
 <div class="meta">
-  <div class="date">Mon Sep. 10 2012</div>
+  <div class="date">Fri May. 28 2010</div>
   <div class="tags">
-    <a href='/archives/categories/octopress/'>octopress</a></div>
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/903/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/729/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/902/">rake的tips
+<h1 class="title"><a href="/archives/721/">利用 trash 來取代 rm 在 Terminal 模式下
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>參考至<a href="http://robdodson.me/blog/2012/06/11/some-octopress-rake-tips/">Some Octopress Rake Tips</a></p>
-<p>剛開始用Octopress的時候感覺上速度還蠻快的，但是在將WP的文章匯入的時候就發現到，每一次的<code>generate</code>就會發現到速度會少許的減慢，好像每一次都會對所有的文章做一次的編譯，造成每次要<code>preview</code>時速度都非常慢，其實裏面有幾個有用的指令可以提昇速度。</p>
-    <a href="/archives/902/" class="more-link">Read More ...</a>
+    <p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下'rm *.jpg'，但是手殘外加腦包的我竟然不小心下成'rm * .jpg'看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>...不不不...應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式....OTZ</p>
+<p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big></p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>$ <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">trash</span><span class="o">-</span><span class="n">cli</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+    <a href="/archives/721/" class="more-link">Read More ...</a>
   
 </div>
 
 <div class="meta">
-  <div class="date">Sat Sep.  8 2012</div>
+  <div class="date">Wed May. 26 2010</div>
   <div class="tags">
-    <a href='/archives/categories/octopress/'>octopress</a></div>
+    <a href='/archives/categories/Linux/'>Linux</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/902/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/721/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/901/">Hello Octopress
+<h1 class="title"><a href="/archives/708/">ubuntu 10.04 升級筆記
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>我把本站的網址改了：<a href="http://www.renn999.twbbs.org">http://www.renn999.twbbs.org</a><br />
-RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.com/renn999</a></p>
-<p>算一算從開始用Wordpress(以下簡稱WP)已經幾年了，我只既得我一開始事由社團教學所認識的，那時沒有記錯的話是從2.3版開始，算是非常晚了那時會自己架站最主要就是看上自己架的 Blog more flexible <s>而且比較能炫耀</s>，並且整合性高，也可以自己架設相簿整合成自己的一套系統，但是經歷了一堆儲存裝置上的大地雷，以及不少次的歸零重整，外加程度上的成長，反而讓自己越來越懶，我懶得改一大堆東西，外加對於 Wordpress 這已經大到可以稱怪物的東西，以及一大堆如雞肋般的功能，還有裝太多的 plugin 拖累系統的效能，那個editor真的爛到我想殺人，都讓我非常的詬病。老實說XDite大在<a href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">Why Octopress?</a>中已經把所有的重點已經講完了，真的身同感受啊！</p>
-    <a href="/archives/901/" class="more-link">Read More ...</a>
+    <p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。"看"起來好像也沒有比較大的問題出現了。</p>
+<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現</p>
+    <a href="/archives/708/" class="more-link">Read More ...</a>
   
 </div>
 
 <div class="meta">
-  <div class="date">Fri Sep.  7 2012</div>
+  <div class="date">Sat May. 22 2010</div>
   <div class="tags">
-    <a href='/archives/categories/octopress/'>octopress</a>, 
-    <a href='/archives/categories/Hello%20World/'>Hello World</a></div>
+    <a href='/archives/categories/Linux/'>Linux</a>, 
+    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a>, 
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/901/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/708/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/690/">觀貓日記 20100514
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>今天真是睡姿大聚集....</p>
+
+<div align="center">
+<wpg2>1297</wpg2>
+先來個日光浴</div>
+
+    <a href="/archives/690/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Fri May. 14 2010</div>
+  <div class="tags">
+    <a href='/archives/categories/%E8%A7%80%E8%B2%93%E6%97%A5%E8%A8%98/'>觀貓日記</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/690/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/680/">觀貓日記 20100513
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>今天觀察才發現到，那隻虎斑貓還會睡在別的地方...XDrz
+<div align="center">
+<p>虎斑貓在波浪版上睡覺之間</p>
+<wpg2>1285</wpg2>
+接著出現了另外一隻花貓
+</div></p>
+    <a href="/archives/680/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Thu May. 13 2010</div>
+  <div class="tags">
+    <a href='/archives/categories/%E8%A7%80%E8%B2%93%E6%97%A5%E8%A8%98/'>觀貓日記</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/680/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/668/">回到高雄的這幾個禮拜
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>有看過我的plurk的人應該都知道，我已經重台南搬回到高雄住了，現在每個星期三通車回到成大去上個游泳外加等畢業然後等Online，體檢報告也不知道啥時會出爐，外加因為蹲不下去還要等醫院的通知(我的身體毛病還真多，應該是我不喜歡運動的關係吧)，然而在家裡的這段時間我不就是幫父母做事，要不就是準備公職考試，看是很閒但是心中有著不明的壓力。
+　　先來說說最近完成的第一件事情吧，我已經搬回高雄了，所以說最近都是在整理家裡已經快要n年沒整理的房間，丟了一大堆東西之後才發現到那間房間的狀況有夠糟糕的，壁癌啦...之類的，當然裡面是以前我們家裡開過文具行的一些剩物，當然也勾起了一堆的回憶，說真的也丟了不少東西就是了整理完之後把牆壁刮一刮就像下面這個樣子。
+<div align="center"><wpg2>1248</wpg2><wpg2>1244</wpg2></div></p>
+    <a href="/archives/668/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Wed May. 12 2010</div>
+  <div class="tags">
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/668/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

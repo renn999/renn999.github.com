@@ -43,6 +43,9 @@
 </nav>
 <nav id="sub-nav" class="alignright">
   <div class="social">
+  	
+  	<a class="plurk" href="http://www.plurk.com/renn999" title="plurk">plurk</a>
+  	
     
     <a class="facebook" href="http://www.facebook.com/renn999" title="Facebook">Facebook</a>
     
@@ -73,133 +76,260 @@
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/910/">No handlers could be found for logger &#39;XXXXX&#39;
+<h1 class="title"><a href="/archives/905/">近日心情
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>之前在練習寫 Markdown Extension ，寫完要測試時 Bash 一直吐出這樣的訊息</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">No</span> <span class="n">handlers</span> <span class="n">could</span> <span class="n">be</span> <span class="n">found</span> <span class="k">for</span> <span class="n">logger</span> <span class="s">&#39;MARKDOWN&#39;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>只要在主 python 的程式加上</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="kn">import</span> <span class="nn">logging</span></span>
-<span class='line'><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">()</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>就可以看到吐出來的錯誤訊息，這個東西浪費了我不少時間。</p>
-    
+    <p>這是密碼保護文</p>
+    <a href="/archives/905/" class="more-link">Read More ...</a>
   
 </div>
 
 <div class="meta">
-  <div class="date">Sun Oct. 21 2012</div>
+  <div class="date">Mon Sep. 17 2012</div>
   <div class="tags">
-    <a href='/archives/categories/python/'>python</a></div>
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/910/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/905/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/909/">Octopress調教メモ之四
+<h1 class="title"><a href="/archives/904/">Octopress調教メモ之二
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
-    <a href="/archives/909/" class="more-link">Read More ...</a>
+    <p>這次把<code>LinkWithin</code>的連結稍微改了一下，把他弄成獨立頁面，並且我發現到如果改了 theme 之前 theme 的東西還是會留下來變成垃圾，但是會不會一起<code>generate</code>老實說我就不得而知了，但是看起來好像不會。</p>
+    <a href="/archives/904/" class="more-link">Read More ...</a>
   
 </div>
 
 <div class="meta">
-  <div class="date">Mon Oct. 15 2012</div>
-  <div class="tags">
-    <a href='/archives/categories/octopress/'>octopress</a>, 
-    <a href='/archives/categories/git/'>git</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/909/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/908/">bash prompt加上目前所在的git branch
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>最近因為 octopress 的關係，把重大學時代某位NE網友提起的 git 給重新翻出來學，順便把一些在硬碟中塵封已久的一些小 project 給 remote 到一些像是 <a href="http://github.com">github</a> <a href="http://bitbucket.org">bitbucket</a> 等服務上面去。</p>
-    <a href="/archives/908/" class="more-link">Read More ...</a>
-  
-</div>
-
-<div class="meta">
-  <div class="date">Mon Oct.  1 2012</div>
-  <div class="tags">
-    <a href='/archives/categories/git/'>git</a>, 
-    <a href='/archives/categories/bash/'>bash</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/908/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/907/">Octopress調教メモ之三
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>用上了 <code>slash</code> 這個 theme 後，忍不住想要惡搞起來，搞得跟自己的 Terminal 一樣黑底綠字</p>
-<p>附上 diff 檔，但是現在還有一堆東西沒有改上...OTZ</p>
-    <a href="/archives/907/" class="more-link">Read More ...</a>
-  
-</div>
-
-<div class="meta">
-  <div class="date">Fri Sep. 21 2012</div>
-  <div class="tags">
-    <a href='/archives/categories/octopress/'>octopress</a>, 
-    <a href='/archives/categories/theme/'>theme</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/907/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/906/">Octopress文章加密計劃？！
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>想想OP如果有像WP一樣的加密文章那該多有趣。</p>
-    <a href="/archives/906/" class="more-link">Read More ...</a>
-  
-</div>
-
-<div class="meta">
-  <div class="date">Tue Sep. 18 2012</div>
+  <div class="date">Wed Sep. 12 2012</div>
   <div class="tags">
     <a href='/archives/categories/octopress/'>octopress</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/906/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/904/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/903/">Octopress調教メモ之一
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章<br />
+</p>
+    <a href="/archives/903/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Mon Sep. 10 2012</div>
+  <div class="tags">
+    <a href='/archives/categories/octopress/'>octopress</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/903/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/902/">rake的tips
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>參考至<a href="http://robdodson.me/blog/2012/06/11/some-octopress-rake-tips/">Some Octopress Rake Tips</a></p>
+<p>剛開始用Octopress的時候感覺上速度還蠻快的，但是在將WP的文章匯入的時候就發現到，每一次的<code>generate</code>就會發現到速度會少許的減慢，好像每一次都會對所有的文章做一次的編譯，造成每次要<code>preview</code>時速度都非常慢，其實裏面有幾個有用的指令可以提昇速度。</p>
+    <a href="/archives/902/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sat Sep.  8 2012</div>
+  <div class="tags">
+    <a href='/archives/categories/octopress/'>octopress</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/902/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/901/">Hello Octopress
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>我把本站的網址改了：<a href="http://www.renn999.twbbs.org">http://www.renn999.twbbs.org</a><br />
+RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.com/renn999</a></p>
+<p>算一算從開始用Wordpress(以下簡稱WP)已經幾年了，我只既得我一開始事由社團教學所認識的，那時沒有記錯的話是從2.3版開始，算是非常晚了那時會自己架站最主要就是看上自己架的 Blog more flexible <s>而且比較能炫耀</s>，並且整合性高，也可以自己架設相簿整合成自己的一套系統，但是經歷了一堆儲存裝置上的大地雷，以及不少次的歸零重整，外加程度上的成長，反而讓自己越來越懶，我懶得改一大堆東西，外加對於 Wordpress 這已經大到可以稱怪物的東西，以及一大堆如雞肋般的功能，還有裝太多的 plugin 拖累系統的效能，那個editor真的爛到我想殺人，都讓我非常的詬病。老實說XDite大在<a href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">Why Octopress?</a>中已經把所有的重點已經講完了，真的身同感受啊！</p>
+    <a href="/archives/901/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Fri Sep.  7 2012</div>
+  <div class="tags">
+    <a href='/archives/categories/octopress/'>octopress</a>, 
+    <a href='/archives/categories/Hello%20World/'>Hello World</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/901/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/900/">[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>This is the first time I write post in English, so if there are something wrong in my post, please notice me, thanks.</p>
+<p>I have a laptop Asus A43SV, I do not like the windows7, so I install the ubuntu on it. But there are "Some" problem, after I finish install.</p>
+<p>First, Elantech touchpad recognized as PS/2 Logitech mouse, but you can find Elantech models in <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/681904/comments/104" target="_blank">this article.</a></p>
+<p>To solve the Realtek USB multi-card reader On my laptops, I have google it for a long time until yesterday. I find freechelmi said that he mailed to Realtek in <a href="http://ubuntuforums.org/showthread.php?t=1797202#6" target="_blank">this article</a>, and RealTek sent him a driver. This driver works on my laptops.</p>
+<p>Now, Asus Fn keys F9-F12 and some special keys stile not work, I hope ubuntu can support it in next release...</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Thu Jul. 21 2011</div>
+  <div class="tags">
+    <a href='/archives/categories/Linux/'>Linux</a>, 
+    <a href='/archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/'>程式相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/900/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/894/">ubuntu11.04使用感使用感外加問題解決
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>為11.04已經發布了，當初還在想說應該完不到了，但是因為了某些原因，提早結束了Online生活，就理用了讀書所剩餘的時間把完了一下，但是感覺上比較大的不同只有unity外加一堆預設程式被換掉，但是還是用不大習慣。
+外加，顯卡的需求好像變得比較高了...= =a，但是這不是重點，重點是解決問題的快感啊。
+首先就是unity的程式分類，當我要新增一個程式到選單時，沒有辦法放到指定的位置，只職能在所有程式中找到，unity的設定不是使用主選單的分類，而是是用每個~/.local/share/applications下的.desktop設定檔中的Categories來分類的，所以說只要分類對了就可以在unity下的分類中看到。
+另外一個就是影片縮圖，因為我都習慣把Totem拔掉，因為他真的貧弱到不行，但是拔掉之後又沒有影片縮圖，我還是利用了<a href="http://sites.google.com/site/me20305812/download_mplayer">mplayer-video-thumb</a>，但是因為1.4.1版的問題非常大...XDrz因為這是要totem存在下，才會縮圖，所以說他讓我改了一堆東西之後才可以用QQ，我是結合了1.3.2的設定，但是看到了比較高桿的用法<a href="http://planykao.blogspot.com/2009/12/mplayer-video-thumb-14-1.html">在這</a>，來為強者鞠躬吧...&lt;(<em> </em>)&gt;</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Tue May. 10 2011</div>
+  <div class="tags">
+    <a href='/archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/'>程式相關</a>, 
+    <a href='/archives/categories/%E9%97%9C%E6%96%BC%E8%BB%9F%E9%AB%94/'>關於軟體</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/894/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/886/">[公告] server硬碟壞掉
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息...OTZ。</p>
+<p>就如標題所說的，因為有的服務是我自己寫得程式，但是我犯了一個不可饒恕的錯誤...就是我忘記備份php程式了，造成有的服務可能無時間表的停止服務，因為這個站是我緊急的跟我們一位社團學長借的空間，因為有所限制，所以說短時間內我也不大想要把剩下的服務弄上去。</p>
+<p>在此公告，老伯繪師收集區停開，因為老早之前我就有打算要整個翻修內部程式碼，但是都懶得去動他，剛好趁著硬碟壞掉算是個總結吧...OTZ，但是不要擔心的是說資料庫還留著，但是程式就881了。</p>
+<p>感謝大家這幾年來對此站的照顧，在這裡除了對一些編輯者至上萬分的歉意以及感謝
+&lt;(<em> </em>)&gt;</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sun Apr. 24 2011</div>
+  <div class="tags">
+    <a href='/archives/categories/about%20PHP/'>about PHP</a>, 
+    <a href='/archives/categories/Gallery2%E9%9B%9C%E8%A8%98/'>Gallery2雜記</a>, 
+    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a>, 
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a>, 
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/886/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/869/">Wordpress升級jQuery from 1.4.2 to 1.4.3
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>jQuery最近釋出了1.4.3，當然在翻wordpress  trac的時候剛好翻到有人釋出了更新到1.4.3的patch。我則手動的將其升級了上去，如果有程度的可以直接看<a href="http://core.trac.wordpress.org/ticket/15135">ticket/15135</a></p>
+    <a href="/archives/869/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Tue Oct. 19 2010</div>
+  <div class="tags">
+    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/869/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/861/">mysql轉sqlite
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到...XDrz</p>
+<p>可以參考這裡<a href="http://www.sqlite.org/cvstrac/wiki?p=ConverterTools">sqlite - Converter Tools</a></p>
+<p>當然我的作法是將步驟分開來作的</p>
+<p>先將sqldump出來</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span><span class="o">&#39;</span><span class="n">username</span><span class="o">&#39;</span> <span class="o">-</span><span class="n">p</span><span class="o">&#39;</span><span class="n">password</span><span class="o">&#39;</span> <span class="o">--</span><span class="n">compact</span> <span class="o">--</span><span class="n">compatible</span><span class="p">=</span><span class="n">ansi</span> <span class="o">--</span><span class="n">default</span><span class="o">-</span><span class="n">character</span><span class="o">-</span><span class="n">set</span><span class="p">=</span><span class="n">binary</span> <span class="s">&#39;databasename&#39;</span> <span class="o">&gt;</span> <span class="n">database</span><span class="p">.</span><span class="n">sql</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+    <a href="/archives/861/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Wed Aug. 11 2010</div>
+  <div class="tags">
+    <a href='/archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/'>程式相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/861/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

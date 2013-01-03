@@ -43,6 +43,9 @@
 </nav>
 <nav id="sub-nav" class="alignright">
   <div class="social">
+  	
+  	<a class="plurk" href="http://www.plurk.com/renn999" title="plurk">plurk</a>
+  	
     
     <a class="facebook" href="http://www.facebook.com/renn999" title="Facebook">Facebook</a>
     
@@ -73,140 +76,311 @@
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/644/">vSlider navigation修正
+<h1 class="title"><a href="/archives/264/">PTTBlog-Rolling嵌入Wordpress  vSlider theme
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>最近發現到這裡霉味很重，已經一段時間沒有更新一堆東西，另外一個原因就是最近都在<del datetime="2010-03-07T14:11:43+00:00">菸酒所</del>研究所考試，所以說大部分的時間都是拿去唸書了。</p>
-<p>我用vSlider當作我的主要佈景主題已經一段時間了，最主要是說裡面我已經改了一堆的東西外加上，如果還要換上新主題的話，又要去研究新主題的語法外加修改掛廣告...等。</p>
-<p>但是在今天拉到頁尾，看到了很刺眼的東西</p>
-<p>就是底下都會出現雙連結，雖然說之前都有看到，但是都是懶的修正...</p>
-    <a href="/archives/644/" class="more-link">Read More ...</a>
+    <p>昨天花了一點時間處理這個東西
+竟然沒想到被我弄了出來</p>
+<p>其實這鬼東西我很早已就很想弄了
+但是基於自己技術上的問題</p>
+<p>但是老實說這也只是簡單的PHP  XML DOM而已
+因為這也是我首次寫一個比我想像還要龐大的東西(對我來說啦....&lt;囧")
+畢竟也是花了一點時間在Try&amp;Error上</p>
+<p>因為我不會寫Wordpress的Plugin所以說在設定以及使用上面有點不這麼的方便
+也不能套用在別的theme上面
+另外 我把內部一些html ifram的TAG轉成noifram這是為了一些安全上的考量
+以及除去一些RSS AD的影響 如果自己的如果自己的Blog上有自己的ads又不想被影響的話
+(我是不知道會不會影響 但是心中就是怪怪的)</p>
+<p>畢竟這是暴力改出來的東西</p>
+    <a href="/archives/264/" class="more-link">Read More ...</a>
   
 </div>
 
 <div class="meta">
-  <div class="date">Sun Mar.  7 2010</div>
+  <div class="date">Wed May. 20 2009</div>
   <div class="tags">
+    <a href='/archives/categories/about%20PHP/'>about PHP</a>, 
     <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/644/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/264/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/618/">Wine開啟視窗字體平滑效果
+<h1 class="title"><a href="/archives/256/">最近在玩XML的語法
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>在很早以前用wine的時候只要在user.reg下加入</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">[Software\\Wine\\X11 Driver]</span></span>
-<span class='line'><span class="na">&quot;ClientSideAntiAliasWithRender&quot;</span><span class="o">=</span><span class="s">&quot;Y&quot;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了
-因為如果不啟用平滑效果的話，情況會像下圖：</p>
-    <a href="/archives/618/" class="more-link">Read More ...</a>
+    <p>只是先拿只是先拿Plurk的的RSS來先玩玩看
+結果如下
+<a href="http://pic.renn999.twbbs.org/upload/280228bebfe454ee.png" target=_blank><img src="http://pic.renn999.twbbs.org/upload/280228bebfe454ee.png" width=640  /></a></p>
+<p>在改一下程式
+<a href="http://pic.renn999.twbbs.org/upload/2631eda66f9d3c35.png" target=_blank><img src="http://pic.renn999.twbbs.org/upload/2631eda66f9d3c35.png" width=640  /></a></p>
+<p>變成可以顯示回應，但是這種作法好暴力...= =
+主要是要去檢查每一個的Plurk回應rss 可能會造成對主網站多餘的loading
+所以說只是玩玩而已</p>
+<p>原始碼如下：</p>
+    <a href="/archives/256/" class="more-link">Read More ...</a>
   
 </div>
 
 <div class="meta">
-  <div class="date">Tue Dec. 29 2009</div>
+  <div class="date">Tue May. 19 2009</div>
   <div class="tags">
-    <a href='/archives/categories/Linux/'>Linux</a></div>
+    <a href='/archives/categories/about%20PHP/'>about PHP</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/618/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/577/">Wordplurk Improve
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p></big>&gt;&gt;已經成立獨立頁面<a href="http://www.renn999.twbbs.org/wordpress/wordplurk-improve">http://www.renn999.twbbs.org/wordpress/wordplurk-improve</a></big></p>
-<p>其實Wordplurk自從我玩了plurk一陣子之後才開始使用的，這是一個當你blog有新文章時，他會自動的將文章連結加上title post到plurk上，當初就已經有想改他的念頭了，剛好稱這plurk API的釋出，基於<a href="http://blog.bluefur.com/2008/07/10/wordplurk-a-wordpress-plugin-for-plurk/">原本作者的程式碼</a>做了一點修改，更多可以設定的部份。而網址還是依照原始的用tinyurl縮網址送出。</p>
-<p>本版本更貼近使用者的各項設定，至於未來是否要結合其他的plugin功能，讓Wordplurk越來越強大我還在思考中。</p>
-    <a href="/archives/577/" class="more-link">Read More ...</a>
-  
-</div>
-
-<div class="meta">
-  <div class="date">Wed Dec. 23 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/577/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/256/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/572/">The final tset Of wordplurk improve modify
+<h1 class="title"><a href="/archives/249/">練習著色...
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p>這一篇只是要作一測試</p>
-<p>改天會把我的修改文章給po出來</p>
-<p>最主要是修改了wordplurk的一些細節</p>
-<p>最初作者是用hacker出來的api下去處理</p>
-<p>我改用官方釋出的api 外加多了一點的修正</p>
+    <p>老實說 我只是個新手</p>
+<p>這也是想說想說看看SAI可不可以在Wine上跑的一個惡趣味而已
+改天真的要去摸摸gimp了</p>
+<p><a href="http://pic.renn999.twbbs.org/view/ccbe0202fbea8960.png"><img src=http://pic.renn999.twbbs.org/thumb/ccbe0202fbea8960.jpg /></a></p>
+<p>因為我真的功力沒這麼好只好先拿人家的線搞來練習了...QQ</p>
+<p>Winee是可以用沒錯啦 但是一堆快速鍵就死光了 像是Ctrl+Z..... 而且中文語系還亂碼顯示 只好強制使用英文了</p>
+<p>P.S. 剛剛才發現到的一件事情 這位畫師畫師竟然有放線稿的PSD...囧(我還在用JPG慢慢塗...我還在用JPG慢慢塗...&lt; 囧&gt;</p>
     
   
 </div>
 
 <div class="meta">
-  <div class="date">Tue Dec. 22 2009</div>
+  <div class="date">Sat May. 16 2009</div>
   <div class="tags">
     <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/572/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/249/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
     
         <article class="post">
 
-<h1 class="title"><a href="/archives/507/">moebuntu中文教學文件(9.10 xSplash篇)
+<h1 class="title"><a href="/archives/243/">Linux音訊轉檔(一)
 
 </a></h1>
 
 <div class="entry-content">
   
-    <p><a href="http://www.renn999.twbbs.org/wordpress/archives/406">&lt;&lt;回到<strong></strong><strong>moebuntu中文教學文件(介面篇)</strong></a></p>
-<p>本文翻譯從<a href="http://moebuntu.web.fc2.com/moexsplash910.html">http://moebuntu.web.fc2.com/moexsplash910.html</a>並符合正體中文語系的使用者介面之翻譯</p>
-<p>題外話：最近整個在研究修改佈景主題的script要怎麼寫，有可能的話就會發出懶人包(這應該是每個人的願望吧....XDrz)，祝我好運吧...XDrz。
-題外話2：Thanks to google translation from JAPANESE to English</p>
-<p><big>事前準備：</big>
-<ol>
-    <li>替換用的萌xsplash包</li>
-</ol></p>
-    <a href="/archives/507/" class="more-link">Read More ...</a>
+    <p>再這裡把幾個常用的有損及無損音樂壓縮整理一下，以及他們在Linux底下如何轉檔所作的整理，基本上無損壓縮壓縮的話不外乎看到的就是tta(<a href="http://true-audio.com/">TrueAudio</a>) ape(<a href="http://www.monkeysaudio.com/">Monkey's Audio</a>) flac(<a href="http://flac.sourceforge.net/">Free Lossless Audio Codec</a>) wv(<a href="http://www.wavpack.com/">Wavpack</a>) tak(<a href="http://www.thbeck.de/Tak/Tak.html">(T)om's lossless (A)udio (K)ompressor</a>)，有損的話Mp3(MPEG-1 Audio Layer 3) Ogg(<a href="http://zh.wikipedia.org/w/index.php?title=Xiph.Org_%E5%9F%BA%E9%87%91%E6%9C%83&amp;variant=zh-tw">Ogg Vorbis</a>) AAC(Advanced Audio Coding)，基本上比較流行的格式不外乎上面幾種</p>
+    <a href="/archives/243/" class="more-link">Read More ...</a>
   
 </div>
 
 <div class="meta">
-  <div class="date">Mon Dec. 21 2009</div>
+  <div class="date">Fri May. 15 2009</div>
   <div class="tags">
     <a href='/archives/categories/Linux/'>Linux</a></div>
   
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/507/#disqus_thread">Comments</a></span>
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/243/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/235/">Ubuntu Tweak - 方便設定Ubuntu設定
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>這真是一個好用的工具啊，真的是好用到炸了XD
+如果說要改一些設定的話都要去翻一些設定檔，但是這個Ubuntu Tweak已經完完全全的幫你"寬便便"了
+<ul>
+<li>官網：<a href="http://ubuntu-tweak.com/">Ubuntu Tweak</a></li>
+<li>下載：<a href="http://ubuntu-tweak.com/downloads">Official download page</a>
+</li></ul>
+當初找了老半天的鬼設定，這裡面都有
+看來這個又是一套必裝的軟體了</p>
+<p>一些截圖
+<a href="http://pic.renn999.twbbs.org/view.php?pic=caeba90887c260ec.png"><img src=http://pic.renn999.twbbs.org/thumb/caeba90887c260ec.jpg /></a>
+這是歡迎畫面 感覺上簡單大方
+<a href="http://pic.renn999.twbbs.org/view.php?pic=8693507822a9eb9c.png"><img src=http://pic.renn999.twbbs.org/thumb/8693507822a9eb9c.jpg /></a><a href="http://pic.renn999.twbbs.org/view.php?pic=0ff401cebf7e7317.png"><img src=http://pic.renn999.twbbs.org/thumb/0ff401cebf7e7317.jpg /></a>
+<a href="http://pic.renn999.twbbs.org/view.php?pic=f9dfa4cc0a8f677f.png"><img src=http://pic.renn999.twbbs.org/thumb/f9dfa4cc0a8f677f.jpg /></a><a href="http://pic.renn999.twbbs.org/view.php?pic=838275d11112e148.png"><img src=http://pic.renn999.twbbs.org/thumb/838275d11112e148.jpg /></a>
+但是老實說內部功能可不是簡單大方啊...XD
+<p>大家可以參考參考一下官網的<a href="http://ubuntu-tweak.com/about">About</a> 看來未來的版本應該很令人期待</p></p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Tue May. 12 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/Linux/'>Linux</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/235/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/226/">Mplayer SVN 29259
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>老實說 這算是一個美麗的錯誤？
+今天原本想寫一個比較文就是有沒有打入CoreAVC-for-Linux的外掛的差別
+但是讓我覺得非常驚訝的是我沒打CoreAVC-for-Linux跟有打一樣....Orz</p>
+<p>應該是說Mplayer已經寫一個libavcodec的東東進去了 讓H264的解碼好了一點
+(他X的 我前幾天幹的事情真的好像拖褲子放屁)
+而且最主要的是說 效能比CoreAVC-for-Linux還要好</p>
+<p>更何況開frame drop時CoreAVC-for-Linux會產生超嚴重的破圖現象
+所以說以後不用拖褲子放屁多弄一個CoreAVC-for-Linux了</p>
+<p>基本上我是建議說 自己SVN一個一個新版本再依自己的喜好compiler 把Gui關掉
+因為沒有人會去用Mplayerr當作前導程式吧...= =a</p>
+    <a href="/archives/226/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Tue May.  5 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/Linux/'>Linux</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/226/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/216/">CoreAVC-for-Linux dshowserver.patch for mplayer.29242
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>就是就是要在Linux底下看H264的影片 老實說都要耗盡好大的一番功夫
+在Linux底下沒有一套一套可以把H264解好的Codec 所以說我還是要單靠<a href="http://code.google.com/p/coreavc-for-linux/">CoreAVC-for-Linux</a>
+但是老實說這個好用的東西好像沒有在更新了了...Orz
+裡面的dshowserver.patch對於新版的Mplayer好像沒有辦法Patch
+所以說我就非常單純的"手動"把dshowserver.patch的東西手動去自己更新
+難怪之前用原本的Patch去作的話在compile的過程中都會發生錯誤
+所以說我就自己來稿定一個Patch</p>
+<p>因為我這時候svn出來的mplayer版本為29242
+所以說有新版本的話不一定能用 就版本也不一定能用
+要不然的自己去讀.patch檔自己手動檔自己手動Patch也可以</p>
+<p>simple english:
+The code from svn is still in 82, and the dshowserver.patch won't work so I differ the patch and codes by myself and make a new dshowserver.patch for Mplayer svn version 29242. you can download from here.(Please forgive me my pool english...Orz)</p>
+<p><a href="http://web.renn999.twbbs.org/~renn999/dshowserver.patch">dshowserver.patch for mplayer.29242 download</a>
+<a href="http://web.renn999.twbbs.org/~renn999/mplayer_20090503-2_i386.deb">mplayer.29242 patched Deb pack for i386 Ubuntu 9.10(Unofficial Pack)</a></p>
+<p>最主要是說網路上好多的資料都沒有說到這一部份...Orz</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sun May.  3 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/Linux/'>Linux</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/216/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/207/">Ubuntu 9.04 ext4 災情外加解決報告...囧&#34;&gt;
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>前幾天非常高興的把我的1T硬碟的的所有Partition的Partition的Ext3轉換成轉換成Ext4，當然我覺得我真的做的太大膽了，轉完之後在做大量檔案搬移的時候，災難已經開始發生了....囧rz，因為之前在google時是有看到有人因為ext4而造成Loss DATA的狀況，但是我在想說但是我在想說Ubuntuu已經開始推了，應該是沒問題才對，於是就很放心的把我1T上的所有partitionn全部轉了過去，但是今天才是慘劇的開始，原因事因為我正在因為某些原因需要騰出大量的Freespace，所以說很直覺得將我的檔案搬過去，但是每搬到一段時間後，Ubuntu娘就整個失神了，我當初只是想說應該只是小問題吧，直到的第三次，第四次...&lt;囧&gt;，我就不甘心的打開Epiphany來google "ext4 wiki"(不要在提Firefox了)，真的是讓我囧了一下下</p>
+    <a href="/archives/207/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Wed Apr. 29 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/Linux/'>Linux</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/207/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/200/">Ubuntu 9.04 發佈
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>今天剛好是Ubuntu9.04發佈的日子
+所以說就想說升級來試試看的心態下去升級了
+整體讓人感覺上對於速度的提昇有不少的改進
+當然我就順道把我的桌機和我就順道把我的桌機和Serverr一起升級上去了</p>
+<p>當然最直覺的感覺開機速度提昇不少
+還有一些的的小地方感覺上沒有這麼頓了
+登入畫面變得比較酷
+但是目前還有去測試Ext4怎樣
+這應該是晚一點的事情了...</p>
+<p>這裡就來寫寫升級的方式好了</p>
+    <a href="/archives/200/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Thu Apr. 23 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/Linux/'>Linux</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/200/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
+<h1 class="title"><a href="/archives/197/">CounterizeII IP紀錄功能
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>在Wordpress中CounterizeII的一些紀錄功能真的很好用
+但是作者在2.13.x版左右開始就開始把IP紀錄的功能拿掉 因為在某些國家IP的紀錄是不合法的
+但是我老實說啦沒了那種功能 就像吃飯沒有筷子一樣 真的非常的不方便
+如果有人亂版 亂塞東西 都沒有伴法有效的Block掉 所以我之前都是一直只有維持在2.12.x版
+最近就心血來潮把這項功能給加回來
+老實說 弄完沒多久自己google了一下才發現到 原來已經有人老早就寫出來了...Orz
+<a href="http://www.beardedknight.com/tech/fixing-counterize-ii-2141/">http://www.beardedknight.com/tech/fixing-counterize-ii-2141/</a></p>
+<p>害我還花了不少時間...Orz
+但是我只有改到兩個地方 沒有像說他改得這麼詳細...XD</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sun Apr. 19 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/197/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
