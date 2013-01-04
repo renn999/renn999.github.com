@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/%E9%97%9C%E6%96%BC%E8%BB%9F%E9%AB%94/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2013-01-03T11:21:00+0800</updated>
+  <updated>2013-01-04T17:09:53+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -85,42 +85,6 @@
 <p>把字型改成WenQuanYi Zen Hei之後都顯示正常了,至於字型的部份您可以自行選擇您要得，但是不要打中文要用字型的英文名稱，否則Chromium的部份還是硬是給你方塊字。</p>
 <p><a href="http://pic.renn999.twbbs.org/view.php?pic=5de8a7a24301dc84.png" target="_blank"><img src="http://pic.renn999.twbbs.org/upload/5de8a7a24301dc84.png" alt="" width="640" /></a></p>
 <p>至於中文輸入，還是死掉，但是我用笨方法，ctrl+C ctrl+V還是可以用...XDrz</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Windows Live Writer 第一篇PO文]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/95/"/>
-    <updated>2008-05-16T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/95/</id>
-    <content type="html"><![CDATA[<p>這微軟真的好樣的...    <br />最近他們好像有搞了一些新的東西...</p>
-
-<p><p>就是可以離線寫Blog...</p>  <p>讓我真的不禁想說...</p>  <blockquote>   <p><font size="5">他們啥時有這麼好用的東西了...&lt;0&gt;</font></p> </blockquote>  <p>老實說他的好用我還真的被嚇到了...</p>  <p>其實說... 有支援Wordpress我就嚇到了...(毆)</p>  <p>(微軟啊！以後要多寫點這樣的軟體啊...)</p>  <p>就先說道這裡吧... 都要考試了我還再說這些...orz</p>  <p>以下是插入測試 可以不用看...XDDD</p> </p>
-<!--more-->
-
-<p><table cellspacing="0" cellpadding="2" width="400" border="0"><tbody>     <tr>       <td valign="top" width="200">表格一</td>        <td valign="top" width="200">表格二</td>     </tr>      <tr>       <td valign="top" width="200">表格三</td>        <td valign="top" width="200">表格四</td>     </tr>   </tbody></table>  <p><a href="http://www.google.com.tw" target="_blank">Google</a></p>  <p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="366" alt="snapshot20080418145943" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/snapshot200804181459433.jpg" width="644" border="0" />&#160;</p>  <p>老實說... 老實說... 還不錯用...</p></p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Windows Live Writer 使用心得]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/104/"/>
-    <updated>2008-05-16T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/104/</id>
-    <content type="html"><![CDATA[<p>這幾天用了...覺得真的太方便了</p>
-
-<p><p>因為老實說 很少有離線寫Blog的軟體...</p>  <p>但是每次用網頁預視時 都會出現下面的錯誤訊息</p>  <p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/00000.jpg"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="292" alt="00000" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/00000-thumb.jpg" width="452" border="0" /></a></p>  <p>可能是我的樣式太花俏了...XDDD 造成很多的問題...XDDD</p>  <p>希望這個部份下一版能改進...</p>  <p>還有一個缺點就是 文字大小的問題</p>  <p>還要手動到Html原始碼下去新增有點麻煩</p></p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[我就說IE6這個廢物早該被淘汰了]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/84/"/>
-    <updated>2008-05-12T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/84/</id>
-    <content type="html"><![CDATA[<p>今天在處理Blog內部升級 順便看看有啥東西有蟲的</p>
-
-<p><p>結果發現到header的圖一直出現問題...</p>  <p>於是乎我就對我的一些原始碼做修正...</p>  <p>But大部分都解決掉了... 唯獨短網址的一直出問題...</p>  <p>有啥問題呢？</p>  <p>請看圖...</p>  <p><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/bug.jpg"><img class="alignnone size-full wp-image-85" title="bug" height="248" alt="" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/bug.jpg" width="690" /></a></p> </p>
-<!--more-->
-
-<p>這就是IE6出現的問題啦 結果我一直找不到到底問題出現在哪裡... 想說可能是路徑的問題..  <p></p>  <p>於是乎俺就把整個位置移到Wordpress底下(因為我是直接call Wordpress底下的vSlider Theme)</p>  <p>但 出現了我不感相信的事實 這個驚人的發現我不知道該囧還是驚訝</p>  <p>竟然就正常了 媽的啦！ IE6這個廢物真的早該丟了 原因好像是一些東西無法直接使用網址指定...</p>  <p>自身的FireFox 3.0B5 及請人家幫我測的IE7都沒有這個問題</p>  <p>混... IE6真的該丟了</p>  <p>IE7的執行效果<a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/ie7.jpg">     <br /><img class="alignnone size-full wp-image-86" title="ie7" height="306" alt="" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/ie7.jpg" width="690" /></a></p>  <p>FireFox3.0B5   <br /><a href="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/fx3b5.jpg"><img class="alignnone size-full wp-image-87" title="fx3b5" height="305" alt="" src="http://www.renn999.twbbs.org/wordpress/wp-content/uploads/2008/05/fx3b5.jpg" width="692" /></a></p>  <p>怎麼看都是正常的啊...囧</p>  <p>這下子我認為真的問題不是在CODE身上了...</p>  <p>害我足足花了五個小時都在改code... 混</p>  <p>算了... 真無言 提醒還在用IE6的朋友 該換瀏覽器了 把這個廢物丟了...</p></p>]]></content>
   </entry>
   
 </feed>
