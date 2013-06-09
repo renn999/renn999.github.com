@@ -113,29 +113,7 @@
 <blockquote>echo "你的內容" | mutt -s "[信件主旨]" -a  [附件名稱].zip [mail位置＠where.are.you]</blockquote>
 如果利用echo的話就可以玩的花樣就多一點了</p>
 <p>以上就是我的Mysql的的其備份的方式 分享一下我的備份Script...Orz</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">#!/bin/bash</span></span>
-<span class='line'><span class="nv">today</span><span class="o">=</span><span class="sb">`</span>date +%y%m%d<span class="sb">`</span></span>
-<span class='line'>mysqldump -u<span class="o">[</span>你看不到<span class="o">]</span> -p********* Gallery2 &gt; Gallery2.sql</span>
-<span class='line'>mysqldump -u<span class="o">[</span>你看不到<span class="o">]</span> -p********* MediaWiki &gt; MediaWiki.sql</span>
-<span class='line'>mysqldump -u<span class="o">[</span>你看不到<span class="o">]</span> -p********* Wordpress &gt; Wordpress.sql</span>
-<span class='line'>mysqldump -u<span class="o">[</span>你看不到<span class="o">]</span> -p********* shorturl &gt; shorturl.sql</span>
-<span class='line'>zip -9r sqlbak<span class="nv">$today</span>.zip *.sql</span>
-<span class='line'>rm *.sql</span>
-<span class='line'><span class="nb">echo</span> <span class="s2">&quot;$today Data base backup&quot;</span> | mutt -s <span class="s2">&quot;Web Mysql Database Backup&quot;</span> -a  sqlbak<span class="nv">$today</span>.zip <span class="o">[</span>mail位置＠where.are.you<span class="o">]</span></span>
-<span class='line'>rm sqlbak<span class="nv">$today</span>.zip sent</span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:0</p>
 <p>接著我就把這個bash寫到 crontab中每天固定的同一時間就會自動去run了...XD</blockquote></blockquote></p>
   
 </div>

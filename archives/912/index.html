@@ -111,7 +111,7 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 <h2><strong>HOT TO USE</strong></h2>
 <p>首先需要先配置python所需要得環境，而 <code>require</code> 內部為所需要的 python extension 可以利用 easy_install 安裝</p>
 
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> `<span class="nb">cat</span> <span class="n">require</span>`<span class="p">;</span><span class="n">do</span> <span class="n">sudo</span> <span class="n">easy_install</span> $<span class="nb">i</span><span class="p">;</span><span class="n">done</span></span>
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="err">`</span><span class="n">cat</span> <span class="n">require</span><span class="err">`</span><span class="p">;</span><span class="k">do</span> <span class="n">sudo</span> <span class="n">easy_install</span> <span class="err">$</span><span class="n">i</span><span class="p">;</span><span class="n">done</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
@@ -126,12 +126,12 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span></pre></td><td class='code'><pre><code><span class='line'><span class="o">---</span></span>
-<span class='line'><span class="n">layout</span><span class="p">:</span> <span class="n">post</span></span>
-<span class='line'><span class="n">title</span><span class="p">:</span> <span class="n">brabrabrabra</span></span>
-<span class='line'><span class="n">date</span><span class="p">:</span> <span class="s">&#39;20XX-XX-XX&#39;</span></span>
-<span class='line'><span class="n">comments</span><span class="p">:</span> <span class="n">true</span></span>
-<span class='line'><span class="n">categories</span><span class="p">:</span><span class="n">brabrabrabra</span></span>
-<span class='line'><span class="n">permalink</span><span class="p">:</span> </span>
+<span class='line'><span class="nl">layout:</span> <span class="n">post</span></span>
+<span class='line'><span class="nl">title:</span> <span class="n">brabrabrabra</span></span>
+<span class='line'><span class="nl">date:</span> <span class="err">&#39;</span><span class="mi">20</span><span class="n">XX</span><span class="o">-</span><span class="n">XX</span><span class="o">-</span><span class="n">XX</span><span class="err">&#39;</span></span>
+<span class='line'><span class="nl">comments:</span> <span class="nb">true</span></span>
+<span class='line'><span class="nl">categories:</span><span class="n">brabrabrabra</span></span>
+<span class='line'><span class="nl">permalink:</span> </span>
 <span class='line'><span class="o">---</span></span>
 <span class='line'><span class="n">brararararararrarararrrarar</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
@@ -160,16 +160,16 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 <p>在 bash 底下只要下以下的指令就可以轉換了(請記得要備份)：</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> `<span class="n">ls</span> <span class="o">*</span>`<span class="p">;</span> <span class="n">do</span> <span class="n">sed</span> <span class="o">-</span><span class="nb">i</span> <span class="o">-</span><span class="n">e</span> &quot;1<span class="n">d</span>&quot; &quot;$<span class="nb">i</span>&quot;<span class="p">;</span><span class="n">done</span></span>
-<span class='line'><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> `<span class="n">ls</span> <span class="o">*</span>`<span class="p">;</span> <span class="n">do</span> <span class="n">sed</span> <span class="o">-</span><span class="nb">i</span> <span class="o">-</span><span class="n">e</span> &quot;<span class="n">s</span><span class="o">/---//</span>&quot; &quot;$<span class="nb">i</span>&quot;<span class="p">;</span><span class="n">done</span></span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="err">`</span><span class="n">ls</span> <span class="o">*</span><span class="err">`</span><span class="p">;</span> <span class="k">do</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="s">&quot;1d&quot;</span> <span class="s">&quot;$i&quot;</span><span class="p">;</span><span class="n">done</span></span>
+<span class='line'><span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="err">`</span><span class="n">ls</span> <span class="o">*</span><span class="err">`</span><span class="p">;</span> <span class="k">do</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="s">&quot;s/---//&quot;</span> <span class="s">&quot;$i&quot;</span><span class="p">;</span><span class="n">done</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
 <p>轉換完後就就可以丟到 page 的 folder 並且下</p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">preview</span> #這是預覽</span>
-<span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">build</span>   #這是產生 <span class="n">static</span> <span class="n">file</span> 放在 <span class="n">build</span> <span class="n">folder</span></span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">preview</span> <span class="err">#這是預覽</span></span>
+<span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">build</span>   <span class="err">#這是產生</span> <span class="k">static</span> <span class="n">file</span> <span class="err">放在</span> <span class="n">build</span> <span class="n">folder</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 

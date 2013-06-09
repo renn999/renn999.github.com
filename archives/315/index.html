@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>ImageUpon檔案副檔名判斷修改 - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案...Orz，優點也是可以正確的去辨識檔案 修改部份： 找到 1$suffix = strtolower(substr(...">
+  <meta name="description" content="今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案...Orz，優點也是可以正確的去辨識檔案 修改部份： 找到 wzxhzdk:0 改成： wzxhzdk:1 雖然說多了...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -86,32 +86,14 @@
     <p>今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案...Orz，優點也是可以正確的去辨識檔案
 <p>修改部份：<br />
 找到</p>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>$<span class="n">suffix</span> <span class="p">=</span> <span class="n">strtolower</span><span class="p">(</span><span class="n">substr</span><span class="p">(</span>$<span class="n">_FILES</span><span class="p">[</span><span class="s">&#39;uploadimg&#39;</span><span class="p">][</span><span class="s">&#39;name&#39;</span><span class="p">],</span><span class="o">-</span>4<span class="p">));</span>
-</pre></div>
-</td></tr></table>
+<p>wzxhzdk:0
 </p>
 <p>改成：</p>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre>$<span class="n">img_info</span> <span class="p">=</span> <span class="n">getimagesize</span><span class="p">(</span>$<span class="n">_FILES</span><span class="p">[</span><span class="s">&#39;uploadimg&#39;</span><span class="p">][</span><span class="s">&#39;tmp_name&#39;</span><span class="p">]);</span>
-$<span class="n">mime</span> <span class="p">=</span> $<span class="n">img_info</span><span class="p">[</span><span class="s">&#39;mime&#39;</span><span class="p">];</span>
-<span class="n">list</span><span class="p">(</span>$<span class="n">t</span><span class="p">,</span> $<span class="n">suffix</span><span class="p">)</span> <span class="p">=</span> <span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> $<span class="n">mime</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span>$<span class="n">suffix</span> <span class="o">==</span> <span class="s">&#39;jpeg&#39;</span><span class="p">)</span> <span class="o">//</span>這個部份將<span class="n">JPEG</span>檔名轉成<span class="n">jpg</span>
-    $<span class="n">suffix</span> <span class="p">=</span> <span class="s">&#39;jpg&#39;</span><span class="p">;</span>
-$<span class="n">suffix</span><span class="p">=</span><span class="s">&#39;.&#39;</span><span class="p">.</span>$<span class="n">suffix</span><span class="p">;</span><span class="o">//</span>加上點這樣整體架構不用去作修改
-</pre></div>
-</td></tr></table>
+<p>wzxhzdk:1
 </p>
 <p>雖然說多了很多的步驟，但是隨便拿一張圖附檔亂改，都還可以正確的去作辨識，取得應有的副檔名。</p>
 <p>如果還是要使用上傳檔案的檔名去取得副檔名的話，我想到比較好的方式還是使用preg_match會比較正統，因為畢竟副檔名不是只有三個字</p>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span class="n">preg_match</span><span class="p">(</span><span class="s">&#39;/(.*?)[.](\w+$)/u&#39;</span><span class="p">,</span> $<span class="n">_FILES</span><span class="p">[</span><span class="s">&#39;uploadimg&#39;</span><span class="p">][</span><span class="s">&#39;name&#39;</span><span class="p">],</span> $<span class="n">regs</span><span class="p">);</span>
-$<span class="n">suffix</span> <span class="p">=</span> <span class="s">&#39;.&#39;</span><span class="p">.</span><span class="n">strtolower</span><span class="p">(</span>$<span class="n">regs</span><span class="p">[</span>2<span class="p">]);</span>
-</pre></div>
-</td></tr></table>
+<p>wzxhzdk:2
 </p></p>
   
 </div>

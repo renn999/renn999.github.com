@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>PHP備份Pixiv的bookmark(お気に入りユーザー)修正版 - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。 所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。 (這是Memory Leaks的問題已經解決) 以下為修改完的程式碼。 1 2 3 4 5 ...">
+  <meta name="description" content="基本上之前的程式一定不能用了，但是phpQuery在備份的時候都會吐出亂碼來，可能是內部的編碼偵測出了問題。 所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。 (這是Memory Leaks的問題已經解決) 以下為修改完的程式碼。 wzxhzdk:0">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -87,115 +87,7 @@
 <p>所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。
 (這是Memory Leaks的問題已經解決)</p>
 <p>以下為修改完的程式碼。</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
-<span class='line'>    <span class="k">require</span> <span class="s1">&#39;simplehtmldom/simple_html_dom.php&#39;</span><span class="p">;</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nv">$loginurl</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/index.php&#39;</span><span class="p">;</span></span>
-<span class='line'>    <span class="nv">$pixiv_id</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span></span>
-<span class='line'>    <span class="nv">$password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span></span>
-<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HEADER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_USERAGENT</span><span class="p">,</span><span class="s1">&#39;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)&#39;</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_FOLLOWLOCATION</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIEJAR</span><span class="p">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIEFILE</span><span class="p">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_COOKIESESSION</span><span class="p">,</span><span class="k">true</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$loginurl</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="s1">&#39;mode=login&amp;pixiv_id=&#39;</span><span class="o">.</span><span class="nv">$pixiv_id</span><span class="o">.</span><span class="s1">&#39;&amp;pass=&#39;</span><span class="o">.</span><span class="nv">$password</span> <span class="p">);</span></span>
-<span class='line'>    <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nv">$p</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span></span>
-<span class='line'>    <span class="nv">$bookmark_rest</span><span class="o">=</span><span class="s1">&#39;show&#39;</span><span class="p">;</span><span class="c1">//show</span></span>
-<span class='line'>    <span class="k">do</span><span class="p">{</span></span>
-<span class='line'>        <span class="nv">$url</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/bookmark.php?type=user&amp;rest=&#39;</span><span class="o">.</span><span class="nv">$bookmark_rest</span><span class="o">.</span><span class="s1">&#39;&amp;p=&#39;</span><span class="o">.</span><span class="nv">$p</span><span class="p">;</span></span>
-<span class='line'>        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span></span>
-<span class='line'>        <span class="nv">$profile</span><span class="o">=</span><span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span></span>
-<span class='line'>        <span class="nv">$dom1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">simple_html_dom</span><span class="p">();</span></span>
-<span class='line'>        <span class="nv">$dom1</span> <span class="o">=</span> <span class="nx">str_get_html</span><span class="p">(</span><span class="nv">$profile</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'>        <span class="nv">$test</span><span class="o">=</span><span class="nv">$dom1</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="s1">&#39;div#content2 div[align=&quot;right&quot;]&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">plaintext</span><span class="p">;</span></span>
-<span class='line'></span>
-<span class='line'>        <span class="nb">preg_match</span><span class="p">(</span><span class="s1">&#39;/次の(.*?)件/&#39;</span><span class="p">,</span><span class="nv">$test</span><span class="p">,</span><span class="nv">$match</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'>        <span class="nv">$title2</span> <span class="o">=</span> <span class="nv">$dom1</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="s1">&#39;div#content2 form#f div[style=&quot;width:140px;height:130px;float:left;text-align:center;&quot;]&#39;</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'>        <span class="k">foreach</span><span class="p">(</span><span class="nv">$title2</span> <span class="k">as</span> <span class="nv">$illsthtml</span><span class="p">){</span></span>
-<span class='line'>        <span class="nv">$illst</span> <span class="o">=</span> <span class="nv">$illsthtml</span><span class="o">-&gt;</span><span class="na">outertext</span><span class="p">;</span></span>
-<span class='line'>        <span class="nv">$illst</span><span class="o">=</span><span class="nb">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;div(.*?)&quot;&gt;&lt;input(.*?)&gt;&lt;\/div&gt;/&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$illst</span><span class="p">);</span></span>
-<span class='line'>        <span class="nv">$illst</span><span class="o">=</span><span class="nb">preg_replace</span><span class="p">(</span><span class="s1">&#39;/\n/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$illst</span><span class="p">);</span></span>
-<span class='line'>        <span class="nv">$illst</span><span class="o">=</span><span class="nb">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;img(.*?)&gt;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$illst</span><span class="p">);</span></span>
-<span class='line'>        <span class="nb">preg_match_all</span><span class="p">(</span><span class="s1">&#39;/&lt;a href=&quot;member.php\?id=(.*?)&quot;&gt;&lt;\/a&gt;&lt;div style=\&quot;padding-top:5px;\&quot;&gt;(.*?)&lt;\/div&gt;(&lt;a href=&quot;jump.php\?(.*?)&quot; target=&quot;_blank&quot;&gt;&lt;\/a&gt;)?/&#39;</span><span class="p">,</span> <span class="nv">$illst</span><span class="p">,</span><span class="nv">$match2</span><span class="p">,</span><span class="nx">PREG_SET_ORDER</span><span class="p">);</span></span>
-<span class='line'>            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$match2</span> <span class="k">as</span> <span class="nv">$val</span><span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>                <span class="k">echo</span> <span class="s1">&#39;http://www.pixiv.net/member.php?id=&#39;</span><span class="o">.</span><span class="nv">$val</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="s1">&#39; - &#39;</span><span class="o">.</span><span class="nv">$val</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span></span>
-<span class='line'>                <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$val</span><span class="p">[</span><span class="mi">4</span><span class="p">])){</span><span class="k">echo</span> <span class="s1">&#39; - &#39;</span><span class="o">.</span><span class="nv">$val</span><span class="p">[</span><span class="mi">4</span><span class="p">];}</span></span>
-<span class='line'>                <span class="k">echo</span> <span class="s2">&quot;&lt;br /&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
-<span class='line'>            <span class="p">}</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>        <span class="nv">$dom1</span><span class="o">-&gt;</span><span class="na">__destruct</span><span class="p">();</span><span class="c1">//解決Memory Leaks的問題</span></span>
-<span class='line'>        <span class="nb">unset</span><span class="p">(</span><span class="nv">$profile</span><span class="p">,</span><span class="nv">$dom1</span><span class="p">,</span><span class="nv">$test</span><span class="p">);</span></span>
-<span class='line'>        <span class="nv">$p</span><span class="o">++</span><span class="p">;</span></span>
-<span class='line'>    <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$match</span><span class="p">));</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span></span>
-<span class='line'><span class="cp">?&gt;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
+<p>wzxhzdk:0</p>
   
 </div>
 

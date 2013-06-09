@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/git/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2013-02-16T10:53:06+0800</updated>
+  <updated>2013-06-09T09:34:46+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -51,7 +51,7 @@
 
 
 <p>這是我的 bash prompt 而在 <code>.bashrc</code> 中修改之後就會變成這樣</p>
-<p><img src=http://i.minus.com/ibonR410SXuSka.png /></p>
+<p>wzxhzdk:0</p>
 <p>這樣就可以隨時之道自己處在那個branch中了。</p>]]></content>
   </entry>
   

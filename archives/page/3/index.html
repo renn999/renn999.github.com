@@ -76,6 +76,33 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/861/">mysql轉sqlite
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到...XDrz</p>
+<p>可以參考這裡<a href="http://www.sqlite.org/cvstrac/wiki?p=ConverterTools">sqlite - Converter Tools</a></p>
+<p>當然我的作法是將步驟分開來作的</p>
+<p>先將sqldump出來</p>
+<p>wzxhzdk:0</p>
+    <a href="/archives/861/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Wed Aug. 11 2010</div>
+  <div class="tags">
+    <a href='/archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/'>程式相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/861/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/828/">初學python
 
 </a></h1>
@@ -84,83 +111,7 @@
   
     <p>這是利用plurk api簡單寫得東東，主要是要搞懂json的用法：p
 到時候先搞定cookie的儲存..OTZ</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">#!/usr/bin/python</span></span>
-<span class='line'><span class="c">#-*- coding: UTF8 -*-</span></span>
-<span class='line'><span class="c">#</span></span>
-<span class='line'></span>
-<span class='line'><span class="kn">import</span> <span class="nn">logging</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">time</span></span>
-<span class='line'><span class="kn">import</span> <span class="nn">urllib</span><span class="o">,</span><span class="nn">urllib2</span><span class="o">,</span><span class="nn">cookielib</span><span class="o">,</span><span class="nn">htmllib</span><span class="o">,</span><span class="nn">formatter</span></span>
-<span class='line'><span class="kn">import</span> <span class="nn">sgmllib</span></span>
-<span class='line'><span class="kn">import</span> <span class="nn">json</span></span>
-<span class='line'></span>
-<span class='line'><span class="k">def</span> <span class="nf">main</span><span class="p">():</span></span>
-<span class='line'>  <span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">())</span></span>
-<span class='line'>  <span class="n">get_api_url</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s">&#39;http://www.plurk.com/API</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">x</span></span>
-<span class='line'>  <span class="n">encode</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span></span>
-<span class='line'></span>
-<span class='line'>  <span class="n">fp</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">get_api_url</span><span class="p">(</span><span class="s">&#39;/Users/login&#39;</span><span class="p">),</span></span>
-<span class='line'>    <span class="n">encode</span><span class="p">({</span></span>
-<span class='line'>      <span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span></span>
-<span class='line'>      <span class="s">&#39;password&#39;</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span></span>
-<span class='line'>      <span class="s">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">api_key</span> <span class="p">,</span></span>
-<span class='line'>    <span class="p">}))</span></span>
-<span class='line'>  <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span></span>
-<span class='line'></span>
-<span class='line'>  <span class="n">fp</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">get_api_url</span><span class="p">(</span><span class="s">&#39;/Timeline/getPlurks&#39;</span><span class="p">),</span></span>
-<span class='line'>    <span class="n">encode</span><span class="p">({</span><span class="s">&#39;api_key&#39;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">}))</span></span>
-<span class='line'>  <span class="n">dumps</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span></span>
-<span class='line'>  <span class="n">dumps</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">dumps</span><span class="p">)</span></span>
-<span class='line'>  <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">dumps</span><span class="p">[</span><span class="s">&#39;plurks&#39;</span><span class="p">]:</span></span>
-<span class='line'>    <span class="k">print</span> <span class="n">api_key</span></span>
-<span class='line'>    <span class="n">user_dis_name</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">[</span><span class="s">&#39;plurk_users&#39;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;owner_id&#39;</span><span class="p">])][</span><span class="s">&#39;display_name&#39;</span><span class="p">]</span></span>
-<span class='line'>    <span class="k">print</span> <span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">user_dis_name</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;qualifier_translated&#39;</span><span class="p">]</span><span class="o">+</span><span class="s">&quot;:&quot;</span></span>
-<span class='line'>    <span class="k">print</span> <span class="s">&quot; &quot;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="n">a</span><span class="p">[</span><span class="s">&#39;content_raw&#39;</span><span class="p">]</span></span>
-<span class='line'></span>
-<span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span><span class="s">&#39;__main__&#39;</span><span class="p">:</span></span>
-<span class='line'>  <span class="n">api_key</span> <span class="o">=</span> <span class="s">&#39;api_key&#39;</span></span>
-<span class='line'>  <span class="n">username</span> <span class="o">=</span> <span class="s">&#39;your_username&#39;</span></span>
-<span class='line'>  <span class="n">password</span> <span class="o">=</span> <span class="s">&#39;your_password&#39;</span></span>
-<span class='line'>  <span class="n">main</span><span class="p">()</span></span>
-<span class='line'>  <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
+<p>wzxhzdk:0</p>
     
   
 </div>
@@ -284,11 +235,7 @@
   
     <p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下'rm *.jpg'，但是手殘外加腦包的我竟然不小心下成'rm * .jpg'看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>...不不不...應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式....OTZ</p>
 <p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big></p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>$ <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">trash</span><span class="o">-</span><span class="n">cli</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:0</p>
     <a href="/archives/721/" class="more-link">Read More ...</a>
   
 </div>
@@ -381,31 +328,6 @@
     <a href='/archives/categories/%E8%A7%80%E8%B2%93%E6%97%A5%E8%A8%98/'>觀貓日記</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/680/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/668/">回到高雄的這幾個禮拜
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>有看過我的plurk的人應該都知道，我已經重台南搬回到高雄住了，現在每個星期三通車回到成大去上個游泳外加等畢業然後等Online，體檢報告也不知道啥時會出爐，外加因為蹲不下去還要等醫院的通知(我的身體毛病還真多，應該是我不喜歡運動的關係吧)，然而在家裡的這段時間我不就是幫父母做事，要不就是準備公職考試，看是很閒但是心中有著不明的壓力。
-　　先來說說最近完成的第一件事情吧，我已經搬回高雄了，所以說最近都是在整理家裡已經快要n年沒整理的房間，丟了一大堆東西之後才發現到那間房間的狀況有夠糟糕的，壁癌啦...之類的，當然裡面是以前我們家裡開過文具行的一些剩物，當然也勾起了一堆的回憶，說真的也丟了不少東西就是了整理完之後把牆壁刮一刮就像下面這個樣子。
-<div align="center"><wpg2>1248</wpg2><wpg2>1244</wpg2></div></p>
-    <a href="/archives/668/" class="more-link">Read More ...</a>
-  
-</div>
-
-<div class="meta">
-  <div class="date">Wed May. 12 2010</div>
-  <div class="tags">
-    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/668/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

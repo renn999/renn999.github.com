@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/octopress/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2013-02-16T10:53:06+0800</updated>
+  <updated>2013-06-09T09:34:46+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -44,229 +44,7 @@
 <p>附上 diff 檔，但是現在還有一堆東西沒有改上...OTZ</p>
 <!--more-->
 
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>  1</span>
-<span class='line-number'>  2</span>
-<span class='line-number'>  3</span>
-<span class='line-number'>  4</span>
-<span class='line-number'>  5</span>
-<span class='line-number'>  6</span>
-<span class='line-number'>  7</span>
-<span class='line-number'>  8</span>
-<span class='line-number'>  9</span>
-<span class='line-number'> 10</span>
-<span class='line-number'> 11</span>
-<span class='line-number'> 12</span>
-<span class='line-number'> 13</span>
-<span class='line-number'> 14</span>
-<span class='line-number'> 15</span>
-<span class='line-number'> 16</span>
-<span class='line-number'> 17</span>
-<span class='line-number'> 18</span>
-<span class='line-number'> 19</span>
-<span class='line-number'> 20</span>
-<span class='line-number'> 21</span>
-<span class='line-number'> 22</span>
-<span class='line-number'> 23</span>
-<span class='line-number'> 24</span>
-<span class='line-number'> 25</span>
-<span class='line-number'> 26</span>
-<span class='line-number'> 27</span>
-<span class='line-number'> 28</span>
-<span class='line-number'> 29</span>
-<span class='line-number'> 30</span>
-<span class='line-number'> 31</span>
-<span class='line-number'> 32</span>
-<span class='line-number'> 33</span>
-<span class='line-number'> 34</span>
-<span class='line-number'> 35</span>
-<span class='line-number'> 36</span>
-<span class='line-number'> 37</span>
-<span class='line-number'> 38</span>
-<span class='line-number'> 39</span>
-<span class='line-number'> 40</span>
-<span class='line-number'> 41</span>
-<span class='line-number'> 42</span>
-<span class='line-number'> 43</span>
-<span class='line-number'> 44</span>
-<span class='line-number'> 45</span>
-<span class='line-number'> 46</span>
-<span class='line-number'> 47</span>
-<span class='line-number'> 48</span>
-<span class='line-number'> 49</span>
-<span class='line-number'> 50</span>
-<span class='line-number'> 51</span>
-<span class='line-number'> 52</span>
-<span class='line-number'> 53</span>
-<span class='line-number'> 54</span>
-<span class='line-number'> 55</span>
-<span class='line-number'> 56</span>
-<span class='line-number'> 57</span>
-<span class='line-number'> 58</span>
-<span class='line-number'> 59</span>
-<span class='line-number'> 60</span>
-<span class='line-number'> 61</span>
-<span class='line-number'> 62</span>
-<span class='line-number'> 63</span>
-<span class='line-number'> 64</span>
-<span class='line-number'> 65</span>
-<span class='line-number'> 66</span>
-<span class='line-number'> 67</span>
-<span class='line-number'> 68</span>
-<span class='line-number'> 69</span>
-<span class='line-number'> 70</span>
-<span class='line-number'> 71</span>
-<span class='line-number'> 72</span>
-<span class='line-number'> 73</span>
-<span class='line-number'> 74</span>
-<span class='line-number'> 75</span>
-<span class='line-number'> 76</span>
-<span class='line-number'> 77</span>
-<span class='line-number'> 78</span>
-<span class='line-number'> 79</span>
-<span class='line-number'> 80</span>
-<span class='line-number'> 81</span>
-<span class='line-number'> 82</span>
-<span class='line-number'> 83</span>
-<span class='line-number'> 84</span>
-<span class='line-number'> 85</span>
-<span class='line-number'> 86</span>
-<span class='line-number'> 87</span>
-<span class='line-number'> 88</span>
-<span class='line-number'> 89</span>
-<span class='line-number'> 90</span>
-<span class='line-number'> 91</span>
-<span class='line-number'> 92</span>
-<span class='line-number'> 93</span>
-<span class='line-number'> 94</span>
-<span class='line-number'> 95</span>
-<span class='line-number'> 96</span>
-<span class='line-number'> 97</span>
-<span class='line-number'> 98</span>
-<span class='line-number'> 99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span></pre></td><td class='code'><pre><code><span class='line'><span class="gh">diff -urN sass.orig/_parts.scss sass.new/_parts.scss</span></span>
-<span class='line'><span class="gd">--- sass.orig/_parts.scss	2012-09-21 08:52:47.812425000 +0800</span></span>
-<span class='line'><span class="gi">+++ sass.new/_parts.scss	2012-09-19 09:56:37.642030000 +0800</span></span>
-<span class='line'><span class="gu">@@ -6,4 +6,5 @@</span></span>
-<span class='line'> @import &quot;parts/comment&quot;;</span>
-<span class='line'> @import &quot;parts/footer&quot;;</span>
-<span class='line'> @import &quot;parts/syntax&quot;;</span>
-<span class='line'><span class="gd">-@import &quot;parts/twitter&quot;;</span></span>
-<span class='line'>\ No newline at end of file</span>
-<span class='line'><span class="gi">+@import &quot;parts/twitter&quot;;</span></span>
-<span class='line'><span class="gi">+@import &quot;parts/scollbars&quot;;</span></span>
-<span class='line'><span class="gh">diff -urN sass.orig/base/_color.scss sass.new/base/_color.scss</span></span>
-<span class='line'><span class="gd">--- sass.orig/base/_color.scss	2012-09-21 08:52:47.812425000 +0800</span></span>
-<span class='line'><span class="gi">+++ sass.new/base/_color.scss	2012-09-18 21:08:57.791326000 +0800</span></span>
-<span class='line'><span class="gu">@@ -1,7 +1,7 @@</span></span>
-<span class='line'><span class="gd">-$color-background: #eee;</span></span>
-<span class='line'><span class="gd">-$color-main: #258fb8;</span></span>
-<span class='line'><span class="gd">-$color-gray01: #666;</span></span>
-<span class='line'><span class="gd">-$color-gray02: #999;</span></span>
-<span class='line'><span class="gd">-$color-gray03: #ccc;</span></span>
-<span class='line'><span class="gd">-$color-gray04: #ddd;</span></span>
-<span class='line'><span class="gd">-$color-gray05: #fff;</span></span>
-<span class='line'>\ No newline at end of file</span>
-<span class='line'><span class="gi">+$color-background: #000;</span></span>
-<span class='line'><span class="gi">+$color-main: lime; //more</span></span>
-<span class='line'><span class="gi">+$color-gray01: lime; //post_font</span></span>
-<span class='line'><span class="gi">+$color-gray02: lime; //post_aside</span></span>
-<span class='line'><span class="gi">+$color-gray03: lime;</span></span>
-<span class='line'><span class="gi">+$color-gray04: black;</span></span>
-<span class='line'><span class="gi">+$color-gray05: lime;</span></span>
-<span class='line'><span class="gh">diff -urN sass.orig/parts/_archive.scss sass.new/parts/_archive.scss</span></span>
-<span class='line'><span class="gd">--- sass.orig/parts/_archive.scss	2012-09-21 08:52:47.812425000 +0800</span></span>
-<span class='line'><span class="gi">+++ sass.new/parts/_archive.scss	2012-09-21 17:13:30.916612000 +0800</span></span>
-<span class='line'><span class="gu">@@ -15,7 +15,7 @@</span></span>
-<span class='line'> 		position: absolute;</span>
-<span class='line'> 		top: 0;</span>
-<span class='line'> 		padding-top: 15px;</span>
-<span class='line'><span class="gd">-		border-top: 1px solid #fff;</span></span>
-<span class='line'><span class="gi">+		border-top: 1px solid lime;</span></span>
-<span class='line'> 		&amp;:before{</span>
-<span class='line'> 			content: &quot;&quot;;</span>
-<span class='line'> 			position: absolute;</span>
-<span class='line'><span class="gu">@@ -70,4 +70,4 @@</span></span>
-<span class='line'> 			.comments:before{content: &quot;\f075&quot;;}</span>
-<span class='line'> 		}</span>
-<span class='line'> 	}</span>
-<span class='line'><span class="gd">-}</span></span>
-<span class='line'>\ No newline at end of file</span>
-<span class='line'><span class="gi">+}</span></span>
-<span class='line'><span class="gh">diff -urN sass.orig/parts/_header.scss sass.new/parts/_header.scss</span></span>
-<span class='line'><span class="gd">--- sass.orig/parts/_header.scss	2012-09-21 08:52:47.812425000 +0800</span></span>
-<span class='line'><span class="gi">+++ sass.new/parts/_header.scss	2012-09-19 08:57:02.705179000 +0800</span></span>
-<span class='line'><span class="gu">@@ -165,7 +165,7 @@</span></span>
-<span class='line'> 		position: relative;</span>
-<span class='line'> 		width: 100%;</span>
-<span class='line'> 		.button{</span>
-<span class='line'><span class="gd">-			background: #f2f2f2;</span></span>
-<span class='line'><span class="gi">+			background: #141414;</span></span>
-<span class='line'> 			border: 1px solid $color-gray04;</span>
-<span class='line'> 			color: #999;</span>
-<span class='line'> 			padding: 0 60px 0 10px;</span>
-<span class='line'><span class="gh">diff -urN sass.orig/parts/_scollbars.scss sass.new/parts/_scollbars.scss</span></span>
-<span class='line'><span class="gd">--- sass.orig/parts/_scollbars.scss	1970-01-01 08:00:00.000000000 +0800</span></span>
-<span class='line'><span class="gi">+++ sass.new/parts/_scollbars.scss	2012-09-19 19:43:24.382908000 +0800</span></span>
-<span class='line'><span class="gu">@@ -0,0 +1,16 @@</span></span>
-<span class='line'><span class="gi">+::-webkit-scrollbar {</span></span>
-<span class='line'><span class="gi">+    width: 8px;</span></span>
-<span class='line'><span class="gi">+    height: 8px;</span></span>
-<span class='line'><span class="gi">+}</span></span>
-<span class='line'><span class="gi">+ </span></span>
-<span class='line'><span class="gi">+::-webkit-scrollbar-track {</span></span>
-<span class='line'><span class="gi">+    border-radius: 10px;</span></span>
-<span class='line'><span class="gi">+    background-color: lime;</span></span>
-<span class='line'><span class="gi">+}</span></span>
-<span class='line'><span class="gi">+ </span></span>
-<span class='line'><span class="gi">+::-webkit-scrollbar-thumb {</span></span>
-<span class='line'><span class="gi">+    border: 1px solid;</span></span>
-<span class='line'><span class="gi">+    border-radius: 10px;</span></span>
-<span class='line'><span class="gi">+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); </span></span>
-<span class='line'><span class="gi">+    background-color: black;</span></span>
-<span class='line'><span class="gi">+}</span></span>
-<span class='line'><span class="gh">diff -urN sass.orig/parts/_syntax.scss sass.new/parts/_syntax.scss</span></span>
-<span class='line'><span class="gd">--- sass.orig/parts/_syntax.scss	2012-09-21 08:52:47.812425000 +0800</span></span>
-<span class='line'><span class="gi">+++ sass.new/parts/_syntax.scss	2012-09-21 17:11:26.524618000 +0800</span></span>
-<span class='line'><span class="gu">@@ -15,7 +15,7 @@</span></span>
-<span class='line'> $solar-cyan:      #2aa198 !default;</span>
-<span class='line'> $solar-green:     #859900 !default;</span>
-<span class='line'> </span>
-<span class='line'><span class="gd">-$solarized: light !default;</span></span>
-<span class='line'><span class="gi">+$solarized: dark !default;</span></span>
-<span class='line'> </span>
-<span class='line'> @if $solarized == light {</span>
-<span class='line'> </span>
-<span class='line'><span class="gu">@@ -83,7 +83,7 @@</span></span>
-<span class='line'> 			margin: -5px -15px 0;</span>
-<span class='line'> 			padding: 5px 15px;</span>
-<span class='line'> 			display: block;</span>
-<span class='line'><span class="gd">-			@include background(linear-gradient(top, $pre-border, $pre-bg));</span></span>
-<span class='line'><span class="gi">+			border-bottom: 1px solid $pre-border;</span></span>
-<span class='line'> 			&amp;:empty{</span>
-<span class='line'> 				display: none;</span>
-<span class='line'> 			}</span>
-<span class='line'><span class="gu">@@ -163,7 +163,7 @@</span></span>
-<span class='line'> 					left: 0;</span>
-<span class='line'> 					padding: 5px 15px;</span>
-<span class='line'> 					width: 100%;</span>
-<span class='line'><span class="gd">-					@include background(linear-gradient(top, $pre-border, $pre-bg));</span></span>
-<span class='line'><span class="gi">+					border-bottom: 1px solid $pre-border;</span></span>
-<span class='line'> 				}</span>
-<span class='line'> 			}</span>
-<span class='line'> 		}</span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>]]></content>
+<p>wzxhzdk:0</p>]]></content>
   </entry>
   
   <entry>
@@ -425,12 +203,10 @@
     <link href="http://www.renn999.twbbs.org/archives/903/"/>
     <updated>2012-09-10T08:03:00+0800</updated>
     <id>http://www.renn999.twbbs.org/archives/903/</id>
-    <content type="html"><![CDATA[<p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章<br />
-</p>
+    <content type="html"><![CDATA[<p>這篇主要是調教<code>atom.xml</code>RSS變成不要全文顯示外加加上<code>LinkWithin</code>有興趣的文章  </p>
 <!--more-->
 
-<p>以下是我參考了一下內部的index的page html改出來的其實好像說不難<br />
-</p>
+<p>以下是我參考了一下內部的index的page html改出來的其實好像說不難  </p>
 
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
 <span class='line-number'> 2</span>

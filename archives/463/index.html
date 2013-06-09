@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Ubuntu9.10 Nautilus解決掛載磁區要輸入密碼麻煩的動作 - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。 首先 1gksudo gedit /usr/share/polkit-1/actions/org.freedesktop.devicekit.disks.poli...">
+  <meta name="description" content="Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。 首先 wzxhzdk:0 之後找到 wzxhzdk:1 把 wzxhzdk:2 改成 wzxhzdk:3 這樣要掛載磁區就不用在輸入密碼了">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -85,53 +85,13 @@
   
     <p>Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。</p>
 <p>首先</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">gksudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">polkit</span><span class="o">-</span>1<span class="o">/</span><span class="n">actions</span><span class="o">/</span><span class="n">org</span><span class="p">.</span><span class="n">freedesktop</span><span class="p">.</span><span class="n">devicekit</span><span class="p">.</span><span class="n">disks</span><span class="p">.</span><span class="n">policy</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:0</p>
 <p>之後找到</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span></pre></td><td class='code'><pre><code><span class='line'>  <span class="nt">&lt;action</span> <span class="na">id=</span><span class="s">&quot;org.freedesktop.devicekit.disks.filesystem-mount-system-internal&quot;</span><span class="nt">&gt;</span></span>
-<span class='line'>    <span class="nt">&lt;description&gt;</span>Mount a system-internal device<span class="nt">&lt;/description&gt;</span></span>
-<span class='line'>    <span class="nt">&lt;description</span> <span class="na">xml:lang=</span><span class="s">&quot;da&quot;</span><span class="nt">&gt;</span>Montér en intern enhed<span class="nt">&lt;/description&gt;</span></span>
-<span class='line'>    <span class="nt">&lt;description</span> <span class="na">xml:lang=</span><span class="s">&quot;de&quot;</span><span class="nt">&gt;</span>Eingebautes Gerät einhängen<span class="nt">&lt;/description&gt;</span></span>
-<span class='line'>    <span class="nt">&lt;message&gt;</span>Authentication is required to mount the device<span class="nt">&lt;/message&gt;</span></span>
-<span class='line'>    <span class="nt">&lt;message</span> <span class="na">xml:lang=</span><span class="s">&quot;da&quot;</span><span class="nt">&gt;</span>Autorisering er påkrævet for at montere et fil system<span class="nt">&lt;/message&gt;</span></span>
-<span class='line'>    <span class="nt">&lt;message</span> <span class="na">xml:lang=</span><span class="s">&quot;de&quot;</span><span class="nt">&gt;</span>Zugriffsrechte werden benötigt um das Gerät einzuhängen<span class="nt">&lt;/message&gt;</span></span>
-<span class='line'>    <span class="nt">&lt;defaults&gt;</span></span>
-<span class='line'>      <span class="nt">&lt;allow_any&gt;</span>no<span class="nt">&lt;/allow_any&gt;</span></span>
-<span class='line'>      <span class="nt">&lt;allow_inactive&gt;</span>no<span class="nt">&lt;/allow_inactive&gt;</span></span>
-<span class='line'>      <span class="nt">&lt;allow_active&gt;</span>auth_admin_keep<span class="nt">&lt;/allow_active&gt;</span></span>
-<span class='line'>    <span class="nt">&lt;/defaults&gt;</span></span>
-<span class='line'>  <span class="nt">&lt;/action&gt;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:1</p>
 <p>把</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="nt">&lt;allow_active&gt;</span>auth_admin_keep<span class="nt">&lt;/allow_active&gt;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:2</p>
 <p>改成</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="nt">&lt;allow_active&gt;</span>yes<span class="nt">&lt;/allow_active&gt;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:3</p>
 <p>這樣要掛載磁區就不用在輸入密碼了</p>
   
 </div>

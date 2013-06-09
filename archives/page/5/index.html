@@ -76,6 +76,30 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/455/">Google Chrome OS試用心得
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>今天用BT將Google Chrome OS拉回來之後，打開看了一下這個號稱開機只要10秒內的神奇作業軟體。</p>
+<p>我是直接使用VirtualBox開機後感覺上有點頓頓的...</p>
+    <a href="/archives/455/" class="more-link">Read More ...</a>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Thu Dec.  3 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/455/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/446/">server上的一些變動紀錄
 
 </a></h1>
@@ -85,17 +109,9 @@
     <p>前一兩個星期從Ubuntu9.04直接升級到9.10，看似沒有問題。但是今天看了一下備份的紀錄只有到091102，好像Postfix沒有動作的樣子，至於為啥沒有動作，我就不想浪費時間去找問題，於是我參考<a href="http://plog.longwin.com.tw/">Tsung</a>大的<a href="http://plog.longwin.com.tw/my_note-unix/2009/08/27/ssmtp-shell-gmail-send-mail-2009">這一篇</a>，把postfix換掉改用gmail的smtp來送我的備份檔，除了附件大小要注意之外，還是可以使用mutt來送東西。這樣真的省得時間再去設定postfix。</p>
 <p>至於mutt的話之前的版本按照我在前一篇的<a href="http://www.renn999.twbbs.org/wordpress/archives/184">自動MySQL備份搞定</a>，中的script中一定會發現到會吐出error，他會跟你說找不到[mail位置＠where.are.you]這個檔案，我是不清楚新板式不是在這裡有改了啥東西，但是這個問題我改一下參數順序就可以了
 原始為：</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">echo</span> &quot;$<span class="n">today</span> <span class="n">Data</span> <span class="n">base</span> <span class="n">backup</span>&quot; <span class="o">|</span> <span class="n">mutt</span> <span class="o">-</span><span class="n">s</span> &quot;<span class="n">Web</span> <span class="n">Mysql</span> <span class="n">Database</span> <span class="n">Backup</span>&quot; <span class="o">-</span><span class="n">a</span>  <span class="n">sqlbak</span>$<span class="n">today</span><span class="p">.</span><span class="n">zip</span> <span class="p">[</span><span class="n">mail</span>位置＠<span class="n">where</span><span class="p">.</span><span class="n">are</span><span class="p">.</span><span class="n">you</span><span class="p">]</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:0</p>
 <p>改成</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">echo</span> &quot;$<span class="n">today</span> <span class="n">Data</span> <span class="n">base</span> <span class="n">backup</span>&quot; <span class="o">|</span> <span class="n">mutt</span> <span class="p">[</span><span class="n">mail</span>位置＠<span class="n">where</span><span class="p">.</span><span class="n">are</span><span class="p">.</span><span class="n">you</span><span class="p">]</span> <span class="o">-</span><span class="n">s</span> &quot;<span class="n">Web</span> <span class="n">Mysql</span> <span class="n">Database</span> <span class="n">Backup</span>&quot; <span class="o">-</span><span class="n">a</span>  <span class="n">sqlbak</span>$<span class="n">today</span><span class="p">.</span><span class="n">zip</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:1</p>
 <p>還有我的/etc/resolv.conf每次重新開機都會跑掉，於是我把resolvconf給remove就ok了 :-P</p>
     
   
@@ -223,21 +239,7 @@
     <p>其實今天就是在google AJAX看到的鬼東西，而且是一個非常有趣的鬼東西，依照我淺薄的接觸以為javascript Libraries只有jQuery，竟然沒想到還有這麼多的種類，</p>
 <p>網站：<a href="http://code.google.com/intl/en/apis/ajaxlibs/">http://code.google.com/intl/en/apis/ajaxlibs/</a></p>
 <p>其實這讓開發者真的可以非常的方便來使用一些javascript的Libraries，如果要使用jQuery的話只要</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span></pre></td><td class='code'><pre><code><span class='line'><span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">&quot;http://www.google.com/jsapi&quot;</span><span class="nt">&gt;&lt;/script&gt;</span> <span class="c">&lt;!--先include google js api--&gt;</span></span>
-<span class='line'><span class="nt">&lt;script&gt;</span> </span>
-<span class='line'>google.load(&quot;jquery&quot;, &quot;1.3.2&quot;);</span>
-<span class='line'>google.load(&quot;jqueryui&quot;, &quot;1.7.2&quot;);</span>
-<span class='line'><span class="c">&lt;!-- your js code --&gt;</span></span>
-<span class='line'><span class="nt">&lt;/script&gt;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:0</p>
 <p>真是方便的東西...XDrz</p>
     
   
@@ -263,145 +265,7 @@
 <div class="entry-content">
   
     <p>這是一個利用php產生rss的script，就只是普通的實做...XDDrz</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
-<span class='line'><span class="k">include</span><span class="p">(</span><span class="s1">&#39;uaocode.php&#39;</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'><span class="nv">$bbs_path</span><span class="o">=</span><span class="s1">&#39;/home/bbs/brd/&#39;</span><span class="p">;</span></span>
-<span class='line'><span class="nv">$brd_name</span><span class="o">=</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;brd&#39;</span><span class="p">];</span></span>
-<span class='line'><span class="nv">$filename</span><span class="o">=</span><span class="nv">$bbs_path</span><span class="o">.</span><span class="nv">$brd_name</span><span class="o">.</span><span class="s1">&#39;/.DIR&#39;</span><span class="p">;</span></span>
-<span class='line'><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$filename</span><span class="p">))</span> <span class="p">{</span></span>
-<span class='line'>    <span class="k">echo</span> <span class="s1">&#39;no such broad!&#39;</span><span class="p">;</span></span>
-<span class='line'>    <span class="k">exit</span><span class="p">;</span></span>
-<span class='line'><span class="p">}</span></span>
-<span class='line'></span>
-<span class='line'><span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Content-type: application/rss+xml; charset=utf-8&#39;</span><span class="p">);</span></span>
-<span class='line'><span class="k">echo</span> <span class="s2">&quot;&lt;?xml version=</span><span class="se">\&quot;</span><span class="s2">1.0</span><span class="se">\&quot;</span><span class="s2"> encoding=</span><span class="se">\&quot;</span><span class="s2">utf-8</span><span class="se">\&quot;</span><span class="s2"> ?&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
-<span class='line'></span>
-<span class='line'><span class="nv">$all_post</span><span class="o">=</span><span class="nb">filesize</span><span class="p">(</span><span class="nv">$filename</span><span class="p">)</span><span class="o">/</span><span class="mi">256</span><span class="p">;</span></span>
-<span class='line'></span>
-<span class='line'><span class="nv">$post_num</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span></span>
-<span class='line'></span>
-<span class='line'><span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="nv">$post_num</span> <span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">){</span></span>
-<span class='line'>    <span class="nv">$fp</span><span class="o">=</span><span class="nb">fopen</span><span class="p">(</span><span class="nv">$filename</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">fseek</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="p">(</span><span class="nv">$all_post</span><span class="o">-</span><span class="nv">$i</span><span class="p">)</span><span class="o">*</span><span class="mi">256</span><span class="o">+</span><span class="mi">12</span><span class="p">);</span></span>
-<span class='line'>    <span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_id&#39;</span><span class="p">]</span><span class="o">=</span><span class="nx">trim</span><span class="p">(</span><span class="nb">fread</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span><span class="mi">32</span><span class="p">));</span></span>
-<span class='line'>    <span class="nv">$post_path</span><span class="o">=</span><span class="nv">$bbs_path</span><span class="o">.</span><span class="nv">$brd_name</span><span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="nx">substr</span><span class="p">(</span><span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_id&#39;</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_id&#39;</span><span class="p">];</span></span>
-<span class='line'>    <span class="nv">$fpp</span><span class="o">=</span><span class="nb">fopen</span><span class="p">(</span><span class="nv">$post_path</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">);</span></span>
-<span class='line'>    <span class="nv">$j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span></span>
-<span class='line'>    <span class="k">while</span><span class="p">(</span><span class="nv">$current_line</span> <span class="o">=</span> <span class="nb">fgets</span><span class="p">(</span><span class="nv">$fpp</span><span class="p">)){</span></span>
-<span class='line'>        <span class="o">++</span><span class="nv">$j</span><span class="p">;</span></span>
-<span class='line'>        <span class="k">switch</span> <span class="p">(</span><span class="nv">$j</span><span class="p">){</span></span>
-<span class='line'>            <span class="k">case</span> <span class="mi">1</span><span class="o">:</span></span>
-<span class='line'>                <span class="nb">preg_match</span><span class="p">(</span><span class="s1">&#39;/: (.*) \(/&#39;</span><span class="p">,</span><span class="nv">$current_line</span><span class="p">,</span><span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_userid&#39;</span><span class="p">]);</span></span>
-<span class='line'>            <span class="k">case</span> <span class="mi">2</span><span class="o">:</span></span>
-<span class='line'>                <span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_title&#39;</span><span class="p">]</span><span class="o">=</span><span class="nx">trim</span><span class="p">(</span><span class="nb">html_entity_decode</span><span class="p">(</span><span class="nb">iconv</span><span class="p">(</span><span class="s2">&quot;big5&quot;</span><span class="p">,</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">,</span><span class="nx">uao_convert</span><span class="p">(</span><span class="nx">substr</span><span class="p">(</span><span class="nv">$current_line</span><span class="p">,</span><span class="mi">6</span><span class="p">))),</span><span class="nx">ENT_QUOTES</span><span class="p">,</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">));</span></span>
-<span class='line'>            <span class="k">case</span> <span class="mi">3</span><span class="o">:</span></span>
-<span class='line'>                <span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_time&#39;</span><span class="p">]</span><span class="o">=</span><span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RSS</span><span class="p">,</span> <span class="nb">strtotime</span><span class="p">(</span><span class="nx">trim</span><span class="p">(</span><span class="nx">substr</span><span class="p">(</span><span class="nv">$current_line</span><span class="p">,</span><span class="mi">6</span><span class="p">))));</span></span>
-<span class='line'>            <span class="k">default</span><span class="p">;</span></span>
-<span class='line'>                <span class="nv">$current_line</span><span class="o">=</span><span class="nb">preg_replace</span><span class="p">(</span><span class="s1">&#39;/\\x1b\\[([^m]*)m/i&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$current_line</span><span class="p">);</span></span>
-<span class='line'>                <span class="nv">$match</span><span class="p">[</span><span class="nv">$i</span><span class="p">][</span><span class="s1">&#39;post_conten&#39;</span><span class="p">]</span> <span class="o">.=</span> <span class="nx">trim</span><span class="p">(</span><span class="nb">html_entity_decode</span><span class="p">(</span><span class="nb">iconv</span><span class="p">(</span><span class="s2">&quot;big5&quot;</span><span class="p">,</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">,</span><span class="nx">uao_convert</span><span class="p">(</span><span class="nv">$current_line</span><span class="p">)),</span><span class="nx">ENT_QUOTES</span><span class="p">,</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">),</span><span class="s1">&#39;\0&#39;</span><span class="p">);</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>    <span class="p">}</span></span>
-<span class='line'><span class="p">}</span></span>
-<span class='line'><span class="cp">?&gt;</span></span>
-<span class='line'><span class="o">&lt;</span><span class="nx">rss</span> <span class="nx">version</span><span class="o">=</span><span class="s2">&quot;2.0&quot;</span></span>
-<span class='line'>    <span class="nx">xmlns</span><span class="o">:</span><span class="nx">content</span><span class="o">=</span><span class="s2">&quot;http://purl.org/rss/1.0/modules/content/&quot;</span></span>
-<span class='line'>    <span class="nx">xmlns</span><span class="o">:</span><span class="nx">wfw</span><span class="o">=</span><span class="s2">&quot;http://wellformedweb.org/CommentAPI/&quot;</span></span>
-<span class='line'>    <span class="nx">xmlns</span><span class="o">:</span><span class="nx">dc</span><span class="o">=</span><span class="s2">&quot;http://purl.org/dc/elements/1.1/&quot;</span></span>
-<span class='line'>    <span class="nx">xmlns</span><span class="o">:</span><span class="nx">atom</span><span class="o">=</span><span class="s2">&quot;http://www.w3.org/2005/Atom&quot;</span></span>
-<span class='line'>    <span class="nx">xmlns</span><span class="o">:</span><span class="nx">sy</span><span class="o">=</span><span class="s2">&quot;http://purl.org/rss/1.0/modules/syndication/&quot;</span></span>
-<span class='line'>    <span class="o">&gt;</span></span>
-<span class='line'>    <span class="o">&lt;</span><span class="nx">channel</span><span class="o">&gt;</span></span>
-<span class='line'>    <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="err">夢之大地</span><span class="nx">rsstest</span><span class="o">&lt;</span><span class="err">/title&gt;</span></span>
-<span class='line'>    <span class="o">&lt;</span><span class="nx">description</span><span class="o">&gt;</span><span class="nx">none</span><span class="o">&lt;</span><span class="err">/description&gt;</span></span>
-<span class='line'>    <span class="o">&lt;</span><span class="nx">link</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">:</span><span class="c1">//140.116.250.9/&lt;/link&gt;</span></span>
-<span class='line'>    <span class="o">&lt;</span><span class="nx">atom</span><span class="o">:</span><span class="nx">link</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://140.116.250.9/paser.php&quot;</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">&quot;self&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;application/rss+xml&quot;</span> <span class="o">/&gt;</span></span>
-<span class='line'>    <span class="o">&lt;</span><span class="nx">language</span><span class="o">&gt;</span><span class="nx">en</span><span class="o">&lt;</span><span class="err">/language&gt;</span></span>
-<span class='line'>    <span class="o">&lt;</span><span class="nx">generator</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">:</span><span class="c1">//www.renn999.twbbs.org/illustrator/RSS.php&lt;/generator&gt;</span></span>
-<span class='line'><span class="cp">&lt;?php</span> </span>
-<span class='line'>        <span class="k">foreach</span><span class="p">(</span><span class="nv">$match</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">){</span></span>
-<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;&lt;item&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
-<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;title&gt;&lt;![CDATA[&quot;</span><span class="o">.</span><span class="nb">stripslashes</span><span class="p">(</span><span class="nv">$item</span><span class="p">[</span><span class="s2">&quot;post_title&quot;</span><span class="p">])</span><span class="o">.</span><span class="s2">&quot;]]]]&gt;&lt;![CDATA[&gt;&lt;/title&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
-<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;pubDate&gt;&quot;</span><span class="o">.</span><span class="nb">stripslashes</span><span class="p">(</span><span class="nv">$item</span><span class="p">[</span><span class="s2">&quot;post_time&quot;</span><span class="p">])</span><span class="o">.</span><span class="s2">&quot;&lt;/pubDate&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
-<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;link&gt;http://140.116.250.9/&lt;/link&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
-<span class='line'>            <span class="c1">//str_replace(&#39; &#39;,&#39;&amp;nbsp;&#39;,nl2br(htmlspecialchars($item[&quot;post_conten&quot;])));</span></span>
-<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;description&gt;&lt;![CDATA[&quot;</span><span class="o">.</span><span class="nb">nl2br</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&amp;nbsp;&#39;</span><span class="p">,</span><span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$item</span><span class="p">[</span><span class="s2">&quot;post_conten&quot;</span><span class="p">])))</span><span class="o">.</span><span class="s2">&quot;]]]]&gt;&lt;![CDATA[&gt;&lt;/description&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
-<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;guid isPermaLink=</span><span class="se">\&quot;</span><span class="s2">false</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">,</span><span class="nv">$item</span><span class="p">[</span><span class="s1">&#39;post_id&#39;</span><span class="p">],</span><span class="s2">&quot;&lt;/guid&gt;&quot;</span><span class="p">;</span></span>
-<span class='line'>            <span class="k">echo</span> <span class="s2">&quot;&lt;/item&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>    <span class="cp">?&gt;</span></span>
-<span class='line'>    <span class="o">&lt;</span><span class="err">/channel&gt;</span></span>
-<span class='line'><span class="o">&lt;</span><span class="err">/rss&gt;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
+<p>wzxhzdk:0</p>
     
   
 </div>
@@ -425,30 +289,10 @@
 <div class="entry-content">
   
     <p>在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span></pre></td><td class='code'><pre><code><span class='line'><span class="p">[</span><span class="n">bbs</span><span class="p">@</span><span class="n">localhost</span> 3<span class="p">]</span>$ <span class="n">ls</span> <span class="o">-</span><span class="n">lt</span></span>
-<span class='line'><span class="n">total</span> 20</span>
-<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> 2 <span class="n">bbs</span> <span class="n">bbs</span> 341 2009<span class="o">-</span>09<span class="o">-</span>01 12<span class="p">:</span>53 <span class="n">A159PA63</span></span>
-<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> 1 <span class="n">bbs</span> <span class="n">bbs</span> 751 2009<span class="o">-</span>05<span class="o">-</span>02 00<span class="p">:</span>20 <span class="n">A14VM573</span></span>
-<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> 1 <span class="n">bbs</span> <span class="n">bbs</span> 719 2009<span class="o">-</span>04<span class="o">-</span>27 12<span class="p">:</span>06 <span class="n">A14VAAL3</span></span>
-<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> 1 <span class="n">bbs</span> <span class="n">bbs</span> 526 2009<span class="o">-</span>02<span class="o">-</span>09 12<span class="p">:</span>10 <span class="n">A14OVB03</span></span>
-<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> 1 <span class="n">bbs</span> <span class="n">bbs</span> 255 2007<span class="o">-</span>10<span class="o">-</span>12 22<span class="p">:</span>41 <span class="n">A13GV1S3</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:0</p>
 <p>所以說必須要讓apache改變user和grup其實非常簡單只要修改/etc/apache2/envvars裡面的APACHE_RUN_USER及APACHE_RUN_GROUP為你要的user及group，並restart apache即可。</p>
 <p>修改phpmyadmin的預設路徑，剛灌好的phpphpmyadmin預設路徑為 http://你的網址/phpmyadmin 以前的作法是在/var/www下面將phpmyadmin的Link修改名稱即可，現在就已經不一樣了，現在已經把設定檔寫在/etc/apache2/conf.d/phpmyadmin.conf，找到</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">Alias</span> <span class="o">/</span><span class="n">phpmyadmin</span><span class="p">(</span>修改這裡<span class="p">)</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">phpmyadmin</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:1</p>
 <p>修改完並restart apache即可。</p>
     
   
@@ -473,115 +317,7 @@
 <div class="entry-content">
   
     <p>這是我第一個將PHP轉Perl的程式，也算是學一點Perl，Perl真是一個博大驚深的語言啊，老實說起來。某些方面比php簡單很多也直覺很多...XDrz</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span></pre></td><td class='code'><pre><code><span class='line'><span class="c1">#!/usr/bin/perl -w</span></span>
-<span class='line'><span class="c1">#</span></span>
-<span class='line'><span class="c1"># This perl script is using GNU General Public License v2.0</span></span>
-<span class='line'><span class="c1"># renn999&lt;AT&gt;ccns.ncku.edu.tw</span></span>
-<span class='line'><span class="c1"># http://renn999.twbbs.org</span></span>
-<span class='line'><span class="c1">#</span></span>
-<span class='line'><span class="c1"># USAGE:ucs2big5( $str );</span></span>
-<span class='line'><span class="c1">#</span></span>
-<span class='line'><span class="c1"># Big5 table(big5.txt)</span></span>
-<span class='line'><span class="c1"># using from Ztrem</span></span>
-<span class='line'><span class="c1"># http://zhouer.org/ZTerm/</span></span>
-<span class='line'></span>
-<span class='line'><span class="k">print</span> <span class="o">&amp;</span><span class="n">ucs2big5</span><span class="p">(</span><span class="s">&#39;測試 試験 しけん&#39;</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'><span class="k">sub </span><span class="nf">ucs2big5</span> <span class="p">{</span></span>
-<span class='line'>    <span class="k">my</span> <span class="nv">$ucs_str</span><span class="o">=</span><span class="nb">shift</span><span class="p">;</span></span>
-<span class='line'>    <span class="nb">open</span> <span class="n">FILE</span><span class="p">,</span> <span class="s">&quot;big5.txt&quot;</span><span class="p">;</span></span>
-<span class='line'>    <span class="c1">#binmode FILE; </span></span>
-<span class='line'>    <span class="k">my</span> <span class="nv">$len</span> <span class="o">=</span> <span class="nb">length</span> <span class="nv">$ucs_str</span><span class="p">;</span></span>
-<span class='line'>    <span class="k">my</span> <span class="p">(</span><span class="nv">$b1</span><span class="p">,</span><span class="nv">$b2</span><span class="p">,</span><span class="nv">$b3</span><span class="p">,</span><span class="nv">$big5_code</span><span class="p">,</span><span class="nv">$ucs_code</span><span class="p">,</span><span class="nv">$big5_str</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="k">for</span><span class="p">(</span> <span class="k">my</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$len</span> <span class="p">;</span> <span class="nv">$i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>        <span class="nv">$b1</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nb">substr</span> <span class="nv">$ucs_str</span><span class="p">,</span> <span class="nv">$i</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
-<span class='line'>        <span class="k">if</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&lt;</span> <span class="mh">0x80</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>            <span class="nv">$big5_str</span> <span class="o">.=</span> <span class="nb">chr</span><span class="p">(</span><span class="nv">$b1</span><span class="p">);</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>        <span class="k">elsif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">224</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>            <span class="c1">#3code UTF-8</span></span>
-<span class='line'>            <span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">224</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nb">substr</span> <span class="nv">$ucs_str</span><span class="p">,</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">128</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$b3</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nb">substr</span> <span class="nv">$ucs_str</span><span class="p">,</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">4096</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b3</span><span class="p">;</span></span>
-<span class='line'>            <span class="nb">seek</span><span class="p">(</span> <span class="n">FILE</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">0</span><span class="p">);</span></span>
-<span class='line'>            <span class="nb">read</span> <span class="n">FILE</span><span class="p">,</span> <span class="nv">$big5_code</span><span class="p">,</span> <span class="mi">2</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$big5_str</span> <span class="o">.=</span> <span class="nv">$big5_code</span><span class="p">;</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>        <span class="k">elsif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">192</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>            <span class="c1">#2code UTF-8</span></span>
-<span class='line'>            <span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">192</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nb">substr</span> <span class="nv">$ucs_str</span><span class="p">,</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="p">;</span></span>
-<span class='line'>            <span class="nb">seek</span><span class="p">(</span> <span class="n">FILE</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">);</span></span>
-<span class='line'>            <span class="nb">read</span> <span class="n">FILE</span><span class="p">,</span> <span class="nv">$big5_code</span><span class="p">,</span> <span class="mi">2</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$big5_str</span> <span class="o">.=</span> <span class="nv">$big5_code</span><span class="p">;</span></span>
-<span class='line'>        <span class="p">}</span><span class="k">else</span><span class="p">{</span></span>
-<span class='line'>            <span class="nv">$big5_str</span> <span class="o">.=</span> <span class="s">&#39;?&#39;</span><span class="p">;</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>    <span class="p">}</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nb">length</span> <span class="nv">$big5_str</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>        <span class="nv">$big5_str</span><span class="p">;</span></span>
-<span class='line'>    <span class="p">}</span></span>
-<span class='line'><span class="p">}</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:0</p>
 <p>用pietty等UAO支援的程式應該可以看得出結果</p>
     
   
@@ -593,144 +329,6 @@
     <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/391/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/383/">利用php將UTF-8 -&gt; big5 UAO沒有PATCH iconv
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>最近因為嘗試要轉換一些HTML-&gt;BBS的文章會發生的問題，所以說就寫了一個這樣的程式，因為我完全不想要動到iconv的PATCH，所以說就先利用ZTerm src中的BIG5表格下去做轉換，結果還不錯。</p>
-<p>(修正了幾個bug 091006 21：00)</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
-<span class='line'><span class="cm">/*  </span></span>
-<span class='line'><span class="cm"> *  This php is using GNU General Public License v2.0</span></span>
-<span class='line'><span class="cm"> *  renn999&lt;AT&gt;ccns.ncku.edu.tw</span></span>
-<span class='line'><span class="cm"> *  http://renn999.twbbs.org</span></span>
-<span class='line'><span class="cm"> *</span></span>
-<span class='line'><span class="cm"> *  USAGE:ucs2big5( $str );</span></span>
-<span class='line'><span class="cm"> *  </span></span>
-<span class='line'><span class="cm"> *  Big5 table(big5.txt)</span></span>
-<span class='line'><span class="cm"> *  using from Ztrem</span></span>
-<span class='line'><span class="cm"> *  http://zhouer.org/ZTerm/</span></span>
-<span class='line'><span class="cm"> */</span></span>
-<span class='line'></span>
-<span class='line'><span class="k">function</span> <span class="nf">ucs2big5</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>    <span class="nv">$fp</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span> <span class="s1">&#39;big5.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span> <span class="p">);</span></span>
-<span class='line'>    <span class="nv">$len</span> <span class="o">=</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">unset</span><span class="p">(</span><span class="nv">$big5_str</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nv">$x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span></span>
-<span class='line'>    <span class="k">for</span><span class="p">(</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$len</span> <span class="p">;</span> <span class="nv">$i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>        <span class="nv">$b1</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="nv">$i</span><span class="p">]);</span></span>
-<span class='line'>        <span class="k">if</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&lt;</span> <span class="mh">0x80</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="nv">$b1</span><span class="p">);</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>        <span class="k">elseif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">224</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>            <span class="c1">#3code UTF-8</span></span>
-<span class='line'>            <span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">224</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">128</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$b3</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">4096</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b3</span><span class="p">;</span></span>
-<span class='line'>            <span class="nb">fseek</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span></span>
-<span class='line'>            <span class="nv">$big5_code</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>        <span class="k">elseif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">192</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>            <span class="c1">#2code UTF-8</span></span>
-<span class='line'>            <span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">192</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="p">;</span></span>
-<span class='line'>            <span class="nb">fseek</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">);</span></span>
-<span class='line'>            <span class="nv">$big5_code</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span></span>
-<span class='line'>        <span class="p">}</span><span class="k">else</span><span class="p">{</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;?&#39;</span><span class="p">;</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>    <span class="p">}</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nb">fclose</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span></span>
-<span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$big5_str</span><span class="p">))</span> <span class="p">{</span></span>
-<span class='line'>        <span class="k">return</span> <span class="nb">join</span><span class="p">(</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$big5_str</span><span class="p">);</span></span>
-<span class='line'>    <span class="p">}</span></span>
-<span class='line'><span class="p">}</span></span>
-<span class='line'><span class="cp">?&gt;</span><span class="x"></span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>至於BIG5.txt可以到<a href="http://zterm.googlecode.com/svn/trunk/org/zhouer/utils/conv/">http://zterm.googlecode.com/svn/trunk/org/zhouer/utils/conv/</a>中去下載 這裡就不附上了</p>
-    
-  
-</div>
-
-<div class="meta">
-  <div class="date">Tue Oct.  6 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/about%20PHP/'>about PHP</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/383/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

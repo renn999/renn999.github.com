@@ -90,35 +90,15 @@
 <ul>
     <li>v先到<a href="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js">http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js</a>將最新版的，jquery下載下來並取代wp-includes/js/jquery/jquery.js</li>
     <li>修改wp-includes/script-loader.php將119行
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>         $<span class="n">scripts</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span> <span class="s">&#39;jquery&#39;</span><span class="p">,</span> <span class="s">&#39;/wp-includes/js/jquery/jquery.js&#39;</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="s">&#39;1.4.2&#39;</span><span class="p">);</span> </span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
+wzxhzdk:0
 改成
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>           $<span class="n">scripts</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span> <span class="s">&#39;jquery&#39;</span><span class="p">,</span> <span class="s">&#39;/wp-includes/js/jquery/jquery.js&#39;</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="s">&#39;1.4.3&#39;</span><span class="p">);</span> </span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
+wzxhzdk:1
 </li>
 </ul>
 但是有的時候可能會出新因為plugin將原本的版本號覆蓋的情形，以本人的wordplurk-improve為例子，要找出
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'>  $<span class="n">jq_url</span> <span class="p">=</span> <span class="s">&#39;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&#39;</span><span class="p">;</span></span>
-<span class='line'>  <span class="n">wp_deregister_script</span><span class="p">(</span><span class="s">&#39;jquery&#39;</span><span class="p">);</span></span>
-<span class='line'>  <span class="n">wp_enqueue_script</span><span class="p">(</span><span class="s">&#39;jquery&#39;</span><span class="p">,</span> $<span class="n">jq_url</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="s">&#39;1.4.2&#39;</span><span class="p">);</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
+wzxhzdk:2
 改成
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'>  $<span class="n">jq_url</span> <span class="p">=</span> <span class="s">&#39;http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js&#39;</span><span class="p">;</span></span>
-<span class='line'>  <span class="n">wp_deregister_script</span><span class="p">(</span><span class="s">&#39;jquery&#39;</span><span class="p">);</span></span>
-<span class='line'>  <span class="n">wp_enqueue_script</span><span class="p">(</span><span class="s">&#39;jquery&#39;</span><span class="p">,</span> $<span class="n">jq_url</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="s">&#39;1.4.3&#39;</span><span class="p">);</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-</p>
+wzxhzdk:3</p>
 <p>即可，至於每個plugin依照設計的不同要是要相對於修改。</p>
   
 </div>

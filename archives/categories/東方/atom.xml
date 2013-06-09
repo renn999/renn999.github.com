@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   
-  <title><![CDATA[Category: 程式相關 | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org//archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 東方 | 老伯筆記]]></title>
+  <link href="http://www.renn999.twbbs.org//archives/categories/%E6%9D%B1%E6%96%B9/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
   <updated>2013-06-09T09:34:46+0800</updated>
@@ -139,56 +139,6 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
 
 
 <p>先暫時筆記到此晚點看看能不能把整個 script 寫出來...</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/900/"/>
-    <updated>2011-07-21T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/900/</id>
-    <content type="html"><![CDATA[<p>This is the first time I write post in English, so if there are something wrong in my post, please notice me, thanks.</p>
-<p>I have a laptop Asus A43SV, I do not like the windows7, so I install the ubuntu on it. But there are "Some" problem, after I finish install.</p>
-<p>First, Elantech touchpad recognized as PS/2 Logitech mouse, but you can find Elantech models in <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/681904/comments/104" target="_blank">this article.</a></p>
-<p>To solve the Realtek USB multi-card reader On my laptops, I have google it for a long time until yesterday. I find freechelmi said that he mailed to Realtek in <a href="http://ubuntuforums.org/showthread.php?t=1797202#6" target="_blank">this article</a>, and RealTek sent him a driver. This driver works on my laptops.</p>
-<p>Now, Asus Fn keys F9-F12 and some special keys stile not work, I hope ubuntu can support it in next release...</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ubuntu11.04使用感使用感外加問題解決]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/894/"/>
-    <updated>2011-05-10T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/894/</id>
-    <content type="html"><![CDATA[<p>為11.04已經發布了，當初還在想說應該完不到了，但是因為了某些原因，提早結束了Online生活，就理用了讀書所剩餘的時間把完了一下，但是感覺上比較大的不同只有unity外加一堆預設程式被換掉，但是還是用不大習慣。
-外加，顯卡的需求好像變得比較高了...= =a，但是這不是重點，重點是解決問題的快感啊。
-首先就是unity的程式分類，當我要新增一個程式到選單時，沒有辦法放到指定的位置，只職能在所有程式中找到，unity的設定不是使用主選單的分類，而是是用每個~/.local/share/applications下的.desktop設定檔中的Categories來分類的，所以說只要分類對了就可以在unity下的分類中看到。
-另外一個就是影片縮圖，因為我都習慣把Totem拔掉，因為他真的貧弱到不行，但是拔掉之後又沒有影片縮圖，我還是利用了<a href="http://sites.google.com/site/me20305812/download_mplayer">mplayer-video-thumb</a>，但是因為1.4.1版的問題非常大...XDrz因為這是要totem存在下，才會縮圖，所以說他讓我改了一堆東西之後才可以用QQ，我是結合了1.3.2的設定，但是看到了比較高桿的用法<a href="http://planykao.blogspot.com/2009/12/mplayer-video-thumb-14-1.html">在這</a>，來為強者鞠躬吧...&lt;(<em> </em>)&gt;</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[mysql轉sqlite]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/861/"/>
-    <updated>2010-08-11T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/861/</id>
-    <content type="html"><![CDATA[<p>前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到...XDrz</p>
-<p>可以參考這裡<a href="http://www.sqlite.org/cvstrac/wiki?p=ConverterTools">sqlite - Converter Tools</a></p>
-<p>當然我的作法是將步驟分開來作的</p>
-<p>先將sqldump出來</p>
-<p>wzxhzdk:0</p>
-<!--more-->
-
-<p>接著就利用內部所說的sh script擷取部份</p>
-<p>wzxhzdk:1</p>
-<p>這樣的好處是說只要亦有問題，可以依照error message出現的錯誤去修正database.sql，老實他那個error message一直沒有辦法被output出來，建議使用script指令紀錄錯誤訊息，利用錯誤訊息慢慢去修正會比較好。</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[初學python]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/828/"/>
-    <updated>2010-07-22T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/828/</id>
-    <content type="html"><![CDATA[<p>這是利用plurk api簡單寫得東東，主要是要搞懂json的用法：p
-到時候先搞定cookie的儲存..OTZ</p>
-<p>wzxhzdk:0</p>]]></content>
   </entry>
   
 </feed>

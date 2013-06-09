@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>利用php將UTF-8 -&gt; big5 UAO沒有PATCH iconv - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="最近因為嘗試要轉換一些HTML-&gt;BBS的文章會發生的問題，所以說就寫了一個這樣的程式，因為我完全不想要動到iconv的PATCH，所以說就先利用ZTerm src中的BIG5表格下去做轉換，結果還不錯。 (修正了幾個bug 091006 21：00) 1 2 3 4 5 6 7 8 9 10 11...">
+  <meta name="description" content="最近因為嘗試要轉換一些HTML-&gt;BBS的文章會發生的問題，所以說就寫了一個這樣的程式，因為我完全不想要動到iconv的PATCH，所以說就先利用ZTerm src中的BIG5表格下去做轉換，結果還不錯。 (修正了幾個bug 091006 21：00) wzxhzdk:0 至於BIG5.txt可以到...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -85,119 +85,7 @@
   
     <p>最近因為嘗試要轉換一些HTML-&gt;BBS的文章會發生的問題，所以說就寫了一個這樣的程式，因為我完全不想要動到iconv的PATCH，所以說就先利用ZTerm src中的BIG5表格下去做轉換，結果還不錯。</p>
 <p>(修正了幾個bug 091006 21：00)</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
-<span class='line'><span class="cm">/*  </span></span>
-<span class='line'><span class="cm"> *  This php is using GNU General Public License v2.0</span></span>
-<span class='line'><span class="cm"> *  renn999&lt;AT&gt;ccns.ncku.edu.tw</span></span>
-<span class='line'><span class="cm"> *  http://renn999.twbbs.org</span></span>
-<span class='line'><span class="cm"> *</span></span>
-<span class='line'><span class="cm"> *  USAGE:ucs2big5( $str );</span></span>
-<span class='line'><span class="cm"> *  </span></span>
-<span class='line'><span class="cm"> *  Big5 table(big5.txt)</span></span>
-<span class='line'><span class="cm"> *  using from Ztrem</span></span>
-<span class='line'><span class="cm"> *  http://zhouer.org/ZTerm/</span></span>
-<span class='line'><span class="cm"> */</span></span>
-<span class='line'></span>
-<span class='line'><span class="k">function</span> <span class="nf">ucs2big5</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>    <span class="nv">$fp</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span> <span class="s1">&#39;big5.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span> <span class="p">);</span></span>
-<span class='line'>    <span class="nv">$len</span> <span class="o">=</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">);</span></span>
-<span class='line'>    <span class="nb">unset</span><span class="p">(</span><span class="nv">$big5_str</span><span class="p">);</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nv">$x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span></span>
-<span class='line'>    <span class="k">for</span><span class="p">(</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$len</span> <span class="p">;</span> <span class="nv">$i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>        <span class="nv">$b1</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="nv">$i</span><span class="p">]);</span></span>
-<span class='line'>        <span class="k">if</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&lt;</span> <span class="mh">0x80</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="nv">$b1</span><span class="p">);</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>        <span class="k">elseif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">224</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>            <span class="c1">#3code UTF-8</span></span>
-<span class='line'>            <span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">224</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">128</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$b3</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">4096</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b3</span><span class="p">;</span></span>
-<span class='line'>            <span class="nb">fseek</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span></span>
-<span class='line'>            <span class="nv">$big5_code</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>        <span class="k">elseif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">192</span> <span class="p">)</span> <span class="p">{</span></span>
-<span class='line'>            <span class="c1">#2code UTF-8</span></span>
-<span class='line'>            <span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">192</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span></span>
-<span class='line'>            <span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="p">;</span></span>
-<span class='line'>            <span class="nb">fseek</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">);</span></span>
-<span class='line'>            <span class="nv">$big5_code</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span></span>
-<span class='line'>        <span class="p">}</span><span class="k">else</span><span class="p">{</span></span>
-<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;?&#39;</span><span class="p">;</span></span>
-<span class='line'>        <span class="p">}</span></span>
-<span class='line'>    <span class="p">}</span></span>
-<span class='line'></span>
-<span class='line'>    <span class="nb">fclose</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span></span>
-<span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$big5_str</span><span class="p">))</span> <span class="p">{</span></span>
-<span class='line'>        <span class="k">return</span> <span class="nb">join</span><span class="p">(</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$big5_str</span><span class="p">);</span></span>
-<span class='line'>    <span class="p">}</span></span>
-<span class='line'><span class="p">}</span></span>
-<span class='line'><span class="cp">?&gt;</span><span class="x"></span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:0</p>
 <p>至於BIG5.txt可以到<a href="http://zterm.googlecode.com/svn/trunk/org/zhouer/utils/conv/">http://zterm.googlecode.com/svn/trunk/org/zhouer/utils/conv/</a>中去下載 這裡就不附上了</p>
   
 </div>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Wine開啟視窗字體平滑效果 - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="在很早以前用wine的時候只要在user.reg下加入 1 2[Software\\Wine\\X11 Driver] &#34;ClientSideAntiAliasWithRender&#34;=&#34;Y&#34; 就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了 因為如果不啟用平滑效果的話，情況會像下圖： 在網...">
+  <meta name="description" content="在很早以前用wine的時候只要在user.reg下加入 wzxhzdk:0 就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了 因為如果不啟用平滑效果的話，情況會像下圖： 在網路上已經有真正的解法了，如果您真的很有耐心的話可以看看Wine-Review的這一篇 他有說到將以下的文字存成reg...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,68 +84,20 @@
 <div class="entry-content">
   
     <p>在很早以前用wine的時候只要在user.reg下加入</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">[Software\\Wine\\X11 Driver]</span></span>
-<span class='line'><span class="na">&quot;ClientSideAntiAliasWithRender&quot;</span><span class="o">=</span><span class="s">&quot;Y&quot;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:0</p>
 <p>就可以啟用平滑效果，但是升級到1.1.35之後完全不管用了
 因為如果不啟用平滑效果的話，情況會像下圖：</p>
 <!--more-->
 
 <p>在網路上已經有真正的解法了，如果您真的很有耐心的話可以看看Wine-Review的<a href="http://www.wine-reviews.net/wine-reviews/tips-n-tricks/how-to-enable-font-anti-aliasing-in-wine.html">這一篇</a>
 他有說到將以下的文字存成reg並且匯進去regedit</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">REGEDIT4</span></span>
-<span class='line'></span>
-<span class='line'><span class="p">[</span><span class="n">HKEY_CURRENT_USER</span><span class="o">\</span><span class="n">Control</span> <span class="n">Panel</span><span class="o">\</span><span class="n">Desktop</span><span class="p">]</span></span>
-<span class='line'>&quot;<span class="n">FontSmoothing</span>&quot;<span class="p">=</span>&quot;2&quot;</span>
-<span class='line'>&quot;<span class="n">FontSmoothingType</span>&quot;<span class="p">=</span><span class="n">dword</span><span class="p">:</span>00000002</span>
-<span class='line'>&quot;<span class="n">FontSmoothingGamma</span>&quot;<span class="p">=</span><span class="n">dword</span><span class="p">:</span>00000578</span>
-<span class='line'>&quot;<span class="n">FontSmoothingOrientation</span>&quot;<span class="p">=</span><span class="n">dword</span><span class="p">:</span>00000001</span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:1</p>
 <p>但是太麻煩了，最快的方式，打開終端機複製貼上</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">files</span><span class="p">.</span><span class="n">polosatus</span><span class="p">.</span><span class="n">ru</span><span class="o">/</span><span class="n">winefontssmoothing_en</span><span class="p">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">O</span><span class="o">-</span> <span class="o">|</span> <span class="n">bash</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:2</p>
 <p>然後，出現以下畫面去作選擇</p>
 <p>之後可以開啟Wine來看看結果</p>
 <p>這樣看起來棒多了，取代其他字型的regcode</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">[Software\\Wine\\Fonts\\Replacements]</span></span>
-<span class='line'><span class="na">&quot;System&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
-<span class='line'><span class="na">&quot;Arial&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
-<span class='line'><span class="na">&quot;Fixedsys&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
-<span class='line'><span class="na">&quot;Microsoft Sans Serif&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
-<span class='line'><span class="na">&quot;MS UI Gothic&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
-<span class='line'><span class="na">&quot;Tahoma&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
-<span class='line'><span class="na">&quot;Terminal&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
-<span class='line'><span class="na">&quot;MingLiU&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
-<span class='line'><span class="na">&quot;PMingLiU&quot;</span><span class="o">=</span><span class="s">&quot;你要的字型名稱&quot;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:3</p>
 <p>將其附加到user.reg後面即可</p>
   
 </div>

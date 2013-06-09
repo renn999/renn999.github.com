@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Apache修改執行user和Group和修改phpmyadmin預設網址 - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣 1 2 3 4 5 6 7[bbs@localhost 3]$ ls -...">
+  <meta name="description" content="在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣 wzxhzdk:0 所以說必須要讓apache改變user和grup其實...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,30 +84,10 @@
 <div class="entry-content">
   
     <p>在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span></pre></td><td class='code'><pre><code><span class='line'><span class="p">[</span><span class="n">bbs</span><span class="p">@</span><span class="n">localhost</span> 3<span class="p">]</span>$ <span class="n">ls</span> <span class="o">-</span><span class="n">lt</span></span>
-<span class='line'><span class="n">total</span> 20</span>
-<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> 2 <span class="n">bbs</span> <span class="n">bbs</span> 341 2009<span class="o">-</span>09<span class="o">-</span>01 12<span class="p">:</span>53 <span class="n">A159PA63</span></span>
-<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> 1 <span class="n">bbs</span> <span class="n">bbs</span> 751 2009<span class="o">-</span>05<span class="o">-</span>02 00<span class="p">:</span>20 <span class="n">A14VM573</span></span>
-<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> 1 <span class="n">bbs</span> <span class="n">bbs</span> 719 2009<span class="o">-</span>04<span class="o">-</span>27 12<span class="p">:</span>06 <span class="n">A14VAAL3</span></span>
-<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> 1 <span class="n">bbs</span> <span class="n">bbs</span> 526 2009<span class="o">-</span>02<span class="o">-</span>09 12<span class="p">:</span>10 <span class="n">A14OVB03</span></span>
-<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> 1 <span class="n">bbs</span> <span class="n">bbs</span> 255 2007<span class="o">-</span>10<span class="o">-</span>12 22<span class="p">:</span>41 <span class="n">A13GV1S3</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:0</p>
 <p>所以說必須要讓apache改變user和grup其實非常簡單只要修改/etc/apache2/envvars裡面的APACHE_RUN_USER及APACHE_RUN_GROUP為你要的user及group，並restart apache即可。</p>
 <p>修改phpmyadmin的預設路徑，剛灌好的phpphpmyadmin預設路徑為 http://你的網址/phpmyadmin 以前的作法是在/var/www下面將phpmyadmin的Link修改名稱即可，現在就已經不一樣了，現在已經把設定檔寫在/etc/apache2/conf.d/phpmyadmin.conf，找到</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">Alias</span> <span class="o">/</span><span class="n">phpmyadmin</span><span class="p">(</span>修改這裡<span class="p">)</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">phpmyadmin</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
+<p>wzxhzdk:1</p>
 <p>修改完並restart apache即可。</p>
   
 </div>
