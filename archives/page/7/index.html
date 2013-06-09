@@ -76,6 +76,40 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/315/">ImageUpon檔案副檔名判斷修改
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>今天趁著空閒的時候把ImageUpon的檔案格式副檔名判斷的部份小修了一下，主要的問題在於他是直接使用上傳之後的檔名去作切割，這對於一些安全上有些疑慮，假設有人上傳改附檔檔名的檔案...Orz，優點也是可以正確的去辨識檔案
+<p>修改部份：<br />
+找到</p>
+<p>wzxhzdk:0
+</p>
+<p>改成：</p>
+<p>wzxhzdk:1
+</p>
+<p>雖然說多了很多的步驟，但是隨便拿一張圖附檔亂改，都還可以正確的去作辨識，取得應有的副檔名。</p>
+<p>如果還是要使用上傳檔案的檔名去取得副檔名的話，我想到比較好的方式還是使用preg_match會比較正統，因為畢竟副檔名不是只有三個字</p>
+<p>wzxhzdk:2
+</p></p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sat Jun. 20 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/about%20PHP/'>about PHP</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/315/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/291/">Google Chromium for Linux總算給我顯示出中文了
 
 </a></h1>
@@ -343,38 +377,6 @@ The code from svn is still in 82, and the dshowserver.patch won't work so I diff
     <a href='/archives/categories/Linux/'>Linux</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/207/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/200/">Ubuntu 9.04 發佈
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>今天剛好是Ubuntu9.04發佈的日子
-所以說就想說升級來試試看的心態下去升級了
-整體讓人感覺上對於速度的提昇有不少的改進
-當然我就順道把我的桌機和我就順道把我的桌機和Serverr一起升級上去了</p>
-<p>當然最直覺的感覺開機速度提昇不少
-還有一些的的小地方感覺上沒有這麼頓了
-登入畫面變得比較酷
-但是目前還有去測試Ext4怎樣
-這應該是晚一點的事情了...</p>
-<p>這裡就來寫寫升級的方式好了</p>
-    <a href="/archives/200/" class="more-link">Read More ...</a>
-  
-</div>
-
-<div class="meta">
-  <div class="date">Thu Apr. 23 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/Linux/'>Linux</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/200/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

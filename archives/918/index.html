@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>THBGM python play music - 老伯筆記</title>
+  <meta name="author" content="renn999">
+  <meta name="description" content="其實這應該說是接續上一篇，因為我注意到弄出來的直接是 PCM WAVE，可以直接存成 wav，所以說我在想說是不是直接餵給 Sound driver就有音樂跑出來了，但是好像不是這樣， 本在股溝上找到的都是餵給 OSS，要不然就是要利用 pygame，真的很不想殺雞用牛刀，好不容易找到原來關在在於新...">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
+  <link rel="canonical" href="">
+  <link href="/favicon.ico" rel="shortcut icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+<body>
+  <header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
+<nav id="main-nav"><ul class="main">
+  <li><a href="/archives/">Archives</a></li>
+  <li><a href="/guestbook/">留言板</a></li>
+  <li><a href="http://illust.renn999.twbbs.org/">老伯繪師收集區</a></li>
+</ul></nav>
+<nav id="mobile-nav">
+  <div class="alignleft menu">
+    <a class="button">Menu</a>
+    <div class="container"><ul class="main">
+  <li><a href="/archives/">Archives</a></li>
+  <li><a href="/guestbook/">留言板</a></li>
+  <li><a href="http://illust.renn999.twbbs.org/">老伯繪師收集區</a></li>
+</ul></div>
+  </div>
+  <div class="alignright search">
+    <a class="button"></a>
+    <div class="container">
+      <form action="http://google.com/search" method="get">
+        <input type="text" name="q" results="0">
+        <input type="hidden" name="q" value="site:www.renn999.twbbs.org">
+      </form>
+    </div>
+  </div>
+</nav>
+<nav id="sub-nav" class="alignright">
+  <div class="social">
+  	
+  	<a class="plurk" href="http://www.plurk.com/renn999" title="plurk">plurk</a>
+  	
+    
+    <a class="facebook" href="http://www.facebook.com/renn999" title="Facebook">Facebook</a>
+    
+    
+    <a class="google" href="https://plus.google.com/103389845925471617368?rel=author" title="Google+">Google+</a>
+    
+    
+    <a class="twitter" href="http://twitter.com/renn999" title="Twitter">Twitter</a>
+    
+    
+    <a class="github" href="https://github.com/renn999" title="GitHub">GitHub</a>
+    
+    
+    
+    
+    
+    <a class="rss" href="http://feeds.feedburner.com/renn999" title="RSS">RSS</a>
+    
+  </div>
+  <form class="search" action="http://google.com/search" method="get">
+    <input class="alignright" type="text" name="q" results="0">
+    <input type="hidden" name="q" value="site:www.renn999.twbbs.org">
+  </form>
+</nav></header>
+  <div id="content" class="inner">
+  
+    
+    <article class="post">
+    
+      
+
+<h1 class="title"><a href="/archives/918/">THBGM python play music
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>其實這應該說是接續上一篇，因為我注意到弄出來的直接是 PCM WAVE，可以直接存成 wav，所以說我在想說是不是直接餵給 Sound driver就有音樂跑出來了，但是好像不是這樣，
+本在<s>股溝</s>上找到的都是餵給 OSS，要不然就是要利用 <code>pygame</code>，真的很不想殺雞用牛刀，好不容易找到原來關在在於新的 Linux 都放棄 OSS 改用 ALSA，像是 <a href="http://pyalsaaudio.sourceforge.net/">pyALSAAudio</a> 還好官方有寫些範例參考，最重要的就是真的非常簡單 read frame 後在塞給 driver 就好了，當我的喇叭放出熟悉的音樂真的感動快炸掉了。（謎之音：你真的是自虐到炸掉了！！！！）</p>
+<p>但是老實說，沒時間去研究 GUI 要怎麼寫</p>
+<!--more-->
+
+<h2>安裝<a href="http://pyalsaaudio.sourceforge.net/">pyALSAAudio</a></h2>
+<p>ubuntu 下可以
+<pre><code>sudo apt-get install python-alsaaudio</code></pre>
+要不然去官方自己下載，並 setup</p>
+<h2>Source Code</h2>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span></pre></td><td class='code'><pre><code><span class='line'><span class="kn">import</span> <span class="nn">alsaaudio</span></span>
+<span class='line'><span class="n">card</span> <span class="o">=</span> <span class="s">&#39;default&#39;</span></span>
+<span class='line'><span class="n">dat_path</span> <span class="o">=</span> <span class="s">ur&#39;thbgm_tr.dat&#39;</span></span>
+<span class='line'><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">dat_path</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span></span>
+<span class='line'><span class="sd">&#39;&#39;&#39;</span></span>
+<span class='line'><span class="sd">這是第7首 &quot;孤独なウェアウルフ&quot; 唯一會讓我一聽在聽的 資訊可以參考</span></span>
+<span class='line'><span class="sd">http://www.renn999.twbbs.org/archives/917/</span></span>
+<span class='line'><span class="sd">另外 更多的ALSAAudio範例可以參考</span></span>
+<span class='line'><span class="sd">http://sourceforge.net/projects/pyalsaaudio/</span></span>
+<span class='line'><span class="sd">&#39;&#39;&#39;</span></span>
+<span class='line'><span class="n">seek_info</span><span class="o">=</span><span class="mh">0x06e2ea50</span></span>
+<span class='line'><span class="n">intro</span> <span class="o">=</span> <span class="mh">0x23cf40</span></span>
+<span class='line'><span class="n">loop</span> <span class="o">=</span> <span class="mh">0xF95340</span></span>
+<span class='line'></span>
+<span class='line'><span class="n">device</span> <span class="o">=</span> <span class="n">alsaaudio</span><span class="o">.</span><span class="n">PCM</span><span class="p">(</span><span class="n">card</span><span class="o">=</span><span class="n">card</span><span class="p">)</span></span>
+<span class='line'><span class="n">device</span><span class="o">.</span><span class="n">setchannels</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></span>
+<span class='line'><span class="n">device</span><span class="o">.</span><span class="n">setrate</span><span class="p">(</span><span class="mi">44100</span><span class="p">)</span></span>
+<span class='line'><span class="n">device</span><span class="o">.</span><span class="n">setformat</span><span class="p">(</span><span class="n">alsaaudio</span><span class="o">.</span><span class="n">PCM_FORMAT_S16_LE</span><span class="p">)</span></span>
+<span class='line'><span class="n">device</span><span class="o">.</span><span class="n">setperiodsize</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'></span>
+<span class='line'><span class="n">i_fn</span> <span class="o">=</span> <span class="p">(</span><span class="n">intro</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'><span class="k">if</span> <span class="p">(</span><span class="n">intro</span><span class="o">%</span><span class="mi">1024</span><span class="p">):</span></span>
+<span class='line'>  <span class="n">i_fn</span><span class="o">=</span><span class="n">i_fn</span><span class="o">+</span><span class="mi">1</span></span>
+<span class='line'></span>
+<span class='line'><span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">seek_info</span><span class="p">)</span></span>
+<span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i_fn</span><span class="p">):</span></span>
+<span class='line'>  <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">i_fn</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span></span>
+<span class='line'>    <span class="nb">buffer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">intro</span><span class="o">%</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'>  <span class="k">else</span><span class="p">:</span></span>
+<span class='line'>    <span class="nb">buffer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'>  <span class="n">b</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span></span>
+<span class='line'></span>
+<span class='line'><span class="k">while</span> <span class="bp">True</span><span class="p">:</span> <span class="c">#loop到天荒地老</span></span>
+<span class='line'>  <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">seek_info</span> <span class="o">+</span> <span class="n">intro</span><span class="p">)</span></span>
+<span class='line'>  <span class="n">l_fn</span> <span class="o">=</span> <span class="p">(</span><span class="n">loop</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">loop</span><span class="o">%</span><span class="mi">1024</span><span class="p">):</span></span>
+<span class='line'>    <span class="n">l_fn</span><span class="o">=</span><span class="n">l_fn</span><span class="o">+</span><span class="mi">1</span></span>
+<span class='line'>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l_fn</span><span class="p">):</span></span>
+<span class='line'>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">i_fn</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span></span>
+<span class='line'>      <span class="nb">buffer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">loop</span><span class="o">%</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'>    <span class="k">else</span><span class="p">:</span></span>
+<span class='line'>      <span class="nb">buffer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'>    <span class="n">b</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sun Jun.  9 2013</div>
+  <div class="tags">
+    <a href='/archives/categories/%E6%9D%B1%E6%96%B9/'>東方</a>, 
+    <a href='/archives/categories/python/'>python</a>, 
+    <a href='/archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/'>程式相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/918/#disqus_thread">Comments</a></span>
+  
+</div>
+
+    </article>
+    
+      <div class="share">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+    
+    
+    <section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
+    
+
+  </div>
+  <footer id="footer" class="inner">
+    Copyright &copy; 
+    2013
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a href='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
+  <script src="/javascripts/slash.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+  
+<script type="text/javascript">
+      var disqus_shortname = 'rennidit';
+      
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.renn999.twbbs.org/archives/918/';
+        var disqus_url = 'http://www.renn999.twbbs.org/archives/918/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12134531-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+</html>

@@ -144,13 +144,13 @@ generate by Hexedit</code></pre>
 <span class='line'>    <span class="n">t</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></span>
 <span class='line'>    <span class="n">lsta</span><span class="o">=</span><span class="p">[]</span></span>
 <span class='line'>    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span></span>
-<span class='line'>            <span class="n">lst</span><span class="o">=</span><span class="p">[]</span></span>
-<span class='line'>            <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span></span>
-<span class='line'>                    <span class="n">hv</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;0x&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span></span>
-<span class='line'>                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span></span>
-<span class='line'>                            <span class="n">hv</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span><span class="o">+</span><span class="n">hv</span></span>
-<span class='line'>                    <span class="n">lst</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">hv</span><span class="p">)</span></span>
-<span class='line'>            <span class="n">lsta</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span></span>
+<span class='line'>        <span class="n">lst</span><span class="o">=</span><span class="p">[]</span></span>
+<span class='line'>        <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span></span>
+<span class='line'>            <span class="n">hv</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;0x&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span></span>
+<span class='line'>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span></span>
+<span class='line'>                <span class="n">hv</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span><span class="o">+</span><span class="n">hv</span></span>
+<span class='line'>            <span class="n">lst</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">hv</span><span class="p">)</span></span>
+<span class='line'>        <span class="n">lsta</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span></span>
 <span class='line'>    <span class="k">print</span> <span class="n">t</span><span class="p">,</span> <span class="s">&#39;  &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lsta</span><span class="p">)</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
@@ -201,7 +201,7 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-<p>先暫時筆記到此晚點看看能不能把整個 script 寫出來...</p>
+<p>此時 wave 應該就可以聽了，先暫時筆記到此晚點看看能不能把整個 script 寫出來...</p>
   
 </div>
 

@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2013-06-09T09:34:46+0800</updated>
+  <updated>2013-06-09T21:12:22+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,110 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[THBGM python play music]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/918/"/>
+    <updated>2013-06-09T22:54:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/918/</id>
+    <content type="html"><![CDATA[<p>其實這應該說是接續上一篇，因為我注意到弄出來的直接是 PCM WAVE，可以直接存成 wav，所以說我在想說是不是直接餵給 Sound driver就有音樂跑出來了，但是好像不是這樣，
+本在<s>股溝</s>上找到的都是餵給 OSS，要不然就是要利用 <code>pygame</code>，真的很不想殺雞用牛刀，好不容易找到原來關在在於新的 Linux 都放棄 OSS 改用 ALSA，像是 <a href="http://pyalsaaudio.sourceforge.net/">pyALSAAudio</a> 還好官方有寫些範例參考，最重要的就是真的非常簡單 read frame 後在塞給 driver 就好了，當我的喇叭放出熟悉的音樂真的感動快炸掉了。（謎之音：你真的是自虐到炸掉了！！！！）</p>
+<p>但是老實說，沒時間去研究 GUI 要怎麼寫</p>
+<!--more-->
+
+<h2>安裝<a href="http://pyalsaaudio.sourceforge.net/">pyALSAAudio</a></h2>
+<p>ubuntu 下可以
+<pre><code>sudo apt-get install python-alsaaudio</code></pre>
+要不然去官方自己下載，並 setup</p>
+<h2>Source Code</h2>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span></pre></td><td class='code'><pre><code><span class='line'><span class="kn">import</span> <span class="nn">alsaaudio</span></span>
+<span class='line'><span class="n">card</span> <span class="o">=</span> <span class="s">&#39;default&#39;</span></span>
+<span class='line'><span class="n">dat_path</span> <span class="o">=</span> <span class="s">ur&#39;thbgm_tr.dat&#39;</span></span>
+<span class='line'><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">dat_path</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span></span>
+<span class='line'><span class="sd">&#39;&#39;&#39;</span></span>
+<span class='line'><span class="sd">這是第7首 &quot;孤独なウェアウルフ&quot; 唯一會讓我一聽在聽的 資訊可以參考</span></span>
+<span class='line'><span class="sd">http://www.renn999.twbbs.org/archives/917/</span></span>
+<span class='line'><span class="sd">另外 更多的ALSAAudio範例可以參考</span></span>
+<span class='line'><span class="sd">http://sourceforge.net/projects/pyalsaaudio/</span></span>
+<span class='line'><span class="sd">&#39;&#39;&#39;</span></span>
+<span class='line'><span class="n">seek_info</span><span class="o">=</span><span class="mh">0x06e2ea50</span></span>
+<span class='line'><span class="n">intro</span> <span class="o">=</span> <span class="mh">0x23cf40</span></span>
+<span class='line'><span class="n">loop</span> <span class="o">=</span> <span class="mh">0xF95340</span></span>
+<span class='line'></span>
+<span class='line'><span class="n">device</span> <span class="o">=</span> <span class="n">alsaaudio</span><span class="o">.</span><span class="n">PCM</span><span class="p">(</span><span class="n">card</span><span class="o">=</span><span class="n">card</span><span class="p">)</span></span>
+<span class='line'><span class="n">device</span><span class="o">.</span><span class="n">setchannels</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></span>
+<span class='line'><span class="n">device</span><span class="o">.</span><span class="n">setrate</span><span class="p">(</span><span class="mi">44100</span><span class="p">)</span></span>
+<span class='line'><span class="n">device</span><span class="o">.</span><span class="n">setformat</span><span class="p">(</span><span class="n">alsaaudio</span><span class="o">.</span><span class="n">PCM_FORMAT_S16_LE</span><span class="p">)</span></span>
+<span class='line'><span class="n">device</span><span class="o">.</span><span class="n">setperiodsize</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'></span>
+<span class='line'><span class="n">i_fn</span> <span class="o">=</span> <span class="p">(</span><span class="n">intro</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'><span class="k">if</span> <span class="p">(</span><span class="n">intro</span><span class="o">%</span><span class="mi">1024</span><span class="p">):</span></span>
+<span class='line'>  <span class="n">i_fn</span><span class="o">=</span><span class="n">i_fn</span><span class="o">+</span><span class="mi">1</span></span>
+<span class='line'></span>
+<span class='line'><span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">seek_info</span><span class="p">)</span></span>
+<span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i_fn</span><span class="p">):</span></span>
+<span class='line'>  <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">i_fn</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span></span>
+<span class='line'>    <span class="nb">buffer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">intro</span><span class="o">%</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'>  <span class="k">else</span><span class="p">:</span></span>
+<span class='line'>    <span class="nb">buffer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'>  <span class="n">b</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span></span>
+<span class='line'></span>
+<span class='line'><span class="k">while</span> <span class="bp">True</span><span class="p">:</span> <span class="c">#loop到天荒地老</span></span>
+<span class='line'>  <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">seek_info</span> <span class="o">+</span> <span class="n">intro</span><span class="p">)</span></span>
+<span class='line'>  <span class="n">l_fn</span> <span class="o">=</span> <span class="p">(</span><span class="n">loop</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">loop</span><span class="o">%</span><span class="mi">1024</span><span class="p">):</span></span>
+<span class='line'>    <span class="n">l_fn</span><span class="o">=</span><span class="n">l_fn</span><span class="o">+</span><span class="mi">1</span></span>
+<span class='line'>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l_fn</span><span class="p">):</span></span>
+<span class='line'>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">i_fn</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span></span>
+<span class='line'>      <span class="nb">buffer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">loop</span><span class="o">%</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'>    <span class="k">else</span><span class="p">:</span></span>
+<span class='line'>      <span class="nb">buffer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span></span>
+<span class='line'>    <span class="n">b</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[東方輝針城BGM解出]]></title>
@@ -81,13 +185,13 @@ generate by Hexedit</code></pre>
 <span class='line'>    <span class="n">t</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></span>
 <span class='line'>    <span class="n">lsta</span><span class="o">=</span><span class="p">[]</span></span>
 <span class='line'>    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span></span>
-<span class='line'>            <span class="n">lst</span><span class="o">=</span><span class="p">[]</span></span>
-<span class='line'>            <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span></span>
-<span class='line'>                    <span class="n">hv</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;0x&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span></span>
-<span class='line'>                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span></span>
-<span class='line'>                            <span class="n">hv</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span><span class="o">+</span><span class="n">hv</span></span>
-<span class='line'>                    <span class="n">lst</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">hv</span><span class="p">)</span></span>
-<span class='line'>            <span class="n">lsta</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span></span>
+<span class='line'>        <span class="n">lst</span><span class="o">=</span><span class="p">[]</span></span>
+<span class='line'>        <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span></span>
+<span class='line'>            <span class="n">hv</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;0x&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span></span>
+<span class='line'>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span></span>
+<span class='line'>                <span class="n">hv</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span><span class="o">+</span><span class="n">hv</span></span>
+<span class='line'>            <span class="n">lst</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">hv</span><span class="p">)</span></span>
+<span class='line'>        <span class="n">lsta</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span></span>
 <span class='line'>    <span class="k">print</span> <span class="n">t</span><span class="p">,</span> <span class="s">&#39;  &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lsta</span><span class="p">)</span></span>
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
@@ -138,7 +242,7 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
 <span class='line'></span></code></pre></td></tr></table></div></figure>
 
 
-<p>先暫時筆記到此晚點看看能不能把整個 script 寫出來...</p>]]></content>
+<p>此時 wave 應該就可以聽了，先暫時筆記到此晚點看看能不能把整個 script 寫出來...</p>]]></content>
   </entry>
   
   <entry>
@@ -179,16 +283,6 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
 <p>接著就利用內部所說的sh script擷取部份</p>
 <p>wzxhzdk:1</p>
 <p>這樣的好處是說只要亦有問題，可以依照error message出現的錯誤去修正database.sql，老實他那個error message一直沒有辦法被output出來，建議使用script指令紀錄錯誤訊息，利用錯誤訊息慢慢去修正會比較好。</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[初學python]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/828/"/>
-    <updated>2010-07-22T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/828/</id>
-    <content type="html"><![CDATA[<p>這是利用plurk api簡單寫得東東，主要是要搞懂json的用法：p
-到時候先搞定cookie的儲存..OTZ</p>
-<p>wzxhzdk:0</p>]]></content>
   </entry>
   
 </feed>
