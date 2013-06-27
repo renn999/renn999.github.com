@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/Linux/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2013-06-09T21:13:02+0800</updated>
+  <updated>2013-06-27T20:15:51+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,50 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[手機利用Ubuntu 12.04藍芽播放音樂]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/919/"/>
+    <updated>2013-06-27T19:34:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/919/</id>
+    <content type="html"><![CDATA[<p><a target="_blank" href="http://minus.com/lbb6crUa4PpdPT"><img src="http://i.minus.com/jbb6crUa4PpdPT.jpg" border="0"/></a></p>
+<h1>這是廢話</h1>
+<hr />
+<p>今年開始有了工作後，順手就將手邊的智障型手機，換成了智慧型手機看看能不能增加一點智慧，但是應該是不夠出水(潮)，沒錢換成水果牌的，但是還算不錯是換成以卵擊石可以接平板的二號機，還算用得滿意。</p>
+<h1>正題開始</h1>
+<hr />
+<p>當我要用藍芽與我的筆電連接時，除了可以可以傳檔外，我還發現到可以把電腦變成音訊裝置，手機也可以變成麥克風，但是只有麥克風是成功的，而且 12.04 的藍芽都怪怪的，順手一次把兩個問題都解決掉，傳檔還是用 wifi 開 Sftp 會比較快，藍芽的傳輸速率超少，而 Mtp 問題還是一堆(無奈)。</p>
+<!--more-->
+
+<h1>先解決藍芽問題</h1>
+<hr />
+<p>其實這很簡單裝一個 blueman 就好了</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">blueman</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這是一個還不錯用的藍芽管理，至少比內建的好多了。反正就是好用多了。</p>
+<h1>開啟藍芽音訊</h1>
+<hr />
+<p>之後修改 <code>/etc/bluetooth/audio.conf</code></p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bluetooth</span><span class="o">/</span><span class="n">audio</span><span class="p">.</span><span class="n">conf</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>在設定檔找到</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">[General]</span></span>
+<span class='line'><span class="c1">## 把底下的東東加入</span></span>
+<span class='line'><span class="na">Enable</span><span class="o">=</span><span class="s">Source</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這樣應該可以了，最好Reboot一下電腦應該就可以了，這樣就可以用手機播音樂，用耳機在電腦上聽音樂了。</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[THBGM python play music]]></title>
@@ -182,53 +226,6 @@ wzxhzdk:1
 <p>wzxhzdk:6</p>
 <p>這幾個應該看名字就知道功用了吧，這裡就不多加說明，更多可以看</p>
 <p>wzxhzdk:7</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ubuntu 10.04 升級筆記]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/708/"/>
-    <updated>2010-05-22T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/708/</id>
-    <content type="html"><![CDATA[<p>雖然說10.04已經放出來一陣子了，最近才把桌機跟server升級上去，當然也遇到了一些升級後遺症，但是還好問題也解決掉。"看"起來好像也沒有比較大的問題出現了。</p>
-<p>server最大的差異點，就是 apache 和 php 的設定檔更變，因為php升級到5.3.2了有的設定因為安全性問題已經預設微觀起來了，所以說除了要打開之外，有的部份也要對程式作修正，wordpress 因為升級的問題，有的時候會出現</p>
-<!--more-->
-
-<p>wzxhzdk:0</p>
-<p>這時候要去修正wp-settings.php這個檔案將原先的18行改成</p>
-<p>wzxhzdk:1</p>
-<p>apache 的部份就是 userdir 的部份因為我有裝php，之前的預設值是在 userdir 中也可以執行php新版更新之後是關起來的，userdir中的php都會變成下載的模式，要打開要修改/etc/apache2/mods-available/php5.conf，找到以下這幾行</p>
-<p>wzxhzdk:2</p>
-<p>修改成</p>
-<p>wzxhzdk:3</p>
-<p>儲存之後resrart apache即可，以上是我server目前遇到的升級問題。</p>
-<p>至於桌機的部份不外乎就是nv顯卡的問題了(幾乎每次升級都會發生...OTZ)，我是不打算裝apt中的顯卡驅動我都是直接到nv官方去下載，在9.10中輕輕鬆鬆的就可以編譯ok，然後上機but這次可就沒這麼幸運了...OTZ，在編譯的過程中時常會出現</p>
-<p>wzxhzdk:4</p>
-<p>這個問題的話，我是google到這一篇<a href="http://ubuntuforums.org/showthread.php?t=1467074">http://ubuntuforums.org/showthread.php?t=1467074</a>參考了一下同樣的作法之後就ok了。作一下大致上的翻譯，首先先下載nv的最新驅動之後，之後開啟terminal</p>
-<p>wzxhzdk:5</p>
-<p>將下面幾行加入並儲存</p>
-<p>wzxhzdk:6</p>
-<p>然後在terminal中輸入底下的指令把一些已經裝過的nv驅動全部拔掉外加nouveau</p>
-<p>wzxhzdk:7</p>
-<p>之後reboot一下，進入recover mode，再把nv的驅動編譯起來，在重新開機，應該就可以順利的執行的，但是我的vdpau無法順利執行，看一下錯誤檔好像是因為沒有權限所以說我又多加了一道指令</p>
-<p>wzxhzdk:8</p>
-<p>大致上nv的部份全部都ok了，但是Plymouth(新的開機畫面看來他們幹掉xsplash了..XDrz)的解析度會變很爛，這也是有解法的google到這一篇<a href="http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html">http://www.webupd8.org/2010/03/how-to-get-plymouth-working-with-nvidia.html</a>，也是大致上翻譯一下作法
-也是打開terminal，輸入下面的指令</p>
-<p>wzxhzdk:9</p>
-<p>找到約18行左右(依照每個人的電腦而異)的"#GRUB_GFXMODE=640x480"改成，把前面的#註解去掉改成。</p>
-<p>wzxhzdk:10</p>
-<p>儲存之後修改/etc/grub.d/00_header的檔案也是在terminal，輸入下面的指令</p>
-<p>wzxhzdk:11</p>
-<p>找到約103行左右(依照每個人的電腦而異)的"gfxmode=${GRUB_GFXMODE}"並此行下面多加一行</p>
-<p>wzxhzdk:12</p>
-<p>儲存並回到terminal，輸入下面的指令更新grub2</p>
-<p>wzxhzdk:13</p>
-<p>更新完之後就可以重新開機看看結果了</p>
-<p>當然還有發現到 rar 的解壓會出現亂碼，我處理的方式是到rar的官方去下載最新版的，改一下makefile裡面的</p>
-<p>wzxhzdk:14</p>
-<p>改成</p>
-<p>wzxhzdk:15</p>
-<p>然後make install把舊版的蓋過去就ok了</p>
-<p>這裡大致上把我遇到的問題先整理部份起來，不知道還會遇到啥鬼問題...OTZ </p>]]></content>
   </entry>
   
 </feed>

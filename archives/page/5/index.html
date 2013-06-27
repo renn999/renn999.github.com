@@ -76,6 +76,37 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/468/">Counterize II 2.14.1 IP patch(還原顯示IP功能)
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p><a href="http://www.renn999.twbbs.org/wordpress/archives/197">前文</a>在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。</p>
+<p><a href="http://www.renn999.twbbs.org/wordpress/downloads/ip_patch.patch">ip_patch.patch download</a></p>
+<p>使用方法：
+將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入</p>
+<p>wzxhzdk:0</p>
+<p>如果出現</p>
+<p>wzxhzdk:1</p>
+<p>表示完成了，這是在Linux底下，在windows的話可能需要GnuWin32或是其他對應的軟體。</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Tue Dec. 15 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/about%20PHP/'>about PHP</a>, 
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/468/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/463/">Ubuntu9.10 Nautilus解決掛載磁區要輸入密碼麻煩的動作
 
 </a></h1>
@@ -308,34 +339,6 @@
     <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/399/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/396/">Apache修改執行user和Group和修改phpmyadmin預設網址
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣</p>
-<p>wzxhzdk:0</p>
-<p>所以說必須要讓apache改變user和grup其實非常簡單只要修改/etc/apache2/envvars裡面的APACHE_RUN_USER及APACHE_RUN_GROUP為你要的user及group，並restart apache即可。</p>
-<p>修改phpmyadmin的預設路徑，剛灌好的phpphpmyadmin預設路徑為 http://你的網址/phpmyadmin 以前的作法是在/var/www下面將phpmyadmin的Link修改名稱即可，現在就已經不一樣了，現在已經把設定檔寫在/etc/apache2/conf.d/phpmyadmin.conf，找到</p>
-<p>wzxhzdk:1</p>
-<p>修改完並restart apache即可。</p>
-    
-  
-</div>
-
-<div class="meta">
-  <div class="date">Mon Oct. 12 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/396/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

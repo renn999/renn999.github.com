@@ -76,6 +76,38 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/328/">WordPlurk一些細部修改
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>WordPlurk以要對wordpress發文之後把標題連結同步到Plurk真的非常的方便，當然我也小看了一下原始碼對於中文語系的話也些地方還是可以調整的。</p>
+<p>wzxhzdk:0</p>
+<p>在台灣地區的話，於第29行網址的部份lang=en可以改成lang=tr_ch，這樣在plurk上就不會出現英文，qualifier=share這裡可以改變plurk post的狀態就是"說""想要"那些有的沒的</p>
+<p>wzxhzdk:1</p>
+<p>在46行的部份<code>'http://tinyurl.com/api-create.php?url='</code>這是將網址用tinyurl縮網如果不想縮網的話可以去掉，要不然要用自己喜歡的服務也可以(0rz.tw的服務好像被拿掉了但是我在研究看看)，我是不知道網址太長會怎樣...Orz，因為我是用我自己的短網址，我還刻意做了一個api給他用...XD</p>
+<p>wzxhzdk:2</p>
+<p>在51行的部份就是post到Plurk的時候會出現的樣式，他這邊就設計的不怎麼好就是了，這裡通常會改成</p>
+<p>wzxhzdk:3</p>
+<p>讓title直接變成連結的方式</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sun Jun. 21 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a>, 
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/328/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/315/">ImageUpon檔案副檔名判斷修改
 
 </a></h1>
@@ -354,29 +386,6 @@ The code from svn is still in 82, and the dshowserver.patch won't work so I diff
     <a href='/archives/categories/Linux/'>Linux</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/216/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/207/">Ubuntu 9.04 ext4 災情外加解決報告...囧&#34;&gt;
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>前幾天非常高興的把我的1T硬碟的的所有Partition的Partition的Ext3轉換成轉換成Ext4，當然我覺得我真的做的太大膽了，轉完之後在做大量檔案搬移的時候，災難已經開始發生了....囧rz，因為之前在google時是有看到有人因為ext4而造成Loss DATA的狀況，但是我在想說但是我在想說Ubuntuu已經開始推了，應該是沒問題才對，於是就很放心的把我1T上的所有partitionn全部轉了過去，但是今天才是慘劇的開始，原因事因為我正在因為某些原因需要騰出大量的Freespace，所以說很直覺得將我的檔案搬過去，但是每搬到一段時間後，Ubuntu娘就整個失神了，我當初只是想說應該只是小問題吧，直到的第三次，第四次...&lt;囧&gt;，我就不甘心的打開Epiphany來google "ext4 wiki"(不要在提Firefox了)，真的是讓我囧了一下下</p>
-    <a href="/archives/207/" class="more-link">Read More ...</a>
-  
-</div>
-
-<div class="meta">
-  <div class="date">Wed Apr. 29 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/Linux/'>Linux</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/207/#disqus_thread">Comments</a></span>
   
 </div>
 </article>

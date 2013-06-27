@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  
+  <title><![CDATA[Category: bluetooth | 老伯筆記]]></title>
+  <link href="http://www.renn999.twbbs.org//archives/categories/bluetooth/atom.xml" rel="self"/>
+  
+  <link href="http://www.renn999.twbbs.org/"/>
+  <updated>2013-06-27T20:15:51+0800</updated>
+  <id>http://www.renn999.twbbs.org/</id>
+  <author>
+    <name><![CDATA[renn999]]></name>
+    <email><![CDATA[renn999@gmail.com]]></email>
+  </author>
+  <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[手機利用Ubuntu 12.04藍芽播放音樂]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/919/"/>
+    <updated>2013-06-27T19:34:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/919/</id>
+    <content type="html"><![CDATA[<p><a target="_blank" href="http://minus.com/lbb6crUa4PpdPT"><img src="http://i.minus.com/jbb6crUa4PpdPT.jpg" border="0"/></a></p>
+<h1>這是廢話</h1>
+<hr />
+<p>今年開始有了工作後，順手就將手邊的智障型手機，換成了智慧型手機看看能不能增加一點智慧，但是應該是不夠出水(潮)，沒錢換成水果牌的，但是還算不錯是換成以卵擊石可以接平板的二號機，還算用得滿意。</p>
+<h1>正題開始</h1>
+<hr />
+<p>當我要用藍芽與我的筆電連接時，除了可以可以傳檔外，我還發現到可以把電腦變成音訊裝置，手機也可以變成麥克風，但是只有麥克風是成功的，而且 12.04 的藍芽都怪怪的，順手一次把兩個問題都解決掉，傳檔還是用 wifi 開 Sftp 會比較快，藍芽的傳輸速率超少，而 Mtp 問題還是一堆(無奈)。</p>
+<!--more-->
+
+<h1>先解決藍芽問題</h1>
+<hr />
+<p>其實這很簡單裝一個 blueman 就好了</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">blueman</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這是一個還不錯用的藍芽管理，至少比內建的好多了。反正就是好用多了。</p>
+<h1>開啟藍芽音訊</h1>
+<hr />
+<p>之後修改 <code>/etc/bluetooth/audio.conf</code></p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bluetooth</span><span class="o">/</span><span class="n">audio</span><span class="p">.</span><span class="n">conf</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>在設定檔找到</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">[General]</span></span>
+<span class='line'><span class="c1">## 把底下的東東加入</span></span>
+<span class='line'><span class="na">Enable</span><span class="o">=</span><span class="s">Source</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這樣應該可以了，最好Reboot一下電腦應該就可以了，這樣就可以用手機播音樂，用耳機在電腦上聽音樂了。</p>]]></content>
+  </entry>
+  
+</feed>

@@ -76,6 +76,34 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/396/">Apache修改執行user和Group和修改phpmyadmin預設網址
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣</p>
+<p>wzxhzdk:0</p>
+<p>所以說必須要讓apache改變user和grup其實非常簡單只要修改/etc/apache2/envvars裡面的APACHE_RUN_USER及APACHE_RUN_GROUP為你要的user及group，並restart apache即可。</p>
+<p>修改phpmyadmin的預設路徑，剛灌好的phpphpmyadmin預設路徑為 http://你的網址/phpmyadmin 以前的作法是在/var/www下面將phpmyadmin的Link修改名稱即可，現在就已經不一樣了，現在已經把設定檔寫在/etc/apache2/conf.d/phpmyadmin.conf，找到</p>
+<p>wzxhzdk:1</p>
+<p>修改完並restart apache即可。</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Mon Oct. 12 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/396/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/391/">Perl版將UTF-8 -&gt; big5 UAO
 
 </a></h1>
@@ -319,38 +347,6 @@
     <a href='/archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/'>隨便亂寫</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/337/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/328/">WordPlurk一些細部修改
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>WordPlurk以要對wordpress發文之後把標題連結同步到Plurk真的非常的方便，當然我也小看了一下原始碼對於中文語系的話也些地方還是可以調整的。</p>
-<p>wzxhzdk:0</p>
-<p>在台灣地區的話，於第29行網址的部份lang=en可以改成lang=tr_ch，這樣在plurk上就不會出現英文，qualifier=share這裡可以改變plurk post的狀態就是"說""想要"那些有的沒的</p>
-<p>wzxhzdk:1</p>
-<p>在46行的部份<code>'http://tinyurl.com/api-create.php?url='</code>這是將網址用tinyurl縮網如果不想縮網的話可以去掉，要不然要用自己喜歡的服務也可以(0rz.tw的服務好像被拿掉了但是我在研究看看)，我是不知道網址太長會怎樣...Orz，因為我是用我自己的短網址，我還刻意做了一個api給他用...XD</p>
-<p>wzxhzdk:2</p>
-<p>在51行的部份就是post到Plurk的時候會出現的樣式，他這邊就設計的不怎麼好就是了，這裡通常會改成</p>
-<p>wzxhzdk:3</p>
-<p>讓title直接變成連結的方式</p>
-    
-  
-</div>
-
-<div class="meta">
-  <div class="date">Sun Jun. 21 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a>, 
-    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/328/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
