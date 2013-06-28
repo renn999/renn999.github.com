@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>最近在玩XML的語法 - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="只是先拿只是先拿Plurk的的RSS來先玩玩看 結果如下 在改一下程式 變成可以顯示回應，但是這種作法好暴力...= = 主要是要去檢查每一個的Plurk回應rss 可能會造成對主網站多餘的loading 所以說只是玩玩而已 原始碼如下： wzxhzdk:0 這只是簡單的php xml dom 但是...">
+  <meta name="description" content="只是先拿只是先拿Plurk的的RSS來先玩玩看 結果如下 在改一下程式 變成可以顯示回應，但是這種作法好暴力...= = 主要是要去檢查每一個的Plurk回應rss 可能會造成對主網站多餘的loading 所以說只是玩玩而已 原始碼如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 ...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -94,7 +94,41 @@
 <p>原始碼如下：</p>
 <!--more-->
 
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span></pre></td><td class='code'><pre><code><span class='line'><span class="o">&lt;</span> <span class="o">?</span><span class="nt">php</span></span>
+<span class='line'><span class="err">$</span><span class="nt">doc</span> <span class="o">=</span> <span class="nt">new</span> <span class="nt">DOMDocument</span><span class="o">();</span></span>
+<span class='line'><span class="err">$</span><span class="nt">doc-</span><span class="o">&gt;</span><span class="nt">load</span><span class="o">(</span> <span class="s1">&#39;http://www.plurk.com/user/renn999.xml&#39;</span> <span class="o">);</span></span>
+<span class='line'></span>
+<span class='line'><span class="err">$</span><span class="nt">feeds</span> <span class="o">=</span> <span class="err">$</span><span class="nt">doc-</span><span class="o">&gt;</span><span class="nt">getElementsByTagName</span><span class="o">(</span> <span class="s2">&quot;entry&quot;</span> <span class="o">);</span></span>
+<span class='line'><span class="nt">foreach</span><span class="o">(</span> <span class="err">$</span><span class="nt">feeds</span> <span class="nt">as</span> <span class="err">$</span><span class="nt">entry</span> <span class="o">)</span></span>
+<span class='line'><span class="p">{</span></span>
+<span class='line'>    <span class="err">$</span><span class="n">titles</span> <span class="o">=</span> <span class="err">$</span><span class="n">entry</span><span class="o">-&gt;</span><span class="n">getElementsByTagName</span><span class="p">(</span> <span class="s2">&quot;title&quot;</span> <span class="p">);</span></span>
+<span class='line'>    <span class="err">$</span><span class="n">title</span> <span class="o">=</span> <span class="err">$</span><span class="n">titles</span><span class="o">-&gt;</span><span class="n">item</span><span class="p">(</span><span class="m">0</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">nodeValue</span><span class="p">;</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="err">$</span><span class="n">links</span> <span class="o">=</span> <span class="err">$</span><span class="n">entry</span><span class="o">-&gt;</span><span class="n">getElementsByTagName</span><span class="p">(</span> <span class="s2">&quot;link&quot;</span> <span class="p">);</span></span>
+<span class='line'>    <span class="err">$</span><span class="n">link</span> <span class="o">=</span> <span class="err">$</span><span class="n">links</span><span class="o">-&gt;</span><span class="n">item</span><span class="p">(</span><span class="m">0</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="n">echo</span> <span class="s2">&quot;$title - http://www.plurk.com$link\n&quot;</span><span class="p">;</span></span>
+<span class='line'><span class="p">}</span></span>
+<span class='line'><span class="o">?&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>這只是簡單的php xml dom
 但是我的腦子已經有一堆鬼點子了 嘿嘿...XDDD</p>
   

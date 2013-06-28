@@ -83,10 +83,30 @@
 <div class="entry-content">
   
     <p>在Linux底下因為權限讀取的關係，要修改預設的apache user和group現在是很快又很簡單，因為最近正在實做一些BBS相關的小型PHP程式，第一個遇到的課題XDrz。如果進去BBS的資料夾裡面去看的話應改只會看到這樣</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span></pre></td><td class='code'><pre><code><span class='line'><span class="p">[</span><span class="n">bbs</span><span class="err">@</span><span class="n">localhost</span> <span class="mi">3</span><span class="p">]</span><span class="err">$</span> <span class="n">ls</span> <span class="o">-</span><span class="n">lt</span></span>
+<span class='line'><span class="n">total</span> <span class="mi">20</span></span>
+<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> <span class="mi">2</span> <span class="n">bbs</span> <span class="n">bbs</span> <span class="mi">341</span> <span class="mi">2009</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mo">01</span> <span class="mi">12</span><span class="o">:</span><span class="mi">53</span> <span class="n">A159PA63</span></span>
+<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> <span class="mi">1</span> <span class="n">bbs</span> <span class="n">bbs</span> <span class="mi">751</span> <span class="mi">2009</span><span class="o">-</span><span class="mo">05</span><span class="o">-</span><span class="mo">02</span> <span class="mo">00</span><span class="o">:</span><span class="mi">20</span> <span class="n">A14VM573</span></span>
+<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> <span class="mi">1</span> <span class="n">bbs</span> <span class="n">bbs</span> <span class="mi">719</span> <span class="mi">2009</span><span class="o">-</span><span class="mo">04</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mo">06</span> <span class="n">A14VAAL3</span></span>
+<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> <span class="mi">1</span> <span class="n">bbs</span> <span class="n">bbs</span> <span class="mi">526</span> <span class="mi">2009</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">09</span> <span class="mi">12</span><span class="o">:</span><span class="mi">10</span> <span class="n">A14OVB03</span></span>
+<span class='line'><span class="o">-</span><span class="n">rw</span><span class="o">----</span> <span class="mi">1</span> <span class="n">bbs</span> <span class="n">bbs</span> <span class="mi">255</span> <span class="mi">2007</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">12</span> <span class="mi">22</span><span class="o">:</span><span class="mi">41</span> <span class="n">A13GV1S3</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>所以說必須要讓apache改變user和grup其實非常簡單只要修改/etc/apache2/envvars裡面的APACHE_RUN_USER及APACHE_RUN_GROUP為你要的user及group，並restart apache即可。</p>
 <p>修改phpmyadmin的預設路徑，剛灌好的phpphpmyadmin預設路徑為 http://你的網址/phpmyadmin 以前的作法是在/var/www下面將phpmyadmin的Link修改名稱即可，現在就已經不一樣了，現在已經把設定檔寫在/etc/apache2/conf.d/phpmyadmin.conf，找到</p>
-<p>wzxhzdk:1</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">Alias</span> <span class="o">/</span><span class="n">phpmyadmin</span><span class="p">(</span><span class="err">修改這裡</span><span class="p">)</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">phpmyadmin</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>修改完並restart apache即可。</p>
     
   
@@ -111,7 +131,117 @@
 <div class="entry-content">
   
     <p>這是我第一個將PHP轉Perl的程式，也算是學一點Perl，Perl真是一個博大驚深的語言啊，老實說起來。某些方面比php簡單很多也直覺很多...XDrz</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span></pre></td><td class='code'><pre><code><span class='line'><span class="c1">#!/usr/bin/perl -w</span></span>
+<span class='line'><span class="c1">#</span></span>
+<span class='line'><span class="c1"># This perl script is using GNU General Public License v2.0</span></span>
+<span class='line'><span class="c1"># renn999&lt;AT&gt;ccns.ncku.edu.tw</span></span>
+<span class='line'><span class="c1"># http://renn999.twbbs.org</span></span>
+<span class='line'><span class="c1">#</span></span>
+<span class='line'><span class="c1"># USAGE:ucs2big5( $str );</span></span>
+<span class='line'><span class="c1">#</span></span>
+<span class='line'><span class="c1"># Big5 table(big5.txt)</span></span>
+<span class='line'><span class="c1"># using from Ztrem</span></span>
+<span class='line'><span class="c1"># http://zhouer.org/ZTerm/</span></span>
+<span class='line'></span>
+<span class='line'></span>
+<span class='line'><span class="k">print</span> <span class="o">&amp;</span><span class="n">ucs2big5</span><span class="p">(</span><span class="s">&#39;測試 試験 しけん&#39;</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'><span class="k">sub </span><span class="nf">ucs2big5</span> <span class="p">{</span></span>
+<span class='line'>    <span class="k">my</span> <span class="nv">$ucs_str</span><span class="o">=</span><span class="nb">shift</span><span class="p">;</span></span>
+<span class='line'>    <span class="nb">open</span> <span class="n">FILE</span><span class="p">,</span> <span class="s">&quot;big5.txt&quot;</span><span class="p">;</span></span>
+<span class='line'>    <span class="c1">#binmode FILE; </span></span>
+<span class='line'>    <span class="k">my</span> <span class="nv">$len</span> <span class="o">=</span> <span class="nb">length</span> <span class="nv">$ucs_str</span><span class="p">;</span></span>
+<span class='line'>    <span class="k">my</span> <span class="p">(</span><span class="nv">$b1</span><span class="p">,</span><span class="nv">$b2</span><span class="p">,</span><span class="nv">$b3</span><span class="p">,</span><span class="nv">$big5_code</span><span class="p">,</span><span class="nv">$ucs_code</span><span class="p">,</span><span class="nv">$big5_str</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="k">for</span><span class="p">(</span> <span class="k">my</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$len</span> <span class="p">;</span> <span class="nv">$i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>        <span class="nv">$b1</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nb">substr</span> <span class="nv">$ucs_str</span><span class="p">,</span> <span class="nv">$i</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span></span>
+<span class='line'>        <span class="k">if</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&lt;</span> <span class="mh">0x80</span> <span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>            <span class="nv">$big5_str</span> <span class="o">.=</span> <span class="nb">chr</span><span class="p">(</span><span class="nv">$b1</span><span class="p">);</span></span>
+<span class='line'>        <span class="p">}</span></span>
+<span class='line'>        <span class="k">elsif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">224</span> <span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>            <span class="c1">#3code UTF-8</span></span>
+<span class='line'>            <span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">224</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nb">substr</span> <span class="nv">$ucs_str</span><span class="p">,</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">128</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$b3</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nb">substr</span> <span class="nv">$ucs_str</span><span class="p">,</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">4096</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b3</span><span class="p">;</span></span>
+<span class='line'>            <span class="nb">seek</span><span class="p">(</span> <span class="n">FILE</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">0</span><span class="p">);</span></span>
+<span class='line'>            <span class="nb">read</span> <span class="n">FILE</span><span class="p">,</span> <span class="nv">$big5_code</span><span class="p">,</span> <span class="mi">2</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$big5_str</span> <span class="o">.=</span> <span class="nv">$big5_code</span><span class="p">;</span></span>
+<span class='line'>        <span class="p">}</span></span>
+<span class='line'>        <span class="k">elsif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">192</span> <span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>            <span class="c1">#2code UTF-8</span></span>
+<span class='line'>            <span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">192</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nb">substr</span> <span class="nv">$ucs_str</span><span class="p">,</span> <span class="o">++</span><span class="nv">$i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="p">;</span></span>
+<span class='line'>            <span class="nb">seek</span><span class="p">(</span> <span class="n">FILE</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">);</span></span>
+<span class='line'>            <span class="nb">read</span> <span class="n">FILE</span><span class="p">,</span> <span class="nv">$big5_code</span><span class="p">,</span> <span class="mi">2</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$big5_str</span> <span class="o">.=</span> <span class="nv">$big5_code</span><span class="p">;</span></span>
+<span class='line'>        <span class="p">}</span><span class="k">else</span><span class="p">{</span></span>
+<span class='line'>            <span class="nv">$big5_str</span> <span class="o">.=</span> <span class="s">&#39;?&#39;</span><span class="p">;</span></span>
+<span class='line'>        <span class="p">}</span></span>
+<span class='line'>    <span class="p">}</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nb">length</span> <span class="nv">$big5_str</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>        <span class="nv">$big5_str</span><span class="p">;</span></span>
+<span class='line'>    <span class="p">}</span></span>
+<span class='line'><span class="p">}</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>用pietty等UAO支援的程式應該可以看得出結果</p>
     
   
@@ -137,7 +267,119 @@
   
     <p>最近因為嘗試要轉換一些HTML-&gt;BBS的文章會發生的問題，所以說就寫了一個這樣的程式，因為我完全不想要動到iconv的PATCH，所以說就先利用ZTerm src中的BIG5表格下去做轉換，結果還不錯。</p>
 <p>(修正了幾個bug 091006 21：00)</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
+<span class='line'><span class="cm">/*  </span></span>
+<span class='line'><span class="cm"> *  This php is using GNU General Public License v2.0</span></span>
+<span class='line'><span class="cm"> *  renn999&lt;AT&gt;ccns.ncku.edu.tw</span></span>
+<span class='line'><span class="cm"> *  http://renn999.twbbs.org</span></span>
+<span class='line'><span class="cm"> *</span></span>
+<span class='line'><span class="cm"> *  USAGE:ucs2big5( $str );</span></span>
+<span class='line'><span class="cm"> *  </span></span>
+<span class='line'><span class="cm"> *  Big5 table(big5.txt)</span></span>
+<span class='line'><span class="cm"> *  using from Ztrem</span></span>
+<span class='line'><span class="cm"> *  http://zhouer.org/ZTerm/</span></span>
+<span class='line'><span class="cm"> */</span></span>
+<span class='line'></span>
+<span class='line'><span class="k">function</span> <span class="nf">ucs2big5</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>    <span class="nv">$fp</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span> <span class="s1">&#39;big5.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span> <span class="p">);</span></span>
+<span class='line'>    <span class="nv">$len</span> <span class="o">=</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">);</span></span>
+<span class='line'>    <span class="nb">unset</span><span class="p">(</span><span class="nv">$big5_str</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nv">$x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span></span>
+<span class='line'>    <span class="k">for</span><span class="p">(</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$len</span> <span class="p">;</span> <span class="nv">$i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>        <span class="nv">$b1</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="nv">$i</span><span class="p">]);</span></span>
+<span class='line'>        <span class="k">if</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&lt;</span> <span class="mh">0x80</span> <span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="nv">$b1</span><span class="p">);</span></span>
+<span class='line'>        <span class="p">}</span></span>
+<span class='line'>        <span class="k">elseif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">224</span> <span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>            <span class="c1">#3code UTF-8</span></span>
+<span class='line'>            <span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">224</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">128</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$b3</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">4096</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b3</span><span class="p">;</span></span>
+<span class='line'>            <span class="nb">fseek</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span></span>
+<span class='line'>            <span class="nv">$big5_code</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span></span>
+<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span></span>
+<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span></span>
+<span class='line'>        <span class="p">}</span></span>
+<span class='line'>        <span class="k">elseif</span><span class="p">(</span> <span class="nv">$b1</span> <span class="o">&gt;=</span> <span class="mi">192</span> <span class="p">)</span> <span class="p">{</span></span>
+<span class='line'>            <span class="c1">#2code UTF-8</span></span>
+<span class='line'>            <span class="nv">$b1</span> <span class="o">-=</span> <span class="mi">192</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$b2</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="nv">$ucs_str</span><span class="p">[</span><span class="o">++</span><span class="nv">$i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">256</span><span class="p">;</span></span>
+<span class='line'>            <span class="nv">$ucs_code</span> <span class="o">=</span> <span class="nv">$b1</span> <span class="o">*</span> <span class="mi">64</span> <span class="o">+</span> <span class="nv">$b2</span> <span class="p">;</span></span>
+<span class='line'>            <span class="nb">fseek</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="nv">$ucs_code</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">);</span></span>
+<span class='line'>            <span class="nv">$big5_code</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span> <span class="nv">$fp</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span></span>
+<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span></span>
+<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$big5_code</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span></span>
+<span class='line'>        <span class="p">}</span><span class="k">else</span><span class="p">{</span></span>
+<span class='line'>            <span class="nv">$big5_str</span><span class="p">[</span><span class="nv">$x</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;?&#39;</span><span class="p">;</span></span>
+<span class='line'>        <span class="p">}</span></span>
+<span class='line'>    <span class="p">}</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nb">fclose</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span></span>
+<span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$big5_str</span><span class="p">))</span> <span class="p">{</span></span>
+<span class='line'>        <span class="k">return</span> <span class="nb">join</span><span class="p">(</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$big5_str</span><span class="p">);</span></span>
+<span class='line'>    <span class="p">}</span></span>
+<span class='line'><span class="p">}</span></span>
+<span class='line'><span class="cp">?&gt;</span><span class="x"></span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>至於BIG5.txt可以到<a href="http://zterm.googlecode.com/svn/trunk/org/zhouer/utils/conv/">http://zterm.googlecode.com/svn/trunk/org/zhouer/utils/conv/</a>中去下載 這裡就不附上了</p>
     
   
@@ -165,7 +407,115 @@
 <p>所以基本上我就用了simple html dom但是這個有一個缺點，就是需要比較多的記憶體空間。
 (這是Memory Leaks的問題已經解決)</p>
 <p>以下為修改完的程式碼。</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span></pre></td><td class='code'><pre><code><span class='line'><span class="o">&lt;?</span><span class="nt">php</span></span>
+<span class='line'>    <span class="nt">require</span> <span class="s1">&#39;simplehtmldom/simple_html_dom.php&#39;</span><span class="o">;</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="err">$</span><span class="nt">loginurl</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/index.php&#39;</span><span class="o">;</span></span>
+<span class='line'>    <span class="err">$</span><span class="nt">pixiv_id</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="o">;</span></span>
+<span class='line'>    <span class="err">$</span><span class="nt">password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="o">;</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="err">$</span><span class="nt">curl</span> <span class="o">=</span> <span class="nt">curl_init</span><span class="o">();</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_HEADER</span><span class="o">,</span> <span class="nt">0</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_USERAGENT</span><span class="o">,</span><span class="s1">&#39;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)&#39;</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_FOLLOWLOCATION</span><span class="o">,</span> <span class="nt">1</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_RETURNTRANSFER</span><span class="o">,</span> <span class="nt">1</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_COOKIEJAR</span><span class="o">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_COOKIEFILE</span><span class="o">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_POST</span><span class="o">,</span> <span class="nt">1</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_COOKIESESSION</span><span class="o">,</span><span class="nt">true</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_URL</span><span class="o">,</span> <span class="err">$</span><span class="nt">loginurl</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_POSTFIELDS</span><span class="o">,</span> <span class="s1">&#39;mode=login&amp;pixiv_id=&#39;</span><span class="o">.</span><span class="err">$</span><span class="nt">pixiv_id</span><span class="o">.</span><span class="s1">&#39;&amp;pass=&#39;</span><span class="o">.</span><span class="err">$</span><span class="nt">password</span> <span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_exec</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">);</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="err">$</span><span class="nt">p</span><span class="o">=</span><span class="nt">1</span><span class="o">;</span></span>
+<span class='line'>    <span class="err">$</span><span class="nt">bookmark_rest</span><span class="o">=</span><span class="s1">&#39;show&#39;</span><span class="o">;//</span><span class="nt">show</span></span>
+<span class='line'>    <span class="nt">do</span><span class="p">{</span></span>
+<span class='line'>        <span class="err">$</span><span class="k">url</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/bookmark.php?type=user&amp;rest=&#39;</span><span class="o">.</span><span class="err">$</span><span class="n">bookmark_rest</span><span class="o">.</span><span class="s1">&#39;&amp;p=&#39;</span><span class="o">.</span><span class="err">$</span><span class="n">p</span><span class="p">;</span></span>
+<span class='line'>        <span class="n">curl_setopt</span><span class="p">(</span><span class="err">$</span><span class="n">curl</span><span class="o">,</span> <span class="n">CURLOPT_URL</span><span class="o">,</span> <span class="err">$</span><span class="k">url</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">profile</span><span class="o">=</span><span class="n">curl_exec</span><span class="p">(</span><span class="err">$</span><span class="n">curl</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">dom1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">simple_html_dom</span><span class="p">();</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">dom1</span> <span class="o">=</span> <span class="n">str_get_html</span><span class="p">(</span><span class="err">$</span><span class="n">profile</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="err">$</span><span class="n">test</span><span class="o">=</span><span class="err">$</span><span class="n">dom1</span><span class="o">-&gt;</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div#content2 div</span><span class="cp">[</span><span class="n">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="cp">]</span><span class="s1">&#39;</span><span class="o">,</span><span class="m">0</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">plaintext</span><span class="p">;</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="n">preg_match</span><span class="p">(</span><span class="s1">&#39;/次の(.*?)件/&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">test</span><span class="o">,</span><span class="err">$</span><span class="n">match</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="err">$</span><span class="n">title2</span> <span class="o">=</span> <span class="err">$</span><span class="n">dom1</span><span class="o">-&gt;</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div#content2 form#f div</span><span class="cp">[</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;width:140px;height:130px;float:left;text-align:center;&quot;</span><span class="cp">]</span><span class="s1">&#39;</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="n">foreach</span><span class="p">(</span><span class="err">$</span><span class="n">title2</span> <span class="n">as</span> <span class="err">$</span><span class="n">illsthtml</span><span class="p">)</span><span class="err">{</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">illst</span> <span class="o">=</span> <span class="err">$</span><span class="n">illsthtml</span><span class="o">-&gt;</span><span class="n">outertext</span><span class="p">;</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">illst</span><span class="o">=</span><span class="n">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;div(.*?)&quot;&gt;&lt;input(.*?)&gt;&lt;\/div&gt;/&#39;</span><span class="o">,</span><span class="s1">&#39;&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">illst</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">illst</span><span class="o">=</span><span class="n">preg_replace</span><span class="p">(</span><span class="s1">&#39;/\n/&#39;</span><span class="o">,</span> <span class="s1">&#39;&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">illst</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">illst</span><span class="o">=</span><span class="n">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;img(.*?)&gt;/&#39;</span><span class="o">,</span> <span class="s1">&#39;&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">illst</span><span class="p">);</span></span>
+<span class='line'>        <span class="n">preg_match_all</span><span class="p">(</span><span class="s1">&#39;/&lt;a href=&quot;member.php\?id=(.*?)&quot;&gt;&lt;\/a&gt;&lt;div style=\&quot;padding-top:5px;\&quot;&gt;(.*?)&lt;\/div&gt;(&lt;a href=&quot;jump.php\?(.*?)&quot; target=&quot;_blank&quot;&gt;&lt;\/a&gt;)?/&#39;</span><span class="o">,</span> <span class="err">$</span><span class="n">illst</span><span class="o">,</span><span class="err">$</span><span class="n">match2</span><span class="o">,</span><span class="n">PREG_SET_ORDER</span><span class="p">);</span></span>
+<span class='line'>            <span class="n">foreach</span> <span class="p">(</span><span class="err">$</span><span class="n">match2</span> <span class="n">as</span> <span class="err">$</span><span class="n">val</span><span class="p">)</span> <span class="err">{</span></span>
+<span class='line'>                <span class="n">echo</span> <span class="s1">&#39;http://www.pixiv.net/member.php?id=&#39;</span><span class="o">.</span><span class="err">$</span><span class="n">val</span><span class="cp">[</span><span class="mi">1</span><span class="cp">]</span><span class="o">.</span><span class="s1">&#39; - &#39;</span><span class="o">.</span><span class="err">$</span><span class="n">val</span><span class="cp">[</span><span class="mi">2</span><span class="cp">]</span><span class="p">;</span></span>
+<span class='line'>                <span class="n">if</span><span class="p">(</span><span class="o">!</span><span class="n">empty</span><span class="p">(</span><span class="err">$</span><span class="n">val</span><span class="cp">[</span><span class="mi">4</span><span class="cp">]</span><span class="p">))</span><span class="err">{</span><span class="n">echo</span> <span class="s1">&#39; - &#39;</span><span class="o">.</span><span class="err">$</span><span class="n">val</span><span class="cp">[</span><span class="mi">4</span><span class="cp">]</span><span class="p">;}</span></span>
+<span class='line'>                <span class="nt">echo</span> <span class="s2">&quot;&lt;br /&gt;\n&quot;</span><span class="o">;</span></span>
+<span class='line'>            <span class="err">}</span></span>
+<span class='line'>        <span class="err">}</span></span>
+<span class='line'>        <span class="err">$</span><span class="nt">dom1-</span><span class="o">&gt;</span><span class="nt">__destruct</span><span class="o">();//</span><span class="err">解決</span><span class="nt">Memory</span> <span class="nt">Leaks</span><span class="err">的問題</span></span>
+<span class='line'>        <span class="nt">unset</span><span class="o">(</span><span class="err">$</span><span class="nt">profile</span><span class="o">,</span><span class="err">$</span><span class="nt">dom1</span><span class="o">,</span><span class="err">$</span><span class="nt">test</span><span class="o">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="nt">p</span><span class="o">++;</span></span>
+<span class='line'>    <span class="err">}</span><span class="nt">while</span><span class="o">(!</span><span class="nt">empty</span><span class="o">(</span><span class="err">$</span><span class="nt">match</span><span class="o">));</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nt">curl_close</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">);</span></span>
+<span class='line'><span class="o">?&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
     
   
 </div>
@@ -191,7 +541,107 @@
     <p>最近老實說又多玩了一個語言，外加我今年算是個考生，所以說很多時候晚上忙一下就已經11點多了，當然最近都在養肝，忙完就睡著了...XD</p>
 <p>至於廢話就不多說了，最近學了一點Action Script 3.0，但是我基本上還是用Flash CS4下去學習，改天會開始去摸摸看Flex，希望是有時間就好(笑)。但是老實說在這個7月時也算是我過的最充實的一個月了，因為搞懂了非常之多的東西。</p>
 <p>這一個PHP只能算是一個小部份，因為也是一個小程式....XD，但是基本上需要phpQuery，因為這個函式庫對於要抓取網頁資訊來說的話非常之方便而且簡單明瞭，對於一個複雜的網頁原始碼而言，可以簡化取出需要的資訊之後，再去做preg的動作繪比較的簡單。</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span></pre></td><td class='code'><pre><code><span class='line'><span class="o">&lt;</span> <span class="o">?</span><span class="nt">php</span></span>
+<span class='line'>    <span class="nt">require</span> <span class="s1">&#39;phpQuery/phpQuery/phpQuery.php&#39;</span><span class="o">;</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="err">$</span><span class="nt">loginurl</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/index.php&#39;</span><span class="o">;</span></span>
+<span class='line'>    <span class="err">$</span><span class="nt">pixiv_id</span><span class="o">=</span><span class="s1">&#39;你的PIXIV_id&#39;</span><span class="o">;</span></span>
+<span class='line'>    <span class="err">$</span><span class="nt">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="o">;</span></span>
+<span class='line'>    <span class="o">//</span><span class="err">以上為一些登入基本資訊</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="err">$</span><span class="nt">curl</span> <span class="o">=</span> <span class="nt">curl_init</span><span class="o">();</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_HEADER</span><span class="o">,</span> <span class="nt">0</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_USERAGENT</span><span class="o">,</span><span class="s1">&#39;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)&#39;</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_FOLLOWLOCATION</span><span class="o">,</span> <span class="nt">1</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_RETURNTRANSFER</span><span class="o">,</span> <span class="nt">1</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_COOKIEJAR</span><span class="o">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_COOKIEFILE</span><span class="o">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_POST</span><span class="o">,</span> <span class="nt">1</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_COOKIESESSION</span><span class="o">,</span><span class="nt">true</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_URL</span><span class="o">,</span> <span class="err">$</span><span class="nt">loginurl</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_POSTFIELDS</span><span class="o">,</span> <span class="s1">&#39;mode=login&amp;pixiv_id=&#39;</span><span class="o">.</span><span class="err">$</span><span class="nt">pixiv_id</span><span class="o">.</span><span class="s1">&#39;&amp;pass=&#39;</span><span class="o">.</span><span class="err">$</span><span class="nt">password</span> <span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_exec</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">);</span></span>
+<span class='line'>    <span class="o">//</span><span class="err">登入的動作</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="err">$</span><span class="nt">p</span><span class="o">=</span><span class="nt">1</span><span class="o">;//</span><span class="err">設定起始頁</span></span>
+<span class='line'>    <span class="err">$</span><span class="nt">bookmark_rest</span><span class="o">=</span><span class="s1">&#39;show&#39;</span><span class="o">;//</span><span class="nt">hide</span><span class="err">為非公開</span> <span class="nt">show</span><span class="err">為公開</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nt">do</span><span class="p">{</span></span>
+<span class='line'>        <span class="err">$</span><span class="k">url</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/bookmark.php?type=user&amp;rest=&#39;</span><span class="o">.</span><span class="err">$</span><span class="n">bookmark_rest</span><span class="o">.</span><span class="s1">&#39;&amp;p=&#39;</span><span class="o">.</span><span class="err">$</span><span class="n">p</span><span class="p">;</span> <span class="o">//</span><span class="n">bookmark</span><span class="err">網址</span></span>
+<span class='line'>        <span class="n">curl_setopt</span><span class="p">(</span><span class="err">$</span><span class="n">curl</span><span class="o">,</span> <span class="n">CURLOPT_URL</span><span class="o">,</span> <span class="err">$</span><span class="k">url</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">profile</span><span class="o">=</span><span class="n">curl_exec</span><span class="p">(</span><span class="err">$</span><span class="n">curl</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="n">phpQuery</span><span class="o">::</span><span class="n">newDocument</span><span class="p">(</span><span class="err">$</span><span class="n">profile</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;html &gt; body &gt; div#wrapper &gt; div#pixiv &gt; div#content2&#39;</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">title</span> <span class="o">=</span> <span class="n">pq</span><span class="p">(</span><span class="s1">&#39;div</span><span class="cp">[</span><span class="n">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="cp">]</span><span class="s1"> &gt; a&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">html</span><span class="p">();</span></span>
+<span class='line'>        <span class="n">preg_match</span><span class="p">(</span><span class="s1">&#39;/次の(.*?)件/&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">title</span><span class="o">,</span><span class="err">$</span><span class="n">match</span><span class="p">);</span></span>
+<span class='line'>        <span class="o">//</span><span class="err">是否有下一頁的判斷用</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="err">$</span><span class="n">title2</span> <span class="o">=</span> <span class="n">pq</span><span class="p">(</span><span class="s1">&#39;form#f &gt; div</span><span class="cp">[</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;width:140px;height:120px;float:left;text-align:center;&quot;</span><span class="cp">]</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">html</span><span class="p">();</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">title2</span><span class="o">=</span><span class="n">preg_replace</span><span class="p">(</span><span class="s1">&#39;/\n/&#39;</span><span class="o">,</span> <span class="s1">&#39;&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">title2</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">title2</span><span class="o">=</span><span class="n">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;input (.*?)/&gt;/&#39;</span><span class="o">,</span> <span class="s1">&#39;&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">title2</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">title2</span><span class="o">=</span><span class="n">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;img (.*?)/&gt;/&#39;</span><span class="o">,</span> <span class="s1">&#39;&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">title2</span><span class="p">);</span></span>
+<span class='line'>        <span class="n">preg_match_all</span><span class="p">(</span><span class="s1">&#39;/&lt;a href=&quot;member.php\?id=(.*?)&quot;&gt;&lt; \/a&gt;&lt;div style=\&quot;padding-top:5px;\&quot;&gt;(.*?)&lt; \/div&gt;/&#39;</span><span class="o">,</span> <span class="err">$</span><span class="n">title2</span><span class="o">,</span><span class="err">$</span><span class="n">match2</span><span class="o">,</span><span class="n">PREG_SET_ORDER</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="n">foreach</span> <span class="p">(</span><span class="err">$</span><span class="n">match2</span> <span class="n">as</span> <span class="err">$</span><span class="n">val</span><span class="p">)</span> <span class="err">{</span></span>
+<span class='line'>            <span class="n">echo</span> <span class="s1">&#39;http://www.pixiv.net/member.php?id=&#39;</span><span class="o">.</span><span class="err">$</span><span class="n">val</span><span class="cp">[</span><span class="mi">1</span><span class="cp">]</span><span class="o">.</span><span class="s1">&#39; - &#39;</span><span class="o">.</span><span class="err">$</span><span class="n">val</span><span class="cp">[</span><span class="mi">2</span><span class="cp">]</span><span class="o">.</span><span class="s2">&quot;\n&quot;</span><span class="p">;</span></span>
+<span class='line'>        <span class="p">}</span><span class="o">//</span><span class="err">映出所有的繪師</span></span>
+<span class='line'>        <span class="err">$</span><span class="nt">p</span><span class="o">++;</span></span>
+<span class='line'>    <span class="err">}</span><span class="nt">while</span><span class="o">(!</span><span class="nt">empty</span><span class="o">(</span><span class="err">$</span><span class="nt">match</span><span class="o">));</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nt">curl_close</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">);</span></span>
+<span class='line'><span class="o">?&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>以上就是一個非常簡單的小範例。對於熟悉PHPQuery之後要處理抓取網頁的資訊的動作的話真的非常的簡單。</p>
 <p>這是一個非常簡單的，把PIXIV上的喜愛繪師的網址給備份出來的一個小程式，用這個列出來後才知道，原來我已經收了快要1150個繪師了...Orz</p>
     
@@ -245,7 +695,11 @@
     <p>最近都在忙一些課業上得問題真的沒有時間去搞定有的沒的</p>
 <p>最主要之前的email publish都一直沒有出現</p>
 <p>今天在翻apache log的時候才發現到問題(奇怪之前都寄得出去...= =a?)</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sh</span><span class="o">:</span> <span class="n">sendmail</span><span class="o">:</span> <span class="n">not</span> <span class="n">found</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>去/etc/php5/apache2/php.ini中把sendmail path設定一下就修好了</p>
 <p>我真的呆了好一陣子...QQ</p>
     
@@ -272,11 +726,19 @@
   
     <p>今天算是把全部 文章內容的一堆.co.cc的字眼給幹掉 除了email外，那是google APP的問題了，改天在處理</p>
 <p>在此紀錄一下 先把wordpress的mysql data dump出來後(如何dump請參考<a href="http://www.renn999.twbbs.org/wordpress/archives/184" target="_blank">自動MySQL備份搞定</a>)</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="err">&#39;</span><span class="n">s</span><span class="o">/</span><span class="err">取代的字串</span><span class="o">/</span><span class="err">取代的字串</span><span class="o">/</span><span class="n">g</span><span class="err">&#39;</span> <span class="s">&quot;Wordpress.sql&quot;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>用gedit開是最不明智的選擇...XD</p>
 <p>在mysql匯回即可</p>
 <p>再把一些轉址設定好(.htaccess)</p>
-<p>wzxhzdk:1</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">redirectMatch</span> <span class="o">/</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span> <span class="n">http</span><span class="o">:</span><span class="c1">//www.renn999.twbbs.org/$1</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>搞定收工</p>
     
   

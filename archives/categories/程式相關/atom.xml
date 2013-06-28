@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2013-06-27T20:15:51+0800</updated>
+  <updated>2013-06-29T00:23:07+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -277,11 +277,65 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
 <p>可以參考這裡<a href="http://www.sqlite.org/cvstrac/wiki?p=ConverterTools">sqlite - Converter Tools</a></p>
 <p>當然我的作法是將步驟分開來作的</p>
 <p>先將sqldump出來</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span><span class="err">&#39;</span><span class="n">username</span><span class="err">&#39;</span> <span class="o">-</span><span class="n">p</span><span class="err">&#39;</span><span class="n">password</span><span class="err">&#39;</span> <span class="o">--</span><span class="n">compact</span> <span class="o">--</span><span class="n">compatible</span><span class="o">=</span><span class="n">ansi</span> <span class="o">--</span><span class="k">default</span><span class="o">-</span><span class="n">character</span><span class="o">-</span><span class="n">set</span><span class="o">=</span><span class="n">binary</span> <span class="err">&#39;</span><span class="n">databasename</span><span class="err">&#39;</span> <span class="o">&gt;</span> <span class="n">database</span><span class="p">.</span><span class="n">sql</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <!--more-->
 
 <p>接著就利用內部所說的sh script擷取部份</p>
-<p>wzxhzdk:1</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">#!/bin/sh</span></span>
+<span class='line'></span>
+<span class='line'>cat database.sql |</span>
+<span class='line'>grep -v <span class="s1">&#39; KEY &quot;&#39;</span> |</span>
+<span class='line'>grep -v <span class="s1">&#39; UNIQUE KEY &quot;&#39;</span> |</span>
+<span class='line'>grep -v <span class="s1">&#39; PRIMARY KEY &#39;</span> |</span>
+<span class='line'>sed <span class="s1">&#39;s/ unsigned / /g&#39;</span> |</span>
+<span class='line'>sed <span class="s1">&#39;s/ auto_increment/ primary key autoincrement/gi&#39;</span> |</span>
+<span class='line'>sed <span class="s1">&#39;s/ smallint([0-9]*) / integer /gi&#39;</span> |</span>
+<span class='line'>sed <span class="s1">&#39;s/ tinyint([0-9]*) / integer /gi&#39;</span> |</span>
+<span class='line'>sed <span class="s1">&#39;s/ int([0-9]*) / integer /gi&#39;</span> |</span>
+<span class='line'>sed <span class="s1">&#39;s/ character set [^ ]* / /gi&#39;</span> |</span>
+<span class='line'>sed <span class="s1">&#39;s/ enum([^)]*) / varchar(255) /gi&#39;</span> |</span>
+<span class='line'>sed <span class="s1">&#39;s/ on update [^,]*//gi&#39;</span> |</span>
+<span class='line'>perl -e <span class="s1">&#39;local $/;$_=&lt;&gt;;s/,\n\)/\n\)/gs;print &quot;begin;\n&quot;;print;print &quot;commit;\n&quot;&#39;</span> |</span>
+<span class='line'>perl -pe <span class="s1">&#39;</span></span>
+<span class='line'><span class="s1">if (/^(INSERT.+?)\(/) {</span></span>
+<span class='line'><span class="s1">   $a=$1;</span></span>
+<span class='line'><span class="s1">   s/\\&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;/&#39;</span><span class="se">\&#39;\&#39;</span><span class="s1">&#39;/g;</span></span>
+<span class='line'><span class="s1">   s/\\n/\n/g;</span></span>
+<span class='line'><span class="s1">   s/\),\(/\);\n$a\(/g;</span></span>
+<span class='line'><span class="s1">}</span></span>
+<span class='line'><span class="s1">&#39;</span> &gt; output.sql</span>
+<span class='line'>cat output.sql | sqlite3 output.db &gt; output.err</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>這樣的好處是說只要亦有問題，可以依照error message出現的錯誤去修正database.sql，老實他那個error message一直沒有辦法被output出來，建議使用script指令紀錄錯誤訊息，利用錯誤訊息慢慢去修正會比較好。</p>]]></content>
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/%E9%97%9C%E6%96%BC%E8%BB%9F%E9%AB%94/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2013-06-27T20:15:51+0800</updated>
+  <updated>2013-06-29T00:23:07+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -37,7 +37,51 @@
 
 <p>我想起之前在裝完Adobe Flash Player之後我去修改了"/etc/fonts/conf.d/49-sansserif.conf"這隻檔案，想說會不會是在這個環節上出了問題，於是我就把當初的檔案給改回來之後，Ｙｅｓ！Chromium正常的把中文字給顯示出來了，但是Adobe Flash Player硬是出現方塊字。</p>
 <p>到了最後放大絕了我就如下的</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span></pre></td><td class='code'><pre><code><span class='line'><span class="err">&lt;</span> ?xml version=&quot;1.0&quot;?&gt;</span>
+<span class='line'><span class="err">&lt;</span> !DOCTYPE fontconfig SYSTEM &quot;fonts.dtd&quot;&gt;</span>
+<span class='line'><span class="nt">&lt;fontconfig&gt;</span></span>
+<span class='line'><span class="c">&lt;!--</span></span>
+<span class='line'><span class="c">  If the font still has no generic name, add sans-serif</span></span>
+<span class='line'><span class="c"> --&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;match</span> <span class="na">target=</span><span class="s">&quot;pattern&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>        <span class="nt">&lt;test</span> <span class="na">qual=</span><span class="s">&quot;all&quot;</span> <span class="na">name=</span><span class="s">&quot;family&quot;</span> <span class="na">compare=</span><span class="s">&quot;not_eq&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>            <span class="nt">&lt;string&gt;</span>sans serif<span class="nt">&lt;/string&gt;</span></span>
+<span class='line'>        <span class="nt">&lt;/test&gt;</span></span>
+<span class='line'>        <span class="nt">&lt;test</span> <span class="na">qual=</span><span class="s">&quot;all&quot;</span> <span class="na">name=</span><span class="s">&quot;family&quot;</span> <span class="na">compare=</span><span class="s">&quot;not_eq&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>            <span class="nt">&lt;string&gt;</span>serif<span class="nt">&lt;/string&gt;</span></span>
+<span class='line'>        <span class="nt">&lt;/test&gt;</span></span>
+<span class='line'>        <span class="nt">&lt;test</span> <span class="na">qual=</span><span class="s">&quot;all&quot;</span> <span class="na">name=</span><span class="s">&quot;family&quot;</span> <span class="na">compare=</span><span class="s">&quot;not_eq&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>            <span class="nt">&lt;string&gt;</span>monospace<span class="nt">&lt;/string&gt;</span></span>
+<span class='line'>        <span class="nt">&lt;/test&gt;</span></span>
+<span class='line'>        <span class="nt">&lt;edit</span> <span class="na">name=</span><span class="s">&quot;family&quot;</span> <span class="na">mode=</span><span class="s">&quot;append_last&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>            <span class="nt">&lt;string&gt;</span>WenQuanYi Zen Hei<span class="nt">&lt;/string&gt;</span></span>
+<span class='line'>        <span class="nt">&lt;/edit&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/match&gt;</span></span>
+<span class='line'><span class="nt">&lt;/fontconfig&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>把字型改成WenQuanYi Zen Hei之後都顯示正常了,至於字型的部份您可以自行選擇您要得，但是不要打中文要用字型的英文名稱，否則Chromium的部份還是硬是給你方塊字。</p>
 <p><a href="http://pic.renn999.twbbs.org/view.php?pic=5de8a7a24301dc84.png" target="_blank"><img src="http://pic.renn999.twbbs.org/upload/5de8a7a24301dc84.png" alt="" width="640" /></a></p>
 <p>至於中文輸入，還是死掉，但是我用笨方法，ctrl+C ctrl+V還是可以用...XDrz</p>]]></content>

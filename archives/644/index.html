@@ -90,10 +90,42 @@
 <!--more-->
 
 <p>其實修正方式非常簡單，打開navigation.php應該會看到</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">&lt;!--</span></span>
+<span class='line'><span class="c">This block is used whenever navigation is required</span></span>
+<span class='line'><span class="c">--&gt;</span></span>
+<span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alignleft&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;?php posts_nav_link(&#39;&#39;,&#39;&#39;,__(&#39;&amp;laquo; Older stuff&#39;, &#39;vSlider&#39;)) ?&gt;</span><span class="nt">&lt;/div&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alignright&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;?php posts_nav_link(&#39;&#39;,__(&#39;Newer stuff &amp;raquo;&#39;, &#39;vSlider&#39;),&#39;&#39;) ?&gt;</span><span class="nt">&lt;/div&gt;</span>   </span>
+<span class='line'><span class="nt">&lt;/div&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>這裡的話他是用<a href="http://codex.wordpress.org/Template_Tags/posts_nav_link">posts_nav_link</a>，可以點連結看一下官方說明，官方有說道這種方式可能會出現雙連結等錯誤的格式。如果要用此方式的話可以使用<a href="http://codex.wordpress.org/next_posts_link">next_posts_link</a> and <a href="http://codex.wordpress.org/Template_Tags/previous_posts_link">previous_posts_link</a>來替代。</p>
 <p>所以說修正之後的程式碼</p>
-<p>wzxhzdk:1</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">&lt;!--</span></span>
+<span class='line'><span class="c">This block is used whenever navigation is required</span></span>
+<span class='line'><span class="c">--&gt;</span></span>
+<span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alignleft&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;?php next_posts_link(__(&#39;&amp;laquo; Older stuff&#39;, &#39;vSlider&#39;),0)?&gt;</span><span class="nt">&lt;/div&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alignright&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;?php previous_posts_link(__(&#39;Newer stuff &amp;raquo;&#39;, &#39;vSlider&#39;),0) ?&gt;</span><span class="nt">&lt;/div&gt;</span>                                      </span>
+<span class='line'><span class="nt">&lt;/div&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>這樣就ok了 可以看一下頁尾就是正常顯示了</p>
   
 </div>

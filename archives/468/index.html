@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Counterize II 2.14.1 IP patch(還原顯示IP功能) - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="前文在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。 ip_patch.patch download 使用方法： 將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入 wzxhzdk:0 如果出現 wzxhzdk:1 表示完成了，這...">
+  <meta name="description" content="前文在這裡，裡面說得網站掛掉了，所以說我剛好做出了一份diff ptach出來。 ip_patch.patch download 使用方法： 將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入 1patch -p0 &lt; ip_patch.patch 如果出現...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -87,9 +87,19 @@
 <p><a href="http://www.renn999.twbbs.org/wordpress/downloads/ip_patch.patch">ip_patch.patch download</a></p>
 <p>使用方法：
 將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">patch</span> <span class="o">-</span><span class="n">p0</span> <span class="o">&lt;</span> <span class="n">ip_patch</span><span class="p">.</span><span class="n">patch</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>如果出現</p>
-<p>wzxhzdk:1</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">patching</span> <span class="n">file</span> <span class="n">counterizeii</span><span class="o">/</span><span class="n">counterize_install</span><span class="p">.</span><span class="n">php</span></span>
+<span class='line'><span class="n">patching</span> <span class="n">file</span> <span class="n">counterizeii</span><span class="o">/</span><span class="n">counterize</span><span class="p">.</span><span class="n">php</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>表示完成了，這是在Linux底下，在windows的話可能需要GnuWin32或是其他對應的軟體。</p>
   
 </div>

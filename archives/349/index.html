@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>修好sendmail - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="最近都在忙一些課業上得問題真的沒有時間去搞定有的沒的 最主要之前的email publish都一直沒有出現 今天在翻apache log的時候才發現到問題(奇怪之前都寄得出去...= =a?) wzxhzdk:0 去/etc/php5/apache2/php.ini中把sendmail path設定...">
+  <meta name="description" content="最近都在忙一些課業上得問題真的沒有時間去搞定有的沒的 最主要之前的email publish都一直沒有出現 今天在翻apache log的時候才發現到問題(奇怪之前都寄得出去...= =a?) 1sh: sendmail: not found 去/etc/php5/apache2/php.ini中把...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -86,7 +86,11 @@
     <p>最近都在忙一些課業上得問題真的沒有時間去搞定有的沒的</p>
 <p>最主要之前的email publish都一直沒有出現</p>
 <p>今天在翻apache log的時候才發現到問題(奇怪之前都寄得出去...= =a?)</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sh</span><span class="o">:</span> <span class="n">sendmail</span><span class="o">:</span> <span class="n">not</span> <span class="n">found</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>去/etc/php5/apache2/php.ini中把sendmail path設定一下就修好了</p>
 <p>我真的呆了好一陣子...QQ</p>
   

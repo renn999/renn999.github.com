@@ -98,7 +98,61 @@
 接著可以參考<a href="http://briian.com/?p=6799">重灌狂人 Bit.ly Pro 開放自訂網址的「縮址服務」</a>的設定方法做好就可以了
 你問我網域從哪邊得到？恩 請google FREE domain或是免費網域吧！</p>
 <p>當然有了api和詳細的<a href="http://code.google.com/p/bitly-api/wiki/ApiDocumentation">使用手冊</a>，因為時常要上去縮的話很累，所以說就自己寫了一個小小的html利用jQuery的AJAX程式在此提供參考。</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span></span>
+<span class='line'><span class="nt">&lt;html&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;head&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;META</span> <span class="na">HTTP-EQUIV=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">CONTENT=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span></span>
+<span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;button#sub&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span></span>
+<span class='line'>        <span class="kd">var</span> <span class="nx">api_user</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span></span>
+<span class='line'>        <span class="kd">var</span> <span class="nx">api_key</span><span class="o">=</span><span class="s1">&#39;&#39;</span></span>
+<span class='line'>        <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">&#39;http://api.bit.ly/v3/shorten?login=&#39;</span><span class="o">+</span> <span class="nx">api_user</span> <span class="o">+</span><span class="s1">&#39;&amp;apiKey=&#39;</span><span class="o">+</span> <span class="nx">api_key</span> <span class="o">+</span><span class="s1">&#39;&amp;longUrl=&#39;</span><span class="o">+</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input#longurl&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">())</span><span class="o">+</span><span class="s1">&#39;&amp;format=json&amp;callback=?&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">bitly</span><span class="p">){</span></span>
+<span class='line'>            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div#show&#39;</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span></span>
+<span class='line'>            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div#show&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">bitly</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">url</span><span class="p">).</span><span class="nx">hide</span><span class="p">().</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span></span>
+<span class='line'>        <span class="p">})</span></span>
+<span class='line'>    <span class="p">});</span></span>
+<span class='line'><span class="p">});</span></span>
+<span class='line'>    <span class="nt">&lt;/script&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/style&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/head&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;body&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;from</span> <span class="na">id=</span><span class="s">&quot;bit&quot;</span> <span class="na">action=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>        longurl:<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="na">id=</span><span class="s">&quot;longurl&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">id=</span><span class="s">&quot;sub&quot;</span><span class="nt">&gt;</span>submit<span class="nt">&lt;/button&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/from&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">show</span><span class="nt">&gt;&lt;/div&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/body&gt;</span></span>
+<span class='line'><span class="nt">&lt;/html&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>如果有申請bitly pro的話api所產生的網址會是你的網域，除非你多了一個domain的參數其實一個比較有趣的地方，像是說我縮了一個<a href="http://ren9.tk/dzkm9I">http://ren9.tk/dzkm9I</a>的網址你可以試試看<a href="http://bit.ly/dzkm9I">http://bit.ly/dzkm9I</a>，其實就是一個代管的功能而已...XDrz</p>
   
 </div>

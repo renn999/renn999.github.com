@@ -86,9 +86,19 @@
 <p><a href="http://www.renn999.twbbs.org/wordpress/downloads/ip_patch.patch">ip_patch.patch download</a></p>
 <p>使用方法：
 將官方的Counterize II 2.14.1解壓縮後的資料夾和patch放在一起後，輸入</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">patch</span> <span class="o">-</span><span class="n">p0</span> <span class="o">&lt;</span> <span class="n">ip_patch</span><span class="p">.</span><span class="n">patch</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>如果出現</p>
-<p>wzxhzdk:1</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">patching</span> <span class="n">file</span> <span class="n">counterizeii</span><span class="o">/</span><span class="n">counterize_install</span><span class="p">.</span><span class="n">php</span></span>
+<span class='line'><span class="n">patching</span> <span class="n">file</span> <span class="n">counterizeii</span><span class="o">/</span><span class="n">counterize</span><span class="p">.</span><span class="n">php</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>表示完成了，這是在Linux底下，在windows的話可能需要GnuWin32或是其他對應的軟體。</p>
     
   
@@ -115,13 +125,53 @@
   
     <p>Ubuntu9.04之前要掛載磁區的話在磁碟上面點下去就可以馬上把磁碟掛上去，但是9.10多了要打入密碼的麻煩動作，今天才找到解決方法。</p>
 <p>首先</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">gksudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">polkit</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">actions</span><span class="o">/</span><span class="n">org</span><span class="p">.</span><span class="n">freedesktop</span><span class="p">.</span><span class="n">devicekit</span><span class="p">.</span><span class="n">disks</span><span class="p">.</span><span class="n">policy</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>之後找到</p>
-<p>wzxhzdk:1</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span></pre></td><td class='code'><pre><code><span class='line'>  <span class="nt">&lt;action</span> <span class="na">id=</span><span class="s">&quot;org.freedesktop.devicekit.disks.filesystem-mount-system-internal&quot;</span><span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;description&gt;</span>Mount a system-internal device<span class="nt">&lt;/description&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;description</span> <span class="na">xml:lang=</span><span class="s">&quot;da&quot;</span><span class="nt">&gt;</span>Montér en intern enhed<span class="nt">&lt;/description&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;description</span> <span class="na">xml:lang=</span><span class="s">&quot;de&quot;</span><span class="nt">&gt;</span>Eingebautes Gerät einhängen<span class="nt">&lt;/description&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;message&gt;</span>Authentication is required to mount the device<span class="nt">&lt;/message&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;message</span> <span class="na">xml:lang=</span><span class="s">&quot;da&quot;</span><span class="nt">&gt;</span>Autorisering er påkrævet for at montere et fil system<span class="nt">&lt;/message&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;message</span> <span class="na">xml:lang=</span><span class="s">&quot;de&quot;</span><span class="nt">&gt;</span>Zugriffsrechte werden benötigt um das Gerät einzuhängen<span class="nt">&lt;/message&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;defaults&gt;</span></span>
+<span class='line'>      <span class="nt">&lt;allow_any&gt;</span>no<span class="nt">&lt;/allow_any&gt;</span></span>
+<span class='line'>      <span class="nt">&lt;allow_inactive&gt;</span>no<span class="nt">&lt;/allow_inactive&gt;</span></span>
+<span class='line'>      <span class="nt">&lt;allow_active&gt;</span>auth_admin_keep<span class="nt">&lt;/allow_active&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/defaults&gt;</span></span>
+<span class='line'>  <span class="nt">&lt;/action&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>把</p>
-<p>wzxhzdk:2</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="nt">&lt;allow_active&gt;</span>auth_admin_keep<span class="nt">&lt;/allow_active&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>改成</p>
-<p>wzxhzdk:3</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="nt">&lt;allow_active&gt;</span>yes<span class="nt">&lt;/allow_active&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>這樣要掛載磁區就不用在輸入密碼了</p>
     
   
@@ -172,9 +222,17 @@
     <p>前一兩個星期從Ubuntu9.04直接升級到9.10，看似沒有問題。但是今天看了一下備份的紀錄只有到091102，好像Postfix沒有動作的樣子，至於為啥沒有動作，我就不想浪費時間去找問題，於是我參考<a href="http://plog.longwin.com.tw/">Tsung</a>大的<a href="http://plog.longwin.com.tw/my_note-unix/2009/08/27/ssmtp-shell-gmail-send-mail-2009">這一篇</a>，把postfix換掉改用gmail的smtp來送我的備份檔，除了附件大小要注意之外，還是可以使用mutt來送東西。這樣真的省得時間再去設定postfix。</p>
 <p>至於mutt的話之前的版本按照我在前一篇的<a href="http://www.renn999.twbbs.org/wordpress/archives/184">自動MySQL備份搞定</a>，中的script中一定會發現到會吐出error，他會跟你說找不到[mail位置＠where.are.you]這個檔案，我是不清楚新板式不是在這裡有改了啥東西，但是這個問題我改一下參數順序就可以了
 原始為：</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">echo</span> <span class="s">&quot;$today Data base backup&quot;</span> <span class="o">|</span> <span class="n">mutt</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;Web Mysql Database Backup&quot;</span> <span class="o">-</span><span class="n">a</span>  <span class="n">sqlbak</span><span class="err">$</span><span class="n">today</span><span class="p">.</span><span class="n">zip</span> <span class="p">[</span><span class="n">mail</span><span class="err">位置＠</span><span class="n">where</span><span class="p">.</span><span class="n">are</span><span class="p">.</span><span class="n">you</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>改成</p>
-<p>wzxhzdk:1</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">echo</span> <span class="s">&quot;$today Data base backup&quot;</span> <span class="o">|</span> <span class="n">mutt</span> <span class="p">[</span><span class="n">mail</span><span class="err">位置＠</span><span class="n">where</span><span class="p">.</span><span class="n">are</span><span class="p">.</span><span class="n">you</span><span class="p">]</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;Web Mysql Database Backup&quot;</span> <span class="o">-</span><span class="n">a</span>  <span class="n">sqlbak</span><span class="err">$</span><span class="n">today</span><span class="p">.</span><span class="n">zip</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>還有我的/etc/resolv.conf每次重新開機都會跑掉，於是我把resolvconf給remove就ok了 :-P</p>
     
   
@@ -302,7 +360,21 @@
     <p>其實今天就是在google AJAX看到的鬼東西，而且是一個非常有趣的鬼東西，依照我淺薄的接觸以為javascript Libraries只有jQuery，竟然沒想到還有這麼多的種類，</p>
 <p>網站：<a href="http://code.google.com/intl/en/apis/ajaxlibs/">http://code.google.com/intl/en/apis/ajaxlibs/</a></p>
 <p>其實這讓開發者真的可以非常的方便來使用一些javascript的Libraries，如果要使用jQuery的話只要</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span></pre></td><td class='code'><pre><code><span class='line'><span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">&quot;http://www.google.com/jsapi&quot;</span><span class="nt">&gt;&lt;/script&gt;</span> <span class="c">&lt;!--先include google js api--&gt;</span></span>
+<span class='line'><span class="nt">&lt;script&gt;</span> </span>
+<span class='line'>google.load(&quot;jquery&quot;, &quot;1.3.2&quot;);</span>
+<span class='line'>google.load(&quot;jqueryui&quot;, &quot;1.7.2&quot;);</span>
+<span class='line'><span class="c">&lt;!-- your js code --&gt;</span></span>
+<span class='line'><span class="nt">&lt;/script&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>真是方便的東西...XDrz</p>
     
   
@@ -328,7 +400,145 @@
 <div class="entry-content">
   
     <p>這是一個利用php產生rss的script，就只是普通的實做...XDDrz</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
+<span class='line'><span class="cp">include(&#39;uaocode.php&#39;);</span></span>
+<span class='line'></span>
+<span class='line'><span class="cp">$bbs_path=&#39;/home/bbs/brd/&#39;;</span></span>
+<span class='line'><span class="cp">$brd_name=$_GET[</span><span class="s1">&#39;brd&#39;</span><span class="cp">];</span></span>
+<span class='line'><span class="cp">$filename=$bbs_path.$brd_name.&#39;/.DIR&#39;;</span></span>
+<span class='line'><span class="cp">if (!file_exists($filename)) {</span></span>
+<span class='line'><span class="cp">    echo &#39;no such broad!&#39;;</span></span>
+<span class='line'><span class="cp">    exit;</span></span>
+<span class='line'><span class="cp">}</span></span>
+<span class='line'></span>
+<span class='line'><span class="cp">header(&#39;Content-type: application/rss+xml; charset=utf-8&#39;);</span></span>
+<span class='line'><span class="cp">echo &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;utf-8\&quot; ?&gt;</span>\n&quot;;</span>
+<span class='line'></span>
+<span class='line'>$all_post=filesize($filename)/256;</span>
+<span class='line'></span>
+<span class='line'>$post_num=10;</span>
+<span class='line'></span>
+<span class='line'>for($i=1; $i <span class="err">&lt;</span>= $post_num ; ++$i){</span>
+<span class='line'>    $fp=fopen($filename,&#39;r&#39;);</span>
+<span class='line'>    fseek($fp, ($all_post-$i)*256+12);</span>
+<span class='line'>    $match<span class="cp">[</span><span class="nv">$i</span><span class="cp">][</span><span class="s1">&#39;post_id&#39;</span><span class="cp">]</span>=trim(fread($fp,32));</span>
+<span class='line'>    $post_path=$bbs_path.$brd_name.&#39;/&#39;.substr($match<span class="cp">[</span><span class="nv">$i</span><span class="cp">][</span><span class="s1">&#39;post_id&#39;</span><span class="cp">]</span>, -1).&#39;/&#39;.$match<span class="cp">[</span><span class="nv">$i</span><span class="cp">][</span><span class="s1">&#39;post_id&#39;</span><span class="cp">]</span>;</span>
+<span class='line'>    $fpp=fopen($post_path,&#39;r&#39;);</span>
+<span class='line'>    $j=0;</span>
+<span class='line'>    while($current_line = fgets($fpp)){</span>
+<span class='line'>        ++$j;</span>
+<span class='line'>        switch ($j){</span>
+<span class='line'>            case 1:</span>
+<span class='line'>                preg_match(&#39;/: (.*) \(/&#39;,$current_line,$match<span class="cp">[</span><span class="nv">$i</span><span class="cp">][</span><span class="s1">&#39;post_userid&#39;</span><span class="cp">]</span>);</span>
+<span class='line'>            case 2:</span>
+<span class='line'>                $match<span class="cp">[</span><span class="nv">$i</span><span class="cp">][</span><span class="s1">&#39;post_title&#39;</span><span class="cp">]</span>=trim(html_entity_decode(iconv(&quot;big5&quot;,&quot;UTF-8&quot;,uao_convert(substr($current_line,6))),ENT_QUOTES,&quot;UTF-8&quot;));</span>
+<span class='line'>            case 3:</span>
+<span class='line'>                $match<span class="cp">[</span><span class="nv">$i</span><span class="cp">][</span><span class="s1">&#39;post_time&#39;</span><span class="cp">]</span>=date(DATE_RSS, strtotime(trim(substr($current_line,6))));</span>
+<span class='line'>            default;</span>
+<span class='line'>                $current_line=preg_replace(&#39;/\\x1b\\<span class="cp">[</span><span class="p">(</span><span class="err">[</span><span class="p">^</span><span class="nx">m</span><span class="cp">]</span>*)m/i&#39;,&#39;&#39;,$current_line);</span>
+<span class='line'>                $match<span class="cp">[</span><span class="nv">$i</span><span class="cp">][</span><span class="s1">&#39;post_conten&#39;</span><span class="cp">]</span> .= trim(html_entity_decode(iconv(&quot;big5&quot;,&quot;UTF-8&quot;,uao_convert($current_line)),ENT_QUOTES,&quot;UTF-8&quot;),&#39;\0&#39;);</span>
+<span class='line'>        }</span>
+<span class='line'>    }</span>
+<span class='line'>}</span>
+<span class='line'>?&gt;</span>
+<span class='line'><span class="nt">&lt;rss</span> <span class="na">version=</span><span class="s">&quot;2.0&quot;</span></span>
+<span class='line'>    <span class="na">xmlns:content=</span><span class="s">&quot;http://purl.org/rss/1.0/modules/content/&quot;</span></span>
+<span class='line'>    <span class="na">xmlns:wfw=</span><span class="s">&quot;http://wellformedweb.org/CommentAPI/&quot;</span></span>
+<span class='line'>    <span class="na">xmlns:dc=</span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span></span>
+<span class='line'>    <span class="na">xmlns:atom=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span></span>
+<span class='line'>    <span class="na">xmlns:sy=</span><span class="s">&quot;http://purl.org/rss/1.0/modules/syndication/&quot;</span></span>
+<span class='line'>    <span class="nt">&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;channel&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;title&gt;</span>夢之大地rsstest<span class="nt">&lt;/title&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;description&gt;</span>none<span class="nt">&lt;/description&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;link&gt;</span>http://140.116.250.9/<span class="nt">&lt;/link&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;atom:link</span> <span class="na">href=</span><span class="s">&quot;http://140.116.250.9/paser.php&quot;</span> <span class="na">rel=</span><span class="s">&quot;self&quot;</span> <span class="na">type=</span><span class="s">&quot;application/rss+xml&quot;</span> <span class="nt">/&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;language&gt;</span>en<span class="nt">&lt;/language&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;generator&gt;</span>http://www.renn999.twbbs.org/illustrator/RSS.php<span class="nt">&lt;/generator&gt;</span></span>
+<span class='line'><span class="cp">&lt;?php </span></span>
+<span class='line'><span class="cp">        foreach($match as $item){</span></span>
+<span class='line'><span class="cp">            echo &quot;&lt;item&gt;\n&quot;;</span></span>
+<span class='line'><span class="cp">            echo &quot;\t\t\t&lt;title&gt;&lt;![</span><span class="nx">CDATA</span><span class="err">[</span><span class="s2">&quot;.stripslashes($item[&quot;</span><span class="nx">post_title</span><span class="s2">&quot;]).&quot;</span><span class="cp">]]]]&gt;&lt;![</span><span class="nx">CDATA</span><span class="err">[</span><span class="o">&gt;&lt;/</span><span class="nb">title</span><span class="o">&gt;\</span><span class="nb">n</span><span class="s2">&quot;;</span></span>
+<span class='line'><span class="s2">            echo &quot;</span><span class="o">\</span><span class="nb">t</span><span class="o">\</span><span class="nb">t</span><span class="o">\</span><span class="nb">t</span><span class="o">&lt;</span><span class="nx">pubDate</span><span class="o">&gt;</span><span class="s2">&quot;.stripslashes($item[&quot;</span><span class="nx">post_time</span><span class="s2">&quot;]).&quot;</span><span class="o">&lt;/</span><span class="nx">pubDate</span><span class="o">&gt;\</span><span class="nb">n</span><span class="s2">&quot;;</span></span>
+<span class='line'><span class="s2">            echo &quot;</span><span class="o">\</span><span class="nb">t</span><span class="o">\</span><span class="nb">t</span><span class="o">\</span><span class="nb">t</span><span class="o">&lt;</span><span class="k">link</span><span class="o">&gt;</span><span class="nx">http</span><span class="p">:</span><span class="c1">//140.116.250.9/&lt;/link&gt;\n&quot;;</span></span>
+<span class='line'>            <span class="c1">//str_replace(&#39; &#39;,&#39;&amp;nbsp;&#39;,nl2br(htmlspecialchars($item[&quot;post_conten&quot;])));</span></span>
+<span class='line'>            <span class="nx">echo</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&lt;description&gt;&lt;![CDATA[&quot;</span><span class="bp">.</span><span class="nx">nl2br</span><span class="p">(</span><span class="nx">str_replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&amp;nbsp;&#39;</span><span class="p">,</span><span class="nx">htmlspecialchars</span><span class="p">(</span><span class="nv">$item</span><span class="err">[</span><span class="s2">&quot;post_conten&quot;</span><span class="cp">]))).&quot;]]]]&gt;&lt;![</span><span class="nx">CDATA</span><span class="err">[</span><span class="o">&gt;&lt;/</span><span class="nb">description</span><span class="o">&gt;\</span><span class="nb">n</span><span class="s2">&quot;;</span></span>
+<span class='line'><span class="s2">            echo &quot;</span><span class="o">\</span><span class="nb">t</span><span class="o">\</span><span class="nb">t</span><span class="o">\</span><span class="nb">t</span><span class="o">&lt;</span><span class="nx">guid</span> <span class="n">isPermaLink</span><span class="o">=\</span><span class="s2">&quot;false</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">,</span><span class="nv">$item</span><span class="err">[</span><span class="s1">&#39;post_id&#39;</span><span class="cp">],&quot;&lt;/guid&gt;&quot;;</span></span>
+<span class='line'><span class="cp">            echo &quot;&lt;/item&gt;\n&quot;;</span></span>
+<span class='line'><span class="cp">        }</span></span>
+<span class='line'><span class="cp">    ?&gt;</span></span>
+<span class='line'>    <span class="nt">&lt;/channel&gt;</span></span>
+<span class='line'><span class="nt">&lt;/rss&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
     
   
 </div>

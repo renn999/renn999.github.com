@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>紀錄一下 - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="今天算是把全部 文章內容的一堆.co.cc的字眼給幹掉 除了email外，那是google APP的問題了，改天在處理 在此紀錄一下 先把wordpress的mysql data dump出來後(如何dump請參考自動MySQL備份搞定) wzxhzdk:0 用gedit開是最不明智的選擇...XD...">
+  <meta name="description" content="今天算是把全部 文章內容的一堆.co.cc的字眼給幹掉 除了email外，那是google APP的問題了，改天在處理 在此紀錄一下 先把wordpress的mysql data dump出來後(如何dump請參考自動MySQL備份搞定) 1sed -i -e &#39;s/取代的字串/取代的字串/g&#39; &#34;...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -85,11 +85,19 @@
   
     <p>今天算是把全部 文章內容的一堆.co.cc的字眼給幹掉 除了email外，那是google APP的問題了，改天在處理</p>
 <p>在此紀錄一下 先把wordpress的mysql data dump出來後(如何dump請參考<a href="http://www.renn999.twbbs.org/wordpress/archives/184" target="_blank">自動MySQL備份搞定</a>)</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="err">&#39;</span><span class="n">s</span><span class="o">/</span><span class="err">取代的字串</span><span class="o">/</span><span class="err">取代的字串</span><span class="o">/</span><span class="n">g</span><span class="err">&#39;</span> <span class="s">&quot;Wordpress.sql&quot;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>用gedit開是最不明智的選擇...XD</p>
 <p>在mysql匯回即可</p>
 <p>再把一些轉址設定好(.htaccess)</p>
-<p>wzxhzdk:1</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">redirectMatch</span> <span class="o">/</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span> <span class="n">http</span><span class="o">:</span><span class="c1">//www.renn999.twbbs.org/$1</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>搞定收工</p>
   
 </div>

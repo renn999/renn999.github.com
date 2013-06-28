@@ -92,44 +92,91 @@
 官方網站：<a href="http://true-audio.com/">TrueAudio</a>
 原始碼下載：<a href="http://true-audio.com/Free_Downloads">Downloads</a>
 debPackage：<a href="http://web.renn999.twbbs.org/%7Erenn999/ttaenc-3.4.1_3.4.1-1_i386.deb">Downloads</a>(UnOffical)</li><li>Encode：
-wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">ttaenc</span> <span class="o">-</span><span class="n">e</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+</p>
 <p>[-o ...]內為可加可不加，不加為為輸出原始檔名的tta file</li><li>Decode：
-wzxhzdk:1
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">ttaenc</span> <span class="o">-</span><span class="n">d</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">).</span><span class="n">tta</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 [-o ...]內為同Encode，更多請詳閱ttaenc -h</li></ul></p>
 <p>ape(<a href="http://www.monkeysaudio.com/">Monkey's Audio</a>)：
 <ul><li>Downlads：
 官方網站：<a href="http://supermmx.org/linux/mac/">Monkey's Audio Codec(.APE) non-win32 Port</a>
 原始碼下載：<a href="http://supermmx.org/linux/mac/">Downloads</a>
 debPackage：<a href="http://web.renn999.twbbs.org/%7Erenn999/mac-3.99-u4_b5-1_i386.deb">Downloads</a>(UnOffical)</li><li>Encode：
-wzxhzdk:2
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">mac</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span> <span class="n">outputfile</span><span class="p">.</span><span class="n">ape</span> <span class="o">-</span><span class="n">c</span><span class="p">[</span><span class="mi">1000</span><span class="o">~</span><span class="mi">5000</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 </li><li>Decode：
-wzxhzdk:3
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">mac</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">).</span><span class="n">wav</span> <span class="n">outputfile</span><span class="p">.</span><span class="n">ape</span> <span class="o">-</span><span class="n">d</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 更多請直接詳閱mac</li></ul></p>
 <p>flac(<a href="http://flac.sourceforge.net/">Free Lossless Audio Codec</a>)：
 <ul><li>安裝：
-wzxhzdk:4
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">flac</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 </li><li>Encode：
-wzxhzdk:5
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">flac</span> <span class="o">-</span><span class="p">[</span><span class="mi">0</span><span class="o">~</span><span class="mi">8</span><span class="p">]</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 [-o ...]內為可加可不加，不加為為輸出原始檔名的flac file</li><li>Decode：
-wzxhzdk:6
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">flac</span> <span class="o">-</span><span class="n">d</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">).</span><span class="n">flac</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 [-o ...]內為同Encode，更多請直接詳閱man flac</li></ul></p>
 <p>wv(<a href="http://www.wavpack.com/">Wavpack</a>)：
 <ul><li>安裝：
-wzxhzdk:7
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">wavpack</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 </li><li>Encode：
-wzxhzdk:8
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">wavepack</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 [-o ...]內為可加可不加，不加為為輸出原始檔名的wv file，更多請直接詳閱man wavpack</li><li>Decode：
-wzxhzdk:9
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">wavunpack</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">).</span><span class="n">wv</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">outputfile</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 [-o ...]內為同Encode，更多請直接詳閱man wavunpack</li></ul></p>
 <p>tak(<a href="http://www.thbeck.de/Tak/Tak.html">(T)om's lossless (A)udio (K)ompressor</a>):(這是在Linux底下最麻煩的格式了)
 <ul><li>Downlads：
 官方網站：<a href="http://www.thbeck.de/Tak/Tak.html">(T)om's lossless (A)udio (K)ompressor</a>
 下載：<a href="http://www.thbeck.de/Tak/Tak.html#Links_TAK">Download</a></li><li>安裝：
-wzxhzdk:10
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span></pre></td><td class='code'><pre><code><span class='line'><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">wine</span></span>
+<span class='line'><span class="err">$</span> <span class="n">wget</span> <span class="n">http</span><span class="o">:</span><span class="c1">//www.thbeck.de/Download/TAK_1.1.1.zip</span></span>
+<span class='line'><span class="err">$</span> <span class="n">unzip</span> <span class="o">-</span><span class="n">j</span> <span class="n">TAK_1</span><span class="mf">.1.1</span><span class="p">.</span><span class="n">zip</span> <span class="n">Applications</span><span class="o">/</span><span class="n">Tak</span><span class="p">.</span><span class="n">exe</span> <span class="n">Applications</span><span class="o">/</span><span class="n">Takc</span><span class="p">.</span><span class="n">exe</span></span>
+<span class='line'><span class="err">$</span> <span class="n">mv</span> <span class="n">Takc</span><span class="p">.</span><span class="n">exe</span> <span class="n">Tak</span><span class="p">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">t</span> <span class="o">~/</span><span class="p">.</span><span class="n">wine</span><span class="o">/</span><span class="n">drive_c</span><span class="o">/</span><span class="n">windows</span><span class="o">/</span><span class="n">system32</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 </li><li>Encode：
-wzxhzdk:11
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">wine</span> <span class="n">tak</span><span class="p">.</span><span class="n">exe</span><span class="p">(</span><span class="n">GUI</span> <span class="n">mode</span><span class="p">)</span></span>
+<span class='line'><span class="n">wine</span> <span class="n">takc</span> <span class="o">-</span><span class="n">e</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span> <span class="p">[</span><span class="n">outfile</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 [outfile]內為可加可不加，不加為為輸出原始檔名的tak file，更多請直接詳閱wine takc</li><li>Decode：
-wzxhzdk:12
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">wine</span> <span class="n">takc</span> <span class="o">-</span><span class="n">d</span> <span class="n">file</span><span class="p">.</span><span class="n">tak</span> <span class="p">[</span><span class="n">outfile</span><span class="p">]</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
 [outfile]內為同Encode</li></ul></p>
 <p>待續...</p>
   

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>WordPlurk一些細部修改 - 老伯筆記</title>
   <meta name="author" content="renn999">
-  <meta name="description" content="WordPlurk以要對wordpress發文之後把標題連結同步到Plurk真的非常的方便，當然我也小看了一下原始碼對於中文語系的話也些地方還是可以調整的。 wzxhzdk:0 在台灣地區的話，於第29行網址的部份lang=en可以改成lang=tr_ch，這樣在plurk上就不會出現英文，qual...">
+  <meta name="description" content="WordPlurk以要對wordpress發文之後把標題連結同步到Plurk真的非常的方便，當然我也小看了一下原始碼對於中文語系的話也些地方還是可以調整的。 1 2 3curl_setopt($curl, CURLOPT_URL, &#39;http://www.plurk.com/TimeLine/add...">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,13 +84,41 @@
 <div class="entry-content">
   
     <p>WordPlurk以要對wordpress發文之後把標題連結同步到Plurk真的非常的方便，當然我也小看了一下原始碼對於中文語系的話也些地方還是可以調整的。</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="x">curl_setopt($curl, CURLOPT_URL, &#39;http://www.plurk.com/TimeLine/addPlurk&#39;);</span></span>
+<span class='line'><span class="x">curl_setopt($curl, CURLOPT_POSTFIELDS, &#39;qualifier=shares&amp;content=&#39;. $new_status .&#39;&amp;lang=en&amp;no_comments=0&amp;uid=&#39; . $uid[0]);</span></span>
+<span class='line'><span class="x">$post = curl_exec($curl);</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>在台灣地區的話，於第29行網址的部份lang=en可以改成lang=tr_ch，這樣在plurk上就不會出現英文，qualifier=share這裡可以改變plurk post的狀態就是"說""想要"那些有的沒的</p>
-<p>wzxhzdk:1</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="x">the_post();</span></span>
+<span class='line'><span class="x">$post_url = file_get_contents(&#39;http://tinyurl.com/api-create.php?url=&#39; . get_permalink());</span></span>
+<span class='line'><span class="x">$title = get_the_title();</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>在46行的部份<code>'http://tinyurl.com/api-create.php?url='</code>這是將網址用tinyurl縮網如果不想縮網的話可以去掉，要不然要用自己喜歡的服務也可以(0rz.tw的服務好像被拿掉了但是我在研究看看)，我是不知道網址太長會怎樣...Orz，因為我是用我自己的短網址，我還刻意做了一個api給他用...XD</p>
-<p>wzxhzdk:2</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="x">$i = &#39;\&#39;&#39; . $title . &#39;\&#39; - &#39; . $post_url;</span></span>
+<span class='line'></span>
+<span class='line'><span class="x">$plurk_username = get_option(&#39;wordplurk_username&#39;, 0);</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>在51行的部份就是post到Plurk的時候會出現的樣式，他這邊就設計的不怎麼好就是了，這裡通常會改成</p>
-<p>wzxhzdk:3</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="x">$i = $post_url . &#39; (&#39;. $title .&#39;)&#39; ;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>讓title直接變成連結的方式</p>
   
 </div>

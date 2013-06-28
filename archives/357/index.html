@@ -86,7 +86,107 @@
     <p>最近老實說又多玩了一個語言，外加我今年算是個考生，所以說很多時候晚上忙一下就已經11點多了，當然最近都在養肝，忙完就睡著了...XD</p>
 <p>至於廢話就不多說了，最近學了一點Action Script 3.0，但是我基本上還是用Flash CS4下去學習，改天會開始去摸摸看Flex，希望是有時間就好(笑)。但是老實說在這個7月時也算是我過的最充實的一個月了，因為搞懂了非常之多的東西。</p>
 <p>這一個PHP只能算是一個小部份，因為也是一個小程式....XD，但是基本上需要phpQuery，因為這個函式庫對於要抓取網頁資訊來說的話非常之方便而且簡單明瞭，對於一個複雜的網頁原始碼而言，可以簡化取出需要的資訊之後，再去做preg的動作繪比較的簡單。</p>
-<p>wzxhzdk:0</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span></pre></td><td class='code'><pre><code><span class='line'><span class="o">&lt;</span> <span class="o">?</span><span class="nt">php</span></span>
+<span class='line'>    <span class="nt">require</span> <span class="s1">&#39;phpQuery/phpQuery/phpQuery.php&#39;</span><span class="o">;</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="err">$</span><span class="nt">loginurl</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/index.php&#39;</span><span class="o">;</span></span>
+<span class='line'>    <span class="err">$</span><span class="nt">pixiv_id</span><span class="o">=</span><span class="s1">&#39;你的PIXIV_id&#39;</span><span class="o">;</span></span>
+<span class='line'>    <span class="err">$</span><span class="nt">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="o">;</span></span>
+<span class='line'>    <span class="o">//</span><span class="err">以上為一些登入基本資訊</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="err">$</span><span class="nt">curl</span> <span class="o">=</span> <span class="nt">curl_init</span><span class="o">();</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_HEADER</span><span class="o">,</span> <span class="nt">0</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_USERAGENT</span><span class="o">,</span><span class="s1">&#39;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.5); InfoPath.2)&#39;</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_FOLLOWLOCATION</span><span class="o">,</span> <span class="nt">1</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_RETURNTRANSFER</span><span class="o">,</span> <span class="nt">1</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_COOKIEJAR</span><span class="o">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_COOKIEFILE</span><span class="o">,</span> <span class="s1">&#39;cookie.txt&#39;</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_POST</span><span class="o">,</span> <span class="nt">1</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_COOKIESESSION</span><span class="o">,</span><span class="nt">true</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_URL</span><span class="o">,</span> <span class="err">$</span><span class="nt">loginurl</span><span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_setopt</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">,</span> <span class="nt">CURLOPT_POSTFIELDS</span><span class="o">,</span> <span class="s1">&#39;mode=login&amp;pixiv_id=&#39;</span><span class="o">.</span><span class="err">$</span><span class="nt">pixiv_id</span><span class="o">.</span><span class="s1">&#39;&amp;pass=&#39;</span><span class="o">.</span><span class="err">$</span><span class="nt">password</span> <span class="o">);</span></span>
+<span class='line'>    <span class="nt">curl_exec</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">);</span></span>
+<span class='line'>    <span class="o">//</span><span class="err">登入的動作</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="err">$</span><span class="nt">p</span><span class="o">=</span><span class="nt">1</span><span class="o">;//</span><span class="err">設定起始頁</span></span>
+<span class='line'>    <span class="err">$</span><span class="nt">bookmark_rest</span><span class="o">=</span><span class="s1">&#39;show&#39;</span><span class="o">;//</span><span class="nt">hide</span><span class="err">為非公開</span> <span class="nt">show</span><span class="err">為公開</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nt">do</span><span class="p">{</span></span>
+<span class='line'>        <span class="err">$</span><span class="k">url</span><span class="o">=</span><span class="s1">&#39;http://www.pixiv.net/bookmark.php?type=user&amp;rest=&#39;</span><span class="o">.</span><span class="err">$</span><span class="n">bookmark_rest</span><span class="o">.</span><span class="s1">&#39;&amp;p=&#39;</span><span class="o">.</span><span class="err">$</span><span class="n">p</span><span class="p">;</span> <span class="o">//</span><span class="n">bookmark</span><span class="err">網址</span></span>
+<span class='line'>        <span class="n">curl_setopt</span><span class="p">(</span><span class="err">$</span><span class="n">curl</span><span class="o">,</span> <span class="n">CURLOPT_URL</span><span class="o">,</span> <span class="err">$</span><span class="k">url</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">profile</span><span class="o">=</span><span class="n">curl_exec</span><span class="p">(</span><span class="err">$</span><span class="n">curl</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="n">phpQuery</span><span class="o">::</span><span class="n">newDocument</span><span class="p">(</span><span class="err">$</span><span class="n">profile</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;html &gt; body &gt; div#wrapper &gt; div#pixiv &gt; div#content2&#39;</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">title</span> <span class="o">=</span> <span class="n">pq</span><span class="p">(</span><span class="s1">&#39;div</span><span class="cp">[</span><span class="n">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="cp">]</span><span class="s1"> &gt; a&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">html</span><span class="p">();</span></span>
+<span class='line'>        <span class="n">preg_match</span><span class="p">(</span><span class="s1">&#39;/次の(.*?)件/&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">title</span><span class="o">,</span><span class="err">$</span><span class="n">match</span><span class="p">);</span></span>
+<span class='line'>        <span class="o">//</span><span class="err">是否有下一頁的判斷用</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="err">$</span><span class="n">title2</span> <span class="o">=</span> <span class="n">pq</span><span class="p">(</span><span class="s1">&#39;form#f &gt; div</span><span class="cp">[</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;width:140px;height:120px;float:left;text-align:center;&quot;</span><span class="cp">]</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">html</span><span class="p">();</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">title2</span><span class="o">=</span><span class="n">preg_replace</span><span class="p">(</span><span class="s1">&#39;/\n/&#39;</span><span class="o">,</span> <span class="s1">&#39;&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">title2</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">title2</span><span class="o">=</span><span class="n">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;input (.*?)/&gt;/&#39;</span><span class="o">,</span> <span class="s1">&#39;&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">title2</span><span class="p">);</span></span>
+<span class='line'>        <span class="err">$</span><span class="n">title2</span><span class="o">=</span><span class="n">preg_replace</span><span class="p">(</span><span class="s1">&#39;/&lt;img (.*?)/&gt;/&#39;</span><span class="o">,</span> <span class="s1">&#39;&#39;</span><span class="o">,</span><span class="err">$</span><span class="n">title2</span><span class="p">);</span></span>
+<span class='line'>        <span class="n">preg_match_all</span><span class="p">(</span><span class="s1">&#39;/&lt;a href=&quot;member.php\?id=(.*?)&quot;&gt;&lt; \/a&gt;&lt;div style=\&quot;padding-top:5px;\&quot;&gt;(.*?)&lt; \/div&gt;/&#39;</span><span class="o">,</span> <span class="err">$</span><span class="n">title2</span><span class="o">,</span><span class="err">$</span><span class="n">match2</span><span class="o">,</span><span class="n">PREG_SET_ORDER</span><span class="p">);</span></span>
+<span class='line'></span>
+<span class='line'>        <span class="n">foreach</span> <span class="p">(</span><span class="err">$</span><span class="n">match2</span> <span class="n">as</span> <span class="err">$</span><span class="n">val</span><span class="p">)</span> <span class="err">{</span></span>
+<span class='line'>            <span class="n">echo</span> <span class="s1">&#39;http://www.pixiv.net/member.php?id=&#39;</span><span class="o">.</span><span class="err">$</span><span class="n">val</span><span class="cp">[</span><span class="mi">1</span><span class="cp">]</span><span class="o">.</span><span class="s1">&#39; - &#39;</span><span class="o">.</span><span class="err">$</span><span class="n">val</span><span class="cp">[</span><span class="mi">2</span><span class="cp">]</span><span class="o">.</span><span class="s2">&quot;\n&quot;</span><span class="p">;</span></span>
+<span class='line'>        <span class="p">}</span><span class="o">//</span><span class="err">映出所有的繪師</span></span>
+<span class='line'>        <span class="err">$</span><span class="nt">p</span><span class="o">++;</span></span>
+<span class='line'>    <span class="err">}</span><span class="nt">while</span><span class="o">(!</span><span class="nt">empty</span><span class="o">(</span><span class="err">$</span><span class="nt">match</span><span class="o">));</span></span>
+<span class='line'></span>
+<span class='line'>    <span class="nt">curl_close</span><span class="o">(</span><span class="err">$</span><span class="nt">curl</span><span class="o">);</span></span>
+<span class='line'><span class="o">?&gt;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
 <p>以上就是一個非常簡單的小範例。對於熟悉PHPQuery之後要處理抓取網頁的資訊的動作的話真的非常的簡單。</p>
 <p>這是一個非常簡單的，把PIXIV上的喜愛繪師的網址給備份出來的一個小程式，用這個列出來後才知道，原來我已經收了快要1150個繪師了...Orz</p>
   
