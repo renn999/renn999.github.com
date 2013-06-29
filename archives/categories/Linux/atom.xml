@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org//archives/categories/Linux/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2013-06-29T00:23:07+0800</updated>
+  <updated>2013-06-29T13:00:21+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,147 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu bzip 多核心壓縮]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/920/"/>
+    <updated>2013-06-29T12:15:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/920/</id>
+    <content type="html"><![CDATA[<p><a target="_blank" href="http://minus.com/lF1skVGXcqp2"><img src="http://i.minus.com/jF1skVGXcqp2.png" border="0"/></a></p>
+<h1>我是廢話</h1>
+<hr />
+<p>（抱歉！我不想貼萌圖）炸飛...</p>
+<h1>正題開始</h1>
+<hr />
+<p>雖然說現在的壓縮檔常用的就那幾個，反正看到就是 rar 要不就是 zip ， 7z 偶爾看到，但是在 linux 上打滾多年後，常看到的反而不是 gz 就是 bz2 ，今天好看到前幾天重灌電腦忘記處理的映像檔，打算壓縮來減少一下空間，於是就順手的去 google 了一下有關於 bzip2 有沒有相關的多線程處理，看來還有不錯的結果。剛好也就順便寫了測試報告。</p>
+<!--more-->
+
+<h1>安裝程式</h1>
+<hr />
+<p>目前有的就有兩個程式，分別為 <code>pbzip2</code> 和 <code>lbzip2</code> 兩套，在 Ubuntu 12.04 下直接用 <code>apt-get</code> 安裝就可以了：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo apt-get install lbzip2</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>或者是</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo apt-get install pbzip2</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h1>如何使用</h1>
+<hr />
+<p>基本上用法大同小異，只是分別多了要用多少的 <code>core</code> 來處理壓縮， <code>lbzip2</code> 利用 <code>-n 數字</code> ， <code>pbizp</code> 是利用 <code>-p數字</code> ，要更詳細可以參考 <code>--help</code> 或找男人， yoooooooooooooooo~!</p>
+<h1>測試報告</h1>
+<hr />
+<p>就以之前做的映像檔為測試：
+<code><pre>-rw-r--r--  1 renn999 renn999 4294967296 Jun  2 16:19 ubuntu12.04.img</pre></code></p>
+<p>bzip 時間測試：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span></pre></td><td class='code'><pre><code><span class='line'><span class="go">renn999 @ /media/Disk_2 :</span></span>
+<span class='line'><span class="gp">&gt;</span> <span class="nb">time </span>bzip2 -k -z -v -9 ubuntu12.04.img </span>
+<span class='line'><span class="go">  ubuntu12.04.img:  2.965:1,  2.698 bits/byte, 66.27% saved, 4294967296 in, 1448661455 out.</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">real  13m37.562s</span></span>
+<span class='line'><span class="go">user  12m55.144s</span></span>
+<span class='line'><span class="go">sys 0m9.897s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>lbzip2 時間測試：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span></pre></td><td class='code'><pre><code><span class='line'><span class="go">renn999 @ /media/Disk_2 :</span></span>
+<span class='line'><span class="gp">&gt;</span> <span class="nb">time </span>lbzip2 -k -z -v -9 -n 4 ubuntu12.04.img </span>
+<span class='line'><span class="go">lbzip2: compressing &quot;ubuntu12.04.img&quot; to &quot;ubuntu12.04.img.bz2&quot;</span></span>
+<span class='line'><span class="go">lbzip2: &quot;ubuntu12.04.img&quot;: compression ratio is 1:2.960, space savings is 66.21%</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">real  4m19.824s</span></span>
+<span class='line'><span class="go">user  16m9.725s</span></span>
+<span class='line'><span class="go">sys 0m26.790s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>pbzip2 時間測試：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span></pre></td><td class='code'><pre><code><span class='line'><span class="go">renn999 @ /media/Disk_2 :</span></span>
+<span class='line'><span class="gp">&gt;</span> <span class="nb">time </span>pbzip2 -k -z -9 -v -p4 ubuntu12.04.img</span>
+<span class='line'><span class="go">Parallel BZIP2 v1.1.6 - by: Jeff Gilchrist [http://compression.ca]</span></span>
+<span class='line'><span class="go">[Oct. 30, 2011]               (uses libbzip2 by Julian Seward)</span></span>
+<span class='line'><span class="go">Major contributions: Yavor Nikolov &lt;nikolov.javor+pbzip2@gmail.com&gt;</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">         # CPUs: 4</span></span>
+<span class='line'><span class="go"> BWT Block Size: 900 KB</span></span>
+<span class='line'><span class="go">File Block Size: 900 KB</span></span>
+<span class='line'><span class="go"> Maximum Memory: 100 MB</span></span>
+<span class='line'><span class="go">-------------------------------------------</span></span>
+<span class='line'><span class="go">         File #: 1 of 1</span></span>
+<span class='line'><span class="go">     Input Name: ubuntu12.04.img</span></span>
+<span class='line'><span class="go">    Output Name: ubuntu12.04.img.bz2</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">     Input Size: 4294967296 bytes</span></span>
+<span class='line'><span class="go">Compressing data...</span></span>
+<span class='line'><span class="go">    Output Size: 1452096308 bytes</span></span>
+<span class='line'><span class="go">-------------------------------------------</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">     Wall Clock: 358.346280 seconds</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">real  5m58.351s</span></span>
+<span class='line'><span class="go">user  22m28.108s</span></span>
+<span class='line'><span class="go">sys 0m33.190s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>由上可知，時間節省了快要 66%</p>
+<p>大小測試：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="go">-rw-r--r--  1 renn999 renn999 1452096308 Jun  2 16:19 ubuntu12.04.img.bz2.pbzip2</span></span>
+<span class='line'><span class="go">-rw-r--r--  1 renn999 renn999 1451089807 Jun  2 16:19 ubuntu12.04.img.bz2.lbzip2</span></span>
+<span class='line'><span class="go">-rw-r--r--  1 renn999 renn999 1448661455 Jun  2 16:19 ubuntu12.04.img.bz2.bzip2</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>還是傳統的 bzip 壓縮率還是高了一點，但是老實說時間省的還是划得來。</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[手機利用Ubuntu 12.04藍芽播放音樂]]></title>
@@ -207,127 +348,6 @@
 
 
 <p><span style="color: #ff0000;"><strong>每台機器可能都會有修改5次或以下的次數，當修改次數沒了之後此機器可能需要送回原廠才可以更改區碼。</strong></span></p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[利用 trash 來取代 rm 在 Terminal 模式下]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/721/"/>
-    <updated>2010-05-26T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/721/</id>
-    <content type="html"><![CDATA[<p>幾天前再整理檔案的時候，真的幹了一個白目的事情，就是原本我要砍掉的只有jpg檔，所以說造理講我應該會下'rm *.jpg'，但是手殘外加腦包的我竟然不小心下成'rm * .jpg'看到出現的錯誤訊息的時候才發現到來不及了，頓時一堆檔案都QQ了，<del datetime="2010-05-26T01:39:55+00:00">為了防止世界再度破壞</del>...不不不...應該說是為了防止同樣腦殘外加手包的事情再度發生，於是我搬出了google大神，才發現到原來有trash-cli這個套件，簡單說就是terminal的資源回收桶，英文版的文章可以參考<a href="http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html">這裡</a>，雖然說定期多了要清資源回收的動作，但是這也是防範的最好方式....OTZ</p>
-<p><big><strong>第一步：先安裝trash-cli，我是在ubuntu10.04下安裝的</strong></big></p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">trash</span><span class="o">-</span><span class="n">cli</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<!--more-->
-
-<p><big><strong>第二步：新增script</strong></big>
-這一步的話最主要是要新增一個script來模擬<code>rm -r</code>的狀況，如果看trash的help就可以知道，雖然說trash也有-r的指令，但是他的指令會被忽略掉。在terminal中輸入</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="err">$</span> <span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">trash</span><span class="o">-</span><span class="n">rm</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>並把下面的code貼入，我在這個地方有做了一些修改，因為原先的script好像會吐出錯誤訊息。</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">#!/bin/bash</span></span>
-<span class='line'><span class="c"># command name: trash-rm</span></span>
-<span class='line'><span class="nb">shopt</span> -s extglob</span>
-<span class='line'><span class="nv">recursive</span><span class="o">=</span>1</span>
-<span class='line'><span class="nb">declare</span> -a cmd</span>
-<span class='line'><span class="o">((</span><span class="nv">i</span> <span class="o">=</span> 0<span class="o">))</span></span>
-<span class='line'><span class="k">for </span>f in <span class="s2">&quot;$@&quot;</span></span>
-<span class='line'><span class="k">do</span></span>
-<span class='line'><span class="k"> case</span> <span class="s2">&quot;$f&quot;</span> in</span>
-<span class='line'>  <span class="o">(</span>-*<span class="o">([</span>fiIv<span class="o">])</span>r*<span class="o">([</span>fiIv<span class="o">])</span>|-*<span class="o">([</span>fiIv<span class="o">])</span>R*<span class="o">([</span>fiIv<span class="o">])</span>|--recursive<span class="o">)</span></span>
-<span class='line'>   <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;$dshdsh&quot;</span> <span class="o">==</span> 1 <span class="o">]</span> ; <span class="k">then</span></span>
-<span class='line'><span class="k">    if</span> <span class="o">[</span> <span class="nv">$recursive</span> !<span class="o">=</span> 0 -a -d <span class="s2">&quot;$f&quot;</span> <span class="o">]</span> ; <span class="k">then</span></span>
-<span class='line'><span class="k">     </span><span class="nb">echo</span> <span class="s2">&quot;skipping directory: $f&quot;</span></span>
-<span class='line'>     <span class="k">continue</span></span>
-<span class='line'><span class="k">    fi</span></span>
-<span class='line'><span class="k">   else</span></span>
-<span class='line'><span class="k">    </span><span class="nv">recursive</span><span class="o">=</span>0</span>
-<span class='line'>   <span class="k">fi</span> ;;</span>
-<span class='line'>  <span class="o">(</span>--<span class="o">)</span></span>
-<span class='line'>   <span class="nv">dshdsh</span><span class="o">=</span>1;;</span>
-<span class='line'>  <span class="o">(</span>*<span class="o">)</span></span>
-<span class='line'>   <span class="k">if</span> <span class="o">[</span> <span class="nv">$recursive</span> !<span class="o">=</span> 0 -a -d <span class="s2">&quot;$f&quot;</span> <span class="o">]</span> ; <span class="k">then</span></span>
-<span class='line'><span class="k">    </span><span class="nb">echo</span> <span class="s2">&quot;skipping directory: $f&quot;</span></span>
-<span class='line'>    <span class="k">continue</span></span>
-<span class='line'><span class="k">   fi</span> ;;</span>
-<span class='line'> <span class="k">esac</span></span>
-<span class='line'><span class="k"> </span>cmd<span class="o">[</span><span class="nv">$i</span><span class="o">]=</span><span class="s2">&quot;$f&quot;</span></span>
-<span class='line'> <span class="o">((</span>i++<span class="o">))</span></span>
-<span class='line'><span class="k">done</span></span>
-<span class='line'>trash <span class="s2">&quot;${cmd[@]}&quot;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>接著，要讓這個script變成可執行檔</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="err">$</span> <span class="n">sudo</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">trash</span><span class="o">-</span><span class="n">rm</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p><big><strong>第三步：利用trash-rm取代rm</strong></big>
-也是在terminal中輸入</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="err">$</span> <span class="n">gedit</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>把以下的code加入到開啟的文件後面，並儲存</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">alias</span> <span class="n">rm</span><span class="o">=</span><span class="s">&quot;trash-rm&quot;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>接著要reload bashrc就下bash的指令就可以了，到這裡就完成了，你可以利用rm和rm -r的指令來試試看。</p>
-<p><big><strong>其他trash-cli相關指令</strong></big></p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">empty</span><span class="o">-</span><span class="n">trash</span> <span class="err">＃清理</span></span>
-<span class='line'><span class="n">list</span><span class="o">-</span><span class="n">trash</span> <span class="err">＃列出</span></span>
-<span class='line'><span class="n">restore</span><span class="o">-</span><span class="n">trash</span> <span class="err">＃還原</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>這幾個應該看名字就知道功用了吧，這裡就不多加說明，更多可以看</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="err">$</span> <span class="n">man</span> <span class="n">trash</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>]]></content>
   </entry>
   
 </feed>

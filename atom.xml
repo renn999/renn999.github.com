@@ -6,7 +6,7 @@
   <link href="http://www.renn999.twbbs.org/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2013-06-29T00:23:07+0800</updated>
+  <updated>2013-06-29T13:00:21+0800</updated>
   <id>http://www.renn999.twbbs.org/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,147 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu bzip 多核心壓縮]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/920/"/>
+    <updated>2013-06-29T12:15:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/920/</id>
+    <content type="html"><![CDATA[<p><a target="_blank" href="http://minus.com/lF1skVGXcqp2"><img src="http://i.minus.com/jF1skVGXcqp2.png" border="0"/></a></p>
+<h1>我是廢話</h1>
+<hr />
+<p>（抱歉！我不想貼萌圖）炸飛...</p>
+<h1>正題開始</h1>
+<hr />
+<p>雖然說現在的壓縮檔常用的就那幾個，反正看到就是 rar 要不就是 zip ， 7z 偶爾看到，但是在 linux 上打滾多年後，常看到的反而不是 gz 就是 bz2 ，今天好看到前幾天重灌電腦忘記處理的映像檔，打算壓縮來減少一下空間，於是就順手的去 google 了一下有關於 bzip2 有沒有相關的多線程處理，看來還有不錯的結果。剛好也就順便寫了測試報告。</p>
+<!--more-->
+
+<h1>安裝程式</h1>
+<hr />
+<p>目前有的就有兩個程式，分別為 <code>pbzip2</code> 和 <code>lbzip2</code> 兩套，在 Ubuntu 12.04 下直接用 <code>apt-get</code> 安裝就可以了：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo apt-get install lbzip2</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>或者是</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo apt-get install pbzip2</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<h1>如何使用</h1>
+<hr />
+<p>基本上用法大同小異，只是分別多了要用多少的 <code>core</code> 來處理壓縮， <code>lbzip2</code> 利用 <code>-n 數字</code> ， <code>pbizp</code> 是利用 <code>-p數字</code> ，要更詳細可以參考 <code>--help</code> 或找男人， yoooooooooooooooo~!</p>
+<h1>測試報告</h1>
+<hr />
+<p>就以之前做的映像檔為測試：
+<code><pre>-rw-r--r--  1 renn999 renn999 4294967296 Jun  2 16:19 ubuntu12.04.img</pre></code></p>
+<p>bzip 時間測試：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span></pre></td><td class='code'><pre><code><span class='line'><span class="go">renn999 @ /media/Disk_2 :</span></span>
+<span class='line'><span class="gp">&gt;</span> <span class="nb">time </span>bzip2 -k -z -v -9 ubuntu12.04.img </span>
+<span class='line'><span class="go">  ubuntu12.04.img:  2.965:1,  2.698 bits/byte, 66.27% saved, 4294967296 in, 1448661455 out.</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">real  13m37.562s</span></span>
+<span class='line'><span class="go">user  12m55.144s</span></span>
+<span class='line'><span class="go">sys 0m9.897s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>lbzip2 時間測試：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span></pre></td><td class='code'><pre><code><span class='line'><span class="go">renn999 @ /media/Disk_2 :</span></span>
+<span class='line'><span class="gp">&gt;</span> <span class="nb">time </span>lbzip2 -k -z -v -9 -n 4 ubuntu12.04.img </span>
+<span class='line'><span class="go">lbzip2: compressing &quot;ubuntu12.04.img&quot; to &quot;ubuntu12.04.img.bz2&quot;</span></span>
+<span class='line'><span class="go">lbzip2: &quot;ubuntu12.04.img&quot;: compression ratio is 1:2.960, space savings is 66.21%</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">real  4m19.824s</span></span>
+<span class='line'><span class="go">user  16m9.725s</span></span>
+<span class='line'><span class="go">sys 0m26.790s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>pbzip2 時間測試：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span></pre></td><td class='code'><pre><code><span class='line'><span class="go">renn999 @ /media/Disk_2 :</span></span>
+<span class='line'><span class="gp">&gt;</span> <span class="nb">time </span>pbzip2 -k -z -9 -v -p4 ubuntu12.04.img</span>
+<span class='line'><span class="go">Parallel BZIP2 v1.1.6 - by: Jeff Gilchrist [http://compression.ca]</span></span>
+<span class='line'><span class="go">[Oct. 30, 2011]               (uses libbzip2 by Julian Seward)</span></span>
+<span class='line'><span class="go">Major contributions: Yavor Nikolov &lt;nikolov.javor+pbzip2@gmail.com&gt;</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">         # CPUs: 4</span></span>
+<span class='line'><span class="go"> BWT Block Size: 900 KB</span></span>
+<span class='line'><span class="go">File Block Size: 900 KB</span></span>
+<span class='line'><span class="go"> Maximum Memory: 100 MB</span></span>
+<span class='line'><span class="go">-------------------------------------------</span></span>
+<span class='line'><span class="go">         File #: 1 of 1</span></span>
+<span class='line'><span class="go">     Input Name: ubuntu12.04.img</span></span>
+<span class='line'><span class="go">    Output Name: ubuntu12.04.img.bz2</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">     Input Size: 4294967296 bytes</span></span>
+<span class='line'><span class="go">Compressing data...</span></span>
+<span class='line'><span class="go">    Output Size: 1452096308 bytes</span></span>
+<span class='line'><span class="go">-------------------------------------------</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">     Wall Clock: 358.346280 seconds</span></span>
+<span class='line'></span>
+<span class='line'><span class="go">real  5m58.351s</span></span>
+<span class='line'><span class="go">user  22m28.108s</span></span>
+<span class='line'><span class="go">sys 0m33.190s</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>由上可知，時間節省了快要 66%</p>
+<p>大小測試：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="go">-rw-r--r--  1 renn999 renn999 1452096308 Jun  2 16:19 ubuntu12.04.img.bz2.pbzip2</span></span>
+<span class='line'><span class="go">-rw-r--r--  1 renn999 renn999 1451089807 Jun  2 16:19 ubuntu12.04.img.bz2.lbzip2</span></span>
+<span class='line'><span class="go">-rw-r--r--  1 renn999 renn999 1448661455 Jun  2 16:19 ubuntu12.04.img.bz2.bzip2</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>還是傳統的 bzip 壓縮率還是高了一點，但是老實說時間省的還是划得來。</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[手機利用Ubuntu 12.04藍芽播放音樂]]></title>
@@ -707,26 +848,6 @@ so Python + Flask + Blog =&gt; Pyblogtle</p>
 
 
 <p>就可以看到吐出來的錯誤訊息，這個東西浪費了我不少時間。</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopress調教メモ之四]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/909/"/>
-    <updated>2012-10-15T10:50:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/909/</id>
-    <content type="html"><![CDATA[<p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
-<!--more-->
-
-<p>像說我把我的 Octopress deploy 到 <a href="http://github.com">github</a> 上，但是在 <a href="http://bitbucket.org">bitbucket</a> 上開了一個 private 的 repo 來放 source 主要是將一些 private post 找到可以放的家。要不然真的一些 private post 放在 github 上的話真的一覽無遺...Q_Q</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">bitbucket</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">repo</span> <span class="n">url</span><span class="o">&gt;</span></span>
-<span class='line'><span class="n">git</span> <span class="n">push</span> <span class="n">bitbucket</span> <span class="n">source</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>而其實 <a href="http://bitbucket.org">bitbucket</a> 的申請方式差不多，而且也可以像 <a href="http://github.com">github</a> 把網頁 deploy 上去，這真的讓我也碘考慮想要搬家了...OTZ</p>
-<p>看到很多人都在抱怨 <a href="http://octopress.org/">octopress</a> 的 generate 速度非常慢，有的強者甚至自己利用其他語言刻了一個出來，像是<a href="http://zespia.tw/blog/2012/10/11/hexo-debut/">這裡</a> 是用 node.js 造出來的，其實我也有打算想要造一個，但是我是想要用Python+Flask而且目前已經有了框架出來了。</p>]]></content>
   </entry>
   
 </feed>
