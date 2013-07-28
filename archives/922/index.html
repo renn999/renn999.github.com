@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FLAC MetaData 操作 - 老伯筆記</title>
+  <meta name="author" content="renn999">
+  <meta name="description" content="我是廢話 前幾天真的屎到爆炸，撿鑰匙還會撿到跌倒，但是不幸中的大幸就是沒事，更何況最近都在想說，看到學生們最近都在快樂的暑假生活，心中頓時想說「年輕的肉體真好」，喂！我沒有惡意，不要叫警察啦！！！！！！ 正題開始 之前在我的手機上裝上 DeadBEEF 之後，在聽音樂時才發現到自己從 CD 轉的 F...">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
+  <link rel="canonical" href="">
+  <link href="/favicon.ico" rel="shortcut icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+<body>
+  <header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
+<nav id="main-nav"><ul class="main">
+  <li><a href="/archives/">Archives</a></li>
+  <li><a href="/guestbook/">留言板</a></li>
+  <li><a href="http://illust.renn999.twbbs.org/">老伯繪師收集區</a></li>
+</ul></nav>
+<nav id="mobile-nav">
+  <div class="alignleft menu">
+    <a class="button">Menu</a>
+    <div class="container"><ul class="main">
+  <li><a href="/archives/">Archives</a></li>
+  <li><a href="/guestbook/">留言板</a></li>
+  <li><a href="http://illust.renn999.twbbs.org/">老伯繪師收集區</a></li>
+</ul></div>
+  </div>
+  <div class="alignright search">
+    <a class="button"></a>
+    <div class="container">
+      <form action="http://google.com/search" method="get">
+        <input type="text" name="q" results="0">
+        <input type="hidden" name="q" value="site:www.renn999.twbbs.org">
+      </form>
+    </div>
+  </div>
+</nav>
+<nav id="sub-nav" class="alignright">
+  <div class="social">
+  	
+  	<a class="plurk" href="http://www.plurk.com/renn999" title="plurk">plurk</a>
+  	
+    
+    <a class="facebook" href="http://www.facebook.com/renn999" title="Facebook">Facebook</a>
+    
+    
+    <a class="google" href="https://plus.google.com/103389845925471617368?rel=author" title="Google+">Google+</a>
+    
+    
+    <a class="twitter" href="http://twitter.com/renn999" title="Twitter">Twitter</a>
+    
+    
+    <a class="github" href="https://github.com/renn999" title="GitHub">GitHub</a>
+    
+    
+    
+    
+    
+    <a class="rss" href="http://feeds.feedburner.com/renn999" title="RSS">RSS</a>
+    
+  </div>
+  <form class="search" action="http://google.com/search" method="get">
+    <input class="alignright" type="text" name="q" results="0">
+    <input type="hidden" name="q" value="site:www.renn999.twbbs.org">
+  </form>
+</nav></header>
+  <div id="content" class="inner">
+  
+    
+    <article class="post">
+    
+      
+
+<h1 class="title"><a href="/archives/922/">FLAC MetaData 操作
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p><a target="_blank" href="http://minus.com/lbpAqTbTpgmuus"><img src="http://i.minus.com/jbpAqTbTpgmuus.jpg" border="0"/></a></p>
+<h1>我是廢話</h1>
+<hr />
+<p>前幾天真的屎到爆炸，撿鑰匙還會撿到跌倒，但是不幸中的大幸就是沒事，更何況最近都在想說，看到學生們最近都在快樂的暑假生活，心中頓時想說「年輕<s>的肉體</s>真好」，喂！我沒有惡意，不要叫警察啦！！！！！！</p>
+<h1>正題開始</h1>
+<hr />
+<p>之前在我的手機上裝上 <code>DeadBEEF</code> 之後，在聽音樂時才發現到自己從 CD 轉的 FLAC 都沒有辦法顯示出正確的 CD 曲名，我還以為是 <code>abcde</code> 在做成 CUE 檔時因為格式不對而無法讀出，自己重新寫了一堆有的沒有的工具，折騰了好一陣子...Q_Q</p>
+<!--more-->
+
+<p>到最後才發現到原來是 FLAC 其中的 <code>MetaData</code> 的問題，在 <code>abcde</code> 抓完音軌後會自動的把 CUE 檔的分軌資訊以 <code>VORBIS_COMMENT</code> 的方式寫進 FLAC 的 <code>MetaData</code> 中，而 <code>DeadBEEF</code> 會先去讀 <code>VORBIS_COMMENT</code> 其中的分軌資訊後，就不會在另外去讀 CUE 檔，就會造成歌曲的曲目及專輯名稱硬是不給你出來。</p>
+<p>當然要解決這種方式，不要急著重壓啦，其實有可以編輯 FLAC <code>MetaData</code> 的工具，就是 <code>metaflac</code> ，這在安裝完 FLAC 就有的，相關更多的指令用法可以參閱 <a href="http://xiph.org/flac/documentation_tools_metaflac.html" title="FLAC 官方文件">FLAC 官方文件</a>， 或是再去找男人 (man)。</p>
+<p>其實看了一下之後， FLAC 可以以塞進去的相關東西可多了，而且不只是可以塞進去還可以<s>拔</s>取出來。</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> metaflac --remove-all your_flac_file.flac</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>先把所有的資訊全部清掉，這會包括所有建立的 <code>seek point</code> ， <code>seek point</code> 的功用可以加速 Player 對於音樂捲動的速度，但是這也是後來可以加進去的，我的感覺是全部清掉，還是沒有清掉的覺沒差。</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> metaflac --set-tag-from-file<span class="o">=</span><span class="s2">&quot;CUESHEET=your_flac_file.cue&quot;</span> your_flac_file.flac</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這樣就可以把 Cue 檔塞進去了，而且 android 上的 <code>DeadBEEF</code> 正確讀出曲目無誤！！！</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> metaflac --import-cuesheet-from<span class="o">=</span>your_flac_file.cue your_flac_file.flac</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這個和上面的差別就是，這個指令就是把分軌資訊以 <code>VORBIS_COMMENT</code> 的方法寫進去，並不會紀錄曲目名稱。</p>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sun Jul. 28 2013</div>
+  <div class="tags">
+    <a href='/archives/categories/linux/'>linux</a>, 
+    <a href='/archives/categories/FLAC/'>FLAC</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/922/#disqus_thread">Comments</a></span>
+  
+</div>
+
+    </article>
+    
+      <div class="share">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+  
+  <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+    
+    
+    <section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
+    
+
+  </div>
+  <footer id="footer" class="inner">
+    Copyright &copy; 
+    2013
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a href='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
+  <script src="/javascripts/slash.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+  
+<script type="text/javascript">
+      var disqus_shortname = 'rennidit';
+      
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.renn999.twbbs.org/archives/922/';
+        var disqus_url = 'http://www.renn999.twbbs.org/archives/922/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12134531-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+</html>

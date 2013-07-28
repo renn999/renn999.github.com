@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  
+  <title><![CDATA[Category: linux | 老伯筆記]]></title>
+  <link href="http://www.renn999.twbbs.org//archives/categories/linux/atom.xml" rel="self"/>
+  
+  <link href="http://www.renn999.twbbs.org/"/>
+  <updated>2013-07-28T16:55:15+0800</updated>
+  <id>http://www.renn999.twbbs.org/</id>
+  <author>
+    <name><![CDATA[renn999]]></name>
+    <email><![CDATA[renn999@gmail.com]]></email>
+  </author>
+  <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[FLAC MetaData 操作]]></title>
+    <link href="http://www.renn999.twbbs.org/archives/922/"/>
+    <updated>2013-07-28T16:07:00+0800</updated>
+    <id>http://www.renn999.twbbs.org/archives/922/</id>
+    <content type="html"><![CDATA[<p><a target="_blank" href="http://minus.com/lbpAqTbTpgmuus"><img src="http://i.minus.com/jbpAqTbTpgmuus.jpg" border="0"/></a></p>
+<h1>我是廢話</h1>
+<hr />
+<p>前幾天真的屎到爆炸，撿鑰匙還會撿到跌倒，但是不幸中的大幸就是沒事，更何況最近都在想說，看到學生們最近都在快樂的暑假生活，心中頓時想說「年輕<s>的肉體</s>真好」，喂！我沒有惡意，不要叫警察啦！！！！！！</p>
+<h1>正題開始</h1>
+<hr />
+<p>之前在我的手機上裝上 <code>DeadBEEF</code> 之後，在聽音樂時才發現到自己從 CD 轉的 FLAC 都沒有辦法顯示出正確的 CD 曲名，我還以為是 <code>abcde</code> 在做成 CUE 檔時因為格式不對而無法讀出，自己重新寫了一堆有的沒有的工具，折騰了好一陣子...Q_Q</p>
+<!--more-->
+
+<p>到最後才發現到原來是 FLAC 其中的 <code>MetaData</code> 的問題，在 <code>abcde</code> 抓完音軌後會自動的把 CUE 檔的分軌資訊以 <code>VORBIS_COMMENT</code> 的方式寫進 FLAC 的 <code>MetaData</code> 中，而 <code>DeadBEEF</code> 會先去讀 <code>VORBIS_COMMENT</code> 其中的分軌資訊後，就不會在另外去讀 CUE 檔，就會造成歌曲的曲目及專輯名稱硬是不給你出來。</p>
+<p>當然要解決這種方式，不要急著重壓啦，其實有可以編輯 FLAC <code>MetaData</code> 的工具，就是 <code>metaflac</code> ，這在安裝完 FLAC 就有的，相關更多的指令用法可以參閱 <a href="http://xiph.org/flac/documentation_tools_metaflac.html" title="FLAC 官方文件">FLAC 官方文件</a>， 或是再去找男人 (man)。</p>
+<p>其實看了一下之後， FLAC 可以以塞進去的相關東西可多了，而且不只是可以塞進去還可以<s>拔</s>取出來。</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> metaflac --remove-all your_flac_file.flac</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>先把所有的資訊全部清掉，這會包括所有建立的 <code>seek point</code> ， <code>seek point</code> 的功用可以加速 Player 對於音樂捲動的速度，但是這也是後來可以加進去的，我的感覺是全部清掉，還是沒有清掉的覺沒差。</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> metaflac --set-tag-from-file<span class="o">=</span><span class="s2">&quot;CUESHEET=your_flac_file.cue&quot;</span> your_flac_file.flac</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這樣就可以把 Cue 檔塞進去了，而且 android 上的 <code>DeadBEEF</code> 正確讀出曲目無誤！！！</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> metaflac --import-cuesheet-from<span class="o">=</span>your_flac_file.cue your_flac_file.flac</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這個和上面的差別就是，這個指令就是把分軌資訊以 <code>VORBIS_COMMENT</code> 的方法寫進去，並不會紀錄曲目名稱。</p>]]></content>
+  </entry>
+  
+</feed>

@@ -76,6 +76,43 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/910/">No handlers could be found for logger &#39;XXXXX&#39;
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>之前在練習寫 Markdown Extension ，寫完要測試時 Bash 一直吐出這樣的訊息</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">No</span> <span class="n">handlers</span> <span class="n">could</span> <span class="n">be</span> <span class="n">found</span> <span class="k">for</span> <span class="n">logger</span> <span class="err">&#39;</span><span class="n">MARKDOWN</span><span class="err">&#39;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>只要在主 python 的程式加上</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="kn">import</span> <span class="nn">logging</span></span>
+<span class='line'><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">()</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>就可以看到吐出來的錯誤訊息，這個東西浪費了我不少時間。</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sun Oct. 21 2012</div>
+  <div class="tags">
+    <a href='/archives/categories/python/'>python</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/910/#disqus_thread">Comments</a></span>
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/909/">Octopress調教メモ之四
 
 </a></h1>
@@ -285,34 +322,6 @@ RSS Feed:<a href="http://feeds.feedburner.com/renn999">http://feeds.feedburner.c
     <a href='/archives/categories/Hello%20World/'>Hello World</a></div>
   
     <span class="comments"><a href="http://www.renn999.twbbs.org/archives/901/#disqus_thread">Comments</a></span>
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/900/">[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>This is the first time I write post in English, so if there are something wrong in my post, please notice me, thanks.</p>
-<p>I have a laptop Asus A43SV, I do not like the windows7, so I install the ubuntu on it. But there are "Some" problem, after I finish install.</p>
-<p>First, Elantech touchpad recognized as PS/2 Logitech mouse, but you can find Elantech models in <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/681904/comments/104" target="_blank">this article.</a></p>
-<p>To solve the Realtek USB multi-card reader On my laptops, I have google it for a long time until yesterday. I find freechelmi said that he mailed to Realtek in <a href="http://ubuntuforums.org/showthread.php?t=1797202#6" target="_blank">this article</a>, and RealTek sent him a driver. This driver works on my laptops.</p>
-<p>Now, Asus Fn keys F9-F12 and some special keys stile not work, I hope ubuntu can support it in next release...</p>
-    
-  
-</div>
-
-<div class="meta">
-  <div class="date">Thu Jul. 21 2011</div>
-  <div class="tags">
-    <a href='/archives/categories/Linux/'>Linux</a>, 
-    <a href='/archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/'>程式相關</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.twbbs.org/archives/900/#disqus_thread">Comments</a></span>
   
 </div>
 </article>
