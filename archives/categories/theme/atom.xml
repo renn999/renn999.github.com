@@ -3,11 +3,11 @@
 
   
   <title><![CDATA[Category: theme | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org//archives/categories/theme/atom.xml" rel="self"/>
+  <link href="http://www.renn999.cc//archives/categories/theme/atom.xml" rel="self"/>
   
-  <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2014-07-06T17:33:05+0800</updated>
-  <id>http://www.renn999.twbbs.org/</id>
+  <link href="http://www.renn999.cc/"/>
+  <updated>2014-07-06T17:54:24+0800</updated>
+  <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -17,9 +17,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之三]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/907/"/>
+    <link href="http://www.renn999.cc/archives/907/"/>
     <updated>2012-09-21T17:22:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/907/</id>
+    <id>http://www.renn999.cc/archives/907/</id>
     <content type="html"><![CDATA[<p>用上了 <code>slash</code> 這個 theme 後，忍不住想要惡搞起來，搞得跟自己的 Terminal 一樣黑底綠字</p>
 <p>附上 diff 檔，但是現在還有一堆東西沒有改上...OTZ</p>
 <!--more-->

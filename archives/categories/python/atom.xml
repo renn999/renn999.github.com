@@ -3,11 +3,11 @@
 
   
   <title><![CDATA[Category: python | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org//archives/categories/python/atom.xml" rel="self"/>
+  <link href="http://www.renn999.cc//archives/categories/python/atom.xml" rel="self"/>
   
-  <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2014-07-06T17:33:05+0800</updated>
-  <id>http://www.renn999.twbbs.org/</id>
+  <link href="http://www.renn999.cc/"/>
+  <updated>2014-07-06T17:54:24+0800</updated>
+  <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -17,9 +17,9 @@
   
   <entry>
     <title type="html"><![CDATA[THBGM python play music]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/918/"/>
+    <link href="http://www.renn999.cc/archives/918/"/>
     <updated>2013-06-09T22:54:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/918/</id>
+    <id>http://www.renn999.cc/archives/918/</id>
     <content type="html"><![CDATA[<p>其實這應該說是接續上一篇，因為我注意到弄出來的直接是 PCM WAVE，可以直接存成 wav，所以說我在想說是不是直接餵給 Sound driver就有音樂跑出來了，但是好像不是這樣，
 本在<s>股溝</s>上找到的都是餵給 OSS，要不然就是要利用 <code>pygame</code>，真的很不想殺雞用牛刀，好不容易找到原來關在在於新的 Linux 都放棄 OSS 改用 ALSA，像是 <a href="http://pyalsaaudio.sourceforge.net/">pyALSAAudio</a> 還好官方有寫些範例參考，最重要的就是真的非常簡單 read frame 後在塞給 driver 就好了，當我的喇叭放出熟悉的音樂真的感動快炸掉了。（謎之音：你真的是自虐到炸掉了！！！！）</p>
 <p>但是老實說，沒時間去研究 GUI 要怎麼寫</p>
@@ -121,9 +121,9 @@
   
   <entry>
     <title type="html"><![CDATA[東方輝針城BGM解出]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/917/"/>
+    <link href="http://www.renn999.cc/archives/917/"/>
     <updated>2013-06-08T22:54:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/917/</id>
+    <id>http://www.renn999.cc/archives/917/</id>
     <content type="html"><![CDATA[<h1>我是廢話</h1>
 <p>大家好，老實說我已經一段時間沒有更新我的 Blog 了，感覺上除了霉味外，我還看見了一大堆菇菇長出來了，當然自從有了工作以後真的時間並沒有比較多，應該說在工作性質的關係整天盯著螢幕真的回家後，看到有鍵盤的東西就一整個賭爛（嘆~！）。</p>
 <h1>正題開始</h1>
@@ -247,9 +247,9 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
   
   <entry>
     <title type="html"><![CDATA[怕了吧! 我用CLI來噗浪 ヽ( ^∀^)ﾉ]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/915/"/>
+    <link href="http://www.renn999.cc/archives/915/"/>
     <updated>2012-11-16T10:56:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/915/</id>
+    <id>http://www.renn999.cc/archives/915/</id>
     <content type="html"><![CDATA[<h1>我是廢話</h1>
 <p>雖然說，最近邁向<s>國家煉金術士</s>的考試還沒有結束，但是沒意外應該是沒問題了，只差需要應景一下的面試。所以說最近異常的活躍(?!)，但是老實說我真的是非常會曬網的人(望向一堆未完成做一半的 project ，<code>pyblogtle</code> ... ， 以及還沒有改版的 <code>wordplurk-improve</code> ...)，算了到時候再說吧 ... 哈哈哈哈哈~~~~~ ( 塊陶啊 ~~ ！ )，( 毆 )( 抓回來~~！)</p>
 <p>先來說說我為啥會做一個CLI的PLURK吧，並不是說Plurk做不好<s>(副聲道：一大堆JAVASCRIP，CSS，and F(畢)CKing ads...)</s>，而是說用CLI是很酷的一件事，正好也看看 Plurk API 2.0 來為 wordplurk-improve 來鋪路。並且減少使用網路頻寬，幫我國偉(ㄌㄨㄥˇ)大(ㄉㄨㄢˋ)的種花電信節省鋪設經費 ... 哈哈哈 ~！怕了吧 ... (毆)明明就是你只有裝最便宜的網路還說...OTZ</p>
@@ -373,9 +373,9 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
   
   <entry>
     <title type="html"><![CDATA[pyBlogtle 計劃啟動 PART II]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/913/"/>
+    <link href="http://www.renn999.cc/archives/913/"/>
     <updated>2012-10-30T10:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/913/</id>
+    <id>http://www.renn999.cc/archives/913/</id>
     <content type="html"><![CDATA[<h2>這是廢話</h2>
 <p>其實老實說東西弄的差不多了，當然有一些<strong>寫的很髒</strong>的地方也修改了一下，當然前幾天因為一個 pull request 被人家說是 over-design 真的感覺上有點言之過重，但是身為一個學習者真的是要虛心受教，或許就是太過於衝動所造成的，而且也缺考慮，呵呵...</p>
 <h2>快速上手</h2>
@@ -414,9 +414,9 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
   
   <entry>
     <title type="html"><![CDATA[pyBlogtle 計劃啟動]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/912/"/>
+    <link href="http://www.renn999.cc/archives/912/"/>
     <updated>2012-10-22T17:03:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/912/</id>
+    <id>http://www.renn999.cc/archives/912/</id>
     <content type="html"><![CDATA[<h2><strong>前言</strong></h2>
 <p>在Octopress用過一陣子之後，最令人詬病的就是 generate 的 speed 一直提升不起來，光是我這只有少少的 136 篇的 markdown 每一次的 generate 就要花上快要 12sec 以下為測試數據</p>
 

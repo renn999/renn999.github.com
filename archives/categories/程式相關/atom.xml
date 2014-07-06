@@ -3,11 +3,11 @@
 
   
   <title><![CDATA[Category: 程式相關 | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org//archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/atom.xml" rel="self"/>
+  <link href="http://www.renn999.cc//archives/categories/%E7%A8%8B%E5%BC%8F%E7%9B%B8%E9%97%9C/atom.xml" rel="self"/>
   
-  <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2014-07-06T17:33:05+0800</updated>
-  <id>http://www.renn999.twbbs.org/</id>
+  <link href="http://www.renn999.cc/"/>
+  <updated>2014-07-06T17:54:24+0800</updated>
+  <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -17,9 +17,9 @@
   
   <entry>
     <title type="html"><![CDATA[THBGM python play music]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/918/"/>
+    <link href="http://www.renn999.cc/archives/918/"/>
     <updated>2013-06-09T22:54:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/918/</id>
+    <id>http://www.renn999.cc/archives/918/</id>
     <content type="html"><![CDATA[<p>其實這應該說是接續上一篇，因為我注意到弄出來的直接是 PCM WAVE，可以直接存成 wav，所以說我在想說是不是直接餵給 Sound driver就有音樂跑出來了，但是好像不是這樣，
 本在<s>股溝</s>上找到的都是餵給 OSS，要不然就是要利用 <code>pygame</code>，真的很不想殺雞用牛刀，好不容易找到原來關在在於新的 Linux 都放棄 OSS 改用 ALSA，像是 <a href="http://pyalsaaudio.sourceforge.net/">pyALSAAudio</a> 還好官方有寫些範例參考，最重要的就是真的非常簡單 read frame 後在塞給 driver 就好了，當我的喇叭放出熟悉的音樂真的感動快炸掉了。（謎之音：你真的是自虐到炸掉了！！！！）</p>
 <p>但是老實說，沒時間去研究 GUI 要怎麼寫</p>
@@ -121,9 +121,9 @@
   
   <entry>
     <title type="html"><![CDATA[東方輝針城BGM解出]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/917/"/>
+    <link href="http://www.renn999.cc/archives/917/"/>
     <updated>2013-06-08T22:54:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/917/</id>
+    <id>http://www.renn999.cc/archives/917/</id>
     <content type="html"><![CDATA[<h1>我是廢話</h1>
 <p>大家好，老實說我已經一段時間沒有更新我的 Blog 了，感覺上除了霉味外，我還看見了一大堆菇菇長出來了，當然自從有了工作以後真的時間並沒有比較多，應該說在工作性質的關係整天盯著螢幕真的回家後，看到有鍵盤的東西就一整個賭爛（嘆~！）。</p>
 <h1>正題開始</h1>
@@ -247,9 +247,9 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
   
   <entry>
     <title type="html"><![CDATA[[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/900/"/>
+    <link href="http://www.renn999.cc/archives/900/"/>
     <updated>2011-07-21T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/900/</id>
+    <id>http://www.renn999.cc/archives/900/</id>
     <content type="html"><![CDATA[<p>This is the first time I write post in English, so if there are something wrong in my post, please notice me, thanks.</p>
 <p>I have a laptop Asus A43SV, I do not like the windows7, so I install the ubuntu on it. But there are "Some" problem, after I finish install.</p>
 <p>First, Elantech touchpad recognized as PS/2 Logitech mouse, but you can find Elantech models in <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/681904/comments/104" target="_blank">this article.</a></p>
@@ -259,9 +259,9 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
   
   <entry>
     <title type="html"><![CDATA[ubuntu11.04使用感使用感外加問題解決]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/894/"/>
+    <link href="http://www.renn999.cc/archives/894/"/>
     <updated>2011-05-10T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/894/</id>
+    <id>http://www.renn999.cc/archives/894/</id>
     <content type="html"><![CDATA[<p>為11.04已經發布了，當初還在想說應該完不到了，但是因為了某些原因，提早結束了Online生活，就理用了讀書所剩餘的時間把完了一下，但是感覺上比較大的不同只有unity外加一堆預設程式被換掉，但是還是用不大習慣。
 外加，顯卡的需求好像變得比較高了...= =a，但是這不是重點，重點是解決問題的快感啊。
 首先就是unity的程式分類，當我要新增一個程式到選單時，沒有辦法放到指定的位置，只職能在所有程式中找到，unity的設定不是使用主選單的分類，而是是用每個~/.local/share/applications下的.desktop設定檔中的Categories來分類的，所以說只要分類對了就可以在unity下的分類中看到。
@@ -270,9 +270,9 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
   
   <entry>
     <title type="html"><![CDATA[mysql轉sqlite]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/861/"/>
+    <link href="http://www.renn999.cc/archives/861/"/>
     <updated>2010-08-11T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/861/</id>
+    <id>http://www.renn999.cc/archives/861/</id>
     <content type="html"><![CDATA[<p>前幾天剛好遇到這個問題，不要問我說為啥我要轉，只是突然想到...XDrz</p>
 <p>可以參考這裡<a href="http://www.sqlite.org/cvstrac/wiki?p=ConverterTools">sqlite - Converter Tools</a></p>
 <p>當然我的作法是將步驟分開來作的</p>

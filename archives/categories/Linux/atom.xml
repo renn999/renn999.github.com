@@ -3,11 +3,11 @@
 
   
   <title><![CDATA[Category: Linux | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org//archives/categories/Linux/atom.xml" rel="self"/>
+  <link href="http://www.renn999.cc//archives/categories/Linux/atom.xml" rel="self"/>
   
-  <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2014-07-06T17:33:05+0800</updated>
-  <id>http://www.renn999.twbbs.org/</id>
+  <link href="http://www.renn999.cc/"/>
+  <updated>2014-07-06T17:54:24+0800</updated>
+  <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -17,9 +17,9 @@
   
   <entry>
     <title type="html"><![CDATA[ubuntu bzip 多核心壓縮]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/920/"/>
+    <link href="http://www.renn999.cc/archives/920/"/>
     <updated>2013-06-29T12:15:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/920/</id>
+    <id>http://www.renn999.cc/archives/920/</id>
     <content type="html"><![CDATA[<p><a target="_blank" href="http://minus.com/lF1skVGXcqp2"><img src="http://i.minus.com/jF1skVGXcqp2.png" border="0"/></a></p>
 <h1>我是廢話</h1>
 <hr />
@@ -158,9 +158,9 @@
   
   <entry>
     <title type="html"><![CDATA[手機利用Ubuntu 12.04藍芽播放音樂]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/919/"/>
+    <link href="http://www.renn999.cc/archives/919/"/>
     <updated>2013-06-27T19:34:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/919/</id>
+    <id>http://www.renn999.cc/archives/919/</id>
     <content type="html"><![CDATA[<p><a target="_blank" href="http://minus.com/lbb6crUa4PpdPT"><img src="http://i.minus.com/jbb6crUa4PpdPT.jpg" border="0"/></a></p>
 <h1>這是廢話</h1>
 <hr />
@@ -202,9 +202,9 @@
   
   <entry>
     <title type="html"><![CDATA[THBGM python play music]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/918/"/>
+    <link href="http://www.renn999.cc/archives/918/"/>
     <updated>2013-06-09T22:54:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/918/</id>
+    <id>http://www.renn999.cc/archives/918/</id>
     <content type="html"><![CDATA[<p>其實這應該說是接續上一篇，因為我注意到弄出來的直接是 PCM WAVE，可以直接存成 wav，所以說我在想說是不是直接餵給 Sound driver就有音樂跑出來了，但是好像不是這樣，
 本在<s>股溝</s>上找到的都是餵給 OSS，要不然就是要利用 <code>pygame</code>，真的很不想殺雞用牛刀，好不容易找到原來關在在於新的 Linux 都放棄 OSS 改用 ALSA，像是 <a href="http://pyalsaaudio.sourceforge.net/">pyALSAAudio</a> 還好官方有寫些範例參考，最重要的就是真的非常簡單 read frame 後在塞給 driver 就好了，當我的喇叭放出熟悉的音樂真的感動快炸掉了。（謎之音：你真的是自虐到炸掉了！！！！）</p>
 <p>但是老實說，沒時間去研究 GUI 要怎麼寫</p>
@@ -306,9 +306,9 @@
   
   <entry>
     <title type="html"><![CDATA[[Ubuntu] Solve The Realtek USB Multi-card Reader On Laptops]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/900/"/>
+    <link href="http://www.renn999.cc/archives/900/"/>
     <updated>2011-07-21T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/900/</id>
+    <id>http://www.renn999.cc/archives/900/</id>
     <content type="html"><![CDATA[<p>This is the first time I write post in English, so if there are something wrong in my post, please notice me, thanks.</p>
 <p>I have a laptop Asus A43SV, I do not like the windows7, so I install the ubuntu on it. But there are "Some" problem, after I finish install.</p>
 <p>First, Elantech touchpad recognized as PS/2 Logitech mouse, but you can find Elantech models in <a href="https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/681904/comments/104" target="_blank">this article.</a></p>
@@ -318,9 +318,9 @@
   
   <entry>
     <title type="html"><![CDATA[在ubuntu下播放正版DVD]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/799/"/>
+    <link href="http://www.renn999.cc/archives/799/"/>
     <updated>2010-07-03T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/799/</id>
+    <id>http://www.renn999.cc/archives/799/</id>
     <content type="html"><![CDATA[<p>我知道這是老梗文了，在前幾天翻出了'I, Robot'又懷念了一下，但是在播放的時候一直出現問題，才想到說我沒有灌解CSS相關的東西，<del datetime="2010-07-03T01:45:34+00:00">雖然說看正版的人應該不多吧</del>，但是還是紀錄一下。</p>
 <p><a href="https://help.ubuntu.com/community/RestrictedFormats/PlayingDVDs">ubuntu原文</a> 英文好的請直接喀這裡，....OTZ</p>
 <!--more-->

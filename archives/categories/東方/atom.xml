@@ -3,11 +3,11 @@
 
   
   <title><![CDATA[Category: 東方 | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org//archives/categories/%E6%9D%B1%E6%96%B9/atom.xml" rel="self"/>
+  <link href="http://www.renn999.cc//archives/categories/%E6%9D%B1%E6%96%B9/atom.xml" rel="self"/>
   
-  <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2014-07-06T17:33:05+0800</updated>
-  <id>http://www.renn999.twbbs.org/</id>
+  <link href="http://www.renn999.cc/"/>
+  <updated>2014-07-06T17:54:24+0800</updated>
+  <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -17,9 +17,9 @@
   
   <entry>
     <title type="html"><![CDATA[THBGM python play music]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/918/"/>
+    <link href="http://www.renn999.cc/archives/918/"/>
     <updated>2013-06-09T22:54:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/918/</id>
+    <id>http://www.renn999.cc/archives/918/</id>
     <content type="html"><![CDATA[<p>其實這應該說是接續上一篇，因為我注意到弄出來的直接是 PCM WAVE，可以直接存成 wav，所以說我在想說是不是直接餵給 Sound driver就有音樂跑出來了，但是好像不是這樣，
 本在<s>股溝</s>上找到的都是餵給 OSS，要不然就是要利用 <code>pygame</code>，真的很不想殺雞用牛刀，好不容易找到原來關在在於新的 Linux 都放棄 OSS 改用 ALSA，像是 <a href="http://pyalsaaudio.sourceforge.net/">pyALSAAudio</a> 還好官方有寫些範例參考，最重要的就是真的非常簡單 read frame 後在塞給 driver 就好了，當我的喇叭放出熟悉的音樂真的感動快炸掉了。（謎之音：你真的是自虐到炸掉了！！！！）</p>
 <p>但是老實說，沒時間去研究 GUI 要怎麼寫</p>
@@ -121,9 +121,9 @@
   
   <entry>
     <title type="html"><![CDATA[東方輝針城BGM解出]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/917/"/>
+    <link href="http://www.renn999.cc/archives/917/"/>
     <updated>2013-06-08T22:54:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/917/</id>
+    <id>http://www.renn999.cc/archives/917/</id>
     <content type="html"><![CDATA[<h1>我是廢話</h1>
 <p>大家好，老實說我已經一段時間沒有更新我的 Blog 了，感覺上除了霉味外，我還看見了一大堆菇菇長出來了，當然自從有了工作以後真的時間並沒有比較多，應該說在工作性質的關係整天盯著螢幕真的回家後，看到有鍵盤的東西就一整個賭爛（嘆~！）。</p>
 <h1>正題開始</h1>

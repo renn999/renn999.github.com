@@ -3,11 +3,11 @@
 
   
   <title><![CDATA[Category: git | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org//archives/categories/git/atom.xml" rel="self"/>
+  <link href="http://www.renn999.cc//archives/categories/git/atom.xml" rel="self"/>
   
-  <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2014-07-06T17:33:05+0800</updated>
-  <id>http://www.renn999.twbbs.org/</id>
+  <link href="http://www.renn999.cc/"/>
+  <updated>2014-07-06T17:54:24+0800</updated>
+  <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -17,9 +17,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之四]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/909/"/>
+    <link href="http://www.renn999.cc/archives/909/"/>
     <updated>2012-10-15T10:50:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/909/</id>
+    <id>http://www.renn999.cc/archives/909/</id>
     <content type="html"><![CDATA[<p>前一段時間都是把 Octopress 的 source 跟網頁一起放在 <a href="http://github.com">github</a> 上，最近也是順便看了一下別的 Git repository hosting ，有很多的的服務是都還算不錯的，像是 <a href="http://bitbucket.org">bitbucket</a> (最近他們把所有的介面改過發現到真的還不錯)。</p>
 <!--more-->
 
@@ -37,9 +37,9 @@
   
   <entry>
     <title type="html"><![CDATA[bash prompt加上目前所在的git branch]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/908/"/>
+    <link href="http://www.renn999.cc/archives/908/"/>
     <updated>2012-10-01T19:17:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/908/</id>
+    <id>http://www.renn999.cc/archives/908/</id>
     <content type="html"><![CDATA[<p>最近因為 octopress 的關係，把重大學時代某位NE網友提起的 git 給重新翻出來學，順便把一些在硬碟中塵封已久的一些小 project 給 remote 到一些像是 <a href="http://github.com">github</a> <a href="http://bitbucket.org">bitbucket</a> 等服務上面去。</p>
 <!--more-->
 

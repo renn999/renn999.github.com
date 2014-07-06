@@ -3,11 +3,11 @@
 
   
   <title><![CDATA[Category: 隨便亂寫 | 老伯筆記]]></title>
-  <link href="http://www.renn999.twbbs.org//archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/atom.xml" rel="self"/>
+  <link href="http://www.renn999.cc//archives/categories/%E9%9A%A8%E4%BE%BF%E4%BA%82%E5%AF%AB/atom.xml" rel="self"/>
   
-  <link href="http://www.renn999.twbbs.org/"/>
-  <updated>2014-07-06T17:33:05+0800</updated>
-  <id>http://www.renn999.twbbs.org/</id>
+  <link href="http://www.renn999.cc/"/>
+  <updated>2014-07-06T17:54:24+0800</updated>
+  <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
     <email><![CDATA[renn999@gmail.com]]></email>
@@ -17,9 +17,9 @@
   
   <entry>
     <title type="html"><![CDATA[近日心情]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/905/"/>
+    <link href="http://www.renn999.cc/archives/905/"/>
     <updated>2012-09-17T20:51:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/905/</id>
+    <id>http://www.renn999.cc/archives/905/</id>
     <content type="html"><![CDATA[<p>這是密碼保護文</p>
 <!--more-->
 
@@ -43,9 +43,9 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
   
   <entry>
     <title type="html"><![CDATA[[公告] server硬碟壞掉]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/886/"/>
+    <link href="http://www.renn999.cc/archives/886/"/>
     <updated>2011-04-24T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/886/</id>
+    <id>http://www.renn999.cc/archives/886/</id>
     <content type="html"><![CDATA[<p>老實說，有一段時間沒有更新blog了，但是久久的更新，竟然是這一件壞消息...OTZ。</p>
 <p>就如標題所說的，因為有的服務是我自己寫得程式，但是我犯了一個不可饒恕的錯誤...就是我忘記備份php程式了，造成有的服務可能無時間表的停止服務，因為這個站是我緊急的跟我們一位社團學長借的空間，因為有所限制，所以說短時間內我也不大想要把剩下的服務弄上去。</p>
 <p>在此公告，老伯繪師收集區停開，因為老早之前我就有打算要整個翻修內部程式碼，但是都懶得去動他，剛好趁著硬碟壞掉算是個總結吧...OTZ，但是不要擔心的是說資料庫還留著，但是程式就881了。</p>
@@ -55,9 +55,9 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
   
   <entry>
     <title type="html"><![CDATA[bitly.pro自訂網域的短網址服務]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/769/"/>
+    <link href="http://www.renn999.cc/archives/769/"/>
     <updated>2010-06-12T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/769/</id>
+    <id>http://www.renn999.cc/archives/769/</id>
     <content type="html"><![CDATA[<p>大家都應該知道<a href="http://bit.ly">bit.ly</a>這家的短網址服務，尤其是使用twitter的人，在這網際網路爆炸性發展的時代，我只記得最早我接觸的短網址就是<a href="http://tinyurl.com">tinyurl.com</a>，接著就是<a href="http://0rz.tw">0rz.tw</a> <a href="http://ppt.cc">ppt.cc</a>等，因為在台灣的網際網路頻寬還是如導尿管及奈米碳管等級的網路，BBS在台灣還算是資訊主要來源之一(看現在的記者一天到晚還在抄ptt的新聞就知道了，本人不是鄉民只是奉公守法隱居山林的小民)，由於文字寬度只有78~82個字元，當如果不小心貼上一個熱熱長的網只是非常容易斷成n節，讓網友們點網址的時候還要全部貼完，網頁還不一定連得到。所以說短網址的發明對造福bbs也有不小的幫助，另外一個推手，就是現在另外一個爆炸性發展的微網誌，讓這種服務也真的是爆炸性發展。</p>
 <!--more-->
 
@@ -133,9 +133,9 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
   
   <entry>
     <title type="html"><![CDATA[EveryDNS替代方案FreeDNS]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/732/"/>
+    <link href="http://www.renn999.cc/archives/732/"/>
     <updated>2010-06-07T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/732/</id>
+    <id>http://www.renn999.cc/archives/732/</id>
     <content type="html"><![CDATA[<p>因為之前聽到Everydns被Dyn收購的消息，然而在這一段時間老實說，我是擔心說和時會停止服務，雖然說官方一直說免費服務還是會維持，但是維持到啥時我就不知道了。然而我就開始尋找替代方案。</p>
 <p>我找到了<a href="http://freedns.afraid.org/">FreeDNS</a>，雖然說網址有點難記就是了。</p>
 <p>我也去申請了一個<a href="http://www.dot.tk">.TK</a>的免費網路域名，作為我自己的短網址之用的，真的短了很多。</p>
@@ -144,9 +144,9 @@ var text='FAPxo4QKWFAoRmLSWv6AYtloHztrmwzCIQl2ISTWRaMHX580EEhvYZchXd0ZqAGWwXLoU5
   
   <entry>
     <title type="html"><![CDATA[紀錄一下]]></title>
-    <link href="http://www.renn999.twbbs.org/archives/729/"/>
+    <link href="http://www.renn999.cc/archives/729/"/>
     <updated>2010-05-28T00:00:00+0800</updated>
-    <id>http://www.renn999.twbbs.org/archives/729/</id>
+    <id>http://www.renn999.cc/archives/729/</id>
     <content type="html"><![CDATA[<p>這篇真的沒啥東西可以說，應該只是測試而已，因為今天把server重灌了</p>
 <p>應該都ok了吧...OTZ</p>
 <p>接著看看明天有沒有把備份自動寄到我的信箱就好了...OTZ</p>]]></content>
