@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>OpenShift MySQL User Name Setup in php config file - 老伯筆記</title>
+  <meta name="author" content="renn999">
+  <meta name="description" content="我是廢話 離上次的 blog 更新都快要一年了，雖然說人家說公務員怎樣好又怎樣好，總歸一句話只有「穩定」而已，反倒是說進了公司後總是被告戒言行要注意，這真的是這樣，不能像以前年輕那樣一天到晚都在「中二」的言論等云云，更不能寫些「官場現形記」被肉搜到也不好玩。看到不爽的事情總是都要自己吞掉，公務機關就...">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="http://feeds.feedburner.com/renn999" rel="alternate" title="老伯筆記" type="application/atom+xml">
+  <link rel="canonical" href="">
+  <link href="/favicon.ico" rel="shortcut icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+<body>
+  <header id="header" class="inner"><h1><a href="/">老伯筆記</a></h1>
+<nav id="main-nav"><ul class="main">
+  <li><a href="/archives/">Archives</a></li>
+  <li><a href="/guestbook/">留言板</a></li>
+  <li><a href="http://illust.renn999.twbbs.org/">老伯繪師收集區</a></li>
+</ul></nav>
+<nav id="mobile-nav">
+  <div class="alignleft menu">
+    <a class="button">Menu</a>
+    <div class="container"><ul class="main">
+  <li><a href="/archives/">Archives</a></li>
+  <li><a href="/guestbook/">留言板</a></li>
+  <li><a href="http://illust.renn999.twbbs.org/">老伯繪師收集區</a></li>
+</ul></div>
+  </div>
+  <div class="alignright search">
+    <a class="button"></a>
+    <div class="container">
+      <form action="http://google.com/search" method="get">
+        <input type="text" name="q" results="0">
+        <input type="hidden" name="q" value="site:www.renn999.cc">
+      </form>
+    </div>
+  </div>
+</nav>
+<nav id="sub-nav" class="alignright">
+  <div class="social">
+  	
+  	<a class="plurk" href="http://www.plurk.com/renn999" title="plurk">plurk</a>
+  	
+    
+    <a class="facebook" href="http://www.facebook.com/renn999" title="Facebook">Facebook</a>
+    
+    
+    <a class="google" href="https://plus.google.com/103389845925471617368?rel=author" title="Google+">Google+</a>
+    
+    
+    <a class="twitter" href="http://twitter.com/renn999" title="Twitter">Twitter</a>
+    
+    
+    <a class="github" href="https://github.com/renn999" title="GitHub">GitHub</a>
+    
+    
+    
+    
+    
+    <a class="rss" href="http://feeds.feedburner.com/renn999" title="RSS">RSS</a>
+    
+  </div>
+  <form class="search" action="http://google.com/search" method="get">
+    <input class="alignright" type="text" name="q" results="0">
+    <input type="hidden" name="q" value="site:www.renn999.cc">
+  </form>
+</nav></header>
+  <div id="content" class="inner">
+  
+    
+    <article class="post">
+    
+      
+
+<h1 class="title"><a href="/archives/923/">OpenShift MySQL User Name Setup in php config file
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <h1>我是廢話</h1>
+<hr />
+<p>離上次的 blog 更新都快要一年了，雖然說人家說公務員怎樣好又怎樣好，總歸一句話只有「穩定」而已，反倒是說進了公司後總是被告戒言行要注意，這真的是這樣，不能像以前年輕那樣一天到晚都在「中二」的言論等云云，更不能寫些「官場現形記」被肉搜到也不好玩。看到不爽的事情總是都要自己吞掉，公務機關就是沒有一定的淘汰機制，即使做得在爛都不會有事，要淘汰更是難上加難。</p>
+<p>反正現在時間多了，就可以玩玩以前玩的東西了，反倒是說以前玩的東西反而讓我在工作上真的是如虎添翼。</p>
+<h1>正題開始</h1>
+<hr />
+<p>前幾天在 <a href="http://www.godaddy.com/" title="godaddy">godaddy</a> 上刷了一個 renn999.cc 的網域後總算完成了年輕的時候一個心願，順便就把 blog 等網站的網址更新了，現在連到舊的 renn999.twbbs.org 應該都會自動導到 renn999.cc 了。</p>
+<p>有了就新的 domain name 後，當然就是把以前玩過的東西架構又拿出來玩了，雖然說沒有自己的 Server 但是有 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 老實說就差不多了</p>
+<!--more-->
+
+<p>當然就想說把 <a href="http://yourls.org/" title="YOURLS">YOURLS</a> 實裝在 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 上，但有一個非常大的問題就是在 DB 上，剛好在 OpenShift <a href="https://github.com/openshift/wordpress-example/blob/master/.openshift/config/wp-config.php" title="Wordpress-example">wordpress-example</a> 上看到要怎麼處理就想說紀錄一下。</p>
+<p>其實只要在 config php 中加入</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_HOST&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_HOST&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_PORT&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_PORT&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_USER&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_USERNAME&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_PASS&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_PASSWORD&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_NAME&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_GEAR_NAME&#39;</span><span class="p">));</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>沒想到這麼簡單，這樣就不用在另外去記 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 建立好的 MySQL 帳號密碼等， <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 真是好物啊。</p>
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sat Jul. 12 2014</div>
+  <div class="tags">
+    <a href='/archives/categories/openshift/'>openshift</a>, 
+    <a href='/archives/categories/php/'>php</a>, 
+    <a href='/archives/categories/mysql/'>mysql</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.cc/archives/923/#disqus_thread">Comments</a></span>
+  
+  
+    <div class="share">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_16x16_style">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_plurk"></a>
+<a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52a312f5451cde83"></script>
+<!-- AddThis Button END -->
+</div>
+  
+</div>
+
+    </article>
+    
+    <section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    </section>
+    
+
+  </div>
+  <footer id="footer" class="inner">
+    Copyright &copy; 
+    2014
+    
+        renn999
+    
+    Powered by <a href='https://github.com/renn999/PyBlogtle'>PyBlogtle</a>
+    &amp; theme <a href='http://zespia.tw/Octopress-Theme-Slash/'>slash</a>
+  </footer>
+  <script src="/javascripts/slash.js"></script>
+  <script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+  
+<script type="text/javascript">
+      var disqus_shortname = 'rennidit';
+      
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.renn999.cc/archives/923/';
+        var disqus_url = 'http://www.renn999.cc/archives/923/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12134531-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+</html>

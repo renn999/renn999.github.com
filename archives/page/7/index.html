@@ -76,6 +76,47 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/345/">紀錄一下
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <p>今天算是把全部 文章內容的一堆.co.cc的字眼給幹掉 除了email外，那是google APP的問題了，改天在處理</p>
+<p>在此紀錄一下 先把wordpress的mysql data dump出來後(如何dump請參考<a href="http://www.renn999.twbbs.org/wordpress/archives/184" target="_blank">自動MySQL備份搞定</a>)</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="err">&#39;</span><span class="n">s</span><span class="o">/</span><span class="err">取代的字串</span><span class="o">/</span><span class="err">取代的字串</span><span class="o">/</span><span class="n">g</span><span class="err">&#39;</span> <span class="s">&quot;Wordpress.sql&quot;</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>用gedit開是最不明智的選擇...XD</p>
+<p>在mysql匯回即可</p>
+<p>再把一些轉址設定好(.htaccess)</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">redirectMatch</span> <span class="o">/</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span> <span class="n">http</span><span class="o">:</span><span class="c1">//www.renn999.twbbs.org/$1</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>搞定收工</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Tue Jun. 23 2009</div>
+  <div class="tags">
+    <a href='/archives/categories/Linux/'>Linux</a>, 
+    <a href='/archives/categories/wordpress%E9%9B%9C%E8%A8%98/'>wordpress雜記</a>, 
+    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.cc/archives/345/#disqus_thread">Comments</a></span>
+  
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/339/">From co.cc to twbbs.org
 
 </a></h1>
@@ -391,44 +432,6 @@
     <a href='/archives/categories/Linux/'>Linux</a></div>
   
     <span class="comments"><a href="http://www.renn999.cc/archives/243/#disqus_thread">Comments</a></span>
-  
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/235/">Ubuntu Tweak - 方便設定Ubuntu設定
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>這真是一個好用的工具啊，真的是好用到炸了XD
-如果說要改一些設定的話都要去翻一些設定檔，但是這個Ubuntu Tweak已經完完全全的幫你"寬便便"了
-<ul>
-<li>官網：<a href="http://ubuntu-tweak.com/">Ubuntu Tweak</a></li>
-<li>下載：<a href="http://ubuntu-tweak.com/downloads">Official download page</a>
-</li></ul>
-當初找了老半天的鬼設定，這裡面都有
-看來這個又是一套必裝的軟體了</p>
-<p>一些截圖
-<a href="http://pic.renn999.twbbs.org/view.php?pic=caeba90887c260ec.png"><img src=http://pic.renn999.twbbs.org/thumb/caeba90887c260ec.jpg /></a>
-這是歡迎畫面 感覺上簡單大方
-<a href="http://pic.renn999.twbbs.org/view.php?pic=8693507822a9eb9c.png"><img src=http://pic.renn999.twbbs.org/thumb/8693507822a9eb9c.jpg /></a><a href="http://pic.renn999.twbbs.org/view.php?pic=0ff401cebf7e7317.png"><img src=http://pic.renn999.twbbs.org/thumb/0ff401cebf7e7317.jpg /></a>
-<a href="http://pic.renn999.twbbs.org/view.php?pic=f9dfa4cc0a8f677f.png"><img src=http://pic.renn999.twbbs.org/thumb/f9dfa4cc0a8f677f.jpg /></a><a href="http://pic.renn999.twbbs.org/view.php?pic=838275d11112e148.png"><img src=http://pic.renn999.twbbs.org/thumb/838275d11112e148.jpg /></a>
-但是老實說內部功能可不是簡單大方啊...XD
-<p>大家可以參考參考一下官網的<a href="http://ubuntu-tweak.com/about">About</a> 看來未來的版本應該很令人期待</p></p>
-    
-  
-</div>
-
-<div class="meta">
-  <div class="date">Tue May. 12 2009</div>
-  <div class="tags">
-    <a href='/archives/categories/Linux/'>Linux</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.cc/archives/235/#disqus_thread">Comments</a></span>
   
   
 </div>

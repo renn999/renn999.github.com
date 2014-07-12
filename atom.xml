@@ -6,7 +6,7 @@
   <link href="http://www.renn999.cc/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.cc/"/>
-  <updated>2014-07-06T17:54:24+0800</updated>
+  <updated>2014-07-12T13:38:01+0800</updated>
   <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,41 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OpenShift MySQL User Name Setup in php config file]]></title>
+    <link href="http://www.renn999.cc/archives/923/"/>
+    <updated>2014-07-12T12:59:00+0800</updated>
+    <id>http://www.renn999.cc/archives/923/</id>
+    <content type="html"><![CDATA[<h1>我是廢話</h1>
+<hr />
+<p>離上次的 blog 更新都快要一年了，雖然說人家說公務員怎樣好又怎樣好，總歸一句話只有「穩定」而已，反倒是說進了公司後總是被告戒言行要注意，這真的是這樣，不能像以前年輕那樣一天到晚都在「中二」的言論等云云，更不能寫些「官場現形記」被肉搜到也不好玩。看到不爽的事情總是都要自己吞掉，公務機關就是沒有一定的淘汰機制，即使做得在爛都不會有事，要淘汰更是難上加難。</p>
+<p>反正現在時間多了，就可以玩玩以前玩的東西了，反倒是說以前玩的東西反而讓我在工作上真的是如虎添翼。</p>
+<h1>正題開始</h1>
+<hr />
+<p>前幾天在 <a href="http://www.godaddy.com/" title="godaddy">godaddy</a> 上刷了一個 renn999.cc 的網域後總算完成了年輕的時候一個心願，順便就把 blog 等網站的網址更新了，現在連到舊的 renn999.twbbs.org 應該都會自動導到 renn999.cc 了。</p>
+<p>有了就新的 domain name 後，當然就是把以前玩過的東西架構又拿出來玩了，雖然說沒有自己的 Server 但是有 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 老實說就差不多了</p>
+<!--more-->
+
+<p>當然就想說把 <a href="http://yourls.org/" title="YOURLS">YOURLS</a> 實裝在 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 上，但有一個非常大的問題就是在 DB 上，剛好在 OpenShift <a href="https://github.com/openshift/wordpress-example/blob/master/.openshift/config/wp-config.php" title="Wordpress-example">wordpress-example</a> 上看到要怎麼處理就想說紀錄一下。</p>
+<p>其實只要在 config php 中加入</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_HOST&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_HOST&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_PORT&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_PORT&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_USER&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_USERNAME&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_PASS&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_PASSWORD&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_NAME&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_GEAR_NAME&#39;</span><span class="p">));</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>沒想到這麼簡單，這樣就不用在另外去記 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 建立好的 MySQL 帳號密碼等， <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 真是好物啊。</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[FLAC MetaData 操作]]></title>
@@ -755,114 +790,6 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
 <li>CLI 尚未處理錯誤終止問題</li>
 <li>完整的文件...XDDrz</li>
 </ol>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[pyBlogtle 計劃啟動]]></title>
-    <link href="http://www.renn999.cc/archives/912/"/>
-    <updated>2012-10-22T17:03:00+0800</updated>
-    <id>http://www.renn999.cc/archives/912/</id>
-    <content type="html"><![CDATA[<h2><strong>前言</strong></h2>
-<p>在Octopress用過一陣子之後，最令人詬病的就是 generate 的 speed 一直提升不起來，光是我這只有少少的 136 篇的 markdown 每一次的 generate 就要花上快要 12sec 以下為測試數據</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="go">real  0m12.665s</span></span>
-<span class='line'><span class="go">user  0m12.053s</span></span>
-<span class='line'><span class="go">sys   0m0.564s</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>所以在想如果利用其他語言編輯不知道效果如何，我到最後選定的基本語言就是python，因為眾多的 extension 也是我的考量之一吧...(沒錯我就是懶)，另外因為 <a href="http://flask.pocoo.org/">Flask</a> 那是因為</p>
-<blockquote>
-<p>Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed!</p>
-</blockquote>
-<p>我有利用其來編寫過一些網頁，對與它的功能及速度上有著非常深刻的映像，外加 <a href="http://flask.pocoo.org/">Flask</a> 的 extension 也是非常多，尤其是 <a href="http://packages.python.org/Frozen-Flask/">Frozen-Flask</a> 才是本次的主角，外加本人真的有點<s>潔癖</s>潔屁，不喜歡一大堆東西混雜的放在一起（看向 octopress 的 _source 資料夾）。</p>
-<!--more-->
-
-<h2><strong>由來</strong></h2>
-<p>為何叫做<code>pyBlogtle</code></p>
-<blockquote>
-<p>flask is a kind of bottle.<br />
-so Python + Flask + Blog =&gt; Pyblogtle</p>
-</blockquote>
-<p>就是這麼簡單，目前 source 我是放在 <a href="https://bitbucket.org/renn999/pyblogtle">Bitbucket/PyBlogtle</a> 有興趣的人可以 clone 下來看看。</p>
-<h2><strong>HOT TO USE</strong></h2>
-<p>首先需要先配置python所需要得環境，而 <code>require</code> 內部為所需要的 python extension 可以利用 easy_install 安裝</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="err">`</span><span class="n">cat</span> <span class="n">require</span><span class="err">`</span><span class="p">;</span><span class="k">do</span> <span class="n">sudo</span> <span class="n">easy_install</span> <span class="err">$</span><span class="n">i</span><span class="p">;</span><span class="n">done</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>基本上只要將所有的 Markdown File 的副檔名 rename 成 <code>.markdown</code> 並且還要轉換一下，因為 Octopress 的 meta head 的格式在這裡完全不通的</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span></pre></td><td class='code'><pre><code><span class='line'><span class="o">---</span></span>
-<span class='line'><span class="nl">layout:</span> <span class="n">post</span></span>
-<span class='line'><span class="nl">title:</span> <span class="n">brabrabrabra</span></span>
-<span class='line'><span class="nl">date:</span> <span class="err">&#39;</span><span class="mi">20</span><span class="n">XX</span><span class="o">-</span><span class="n">XX</span><span class="o">-</span><span class="n">XX</span><span class="err">&#39;</span></span>
-<span class='line'><span class="nl">comments:</span> <span class="nb">true</span></span>
-<span class='line'><span class="nl">categories:</span><span class="n">brabrabrabra</span></span>
-<span class='line'><span class="nl">permalink:</span> </span>
-<span class='line'><span class="o">---</span></span>
-<span class='line'><span class="n">brararararararrarararrrarar</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>閉需要換成</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">layout</span><span class="o">:</span> <span class="n">post</span></span>
-<span class='line'><span class="n">title</span><span class="o">:</span> <span class="n">brabrabrabra</span></span>
-<span class='line'><span class="n">date</span><span class="o">:</span> <span class="s1">&#39;20XX-XX-XX&#39;</span></span>
-<span class='line'><span class="n">comments</span><span class="o">:</span> <span class="kc">true</span></span>
-<span class='line'><span class="n">categories</span><span class="o">:</span><span class="n">brabrabrabra</span></span>
-<span class='line'><span class="n">permalink</span><span class="o">:</span></span>
-<span class='line'></span>
-<span class='line'><span class="n">brararararararrarararrrarar</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>在 bash 底下只要下以下的指令就可以轉換了(請記得要備份)：</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="err">`</span><span class="n">ls</span> <span class="o">*</span><span class="err">`</span><span class="p">;</span> <span class="k">do</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="s">&quot;1d&quot;</span> <span class="s">&quot;$i&quot;</span><span class="p">;</span><span class="n">done</span></span>
-<span class='line'><span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="err">`</span><span class="n">ls</span> <span class="o">*</span><span class="err">`</span><span class="p">;</span> <span class="k">do</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="s">&quot;s/---//&quot;</span> <span class="s">&quot;$i&quot;</span><span class="p">;</span><span class="n">done</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>轉換完後就就可以丟到 page 的 folder 並且下</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">preview</span> <span class="err">#這是預覽</span></span>
-<span class='line'><span class="n">python</span> <span class="n">blogtle</span><span class="p">.</span><span class="n">py</span> <span class="n">build</span>   <span class="err">#這是產生</span> <span class="k">static</span> <span class="n">file</span> <span class="err">放在</span> <span class="n">build</span> <span class="n">folder</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>時間測試：</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="go">real  0m1.929s</span></span>
-<span class='line'><span class="go">user  0m1.840s</span></span>
-<span class='line'><span class="go">sys   0m0.080s</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>目前真的只是半成品而已，請大家鞭小力點...OTZ</p>]]></content>
   </entry>
   
 </feed>

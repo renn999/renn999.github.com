@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  
+  <title><![CDATA[Category: mysql | 老伯筆記]]></title>
+  <link href="http://www.renn999.cc//archives/categories/mysql/atom.xml" rel="self"/>
+  
+  <link href="http://www.renn999.cc/"/>
+  <updated>2014-07-12T13:38:01+0800</updated>
+  <id>http://www.renn999.cc/</id>
+  <author>
+    <name><![CDATA[renn999]]></name>
+    <email><![CDATA[renn999@gmail.com]]></email>
+  </author>
+  <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OpenShift MySQL User Name Setup in php config file]]></title>
+    <link href="http://www.renn999.cc/archives/923/"/>
+    <updated>2014-07-12T12:59:00+0800</updated>
+    <id>http://www.renn999.cc/archives/923/</id>
+    <content type="html"><![CDATA[<h1>我是廢話</h1>
+<hr />
+<p>離上次的 blog 更新都快要一年了，雖然說人家說公務員怎樣好又怎樣好，總歸一句話只有「穩定」而已，反倒是說進了公司後總是被告戒言行要注意，這真的是這樣，不能像以前年輕那樣一天到晚都在「中二」的言論等云云，更不能寫些「官場現形記」被肉搜到也不好玩。看到不爽的事情總是都要自己吞掉，公務機關就是沒有一定的淘汰機制，即使做得在爛都不會有事，要淘汰更是難上加難。</p>
+<p>反正現在時間多了，就可以玩玩以前玩的東西了，反倒是說以前玩的東西反而讓我在工作上真的是如虎添翼。</p>
+<h1>正題開始</h1>
+<hr />
+<p>前幾天在 <a href="http://www.godaddy.com/" title="godaddy">godaddy</a> 上刷了一個 renn999.cc 的網域後總算完成了年輕的時候一個心願，順便就把 blog 等網站的網址更新了，現在連到舊的 renn999.twbbs.org 應該都會自動導到 renn999.cc 了。</p>
+<p>有了就新的 domain name 後，當然就是把以前玩過的東西架構又拿出來玩了，雖然說沒有自己的 Server 但是有 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 老實說就差不多了</p>
+<!--more-->
+
+<p>當然就想說把 <a href="http://yourls.org/" title="YOURLS">YOURLS</a> 實裝在 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 上，但有一個非常大的問題就是在 DB 上，剛好在 OpenShift <a href="https://github.com/openshift/wordpress-example/blob/master/.openshift/config/wp-config.php" title="Wordpress-example">wordpress-example</a> 上看到要怎麼處理就想說紀錄一下。</p>
+<p>其實只要在 config php 中加入</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">&lt;?php</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_HOST&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_HOST&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_PORT&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_PORT&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_USER&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_USERNAME&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_PASS&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_MYSQL_DB_PASSWORD&#39;</span><span class="p">));</span></span>
+<span class='line'><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DB_NAME&#39;</span><span class="p">,</span> <span class="nb">getenv</span><span class="p">(</span><span class="s1">&#39;OPENSHIFT_GEAR_NAME&#39;</span><span class="p">));</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>沒想到這麼簡單，這樣就不用在另外去記 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 建立好的 MySQL 帳號密碼等， <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 真是好物啊。</p>]]></content>
+  </entry>
+  
+</feed>
