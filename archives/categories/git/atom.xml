@@ -6,7 +6,7 @@
   <link href="http://www.renn999.cc//archives/categories/git/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.cc/"/>
-  <updated>2014-07-12T13:38:01+0800</updated>
+  <updated>2014-07-13T16:52:37+0800</updated>
   <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,75 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OpenShift Daily Backup and Push to Git]]></title>
+    <link href="http://www.renn999.cc/archives/924/"/>
+    <updated>2014-07-13T15:41:00+0800</updated>
+    <id>http://www.renn999.cc/archives/924/</id>
+    <content type="html"><![CDATA[<h1>我是廢話</h1>
+<hr />
+<p>嘛~！(滾來滾去~！</p>
+<h1>正題開始</h1>
+<hr />
+<p>在 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 上雖然有提供備份功能，但是僅只要備份 SQL 資料還是牛刀一把，當然 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 尚有提供 Cron 等工具，反而直接 dump sql 資料出來反而是一個比較直覺的方法。我也看過不少的做法，例如<a href="http://www.skyebook.net/blog/2012/08/openshift-postgresql-backups/">這篇</a>利用 rsync ，但是固定一段時間就要去下一次指令。所以我就想說有沒有直接可以 psuh 上 git private repo 的方法，這樣就不用固定都還要從 app 上拉下來。</p>
+<!--more-->
+
+<p>但是因為 <a href="https://www.openshift.com" title="OpenShift">OpenShift</a> 上權限的關系，要 ssh 真是一件大工程，裡面唯一個可以寫入又不會被清掉的資料夾大概就只有一個 <code>$OPENSHIFT_DATA_DIR</code> ，可以用的指令也算不錯多 <code>ssh-keygen</code>、<code>ssh-agent</code>...等，繞個路應該還是可以達到想要的效果。</p>
+<p>當然 ssh-keygen 等相關技術文件請參閱 <a href="https://github.com">github</a> <a href="https://help.github.com/articles/generating-ssh-keys">Generating SSH Keys</a> 文章，但是其中在 ssh-keygen 要產生 key 時會問 key 要存放在哪裡，請將其指定到 <code>$OPENSHIFT_DATA_DIR</code> 中，接著就可以把 pubkey 加入到 github 或其他類似網站的信任清單中後，就可以測試了。</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">eval</span> <span class="s2">&quot;$(ssh-agent -s)&quot;</span></span>
+<span class='line'>ssh-add <span class="nv">$OPENSHIFT_DATA_DIR</span><span class="s1">&#39;your/id_rsa/key/path&#39;</span></span>
+<span class='line'>ssh -o <span class="nv">UserKnownHostsFile</span><span class="o">=</span>/dev/null -o <span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no -T git@github.com</span>
+<span class='line'>killall ssh-agent</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果看到</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>表示成功了，但在這裡算是完成步驟的三分之二而已，當然要讓 git 的 ssh 作用還要建立一個假的 ssh 在 <code>$OPENSHIFT_DATA_DIR</code> 中</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">cd</span> <span class="nv">$OPENSHIFT_DATA_DIR</span></span>
+<span class='line'><span class="nb">echo</span> <span class="s1">&#39;ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $*&#39;</span> &gt; ssh</span>
+<span class='line'>chmod +x ssh</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>當然就可以將相關的 git 資料夾建立 init add remote 相關資訊建立好後就可以寫入到 cron 中</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
+<span class='line-number'> 2</span>
+<span class='line-number'> 3</span>
+<span class='line-number'> 4</span>
+<span class='line-number'> 5</span>
+<span class='line-number'> 6</span>
+<span class='line-number'> 7</span>
+<span class='line-number'> 8</span>
+<span class='line-number'> 9</span>
+<span class='line-number'>10</span></pre></td><td class='code'><pre><code><span class='line'><span class="c">##copy or generate backup file into the folder. and cd into it.</span></span>
+<span class='line'>...</span>
+<span class='line'><span class="c">##start git commend</span></span>
+<span class='line'>git add .</span>
+<span class='line'>git commit -a -m <span class="s2">&quot;git commit message&quot;</span></span>
+<span class='line'></span>
+<span class='line'><span class="nb">eval</span> <span class="s2">&quot;$(ssh-agent -s)&quot;</span></span>
+<span class='line'>ssh-add <span class="nv">$OPENSHIFT_DATA_DIR</span><span class="s1">&#39;your/id_rsa/key/path&#39;</span></span>
+<span class='line'><span class="nv">GIT_TRACE</span><span class="o">=</span>1 <span class="nv">GIT_SSH</span><span class="o">=</span><span class="nv">$OPENSHIFT_DATA_DIR</span><span class="s2">&quot;ssh&quot;</span> git push</span>
+<span class='line'>killall ssh-agent</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這樣時間一到就如果有任何變動的話就會 commit 並且 push 到相關的 git repo 中了。</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress調教メモ之四]]></title>
