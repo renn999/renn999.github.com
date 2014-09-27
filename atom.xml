@@ -6,7 +6,7 @@
   <link href="http://www.renn999.cc/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.cc/"/>
-  <updated>2014-07-20T21:57:08+0800</updated>
+  <updated>2014-09-27T17:43:38+0800</updated>
   <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,33 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[在 Ubuntu 下修復 Windows7 Boot Loader]]></title>
+    <link href="http://www.renn999.cc/archives/925/"/>
+    <updated>2014-09-27T17:25:00+0800</updated>
+    <id>http://www.renn999.cc/archives/925/</id>
+    <content type="html"><![CDATA[<h1>我是廢話</h1>
+<hr />
+<p>這次還是沒有廢話...</p>
+<h1>正題開始</h1>
+<hr />
+<p>之前為了玩一個遊戲把 Windows7 召喚回來，但是還原後還是開不了機，原來 ASUS 筆電內件還原根本不會修復 Boot Loader ，臉上頓時三條線，手邊又沒有 Windows7 安裝光碟，剛好又 google 到在 Ubuntu 下可以直接修復 Boot Loader 的方法，發現到超簡單的...</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="nv">$ </span>sudo apt-get update</span>
+<span class='line'><span class="nv">$ </span>sudo apt-get install syslinux</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>然後利用 <code>fdisk</code> 或 <code>gpatred</code> 確認安裝的硬碟代號，這裡假設<code>/dev/sda</code></p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="nv">$ </span>sudo dd <span class="k">if</span><span class="o">=</span>/usr/lib/syslinux/mbr.bin <span class="nv">of</span><span class="o">=</span>/dev/sda</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這樣就可以了...</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenShift Daily Backup and Push to Git]]></title>
@@ -769,55 +796,6 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
 <li>目前只有TimeLine上得功能 未來應該會把所有功能加上</li>
 <li>Not Support Windows.`</li>
 </ul>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[apache virtualhost 開啟其他 port]]></title>
-    <link href="http://www.renn999.cc/archives/914/"/>
-    <updated>2012-11-05T09:30:00+0800</updated>
-    <id>http://www.renn999.cc/archives/914/</id>
-    <content type="html"><![CDATA[<p>因為本機剛好有架設測試用的 apache server ，因為在寫完 blog 之後都很習慣的利用 <code>preview</code> 指令，我在想說乾脆一個 apache virtualhost 指向其他 port 之後直接下 <code>build</code> 就好了，如果沒問題直接 <code>deploy</code>。</p>
-<!--more-->
-
-<p>在 <code>/etc/apache2/sites-available/</code> 建立一個 apache conf</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span></pre></td><td class='code'><pre><code><span class='line'><span class="nb">Listen</span> <span class="m">8080</span></span>
-<span class='line'><span class="c">#port to Listen</span></span>
-<span class='line'><span class="nb">NameVirtualHost</span> *:8080</span>
-<span class='line'><span class="nt">&lt;VirtualHost</span> <span class="s">*:8080</span><span class="nt">&gt;</span></span>
-<span class='line'>  <span class="nb">ServerAdmin</span> webmaster@localhost</span>
-<span class='line'>  <span class="nb">DocumentRoot</span> <span class="sx">/path/to/build</span></span>
-<span class='line'>  <span class="nt">&lt;Directory</span> <span class="s">/path/to/build/</span><span class="nt">&gt;</span></span>
-<span class='line'>    <span class="nb">Options</span> Indexes FollowSymLinks MultiViews</span>
-<span class='line'>    <span class="nb">AllowOverride</span> <span class="k">None</span></span>
-<span class='line'>    <span class="nb">Order</span> allow,deny</span>
-<span class='line'>    <span class="nb">allow</span> from <span class="k">all</span></span>
-<span class='line'>  <span class="nt">&lt;/Directory&gt;</span></span>
-<span class='line'><span class="nt">&lt;/VirtualHost&gt;</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>儲存後記得</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">$</span> sudo a2ensite &lt;your-apache-conf-name&gt;</span>
-<span class='line'><span class="gp">$</span> sudo service apache2 reload</span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>雖然說我的 pyblogtle preview 花不了多少時間...OTZ</p>]]></content>
   </entry>
   
 </feed>

@@ -76,6 +76,50 @@
     
         <article class="post">
 
+<h1 class="title"><a href="/archives/925/">在 Ubuntu 下修復 Windows7 Boot Loader
+
+</a></h1>
+
+<div class="entry-content">
+  
+    <h1>我是廢話</h1>
+<hr />
+<p>這次還是沒有廢話...</p>
+<h1>正題開始</h1>
+<hr />
+<p>之前為了玩一個遊戲把 Windows7 召喚回來，但是還原後還是開不了機，原來 ASUS 筆電內件還原根本不會修復 Boot Loader ，臉上頓時三條線，手邊又沒有 Windows7 安裝光碟，剛好又 google 到在 Ubuntu 下可以直接修復 Boot Loader 的方法，發現到超簡單的...</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="nv">$ </span>sudo apt-get update</span>
+<span class='line'><span class="nv">$ </span>sudo apt-get install syslinux</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>然後利用 <code>fdisk</code> 或 <code>gpatred</code> 確認安裝的硬碟代號，這裡假設<code>/dev/sda</code></p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="nv">$ </span>sudo dd <span class="k">if</span><span class="o">=</span>/usr/lib/syslinux/mbr.bin <span class="nv">of</span><span class="o">=</span>/dev/sda</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這樣就可以了...</p>
+    
+  
+</div>
+
+<div class="meta">
+  <div class="date">Sat Sep. 27 2014</div>
+  <div class="tags">
+    <a href='/archives/categories/windows/'>windows</a>, 
+    <a href='/archives/categories/ubuntu/'>ubuntu</a></div>
+  
+    <span class="comments"><a href="http://www.renn999.cc/archives/925/#disqus_thread">Comments</a></span>
+  
+  
+</div>
+</article>
+    
+        <article class="post">
+
 <h1 class="title"><a href="/archives/924/">OpenShift Daily Backup and Push to Git
 
 </a></h1>
@@ -348,30 +392,6 @@
     <a href='/archives/categories/CLI/'>CLI</a></div>
   
     <span class="comments"><a href="http://www.renn999.cc/archives/915/#disqus_thread">Comments</a></span>
-  
-  
-</div>
-</article>
-    
-        <article class="post">
-
-<h1 class="title"><a href="/archives/914/">apache virtualhost 開啟其他 port
-
-</a></h1>
-
-<div class="entry-content">
-  
-    <p>因為本機剛好有架設測試用的 apache server ，因為在寫完 blog 之後都很習慣的利用 <code>preview</code> 指令，我在想說乾脆一個 apache virtualhost 指向其他 port 之後直接下 <code>build</code> 就好了，如果沒問題直接 <code>deploy</code>。</p>
-    <a href="/archives/914/" class="more-link">Read More ...</a>
-  
-</div>
-
-<div class="meta">
-  <div class="date">Mon Nov.  5 2012</div>
-  <div class="tags">
-    <a href='/archives/categories/%E6%9E%B6%E7%AB%99%E7%9B%B8%E9%97%9C/'>架站相關</a></div>
-  
-    <span class="comments"><a href="http://www.renn999.cc/archives/914/#disqus_thread">Comments</a></span>
   
   
 </div>
