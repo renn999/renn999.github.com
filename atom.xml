@@ -6,7 +6,7 @@
   <link href="http://www.renn999.cc/atom.xml" rel="self"/>
   
   <link href="http://www.renn999.cc/"/>
-  <updated>2014-10-12T22:09:13+0800</updated>
+  <updated>2016-05-14T23:37:21+0800</updated>
   <id>http://www.renn999.cc/</id>
   <author>
     <name><![CDATA[renn999]]></name>
@@ -14,6 +14,63 @@
   </author>
   <generator uri="http://bbk.renn999.twbbs.org/pyblogtle">pyBlogtle</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 16.04 tty FBTerm 取代]]></title>
+    <link href="http://www.renn999.cc/archives/926/"/>
+    <updated>2016-05-14T22:53:00+0800</updated>
+    <id>http://www.renn999.cc/archives/926/</id>
+    <content type="html"><![CDATA[<h2>我是廢話</h2>
+<p>真是抱歉真的很久沒有更新 blog 了，看樣子真的長了一層厚厚的黴菌，人生 online 這東西真的太可怕了，除了整天的工作外還是工作，沒時間搞自己想搞的東西結果一大堆東西就開始放置 play 了。</p>
+<h2>正題開始</h2>
+<p>會開始想要寫一些東西是因爲參加了 Ubuntu release party ，剛好聽到了一些關鍵字，就剛好解決了我之前多個問題就是在 tty 底下的中文都會不見所以說這一次的聚會就剛好聽到原來是要利用 Fbterm 來解決問題。剛好就研究了一下要怎麼處理。</p>
+<!--more-->
+
+<p>首先先安裝 Fbterm</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>sudo apt-get install fbterm</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>接着就是要把 tty 取代掉但是我試了很多的方法到最後還是改成修改<code>.profile</code> 的做法會比較好點，這樣不用動到很多系統檔案，在 tty 底下登入後就會執行 Fbterm 了，安裝完要先處理一些權限的問題，就是讓非 root 的使用者可以調用 video 及系統快捷鍵資源：</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'>sudo gpasswd -a YOUR_USERNAME video</span>
+<span class='line'>sudo setcap <span class="s1">&#39;cap_sys_tty_config+ep&#39;</span> /usr/bin/fbterm</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>接着修改<code>.profile</code>檔</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span></pre></td><td class='code'><pre><code><span class='line'><span class="c"># 確認如果在tty底下就執行 fbtrem</span></span>
+<span class='line'><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;$TERM&quot;</span> <span class="o">=</span> <span class="s2">&quot;linux&quot;</span> <span class="o">]</span>; <span class="k">then</span></span>
+<span class='line'>  <span class="c"># exec fbterm</span></span>
+<span class='line'>  <span class="nv">LC_CTYPE</span><span class="o">=</span>zh_TW.UTF-8 <span class="nb">exec </span>fbterm</span>
+<span class='line'><span class="k">fi</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>這樣後就是可以試試看在 tty 底下登入後是否會執行 Fbterm 了，當然Fbterm 的配置在 <code>.fbtermrc</code> 底下當然可以依照自己的喜好配置字體或字體、大小等。</p>
+<p>接着就是配置中文輸入，到目前爲止唯一正常的就是 fcitx 了，當然先安裝吧</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'>sudo apt-get install fcitx fcitx-chewing fcitx-frontend-all fcitx-libpinyin im-config</span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>我是覺得 libpinyin 的注音輸入方式比較像 HIME 的詞音，看看喜歡哪種輸入法就找找看吧</p>
+<p>安裝完後如果用其他輸入法的，很抱歉如果要在 fbterm 底下輸入中文就只能選一種使用開啓 <code>im-config</code>，把預設輸入法改成 <code>fcitx</code> 重新開機，並修改<code>.fbtermrc</code>找到<code>input-method=</code>改成</p>
+
+<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">input</span><span class="o">-</span><span class="n">method</span><span class="o">=</span><span class="n">fcitx</span><span class="o">-</span><span class="n">fbterm</span></span>
+<span class='line'></span></code></pre></td></tr></table></div></figure>
+
+
+<p>就可以試試看有沒有問題了，但是用了幾次 fcitx 都會當掉的情況要殺掉 dbus 重開才可以解決問題</p>
+<p>至於其他fbterm的配置改天在來寫吧</p>]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[在 Ubuntu 下修復 Windows7 Boot Loader]]></title>
@@ -670,132 +727,6 @@ th14_07.wav 06 e2 ea 50  01 1d 22 80  00 23 cf 40  01 1d 22 80  00 02 00 01  00 
 
 
 <p>如果是出現 500 error 請參照 error.log 修正</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[怕了吧! 我用CLI來噗浪 ヽ( ^∀^)ﾉ]]></title>
-    <link href="http://www.renn999.cc/archives/915/"/>
-    <updated>2012-11-16T10:56:00+0800</updated>
-    <id>http://www.renn999.cc/archives/915/</id>
-    <content type="html"><![CDATA[<h1>我是廢話</h1>
-<p>雖然說，最近邁向<s>國家煉金術士</s>的考試還沒有結束，但是沒意外應該是沒問題了，只差需要應景一下的面試。所以說最近異常的活躍(?!)，但是老實說我真的是非常會曬網的人(望向一堆未完成做一半的 project ，<code>pyblogtle</code> ... ， 以及還沒有改版的 <code>wordplurk-improve</code> ...)，算了到時候再說吧 ... 哈哈哈哈哈~~~~~ ( 塊陶啊 ~~ ！ )，( 毆 )( 抓回來~~！)</p>
-<p>先來說說我為啥會做一個CLI的PLURK吧，並不是說Plurk做不好<s>(副聲道：一大堆JAVASCRIP，CSS，and F(畢)CKing ads...)</s>，而是說用CLI是很酷的一件事，正好也看看 Plurk API 2.0 來為 wordplurk-improve 來鋪路。並且減少使用網路頻寬，幫我國偉(ㄌㄨㄥˇ)大(ㄉㄨㄢˋ)的種花電信節省鋪設經費 ... 哈哈哈 ~！怕了吧 ... (毆)明明就是你只有裝最便宜的網路還說...OTZ</p>
-<!--more-->
-
-<h1>安裝</h1>
-<h2>需求</h2>
-<ul>
-<li><a href="https://github.com/clsung/plurk-oauth">plurk-oauth</a></li>
-<li><a href="http://pypi.python.org/pypi/termcolor">termcolor</a></li>
-</ul>
-<h2>建立所需要的環境</h2>
-<h3>安裝 <a href="https://github.com/clsung/plurk-oauth">plurk-oauth</a></h3>
-<h4>git clone from https://github.com/clsung/plurk-oauth</h4>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/clsung/plurk-oauth</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<h4>安裝和建立</h4>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">build</span></span>
-<span class='line'><span class="n">sudo</span> <span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">install</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<h3>安裝 termcolor</h3>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">termcolor</span></span>
-<span class='line'><span class="n">or</span></span>
-<span class='line'><span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">termcolor</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<h2>安裝PLURK-CLI</h2>
-<h3>Ubuntu 環境下</h3>
-<p>可以直接<a href="https://github.com/downloads/renn999/Plurk-CLI/plurk-cli_0.1-1_all.deb">下載</a> deb，直接安裝，或下</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="gp">#</span> dpkg -i plurk-cli_0.1-1_all.deb</span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<h3>其他版本 Linux</h3>
-<p>Git clone from Github https://github.com/renn999/Plurk-CLI</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//github.com/renn999/Plurk-CLI.git</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>在要<code>make</code>之前 修改 <code>makefile</code> 的開頭符合你的Linux版本</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">PERFIX</span><span class="o">=/</span><span class="n">usr</span></span>
-<span class='line'><span class="n">ETCPERFIX</span><span class="o">=/</span><span class="n">etc</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<p>然後開心make</p>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span></pre></td><td class='code'><pre><code><span class='line'><span class="cp">#install</span></span>
-<span class='line'><span class="err">$</span> <span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span></span>
-<span class='line'><span class="cp">#uninstall</span></span>
-<span class='line'><span class="err">$</span> <span class="n">sudo</span> <span class="n">make</span> <span class="n">uninstall</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<h2>使用</h2>
-
-<figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'> 1</span>
-<span class='line-number'> 2</span>
-<span class='line-number'> 3</span>
-<span class='line-number'> 4</span>
-<span class='line-number'> 5</span>
-<span class='line-number'> 6</span>
-<span class='line-number'> 7</span>
-<span class='line-number'> 8</span>
-<span class='line-number'> 9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span></pre></td><td class='code'><pre><code><span class='line'><span class="n">plurk</span> <span class="n">add</span> <span class="p">[</span><span class="n">qualifier</span><span class="p">]</span> <span class="p">[</span><span class="n">content</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">nc</span> <span class="o">-</span><span class="n">fc</span><span class="p">]</span></span>
-<span class='line'>      <span class="n">get</span> <span class="p">[</span><span class="o">--</span><span class="n">offset</span> <span class="p">[</span><span class="n">time</span> <span class="n">Type</span><span class="o">:</span> <span class="n">YYYY</span><span class="o">-</span><span class="n">mm</span><span class="o">-</span><span class="n">ddTHH</span><span class="o">:</span><span class="n">MM</span><span class="o">:</span><span class="n">SS</span><span class="p">]]</span> <span class="p">[</span><span class="o">--</span><span class="n">filter</span> <span class="p">[</span><span class="n">only_user</span> <span class="n">only_responded</span> <span class="n">only_private</span> <span class="n">only_favorite</span><span class="p">]]</span></span>
-<span class='line'>      <span class="n">resp_add</span> <span class="p">[</span><span class="n">plurk_id</span><span class="p">]</span> <span class="p">[</span><span class="n">qualifier</span><span class="p">]</span> <span class="p">[</span><span class="n">content</span><span class="p">]</span></span>
-<span class='line'>      <span class="n">resp_get</span> <span class="p">[</span><span class="n">plurk_id</span><span class="p">]</span></span>
-<span class='line'>      <span class="n">resp_del</span> <span class="p">[</span><span class="n">plurk_id</span><span class="p">]</span> <span class="p">[</span><span class="n">resp_id</span><span class="p">]</span></span>
-<span class='line'>      <span class="n">count_unread</span></span>
-<span class='line'>      <span class="n">get_unread</span> <span class="p">[</span><span class="o">--</span><span class="n">new</span> <span class="o">--</span><span class="n">my</span> <span class="o">--</span><span class="n">responded</span> <span class="o">--</span><span class="n">private</span> <span class="o">--</span><span class="n">favorite</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">withmar</span><span class="p">]</span></span>
-<span class='line'>      <span class="n">del</span> <span class="p">[</span><span class="n">plurk_id</span><span class="p">]</span></span>
-<span class='line'>      <span class="n">edit</span> <span class="p">[</span><span class="n">plurk_id</span><span class="p">]</span> <span class="p">[</span><span class="n">content</span><span class="p">]</span></span>
-<span class='line'>      <span class="n">mute</span> <span class="p">[</span><span class="n">plurk_id</span><span class="err">#</span><span class="mi">1</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">2</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">3</span> <span class="p">...]</span></span>
-<span class='line'>      <span class="n">unmute</span> <span class="p">[</span><span class="n">plurk_id</span><span class="err">#</span><span class="mi">1</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">2</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">3</span> <span class="p">...]</span></span>
-<span class='line'>      <span class="n">favor</span> <span class="p">[</span><span class="n">plurk_id</span><span class="err">#</span><span class="mi">1</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">2</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">3</span> <span class="p">...]</span></span>
-<span class='line'>      <span class="n">unfavor</span> <span class="p">[</span><span class="n">plurk_id</span><span class="err">#</span><span class="mi">1</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">2</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">3</span> <span class="p">...]</span></span>
-<span class='line'>      <span class="n">mar</span> <span class="p">[</span><span class="n">plurk_id</span><span class="err">#</span><span class="mi">1</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">2</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">3</span> <span class="p">...]</span></span>
-<span class='line'>      <span class="n">replurk</span> <span class="p">[</span><span class="n">plurk_id</span><span class="err">#</span><span class="mi">1</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">2</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">3</span> <span class="p">...]</span></span>
-<span class='line'>      <span class="n">unreplurk</span> <span class="p">[</span><span class="n">plurk_id</span><span class="err">#</span><span class="mi">1</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">2</span> <span class="n">plurk_id</span><span class="err">#</span><span class="mi">3</span> <span class="p">...]</span></span>
-<span class='line'>      <span class="n">get_user_pub</span> <span class="p">[</span><span class="n">user_id</span><span class="p">]</span></span>
-<span class='line'></span>
-<span class='line'><span class="n">Readmore</span> <span class="k">in</span> <span class="err">`</span><span class="n">doc</span><span class="o">/</span><span class="n">doc</span><span class="p">.</span><span class="n">txt</span><span class="err">`</span> <span class="n">or</span> <span class="err">`</span><span class="n">man</span> <span class="n">plurk</span><span class="err">`</span><span class="p">.</span></span>
-<span class='line'></span></code></pre></td></tr></table></div></figure>
-
-
-<h1>已知問題</h1>
-<ul>
-<li>目前只有TimeLine上得功能 未來應該會把所有功能加上</li>
-<li>Not Support Windows.`</li>
-</ul>]]></content>
   </entry>
   
 </feed>
